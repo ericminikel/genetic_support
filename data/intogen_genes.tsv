@@ -1,0 +1,569 @@
+gene	mechanism
+ABCB1	oncogene
+ABI1	unknown
+ABL1	oncogene
+ABL2	oncogene
+ACKR3	oncogene
+ACSL3	oncogene
+ACVR1	unknown
+ACVR2A	tumor suppressor
+ADGRB1	unknown
+AFF1	oncogene
+AFF3	unknown
+AJUBA	tumor suppressor
+AKT1	oncogene
+AKT3	unknown
+ALB	oncogene
+ALK	oncogene
+AMER1	tumor suppressor
+APC	tumor suppressor
+AR	oncogene
+ARAF	oncogene
+ARHGAP35	tumor suppressor
+ARHGAP5	tumor suppressor
+ARHGEF10	unknown
+ARHGEF10L	tumor suppressor
+ARHGEF12	oncogene
+ARID1A	tumor suppressor
+ARID1B	tumor suppressor
+ARID2	tumor suppressor
+ASXL1	tumor suppressor
+ASXL2	tumor suppressor
+ATF7IP	tumor suppressor
+ATG7	tumor suppressor
+ATM	tumor suppressor
+ATR	tumor suppressor
+ATRX	tumor suppressor
+AXIN1	tumor suppressor
+AXIN2	tumor suppressor
+B2M	tumor suppressor
+BAP1	tumor suppressor
+BCL10	unknown
+BCL11A	oncogene
+BCL11B	oncogene
+BCL2	oncogene
+BCL2L12	unknown
+BCL6	oncogene
+BCL7A	oncogene
+BCL9	oncogene
+BCL9L	oncogene
+BCLAF1	oncogene
+BCOR	tumor suppressor
+BCORL1	tumor suppressor
+BCR	oncogene
+BIRC3	oncogene
+BIRC6	unknown
+BMPR1A	tumor suppressor
+BMPR2	tumor suppressor
+BRAF	oncogene
+BRCA1	tumor suppressor
+BRCA2	tumor suppressor
+BRD4	oncogene
+BRD7	tumor suppressor
+BTG1	unknown
+BTK	oncogene
+CACNA1D	unknown
+CAMTA1	tumor suppressor
+CARD11	oncogene
+CARS	unknown
+CASP8	tumor suppressor
+CASZ1	tumor suppressor
+CBFA2T3	oncogene
+CBFB	oncogene
+CBL	oncogene
+CCDC6	tumor suppressor
+CCND1	oncogene
+CCND2	oncogene
+CCND3	oncogene
+CCR7	tumor suppressor
+CD58	tumor suppressor
+CD79B	oncogene
+CDC73	tumor suppressor
+CDH1	tumor suppressor
+CDH10	oncogene
+CDH11	unknown
+CDK12	tumor suppressor
+CDK4	oncogene
+CDKN1A	tumor suppressor
+CDKN1B	tumor suppressor
+CDKN2A	tumor suppressor
+CDKN2C	tumor suppressor
+CDX2	oncogene
+CEBPA	unknown
+CHD2	tumor suppressor
+CHD4	oncogene
+CHEK2	tumor suppressor
+CIC	tumor suppressor
+CIITA	oncogene
+CLIP1	tumor suppressor
+CLTC	oncogene
+CLTCL1	oncogene
+CMTR2	tumor suppressor
+CNOT3	oncogene
+CNOT9	unknown
+COL1A1	oncogene
+CPEB3	oncogene
+CR1	unknown
+CREBBP	tumor suppressor
+CRNKL1	oncogene
+CRTC1	unknown
+CSF3R	oncogene
+CTCF	tumor suppressor
+CTNNB1	oncogene
+CUL3	tumor suppressor
+CUX1	unknown
+CXCR4	oncogene
+CYLD	tumor suppressor
+CYP2C8	tumor suppressor
+CYSLTR2	oncogene
+DAXX	tumor suppressor
+DAZAP1	tumor suppressor
+DCAF12L2	oncogene
+DCC	tumor suppressor
+DCSTAMP	oncogene
+DDB2	tumor suppressor
+DDX3X	tumor suppressor
+DDX6	unknown
+DGCR8	tumor suppressor
+DHX9	oncogene
+DICER1	tumor suppressor
+DIS3	tumor suppressor
+DNAJB1	tumor suppressor
+DNMT3A	tumor suppressor
+DOT1L	tumor suppressor
+DROSHA	tumor suppressor
+DTX1	unknown
+DUSP16	tumor suppressor
+EBF1	unknown
+EFTUD2	unknown
+EGFR	oncogene
+EGR2	unknown
+EHD2	unknown
+EIF1AX	tumor suppressor
+EIF3E	oncogene
+ELF3	tumor suppressor
+ELF4	oncogene
+ELL	unknown
+ELN	unknown
+EML4	unknown
+ENPEP	unknown
+EP300	tumor suppressor
+EPAS1	oncogene
+EPHA2	tumor suppressor
+EPHA3	unknown
+EPHA7	unknown
+EPS15	oncogene
+ERBB2	oncogene
+ERBB3	oncogene
+ERBB4	tumor suppressor
+ERCC2	tumor suppressor
+ERCC3	tumor suppressor
+ERG	oncogene
+ESR1	oncogene
+ESRRA	oncogene
+ETV4	tumor suppressor
+ETV5	oncogene
+ETV6	oncogene
+EWSR1	oncogene
+EXT2	tumor suppressor
+EZH2	tumor suppressor
+FAM135B	oncogene
+FAM174B	unknown
+FAM186A	unknown
+FAM46C	tumor suppressor
+FANCA	tumor suppressor
+FANCC	tumor suppressor
+FANCD2	tumor suppressor
+FANCF	tumor suppressor
+FAS	tumor suppressor
+FAT1	tumor suppressor
+FAT2	oncogene
+FAT3	unknown
+FAT4	tumor suppressor
+FBLN1	oncogene
+FBN2	unknown
+FBXO11	tumor suppressor
+FBXW7	tumor suppressor
+FGD5	oncogene
+FGFR1	oncogene
+FGFR2	oncogene
+FGFR3	oncogene
+FGFR4	oncogene
+FH	tumor suppressor
+FHIT	unknown
+FLCN	tumor suppressor
+FLT3	oncogene
+FLT4	unknown
+FN1	tumor suppressor
+FOXA1	tumor suppressor
+FOXA2	tumor suppressor
+FOXD4L1	tumor suppressor
+FOXL2	oncogene
+FOXO1	oncogene
+FOXO3	unknown
+FOXP1	oncogene
+FUBP1	tumor suppressor
+GATA1	oncogene
+GATA2	oncogene
+GATA3	tumor suppressor
+GLI1	oncogene
+GMPS	tumor suppressor
+GNA11	oncogene
+GNA13	tumor suppressor
+GNAI2	unknown
+GNAQ	oncogene
+GNAS	oncogene
+GRIN2A	oncogene
+GTF2I	oncogene
+H3F3A	oncogene
+HERC2	unknown
+HGF	oncogene
+HIP1	oncogene
+HIST1H3B	oncogene
+HIST1H4I	oncogene
+HLA-A	unknown
+HLA-B	unknown
+HNF1A	tumor suppressor
+HNRNPA2B1	oncogene
+HOXA11	unknown
+HOXC13	oncogene
+HOXD13	tumor suppressor
+HRAS	oncogene
+HSP90AA1	oncogene
+HSP90AB1	oncogene
+HSPG2	unknown
+HTRA2	tumor suppressor
+ID3	tumor suppressor
+IDH1	oncogene
+IDH2	oncogene
+IFNAR1	tumor suppressor
+IFNGR1	tumor suppressor
+IKBKB	unknown
+IKZF1	unknown
+IKZF3	unknown
+IL6ST	oncogene
+IL7R	oncogene
+ING1	tumor suppressor
+INO80	unknown
+IRAK1	tumor suppressor
+IRF1	tumor suppressor
+IRF4	unknown
+IRS4	tumor suppressor
+JAK1	unknown
+JAK2	unknown
+JAK3	oncogene
+KAT6A	unknown
+KAT6B	oncogene
+KDM3B	unknown
+KDM5A	oncogene
+KDM5C	tumor suppressor
+KDM6A	tumor suppressor
+KDR	oncogene
+KEAP1	oncogene
+KEL	oncogene
+KIF5B	oncogene
+KIFC1	oncogene
+KIT	oncogene
+KLF4	oncogene
+KLF5	unknown
+KLHL36	unknown
+KLHL6	tumor suppressor
+KMT2A	tumor suppressor
+KMT2B	tumor suppressor
+KMT2C	tumor suppressor
+KMT2D	tumor suppressor
+KRAS	oncogene
+LATS1	tumor suppressor
+LATS2	tumor suppressor
+LDB1	oncogene
+LIFR	oncogene
+LOX	tumor suppressor
+LPAR4	tumor suppressor
+LPP	oncogene
+LRIG3	unknown
+LRP1B	tumor suppressor
+LTB	oncogene
+LY75-CD302	oncogene
+LZTR1	tumor suppressor
+MAF	tumor suppressor
+MALT1	tumor suppressor
+MAML2	tumor suppressor
+MAP2	unknown
+MAP2K1	oncogene
+MAP2K4	tumor suppressor
+MAP2K7	tumor suppressor
+MAP3K1	tumor suppressor
+MAPK1	oncogene
+MARK2	unknown
+MAX	oncogene
+MB21D2	tumor suppressor
+MCM3AP	unknown
+MDM2	oncogene
+MDM4	oncogene
+MECOM	oncogene
+MED12	oncogene
+MEF2B	tumor suppressor
+MEN1	tumor suppressor
+MET	oncogene
+MGA	tumor suppressor
+MLLT1	oncogene
+MLLT3	oncogene
+MSI2	unknown
+MSN	unknown
+MTCP1	oncogene
+MTOR	oncogene
+MYC	oncogene
+MYCN	oncogene
+MYD88	oncogene
+MYH11	oncogene
+MYH9	oncogene
+MYO5A	unknown
+NBEA	unknown
+NCOA1	unknown
+NCOA2	oncogene
+NCOR1	tumor suppressor
+NCOR2	oncogene
+NEFH	unknown
+NF1	tumor suppressor
+NF2	tumor suppressor
+NFATC2	unknown
+NFE2L2	oncogene
+NFKB2	unknown
+NFKBIA	tumor suppressor
+NFKBIE	unknown
+NIN	tumor suppressor
+NIPBL	tumor suppressor
+NKTR	oncogene
+NKX2-1	unknown
+NONO	tumor suppressor
+NOTCH1	unknown
+NOTCH2	unknown
+NPEPPS	tumor suppressor
+NPM1	unknown
+NPRL2	tumor suppressor
+NRAS	oncogene
+NRG1	oncogene
+NRK	oncogene
+NRP1	tumor suppressor
+NSD1	oncogene
+NSD2	unknown
+NT5C3A	tumor suppressor
+NTRK1	oncogene
+NTRK3	oncogene
+NUMA1	oncogene
+NUP214	oncogene
+NXF1	oncogene
+P2RY8	oncogene
+PABPC1	unknown
+PAK2	oncogene
+PARP4	unknown
+PBRM1	tumor suppressor
+PCBP1	oncogene
+PCDH17	tumor suppressor
+PCMTD1	tumor suppressor
+PDCD1LG2	oncogene
+PDE4DIP	oncogene
+PDGFRA	oncogene
+PDGFRB	oncogene
+PDPR	unknown
+PEG3	oncogene
+PHF6	tumor suppressor
+PIK3CA	oncogene
+PIK3CB	oncogene
+PIK3R1	tumor suppressor
+PIM1	tumor suppressor
+PLAG1	oncogene
+PLCB4	oncogene
+PLCG1	oncogene
+PML	tumor suppressor
+PMS2	tumor suppressor
+POLD1	oncogene
+POLE	unknown
+POLQ	unknown
+POT1	unknown
+POU2F2	unknown
+PPM1D	tumor suppressor
+PPP2R1A	oncogene
+PPP3CA	tumor suppressor
+PPP6C	tumor suppressor
+PPT2	oncogene
+PRDM1	tumor suppressor
+PRDM2	unknown
+PREX2	oncogene
+PRF1	tumor suppressor
+PRKAR1A	tumor suppressor
+PRKCB	oncogene
+PRKCD	tumor suppressor
+PRKD2	unknown
+PRR14	tumor suppressor
+PRRX1	oncogene
+PSIP1	oncogene
+PTCH1	tumor suppressor
+PTEN	tumor suppressor
+PTMA	tumor suppressor
+PTPN11	oncogene
+PTPN13	tumor suppressor
+PTPN14	tumor suppressor
+PTPN6	tumor suppressor
+PTPRB	unknown
+PTPRC	oncogene
+PTPRD	oncogene
+PTPRK	tumor suppressor
+PTPRT	tumor suppressor
+QKI	tumor suppressor
+RABEP1	tumor suppressor
+RAC1	oncogene
+RAD21	tumor suppressor
+RAF1	oncogene
+RALGDS	oncogene
+RANBP2	tumor suppressor
+RAP1GDS1	oncogene
+RARA	oncogene
+RASA1	tumor suppressor
+RASA2	tumor suppressor
+RB1	tumor suppressor
+RBFOX1	oncogene
+RBFOX2	oncogene
+RBM10	tumor suppressor
+RBM15	tumor suppressor
+RBM38	unknown
+RBM39	oncogene
+RECQL4	tumor suppressor
+RELA	oncogene
+RET	oncogene
+RGL3	oncogene
+RGPD3	unknown
+RGS7	tumor suppressor
+RHOA	oncogene
+RHPN2	unknown
+RIPK1	unknown
+RNF213	oncogene
+RNF43	tumor suppressor
+RNF6	tumor suppressor
+RPL10	tumor suppressor
+RPL22	oncogene
+RPS3A	unknown
+RPS6KA3	tumor suppressor
+RRAGC	oncogene
+RRAS2	oncogene
+RSPH10B2	unknown
+RUNX1	unknown
+RUNX1T1	unknown
+RXRA	tumor suppressor
+SALL4	oncogene
+SATB1	oncogene
+SDC4	tumor suppressor
+SEPT9	oncogene
+SET	oncogene
+SETBP1	oncogene
+SETD1B	tumor suppressor
+SETD2	tumor suppressor
+SETDB1	oncogene
+SF3B1	oncogene
+SFMBT2	oncogene
+SGK1	unknown
+SH2B3	unknown
+SIN3A	oncogene
+SIRPA	tumor suppressor
+SIX1	tumor suppressor
+SLC45A3	tumor suppressor
+SMAD2	tumor suppressor
+SMAD3	tumor suppressor
+SMAD4	tumor suppressor
+SMARCA1	tumor suppressor
+SMARCA4	tumor suppressor
+SMARCB1	tumor suppressor
+SMARCD1	unknown
+SMC1A	oncogene
+SMO	oncogene
+SOCS1	tumor suppressor
+SOHLH2	oncogene
+SOS1	oncogene
+SOX17	oncogene
+SOX21	tumor suppressor
+SOX9	tumor suppressor
+SP140	unknown
+SPEN	unknown
+SPOP	oncogene
+SRGAP3	oncogene
+SRSF2	oncogene
+STAG2	tumor suppressor
+STAT3	unknown
+STAT5B	unknown
+STAT6	oncogene
+STIL	unknown
+STK11	tumor suppressor
+STRN	unknown
+SUSD2	oncogene
+SUZ12	oncogene
+TAF15	unknown
+TBL1XR1	tumor suppressor
+TBX3	tumor suppressor
+TCF4	oncogene
+TCF7L2	oncogene
+TCIRG1	tumor suppressor
+TEC	tumor suppressor
+TET1	unknown
+TET2	tumor suppressor
+TFAP4	tumor suppressor
+TFG	tumor suppressor
+TGFBR2	tumor suppressor
+TGIF1	tumor suppressor
+TLL1	oncogene
+TNC	unknown
+TNFAIP3	tumor suppressor
+TNFRSF14	tumor suppressor
+TOP1	tumor suppressor
+TOP2A	oncogene
+TP53	tumor suppressor
+TP63	unknown
+TRAF3	tumor suppressor
+TRIM24	oncogene
+TRIM33	unknown
+TRIM49C	oncogene
+TRIP11	oncogene
+TRRAP	unknown
+TSC1	tumor suppressor
+TSC2	tumor suppressor
+U2AF1	oncogene
+U2AF2	oncogene
+UBE2A	tumor suppressor
+UBE2D2	oncogene
+UBR5	unknown
+UGT2B17	oncogene
+USP44	tumor suppressor
+USP6	oncogene
+USP8	unknown
+USP9X	tumor suppressor
+VAV1	oncogene
+VHL	tumor suppressor
+WAS	tumor suppressor
+WDR45	tumor suppressor
+WNK2	unknown
+WNK4	unknown
+WRN	tumor suppressor
+WT1	tumor suppressor
+XPC	tumor suppressor
+XPO1	oncogene
+ZBTB16	unknown
+ZBTB20	oncogene
+ZBTB7B	oncogene
+ZCRB1	tumor suppressor
+ZEB1	tumor suppressor
+ZFHX3	tumor suppressor
+ZFP36L1	tumor suppressor
+ZFX	tumor suppressor
+ZNF148	oncogene
+ZNF165	tumor suppressor
+ZNF208	unknown
+ZNF429	tumor suppressor
+ZNF521	oncogene
+ZNF626	unknown
+ZNF680	unknown
+ZNF721	unknown
+ZNF780A	oncogene
+ZNF814	oncogene
+ZNF93	tumor suppressor
+ZNRF3	tumor suppressor
+ZRSR2	tumor suppressor
+ZXDB	tumor suppressor

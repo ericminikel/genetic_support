@@ -1,0 +1,27 @@
+gene	mesh_id	mesh_term	original_trait
+ABCC8	D003920	Diabetes Mellitus	Diabetes mellitus, permanent neonatal, 606176 (3), Autosomal recessive, Autosomal dominant
+ABCC8	D003920	Diabetes Mellitus	Diabetes mellitus, transient neonatal 2, 610374 (3)
+ABCC8	D003924	Diabetes Mellitus, Type 2	Diabetes mellitus, noninsulin-dependent, 125853 (3), Autosomal dominant
+AQP2	D018500	Diabetes Insipidus, Nephrogenic	Diabetes insipidus, nephrogenic, 125800 (3), Autosomal recessive, Autosomal dominant
+AVP	D020790	Diabetes Insipidus, Neurogenic	Diabetes insipidus, neurohypophyseal, 125700 (3), Autosomal dominant
+BLK	D003924	Diabetes Mellitus, Type 2	Maturity-onset diabetes of the young, type 11, 613375 (3), Autosomal dominant
+CEL	D003924	Diabetes Mellitus, Type 2	Maturity-onset diabetes of the young, type VIII, 609812 (3), Autosomal dominant
+GCK	D003920	Diabetes Mellitus	Diabetes mellitus, permanent neonatal, 606176 (3), Autosomal recessive, Autosomal dominant
+GCK	D003924	Diabetes Mellitus, Type 2	Diabetes mellitus, noninsulin-dependent, late onset, 125853 (3), Autosomal dominant
+GLIS3	D003409	Congenital Hypothyroidism	Diabetes mellitus, neonatal, with congenital hypothyroidism, 610199 (3), Autosomal recessive
+HNF1A	D003922	Diabetes Mellitus, Type 1	Diabetes mellitus, insulin-dependent, 20, 612520 (3)
+HNF1B	D003924	Diabetes Mellitus, Type 2	Diabetes mellitus, noninsulin-dependent, 125853 (3), Autosomal dominant
+HNF1B	D003924	Diabetes Mellitus, Type 2	Renal cysts and diabetes syndrome, 137920 (3), Autosomal dominant
+HNF4A	D003924	Diabetes Mellitus, Type 2	Fanconi renotubular syndrome 4, with maturity-onset diabetes of the young, 616026 (3), Autosomal dominant
+IER3IP1	D008831	Microcephaly	Microcephaly, epilepsy, and diabetes syndrome, 614231 (3), Autosomal recessive
+INS	D003922	Diabetes Mellitus, Type 1	Diabetes mellitus, insulin-dependent, 2, 125852 (3), Autosomal dominant
+INS	D003924	Diabetes Mellitus, Type 2	Maturity-onset diabetes of the young, type 10, 613370 (3), Autosomal dominant
+INSR	D003920	Diabetes Mellitus	Diabetes mellitus, insulin-resistant, with acanthosis nigricans, 610549 (3)
+KCNJ11	D003920	Diabetes Mellitus	Diabetes mellitus, transient neonatal, 3, 610582 (3), Autosomal dominant
+KCNJ11	D011236	Prediabetic State	Diabetes, permanent neonatal, with or without neurologic features, 606176 (3), Autosomal recessive, Autosomal dominant
+KLF11	D003924	Diabetes Mellitus, Type 2	Maturity-onset diabetes of the young, type VII, 610508 (3)
+MAFA	D003920	Diabetes Mellitus	Insulinomatosis and diabetes mellitus, 147630 (3), Autosomal dominant
+NEUROD1	D003924	Diabetes Mellitus, Type 2	Maturity-onset diabetes of the young 6, 606394 (3)
+PAX4	D003924	Diabetes Mellitus, Type 2	Diabetes mellitus, type 2, 125853 (3), Autosomal dominant
+PAX4	D003924	Diabetes Mellitus, Type 2	Maturity-onset diabetes of the young, type IX, 612225 (3)
+ZFP57	D003920	Diabetes Mellitus	Diabetes mellitus, transient neonatal, 1, 601410 (3), Autosomal dominant

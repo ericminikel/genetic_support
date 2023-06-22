@@ -1,0 +1,76 @@
+phase	category	n_ti_gensup	n_ti_total
+0 Preclinical	Autoimmune	6	160
+0 Preclinical	Blood	3	29
+0 Preclinical	Cardiovascular	1	72
+0 Preclinical	Diabetes	0	46
+0 Preclinical	Eye	0	26
+0 Preclinical	Infection	0	17
+0 Preclinical	Inflammation	0	3
+0 Preclinical	Liver & kidney	1	15
+0 Preclinical	Metabolic	2	21
+0 Preclinical	Musculoskeletal	0	9
+0 Preclinical	Neurological/behavioral	3	88
+0 Preclinical	Oncology	1	337
+0 Preclinical	Respiratory	0	36
+0 Preclinical	Skin & connective tissue	0	2
+0 Preclinical	Urogenital	1	8
+1 Phase I	Autoimmune	3	91
+1 Phase I	Blood	1	12
+1 Phase I	Cardiovascular	2	27
+1 Phase I	Diabetes	1	28
+1 Phase I	Eye	0	11
+1 Phase I	Infection	0	5
+1 Phase I	Inflammation	0	6
+1 Phase I	Liver & kidney	0	11
+1 Phase I	Metabolic	1	18
+1 Phase I	Musculoskeletal	0	3
+1 Phase I	Neurological/behavioral	2	50
+1 Phase I	Oncology	12	888
+1 Phase I	Respiratory	2	17
+1 Phase I	Skin & connective tissue	0	2
+1 Phase I	Urogenital	0	6
+2 Phase II	Autoimmune	11	188
+2 Phase II	Blood	4	38
+2 Phase II	Cardiovascular	8	74
+2 Phase II	Diabetes	3	41
+2 Phase II	Eye	1	37
+2 Phase II	Infection	0	21
+2 Phase II	Inflammation	0	0
+2 Phase II	Liver & kidney	1	21
+2 Phase II	Metabolic	2	23
+2 Phase II	Musculoskeletal	0	4
+2 Phase II	Neurological/behavioral	3	115
+2 Phase II	Oncology	22	1170
+2 Phase II	Respiratory	10	48
+2 Phase II	Skin & connective tissue	1	12
+2 Phase II	Urogenital	0	3
+3 Phase III	Autoimmune	6	63
+3 Phase III	Blood	3	8
+3 Phase III	Cardiovascular	4	33
+3 Phase III	Diabetes	0	15
+3 Phase III	Eye	0	8
+3 Phase III	Infection	0	4
+3 Phase III	Inflammation	0	1
+3 Phase III	Liver & kidney	0	5
+3 Phase III	Metabolic	0	8
+3 Phase III	Musculoskeletal	0	3
+3 Phase III	Neurological/behavioral	2	41
+3 Phase III	Oncology	6	179
+3 Phase III	Respiratory	1	6
+3 Phase III	Skin & connective tissue	0	0
+3 Phase III	Urogenital	0	0
+4 Approved	Autoimmune	3	95
+4 Approved	Blood	14	46
+4 Approved	Cardiovascular	14	150
+4 Approved	Diabetes	4	33
+4 Approved	Eye	0	18
+4 Approved	Infection	2	7
+4 Approved	Inflammation	1	8
+4 Approved	Liver & kidney	1	4
+4 Approved	Metabolic	7	17
+4 Approved	Musculoskeletal	5	11
+4 Approved	Neurological/behavioral	6	151
+4 Approved	Oncology	2	171
+4 Approved	Respiratory	6	28
+4 Approved	Skin & connective tissue	0	20
+4 Approved	Urogenital	2	45

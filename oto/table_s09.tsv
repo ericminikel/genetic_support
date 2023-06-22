@@ -1,0 +1,5 @@
+source	orphan	pipeline_obj	label	y	mean	l95	u95	numerator	denominator
+OMIM	orphan	hist_ti_omim_orphan	OMIM orphan	4	2.6233101936426744	2.0095497147456713	3.4245265601406234	40	119
+OMIM	non-orphan	hist_ti_omim_nonorphan	OMIM non-orphan	3	3.1643692806672075	2.5406025678901787	3.9412826984370493	58	178
+OTG	orphan	hist_ti_otg_orphan	OTG orphan	2	2.1024686520376172	1.5712792867192642	2.8132328034631886	36	132
+OTG	non-orphan	hist_ti_otg_nonorphan	OTG non-orphan	1	2.3547824302134646	1.9636775508661877	2.8237835133350195	100	420

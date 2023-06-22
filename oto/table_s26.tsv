@@ -1,0 +1,25 @@
+area	genelist	developed	supported	utilization
+oncogene	all genes	39	218	0.17889908256880735
+oncogene	predicted Ab tractable	32	108	0.2962962962962963
+oncogene	predicted SM tractable	37	129	0.2868217054263566
+oncogene	rhodopsin-like GPCRs	0	4	0
+oncogene	nuclear receptors	2	3	0.6666666666666666
+oncogene	enzymes	7	20	0.35
+oncogene	ion channels	0	1	0
+oncogene	kinases	13	26	0.5
+tumor_suppressor	all genes	6	225	0.02666666666666667
+tumor_suppressor	predicted Ab tractable	1	81	0.012345679012345678
+tumor_suppressor	predicted SM tractable	5	116	0.04310344827586207
+tumor_suppressor	rhodopsin-like GPCRs	0	2	0
+tumor_suppressor	nuclear receptors	0	1	0
+tumor_suppressor	enzymes	2	26	0.07692307692307693
+tumor_suppressor	ion channels	0	0	0
+tumor_suppressor	kinases	1	11	0.09090909090909091
+unknown	all genes	7	118	0.059322033898305086
+unknown	predicted Ab tractable	4	50	0.08
+unknown	predicted SM tractable	6	57	0.10526315789473684
+unknown	rhodopsin-like GPCRs	0	0	0
+unknown	nuclear receptors	0	0	0
+unknown	enzymes	1	8	0.125
+unknown	ion channels	0	1	0
+unknown	kinases	1	12	0.08333333333333333

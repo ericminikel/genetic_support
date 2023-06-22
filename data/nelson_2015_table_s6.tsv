@@ -1,0 +1,262 @@
+Gene	MSH.Ind	Category	MSH.Trt	pvalue	eCat	Rank	RelSim	LatestPhase
+ABCC8	"diabetes mellitus, type 2"	Diabetes	"diabetes mellitus, type 2"	5.00E-11	0	3	1	Approved US/EU
+ABCC8	"diabetes mellitus, type 2"	Diabetes	"diabetes mellitus, type 2"	0		1	1	Approved US/EU
+ADORA1	asthma	Respiratory	asthma	9.74E-13	2	1	1	Approved US/EU
+ADORA1	hypersensitivity	Inflammation	asthma	9.74E-13	2	1	0.708925055	Approved US/EU
+ADORA1	"pulmonary disease, chronic obstructive"	Respiratory	asthma	9.74E-13	2	1	0.716998335	Approved US/EU
+ADRA2A	attention deficit disorder with hyperactivity	Neurological/behavioral	attention deficit disorder with hyperactivity	1.00E-08	9	1	1	Approved US/EU
+ADRB2	asthma	Respiratory	asthma	0		1	1	Approved US/EU
+ADRB2	"pulmonary disease, chronic obstructive"	Respiratory	asthma	0		1	0.716998335	Approved US/EU
+ALOX5	asthma	Respiratory	asthma	0		1	1	Approved US/EU
+ALOX5	"pulmonary disease, chronic obstructive"	Respiratory	asthma	0		1	0.716998335	Approved US/EU
+APOB	hypercholesterolemia	Cardiovascular	cholesterol	1.10E-100	0	1	0.9	Approved US/EU
+APOB	hypercholesterolemia	Cardiovascular	"cholesterol, ldl"	1.20E-118	0	1	0.9	Approved US/EU
+APOB	hypercholesterolemia	Cardiovascular	dyslipidemias	5.40E-14	0	1	0.769796231	Approved US/EU
+APOB	hypercholesterolemia	Cardiovascular	hyperlipoproteinemia type ii	0		1	0.735367931	Approved US/EU
+APOB	hypercholesterolemia	Cardiovascular	hyperlipoproteinemia type ii	1.90E-09	0	1	0.735367931	Approved US/EU
+AR	turner syndrome	Urogenital	androgen-insensitivity syndrome	0		1	0.773805106	Approved US/EU
+ARSB	mucopolysaccharidosis vi	Metabolic	mucopolysaccharidosis vi	0		1	1	Approved US/EU
+AVPR2	diabetes insipidus	Diabetes	"diabetes insipidus, nephrogenic"	0		1	0.717682774	Approved US/EU
+CALCR	osteoporosis	Musculoskeletal	osteoporosis	0		1	1	Approved US/EU
+CASR	hypercalcemia	Metabolic	hypocalcemia	6.00E-37	0	1	0.733946876	Approved US/EU
+CD80	"arthritis, rheumatoid"	Autoimmune	"arthritis, rheumatoid"	8.03E-09	2b	4	1	Approved US/EU
+CHRM4	psychotic disorders	Neurological/behavioral	schizophrenia	3.89E-09	9	7	0.750453586	Approved US/EU
+CHRM4	schizophrenia	Neurological/behavioral	schizophrenia	3.89E-09	9	7	1	Approved US/EU
+CRHR2	sleep initiation and maintenance disorders	Neurological/behavioral	narcolepsy	1.13E-30	9	1	0.732465524	Approved US/EU
+ERBB2	stomach neoplasms	Oncology	stomach neoplasms	0		1	1	Approved US/EU
+ESR1	breast neoplasms	Oncology	breast neoplasms	0		1	1	Approved US/EU
+ESR1	osteoporosis	Musculoskeletal	bone density	1.50E-10	2b	1	0.9	Approved US/EU
+F10	thrombocytopenia	Blood	prothrombin time	4.00E-56	9	3	0.75	Approved US/EU
+F10	thrombocytopenia	Blood	blood coagulation	1.93E-45	9	2	0.75	Approved US/EU
+F10	thrombosis	Cardiovascular	prothrombin time	4.00E-56	9	3	0.75	Approved US/EU
+F10	thrombosis	Cardiovascular	blood coagulation	1.93E-45	9	2	0.75	Approved US/EU
+F10	venous thrombosis	Cardiovascular	blood coagulation	1.93E-45	9	2	0.75	Approved US/EU
+F13A1	factor xiii deficiency	Blood	blood coagulation	2.59E-186	0	1	0.75	Approved US/EU
+F2	antithrombin iii deficiency	Blood	thrombophilia	0		1	0.775976866	Approved US/EU
+F2	disseminated intravascular coagulation	Blood	thrombophilia	0		1	0.821176866	Approved US/EU
+F2	thrombocytopenia	Blood	blood coagulation	1.33E-10	9	3	0.75	Approved US/EU
+F2	thrombosis	Cardiovascular	blood coagulation	1.33E-10	9	3	0.75	Approved US/EU
+F2	venous thrombosis	Cardiovascular	blood coagulation	1.33E-10	9	3	0.75	Approved US/EU
+F7	hemophilia a	Blood	factor vii deficiency	0		1	0.714049015	Approved US/EU
+F8	hemophilia a	Blood	hemophilia a	0		1	1	Approved US/EU
+F8	von willebrand diseases	Blood	hemophilia a	0		1	0.775349015	Approved US/EU
+FGA	afibrinogenemia	Blood	fibrinogen	9.00E-90	0	1	0.75	Approved US/EU
+FGB	afibrinogenemia	Blood	fibrinogen	1.00E-39	9	4	0.75	Approved US/EU
+FGG	afibrinogenemia	Blood	fibrinogen	8.00E-39	1f	2	0.75	Approved US/EU
+FSHR	polycystic ovary syndrome	Urogenital	polycystic ovary syndrome	9.89E-13	9	1	1	Approved US/EU
+GAA	glycogen storage disease type ii	Metabolic	glycogen storage disease type ii	0		1	1	Approved US/EU
+GBA	gaucher disease	Metabolic	gaucher disease	0		1	1	Approved US/EU
+GHR	dwarfism	Musculoskeletal	laron syndrome	0		1	0.717911184	Approved US/EU
+GLA	fabry disease	Metabolic	fabry disease	0		1	1	Approved US/EU
+HMGCR	hypercholesterolemia	Cardiovascular	dyslipidemias	1.00E-20	9	2	0.769796231	Approved US/EU
+HMGCR	hypercholesterolemia	Cardiovascular	"cholesterol, ldl"	1.00E-20	9	2	0.9	Approved US/EU
+HMGCR	hypercholesterolemia	Cardiovascular	cholesterol	3.00E-19	9	2	0.9	Approved US/EU
+HMGCR	hyperlipidemias	Cardiovascular	dyslipidemias	1.00E-20	9	2	0.793846231	Approved US/EU
+HMGCR	hyperlipidemias	Cardiovascular	"cholesterol, ldl"	1.00E-20	9	2	0.9	Approved US/EU
+HMGCR	hyperlipidemias	Cardiovascular	triglycerides	3.22E-09	9	2	0.9	Approved US/EU
+HMGCR	hyperlipidemias	Cardiovascular	cholesterol	3.00E-19	9	2	0.9	Approved US/EU
+HMGCR	hypertriglyceridemia	Cardiovascular	dyslipidemias	1.00E-20	9	2	0.745146231	Approved US/EU
+HMGCR	hypertriglyceridemia	Cardiovascular	triglycerides	3.22E-09	9	2	0.9	Approved US/EU
+IDS	mucopolysaccharidosis ii	Neurological/behavioral	mucopolysaccharidosis ii	0		1	1	Approved US/EU
+IDUA	mucopolysaccharidosis i	Metabolic	mucopolysaccharidosis i	0		1	1	Approved US/EU
+IFNAR2	hepatitis b	Infection	hepatitis b	0		1	1	Approved US/EU
+IFNAR2	hepatitis c	Infection	hepatitis b	0		1	0.733336798	Approved US/EU
+IL12B	"arthritis, psoriatic"	Autoimmune	psoriasis	2.00E-28	9	2	0.783734646	Approved US/EU
+IL12B	psoriasis	Autoimmune	psoriasis	2.00E-28	9	2	1	Approved US/EU
+KCNH2	atrial fibrillation	Cardiovascular	electrocardiography	5.00E-11	9	2	0.75	Approved US/EU
+KCNJ11	"diabetes mellitus, type 2"	Diabetes	"diabetes mellitus, type 2"	5.00E-11	0	2	1	Approved US/EU
+KCNJ11	"diabetes mellitus, type 2"	Diabetes	"diabetes mellitus, type 2"	0		1	1	Approved US/EU
+LPL	hypercholesterolemia	Cardiovascular	dyslipidemias	4.00E-15	2	1	0.769796231	Approved US/EU
+LPL	hyperlipidemias	Cardiovascular	hyperlipoproteinemia type i	0		1	0.703117931	Approved US/EU
+LPL	hyperlipidemias	Cardiovascular	triglycerides	2.20E-121	2	1	0.9	Approved US/EU
+LPL	hyperlipidemias	Cardiovascular	dyslipidemias	4.00E-15	2	1	0.793846231	Approved US/EU
+LPL	hyperlipidemias	Cardiovascular	"cholesterol, hdl"	8.00E-43	2	1	0.75	Approved US/EU
+MTTP	hypercholesterolemia	Cardiovascular	abetalipoproteinemia	0		1	0.739646231	Approved US/EU
+PPARG	"diabetes mellitus, type 2"	Diabetes	"diabetes mellitus, type 2"	0		1	1	Approved US/EU
+SCN5A	"arrhythmias, cardiac"	Cardiovascular	electrocardiography	5.00E-10	9	1	0.75	Approved US/EU
+SCN5A	atrial fibrillation	Cardiovascular	electrocardiography	5.00E-10	9	1	0.75	Approved US/EU
+SERPINC1	antithrombin iii deficiency	Blood	antithrombin iii deficiency	0		1	1	Approved US/EU
+SERPINC1	disseminated intravascular coagulation	Blood	antithrombin iii deficiency	0		1	0.756326866	Approved US/EU
+SLC22A12	hyperuricemia	Metabolic	hyperuricemia	2.00E-09	9	25	1	Approved US/EU
+SLC6A3	attention deficit disorder with hyperactivity	Neurological/behavioral	attention deficit disorder with hyperactivity	1.00E-08	9	1	1	Approved US/EU
+TNFSF11	osteoporosis	Musculoskeletal	bone density	1.20E-10	2b	4	0.9	Approved US/EU
+VDR	osteoporosis	Musculoskeletal	osteoporosis	0		1	1	Approved US/EU
+VDR	renal osteodystrophy	Liver & kidney	osteoporosis	0		1	0.707263798	Approved US/EU
+VWF	von willebrand diseases	Blood	"von willebrand disease, type 2"	0		1	0.7402438	Approved US/EU
+VWF	von willebrand diseases	Blood	"von willebrand disease, type 3"	0		1	0.7522438	Approved US/EU
+VWF	von willebrand diseases	Blood	"von willebrand disease, type 1"	0		1	0.7529438	Approved US/EU
+VWF	von willebrand diseases	Blood	"von willebrand disease, type 2"	0		1	0.7402438	Approved US/EU
+VWF	von willebrand diseases	Blood	"von willebrand disease, type 2"	0		1	0.7402438	Approved US/EU
+VWF	von willebrand diseases	Blood	"von willebrand disease, type 2"	0		1	0.7402438	Approved US/EU
+ADAMTS13	"purpura, thrombotic thrombocytopenic"	Blood	"purpura, thrombotic thrombocytopenic"	0		1	1	Preclinical
+CASR	hypocalcemia	Metabolic	hypocalcemia	6.00E-37	0	1	1	Preclinical
+CCL11	"colitis, ulcerative"	Autoimmune	"colitis, ulcerative"	5.60E-12	9	2	1	Preclinical
+CCL11	"colitis, ulcerative"	Autoimmune	crohn disease	2.00E-13	9	2	0.767447702	Preclinical
+CCL11	"colitis, ulcerative"	Autoimmune	inflammatory bowel diseases	1.00E-26	9	2	0.782247702	Preclinical
+CCL11	crohn disease	Autoimmune	"colitis, ulcerative"	5.60E-12	9	2	0.767447702	Preclinical
+CCL11	crohn disease	Autoimmune	crohn disease	2.00E-13	9	2	1	Preclinical
+CCL11	crohn disease	Autoimmune	inflammatory bowel diseases	1.00E-26	9	2	0.799397702	Preclinical
+CD80	"liver cirrhosis, biliary"	Liver & kidney	"liver cirrhosis, biliary"	3.00E-11	9	2	1	Preclinical
+GBA	parkinson disease	Neurological/behavioral	parkinson disease	3.60E-12	0	1	1	Preclinical
+GLA	glycogen storage disease type ii	Metabolic	fabry disease	0		1	0.711706297	Preclinical
+IL10	inflammatory bowel diseases	Autoimmune	"colitis, ulcerative"	6.00E-17	9	1	0.782247702	Preclinical
+IL10	inflammatory bowel diseases	Autoimmune	crohn disease	2.00E-14	9	1	0.799397702	Preclinical
+MAP3K1	breast neoplasms	Oncology	breast neoplasms	7.00E-20	4	2	1	Preclinical
+MAPT	"supranuclear palsy, progressive"	Neurological/behavioral	"supranuclear palsy, progressive"	9.00E-18	9	1	1	Preclinical
+MAPT	"supranuclear palsy, progressive"	Neurological/behavioral	"supranuclear palsy, progressive"	0		1	1	Preclinical
+MMP9	multiple sclerosis	Autoimmune	multiple sclerosis	5.10E-10	4	3	1	Preclinical
+MYLIP	hyperlipidemias	Cardiovascular	cholesterol	1.20E-09	9	1	0.9	Preclinical
+MYLIP	hyperlipidemias	Cardiovascular	"cholesterol, ldl"	4.40E-12	9	1	0.9	Preclinical
+PDE7B	restless legs syndrome	Neurological/behavioral	narcolepsy	1.95E-11	9	1	0.732165524	Preclinical
+RORC	inflammatory bowel diseases	Autoimmune	inflammatory bowel diseases	4.00E-16	9	6	1	Preclinical
+RORC	inflammatory bowel diseases	Autoimmune	"colitis, ulcerative"	3.52E-16	9	6	0.782247702	Preclinical
+RXFP2	urogenital abnormalities	Urogenital	cryptorchidism	0		1	0.779441539	Preclinical
+TMPRSS6	"anemia, sickle cell"	Blood	sickle cell trait	1.00E-69	0	1	0.827343739	Preclinical
+TMPRSS6	thalassemia	Blood	sickle cell trait	1.00E-69	0	1	0.744229832	Preclinical
+TYK2	psoriasis	Autoimmune	psoriasis	4.00E-11	0	1	1	Preclinical
+CDK2	ovarian neoplasms	Oncology	polycystic ovary syndrome	3.73E-17	9	4	0.712376647	Phase I
+CHEK2	mouth neoplasms	Oncology	esophageal neoplasms	4.00E-15	2b	1	0.716905932	Phase I
+CRP	"anemia, aplastic"	Neurological/behavioral	leukocyte count	7.51E-12	9	5	0.75	Phase I
+CTLA4	"arthritis, rheumatoid"	Autoimmune	"arthritis, rheumatoid"	1.00E-08	9	1	1	Phase I
+CXCL12	myocardial infarction	Cardiovascular	myocardial infarction	5.20E-18	9	1	1	Phase I
+ENPEP	hypertension	Cardiovascular	blood pressure	9.00E-09	2	1	0.9	Phase I
+F10	blood coagulation disorders	Blood	blood coagulation	1.93E-45	9	2	0.9	Phase I
+F10	blood coagulation disorders	Blood	factor vii	5.00E-16	9	3	0.75	Phase I
+FGFR2	colorectal neoplasms	Oncology	stomach neoplasms	0		1	0.724198468	Phase I
+HMBS	porphyrias	Metabolic	"porphyria, acute intermittent"	0		1	0.768091819	Phase I
+IL10	"arthritis, rheumatoid"	Autoimmune	"arthritis, rheumatoid"	0		1	1	Phase I
+INPP5D	inflammatory bowel diseases	Autoimmune	crohn disease	4.61E-25	4	5	0.799397702	Phase I
+INS	"diabetes mellitus, type 1"	Diabetes	"diabetes mellitus, type 1"	5.00E-196	9	1	1	Phase I
+MET	urinary bladder neoplasms	Oncology	"carcinoma, renal cell"	0		1	0.750890834	Phase I
+PIK3CA	gastrointestinal neoplasms	Oncology	stomach neoplasms	0		1	0.734298468	Phase I
+PIK3CA	stomach neoplasms	Oncology	stomach neoplasms	0		1	1	Phase I
+PLA2G7	asthma	Respiratory	asthma	0		1	1	Phase I
+PTEN	endometrial neoplasms	Oncology	endometrial neoplasms	0		1	1	Phase I
+PTEN	uterine cervical neoplasms	Oncology	endometrial neoplasms	0		1	0.777055701	Phase I
+SNCA	parkinson disease	Neurological/behavioral	parkinson disease	2.51E-66	9	1	1	Phase I
+SPHK2	neoplasms	Oncology	neoplasms	3.54E-12	9	14	1	Phase I
+TNFSF13	multiple myeloma	Oncology	hyper-igm immunodeficiency syndrome	4.00E-09	0	1	0.712126477	Phase I
+TP53	liver neoplasms	Oncology	"carcinoma, hepatocellular"	0		1	0.72968478	Phase I
+TP53	sarcoma	Oncology	osteosarcoma	0		1	0.711823766	Phase I
+TSLP	asthma	Respiratory	asthma	3.00E-09	9	1	1	Phase I
+TSLP	asthma	Respiratory	eosinophilic esophagitis	3.00E-09	9	1	0.705205823	Phase I
+ABCD1	adrenoleukodystrophy	Neurological/behavioral	adrenoleukodystrophy	0		1	1	Phase II
+ABCD1	adrenoleukodystrophy	Neurological/behavioral	adrenoleukodystrophy	0		1	1	Phase II
+ADRB2	obesity	Metabolic	obesity	0		1	1	Phase II
+AKT1	breast neoplasms	Oncology	breast neoplasms	0		1	1	Phase II
+APOC3	hyperlipidemias	Cardiovascular	"cholesterol, ldl"	3.00E-11	9	6	0.9	Phase II
+APOC3	hyperlipidemias	Cardiovascular	"cholesterol, hdl"	6.77E-33	9	6	0.75	Phase II
+APOC3	hyperlipidemias	Cardiovascular	dyslipidemias	8.00E-20	9	6	0.793846231	Phase II
+APOC3	hyperlipidemias	Cardiovascular	triglycerides	5.68E-12	2b	3	0.9	Phase II
+APOC3	hypertriglyceridemia	Cardiovascular	dyslipidemias	8.00E-20	9	6	0.745146231	Phase II
+APOC3	hypertriglyceridemia	Cardiovascular	triglycerides	5.68E-12	2b	3	0.9	Phase II
+ARSA	"leukodystrophy, metachromatic"	Neurological/behavioral	"leukodystrophy, metachromatic"	0		1	1	Phase II
+BCR	polycythemia vera	Blood	"leukemia, myelogenous, chronic, bcr-abl positive"	0		1	0.771212789	Phase II
+C3	macular degeneration	Eye	macular degeneration	5.00E-29	0	1	1	Phase II
+CASP9	renal insufficiency	Liver & kidney	"kidney failure, chronic"	9.49E-22	2	1	0.817871663	Phase II
+CCR1	"arthritis, rheumatoid"	Autoimmune	"arthritis, rheumatoid"	3.26E-17	2	1	1	Phase II
+CCR2	asthma	Respiratory	asthma	3.00E-17	9	3	1	Phase II
+CCR2	"pulmonary disease, chronic obstructive"	Respiratory	asthma	3.00E-17	9	3	0.716998335	Phase II
+CCR3	asthma	Respiratory	asthma	3.00E-17	9	2	1	Phase II
+CSF2	"arthritis, rheumatoid"	Autoimmune	"arthritis, rheumatoid"	2.80E-10	9	6	1	Phase II
+ERBB2	colorectal neoplasms	Oncology	stomach neoplasms	0		1	0.724198468	Phase II
+ERBB3	ovarian neoplasms	Oncology	polycystic ovary syndrome	2.72E-22	9	3	0.712376647	Phase II
+F11	thrombosis	Cardiovascular	venous thromboembolism	6.00E-11	9	1	0.70284256	Phase II
+F9	hemophilia a	Blood	hemophilia b	0		1	0.736349015	Phase II
+FGFR2	breast neoplasms	Oncology	breast neoplasms	2.00E-76	9	1	1	Phase II
+FGFR2	stomach neoplasms	Oncology	stomach neoplasms	0		1	1	Phase II
+FGFR3	endometrial neoplasms	Oncology	uterine cervical neoplasms	0		1	0.777055701	Phase II
+FGFR3	ovarian neoplasms	Oncology	uterine cervical neoplasms	0		1	0.753600073	Phase II
+FGFR3	urethral neoplasms	Oncology	urinary bladder neoplasms	0		1	0.703040834	Phase II
+FGFR3	urinary bladder neoplasms	Oncology	urinary bladder neoplasms	0		1	1	Phase II
+GCGR	"diabetes mellitus, type 2"	Diabetes	"diabetes mellitus, type 2"	0		1	1	Phase II
+GCK	"diabetes mellitus, type 2"	Diabetes	"diabetes mellitus, type 2"	0		1	1	Phase II
+GP6	thrombosis	Cardiovascular	thrombosis	8.00E-14	0	1	1	Phase II
+HBB	"anemia, sickle cell"	Blood	"anemia, sickle cell"	0		1	1	Phase II
+HBB	thalassemia	Blood	"anemia, sickle cell"	0		1	0.785229832	Phase II
+IGF2R	liver neoplasms	Oncology	colorectal neoplasms	8.00E-09	4	1	0.702492925	Phase II
+IL13	"colitis, ulcerative"	Autoimmune	crohn disease	1.00E-20	4	5	0.767447702	Phase II
+IL13	crohn disease	Autoimmune	crohn disease	1.00E-20	4	5	1	Phase II
+IL13	eosinophilic esophagitis	Autoimmune	asthma	2.00E-18	4	5	0.705205823	Phase II
+IL13	eosinophilic esophagitis	Autoimmune	asthma	0		1	0.705205823	Phase II
+IL1R1	"pulmonary disease, chronic obstructive"	Respiratory	asthma	7.90E-15	3a	1	0.716998335	Phase II
+IL1R2	"arthritis, rheumatoid"	Autoimmune	"arthritis, rheumatoid"	1.11E-15	4	1	1	Phase II
+IL1R2	"pulmonary disease, chronic obstructive"	Respiratory	asthma	2.00E-15	2b	1	0.716998335	Phase II
+IL4	asthma	Respiratory	asthma	2.00E-18	4	7	1	Phase II
+IL6	crohn disease	Autoimmune	inflammatory bowel diseases	0		1	0.799397702	Phase II
+INPP5D	asthma	Respiratory	asthma	2.00E-32	4	2	1	Phase II
+INPP5D	"pulmonary disease, chronic obstructive"	Respiratory	asthma	2.00E-32	4	2	0.716998335	Phase II
+LHCGR	ovarian neoplasms	Oncology	polycystic ovary syndrome	8.00E-21	9	2	0.712376647	Phase II
+LTF	asthma	Respiratory	asthma	3.00E-17	9	7	1	Phase II
+MC1R	vitiligo	Skin & connective tissue	melanosis	1.00E-96	0	1	0.70144025	Phase II
+MC1R	vitiligo	Skin & connective tissue	vitiligo	2.00E-13	2	5	1	Phase II
+MC1R	vitiligo	Skin & connective tissue	pigmentation disorders	2.00E-142	0	1	0.74669025	Phase II
+MC4R	obesity	Metabolic	obesity	0		1	1	Phase II
+MET	kidney neoplasms	Oncology	"carcinoma, renal cell"	0		1	0.801173888	Phase II
+MTTP	hyperlipidemias	Cardiovascular	abetalipoproteinemia	0		1	0.760546231	Phase II
+MTTP	hypertriglyceridemia	Cardiovascular	abetalipoproteinemia	0		1	0.717996231	Phase II
+NFKB1	"colitis, ulcerative"	Autoimmune	"colitis, ulcerative"	4.00E-12	9	2	1	Phase II
+PDE4C	multiple sclerosis	Autoimmune	multiple sclerosis	1.00E-08	9	5	1	Phase II
+PRKCB	"colitis, ulcerative"	Autoimmune	inflammatory bowel diseases	1.00E-09	2	1	0.782247702	Phase II
+PRKCB	"colitis, ulcerative"	Autoimmune	"colitis, ulcerative"	9.68E-10	2	1	1	Phase II
+PTEN	ovarian neoplasms	Oncology	endometrial neoplasms	0		1	0.733500073	Phase II
+PTPN1	"diabetes mellitus, type 2"	Diabetes	"diabetes mellitus, type 2"	0		1	1	Phase II
+RARA	crohn disease	Autoimmune	crohn disease	2.50E-09	4	10	1	Phase II
+RARA	crohn disease	Autoimmune	"colitis, ulcerative"	5.00E-11	4	10	0.767447702	Phase II
+RET	melanoma	Oncology	pheochromocytoma	0		1	0.715068308	Phase II
+SMPD1	niemann-pick diseases	Neurological/behavioral	"niemann-pick disease, type a"	0		1	0.773593934	Phase II
+SMPD1	niemann-pick diseases	Neurological/behavioral	"niemann-pick disease, type b"	0		1	0.768743934	Phase II
+SYK	colorectal neoplasms	Oncology	esophageal neoplasms	8.41E-10	9	1	0.709348468	Phase II
+SYK	head and neck neoplasms	Oncology	esophageal neoplasms	8.41E-10	9	1	0.748505932	Phase II
+SYK	thyroid neoplasms	Oncology	esophageal neoplasms	8.41E-10	9	1	0.711955932	Phase II
+TERT	breast neoplasms	Oncology	breast neoplasms	1.00E-10	9	1	1	Phase II
+TERT	"carcinoma, non-small-cell lung"	Oncology	lung neoplasms	2.00E-22	9	1	0.762665804	Phase II
+TERT	kidney neoplasms	Oncology	prostatic neoplasms	1.00E-10	4	1	0.70122548	Phase II
+TERT	prostatic neoplasms	Oncology	testicular neoplasms	4.24E-22	4	1	0.790307428	Phase II
+TERT	prostatic neoplasms	Oncology	prostatic neoplasms	1.00E-10	4	1	1	Phase II
+TNFSF4	asthma	Respiratory	asthma	2.00E-09	4	1	1	Phase II
+TYR	melanoma	Oncology	melanoma	2.00E-14	9	1	1	Phase II
+VWF	thrombosis	Cardiovascular	blood coagulation factors	5.00E-16	0	1	0.75	Phase II
+VWF	venous thrombosis	Cardiovascular	blood coagulation factors	5.00E-16	0	1	0.75	Phase II
+APP	alzheimer disease	Neurological/behavioral	alzheimer disease	0		1	1	Phase III
+CD80	lupus nephritis	Autoimmune	"lupus erythematosus, systemic"	3.00E-16	9	1	0.728789971	Phase III
+CETP	hypercholesterolemia	Cardiovascular	"cholesterol, ldl"	9.00E-13	9	1	0.9	Phase III
+CETP	hypercholesterolemia	Cardiovascular	cholesterol	1.70E-14	9	1	0.9	Phase III
+CETP	hypercholesterolemia	Cardiovascular	sphingolipidoses	8.50E-20	9	2	0.706339144	Phase III
+CETP	hypercholesterolemia	Cardiovascular	hyperlipidemias	1.00E-08	9	1	0.797217931	Phase III
+CETP	hypercholesterolemia	Cardiovascular	dyslipidemias	1.00E-36	9	1	0.769796231	Phase III
+CETP	hyperlipidemias	Cardiovascular	"cholesterol, ldl"	9.00E-13	9	1	0.9	Phase III
+CETP	hyperlipidemias	Cardiovascular	cholesterol	1.70E-14	9	1	0.9	Phase III
+CETP	hyperlipidemias	Cardiovascular	triglycerides	6.37E-15	0	1	0.9	Phase III
+CETP	hyperlipidemias	Cardiovascular	sphingolipidoses	8.50E-20	9	2	0.727739144	Phase III
+CETP	hyperlipidemias	Cardiovascular	hyperlipidemias	1.00E-08	9	1	1	Phase III
+CETP	hyperlipidemias	Cardiovascular	"cholesterol, hdl"	3.10E-21	0	1	0.75	Phase III
+CETP	hyperlipidemias	Cardiovascular	dyslipidemias	1.00E-36	9	1	0.793846231	Phase III
+ERBB4	breast neoplasms	Oncology	breast neoplasms	9.00E-14	9	1	1	Phase III
+F10	hemophilia a	Blood	factor x deficiency	0		1	0.739999015	Phase III
+FGFR3	kidney neoplasms	Oncology	urinary bladder neoplasms	0		1	0.774790834	Phase III
+IL13	asthma	Respiratory	asthma	2.00E-18	4	5	1	Phase III
+IL13	asthma	Respiratory	asthma	0		1	1	Phase III
+IL23A	psoriasis	Autoimmune	psoriasis	1.00E-09	9	10	1	Phase III
+JAK2	polycythemia vera	Blood	myeloproliferative disorders	4.00E-20	9	1	0.800612789	Phase III
+JAK2	polycythemia vera	Blood	primary myelofibrosis	0		1	0.748412789	Phase III
+JAK2	polycythemia vera	Blood	polycythemia vera	0		1	1	Phase III
+JAK2	thrombocytosis	Blood	myeloproliferative disorders	4.00E-20	9	1	0.763562789	Phase III
+JAK2	thrombocytosis	Blood	primary myelofibrosis	0		1	0.718712789	Phase III
+JAK2	thrombocytosis	Blood	polycythemia vera	0		1	0.747462789	Phase III
+KLK3	prostatic neoplasms	Oncology	prostatic neoplasms	3.00E-46	0	1	1	Phase III
+KLK3	prostatic neoplasms	Oncology	prostate-specific antigen	6.00E-37	9	1	0.9	Phase III
+MAPT	alzheimer disease	Neurological/behavioral	"supranuclear palsy, progressive"	9.00E-18	9	1	0.715051434	Phase III
+MAPT	alzheimer disease	Neurological/behavioral	"supranuclear palsy, progressive"	0		1	0.715051434	Phase III
+MET	liver neoplasms	Oncology	"carcinoma, hepatocellular"	0		1	0.72968478	Phase III
+PCSK9	hypercholesterolemia	Cardiovascular	"cholesterol, ldl"	2.00E-44	0	1	0.9	Phase III
+PCSK9	hypercholesterolemia	Cardiovascular	dyslipidemias	2.00E-44	0	1	0.769796231	Phase III
+PCSK9	hyperlipidemias	Cardiovascular	"cholesterol, ldl"	2.00E-44	0	1	0.9	Phase III
+PCSK9	hyperlipidemias	Cardiovascular	dyslipidemias	2.00E-44	0	1	0.793846231	Phase III
+PDE4A	"arthritis, psoriatic"	Autoimmune	psoriasis	4.00E-11	9	4	0.783734646	Phase III
+PDE4A	crohn disease	Autoimmune	inflammatory bowel diseases	2.00E-18	9	8	0.799397702	Phase III
+PDE4A	crohn disease	Autoimmune	crohn disease	1.00E-12	9	4	1	Phase III
+PDE4A	psoriasis	Autoimmune	psoriasis	4.00E-11	9	4	1	Phase III
+PIK3CA	breast neoplasms	Oncology	breast neoplasms	0		1	1	Phase III
+PIK3CA	colorectal neoplasms	Oncology	stomach neoplasms	0		1	0.724198468	Phase III
+TNFSF13	lupus nephritis	Autoimmune	"glomerulonephritis, iga"	9.00E-11	0	2	0.738734598	Phase III

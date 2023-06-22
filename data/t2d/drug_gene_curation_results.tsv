@@ -1,0 +1,27 @@
+gene	keep	remap	drug	comments
+IGF1R	FALSE		mecasermin	Approved worldwide for Mendelian IGF1 deficiency. Japan PDMA label mentions treating hyperglycemia in this condition, but no evidence that it has ever been approved specifically for hyperglycemia or T2D.
+LPL	FALSE		bezafibrate	Direct target is PPARA; LPL is an indirect target. Most worldwide approvals are for hypertriglyceridemia and mixed dyslipidemia, some studies indicate benefit in T2D but unable to identify any specific regulatory approvals for this indication.
+ABCC8	TRUE		sulfonylureas	
+INSR	TRUE		insulin	
+KCNJ11	TRUE		sulfonylureas	
+PPARG	TRUE		glitazones	
+CALCR	TRUE		pramlintide	Pramlintide is synthetic amylin; the amylin receptor is the calcitonin receptor (CALCR) complexed with one of three other proteins.
+GLP1R	TRUE		exenatide	
+AKR1B1	FALSE		troglitazone	Other glitazones target PPARG; Google search found no support for this one targeting AKR1B1. Also, the drug is withdrawn from world market.
+HMGCR	FALSE		benfluorex	Benfluorex is withdrawn and does not appear to target HMGCR; statins are labeled for T2D only in combination therapy with metformin, sitagliptin, or gemagliptin.
+DPP4	TRUE		sitagliptin	
+DRD1	FALSE		bromocriptine	FDA label simply says dopamine receptor agonist (https://www.accessdata.fda.gov/drugsatfda_docs/label/2009/020866lbl.pdf); two papers found the affinity for D1 was 3 orders of magnitude weaker than D2 - see Miyagi 1996 PMID: 8889042, D1 = 2.4 micromolar and D2 = 6.1 nanomolar; Perachon 1999, PMID: 10082211, D1 = 1.5 micromolar and D2 = 1 nanomolar.
+DRD2	TRUE		bromocriptine	
+GAA	TRUE		voglibose	
+GCGR	TRUE		glucagon	
+HTR2C	TRUE		lorcaserin	Indicated for obestiy but T2D affects the BMI at which it is indicated. https://www.accessdata.fda.gov/drugsatfda_docs/label/2012/022529lbl.pdf
+PNLIP	TRUE		orlistat	Indicated for obestiy but T2D affects the BMI at which it is indicated. https://www.accessdata.fda.gov/drugsatfda_docs/label/2012/020766s029lbl.pdf
+PPARA	TRUE		lobeglitazone	Like other glitazones it targets PPARG, but unlike other glitazones it is reported to have similar affinity for PPARA as PPPARG: 18-20nM Kim 2011 PMID: 22047812.
+SLC5A2	TRUE		canagliflozin	
+AR	FALSE		enclomphene citrate	FDA-approved for hypogonadism since 1976 (PMID: 27337642) and there has been a trial in T2D (NCT01191320) but found no evidence it is launched for this indication.
+GCG	FALSE	GCGR	dasiglucagon	There are 62 programs with GCGR listed as target and 14 with GCG as target, no clear mechanistic differnece, seems just an annotation inconsistency.
+GCK	TRUE		dorzagliatin	Positive Phase III results PMID: 35551294 and first approval in China PMID: 36449148 both new as of 2022
+GIPR	TRUE		tirzepatide	Dual-acting against GIPR and GLP1R, first approved in 2022 (PMID: 35807558) "to improve glycemic control in adults with type 2 diabetes mellitus." https://www.accessdata.fda.gov/drugsatfda_docs/label/2022/215866s000lbl.pdf
+INS	FALSE	INSR	INS-068	There are 396 insulin programs with INSR listed as target and 29 with INS listed as target, no clear mechanistic difference, appears to be just an annotation inconsistency.
+PPARD	TRUE		chiglitazar	First approval in China 2022 PMID: 34846697, targets PPARA, PPARG, and PPARD
+SLC5A1	FALSE		sotaglifozin	Does indeed target both SLC5A2 and SLC5A1, positive Phase III in 2021 PMID: 33200892 however it was for heart failure in T2D patients, rather than to treat T2D itself, and from a Google search it does not appear to be approved yet in any jurisdiction.

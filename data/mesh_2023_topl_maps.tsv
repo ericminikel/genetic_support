@@ -1,0 +1,99 @@
+topl	n_indic	description	map_to
+C10	239	Nervous System Diseases	C10
+C16	231	Congenital, Hereditary, and Neonatal Diseases and Abnormalities	C16
+C01	165	Infections	C01
+C18	156	Nutritional and Metabolic Diseases	C18
+C23	155	Pathological Conditions, Signs and Symptoms	C23
+C04	138	Neoplasms	C04
+C17	116	Skin and Connective Tissue Diseases	C17
+C20	100	Immune System Diseases	C20
+C14	99	Cardiovascular Diseases	C14
+C15	99	Hemic and Lymphatic Diseases	C15
+C06	91	Digestive System Diseases	C06
+C13	85	Female Urogenital Diseases and Pregnancy Complications	OTH
+C11	81	Eye Diseases	C11
+C05	78	Musculoskeletal Diseases	C05
+F03	68	Mental Disorders	F03
+C12	65	Male Urogenital Diseases	OTH
+OTH	59		OTH
+C08	54	Respiratory Tract Diseases	C08
+C19	48	Endocrine System Diseases	C19
+C25	26	Chemically-Induced Disorders	OTH
+C09	25	Otorhinolaryngologic Diseases	OTH
+C26	22	Wounds and Injuries	OTH
+C07	18	Stomatognathic Diseases	OTH
+E01	10	Diagnosis	OTH
+E04	8	Surgical Procedures, Operative	OTH
+F01	7	Behavior and Behavior Mechanisms	F03
+E02	5	Therapeutics	OTH
+G07	5	Physiological Phenomena	OTH
+G11	5	Musculoskeletal and Neural Physiological Phenomena	C05
+A10	4	Tissues	OTH
+B04	4	Viruses	C01
+C22	4	Animal Diseases	OTH
+G16	4	Biological Phenomena	OTH
+F02	3	Psychological Phenomena	F03
+G12	3	Immune System Phenomena	C20
+C24	2	Occupational Diseases	OTH
+E03	2	Anesthesia and Analgesia	OTH
+E05	2	Investigative Techniques	OTH
+G01	2	Physical Phenomena	OTH
+G08	2	Reproductive and Urinary Physiological Phenomena	OTH
+A02	1	Musculoskeletal System	C05
+A07	1	Cardiovascular System	C14
+B03	1	Bacteria	C01
+D02	1	Organic Chemicals	OTH
+E06	1	Dentistry	OTH
+G10	1	Digestive System and Oral Physiological Phenomena	C06
+G13	1	Integumentary System Physiological Phenomena	C17
+H02	1	Health Occupations	OTH
+N02	1	Health Care Facilities, Manpower, and Services	OTH
+N06	1	Environment and Public Health	OTH
+A01	0	Body Regions	OTH
+A03	0	Digestive System	OTH
+A04	0	Respiratory System	OTH
+A05	0	Urogenital System	OTH
+A08	0	Nervous System	OTH
+A09	0	Sense Organs	OTH
+A11	0	Cells	OTH
+A12	0	Fluids and Secretions	OTH
+A14	0	Stomatognathic System	OTH
+A15	0	Hemic and Immune Systems	OTH
+A17	0	Integumentary System	OTH
+A18	0	Plant Structures	OTH
+B01	0	Eukaryota	C01
+D01	0	Inorganic Chemicals	OTH
+D03	0	Heterocyclic Compounds	OTH
+D04	0	Polycyclic Compounds	OTH
+D05	0	Macromolecular Substances	OTH
+D06	0	Hormones, Hormone Substitutes, and Hormone Antagonists	OTH
+D08	0	Enzymes and Coenzymes	OTH
+D09	0	Carbohydrates	OTH
+D10	0	Lipids	OTH
+D12	0	Amino Acids, Peptides, and Proteins	OTH
+D13	0	Nucleic Acids, Nucleotides, and Nucleosides	OTH
+D20	0	Complex Mixtures	OTH
+D23	0	Biological Factors	OTH
+D27	0	Chemical Actions and Uses	OTH
+E07	0	Equipment and Supplies	OTH
+F04	0	Behavioral Disciplines and Activities	OTH
+G02	0	Chemical Phenomena	OTH
+G03	0	Metabolism	OTH
+G04	0	Cell Physiological Phenomena	OTH
+G05	0	Genetic Phenomena	OTH
+G06	0	Microbiological Phenomena	OTH
+G09	0	Circulatory and Respiratory Physiological Phenomena	OTH
+G14	0	Ocular Physiological Phenomena	OTH
+G17	0	Mathematical Concepts	OTH
+I01	0	Social Sciences	OTH
+I02	0	Education	OTH
+I03	0	Human Activities	OTH
+J01	0	Technology, Industry, and Agriculture	OTH
+J02	0	Food and Beverages	OTH
+L01	0	Information Science	OTH
+M01	0	Persons	OTH
+N01	0	Population Characteristics	OTH
+N04	0	Health Services Administration	OTH
+N05	0	Health Care Quality, Access, and Evaluation	OTH
+V01	0	Publication Components	OTH
+V02	0	Publication Formats	OTH

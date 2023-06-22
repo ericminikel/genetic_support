@@ -1,0 +1,101 @@
+trait_reported	n_total	n_genes	n_variants	n_studies	disease?	retain
+Heel bone mineral density	755	484	285	4		
+Body mass index	566	381	213	17		y
+Systolic blood pressure	500	402	216	18		
+Standing height	401	376	201	1		
+Mean corpuscular hemoglobin	396	330	167	6		
+Platelet count	387	307	173	7		
+Mean corpuscular volume	382	304	152	7		
+Weight	375	220	107	4		
+Red cell distribution width	374	315	161	3		
+Educational attainment (MTAG) [MTAG]	370	354	193	1		
+Red blood cell count	340	308	154	6		
+Educational attainment (years of education)	324	287	171	3		
+Highest math class taken (MTAG) [MTAG]	316	301	158	1		
+White blood cell count	301	268	137	3		
+Sitting height	293	279	139	1		
+Eosinophil counts	292	255	136	3		
+Pulse pressure	282	223	117	12		
+Lung function (FEV1/FVC)	257	230	124	4		y
+Body mass index (BMI)	247	154	83	2		y
+Trunk predicted mass	247	235	117	1		
+Trunk fat-free mass	242	232	114	1		
+Whole body fat-free mass	237	225	115	1		
+Whole body water mass	237	224	114	1		
+Mean platelet (thrombocyte) volume	235	217	106	1		
+Height	234	129	83	14		
+Platelet distribution width	231	200	103	2		
+Type 2 diabetes	230	137	80	27	y	y
+Menarche (age at onset)	217	190	87	5		y
+Adolescent idiopathic scoliosis	213	209	103	2		y
+Arm fat-free mass (right)	210	205	101	1		
+Diastolic blood pressure	207	156	84	16		
+Arm predicted mass (right)	206	199	101	1		
+Basal metabolic rate	202	196	100	1		
+Arm fat-free mass (left)	195	189	91	1		
+Impedance of arm (left)	194	192	92	1		
+Self-reported math ability (MTAG) [MTAG]	190	180	102	1		
+Lung function (FVC)	186	171	96	4		
+Monocyte count	186	150	79	5		
+Triglycerides	185	112	60	17	y	y
+Platelet crit	181	176	90	1		
+Comparative height size at age 10	180	174	95	1		
+High light scatter reticulocyte count	180	159	75	2		
+Leg predicted mass (right)	179	174	88	1		
+Red blood cell (erythrocyte) count	179	177	83	1		
+Impedance of arm (right)	177	167	87	1		
+Arm predicted mass (left)	176	172	84	1		
+Leg fat-free mass (left)	176	173	90	1		
+Male-pattern baldness	176	155	88	6		y
+Smoking initiation (ever regular vs never regular) (MTAG)	170	165	94	1		
+Leg fat-free mass (right)	169	167	84	1		
+Leg predicted mass (left)	166	163	87	1		
+Impedance of whole body	162	162	80	1		y
+Mean sphered cell volume	160	155	77	1		
+High light scatter reticulocyte percentage	154	154	82	1		
+Hair color	152	138	77	4		
+Intraocular pressure	152	115	61	7		y
+Mean corpuscular haemoglobin	148	147	68	1		
+Cognitive performance (MTAG) [MTAG]	147	143	80	1		y
+Impedance of leg (right)	146	144	75	1		
+Neuroticism	146	98	61	6		y
+Neutrophill count	145	143	66	1		
+Impedance of leg (left)	143	141	69	1		
+Mean reticulocyte volume	142	138	67	1		
+Eosinophill count	141	132	71	1		
+Atrial fibrillation	140	107	51	10		y
+Waist-hip ratio	140	131	66	3		y
+Schizophrenia	139	79	49	11	y	y
+Coronary artery disease	138	92	51	7	y	y
+Trunk fat mass	136	136	70	1		
+LDL cholesterol	135	89	56	12	y	y
+Chronotype	133	126	63	4		
+Mean platelet volume	131	117	60	5		
+Self-reported math ability	130	121	75	1		
+HDL cholesterol	129	84	46	13		y
+Whole body fat mass	129	129	64	1		
+"Forced expiratory volume in 1-second (FEV1), predicted"	125	125	59	1		y
+Leg fat mass (left)	124	124	61	1		
+Breast cancer	122	84	48	11	y	y
+Eosinophill percentage	121	117	65	1		
+Hip circumference	121	120	58	1		
+Body fat percentage	120	116	66	4		y
+Leg fat percentage (right)	120	120	68	1		
+Lymphocyte percentage	119	118	59	1		
+DNA methylation variation (age effect)	118	114	58	1		
+"Cholesterol, total"	116	84	48	7	y	y
+Leg fat mass (right)	116	116	59	1		
+Total cholesterol levels	114	102	53	5		y
+Heel bone mineral density (BMD)	113	111	55	1		y
+"Heel bone mineral density (BMD) T-score, automated"	113	111	55	1		
+"Heel quantitative ultrasound index (QUI), direct entry"	113	111	55	1		
+Arm fat percentage (right)	111	111	56	1		
+Haematocrit percentage	110	109	47	1		
+Waist circumference	110	105	59	2		
+Leg fat percentage (left)	108	108	60	1		
+Arm fat mass (left)	106	104	50	1		
+Arm fat percentage (left)	105	105	55	1		
+Haemoglobin concentration	105	103	52	1		
+Reticulocyte count	105	92	45	2		
+Crohn's disease	103	71	38	14	y	y
+"Heel Broadband ultrasound attenuation, direct entry"	101	99	51	1		
