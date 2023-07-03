@@ -1,6 +1,6 @@
-This repository holds the data and source code for a manuscript in preparation:
+This repository holds the data and source code for the following manuscript:
 
-Minikel EV, Painter JL, Dong CL, Nelson MR. Refining the impact of genetic evidence on clinical success. April 2023.
+[Minikel EV, Painter JL, Dong CL, Nelson MR. **Refining the impact of genetic evidence on clinical success**. _medRxiv_. 2023 Jun 29. 2023.06.23.23291765.](https://doi.org/10.1101/2023.06.23.23291765)
 
 Here, you can:
 
