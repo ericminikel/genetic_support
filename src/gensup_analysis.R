@@ -2027,7 +2027,7 @@ write(paste("Logit model gensup ~ meansim without 1-indication targets: beta = "
             '\n',sep=''),text_stats_path,append=T)
 
 resx=300
-png(paste0(output_path,'/figure-2.png'),width=12.5*resx,height=8.5*resx,res=resx)
+png(paste0(output_path,'/figure-2.png'),width=6.5*resx,height=8.5*resx,res=resx)
 
 #layout_matrix =  matrix(c(1,1,2,2,3,3,4,4,5,5,6,6,6,
 #                          7,7,7,8,8,8,8,9,9,9,10,10,10), nrow=2, byrow=T)
@@ -2044,16 +2044,16 @@ ylims = range(areas_all$y, na.rm=T) + c(-0.5, 0.5)
 par(mar=c(3,1,3,0))
 plot(NA, NA, ylim=ylims, xlim=xlims, axes=F, ann=F, xaxs='i', yaxs='i')
 areas_all %>% group_by(topl, area, color, y) %>% slice(1) %>% select(topl, area, color, y) -> rr_table_meta
-mtext(side=4, at=rr_table_meta$y, line=0, adj=1, las=2, text=rr_table_meta$area, cex=.85, col=rr_table_meta$color)
+mtext(side=4, at=rr_table_meta$y, line=0, adj=1, las=2, text=rr_table_meta$area, cex=.8, col=rr_table_meta$color)
 panel = 1
-par(mar=c(3,1,3,4.5))
+par(mar=c(3,0.25,3,3.5))
 transition_disp = list('Preclinical'='Pre-I','I'='I-II', 'II'='II-III', 'III'='III-Launch', 'I-Launch'='I-Launch')
 for (transition in c('Preclinical','I','II','III','I-Launch')) {
   subs = subset(rr_table_areas, phase==transition & !is.na(y))
   if (transition == 'I-Launch') {
     xlims = c(0, 5)
   } else {
-    xlims = c(0, 3)
+    xlims = c(0, 2.5)
   }
   plot(NA, NA, ylim=ylims, xlim=xlims, axes=F, ann=F, xaxs='i', yaxs='i')
   axis(side=1, at=xlims, labels=NA, lwd=1, lwd.ticks=0)
@@ -2062,12 +2062,12 @@ for (transition in c('Preclinical','I','II','III','I-Launch')) {
   axis(side=1, lwd=0, at=0:5, line=-0.5)
   mtext(side=1, line=2, text='RS')
   abline(v=0:4, lwd=0.125, col=line_color)
-  abline(v=1, lwd=.5, col='black')
+  abline(v=1, lwd=.375, lty=3, col='black')
   axis(side=2, at=ylims, labels=NA, lwd=1, lwd.ticks=0)
-  mtext(side=4, at=subs$y, line=0.5, las=2, text=subs$fraction, cex=0.85, col=subs$color)
+  mtext(side=4, at=subs$y, line=0.5, las=2, text=subs$fraction, cex=0.6, col=subs$color)
   segments(x0=subs$rs_l, x1=pmin(subs$rs_u,max(xlims)+1), y0=subs$y, lwd=2, col=subs$color)
   points(x=subs$rs_mean, y=subs$y, pch=19, col=subs$color)
-  mtext(side=3, line=0.25, text=transition_disp[[transition]], adj=0, at=2, cex=0.9, font=2)
+  mtext(side=3, line=0.25, text=transition_disp[[transition]], adj=0, at=1, cex=0.9, font=2)
   
   par(xpd=T)
   segments(x0=-max(xlims), x1=max(xlims)*1.25, y0=max(areas_all$y)-0.5, lwd=.125)
@@ -2138,7 +2138,7 @@ tiya %>%
   ungroup() %>%
   arrange(desc(cumn)) -> tiya_leg
 
-par(mar=c(3,5,2,10))
+par(mar=c(3,4,2,6))
 xlims = c(2007, 2022)
 xats = 2007:2022
 xbigs = c(2010, 2015, 2020)
@@ -2150,7 +2150,7 @@ axis(side=1, at=xlims, lwd.ticks=0, labels=NA)
 axis(side=1, at=xats, tck=-0.025, labels=NA)
 axis(side=1, at=xbigs, tck=-0.05, labels=NA)
 axis(side=1, at=xbigs, line=-0.5, lwd=0, labels=xbigs)
-mtext(side=1, line=1.5, text='Year')
+mtext(side=1, line=2.0, text='Year')
 axis(side=2, at=ylims, lwd.ticks=0, labels=NA)
 axis(side=2, at=yats, tck=-0.015, labels=NA)
 axis(side=2, at=ybigs, tck=-0.03, labels=NA)
@@ -2161,7 +2161,7 @@ for (this_area in unique(tiya$area)) {
   points(subs$min_year, subs$cumn, col=subs$color, lwd=1.5, type='l')
 }
 par(xpd=T)
-legend(x=max(xlims), y=max(ylims)*1.1, tiya_leg$area, col=tiya_leg$color, text.col=tiya_leg$color, lwd=1.5, bty='n', cex=0.9)
+legend(x=max(xlims), y=max(ylims)*1.1, tiya_leg$area, col=tiya_leg$color, text.col=tiya_leg$color, lwd=1.5, bty='n', cex=0.7)
 par(xpd=F)
 mtext(letters[panel], side=3, cex=2, adj = 0.0, line = 0.5)
 panel = panel + 1
@@ -2169,14 +2169,14 @@ panel = panel + 1
 write_supp_table(tiya, 'Cumulative OTG supported G-I pairs by year and therapy area.')
 
 cex_factor = 70
-par(mar=c(2.5,2.5,2,1))
+par(mar=c(3,2.5,2,1))
 xlims = c(0,30000)
 plot(NA, NA, xlim=xlims, ylim=c(0,4.5), axes=F, ann=F, xaxs='i', yaxs='i')
 axis(side=1, lwd=1, at=xlims, lwd.ticks=0, labels=NA)
 axis(side=1, lwd=0, lwd.ticks=1, at=0:30*1e3, labels=NA, tck=-0.015)
 axis(side=1, lwd=0, lwd.ticks=1, at=0:6*5e3, labels=NA, tck=-0.03)
 axis(side=1, lwd=0, line=-0.5, at=0:6*5e3, labels=c('0',paste0(1:6*5,'K')))
-mtext(side=1, line=1.5, text="Possible supported G-I")
+mtext(side=1, line=1.75, text="Possible supported G-I")
 mtext(side=2, line=1.5, text='RS')
 axis(side=2, lwd=1, lwd.ticks=1, at=0:10/2, labels=NA, tck=-0.015)
 axis(side=2, lwd=0, lwd.ticks=1, at=0:5, labels=NA, tck=-0.03)
@@ -2201,7 +2201,7 @@ plot(NA, NA, xlim=c(0,55), ylim=c(0,1), axes=F, ann=F, xaxs='i', yaxs='i')
 axis(side=1, lwd=1, lwd.ticks=1, at=0:100, labels=NA, tck=-0.015)
 axis(side=1, lwd=0, lwd.ticks=1, at=0:10*10, labels=NA, tck=-0.03)
 axis(side=1, lwd=0, at=0:10*10, line=-0.5)
-mtext(side=1, line=1.5, text='Approved indications')
+mtext(side=1, line=1.75, text='Approved indications')
 mtext(side=2, line=2.5, text='Mean similarity')
 axis(side=2, lwd=1, lwd.ticks=1, at=0:100/100, labels=NA, tck=-0.015)
 axis(side=2, lwd=0, lwd.ticks=1, at=0:10/10, labels=NA, tck=-0.03)
@@ -2220,6 +2220,8 @@ callouts$x[callouts$gene %in% c('SLC6A4')] = callouts$x_orig[callouts$gene %in% 
 callouts$y[callouts$gene %in% c('SLC6A4')] = callouts$y_orig[callouts$gene %in% c('SLC6A4')] - 0.13
 callouts$x[callouts$gene %in% c('CHRM3')] = callouts$x_orig[callouts$gene %in% c('CHRM3')] - 2
 callouts$y[callouts$gene %in% c('CHRM3')] = callouts$y_orig[callouts$gene %in% c('CHRM3')] - 0.05
+callouts$x[callouts$gene %in% c('PTGS2')] = callouts$x_orig[callouts$gene %in% c('PTGS2')] + 4
+callouts$y[callouts$gene %in% c('PTGS2')] = callouts$y_orig[callouts$gene %in% c('PTGS2')] - 0.04
 callouts$x[callouts$gene %in% c('OPRM1')] = callouts$x_orig[callouts$gene %in% c('OPRM1')] + 6
 callouts$y[callouts$gene %in% c('OPRM1')] = callouts$y_orig[callouts$gene %in% c('OPRM1')] - 0.15
 callouts$x[callouts$gene %in% c('TOP2A')] = callouts$x_orig[callouts$gene %in% c('TOP2A')] + 5
@@ -2228,7 +2230,7 @@ callouts$x[callouts$gene %in% c('PDCD1')] = callouts$x_orig[callouts$gene %in% c
 callouts$y[callouts$gene %in% c('PDCD1')] = callouts$y_orig[callouts$gene %in% c('PDCD1')] + 0.1
 par(xpd=T)
 segments(x0=callouts$x_orig, x1=callouts$x, y0=callouts$y_orig, y1=callouts$y, lwd=0.75)
-text(x=callouts$x, y=callouts$y, pos=callouts$pos, font=3, labels=callouts$gene)
+text(x=callouts$x, y=callouts$y, pos=callouts$pos, font=3, labels=callouts$gene, cex=0.8)
 par(xpd=F)
 indic_sim_spearman = suppressWarnings(cor.test(target_stats$n_launched_indic, target_stats$meansim, method='spearman'))
 mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
@@ -2279,7 +2281,7 @@ master_forest_2 = rbind(indic_per_forest, meansim_forest)
 master_forest_2$y = c(11:7,5:1)
 
 
-plot_forest(master_forest_2, xlims=c(0,.35), xstyle='percent', mar=c(4,8,3,6))
+plot_forest(master_forest_2, xlims=c(0,.35), xstyle='percent', mar=c(4,8,2.5,6))
 tranche_line = 4.0
 axis(side=2, at=c(6.75,11.25), tck=0.025, labels=NA, line=tranche_line)
 axis(side=2, at=c(0.75,5.25), tck=0.025, labels=NA, line=tranche_line)
@@ -2293,7 +2295,7 @@ write_supp_table(master_forest_2, "Probability of genetic support by count and s
 
 cex_factor = 70
 
-par(mar=c(3,3,2,1))
+par(mar=c(4,3,2.5,1))
 plot(NA, NA, xlim=c(0.3,0.65), ylim=c(0,4.5), axes=F, ann=F, xaxs='i', yaxs='i')
 axis(side=1, lwd=1, at=c(0,1), lwd.ticks=0, labels=NA)
 axis(side=1, lwd=0, lwd.ticks=1, at=0:20/20, labels=NA, tck=-0.015)
@@ -2317,7 +2319,7 @@ sim_rr_weightedbygensup_p = round(sim_rr_weightedbygensup['Y','p.value'],3)
 
 write(paste('Weighted Pearson correlation across areas, mean_sim vs. rs: rho= ',formatC(sim_rr_weightedbygensup_rho,digits=2,format='fg'),', P = ',formatC(sim_rr_weightedbygensup_p,digits=2,format='fg'),'\n',sep=''),text_stats_path,append=T)
 
-par(mar=c(3,3,2,1))
+par(mar=c(4,3,2.5,1))
 xlims = c(0,18)
 plot(NA, NA, xlim=xlims, ylim=c(0,4.5), axes=F, ann=F, xaxs='i', yaxs='i')
 axis(side=1, at=xlims, lwd.ticks=0, labels=NA)
