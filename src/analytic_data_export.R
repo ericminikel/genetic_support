@@ -114,8 +114,6 @@ pp_launched_alltime = read.xlsx('nonrelease/input_sources-2023-01-20/target_indi
 
 write_tsv(pp_launched_alltime, 'data/pp_launched_alltime.tsv', na='')
 
-### TO DO: for figure 3e, we will also need an analysis by drugid, that is TBD
-
 pp_drugs = read.xlsx('data_received/drug_target_mesh_after_2000_202212222.xlsx') %>%
   clean_names() %>% as_tibble()
 

@@ -13,6 +13,6 @@ C17	dermatology	#FB9A99	only
 C18	metabolic	#FFB90F	only
 C19	endocrine	#33A02C	only
 C20	immune	#FF7F00	only
-C23	signs	#7B3F00	only
+C23	signs/symptoms	#7B3F00	only
 F03	psychiatry	#9959E1	only
 OTH	other	#BBBBBB	only

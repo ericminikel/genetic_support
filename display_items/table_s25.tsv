@@ -95,14 +95,14 @@ psychiatry	nuclear receptors	0	18	0
 psychiatry	enzymes	4	125	0.032
 psychiatry	ion channels	6	77	0.07792207792207792
 psychiatry	kinases	0	73	0
-signs	all genes	47	3535	0.013295615275813296
-signs	predicted Ab tractable	40	1844	0.021691973969631236
-signs	predicted SM tractable	40	1169	0.03421727972626176
-signs	rhodopsin-like GPCRs	7	65	0.1076923076923077
-signs	nuclear receptors	4	31	0.12903225806451613
-signs	enzymes	4	203	0.019704433497536946
-signs	ion channels	10	116	0.08620689655172414
-signs	kinases	3	105	0.02857142857142857
+signs/symptoms	all genes	47	3535	0.013295615275813296
+signs/symptoms	predicted Ab tractable	40	1844	0.021691973969631236
+signs/symptoms	predicted SM tractable	40	1169	0.03421727972626176
+signs/symptoms	rhodopsin-like GPCRs	7	65	0.1076923076923077
+signs/symptoms	nuclear receptors	4	31	0.12903225806451613
+signs/symptoms	enzymes	4	203	0.019704433497536946
+signs/symptoms	ion channels	10	116	0.08620689655172414
+signs/symptoms	kinases	3	105	0.02857142857142857
 immune	all genes	64	2222	0.0288028802880288
 immune	predicted Ab tractable	57	1192	0.047818791946308725
 immune	predicted SM tractable	35	782	0.04475703324808184
