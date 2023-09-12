@@ -517,7 +517,7 @@ advancement_rr = function(best, alpha = 0.05, threshold = NA) {
     mutate(mean = binom$mean, l=binom$lower, u=binom$upper) %>%
     select(gs, phase, x, n, mean, l, u) -> rs_long
   
-  # Wald CI for product
+  # Wald CI for product of P(S) across I-Launch
   rs_long %>%
     filter(phase != 'Preclinical' & phase != 'I-Launch') %>%
     group_by(gs) %>%
@@ -1492,64 +1492,22 @@ resx=300
 png(paste0(output_path,'/figure-s3.png'),width=6.5*resx,height=3.5*resx,res=resx)
 
 # read data
-omim = read_tsv('data/t2d/omim_t2d.tsv', col_types=cols())
-gwas_t5 = read_tsv('data/t2d/vujkovic_supp_t5.tsv', col_types=cols())
-gwas_t13 = suppressMessages(read_tsv('data/t2d/vujkovic_supp_t13.tsv', col_types=cols()))
-gwas_t15 = read_tsv('data/t2d/vujkovic_supp_t15.tsv', col_types=cols())
+t2d_omim = read_tsv('data/t2d/omim_t2d.tsv', col_types=cols())
+t2d_gwas = read_tsv('data/t2d/t2d_gwas_vujkovic_suzuki.tsv', col_types=cols())
 pp_dia = read_tsv('data/t2d/pp_diabetes.tsv', col_types=cols())
 curated = read_tsv('data/t2d/drug_gene_curation_results.tsv', col_types=cols())
 
-first_novel = min(which(gwas_t5$description %in% c('1. novel transethnic SNP in at least one ancestral group','2. novel T2D SNP in transethnic meta only')))  
-first_repl = which(gwas_t5$description=='3. established T2D variant')
-gwas_t5$novel = 1:nrow(gwas_t5) %in% first_novel:(first_repl-1)
-gwas_t5$gene = gwas_t5$nearestgene
 
-gwas_t13$novel = gwas_t13$codingnovel==1
-
-gwas_t15$best_coloc_snp_pp_h4 = suppressWarnings(as.numeric(gwas_t15$best_coloc_snp_pp_h4))
-gwas_t15$pp_h4_abf = suppressWarnings(as.numeric(gwas_t15$pp_h4_abf))
-gwas_t15$p = suppressWarnings(as.numeric(gwas_t15$p))
-
-gwas_t15 %>%
-  filter(pp_h4_abf >= 0.9) %>%
-  filter(best_coloc_snp_pp_h4 >= 0.9) %>%
-  filter(p < 5e-8) %>%
-  distinct(gene) %>%
-  arrange(gene) -> eqtl
-
-eqtl$novelty = ''
-eqtl$novelty[!(eqtl$gene %in% gwas_t5$gene[!gwas_t5$novel]) & !(eqtl$gene %in% gwas_t13$gene[!gwas_t13$novel])] = 'novel'
-eqtl$novelty[((eqtl$gene %in% gwas_t5$gene[!gwas_t5$novel]) | (eqtl$gene %in% gwas_t13$gene[!gwas_t13$novel]))] = 'estab'
-
-eqtl$novel = eqtl$novelty=='novel'
-
-gwas_t5 %>%
-  filter(gene != '-') %>%
-  select(gene, novel) -> g1
-gwas_t13 %>%
-  filter(gene != '-') %>%
-  select(gene, novel) -> g2
-eqtl %>%
-  select(gene, novel) -> g3
-
-# intentionally preserve dup genes at this step
-rbind(g1, g2, g3) -> gwas
-
-# now if multiple entries, and any are "established", set all to established
-gwas$novel[gwas$gene %in% gwas$gene[!gwas$novel]] = FALSE
-# now remove dups
-gwas = gwas[!duplicated(gwas$gene),]
-
-write_supp_table(omim, "T2D genes with OMIM support.")
-write_supp_table(gwas, "T2D genes with GWAS support by novelty status.")
+write_supp_table(t2d_omim, "T2D genes with OMIM support.")
+write_supp_table(t2d_gwas, "T2D genes with GWAS support by novelty status.")
 
 pp_dia$keep = curated$keep[match(pp_dia$gene, curated$gene)]
 pp_dia$keep[is.na(pp_dia$keep)] = TRUE
 pp_dia$drug = curated$drug[match(pp_dia$gene, curated$gene)]
 pp_dia$comments = curated$comments[match(pp_dia$gene, curated$gene)]
-pp_dia$gensup_omim = pp_dia$gene %in% omim$gene
-pp_dia$gensup_estab = pp_dia$gene %in% gwas$gene[!gwas$novel]
-pp_dia$gensup_novel = pp_dia$gene %in% gwas$gene[gwas$novel]
+pp_dia$gensup_omim = pp_dia$gene %in% t2d_omim$gene
+pp_dia$gensup_estab = pp_dia$gene %in% t2d_gwas$gene[!gwas$novel]
+pp_dia$gensup_novel = pp_dia$gene %in% t2d_gwas$gene[gwas$novel]
 pp_dia$support = 'none'
 pp_dia$support[pp_dia$gensup_omim] = 'omim'
 pp_dia$support[pp_dia$gensup_novel & !pp_dia$gensup_omim] = 'novel gwas'
@@ -1580,6 +1538,8 @@ forest[,c('omim_mean','omim_l95','omim_u95')] = binom.confint(x=forest$n_omim, n
 forest[,c('novel_mean','novel_l95','novel_u95')] = binom.confint(x=forest$n_novel, n=forest$n_total, method='wilson')[,c('mean','lower','upper')]
 forest[,c('estab_mean','estab_l95','estab_u95')] = binom.confint(x=forest$n_estab, n=forest$n_total, method='wilson')[,c('mean','lower','upper')]
 forest[,c('all_mean','all_l95','all_u95')] = binom.confint(x=forest$n_all, n=forest$n_total, method='wilson')[,c('mean','lower','upper')]
+
+write_supp_table(forest, "T2D drug program genetic support by development phase.")
 
 panel = 1
 

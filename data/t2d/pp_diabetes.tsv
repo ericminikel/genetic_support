@@ -1,5 +1,5 @@
 gene	maxphasenum	maxphase	indication_mesh_id	indication_mesh_term
-ABCA1	1	Preclinical	D003920	Diabetes Mellitus
+ABCA1	1	Preclinical	D003924	Diabetes Mellitus, Type 2
 ABCC8	5	Launched	D003924	Diabetes Mellitus, Type 2
 ACACA	1	Preclinical	D003920	Diabetes Mellitus
 ACACB	3	Phase II	D003924	Diabetes Mellitus, Type 2
@@ -59,7 +59,6 @@ CTSD	1	Preclinical	D003920	Diabetes Mellitus
 CXCL12	3	Phase II	D003920	Diabetes Mellitus
 CXCR3	1	Preclinical	D003920	Diabetes Mellitus
 CXCR4	2	Phase I	D003924	Diabetes Mellitus, Type 2
-CYP7A1	1	Preclinical	D003924	Diabetes Mellitus, Type 2
 DGAT1	2	Phase I	D003924	Diabetes Mellitus, Type 2
 DGAT2	3	Phase II	D003924	Diabetes Mellitus, Type 2
 DPP4	5	Launched	D003924	Diabetes Mellitus, Type 2
@@ -80,7 +79,6 @@ FFAR2	1	Preclinical	D003924	Diabetes Mellitus, Type 2
 FFAR4	2	Phase I	D003924	Diabetes Mellitus, Type 2
 FGF1	1	Preclinical	D003924	Diabetes Mellitus, Type 2
 FGF21	2	Phase I	D003924	Diabetes Mellitus, Type 2
-FGFR1	2	Phase I	D003924	Diabetes Mellitus, Type 2
 FGFR4	3	Phase II	D003924	Diabetes Mellitus, Type 2
 FOXO1	1	Preclinical	D003924	Diabetes Mellitus, Type 2
 FSTL3	1	Preclinical	D003924	Diabetes Mellitus, Type 2
@@ -101,7 +99,7 @@ GFRAL	1	Preclinical	D003920	Diabetes Mellitus
 GHR	1	Preclinical	D003924	Diabetes Mellitus, Type 2
 GHRHR	3	Phase II	D003924	Diabetes Mellitus, Type 2
 GHSR	1	Preclinical	D003924	Diabetes Mellitus, Type 2
-GIPR	2	Phase I	D003924	Diabetes Mellitus, Type 2
+GIPR	3	Phase II	D003924	Diabetes Mellitus, Type 2
 GLP1R	5	Launched	D003924	Diabetes Mellitus, Type 2
 GLP2R	1	Preclinical	D003924	Diabetes Mellitus, Type 2
 GLUD1	1	Preclinical	D003920	Diabetes Mellitus
@@ -153,17 +151,17 @@ LGALS9	1	Preclinical	D003920	Diabetes Mellitus
 LIPE	1	Preclinical	D003920	Diabetes Mellitus
 LYN	3	Phase II	D003924	Diabetes Mellitus, Type 2
 MANF	1	Preclinical	D003924	Diabetes Mellitus, Type 2
+MAP2K7	1	Preclinical	D003920	Diabetes Mellitus
 MAP3K5	1	Preclinical	D003924	Diabetes Mellitus, Type 2
 MAP4K4	1	Preclinical	D003920	Diabetes Mellitus
 MAPK14	1	Preclinical	D003924	Diabetes Mellitus, Type 2
 MAPK3	3	Phase II	D003924	Diabetes Mellitus, Type 2
 MAPK8	1	Preclinical	D003920	Diabetes Mellitus
-MAPK8IP1	1	Preclinical	D003920	Diabetes Mellitus
 MAPK9	1	Preclinical	D003920	Diabetes Mellitus
 MAS1	1	Preclinical	D003924	Diabetes Mellitus, Type 2
 MBOAT4	2	Phase I	D003924	Diabetes Mellitus, Type 2
-MC1R	2	Phase I	D003924	Diabetes Mellitus, Type 2
-MC4R	2	Phase I	D003920	Diabetes Mellitus
+MC1R	1	Preclinical	D003920	Diabetes Mellitus
+MC4R	2	Phase I	D003924	Diabetes Mellitus, Type 2
 MCHR1	2	Phase I	D003924	Diabetes Mellitus, Type 2
 METAP2	3	Phase II	D003924	Diabetes Mellitus, Type 2
 MIF	1	Preclinical	D003920	Diabetes Mellitus
