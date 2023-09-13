@@ -1,5 +1,5 @@
 gene	indication_mesh_id	indication_mesh_term	maxphasenum	maxphase	drug	support
-ABCA1	D003920	Diabetes Mellitus	1	Preclinical		none
+ABCA1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		novel gwas
 ABCC8	D003924	Diabetes Mellitus, Type 2	5	Launched	sulfonylureas	omim, established gwas
 ACACA	D003920	Diabetes Mellitus	1	Preclinical		none
 ACACB	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
@@ -57,7 +57,6 @@ CTSD	D003920	Diabetes Mellitus	1	Preclinical		none
 CXCL12	D003920	Diabetes Mellitus	3	Phase II		none
 CXCR3	D003920	Diabetes Mellitus	1	Preclinical		none
 CXCR4	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
-CYP7A1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
 DGAT1	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
 DGAT2	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
 DPP4	D003924	Diabetes Mellitus, Type 2	5	Launched	sitagliptin	none
@@ -77,7 +76,6 @@ FFAR2	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
 FFAR4	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
 FGF1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
 FGF21	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
-FGFR1	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
 FGFR4	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
 FOXO1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
 FSTL3	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
@@ -98,7 +96,7 @@ GFRAL	D003920	Diabetes Mellitus	1	Preclinical		none
 GHR	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
 GHRHR	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
 GHSR	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-GIPR	D003924	Diabetes Mellitus, Type 2	2	Phase I	tirzepatide	none
+GIPR	D003924	Diabetes Mellitus, Type 2	3	Phase II	tirzepatide	novel gwas
 GLP1R	D003924	Diabetes Mellitus, Type 2	5	Launched	exenatide	novel gwas
 GLP2R	D003924	Diabetes Mellitus, Type 2	1	Preclinical		established gwas
 GLUD1	D003920	Diabetes Mellitus	1	Preclinical		none
@@ -134,10 +132,10 @@ IL2RA	D003920	Diabetes Mellitus	1	Preclinical		none
 IL4R	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
 IL9R	D003920	Diabetes Mellitus	1	Preclinical		none
 INSR	D003924	Diabetes Mellitus, Type 2	5	Launched	insulin	omim, established gwas
-IRS2	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+IRS2	D003924	Diabetes Mellitus, Type 2	1	Preclinical		novel gwas
 KCNJ11	D003924	Diabetes Mellitus, Type 2	5	Launched	sulfonylureas	omim, established gwas
 KHK	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-KLB	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
+KLB	D003924	Diabetes Mellitus, Type 2	2	Phase I		novel gwas
 KLKB1	D003920	Diabetes Mellitus	1	Preclinical		none
 KMO	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
 LANCL2	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
@@ -148,17 +146,17 @@ LGALS9	D003920	Diabetes Mellitus	1	Preclinical		none
 LIPE	D003920	Diabetes Mellitus	1	Preclinical		none
 LYN	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
 MANF	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+MAP2K7	D003920	Diabetes Mellitus	1	Preclinical		novel gwas
 MAP3K5	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
 MAP4K4	D003920	Diabetes Mellitus	1	Preclinical		none
 MAPK14	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
 MAPK3	D003924	Diabetes Mellitus, Type 2	3	Phase II		novel gwas
 MAPK8	D003920	Diabetes Mellitus	1	Preclinical		none
-MAPK8IP1	D003920	Diabetes Mellitus	1	Preclinical		none
 MAPK9	D003920	Diabetes Mellitus	1	Preclinical		none
 MAS1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
 MBOAT4	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
-MC1R	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
-MC4R	D003920	Diabetes Mellitus	2	Phase I		none
+MC1R	D003920	Diabetes Mellitus	1	Preclinical		none
+MC4R	D003924	Diabetes Mellitus, Type 2	2	Phase I		novel gwas
 MCHR1	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
 METAP2	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
 MIF	D003920	Diabetes Mellitus	1	Preclinical		none
@@ -174,7 +172,7 @@ MTNR1B	D003924	Diabetes Mellitus, Type 2	1	Preclinical		established gwas
 MTOR	D003920	Diabetes Mellitus	1	Preclinical		novel gwas
 MTTP	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
 NAIP	D003920	Diabetes Mellitus	1	Preclinical		none
-NCOR2	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+NCOR2	D003924	Diabetes Mellitus, Type 2	1	Preclinical		novel gwas
 NLRP3	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
 NMUR1	D003920	Diabetes Mellitus	1	Preclinical		none
 NNMT	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
@@ -194,7 +192,7 @@ P2RX7	D003920	Diabetes Mellitus	1	Preclinical		none
 PARK7	D003920	Diabetes Mellitus	1	Preclinical		none
 PARL	D003920	Diabetes Mellitus	1	Preclinical		none
 PARP1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-PAX4	D003924	Diabetes Mellitus, Type 2	1	Preclinical		omim
+PAX4	D003924	Diabetes Mellitus, Type 2	1	Preclinical		omim, novel gwas
 PBK	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
 PCK1	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
 PCSK9	D003924	Diabetes Mellitus, Type 2	4	Phase III		none
@@ -282,6 +280,6 @@ UCN2	D003920	Diabetes Mellitus	2	Phase I		none
 UGCG	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
 VCAM1	D003924	Diabetes Mellitus, Type 2	4	Phase III		none
 VDAC1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-VEGFA	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
+VEGFA	D003924	Diabetes Mellitus, Type 2	2	Phase I		novel gwas
 VEGFB	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
 VIPR2	D003920	Diabetes Mellitus	1	Preclinical		none

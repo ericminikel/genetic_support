@@ -1497,9 +1497,10 @@ t2d_gwas = read_tsv('data/t2d/t2d_gwas_vujkovic_suzuki.tsv', col_types=cols())
 pp_dia = read_tsv('data/t2d/pp_diabetes.tsv', col_types=cols())
 curated = read_tsv('data/t2d/drug_gene_curation_results.tsv', col_types=cols())
 
-
-write_supp_table(t2d_omim, "T2D genes with OMIM support.")
-write_supp_table(t2d_gwas, "T2D genes with GWAS support by novelty status.")
+t2d_omim_out = t2d_omim %>% arrange(gene, mesh_id)
+t2d_gwas_out = t2d_gwas %>% arrange(gene)
+write_supp_table(t2d_omim_out, "T2D genes with OMIM support.")
+write_supp_table(t2d_gwas_out, "T2D genes with GWAS support by novelty status.")
 
 pp_dia$keep = curated$keep[match(pp_dia$gene, curated$gene)]
 pp_dia$keep[is.na(pp_dia$keep)] = TRUE
@@ -1514,6 +1515,9 @@ pp_dia$support[pp_dia$gensup_novel & !pp_dia$gensup_omim] = 'novel gwas'
 pp_dia$support[pp_dia$gensup_estab & !pp_dia$gensup_omim] = 'established gwas' 
 pp_dia$support[pp_dia$gensup_novel & pp_dia$gensup_omim] = 'omim, novel gwas'
 pp_dia$support[pp_dia$gensup_estab & pp_dia$gensup_omim] = 'omim, established gwas' 
+pp_dia$gwas_source = t2d_gwas$source[match(pp_dia$gene, t2d_gwas$gene)]
+pp_dia$gwas_source[is.na(pp_dia$gwas_source)] = 'None'
+
 
 pp_dia %>%
   filter(keep) %>%
@@ -1539,7 +1543,7 @@ forest[,c('novel_mean','novel_l95','novel_u95')] = binom.confint(x=forest$n_nove
 forest[,c('estab_mean','estab_l95','estab_u95')] = binom.confint(x=forest$n_estab, n=forest$n_total, method='wilson')[,c('mean','lower','upper')]
 forest[,c('all_mean','all_l95','all_u95')] = binom.confint(x=forest$n_all, n=forest$n_total, method='wilson')[,c('mean','lower','upper')]
 
-write_supp_table(forest, "T2D drug program genetic support by development phase.")
+write_supp_table(forest, "T2D proportion of programs with genetic support by development phase.")
 
 panel = 1
 

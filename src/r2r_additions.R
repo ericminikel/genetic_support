@@ -74,3 +74,10 @@ mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
 panel = panel + 1
 mtext(side=3, text='OTG all time')
 dev.off()
+
+
+
+pp %>% inner_join(indic_topl_match, by=c('indication_mesh_id','indication_mesh_term')) %>% filter(topl=='C23') %>%
+  group_by(indication_mesh_id, indication_mesh_term) %>%
+  summarize(.groups='keep', n=n()) %>%
+  arrange(desc(n))
