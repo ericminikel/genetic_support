@@ -145,10 +145,10 @@ pg_time_comparison %>%
 resx=300
 png('display_items/figure_s_new1.png',width=6.5*resx,height=4.5*resx,res=resx)
 par(mfrow=c(2,2))
-plot_forest(pg_forest %>% filter(drug_data==2013 & genetic_data==2013), title='2013 Pharmaprojects, 2013 genetics', xlims=c(0,.12), xlab='P(G) vs. phase', col='#000000')
-plot_forest(pg_forest %>% filter(drug_data==2013 & genetic_data==2023), title='2013 Pharmaprojects, 2023 genetics', xlims=c(0,.12), xlab='P(G) vs. phase', col='#000000')
-plot_forest(pg_forest %>% filter(drug_data==2023 & genetic_data==2013), title='2023 Pharmaprojects, 2013 genetics', xlims=c(0,.12), xlab='P(G) vs. phase', col='#000000')
-plot_forest(pg_forest %>% filter(drug_data==2023 & genetic_data==2023), title='2023 Pharmaprojects, 2023 genetics', xlims=c(0,.12), xlab='P(G) vs. phase', col='#000000')
+plot_forest(pg_forest %>% filter(drug_data==2013 & genetic_data==2013), title='2013 drug pipeline\n2013 genetics', xlims=c(0,.12), xlab='P(G) vs. phase', col='#000000')
+plot_forest(pg_forest %>% filter(drug_data==2013 & genetic_data==2023), title='2013 drug pipeline\n2023 genetics', xlims=c(0,.12), xlab='P(G) vs. phase', col='#000000')
+plot_forest(pg_forest %>% filter(drug_data==2023 & genetic_data==2013), title='2023 drug pipeline\n2013 genetics', xlims=c(0,.12), xlab='P(G) vs. phase', col='#000000')
+plot_forest(pg_forest %>% filter(drug_data==2023 & genetic_data==2023), title='2023 drug pipeline\n2023 genetics', xlims=c(0,.12), xlab='P(G) vs. phase', col='#000000')
 dev.off()
 
 hist_ti_otg_pre2013 = pipeline_best(merge2, phase='historical', basis='ti', associations=c('OTG'), verbose=F, max_year=2013)

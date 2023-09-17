@@ -621,7 +621,7 @@ plot_forest = function(forestdf, xlims=c(0,1), xstyle='percent', mar=c(3,8,3,8),
   par(xpd=F)
   points(forestdf$mean, forestdf$y, pch=19, col=col) # means
   segments(x0=forestdf$l95, x1=pmin(forestdf$u95,max(xlims)), y0=forestdf$y, lwd=2, col=col) # 95%CIs
-  mtext(side=3, line=0, text=title, col=col, font=2)
+  mtext(side=3, line=0, text=title, col=col, font=1, cex=0.7)
   if (showvals) {
     text(x=forestdf$u95, y=forestdf$y, pos=4, labels=formatC(forestdf$mean, format='f', digits=1), font=3, cex=.75, col=col)
   }
