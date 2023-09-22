@@ -292,21 +292,30 @@ dev.off()
 resx=300
 png('display_items/figure_s_new3.png',width=6.5*resx,height=8.0*resx,res=resx)
 panel = 1
-rr_table_areas %>%
-  mutate(yes = ifelse(phase=='I-Launch', x_yes, n_yes)) %>%
-  mutate(no =  ifelse(phase=='I-Launch', x_no, n_no)) %>%
-  mutate(pg_binom = binom.confint(x=yes, n=yes+no, method='wilson')) %>%
-  mutate(pg_mean = pg_binom[,'mean'],
-         pg_l95 = pg_binom[,'lower'],
-         pg_u95 = pg_binom[,'upper']) %>%
-  mutate(frac = paste0(formatC(yes,big.mark=','),'/',formatC(yes+no,big.mark=','))) %>%
-  mutate(denominator = yes+no, numerator=yes) %>%
-  select(area, color, phase, frac, pg_mean, pg_l95, pg_u95, numerator, denominator) -> pg_by_area
 par(mfrow = c(6,3))
 for (i in 1:nrow(areas_all)) {
-  subs = subset(pg_by_area, area==areas_all$area[i]) %>%
-    mutate(y = max(row_number()) - row_number() + 1) %>%
-    rename(label=phase, mean=pg_mean, l95=pg_l95, u95=pg_u95)
-  plot_forest(subs, xlims=c(0,.60), xlab='P(G) vs. phase', col=subs$color, title=subs$area[1], mar=c(3,6,2.5,5))
+  
+  combined_ti_area = subset_by_area(combined_ti, topl=areas_all$topl[i], filter=areas_all$filter[i])
+  area_forest = advancement_forest(combined_ti_area)
+  plot_forest(area_forest, xlims=c(0,.60), xlab='P(G) vs. phase', col=areas_all$color[i], title='', mar=c(3,6,2.5,5))
+  mtext(side=3, adj=0, at=-0.3, line=0.25, col='#000000', text=areas_all$area[i], cex=.85)
+  mtext(letters[panel], side=3, cex=1.4, at=-0.5, line = 0.25)
+  panel = panel + 1
+  
+  area_forest$area = areas_all$area[i]
+  if (i == 1) {
+    pg_out = area_forest
+  } else {
+    pg_out = rbind(pg_out, area_forest)
+  }
 }
 dev.off()
+
+pg_out %>%
+  select(area, phase=label, phasenum=num, supported=numerator, total=denominator, pg_mean=mean, pg_l95 = l95, pg_u95 = u95) -> pg_out
+
+write_supp_table(pg_out, "Proportion of target-indication pairs with genetic support by phase and therapy area, combined mode (both historical and active programs).")
+
+
+
+
