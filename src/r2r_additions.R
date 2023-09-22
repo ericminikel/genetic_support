@@ -1,4 +1,7 @@
 
+mesh_best_names = read_tsv('data/mesh_best_names.tsv.gz', col_types=cols())
+
+
 # all synonyms for all MeSH terms
 all_vocab = read_tsv('data/mesh_all_vocab.tsv.gz', col_types=cols())
 # prepare to match them to Nelson 2015
@@ -18,7 +21,7 @@ n15p = read_tsv('data/nelson_2015_supplementary_dataset_3.tsv', col_types=cols()
   mutate(ccat = gsub(' Clinical Trial','',phase_latest)) %>%
   mutate(mesh = tolower(msh))
 n15p$mesh_id = vocab_match$id[match(n15p$msh, vocab_match$labeltext)]
-n15p$mesh_term = best_names$labeltext[match(n15p$mesh_id, best_match$id)]
+n15p$mesh_term = mesh_best_names$labeltext[match(n15p$mesh_id, mesh_best_names$id)]
 n15p %>%
   select(gene, mesh_id, mesh_term, ccat) %>%
   inner_join(meta_ccat, by=c('ccat'='cat')) %>%
@@ -29,7 +32,7 @@ n15g = read_tsv('data/nelson_2015_supplementary_dataset_2.tsv', col_types=cols()
   clean_names() %>%
   mutate(mesh = tolower(msh))
 n15g$mesh_id = vocab_match$id[match(n15g$msh, vocab_match$labeltext)]
-n15g$mesh_term = best_names$labeltext[match(n15g$mesh_id, best_match$id)]
+n15g$mesh_term = mesh_best_names$labeltext[match(n15g$mesh_id, mesh_best_names$id)]
 n15g %>%
   filter(!is.na(mesh_id)) %>%
   select(gene, mesh_id, mesh_term, source) -> n15g
@@ -239,7 +242,7 @@ n15p = read_tsv('data/nelson_2015_supplementary_dataset_3.tsv', col_types=cols()
   mutate(ccat = gsub(' Clinical Trial','',phase_latest)) %>%
   mutate(mesh = tolower(msh))
 n15p$mesh_id = vocab_match$id[match(n15p$msh, vocab_match$labeltext)]
-n15p$mesh_term = best_names$labeltext[match(n15p$mesh_id, best_match$id)]
+n15p$mesh_term = mesh_best_names$labeltext[match(n15p$mesh_id, mesh_best_names$id)]
 
 n15p %>%
   distinct(msh_top) -> n15_areas
