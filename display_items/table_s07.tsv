@@ -3,6 +3,7 @@ D059226	176	840	0	-1	Nociceptive Pain
 D010149	49	166	0	-1	Pain, Postoperative
 D005355	115	143	0	-1	Fibrosis
 D020522	77	128	0	-1	Lymphoma, Mantle-Cell
+D008654	101	113	0	-1	Mesothelioma
 D000072716	44	107	0	-1	Cancer Pain
 D009325	30	103	0	-1	Nausea
 D014945	92	101	0	-1	Wound Healing
@@ -13,7 +14,6 @@ D013119	60	64	0	-1	Spinal Cord Injuries
 D057092	51	64	0	-1	Geographic Atrophy
 D005261	43	61	0	-1	Female Urogenital Diseases and Pregnancy Complications
 D018278	60	61	0	-1	Carcinoma, Neuroendocrine
-D052801	43	61	0	-1	Male Urogenital Diseases
 D003267	20	57	0	-1	Contraception
 D013514	42	57	0	-1	Surgical Procedures, Operative
 D023903	45	53	0	-1	Coronary Restenosis
@@ -34,6 +34,7 @@ D006470	10	22	0	-1	Hemorrhage
 D012003	1	20	0	-1	Rectal Fistula
 D015266	25	20	0	-1	Carcinoma, Merkel Cell
 D011832	16	19	0	-1	Radiation Injuries
+D013584	21	19	0	-1	Sarcoma, Synovial
 D009140	18	18	0	-1	Musculoskeletal Diseases
 D004686	20	17	0	-1	Encephalomyocarditis virus
 D004660	17	15	0	-1	Encephalitis
@@ -112,10 +113,12 @@ D012080	2	3	0	-1	Chronic Kidney Disease-Mineral and Bone Disorder
 D015526	7	3	0	-1	AIDS Dementia Complex
 D016066	3	3	0	-1	Pleural Effusion, Malignant
 D018058	3	3	0	-1	Tympanic Membrane Perforation
+D018192	1	3	0	-1	Lymphangioleiomyomatosis
 D019121	3	3	0	-1	Burkholderia Infections
 D019449	4	3	0	-1	Pouchitis
 D055501	3	3	0	-1	Macrophage Activation Syndrome
 C531854	1	2	0	-1	Lysosomal acid lipase deficiency
+C535607	1	2	0	-1	Aicardi-Goutieres syndrome
 C535933	1	2	0	-1	Cholestasis, progressive familial intrahepatic 1
 C535935	1	2	0	-1	Cholestasis, progressive familial intrahepatic 3
 C537437	1	2	0	-1	Aromatic amino acid decarboxylase deficiency
@@ -141,6 +144,7 @@ D059373	2	2	0	-1	Mastodynia
 D065227	4	2	0	-1	Transfusion Reaction
 C000656924	1	1	0	-1	scedosporiosis
 C535297	1	1	0	-1	Recurrent respiratory papillomatosis
+C535306	1	1	0	-1	2-Hydroxyglutaricaciduria
 C535440	1	1	0	-1	Bietti Crystalline Dystrophy
 C535739	1	1	0	-1	Congenital disorder of glycosylation type 1A
 C535803	1	1	0	-1	succinic semialdehyde dehydrogenase deficiency
@@ -150,6 +154,7 @@ C536353	1	1	0	-1	VLCAD deficiency
 C536657	1	1	0	-1	Periodic fever, familial, autosomal dominant
 C536697	1	1	0	-1	WHIM syndrome
 C536764	1	1	0	-1	Xerocytosis, hereditary
+C537358	1	1	0	-1	Methylmalonic acidemia
 C537403	2	1	0	-1	Pitt-Hopkins syndrome
 C537409	1	1	0	-1	Bruton type agammaglobulinemia
 C538380	1	1	0	-1	HHH syndrome
@@ -157,6 +162,7 @@ C562687	1	1	0	-1	Lysinuric Protein Intolerance
 C563600	1	1	0	-1	Masticatory Muscles, Hypertrophy of
 C566780	1	1	0	-1	Actinic Prurigo
 C580017	1	1	0	-1	Congenital Plasminogen Deficiency
+C580383	1	1	0	-1	Pontocerebellar Hypoplasia
 D000007	1	1	0	-1	Abdominal Injuries
 D000068884	1	1	0	-1	Immunosenescence
 D000080365	1	1	0	-1	Birdshot Chorioretinopathy
@@ -183,7 +189,6 @@ D012398	1	1	0	-1	Ross River virus
 D012400	1	1	0	-1	Rotavirus Infections
 D014245	1	1	0	-1	Trichomonas Infections
 D014256	1	1	0	-1	Trichotillomania
-D014627	1	1	0	-1	Vaginitis
 D014947	1	1	0	-1	Wounds and Injuries
 D015275	1	1	0	-1	Tumor Lysis Syndrome
 D016557	1	1	0	-1	Guided Tissue Regeneration, Periodontal
@@ -200,6 +205,7 @@ D050724	1	1	0	-1	Fractures, Cartilage
 D054066	1	1	0	-1	Leukemia, Large Granular Lymphocytic
 D054973	1	1	0	-1	Perivascular Epithelioid Cell Neoplasms
 D055496	1	1	0	-1	Neurogenic Bowel
+D056650	1	1	0	-1	Vulvodynia
 D058088	1	1	0	-1	Sarcoglycanopathies
 D060585	1	1	0	-1	Fusariosis
 D065632	1	1	0	-1	Chikungunya Fever

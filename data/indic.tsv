@@ -578,7 +578,7 @@ D015267	Churg-Strauss Syndrome	4		4	0	7	gwas	cardiovascular, hematology, immune
 D017240	Mitochondrial Myopathies	4		4	5	0	omim/tcga	musculoskeletal, neurology, metabolic
 D017563	Lung Diseases, Interstitial	4	5	4	2	39	both	respiratory
 D020277	Polyradiculoneuropathy, Chronic Inflammatory Demyelinating	4	5	4	22	3	both	neurology, immune
-D020914	Myopathies, Structural, Congenital	4		4	32	0	omim/tcga	musculoskeletal, neurology
+D020914	Myopathies, Structural, Congenital	4		4	33	0	omim/tcga	musculoskeletal, neurology
 D042882	Gallstones	4		4	2	83	both	digestive, signs/symptoms
 D044903	Congenital Hyperinsulinism	4	5	4	7	46	both	digestive, congenital, metabolic
 D052245	Usher Syndromes	4		4	116	101	both	neurology, ophthalmology, congenital, signs/symptoms
