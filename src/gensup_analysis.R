@@ -2790,37 +2790,39 @@ write(paste("Overall RS from Nelson 2015: ",
             formatC(total2015['estimate'], format='fg', digits=3),
             ' vs. current study: ',formatC(total2022$rs_mean, format='fg', digits=3),
       '\n',sep=''),text_stats_path,append=T)
-# 
-# # cross-tab of 2013 area assignments vs. 2023 area assignments
-# n15p = read_tsv('data/nelson_2015_supplementary_dataset_3.tsv', col_types=cols()) %>%
-#   clean_names() %>%
-#   filter(!(phase_latest %in% c('Discontinued','No Development Reported'))) %>%
-#   mutate(ccat = gsub(' Clinical Trial','',phase_latest)) %>%
-#   mutate(mesh = tolower(msh))
-# n15p$mesh_id = vocab_match$id[match(n15p$msh, vocab_match$labeltext)]
-# n15p$mesh_term = mesh_best_names$labeltext[match(n15p$mesh_id, mesh_best_names$id)]
 
-# TO DO: table s6 is only the genetically supported ones.
-# instead need to switch to supp dataset 3 which is all of PP in 2013
-# then use supp table 9 which maps indications to categories
+# n15p = pharmaprojects in Nelson 2015
+n15p = read_tsv('data/nelson_2015_supplementary_dataset_3.tsv', col_types=cols()) %>%
+  clean_names()
 
-
-n15a = read_tsv('data/nelson_2015_table_s6.tsv', col_types=cols()) %>%
+# n15m = maps in Nelson 2015
+n15m = read_tsv('data/nelson_2015_table_s9.tsv', col_types=cols()) %>%
   clean_names() %>%
-  distinct(msh_ind, category) 
+  select(msh, category)
 
-cats = read_tsv('data/nelson_2015_categories.tsv', col_types=cols()) %>%
+# n15c = Nelson 2015 categories
+n15c = read_tsv('data/nelson_2015_categories.tsv', col_types=cols()) %>%
   mutate(y = max(ord) - ord + 1)
+
+# n15i = indications in Nelson 2015
+# note this is limited to indications that actually appear in the PP table,
+# have a phase that is not "no development reported" or "discontinued" and
+# actually have maps in the category table
+n15p %>%
+  filter(!(phase_latest %in% c('Discontinued','No Development Reported'))) %>%
+  distinct(msh) %>%
+  inner_join(n15m, by='msh') %>%
+  inner_join(n15c, by='category') %>%
+  mutate(msh = tolower(msh)) -> n15i
 
 read_tsv('data/areas.tsv', col_types=cols()) %>%
   select(topl, area, color) %>%
   mutate(x=row_number()) -> current_areas
 
-n15a %>%
-  inner_join(vocab_match, by=c('msh_ind'='labeltext')) %>%
+n15i %>%
+  inner_join(vocab_match, by=c('msh'='labeltext')) %>%
   inner_join(indic_topl_match, by=c('id'='indication_mesh_id')) %>%
   inner_join(current_areas, by='topl') %>%
-  inner_join(cats, by='category') %>%
   group_by(y, category, x, area, color) %>%
   summarize(.groups='keep', n = length(unique(id))) %>%
   ungroup() -> area_xtab
@@ -2829,7 +2831,7 @@ area_xtab$plot_color = alpha(area_xtab$color, area_xtab$n / max(area_xtab$n))
 
 par(mar=c(7,7,3,1))
 xlims = range(current_areas$x) + c(-0.6, 0.6)
-ylims = range(cats$y) + c(-0.6, 0.6)
+ylims = range(n15c$y) + c(-0.6, 0.6)
 boxrad = 0.5
 plot(NA, NA, xlim=xlims, ylim=ylims, ann=F, axes=F, xaxs='i', yaxs='i')
 abline(v=unique(c(boxrad, current_areas$x + boxrad)), lwd=0.125)
@@ -2838,7 +2840,7 @@ rect(xleft=area_xtab$x - boxrad, xright=area_xtab$x + boxrad, ybottom = area_xta
      col = area_xtab$plot_color, border='#000000', lwd=0.5)
 text(x=area_xtab$x, y=area_xtab$y, labels=area_xtab$n, cex=0.5)
 mtext(side=1, at=current_areas$x, text=current_areas$area, col=current_areas$color, las=2, cex=0.6)
-mtext(side=2, at=cats$y, text=cats$category, col='#4D4D4D', las=2, cex=0.6)
+mtext(side=2, at=n15c$y, text=n15c$category, col='#4D4D4D', las=2, cex=0.6)
 mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
 panel = panel + 1
 
