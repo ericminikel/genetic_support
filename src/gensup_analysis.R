@@ -695,6 +695,11 @@ combined_ti_gwas = pipeline_best(merge2,  phase='combined', basis='ti', associat
 
 cat(file=stderr(), '\rGenerating pipeline tables... done.                    \n')
 
+# combined_ti %>%
+#   select(ti_uid, gene, indication_mesh_id, indication_mesh_term, ccatnum, ccat, orphan, 
+#          assoc_mesh_id, assoc_mesh_term, assoc_source, assoc_info, original_trait, original_link,
+#          assoc_year, pic_qtl_pval, pic_h4)
+
 
 #########
 # Figure S1
@@ -1080,7 +1085,9 @@ rbind(cbind(hist_ti_forest, mode='historical'),
   relocate(mode) %>% 
   filter(label != 'Historical') %>%
   ungroup() %>%
-  select(-num) -> pg_phase_mode
+  select(-num) %>%
+  rename(phase=label, supported=numerator, total=denominator, pg=mean, pg_l95=l95, pg_u95=u95) %>%
+  select(mode, phase, supported, total, pg, pg_l95, pg_u95) -> pg_phase_mode
 write_supp_table(pg_phase_mode, "Proportion of target-indication pairs with genetic support by phase and active/historical status.")
 
 #### 1B - by association source
@@ -1089,13 +1096,15 @@ mtext(side=1, line=1.6, text='RS')
 mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
 panel = panel + 1
 
-write_supp_table(assoc_source_rr_forest, "Relative success by source of germline genetic evidence.")
+assoc_source_rr_forest %>%
+  select(source=label, rs=mean, rs_l95 = l95, rs_u95 = u95, approved=numerator, supported=denominator) -> assoc_source_rr_out
+write_supp_table(assoc_source_rr_out, "Relative success by source of germline genetic evidence.")
 
 ##### 1C - by threshold
 roc_col = '#FFAA00'
 omim_col = '#00CDCD'
 xlims = c(1000, 0)
-ylims = c(0.8, 3.5)
+ylims = c(0.8, 4.0)
 par(mar=c(4,4,3,6))
 plot(NA, NA, xlim=xlims, ylim=ylims, xaxs='i', yaxs='i', axes=F, ann=F)
 axis(side=2, at=xlims, labels=NA, lwd.ticks=0)
@@ -1486,10 +1495,247 @@ unecessary_message = dev.off()
 
 
 
-cat(file=stderr(), 'done.\nCreating Figure S3...')
 
 resx=300
-png(paste0(output_path,'/figure-s3.png'),width=6.5*resx,height=3.5*resx,res=resx)
+png(paste0(output_path,'/figure-s3.png'),width=6.5*resx,height=4.5*resx,res=resx)
+
+# all synonyms for all MeSH terms
+all_vocab = read_tsv('data/mesh_all_vocab.tsv.gz', col_types=cols())
+# prepare to match them to Nelson 2015
+all_vocab %>%
+  mutate(labeltext = tolower(labeltext)) %>%
+  group_by(labeltext) %>%
+  slice(1) %>%
+  ungroup() -> vocab_match
+
+
+# Nelson 2015 Pharmaprojects snapshot
+n15p = read_tsv('data/nelson_2015_supplementary_dataset_3.tsv', col_types=cols()) %>%
+  clean_names() %>%
+  filter(!(phase_latest %in% c('Discontinued','No Development Reported'))) %>%
+  mutate(ccat = gsub(' Clinical Trial','',phase_latest)) %>%
+  mutate(mesh = tolower(msh))
+n15p$mesh_id = vocab_match$id[match(n15p$msh, vocab_match$labeltext)]
+n15p$mesh_term = mesh_best_names$labeltext[match(n15p$mesh_id, mesh_best_names$id)]
+n15p %>%
+  select(gene, mesh_id, mesh_term, ccat) %>%
+  inner_join(meta_ccat, by=c('ccat'='cat')) %>%
+  rename(ccatnum = num) -> n15p
+# mean(!is.na(n15p$mesh_id)) # 100%
+# Nelson 2015 genetics snapshot
+n15g = read_tsv('data/nelson_2015_supplementary_dataset_2.tsv', col_types=cols()) %>%
+  clean_names() %>%
+  mutate(mesh = tolower(msh))
+n15g$mesh_id = vocab_match$id[match(n15g$msh, vocab_match$labeltext)]
+n15g$mesh_term = mesh_best_names$labeltext[match(n15g$mesh_id, mesh_best_names$id)]
+n15g %>%
+  filter(!is.na(mesh_id)) %>%
+  select(gene, mesh_id, mesh_term, source) -> n15g
+# mean(!is.na(n15g$mesh_id)) # 99.4%
+
+sim_temp = sim %>%
+  filter(meshcode_a %in% n15p$mesh_id) %>%
+  filter(meshcode_b %in% n15g$mesh_id)
+
+n15p %>%
+  left_join(n15g, by='gene', suffix=c('_indication','_association')) %>%
+  left_join(sim_temp, by=c('mesh_id_indication'='meshcode_a', 'mesh_id_association'='meshcode_b')) %>%
+  mutate(comb_norm = replace_na(comb_norm, 0)) %>%
+  group_by(gene, mesh_id_indication, mesh_term_indication, ccat, ccatnum) %>%
+  arrange(desc(comb_norm)) %>%
+  slice(1) %>%
+  mutate(gensup = comb_norm >= 0.8) -> p13_g13
+
+p13_g13 %>%
+  group_by(ccatnum, ccat) %>%
+  summarize(.groups='keep',
+            supported = sum(gensup),
+            total = n(),
+            binom_obj = binom.confint(x=sum(gensup), n=n(), method='wilson')) %>%
+  mutate(pg_mean = binom_obj$mean, pg_l95 = binom_obj$lower, pg_u95 = binom_obj$upper) %>%
+  mutate(drug_data = 2013, genetic_data = '2013') %>%
+  select(drug_data, genetic_data, ccatnum, ccat, pg_mean, pg_l95, pg_u95, supported, total) -> p13_g13_smry
+
+assoc_temp = assoc %>%
+  filter(source == 'OTG' & l2g_share >= 0.5 | source == 'PICCOLO' | source == 'OMIM' | source=='Genebass') %>%
+  select(gene, mesh_id, mesh_term, source)
+sim_temp = sim %>%
+  filter(meshcode_a %in% n15p$mesh_id) %>%
+  filter(meshcode_b %in% assoc_temp$mesh_id)
+n15p %>%
+  left_join(assoc_temp, by='gene', suffix=c('_indication','_association')) %>%
+  left_join(sim_temp, by=c('mesh_id_indication'='meshcode_a', 'mesh_id_association'='meshcode_b')) %>%
+  mutate(comb_norm = replace_na(comb_norm, 0)) %>%
+  group_by(gene, mesh_id_indication, mesh_term_indication, ccat, ccatnum) %>%
+  arrange(desc(comb_norm)) %>%
+  slice(1) %>%
+  mutate(gensup = comb_norm >= 0.8) -> p13_g23
+
+p13_g23 %>%
+  group_by(ccatnum, ccat) %>%
+  summarize(.groups='keep',
+            supported = sum(gensup),
+            total = n(),
+            binom_obj = binom.confint(x=sum(gensup), n=n(), method='wilson')) %>%
+  mutate(pg_mean = binom_obj$mean, pg_l95 = binom_obj$lower, pg_u95 = binom_obj$upper) %>%
+  mutate(drug_data = 2013, genetic_data = '2023') %>%
+  select(drug_data, genetic_data, ccatnum, ccat, pg_mean, pg_l95, pg_u95, supported, total) -> p13_g23_smry
+
+
+pp_temp = pp %>%
+  rename(mesh_id = indication_mesh_id, mesh_term = indication_mesh_term) %>%
+  select(gene, mesh_id, mesh_term, ccat, ccatnum)
+sim_temp = sim %>%
+  filter(meshcode_a %in% pp_temp$mesh_id) %>%
+  filter(meshcode_b %in% n15g$mesh_id)
+
+pp_temp %>%
+  left_join(n15g, by='gene', suffix=c('_indication','_association')) %>%
+  left_join(sim_temp, by=c('mesh_id_indication'='meshcode_a', 'mesh_id_association'='meshcode_b')) %>%
+  mutate(comb_norm = replace_na(comb_norm, 0)) %>%
+  group_by(gene, mesh_id_indication, mesh_term_indication, ccat, ccatnum) %>%
+  arrange(desc(comb_norm)) %>%
+  slice(1) %>%
+  mutate(gensup = comb_norm >= 0.8) -> p23_g13
+
+p23_g13 %>%
+  group_by(ccatnum, ccat) %>%
+  summarize(.groups='keep',
+            supported = sum(gensup),
+            total = n(),
+            binom_obj = binom.confint(x=sum(gensup), n=n(), method='wilson')) %>%
+  mutate(pg_mean = binom_obj$mean, pg_l95 = binom_obj$lower, pg_u95 = binom_obj$upper) %>%
+  mutate(drug_data = 2023, genetic_data = '2013') %>%
+  select(drug_data, genetic_data, ccatnum, ccat, pg_mean, pg_l95, pg_u95, supported, total) -> p23_g13_smry
+
+
+sim_temp = sim %>%
+  filter(meshcode_a %in% pp_temp$mesh_id) %>%
+  filter(meshcode_b %in% assoc_temp$mesh_id)
+
+pp_temp %>%
+  left_join(assoc_temp, by='gene', suffix=c('_indication','_association')) %>%
+  left_join(sim_temp, by=c('mesh_id_indication'='meshcode_a', 'mesh_id_association'='meshcode_b')) %>%
+  mutate(comb_norm = replace_na(comb_norm, 0)) %>%
+  group_by(gene, mesh_id_indication, mesh_term_indication, ccat, ccatnum) %>%
+  arrange(desc(comb_norm)) %>%
+  slice(1) %>%
+  mutate(gensup = comb_norm >= 0.8) -> p23_g23
+
+p23_g23 %>%
+  group_by(ccatnum, ccat) %>%
+  summarize(.groups='keep',
+            supported = sum(gensup),
+            total = n(),
+            binom_obj = binom.confint(x=sum(gensup), n=n(), method='wilson')) %>%
+  mutate(pg_mean = binom_obj$mean, pg_l95 = binom_obj$lower, pg_u95 = binom_obj$upper) %>%
+  mutate(drug_data = 2023, genetic_data = '2023') %>%
+  select(drug_data, genetic_data, ccatnum, ccat, pg_mean, pg_l95, pg_u95, supported, total) -> p23_g23_smry
+
+
+# the above comparisons do not filter for genetic insight (since that is a moving target in 2013 vs. 2023)
+# note that for pipeline_best though the default is to require insight, and advancement_forest always requires insight
+# so to compare apples to apples, let's do the OTG pre/post 2013 comparison manually rather than using those functions
+
+assoc_temp = assoc %>%
+  filter(source == 'OTG' & l2g_share >= 0.5 & year <= 2013) %>%
+  select(gene, mesh_id, mesh_term, source)
+sim_temp = sim %>%
+  filter(meshcode_a %in% pp_temp$mesh_id) %>%
+  filter(meshcode_b %in% assoc_temp$mesh_id)
+
+pp_temp %>%
+  left_join(assoc_temp, by='gene', suffix=c('_indication','_association')) %>%
+  left_join(sim_temp, by=c('mesh_id_indication'='meshcode_a', 'mesh_id_association'='meshcode_b')) %>%
+  mutate(comb_norm = replace_na(comb_norm, 0)) %>%
+  group_by(gene, mesh_id_indication, mesh_term_indication, ccat, ccatnum) %>%
+  arrange(desc(comb_norm)) %>%
+  slice(1) %>%
+  mutate(gensup = comb_norm >= 0.8) -> p23_otgpre2013
+
+p23_otgpre2013 %>%
+  group_by(ccatnum, ccat) %>%
+  summarize(.groups='keep',
+            supported = sum(gensup),
+            total = n(),
+            binom_obj = binom.confint(x=sum(gensup), n=n(), method='wilson')) %>%
+  mutate(pg_mean = binom_obj$mean, pg_l95 = binom_obj$lower, pg_u95 = binom_obj$upper) %>%
+  mutate(drug_data = 2023, genetic_data = 'OTG through 2013') %>%
+  select(drug_data, genetic_data, ccatnum, ccat, pg_mean, pg_l95, pg_u95, supported, total) -> p23_otgpre2013_smry
+
+
+assoc_temp = assoc %>%
+  filter(source == 'OTG' & l2g_share >= 0.5) %>%
+  select(gene, mesh_id, mesh_term, source)
+sim_temp = sim %>%
+  filter(meshcode_a %in% pp_temp$mesh_id) %>%
+  filter(meshcode_b %in% assoc_temp$mesh_id)
+
+pp_temp %>%
+  left_join(assoc_temp, by='gene', suffix=c('_indication','_association')) %>%
+  left_join(sim_temp, by=c('mesh_id_indication'='meshcode_a', 'mesh_id_association'='meshcode_b')) %>%
+  mutate(comb_norm = replace_na(comb_norm, 0)) %>%
+  group_by(gene, mesh_id_indication, mesh_term_indication, ccat, ccatnum) %>%
+  arrange(desc(comb_norm)) %>%
+  slice(1) %>%
+  mutate(gensup = comb_norm >= 0.8) -> p23_otgalltime
+
+p23_otgalltime %>%
+  group_by(ccatnum, ccat) %>%
+  summarize(.groups='keep',
+            supported = sum(gensup),
+            total = n(),
+            binom_obj = binom.confint(x=sum(gensup), n=n(), method='wilson')) %>%
+  mutate(pg_mean = binom_obj$mean, pg_l95 = binom_obj$lower, pg_u95 = binom_obj$upper) %>%
+  mutate(drug_data = 2023, genetic_data = 'OTG all time') %>%
+  select(drug_data, genetic_data, ccatnum, ccat, pg_mean, pg_l95, pg_u95, supported, total) -> p23_otgalltime_smry
+
+
+rbind(p13_g13_smry, p13_g23_smry, p23_g13_smry, p23_g23_smry, p23_otgpre2013_smry, p23_otgalltime_smry) -> pg_time_comparison
+# write_supp_table(pg_time_comparison, 'P(G) by phase using 2013 vs. 2023 drug and genetics datasets.')
+
+
+pg_time_comparison %>%
+  mutate(y = 6-ccatnum) %>%
+  rename(mean=pg_mean, l95=pg_l95, u95=pg_u95, numerator=supported, denominator=total, label=ccat) -> pg_forest
+
+par(mfrow=c(3,2))
+panel = 1
+plot_forest(pg_forest %>% filter(drug_data==2013 & genetic_data=='2013'), title='2013 drug pipeline\n2013 genetics', xlims=c(0,.12), xlab='P(G) vs. phase', col='#000000')
+mtext(letters[panel], side=3, cex=2, adj = -0.2, line = 0.5)
+panel = panel + 1
+plot_forest(pg_forest %>% filter(drug_data==2013 & genetic_data=='2023'), title='2013 drug pipeline\n2023 genetics', xlims=c(0,.12), xlab='P(G) vs. phase', col='#000000')
+mtext(letters[panel], side=3, cex=2, adj = -0.2, line = 0.5)
+panel = panel + 1
+plot_forest(pg_forest %>% filter(drug_data==2023 & genetic_data=='2013'), title='2023 drug pipeline\n2013 genetics', xlims=c(0,.12), xlab='P(G) vs. phase', col='#000000')
+mtext(letters[panel], side=3, cex=2, adj = -0.2, line = 0.5)
+panel = panel + 1
+plot_forest(pg_forest %>% filter(drug_data==2023 & genetic_data=='2023'), title='2023 drug pipeline\n2023 genetics', xlims=c(0,.12), xlab='P(G) vs. phase', col='#000000')
+mtext(letters[panel], side=3, cex=2, adj = -0.2, line = 0.5)
+panel = panel + 1
+plot_forest(pg_forest %>% filter(drug_data==2023 & genetic_data=='OTG through 2013'), title='2023 drug pipeline\nOTG only, 2005-2013', xlims=c(0,.12), xlab='P(G) vs. phase', col='#000000')
+mtext(letters[panel], side=3, cex=2, adj = -0.2, line = 0.5)
+panel = panel + 1
+plot_forest(pg_forest %>% filter(drug_data==2023 & genetic_data=='OTG all time'), title='2023 drug pipeline\nOTG only, all time', xlims=c(0,.12), xlab='P(G) vs. phase', col='#000000')
+mtext(letters[panel], side=3, cex=2, adj = -0.2, line = 0.5)
+panel = panel + 1
+
+unnecessary_message = dev.off()
+
+# 
+# # examples of what is in signs & symptoms
+# pp %>% inner_join(indic_topl_match, by=c('indication_mesh_id','indication_mesh_term')) %>% filter(topl=='C23') %>%
+#   group_by(indication_mesh_id, indication_mesh_term) %>%
+#   summarize(.groups='keep', n=n()) %>%
+#   arrange(desc(n))
+
+
+
+
+cat(file=stderr(), 'done.\nCreating Figure S4...')
+
+resx=300
+png(paste0(output_path,'/figure-s4.png'),width=6.5*resx,height=3.5*resx,res=resx)
 
 # read data
 t2d_omim = read_tsv('data/t2d/omim_t2d.tsv', col_types=cols())
@@ -1623,6 +1869,10 @@ unnecessary_message = dev.off()
 
 
 
+
+
+
+
 cat(file=stderr(), 'done.\nCreating Figure 2...')
 
 read_tsv('data/areas.tsv', col_types=cols()) %>%
@@ -1705,51 +1955,6 @@ areas[,c('p_g_mean','p_g_l95','p_g_u95')] = p_g_bconf_obj[,c('mean','lower','upp
 
 indic %>% filter(genetic_insight != 'none') -> indic_insight
 
-### would add the tiya stuff here
-# 
-# tiya %>%
-#   filter(min_year==2022) %>%
-#   select(min_year, area, cumn) -> tiyamax
-# 
-# areas$otg_supp_ti = tiyamax$cumn[match(areas$area, tiyamax$area)]
-# 
-# wtd.cor(areas$otg_supp_ti, areas$rs_mean, weight=areas$n_hist_ti)
-# cor.test(areas$otg_supp_ti, areas$rs_mean)
-# 
-# panel =1
-# resx=300
-# png(paste0(output_path,'/figure-s5c.png'),width=3.25*resx,height=2.5*resx,res=resx)
-# 
-# cex_factor = 70
-# 
-# par(mar=c(2.5,2.5,2,1))
-# xlims = c(0,25000)
-# plot(NA, NA, xlim=xlims, ylim=c(0,4.5), axes=F, ann=F, xaxs='i', yaxs='i')
-# axis(side=1, lwd=1, at=xlims, lwd.ticks=0, labels=NA)
-# axis(side=1, lwd=0, lwd.ticks=1, at=0:25*1e3, labels=NA, tck=-0.015)
-# axis(side=1, lwd=0, lwd.ticks=1, at=0:5*5e3, labels=NA, tck=-0.03)
-# axis(side=1, lwd=0, line=-0.5, at=0:5*5e3, labels=c('0',paste0(1:5*5,'K')))
-# mtext(side=1, line=1.5, text="OTG-supported T-I")
-# mtext(side=2, line=1.5, text='RS')
-# axis(side=2, lwd=1, lwd.ticks=1, at=0:10/2, labels=NA, tck=-0.015)
-# axis(side=2, lwd=0, lwd.ticks=1, at=0:5, labels=NA, tck=-0.03)
-# axis(side=2, lwd=0, at=0:5, line=-0.5, las=2)
-# abline(h=0:5, lwd=0.125, col=line_color)
-# abline(h=1, lwd=0.5, col='black')
-# par(xpd=T)
-# points(x=areas$otg_supp_ti, y=areas$rs_mean, col=areas$color, pch=19, cex=areas$n_gensup_ti/cex_factor)
-# par(xpd=F)
-# mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
-# panel = panel + 1
-# supp_rs_weightedbygensup = wtd.cor(areas$otg_supp_ti, areas$rs_mean, weight=areas$n_gensup_ti)
-# supp_rs_weightedbygensup_rho = round(supp_rs_weightedbygensup['Y','correlation'],2)
-# supp_rs_weightedbygensup_p = round(supp_rs_weightedbygensup['Y','p.value'],3)
-# 
-# cor.test(areas$otg_supp_ti, areas$rs_mean)
-# 
-# write(paste('Weighted Pearson correlation across areas, otg_supp_ti vs. rs: rho= ',formatC(supp_rs_weightedbygensup_rho,digits=2,format='fg'),', P = ',formatC(supp_rs_weightedbygensup_p,digits=2,format='fg'),'\n',sep=''),text_stats_path,append=T)
-# 
-# dev.off()
 
 
 
@@ -2311,14 +2516,64 @@ write(paste('Weighted Pearson correlation across areas, indic per target vs. rs:
 unecessary_message = dev.off()
 
 
-cat(file=stderr(), 'done.\nCreating Figure S4...')
+
+
+
+
+
+
+
+
 
 resx=300
-png(paste0(output_path,'/figure-s4.png'),width=6.5*resx,height=9*resx,res=resx)
-layout_matrix = matrix(c(1,1,2,2,2,3,3,3,8,
+png('display_items/figure-s5.png',width=6.5*resx,height=8.0*resx,res=resx)
+panel = 1
+par(mfrow = c(6,3))
+for (i in 1:nrow(areas_all)) {
+  
+  combined_ti_area = subset_by_area(combined_ti, topl=areas_all$topl[i], filter=areas_all$filter[i])
+  area_forest = advancement_forest(combined_ti_area)
+  left_margin = case_when(i %% 3 == 1 ~ 6,
+                          TRUE ~ 0)
+  bottom_margin = case_when(i >= 16 ~ 3,
+                            TRUE ~ 0)
+  margins = c(bottom_margin, left_margin, 2, 0)
+  
+  plot_forest(area_forest, xlims=c(0,.60), xlab='', col=areas_all$color[i], title='', mar=margins)
+  mtext(side=3, adj=0, at=-0.3, line=0.25, col='#000000', text=areas_all$area[i], cex=.85)
+  # mtext(letters[panel], side=3, cex=1.4, at=-0.5, line = 0.25)
+  # panel = panel + 1
+  
+  area_forest$area = areas_all$area[i]
+  if (i == 1) {
+    pg_out = area_forest
+  } else {
+    pg_out = rbind(pg_out, area_forest)
+  }
+}
+unnecessary_message = dev.off()
+
+pg_out %>%
+  select(area, phase=label, phasenum=num, supported=numerator, total=denominator, pg_mean=mean, pg_l95 = l95, pg_u95 = u95) -> pg_out
+
+write_supp_table(pg_out, "Proportion of target-indication pairs with genetic support by phase and therapy area, combined mode (both historical and active programs).")
+
+
+
+
+
+
+
+
+
+cat(file=stderr(), 'done.\nCreating Figure S6...')
+
+resx=300
+png(paste0(output_path,'/figure-s6.png'),width=6.5*resx,height=9*resx,res=resx)
+layout_matrix = matrix(c(1,1,2,2,2,3,3,3,9,
                          4,4,4,5,5,5,6,6,6,
-                         7,7,7,7,7,7,7,7,7,
-                         7,7,7,7,7,7,7,7,7), nrow=4,byrow=T)
+                         7,7,7,7,7,8,8,8,8,
+                         7,7,7,7,7,8,8,8,8), nrow=4,byrow=T)
 layout(layout_matrix, heights=c(1.5,1,.75,.75))
 panel = 1
 
@@ -2486,17 +2741,17 @@ smry2015$area = smry2015$category
 ylims = range(smry2015$y, na.rm=T) + c(-0.5, 0.5)
 smry2015$rs_u95[smry2015$rs_u95==Inf] = max(ylims)
 xlims = c(0, 8)
-par(mar=c(4,15,3,6))
+par(mar=c(4,10,3,4))
 plot(NA, NA, ylim=ylims, xlim=xlims, axes=F, ann=F, xaxs='i', yaxs='i')
 axis(side=1, at=xlims, labels=NA, lwd=1, lwd.ticks=0)
-axis(side=1, lwd=0, lwd.ticks=1, at=0:100/10, labels=NA, tck=-0.015)
-axis(side=1, lwd=0, lwd.ticks=1, at=0:10, labels=NA, tck=-0.03)
+axis(side=1, lwd=0, lwd.ticks=1, at=0:100/10, labels=NA, tck=-0.015, cex.axis=0.7)
+axis(side=1, lwd=0, lwd.ticks=1, at=0:10, labels=NA, tck=-0.03, cex.axis=0.7)
 axis(side=1, lwd=0, at=0:10, line=-0.5)
 abline(v=0:8, lwd=0.125, col=line_color)
 abline(v=1, lwd=1, col='black')
 axis(side=2, at=ylims, labels=NA, lwd=1, lwd.ticks=0)
-mtext(side=2, at=smry2015$y, line=0.5, las=2, text=smry2015$area, cex=1, col=smry2015$color)
-mtext(side=4, at=smry2015$y, line=0.5, las=2, text=paste0(smry2015$gensup_launched,'/',smry2015$gensup_launched + smry2015$gensup_clinical), cex=1, col=smry2015$color)
+mtext(side=2, at=smry2015$y, line=0.5, las=2, cex=0.7, text=smry2015$area, col=smry2015$color)
+mtext(side=4, at=smry2015$y, line=0.5, las=2, cex=0.7, text=paste0(smry2015$gensup_launched,'/',smry2015$gensup_launched + smry2015$gensup_clinical), col=smry2015$color)
 segments(x0=smry2015$rs_l95, x1=smry2015$rs_u95, y0=smry2015$y, lwd=3, col=smry2015$color)
 points(x=smry2015$rs_mean, y=smry2015$y, pch=19, col=smry2015$color)
 mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
@@ -2516,6 +2771,58 @@ write(paste("Overall RS from Nelson 2015: ",
             formatC(total2015['estimate'], format='fg', digits=3),
             ' vs. current study: ',formatC(total2022$rs_mean, format='fg', digits=3),
       '\n',sep=''),text_stats_path,append=T)
+# 
+# # cross-tab of 2013 area assignments vs. 2023 area assignments
+# n15p = read_tsv('data/nelson_2015_supplementary_dataset_3.tsv', col_types=cols()) %>%
+#   clean_names() %>%
+#   filter(!(phase_latest %in% c('Discontinued','No Development Reported'))) %>%
+#   mutate(ccat = gsub(' Clinical Trial','',phase_latest)) %>%
+#   mutate(mesh = tolower(msh))
+# n15p$mesh_id = vocab_match$id[match(n15p$msh, vocab_match$labeltext)]
+# n15p$mesh_term = mesh_best_names$labeltext[match(n15p$mesh_id, mesh_best_names$id)]
+
+# TO DO: table s6 is only the genetically supported ones.
+# instead need to switch to supp dataset 3 which is all of PP in 2013
+# then use supp table 9 which maps indications to categories
+
+
+n15a = read_tsv('data/nelson_2015_table_s6.tsv', col_types=cols()) %>%
+  clean_names() %>%
+  distinct(msh_ind, category) 
+
+cats = read_tsv('data/nelson_2015_categories.tsv', col_types=cols()) %>%
+  mutate(y = max(ord) - ord + 1)
+
+read_tsv('data/areas.tsv', col_types=cols()) %>%
+  select(topl, area, color) %>%
+  mutate(x=row_number()) -> current_areas
+
+n15a %>%
+  inner_join(vocab_match, by=c('msh_ind'='labeltext')) %>%
+  inner_join(indic_topl_match, by=c('id'='indication_mesh_id')) %>%
+  inner_join(current_areas, by='topl') %>%
+  inner_join(cats, by='category') %>%
+  group_by(y, category, x, area, color) %>%
+  summarize(.groups='keep', n = length(unique(id))) %>%
+  ungroup() -> area_xtab
+
+area_xtab$plot_color = alpha(area_xtab$color, area_xtab$n / max(area_xtab$n))
+
+par(mar=c(7,7,3,1))
+xlims = range(current_areas$x) + c(-0.6, 0.6)
+ylims = range(cats$y) + c(-0.6, 0.6)
+boxrad = 0.5
+plot(NA, NA, xlim=xlims, ylim=ylims, ann=F, axes=F, xaxs='i', yaxs='i')
+abline(v=unique(c(boxrad, current_areas$x + boxrad)), lwd=0.125)
+abline(h=unique(c(boxrad, cats$y + boxrad)), lwd=0.125)
+rect(xleft=area_xtab$x - boxrad, xright=area_xtab$x + boxrad, ybottom = area_xtab$y - boxrad, ytop = area_xtab$y + boxrad,
+     col = area_xtab$plot_color, border='#000000', lwd=0.5)
+text(x=area_xtab$x, y=area_xtab$y, labels=area_xtab$n, cex=0.5)
+mtext(side=1, at=current_areas$x, text=current_areas$area, col=current_areas$color, las=2, cex=0.6)
+mtext(side=2, at=cats$y, text=cats$category, col='#4D4D4D', las=2, cex=0.6)
+mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
+panel = panel + 1
+
 
 unecessary_message = dev.off()
 
@@ -3006,13 +3313,13 @@ unecessary_message = dev.off()
 
 
 ####
-# FIGURE S5
+# FIGURE S7
 ####
 
-cat(file=stderr(), 'done.\nCreating Figure S5...')
+cat(file=stderr(), 'done.\nCreating Figure S7...')
 
 resx=300
-png(paste0(output_path,'/figure-s5.png'),width=6.5*resx,height=8*resx,res=resx)
+png(paste0(output_path,'/figure-s7.png'),width=6.5*resx,height=8*resx,res=resx)
 
 layout_matrix = matrix(c(1,2,3,3),nrow=2,byrow=T)
 layout(layout_matrix, heights=c(1,3))

@@ -1,7 +1,6 @@
 
 mesh_best_names = read_tsv('data/mesh_best_names.tsv.gz', col_types=cols())
 
-
 # all synonyms for all MeSH terms
 all_vocab = read_tsv('data/mesh_all_vocab.tsv.gz', col_types=cols())
 # prepare to match them to Nelson 2015
@@ -228,11 +227,6 @@ mtext(letters[panel], side=3, cex=2, adj = -0.2, line = 0.5)
 panel = panel + 1
 dev.off()
 
-# examples of what is in signs & symptoms
-pp %>% inner_join(indic_topl_match, by=c('indication_mesh_id','indication_mesh_term')) %>% filter(topl=='C23') %>%
-  group_by(indication_mesh_id, indication_mesh_term) %>%
-  summarize(.groups='keep', n=n()) %>%
-  arrange(desc(n))
 
 
 # cross-tab of 2013 area assignments vs. 2023 area assignments
