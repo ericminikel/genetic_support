@@ -2526,9 +2526,12 @@ unecessary_message = dev.off()
 
 
 resx=300
-png('display_items/figure-s5.png',width=6.5*resx,height=8.0*resx,res=resx)
-panel = 1
-par(mfrow = c(6,3))
+png('display_items/figure-s5.png',width=6.5*resx,height=6.0*resx,res=resx)
+
+layout_matrix = matrix(1:18, nrow=6, byrow=T)
+layout(layout_matrix, 
+       heights=c(1,1,1,1,1,1.42),
+       widths = c(1.4, 1, 1))
 for (i in 1:nrow(areas_all)) {
   
   combined_ti_area = subset_by_area(combined_ti, topl=areas_all$topl[i], filter=areas_all$filter[i])
@@ -2537,13 +2540,29 @@ for (i in 1:nrow(areas_all)) {
                           TRUE ~ 0)
   bottom_margin = case_when(i >= 16 ~ 3,
                             TRUE ~ 0)
-  margins = c(bottom_margin, left_margin, 2, 0)
-  
-  plot_forest(area_forest, xlims=c(0,.60), xlab='', col=areas_all$color[i], title='', mar=margins)
-  mtext(side=3, adj=0, at=-0.3, line=0.25, col='#000000', text=areas_all$area[i], cex=.85)
-  # mtext(letters[panel], side=3, cex=1.4, at=-0.5, line = 0.25)
-  # panel = panel + 1
-  
+  margins = c(bottom_margin, left_margin, 1.5, 0.25)
+  par(mar=margins)
+  xlims = c(0, .60)
+  ylims = c(0.5, 5.5)
+  plot(NA, NA, xlim=xlims, ylim=ylims, axes=F, ann=F, xaxs='i', yaxs='i')
+  axis(side=1, at=xlims, labels=NA, lwd.ticks=0)
+  axis(side=2, at=ylims, labels=NA, lwd.ticks=0)
+  if (i %% 3 == 1) {
+    mtext(side=2, at=area_forest$y, las=2, text=area_forest$label, cex=0.8, line=0.25)
+  }
+  if (i >= 16) {
+    axis(side=1, at=0:100/100, labels=NA, tck=-0.025)
+    axis(side=1, at=0:10/10, labels=NA, tck=-0.05)
+    axis(side=1, at=0:5/10, labels=percent(0:5/10), lwd=0, line=-0.75, cex.axis=0.8)
+    mtext(side=1, line=1.6, text='P(G)')
+  }
+  points(x=area_forest$mean, y=area_forest$y, pch=19, col=areas_all$color[i])
+  segments(x0=area_forest$l95, x1=area_forest$u95, y0=area_forest$y, col=areas_all$color[i])
+  par(xpd=T)
+  rect_height = 1.5
+  rect(xleft=min(xlims), xright=max(xlims), ybottom=max(ylims), ytop=max(ylims+rect_height), col=alpha(areas_all$color[i],.35), border=NA)
+  mtext(side=3, line=0.25, col='#000000', text=areas_all$area[i], cex=.85)
+  par(xpd=F)
   area_forest$area = areas_all$area[i]
   if (i == 1) {
     pg_out = area_forest
