@@ -1,16 +1,16 @@
 ord	category
-13	Diabetes
-5	Respiratory
+11	Diabetes
+4	Respiratory
 14	Inflammation
-6	Neurological/behavioral
-8	Cardiovascular
+5	Neurological/behavioral
+7	Cardiovascular
 15	Urogenital
-11	Metabolic
+10	Metabolic
 3	Musculoskeletal
 12	Autoimmune
 2	Oncology
-9	Blood
+8	Blood
 1	Infection
-4	Liver & kidney
-7	Eye
-10	Skin & connective tissue
+13	Liver & kidney
+6	Eye
+9	Skin & connective tissue
