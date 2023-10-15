@@ -314,5 +314,263 @@ pg_out %>%
 write_supp_table(pg_out, "Proportion of target-indication pairs with genetic support by phase and therapy area, combined mode (both historical and active programs).")
 
 
+##### stuff for rev 3
+assoc %>%
+  filter(source=='PICCOLO') %>%
+  mutate(qtl_source = case_when(grepl('gtex',tolower(extra_info)) ~ 'GTEx',
+                                TRUE ~ 'other')) %>%
+  group_by(qtl_source) %>%
+  summarize(.groups='keep', n=n()) %>%
+  ungroup()
+
+assoc %>%
+  filter(source=='OTG') %>%
+  mutate(subsource = gsub('[0-9_].*','',gsub('https://genetics.opentargets.org/study/','',original_link))) %>%
+  group_by(subsource) %>%
+  summarize(.groups='keep', n=n()) %>%
+  ungroup()
+
+##### confounding between TA and categories in panel 1D
+# yearfirst
+for (i in 1:nrow(areas)) {
+  this_topl = areas$topl[i]
+  this_area = areas$area[i]
+  yf_obj = subset_by_area(yearfirst_logit_data, topl=this_topl, filter='only')
+  yf_minimal = yf_obj %>%
+    mutate(area = this_area) %>%
+    mutate(topl = this_topl) %>%
+    select(topl, area, uid, gene, indication_mesh_id, indication_mesh_term, assoc_year)
+  if (i == 1) {
+    area_x_year = yf_minimal
+  } else {
+    area_x_year = rbind(yf_minimal, area_x_year)
+  }
+}
+# ANOVA for continuous model
+# though year is not normally distributed, should look for a non-normal analog of ANOVA
+area_year_anova = aov(assoc_year ~ area, data=area_x_year)
+area_year_anova_p = summary(area_year_anova)[[1]]['area','Pr(>F)']
+# or, try a discrete model more analogous to what 1D shows visually
+area_x_year$yearbin = floor((area_x_year$assoc_year - 2007)/4)*4+2007
+area_year_ctable = table(area_x_year[,c('yearbin','area')])
+area_year_chisq_obj = chisq.test(area_year_ctable)
+
+# genecount
+for (i in 1:nrow(areas)) {
+  this_topl = areas$topl[i]
+  this_area = areas$area[i]
+  gc_obj = subset_by_area(gc_logit_data, topl=this_topl, filter='only')
+  gc_minimal = gc_obj %>%
+    mutate(area = this_area) %>%
+    mutate(topl = this_topl) %>%
+    select(topl, area, uid, gene, indication_mesh_id, indication_mesh_term, gene_count)
+  if (i == 1) {
+    area_x_gc = gc_minimal
+  } else {
+    area_x_gc = rbind(gc_minimal, area_x_gc)
+  }
+}
+# ANOVA for continuous model
+area_gc_anova = aov(gene_count ~ area, data=area_x_gc)
+area_gc_anova_p = summary(area_gc_anova)[[1]]['area','Pr(>F)']
+# try a discrete model more analogous to what 1D shows visually
+#10^floor(log10(area_x_gc$gene_count))
+area_x_gc$gcbin = case_when(area_x_gc$gene_count == 1 ~ 1,
+                            area_x_gc$gene_count >= 2 & area_x_gc$gene_count <= 9 ~ 2,
+                            area_x_gc$gene_count >= 10 & area_x_gc$gene_count <= 99 ~ 10,
+                            area_x_gc$gene_count >= 100 & area_x_gc$gene_count <= 999 ~ 100,
+                            area_x_gc$gene_count >= 1000 ~ 1000)
+area_gc_ctable = table(area_x_gc[,c('gcbin','area')])
+chisq.test(area_gc_ctable)$p.value
 
 
+# beta
+for (i in 1:nrow(areas)) {
+  this_topl = areas$topl[i]
+  this_area = areas$area[i]
+  beta_obj = subset_by_area(beta_logit_data, topl=this_topl, filter='only')
+  beta_minimal = beta_obj %>%
+    mutate(area = this_area) %>%
+    mutate(topl = this_topl) %>%
+    select(topl, area, uid, gene, indication_mesh_id, indication_mesh_term, abs_beta)
+  if (i == 1) {
+    area_x_beta = beta_minimal
+  } else {
+    area_x_beta = rbind(beta_minimal, area_x_beta)
+  }
+}
+# ANOVA for continuous model
+area_beta_anova = aov(abs_beta ~ area, data=area_x_beta)
+area_beta_anova_p = summary(area_beta_anova)[[1]]['area','Pr(>F)']
+# also discrete model like 1D
+crossing(area_x_beta, (beta_rrs %>% filter(label!='All with beta'))) %>%
+           filter(abs_beta >= min_beta & abs_beta <= max_beta) -> area_x_beta_binned
+area_beta_ctable = table(area_x_beta_binned[,c('label','area')])
+chisq.test(area_beta_ctable)$p.value
+
+# or
+for (i in 1:nrow(areas)) {
+  this_topl = areas$topl[i]
+  this_area = areas$area[i]
+  or_obj = subset_by_area(or_logit_data, topl=this_topl, filter='only')
+  or_minimal = or_obj %>%
+    mutate(area = this_area) %>%
+    mutate(topl = this_topl) %>%
+    select(topl, area, uid, gene, indication_mesh_id, indication_mesh_term, abs_or)
+  if (i == 1) {
+    area_x_or = or_minimal
+  } else {
+    area_x_or = rbind(or_minimal, area_x_or)
+  }
+}
+# ANOVA for continuous model
+area_or_anova = aov(abs_or ~ area, data=area_x_or)
+area_or_anova_p = summary(area_or_anova)[[1]]['area','Pr(>F)']
+# also discrete model like 1D
+crossing(area_x_or, (or_rrs %>% filter(label!='All with OR'))) %>%
+  filter(abs_or >= min_or & abs_or <= max_or) -> area_x_or_binned
+area_or_ctable = table(area_x_or_binned[,c('label','area')])
+chisq.test(area_or_ctable)$p.value
+
+
+
+# maf
+for (i in 1:nrow(areas)) {
+  this_topl = areas$topl[i]
+  this_area = areas$area[i]
+  maf_obj = subset_by_area(maf_logit_data, topl=this_topl, filter='only')
+  maf_minimal = maf_obj %>%
+    mutate(area = this_area) %>%
+    mutate(topl = this_topl) %>%
+    select(topl, area, uid, gene, indication_mesh_id, indication_mesh_term, lead_maf)
+  if (i == 1) {
+    area_x_maf = maf_minimal
+  } else {
+    area_x_maf = rbind(maf_minimal, area_x_maf)
+  }
+}
+# ANOVA fmaf continuous model
+area_maf_anova = aov(lead_maf ~ area, data=area_x_maf)
+area_maf_anova_p = summary(area_maf_anova)[[1]]['area','Pr(>F)']
+# also discrete model like 1D
+crossing(area_x_maf, (maf_rrs %>% filter(label!='All with MAF'))) %>%
+  filter(lead_maf >= min_maf & lead_maf <= max_maf) -> area_x_maf_binned
+area_maf_ctable = table(area_x_maf_binned[,c('label','area')])
+chisq.test(area_maf_ctable)$p.value
+
+
+layout_matrix = matrix(1:6, byrow=T, nrow=1)
+layout(layout_matrix)
+
+if (is.null(areas$y)) {
+  areas$y = nrow(areas):1
+}
+line_color = '#B9B9B9'
+xlims = c(0,5)
+ylims = range(areas$y, na.rm=T) + c(-0.5, 0.5)
+par(mar=c(3,1,3,0))
+plot(NA, NA, ylim=ylims, xlim=xlims, axes=F, ann=F, xaxs='i', yaxs='i')
+mtext(side=4, at=areas$y, line=0, adj=1, las=2, text=areas$area, cex=.8, col=areas$color)
+panel = 1
+par(mar=c(3,0.25,3,3.5))
+xlims = c(2007, 2022) + c(-0.5, 0.5)
+plot(NA, NA, xlim=xlims, ylim=ylims, axes=F, ann=F, xaxs='i', yaxs='i')
+axis(side=1, at=2007:2022, tck=-0.025, labels=NA)
+axis(side=1, at=seq(2007, 2022, 4), tck=-0.05, labels=NA)
+axis(side=1, at=seq(2007, 2022, 4), line=-0.5, lwd=0, cex.axis=0.8)
+abline(v=min(xlims))
+area_x_year %>%
+  inner_join(areas, by='topl') %>%
+  select(x=assoc_year, y, color) -> toplot
+set.seed(1)
+points(jitter(toplot$x,amount=.25), jitter(toplot$y,amount=.25), col=alpha(toplot$color, .1), pch=20)
+toplot %>%
+  group_by(y, color) %>%
+  summarize(.groups='keep', 
+            median_x = median(x),
+            q25 = quantile(x,.25),
+            q75 = quantile(x,.75)) %>%
+  ungroup() -> tosmry
+barwidth = .33
+segments(x0=tosmry$median_x, y0=tosmry$y - barwidth, y1=tosmry$y + barwidth, lwd=2, col=tosmry$color)
+rect(xleft=tosmry$q25, xright=tosmry$q75, ybottom=tosmry$y - barwidth, ytop=tosmry$y + barwidth, lwd=1.5, border=tosmry$color, col=NULL)
+
+par(mar=c(3,0.25,3,3.5))
+xlims = c(1,2000)
+plot(NA, NA, xlim=xlims, ylim=ylims, axes=F, ann=F, xaxs='i', yaxs='i', log='x')
+xats = rep(1:9, 4) * 10^rep(0:3, each=9)
+xbigs = 10^(0:3)
+axis(side=1, at=xats, tck=-0.025, labels=NA)
+axis(side=1, at=xbigs, tck=-0.05, labels=NA)
+axis(side=1, at=xbigs, line=-0.5, lwd=0, cex.axis=0.8)
+abline(v=min(xlims))
+area_x_gc %>%
+  inner_join(areas, by='topl') %>%
+  select(x=gene_count, y, color) -> toplot
+set.seed(1)
+points(jitter(toplot$x,amount=.25), jitter(toplot$y,amount=.25), col=alpha(toplot$color, .1), pch=20)
+toplot %>%
+  group_by(y, color) %>%
+  summarize(.groups='keep', 
+            median_x = median(x),
+            q25 = quantile(x,.25),
+            q75 = quantile(x,.75)) %>%
+  ungroup() -> tosmry
+barwidth = .33
+segments(x0=tosmry$median_x, y0=tosmry$y - barwidth, y1=tosmry$y + barwidth, lwd=2, col=tosmry$color)
+rect(xleft=tosmry$q25, xright=tosmry$q75, ybottom=tosmry$y - barwidth, ytop=tosmry$y + barwidth, lwd=1.5, border=tosmry$color, col=NULL)
+
+
+par(mar=c(3,0.25,3,3.5))
+xlims = c(0.001, 50)
+plot(NA, NA, xlim=xlims, ylim=ylims, axes=F, ann=F, xaxs='i', yaxs='i', log='x')
+xats = rep(1:9, 5) * 10^rep(-3:1, each=9)
+xbigs = 10^(-3:1)
+axis(side=1, at=xats, tck=-0.025, labels=NA)
+axis(side=1, at=xbigs, tck=-0.05, labels=NA)
+axis(side=1, at=xbigs, line=-0.5, lwd=0, cex.axis=0.8)
+abline(v=min(xlims))
+area_x_beta %>%
+  filter(abs_beta > 0) %>%
+  inner_join(areas, by='topl') %>%
+  select(x=abs_beta, y, color) -> toplot
+set.seed(1)
+points(jitter(toplot$x,amount=.25), jitter(toplot$y,amount=.25), col=alpha(toplot$color, .1), pch=20)
+toplot %>%
+  group_by(y, color) %>%
+  summarize(.groups='keep', 
+            median_x = median(x),
+            q25 = quantile(x,.25),
+            q75 = quantile(x,.75)) %>%
+  ungroup() -> tosmry
+barwidth = .33
+segments(x0=tosmry$median_x, y0=tosmry$y - barwidth, y1=tosmry$y + barwidth, lwd=2, col=tosmry$color)
+rect(xleft=tosmry$q25, xright=tosmry$q75, ybottom=tosmry$y - barwidth, ytop=tosmry$y + barwidth, lwd=1.5, border=tosmry$color, col=NULL)
+
+
+par(mar=c(3,0.25,3,3.5))
+xlims = c(0.001, 50)
+plot(NA, NA, xlim=xlims, ylim=ylims, axes=F, ann=F, xaxs='i', yaxs='i', log='x')
+xats = rep(1:9, 5) * 10^rep(-3:1, each=9)
+xbigs = c(10^(-3:-1), 1, 9)
+xbigslabs = c(1+10^(-3:-1), 2, 10)
+axis(side=1, at=xats, tck=-0.025, labels=NA)
+axis(side=1, at=xbigs, tck=-0.05, labels=NA)
+axis(side=1, at=xbigslabs, labels=formatC(xbigslabs, format='g'), line=-0.5, lwd=0, cex.axis=0.8)
+abline(v=min(xlims))
+area_x_or %>%
+  inner_join(areas, by='topl') %>%
+  mutate(x = abs_or-1) %>%
+  select(x, y, color) -> toplot
+set.seed(1)
+points(jitter(toplot$x,amount=.25), jitter(toplot$y,amount=.25), col=alpha(toplot$color, .1), pch=20)
+toplot %>%
+  group_by(y, color) %>%
+  summarize(.groups='keep', 
+            median_x = median(x),
+            q25 = quantile(x,.25),
+            q75 = quantile(x,.75)) %>%
+  ungroup() -> tosmry
+barwidth = .33
+segments(x0=tosmry$median_x, y0=tosmry$y - barwidth, y1=tosmry$y + barwidth, lwd=2, col=tosmry$color)
+rect(xleft=tosmry$q25, xright=tosmry$q75, ybottom=tosmry$y - barwidth, ytop=tosmry$y + barwidth, lwd=1.5, border=tosmry$color, col=NULL)
