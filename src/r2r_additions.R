@@ -459,6 +459,10 @@ area_maf_ctable = table(area_x_maf_binned[,c('label','area')])
 chisq.test(area_maf_ctable)$p.value
 
 
+
+resx=300
+png(paste0(output_path,'/figure-sx-area-x-1d.png'),width=6.5*resx,height=4*resx,res=resx)
+
 layout_matrix = matrix(1:6, byrow=T, nrow=1)
 layout(layout_matrix)
 
@@ -492,8 +496,9 @@ toplot %>%
             q75 = quantile(x,.75)) %>%
   ungroup() -> tosmry
 barwidth = .33
-segments(x0=tosmry$median_x, y0=tosmry$y - barwidth, y1=tosmry$y + barwidth, lwd=2, col=tosmry$color)
+segments(x0=tosmry$median_x, y0=tosmry$y - barwidth, y1=tosmry$y + barwidth, lwd=2, lend=1, col=tosmry$color)
 rect(xleft=tosmry$q25, xright=tosmry$q75, ybottom=tosmry$y - barwidth, ytop=tosmry$y + barwidth, lwd=1.5, border=tosmry$color, col=NULL)
+mtext(side=3, text='year')
 
 par(mar=c(3,0.25,3,3.5))
 xlims = c(1,2000)
@@ -517,9 +522,9 @@ toplot %>%
             q75 = quantile(x,.75)) %>%
   ungroup() -> tosmry
 barwidth = .33
-segments(x0=tosmry$median_x, y0=tosmry$y - barwidth, y1=tosmry$y + barwidth, lwd=2, col=tosmry$color)
+segments(x0=tosmry$median_x, y0=tosmry$y - barwidth, y1=tosmry$y + barwidth, lwd=2, lend=1, col=tosmry$color)
 rect(xleft=tosmry$q25, xright=tosmry$q75, ybottom=tosmry$y - barwidth, ytop=tosmry$y + barwidth, lwd=1.5, border=tosmry$color, col=NULL)
-
+mtext(side=3, text='gene count')
 
 par(mar=c(3,0.25,3,3.5))
 xlims = c(0.001, 50)
@@ -544,19 +549,19 @@ toplot %>%
             q75 = quantile(x,.75)) %>%
   ungroup() -> tosmry
 barwidth = .33
-segments(x0=tosmry$median_x, y0=tosmry$y - barwidth, y1=tosmry$y + barwidth, lwd=2, col=tosmry$color)
+segments(x0=tosmry$median_x, y0=tosmry$y - barwidth, y1=tosmry$y + barwidth, lwd=2, lend=1, col=tosmry$color)
 rect(xleft=tosmry$q25, xright=tosmry$q75, ybottom=tosmry$y - barwidth, ytop=tosmry$y + barwidth, lwd=1.5, border=tosmry$color, col=NULL)
-
+mtext(side=3, text='beta')
 
 par(mar=c(3,0.25,3,3.5))
 xlims = c(0.001, 50)
 plot(NA, NA, xlim=xlims, ylim=ylims, axes=F, ann=F, xaxs='i', yaxs='i', log='x')
 xats = rep(1:9, 5) * 10^rep(-3:1, each=9)
-xbigs = c(10^(-3:-1), 1, 9)
+xbigs  = c(10^(-3:-1), 1, 9)
 xbigslabs = c(1+10^(-3:-1), 2, 10)
 axis(side=1, at=xats, tck=-0.025, labels=NA)
 axis(side=1, at=xbigs, tck=-0.05, labels=NA)
-axis(side=1, at=xbigslabs, labels=formatC(xbigslabs, format='g'), line=-0.5, lwd=0, cex.axis=0.8)
+axis(side=1, at=xbigs, labels=formatC(xbigslabs, format='g'), line=-0.5, lwd=0, cex.axis=0.8)
 abline(v=min(xlims))
 area_x_or %>%
   inner_join(areas, by='topl') %>%
@@ -572,5 +577,37 @@ toplot %>%
             q75 = quantile(x,.75)) %>%
   ungroup() -> tosmry
 barwidth = .33
-segments(x0=tosmry$median_x, y0=tosmry$y - barwidth, y1=tosmry$y + barwidth, lwd=2, col=tosmry$color)
+segments(x0=tosmry$median_x, y0=tosmry$y - barwidth, y1=tosmry$y + barwidth, lwd=2, lend=1, col=tosmry$color)
 rect(xleft=tosmry$q25, xright=tosmry$q75, ybottom=tosmry$y - barwidth, ytop=tosmry$y + barwidth, lwd=1.5, border=tosmry$color, col=NULL)
+mtext(side=3, text='OR')
+
+par(mar=c(3,0.25,3,3.5))
+xlims = c(0.001, 0.5)
+plot(NA, NA, xlim=xlims, ylim=ylims, axes=F, ann=F, xaxs='i', yaxs='i', log='x')
+xats = rep(1:9, 4) * 10^rep(-3:0, each=9)
+xbigs = c(10^(-3:-1),.5)
+xbigslabs = c('0.1%','1%','10%','50%')
+axis(side=1, at=xats, tck=-0.025, labels=NA)
+axis(side=1, at=xbigs, tck=-0.05, labels=NA)
+axis(side=1, at=xbigs, labels=formatC(xbigslabs, format='g'), line=-0.5, lwd=0, cex.axis=0.8)
+abline(v=min(xlims))
+area_x_maf %>%
+  filter(lead_maf > 0) %>%
+  inner_join(areas, by='topl') %>%
+  mutate(x = lead_maf) %>%
+  select(x, y, color) -> toplot
+set.seed(1)
+points(jitter(toplot$x,amount=.25), jitter(toplot$y,amount=.25), col=alpha(toplot$color, .1), pch=20)
+toplot %>%
+  group_by(y, color) %>%
+  summarize(.groups='keep', 
+            median_x = median(x),
+            q25 = quantile(x,.25),
+            q75 = quantile(x,.75)) %>%
+  ungroup() -> tosmry
+barwidth = .33
+segments(x0=tosmry$median_x, y0=tosmry$y - barwidth, y1=tosmry$y + barwidth, lwd=2, lend=1, col=tosmry$color)
+rect(xleft=tosmry$q25, xright=tosmry$q75, ybottom=tosmry$y - barwidth, ytop=tosmry$y + barwidth, lwd=1.5, border=tosmry$color, col=NULL)
+mtext(side=3, text='MAF')
+
+dev.off()
