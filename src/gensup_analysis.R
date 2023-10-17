@@ -735,6 +735,34 @@ write(paste('Merged sim ≥0.8 | Unique indications: ',length(unique(merge2$indi
 write(paste('Merged sim ≥0.8 | Unique T-I: ',length(unique(merge2$ti_uid[merge2$comb_norm >= 0.8 & !is.na(merge2$comb_norm)])),'\n',sep=''),text_stats_path,append=T)
 write(paste('Merged sim ≥0.8 | Unique T-I-A: ',length(unique(merge2$tia[merge2$comb_norm >= 0.8 & !is.na(merge2$comb_norm)])),'\n',sep=''),text_stats_path,append=T)
 
+# merge2 %>%
+#   filter(!is.na(comb_norm) & comb_norm >= 0.8) %>%
+#   group_by(ti_uid) %>%
+#   summarize(.groups='keep', max_ccatnum = max(ccatnum)) %>%
+#   ungroup() %>%
+#   group_by(max_ccatnum) %>%
+#   summarize(.groups='keep', n_ti = length(unique(ti_uid)))
+# 
+# merge2 %>%
+#   filter(!is.na(comb_norm) & comb_norm >= 0.8) %>%
+#   group_by(ti_uid) %>%
+#   summarize(.groups='keep', max_hcatnum = max(hcatnum)) %>%
+#   ungroup() %>%
+#   group_by(max_hcatnum) %>%
+#   summarize(.groups='keep', n_ti = length(unique(ti_uid)))
+
+# this replicates the number show in roc_sim for threshold 0.8
+# merge2 %>%
+#   filter(!is.na(comb_norm) & comb_norm >= 0.8) %>%
+#   filter(assoc_source != 'intOGen' & (l2g_share >= 0.5 | assoc_source != 'OTG')) %>%
+#   group_by(ti_uid) %>%
+#   summarize(.groups='keep', max_hcatnum = max(hcatnum)) %>%
+#   ungroup() %>%
+#   group_by(max_hcatnum) %>%
+#   summarize(.groups='keep', n_ti = length(unique(ti_uid)))
+
+
+
 assoc$ta_uid = paste0(assoc$gene, '-', assoc$mesh_id)
 write(paste('Assocs | Unique T-A: ',length(unique(assoc$ta_uid[(assoc$l2g_share >= 0.5 | assoc$source != 'OTG')])),'\n',sep=''),text_stats_path,append=T)
 write(paste('Assocs | OTG | Unique T-A: ',length(unique(assoc$ta_uid[(assoc$l2g_share >= 0.5 & assoc$source == 'OTG')])),'\n',sep=''),text_stats_path,append=T)
@@ -2585,10 +2613,10 @@ write_supp_table(pg_out, "Proportion of target-indication pairs with genetic sup
 
 
 
-cat(file=stderr(), 'done.\nCreating Figure S6...')
+cat(file=stderr(), 'done.\nCreating Figure S7...')
 
 resx=300
-png(paste0(output_path,'/figure-s6.png'),width=6.5*resx,height=9*resx,res=resx)
+png(paste0(output_path,'/figure-s7.png'),width=6.5*resx,height=9*resx,res=resx)
 layout_matrix = matrix(c(1,1,2,2,2,3,3,3,9,
                          4,4,4,5,5,5,6,6,6,
                          7,7,7,7,7,8,8,8,8,
@@ -2827,17 +2855,69 @@ n15i %>%
   summarize(.groups='keep', n = length(unique(id))) %>%
   ungroup() -> area_xtab
 
-area_xtab$plot_color = alpha(area_xtab$color, area_xtab$n / max(area_xtab$n))
+# experiment with full join to get marginals
+#n15i %>%
+#  inner_join(vocab_match, by=c('msh'='labeltext')) -> temp
+#mean(temp$id %in% indic_topl_match$indication_mesh_id)
+
+n15i %>%
+  inner_join(vocab_match, by=c('msh'='labeltext')) %>%
+  full_join(indic_topl_match, by=c('id'='indication_mesh_id')) %>%
+  full_join(current_areas, by='topl') %>%
+  left_join(mesh_best_names, by=c('id')) %>%
+  filter(!is.na(id)) %>%
+  select(indication_mesh_id = id, 
+         indication_mesh_term = labeltext,
+         category_2015 = category,
+         area_2023 = area) -> areas_2015_vs_now
+
+write_supp_table(areas_2015_vs_now, 'Classification of individual drug indications into therapy areas in 2015 versus 2023.')
+# 
+# areas_2015_vs_now %>%
+#   filter(category_2015 == 'Musculoskeletal') %>%
+#   distinct(indication_mesh_id) # 29
+# 
+# areas_2015_vs_now %>%
+#   filter(category_2015 == 'Musculoskeletal' & area_2023=='musculoskeletal') %>%
+#   distinct(indication_mesh_id) # 25
+
+
+n15i %>%
+  inner_join(vocab_match, by=c('msh'='labeltext')) %>%
+  full_join(indic_topl_match, by=c('id'='indication_mesh_id')) %>%
+  full_join(current_areas, by='topl') %>%
+  filter(!is.na(id)) %>%
+  mutate(y = replace_na(y, 16), x=replace_na(x, 18)) %>%
+  group_by(y, category, x, area, color) %>%
+  summarize(.groups='keep', n = length(unique(id))) %>%
+  ungroup() %>%
+  mutate(plot_color = case_when(is.na(area) | is.na(category) ~ '#FFFFFF00',
+                                TRUE ~ alpha(color, n / max(n)))) %>%
+  mutate(lwd = case_when(is.na(area) | is.na(category) ~ 0,
+                         TRUE ~ 0.5)) -> area_xtab
+
+area_xtab %>%
+  select(category_2015 = category,
+         area_2023 = area,
+         unique_indications = n) -> area_xtab_out
+
+write_supp_table(area_xtab_out, 'Confusion matrix of count of drug indication classifications into therapy areas in 2015 versus 2023.')
 
 par(mar=c(7,7,3,1))
-xlims = range(current_areas$x) + c(-0.6, 0.6)
-ylims = range(n15c$y) + c(-0.6, 0.6)
+xlims = range(area_xtab$x) + c(-0.6, 0.6)
+ylims = range(area_xtab$y) + c(-0.6, 0.6)
 boxrad = 0.5
 plot(NA, NA, xlim=xlims, ylim=ylims, ann=F, axes=F, xaxs='i', yaxs='i')
-abline(v=unique(c(boxrad, current_areas$x + boxrad)), lwd=0.125)
-abline(h=unique(c(boxrad, cats$y + boxrad)), lwd=0.125)
+segments(x0=min(area_xtab$x) - 0.5, x1=max(area_xtab$x) - 1 + 0.5,
+         y0 = area_xtab$y - 0.5,
+         lwd =0.125)
+segments(x0= area_xtab$x - 0.5,
+         y0 = min(area_xtab$y) - 0.5, y1 = max(area_xtab$y) - 1 + 0.5,
+         lwd =0.125)
+#abline(v=unique(c(boxrad, current_areas$x + boxrad)), lwd=0.125)
+#abline(h=unique(c(boxrad, n15c$y + boxrad)), lwd=0.125)
 rect(xleft=area_xtab$x - boxrad, xright=area_xtab$x + boxrad, ybottom = area_xtab$y - boxrad, ytop = area_xtab$y + boxrad,
-     col = area_xtab$plot_color, border='#000000', lwd=0.5)
+     col = area_xtab$plot_color, border='#000000', lwd=area_xtab$lwd)
 text(x=area_xtab$x, y=area_xtab$y, labels=area_xtab$n, cex=0.5)
 mtext(side=1, at=current_areas$x, text=current_areas$area, col=current_areas$color, las=2, cex=0.6)
 mtext(side=2, at=n15c$y, text=n15c$category, col='#4D4D4D', las=2, cex=0.6)
@@ -3334,13 +3414,13 @@ unecessary_message = dev.off()
 
 
 ####
-# FIGURE S7
+# FIGURE S8
 ####
 
-cat(file=stderr(), 'done.\nCreating Figure S7...')
+cat(file=stderr(), 'done.\nCreating Figure S8...')
 
 resx=300
-png(paste0(output_path,'/figure-s7.png'),width=6.5*resx,height=8*resx,res=resx)
+png(paste0(output_path,'/figure-s8.png'),width=6.5*resx,height=8*resx,res=resx)
 
 layout_matrix = matrix(c(1,2,3,3),nrow=2,byrow=T)
 layout(layout_matrix, heights=c(1,3))

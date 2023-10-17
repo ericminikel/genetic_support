@@ -469,7 +469,7 @@ for (i in 1:nrow(areas)) {
     area_x_maf = rbind(maf_minimal, area_x_maf)
   }
 }
-# ANOVA fmaf continuous model
+# KW maf continuous model
 area_maf_kw = kruskal.test(lead_maf ~ area, data=area_x_maf)
 area_maf_kw_p = area_maf_kw$p.value
 # also discrete model like 1D
@@ -485,10 +485,42 @@ write(paste("Confounding between therapy area and MAF among OTG GWAS Catalog-sup
             '\n',sep=''),text_stats_path,append=T)
 
 
+
+
+### assess confounding between TA and OTG source
+for (i in 1:nrow(areas)) {
+  this_topl = areas$topl[i]
+  this_area = areas$area[i]
+  gwascat_obj = subset_by_area(hist_ti_gwascat, topl=this_topl, filter='only')
+  ukbb_obj = subset_by_area(hist_ti_ukbb, topl=this_topl, filter='only')
+  finngen_obj = subset_by_area(hist_ti_finngen, topl=this_topl, filter='only')
+  rbind(gwascat_obj, ukbb_obj, finngen_obj) %>%
+    filter(target_status == 'genetically supported target' & !is.na(indication_mesh_id) & cat %in% c('Launched',active_clinical$cat)) %>%
+    mutate(area = this_area) %>%
+    mutate(topl = this_topl) %>%
+    select(topl, area, uid, gene, indication_mesh_id, indication_mesh_term, gwas_source) -> subcat_minimal
+  
+  if (i == 1) {
+    area_x_subcat = subcat_minimal
+  } else {
+    area_x_subcat = rbind(subcat_minimal, area_x_subcat)
+  }
+}
+
+area_subcat_ctable = table(area_x_subcat[,c('gwas_source','area')])
+area_subcat_chisq_p = suppressWarnings(chisq.test(area_subcat_ctable)$p.value)
+
+
+
+write(paste("Confounding between therapy area and GWAS source: ",
+            'Chi Square test P = ',formatC(area_subcat_chisq_p, format='e', digits=1),
+            '\n',sep=''),text_stats_path,append=T)
+
+
 resx=300
 png(paste0(output_path,'/figure-s6.png'),width=6.5*resx,height=4*resx,res=resx)
 
-layout_matrix = matrix(1:6, byrow=T, nrow=1)
+layout_matrix = matrix(1:7, byrow=T, nrow=1)
 layout(layout_matrix)
 
 if (is.null(areas$y)) {
@@ -499,7 +531,7 @@ xlims = c(0,5)
 ylims = range(areas$y, na.rm=T) + c(-0.5, 0.5)
 par(mar=c(3,1,3,0))
 plot(NA, NA, ylim=ylims, xlim=xlims, axes=F, ann=F, xaxs='i', yaxs='i')
-mtext(side=4, at=areas$y, line=0, adj=1, las=2, text=areas$area, cex=.8, col=areas$color)
+mtext(side=4, at=areas$y, line=0, adj=1, las=2, text=areas$area, cex=.7, col=areas$color)
 panel = 1
 par(mar=c(3,0.25,3,0.75))
 xlims = c(2007, 2022) + c(-0.5, 0.5)
@@ -646,32 +678,7 @@ mtext(side=1, cex=0.8, line=1.3, text='MAF')
 mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
 panel = panel + 1
 
-dev.off()
 
-
-
-### assess confounding between TA and OTG source
-for (i in 1:nrow(areas)) {
-  this_topl = areas$topl[i]
-  this_area = areas$area[i]
-  gwascat_obj = subset_by_area(hist_ti_gwascat, topl=this_topl, filter='only')
-  ukbb_obj = subset_by_area(hist_ti_ukbb, topl=this_topl, filter='only')
-  finngen_obj = subset_by_area(hist_ti_finngen, topl=this_topl, filter='only')
-  rbind(gwascat_obj, ukbb_obj, finngen_obj) %>%
-    filter(target_status == 'genetically supported target' & !is.na(indication_mesh_id) & cat %in% c('Launched',active_clinical$cat)) %>%
-    mutate(area = this_area) %>%
-    mutate(topl = this_topl) %>%
-    select(topl, area, uid, gene, indication_mesh_id, indication_mesh_term, gwas_source) -> subcat_minimal
-  
-  if (i == 1) {
-    area_x_subcat = subcat_minimal
-  } else {
-    area_x_subcat = rbind(subcat_minimal, area_x_subcat)
-  }
-}
-
-area_subcat_ctable = table(area_x_subcat[,c('gwas_source','area')])
-area_subcat_chisq_p = suppressWarnings(chisq.test(area_subcat_ctable)$p.value)
 
 area_x_subcat %>%
   group_by(topl, area, gwas_source) %>%
@@ -680,4 +687,35 @@ area_x_subcat %>%
   group_by(gwas_source) %>%
   mutate(area_proportion = n_ti/sum(n_ti)) %>%
   ungroup() -> area_x_subcat_proportions
+
+subcat_meta = tibble(gwas_source=c('GWAS Catalog','Neale UKBB','FinnGen'),
+                     x=1:3)
+
+area_x_subcat_proportions %>%
+  inner_join(select(areas, topl, area, color, y), by=c('topl','area')) %>%
+  inner_join(subcat_meta, by='gwas_source') %>%
+  arrange(y) %>%
+  group_by(x, gwas_source) %>%
+  mutate(cume_prop = cumsum(area_proportion)) %>%
+  ungroup() %>%
+  arrange(x, desc(y)) -> area_subcat_plotdata
+
+par(mar=c(7,3,3,0.75))
+xlims = c(0.5, 3.5)
+ylims = c(0, 1)
+plot(NA, NA, xlim=xlims, ylim=ylims, axes=F, ann=F, xaxs='i', yaxs='i')
+axis(side=1, at=xlims, labels=NA, lwd.ticks=0)
+mtext(side=1, at=subcat_meta$x, text=subcat_meta$gwas_source, cex=0.65, line=0.25, las=2)
+axis(side=2, at=0:4/4, labels=NA)
+axis(side=2, at=0:4/4, labels=percent(0:4/4), las=2, lwd=0, line=-0.25, cex.axis=0.7)
+barwidth=0.33
+rect(xleft=area_subcat_plotdata$x - barwidth,
+     xright=area_subcat_plotdata$x + barwidth,
+     ybottom=rep(0,length(area_subcat_plotdata)),
+     ytop=area_subcat_plotdata$cume_prop,
+     col=area_subcat_plotdata$color, border=NA)
+
+dev.off()
+
+
 
