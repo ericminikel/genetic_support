@@ -346,14 +346,18 @@ for (i in 1:nrow(areas)) {
     area_x_year = rbind(yf_minimal, area_x_year)
   }
 }
-# ANOVA for continuous model
-# though year is not normally distributed, should look for a non-normal analog of ANOVA
-area_year_anova = aov(assoc_year ~ area, data=area_x_year)
-area_year_anova_p = summary(area_year_anova)[[1]]['area','Pr(>F)']
-# or, try a discrete model more analogous to what 1D shows visually
+# Kruskal Wallis test
+area_year_kw = kruskal.test(assoc_year ~ area, data=area_x_year)
+area_year_kw_p = area_year_kw$p.value
+# also try a discrete model more analogous to what 1D shows visually
 area_x_year$yearbin = floor((area_x_year$assoc_year - 2007)/4)*4+2007
 area_year_ctable = table(area_x_year[,c('yearbin','area')])
-area_year_chisq_obj = chisq.test(area_year_ctable)
+area_year_chisq_p = suppressWarnings(chisq.test(area_year_ctable))$p.value
+
+write(paste("Confounding between therapy area and year of discovery among OTG GWAS Catalog-supported T-I pairs: KW test P = ",
+            formatC(area_year_kw_p, format='e', digits=1),
+            ', Chi Square test P = ',formatC(area_year_chisq_p, format='e', digits=1),
+            '\n',sep=''),text_stats_path,append=T)
 
 # genecount
 for (i in 1:nrow(areas)) {
@@ -370,10 +374,10 @@ for (i in 1:nrow(areas)) {
     area_x_gc = rbind(gc_minimal, area_x_gc)
   }
 }
-# ANOVA for continuous model
-area_gc_anova = aov(gene_count ~ area, data=area_x_gc)
-area_gc_anova_p = summary(area_gc_anova)[[1]]['area','Pr(>F)']
-# try a discrete model more analogous to what 1D shows visually
+# KW
+area_gc_kw = kruskal.test(gene_count ~ area, data=area_x_gc)
+area_gc_kw_p = area_gc_kw$p.value
+# also try a discrete model more analogous to what 1D shows visually
 #10^floor(log10(area_x_gc$gene_count))
 area_x_gc$gcbin = case_when(area_x_gc$gene_count == 1 ~ 1,
                             area_x_gc$gene_count >= 2 & area_x_gc$gene_count <= 9 ~ 2,
@@ -381,7 +385,12 @@ area_x_gc$gcbin = case_when(area_x_gc$gene_count == 1 ~ 1,
                             area_x_gc$gene_count >= 100 & area_x_gc$gene_count <= 999 ~ 100,
                             area_x_gc$gene_count >= 1000 ~ 1000)
 area_gc_ctable = table(area_x_gc[,c('gcbin','area')])
-chisq.test(area_gc_ctable)$p.value
+area_gc_chisq_p = suppressWarnings(chisq.test(area_gc_ctable)$p.value)
+
+write(paste("Confounding between therapy area and gene count among OTG GWAS Catalog-supported T-I pairs: KW test P = ",
+            formatC(area_gc_kw_p, format='e', digits=1),
+            ', Chi Square test P = ',formatC(area_gc_chisq_p, format='e', digits=1),
+            '\n',sep=''),text_stats_path,append=T)
 
 
 # beta
@@ -399,14 +408,20 @@ for (i in 1:nrow(areas)) {
     area_x_beta = rbind(beta_minimal, area_x_beta)
   }
 }
-# ANOVA for continuous model
-area_beta_anova = aov(abs_beta ~ area, data=area_x_beta)
-area_beta_anova_p = summary(area_beta_anova)[[1]]['area','Pr(>F)']
+# KW
+area_beta_kw = kruskal.test(abs_beta ~ area, data=area_x_beta)
+area_beta_kw_p = area_beta_kw$p.value
 # also discrete model like 1D
 crossing(area_x_beta, (beta_rrs %>% filter(label!='All with beta'))) %>%
            filter(abs_beta >= min_beta & abs_beta <= max_beta) -> area_x_beta_binned
 area_beta_ctable = table(area_x_beta_binned[,c('label','area')])
-chisq.test(area_beta_ctable)$p.value
+area_beta_chisq_p = suppressWarnings(chisq.test(area_beta_ctable)$p.value)
+
+write(paste("Confounding between therapy area and beta among OTG GWAS Catalog-supported T-I pairs: KW test P = ",
+            formatC(area_beta_kw_p, format='e', digits=1),
+            ', Chi Square test P = ',formatC(area_beta_chisq_p, format='e', digits=1),
+            '\n',sep=''),text_stats_path,append=T)
+
 
 # or
 for (i in 1:nrow(areas)) {
@@ -423,18 +438,23 @@ for (i in 1:nrow(areas)) {
     area_x_or = rbind(or_minimal, area_x_or)
   }
 }
-# ANOVA for continuous model
-area_or_anova = aov(abs_or ~ area, data=area_x_or)
-area_or_anova_p = summary(area_or_anova)[[1]]['area','Pr(>F)']
+# KW
+area_or_kw = kruskal.test(abs_or ~ area, data=area_x_or)
+area_or_kw_p = area_or_kw$p.value
 # also discrete model like 1D
 crossing(area_x_or, (or_rrs %>% filter(label!='All with OR'))) %>%
   filter(abs_or >= min_or & abs_or <= max_or) -> area_x_or_binned
 area_or_ctable = table(area_x_or_binned[,c('label','area')])
-chisq.test(area_or_ctable)$p.value
+area_or_chisq_p = suppressWarnings(chisq.test(area_or_ctable)$p.value)
+
+write(paste("Confounding between therapy area and OR among OTG GWAS Catalog-supported T-I pairs: KW test P = ",
+            formatC(area_or_kw_p, format='e', digits=1),
+            ', Chi Square test P = ',formatC(area_or_chisq_p, format='e', digits=1),
+            '\n',sep=''),text_stats_path,append=T)
 
 
 
-# maf
+# MAF
 for (i in 1:nrow(areas)) {
   this_topl = areas$topl[i]
   this_area = areas$area[i]
@@ -450,18 +470,23 @@ for (i in 1:nrow(areas)) {
   }
 }
 # ANOVA fmaf continuous model
-area_maf_anova = aov(lead_maf ~ area, data=area_x_maf)
-area_maf_anova_p = summary(area_maf_anova)[[1]]['area','Pr(>F)']
+area_maf_kw = kruskal.test(lead_maf ~ area, data=area_x_maf)
+area_maf_kw_p = area_maf_kw$p.value
 # also discrete model like 1D
 crossing(area_x_maf, (maf_rrs %>% filter(label!='All with MAF'))) %>%
   filter(lead_maf >= min_maf & lead_maf <= max_maf) -> area_x_maf_binned
 area_maf_ctable = table(area_x_maf_binned[,c('label','area')])
-chisq.test(area_maf_ctable)$p.value
+area_maf_chisq_p = suppressWarnings(chisq.test(area_maf_ctable)$p.value)
 
+
+write(paste("Confounding between therapy area and MAF among OTG GWAS Catalog-supported T-I pairs: KW test P = ",
+            formatC(area_maf_kw_p, format='e', digits=1),
+            ', Chi Square test P = ',formatC(area_maf_chisq_p, format='e', digits=1),
+            '\n',sep=''),text_stats_path,append=T)
 
 
 resx=300
-png(paste0(output_path,'/figure-sx-area-x-1d.png'),width=6.5*resx,height=4*resx,res=resx)
+png(paste0(output_path,'/figure-s6.png'),width=6.5*resx,height=4*resx,res=resx)
 
 layout_matrix = matrix(1:6, byrow=T, nrow=1)
 layout(layout_matrix)
@@ -476,12 +501,13 @@ par(mar=c(3,1,3,0))
 plot(NA, NA, ylim=ylims, xlim=xlims, axes=F, ann=F, xaxs='i', yaxs='i')
 mtext(side=4, at=areas$y, line=0, adj=1, las=2, text=areas$area, cex=.8, col=areas$color)
 panel = 1
-par(mar=c(3,0.25,3,3.5))
+par(mar=c(3,0.25,3,0.75))
 xlims = c(2007, 2022) + c(-0.5, 0.5)
 plot(NA, NA, xlim=xlims, ylim=ylims, axes=F, ann=F, xaxs='i', yaxs='i')
+axis(side=1, at=xlims, lwd.ticks=0, labels=NA)
 axis(side=1, at=2007:2022, tck=-0.025, labels=NA)
 axis(side=1, at=seq(2007, 2022, 4), tck=-0.05, labels=NA)
-axis(side=1, at=seq(2007, 2022, 4), line=-0.5, lwd=0, cex.axis=0.8)
+axis(side=1, at=seq(2007, 2022, 4), line=-0.75, lwd=0, cex.axis=0.7)
 abline(v=min(xlims))
 area_x_year %>%
   inner_join(areas, by='topl') %>%
@@ -498,16 +524,18 @@ toplot %>%
 barwidth = .33
 segments(x0=tosmry$median_x, y0=tosmry$y - barwidth, y1=tosmry$y + barwidth, lwd=2, lend=1, col=tosmry$color)
 rect(xleft=tosmry$q25, xright=tosmry$q75, ybottom=tosmry$y - barwidth, ytop=tosmry$y + barwidth, lwd=1.5, border=tosmry$color, col=NULL)
-mtext(side=3, text='year')
+mtext(side=1, cex=0.8, line=1.3, text='year')
+mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
+panel = panel + 1
 
-par(mar=c(3,0.25,3,3.5))
+
 xlims = c(1,2000)
 plot(NA, NA, xlim=xlims, ylim=ylims, axes=F, ann=F, xaxs='i', yaxs='i', log='x')
 xats = rep(1:9, 4) * 10^rep(0:3, each=9)
 xbigs = 10^(0:3)
 axis(side=1, at=xats, tck=-0.025, labels=NA)
 axis(side=1, at=xbigs, tck=-0.05, labels=NA)
-axis(side=1, at=xbigs, line=-0.5, lwd=0, cex.axis=0.8)
+axis(side=1, at=xbigs, line=-0.75, lwd=0, cex.axis=0.7)
 abline(v=min(xlims))
 area_x_gc %>%
   inner_join(areas, by='topl') %>%
@@ -524,16 +552,18 @@ toplot %>%
 barwidth = .33
 segments(x0=tosmry$median_x, y0=tosmry$y - barwidth, y1=tosmry$y + barwidth, lwd=2, lend=1, col=tosmry$color)
 rect(xleft=tosmry$q25, xright=tosmry$q75, ybottom=tosmry$y - barwidth, ytop=tosmry$y + barwidth, lwd=1.5, border=tosmry$color, col=NULL)
-mtext(side=3, text='gene count')
+mtext(side=1, cex=0.8, line=1.3, text='gene count')
+mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
+panel = panel + 1
 
-par(mar=c(3,0.25,3,3.5))
+
 xlims = c(0.001, 50)
 plot(NA, NA, xlim=xlims, ylim=ylims, axes=F, ann=F, xaxs='i', yaxs='i', log='x')
 xats = rep(1:9, 5) * 10^rep(-3:1, each=9)
 xbigs = 10^(-3:1)
 axis(side=1, at=xats, tck=-0.025, labels=NA)
 axis(side=1, at=xbigs, tck=-0.05, labels=NA)
-axis(side=1, at=xbigs, line=-0.5, lwd=0, cex.axis=0.8)
+axis(side=1, at=xbigs, labels=formatC(xbigs, format='g'), line=-0.75, lwd=0, cex.axis=0.7)
 abline(v=min(xlims))
 area_x_beta %>%
   filter(abs_beta > 0) %>%
@@ -551,9 +581,11 @@ toplot %>%
 barwidth = .33
 segments(x0=tosmry$median_x, y0=tosmry$y - barwidth, y1=tosmry$y + barwidth, lwd=2, lend=1, col=tosmry$color)
 rect(xleft=tosmry$q25, xright=tosmry$q75, ybottom=tosmry$y - barwidth, ytop=tosmry$y + barwidth, lwd=1.5, border=tosmry$color, col=NULL)
-mtext(side=3, text='beta')
+mtext(side=1, cex=0.8, line=1.3, text='beta')
+mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
+panel = panel + 1
 
-par(mar=c(3,0.25,3,3.5))
+
 xlims = c(0.001, 50)
 plot(NA, NA, xlim=xlims, ylim=ylims, axes=F, ann=F, xaxs='i', yaxs='i', log='x')
 xats = rep(1:9, 5) * 10^rep(-3:1, each=9)
@@ -561,7 +593,7 @@ xbigs  = c(10^(-3:-1), 1, 9)
 xbigslabs = c(1+10^(-3:-1), 2, 10)
 axis(side=1, at=xats, tck=-0.025, labels=NA)
 axis(side=1, at=xbigs, tck=-0.05, labels=NA)
-axis(side=1, at=xbigs, labels=formatC(xbigslabs, format='g'), line=-0.5, lwd=0, cex.axis=0.8)
+axis(side=1, at=xbigs, labels=formatC(xbigslabs, format='g'), line=-0.75, lwd=0, cex.axis=0.7)
 abline(v=min(xlims))
 area_x_or %>%
   inner_join(areas, by='topl') %>%
@@ -579,9 +611,11 @@ toplot %>%
 barwidth = .33
 segments(x0=tosmry$median_x, y0=tosmry$y - barwidth, y1=tosmry$y + barwidth, lwd=2, lend=1, col=tosmry$color)
 rect(xleft=tosmry$q25, xright=tosmry$q75, ybottom=tosmry$y - barwidth, ytop=tosmry$y + barwidth, lwd=1.5, border=tosmry$color, col=NULL)
-mtext(side=3, text='OR')
+mtext(side=1, cex=0.8, line=1.3, text='OR')
+mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
+panel = panel + 1
 
-par(mar=c(3,0.25,3,3.5))
+
 xlims = c(0.001, 0.5)
 plot(NA, NA, xlim=xlims, ylim=ylims, axes=F, ann=F, xaxs='i', yaxs='i', log='x')
 xats = rep(1:9, 4) * 10^rep(-3:0, each=9)
@@ -589,7 +623,7 @@ xbigs = c(10^(-3:-1),.5)
 xbigslabs = c('0.1%','1%','10%','50%')
 axis(side=1, at=xats, tck=-0.025, labels=NA)
 axis(side=1, at=xbigs, tck=-0.05, labels=NA)
-axis(side=1, at=xbigs, labels=formatC(xbigslabs, format='g'), line=-0.5, lwd=0, cex.axis=0.8)
+axis(side=1, at=xbigs, labels=formatC(xbigslabs, format='g'), line=-0.75, lwd=0, cex.axis=0.7)
 abline(v=min(xlims))
 area_x_maf %>%
   filter(lead_maf > 0) %>%
@@ -608,6 +642,42 @@ toplot %>%
 barwidth = .33
 segments(x0=tosmry$median_x, y0=tosmry$y - barwidth, y1=tosmry$y + barwidth, lwd=2, lend=1, col=tosmry$color)
 rect(xleft=tosmry$q25, xright=tosmry$q75, ybottom=tosmry$y - barwidth, ytop=tosmry$y + barwidth, lwd=1.5, border=tosmry$color, col=NULL)
-mtext(side=3, text='MAF')
+mtext(side=1, cex=0.8, line=1.3, text='MAF')
+mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
+panel = panel + 1
 
 dev.off()
+
+
+
+### assess confounding between TA and OTG source
+for (i in 1:nrow(areas)) {
+  this_topl = areas$topl[i]
+  this_area = areas$area[i]
+  gwascat_obj = subset_by_area(hist_ti_gwascat, topl=this_topl, filter='only')
+  ukbb_obj = subset_by_area(hist_ti_ukbb, topl=this_topl, filter='only')
+  finngen_obj = subset_by_area(hist_ti_finngen, topl=this_topl, filter='only')
+  rbind(gwascat_obj, ukbb_obj, finngen_obj) %>%
+    filter(target_status == 'genetically supported target' & !is.na(indication_mesh_id) & cat %in% c('Launched',active_clinical$cat)) %>%
+    mutate(area = this_area) %>%
+    mutate(topl = this_topl) %>%
+    select(topl, area, uid, gene, indication_mesh_id, indication_mesh_term, gwas_source) -> subcat_minimal
+  
+  if (i == 1) {
+    area_x_subcat = subcat_minimal
+  } else {
+    area_x_subcat = rbind(subcat_minimal, area_x_subcat)
+  }
+}
+
+area_subcat_ctable = table(area_x_subcat[,c('gwas_source','area')])
+area_subcat_chisq_p = suppressWarnings(chisq.test(area_subcat_ctable)$p.value)
+
+area_x_subcat %>%
+  group_by(topl, area, gwas_source) %>%
+  summarize(.groups='keep', n_ti=n()) %>%
+  ungroup() %>%
+  group_by(gwas_source) %>%
+  mutate(area_proportion = n_ti/sum(n_ti)) %>%
+  ungroup() -> area_x_subcat_proportions
+
