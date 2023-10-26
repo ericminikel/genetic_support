@@ -282,7 +282,7 @@ D006467	Hemophilia A	11		5	15	26	both	hematology, congenital
 D007889	Leiomyoma	11		5	0	67	gwas	oncology
 D009196	Myeloproliferative Disorders	11		5	4	15	both	hematology
 D011655	Pulmonary Embolism	11		5	0	10	gwas	respiratory, cardiovascular
-D013226	Status Epilepticus	11		5	12	0	omim/tcga	neurology, signs/symptoms
+D013226	Status Epilepticus	11	6	5	12	0	omim/tcga	neurology, signs/symptoms
 D014402	Tuberous Sclerosis	11		5	95	492	both	oncology
 D019650	Hematopoietic Stem Cell Mobilization	11		5	0	0	none	other
 D002836	Hemophilia B	10		5	10	24	both	hematology, congenital
@@ -387,7 +387,7 @@ D056587	Cryopyrin-Associated Periodic Syndromes	4		5	20	15	both	congenital, derm
 D000224	Addison Disease	3		5	19	7	both	endocrine, immune
 D000347	Afibrinogenemia	3	6	5	10	24	both	hematology, congenital
 D000795	Fabry Disease	3	6	5	35	10	both	neurology, cardiovascular, congenital, metabolic
-D002062	Bursitis	3		5	0	10	gwas	musculoskeletal
+D002062	Bursitis	3	6	5	0	10	gwas	musculoskeletal
 D004211	Disseminated Intravascular Coagulation	3		5	7	0	omim/tcga	hematology
 D004381	Duodenal Ulcer	3		5	0	8	gwas	digestive
 D004414	Dyspareunia	3		5	0	3	gwas	psychiatry
@@ -450,10 +450,10 @@ D005173	Factor XI Deficiency	1	6	5	12	26	both	hematology, congenital
 D006330	Heart Defects, Congenital	1	6	5	25	10	both	cardiovascular, congenital
 D006506	Hepatitis A	1	6	5	0	4	gwas	infection, digestive
 D006623	von Hippel-Lindau Disease	1	6	5	75	1	omim/tcga	neurology, cardiovascular, congenital
-D006932	Hyperbilirubinemia	1		5	4	235	both	signs/symptoms
+D006932	Hyperbilirubinemia	1	6	5	4	235	both	signs/symptoms
 D007020	Hypoprothrombinemias	1	6	5	0	1	none	hematology, congenital
 D007037	Hypothyroidism	1	6	5	19	177	both	endocrine
-D007565	Jaundice	1		5	4	273	both	signs/symptoms
+D007565	Jaundice	1	6	5	4	273	both	signs/symptoms
 D007970	Leukopenia	1	6	5	2	890	both	hematology
 D008305	Malignant Hyperthermia	1	6	5	2	0	omim/tcga	signs/symptoms
 D008363	alpha-Mannosidosis	1	6	5	1	0	omim/tcga	congenital, metabolic
@@ -469,7 +469,7 @@ D016532	Mucopolysaccharidosis II	1	6	5	15	10	both	neurology, congenital, dermato
 D016538	Mucopolysaccharidosis VII	1	6	5	13	0	omim/tcga	congenital, dermatology, metabolic
 D018192	Lymphangioleiomyomatosis	1	6	5	0	0	none	oncology
 D018325	Hemangioblastoma	1	6	5	0	0	none	oncology
-D018883	Heat Stroke	1		5	0	0	none	other
+D018883	Heat Stroke	1	6	5	0	0	none	other
 D049950	Hyperparathyroidism, Primary	1	6	5	2	9	both	endocrine
 D054078	Mevalonate Kinase Deficiency	1	6	5	49	29	both	neurology, hematology, congenital, metabolic, immune
 D054973	Perivascular Epithelioid Cell Neoplasms	1	6	5	0	0	none	oncology
@@ -510,10 +510,8 @@ D005134	Eye Neoplasms	17		4	1	5	both	oncology
 D005879	Tourette Syndrome	17		4	2	1	omim/tcga	neurology, congenital, psychiatry
 D013494	Supranuclear Palsy, Progressive	17		4	59	541	both	neurology, ophthalmology, signs/symptoms
 D003882	Dermatomyositis	16		4	1	6	both	musculoskeletal, neurology, dermatology
-D007674	Kidney Diseases	16		4	3	125	both	other
 D051799	Delayed Graft Function	15		4	0	0	none	signs/symptoms
 D012141	Respiratory Tract Infections	14		4	1	3	both	infection, respiratory
-D050723	Fractures, Bone	14		4	0	26	gwas	other
 D000072861	Phobia, Social	13		4	0	336	gwas	psychiatry
 D002543	Cerebral Hemorrhage	13		4	0	12	gwas	neurology, cardiovascular, signs/symptoms
 D007403	Intervertebral Disc	13		4	0	0	none	musculoskeletal
@@ -526,12 +524,10 @@ D013035	Spasm	11		4	11	3	both	neurology, signs/symptoms
 D001987	Bronchiectasis	10		4	5	8	both	respiratory
 D006261	Headache	10		4	0	50	gwas	signs/symptoms
 D012778	Short Bowel Syndrome	10		4	0	0	none	digestive, signs/symptoms
-D013345	Subarachnoid Hemorrhage	10		4	0	12	gwas	neurology, cardiovascular, signs/symptoms
 D002311	Cardiomyopathy, Dilated	9		4	47	70	both	cardiovascular, congenital
 D009223	Myotonic Dystrophy	9		4	34	19	both	musculoskeletal, neurology, congenital
 D018979	Myositis, Inclusion Body	9		4	0	0	none	musculoskeletal, neurology
 D001883	Borderline Personality Disorder	8		4	0	4	gwas	psychiatry
-D004314	Down Syndrome	8		4	398	1	omim/tcga	neurology, congenital
 D005756	Gastritis	8		4	0	17	gwas	digestive
 D015433	Glomerulonephritis, Membranous	8		4	11	30	both	immune
 D017511	Pyoderma Gangrenosum	8		4	0	2	none	dermatology
@@ -610,7 +606,6 @@ D011305	Presbyopia	2	5	4	10	669	both	ophthalmology
 D015423	Scleritis	2		4	0	0	none	ophthalmology
 D015837	Vestibular Diseases	2		4	0	6	gwas	other
 D016739	Behavior, Addictive	2		4	0	2	none	psychiatry
-D019873	Schnitzler Syndrome	2	4	4	2	14	both	immune
 D020159	Citrullinemia	2		4	9	0	omim/tcga	neurology, congenital, metabolic
 D020162	Hyperargininemia	2		4	9	0	omim/tcga	neurology, congenital, metabolic
 D020278	Demyelinating Autoimmune Diseases, CNS	2	5	4	17	308	both	neurology, immune
@@ -627,7 +622,6 @@ D000070607	Morton Neuroma	1		4	0	5	gwas	musculoskeletal, neurology, signs/sympto
 D000568	Amenorrhea	1		4	1	9	both	signs/symptoms
 D002239	Carbohydrate Metabolism, Inborn Errors	1	5	4	31	0	omim/tcga	congenital, metabolic
 D005168	Factor VII Deficiency	1		4	6	26	both	hematology, congenital
-D005401	Fissure in Ano	1	4	4	0	2	none	digestive
 D005693	Galactosemias	1	5	4	3	0	omim/tcga	neurology, congenital, metabolic
 D006461	Hemolysis	1		4	0	0	none	signs/symptoms
 D006965	Hyperplasia	1		4	0	0	none	signs/symptoms
@@ -636,7 +630,6 @@ D010411	Penile Induration	1	5	4	1	18	both	dermatology
 D010493	Pericarditis	1	5	4	0	3	gwas	cardiovascular
 D011649	Pulmonary Alveolar Proteinosis	1	5	4	3	0	omim/tcga	respiratory
 D015490	HTLV-I Infections	1		4	0	2	none	infection, immune
-D015794	Choroideremia	1	4	4	3	1	omim/tcga	ophthalmology, congenital
 D016738	Alagille Syndrome	1	5	4	15	63	both	digestive, cardiovascular, congenital
 D019955	Conduct Disorder	1		4	1	35	both	psychiatry
 D020194	Unverricht-Lundborg Syndrome	1		4	13	1	omim/tcga	neurology, congenital
@@ -656,11 +649,11 @@ D009202	Cardiomyopathies	22		3	53	50	both	cardiovascular
 D010195	Pancreatitis	21		3	2	12	both	digestive
 D010523	Peripheral Nervous System Diseases	19		3	26	38	both	neurology
 D014565	Urogenital Neoplasms	19		3	2	294	both	oncology
-D008288	Malaria	18		3	0	6	gwas	infection
 D055948	Sarcopenia	18		3	2	4	both	neurology, signs/symptoms
 D004660	Encephalitis	17		3	0	1	none	neurology
 D001145	Arrhythmias, Cardiac	16		3	4	319	both	cardiovascular, signs/symptoms
 D004700	Endocrine System Diseases	16		3	0	847	gwas	endocrine
+D007674	Kidney Diseases	16		3	3	125	both	other
 D013945	Thymoma	16		3	2	4	both	oncology
 D014625	Vaginal Neoplasms	16		3	0	43	gwas	oncology
 D019142	Hemorrhagic Fever, Ebola	16		3	0	2	none	infection
@@ -668,6 +661,7 @@ D012220	Rhinitis	15		3	0	147	gwas	infection, respiratory
 D002446	Celiac Disease	14		3	2	49	both	digestive, metabolic
 D003967	Diarrhea	14		3	11	1	omim/tcga	signs/symptoms
 D018242	Neuroectodermal Tumors, Primitive	14		3	1	45	both	oncology
+D050723	Fractures, Bone	14		3	0	26	gwas	other
 D002607	Charcot-Marie-Tooth Disease	13		3	84	3	both	neurology, congenital
 D003877	Dermatitis, Contact	13		3	0	200	gwas	dermatology
 D013203	Staphylococcal Infections	13		3	0	2	none	infection
@@ -678,6 +672,7 @@ D013683	Telangiectasia, Hereditary Hemorrhagic	11		3	11	0	omim/tcga	cardiovascul
 D006561	Herpes Simplex	10		3	2	8	both	infection, dermatology
 D009220	Myositis	10		3	1	6	both	musculoskeletal, neurology
 D009393	Nephritis	10		3	15	31	both	other
+D013345	Subarachnoid Hemorrhage	10		3	0	12	gwas	neurology, cardiovascular, signs/symptoms
 D013953	Thymus Neoplasms	10		3	0	0	none	oncology
 D018357	Respiratory Syncytial Virus Infections	10		3	0	0	none	infection
 D044968	Regenerative Medicine	10		3	0	0	none	other
@@ -688,6 +683,7 @@ D004719	Endomyocardial Fibrosis	9		3	12	10	both	cardiovascular
 D009062	Mouth Neoplasms	9		3	2	43	both	oncology
 D010518	Periodontitis	9		3	1	8	both	other
 D020196	Trauma, Nervous System	9		3	0	1	none	neurology
+D004314	Down Syndrome	8		3	398	1	omim/tcga	neurology, congenital
 D004392	Dwarfism	8		3	135	6	both	musculoskeletal, congenital, endocrine
 D006980	Hyperthyroidism	8		3	2	52	both	endocrine
 D010787	Photosensitivity Disorders	8		3	9	68	both	dermatology
@@ -745,7 +741,6 @@ D002813	Chondrosarcoma	3		3	0	0	none	oncology
 D003117	Color Vision Defects	3		3	10	0	omim/tcga	neurology, ophthalmology, signs/symptoms
 D005199	Fanconi Anemia	3		3	35	4	both	hematology, congenital, metabolic
 D006105	Granulomatous Disease, Chronic	3		3	9	0	omim/tcga	hematology, congenital, immune
-D007589	Job Syndrome	3	2	3	5	0	omim/tcga	hematology, congenital, immune
 D007965	Leukodystrophy, Globoid Cell	3	4	3	51	10	both	neurology, congenital, metabolic
 D008231	Lymphopenia	3		3	0	0	none	hematology, immune
 D013130	Spinal Stenosis	3		3	0	29	gwas	musculoskeletal
@@ -756,7 +751,6 @@ D015461	Leukemia, Prolymphocytic, T-Cell	3	4	3	0	0	none	oncology
 D016055	Urinary Retention	3		3	0	12	gwas	other
 D016066	Pleural Effusion, Malignant	3	4	3	0	0	none	oncology
 D016537	Gangliosidosis, GM1	3	4	3	6	10	both	neurology, congenital, metabolic
-D016657	Cerebral Amyloid Angiopathy	3	2	3	5	63	both	neurology, cardiovascular, metabolic
 D017241	MELAS Syndrome	3		3	9	0	omim/tcga	musculoskeletal, neurology, cardiovascular, congenital, metabolic
 D017676	Lichen Planus, Oral	3	4	3	2	145	both	dermatology
 D056693	Propionic Acidemia	3	4	3	4	0	omim/tcga	congenital, metabolic
@@ -765,7 +759,6 @@ C538036	Partial Duplication 15q Syndrome	2		3	0	0	none	other
 D001471	Barrett Esophagus	2		3	0	19	gwas	oncology
 D001766	Blindness	2		3	1	4	both	neurology, ophthalmology, signs/symptoms
 D003047	Coccidioidomycosis	2	4	3	0	2	none	infection
-D004374	Ductus Arteriosus, Patent	2	2	3	1	0	omim/tcga	cardiovascular, congenital
 D004402	Dysautonomia, Familial	2		3	127	4	both	neurology, congenital
 D005221	Fatigue	2		3	1	1	omim/tcga	signs/symptoms
 D006929	Hyperaldosteronism	2		3	12	1	omim/tcga	endocrine
@@ -782,6 +775,7 @@ D014717	Vertigo	2	4	3	0	6	gwas	neurology, signs/symptoms
 D015715	Corneal Edema	2	4	3	6	67	both	ophthalmology
 D015862	Choroid Diseases	2		3	3	1	omim/tcga	ophthalmology
 D018746	Systemic Inflammatory Response Syndrome	2		3	0	460	gwas	signs/symptoms
+D019873	Schnitzler Syndrome	2	4	3	2	14	both	immune
 C000656924	scedosporiosis	1	4	3	0	0	none	other
 C536353	VLCAD deficiency	1		3	0	0	none	other
 C537358	Methylmalonic acidemia	1	4	3	0	0	none	other
@@ -801,6 +795,7 @@ D003554	Cystinosis	1		3	1	0	omim/tcga	congenital, metabolic
 D004476	Ectodermal Dysplasia	1	4	3	26	0	omim/tcga	congenital, dermatology
 D004931	Esophageal Achalasia	1		3	0	148	gwas	digestive
 D005348	Fibrocystic Breast Disease	1		3	0	6	gwas	dermatology
+D005401	Fissure in Ano	1	4	3	0	2	none	digestive
 D006712	Homocystinuria	1	4	3	13	113	both	neurology, congenital, dermatology, metabolic
 D006966	Hyperprolactinemia	1		3	1	0	omim/tcga	neurology, endocrine
 D007174	Disruptive, Impulse Control, and Conduct Disorders	1		3	0	0	none	psychiatry
@@ -818,6 +813,7 @@ D012398	Ross River virus	1	4	3	0	0	none	infection
 D012872	Skin Diseases, Vesiculobullous	1		3	18	9	both	dermatology
 D014256	Trichotillomania	1		3	0	0	none	psychiatry
 D014947	Wounds and Injuries	1		3	0	0	none	other
+D015794	Choroideremia	1	4	3	3	1	omim/tcga	ophthalmology, congenital
 D015831	Osteochondroma	1		3	84	11	both	oncology
 D017492	Keratosis, Seborrheic	1	4	3	0	3	gwas	dermatology
 D019973	Alcohol-Related Disorders	1		3	0	161	gwas	psychiatry
@@ -827,6 +823,7 @@ D052456	Hypoalphalipoproteinemias	1		3	18	744	both	congenital, metabolic
 D054066	Leukemia, Large Granular Lymphocytic	1	4	3	0	0	none	oncology
 D014777	Virus Diseases	41		2	1	2	omim/tcga	infection
 D019966	Substance-Related Disorders	28		2	0	171	gwas	psychiatry
+D008288	Malaria	18		2	0	6	gwas	infection
 D009140	Musculoskeletal Diseases	18		2	0	0	none	musculoskeletal
 D011041	Poisoning	15		2	0	12	gwas	other
 D001930	Brain Injuries	12		2	0	3	gwas	neurology
@@ -849,7 +846,6 @@ D014901	West Nile Fever	4		2	0	0	none	infection, neurology
 D016472	Motor Neuron Disease	4		2	37	35	both	neurology
 D065227	Transfusion Reaction	4		2	0	0	none	hematology, immune
 D065446	Premenstrual Dysphoric Disorder	4		2	1	9	both	signs/symptoms, psychiatry
-C537705	Kabuki syndrome	3	2	2	0	0	none	other
 D000070627	Chronic Traumatic Encephalopathy	3	3	2	0	0	none	neurology
 D000707	Anaphylaxis	3		2	0	0	none	immune
 D006628	Hirsutism	3		2	20	414	both	dermatology, signs/symptoms
@@ -880,7 +876,6 @@ D001260	Ataxia Telangiectasia	1	3	2	2	0	omim/tcga	neurology, cardiovascular, con
 D001845	Bone Cysts	1		2	2	0	omim/tcga	oncology
 D002771	Cholera	1	3	2	0	0	none	infection
 D006177	Gynecomastia	1	3	2	2	234	both	dermatology
-D007562	Creutzfeldt-Jakob Syndrome	1	2	2	1	6	both	infection, neurology, psychiatry
 D008052	Lipid Metabolism, Inborn Errors	1	3	2	42	817	both	congenital, metabolic
 D014103	Torticollis	1		2	23	2	omim/tcga	signs/symptoms
 D014123	Toxoplasmosis	1		2	0	7	gwas	infection
@@ -907,22 +902,26 @@ D011552	Pseudomonas Infections	4		1	0	0	none	infection
 D012899	Smallpox	4		1	0	0	none	infection
 D020192	Lafora Disease	4		1	13	1	omim/tcga	neurology, congenital
 C537701	Hyperostosis corticalis deformans juvenilis	3		1	0	0	none	other
+C537705	Kabuki syndrome	3	2	1	0	0	none	other
 D002925	Ciliary Motility Disorders	3		1	75	1	omim/tcga	respiratory, congenital
 D003231	Conjunctivitis	3		1	1	7	both	ophthalmology
 D003919	Diabetes Insipidus	3		1	5	0	omim/tcga	endocrine
 D004427	Ear Diseases	3		1	64	117	both	other
 D006429	Hemiplegia	3	2	1	49	12	both	neurology, signs/symptoms
+D007589	Job Syndrome	3	2	1	5	0	omim/tcga	hematology, congenital, immune
 D008581	Meningitis	3		1	0	6	gwas	neurology
 D009634	Noonan Syndrome	3		1	29	218	both	musculoskeletal, cardiovascular, congenital, dermatology
 D010001	Osteitis Deformans	3		1	9	7	both	musculoskeletal
 D010144	Paget's Disease, Mammary	3		1	0	0	none	oncology
 D010145	Paget Disease, Extramammary	3		1	0	0	none	oncology
 D013771	Tetralogy of Fallot	3		1	18	10	both	cardiovascular, congenital
+D016657	Cerebral Amyloid Angiopathy	3	2	1	5	63	both	neurology, cardiovascular, metabolic
 D019121	Burkholderia Infections	3		1	0	0	none	infection
 D020031	Epstein-Barr Virus Infections	3		1	2	13	both	infection
 D020767	Intracranial Thrombosis	3		1	0	77	gwas	neurology, cardiovascular
 C537403	Pitt-Hopkins syndrome	2	2	1	0	0	none	other
 D001259	Ataxia	2	2	1	18	0	omim/tcga	neurology, signs/symptoms
+D004374	Ductus Arteriosus, Patent	2	2	1	1	0	omim/tcga	cardiovascular, congenital
 D006223	Hamartoma Syndrome, Multiple	2		1	5	0	omim/tcga	oncology
 D007035	Hypothermia	2		1	1	0	omim/tcga	signs/symptoms
 D007637	Keratoconjunctivitis	2	2	1	7	75	both	ophthalmology
@@ -979,6 +978,7 @@ D006501	Hepatic Encephalopathy	1		1	2	2	omim/tcga	digestive, neurology, metaboli
 D006946	Hyperinsulinism	1		1	7	124	both	metabolic
 D006961	Hyperparathyroidism	1		1	6	10	both	endocrine
 D007169	Impetigo	1		1	0	2	none	infection, dermatology
+D007562	Creutzfeldt-Jakob Syndrome	1	2	1	1	6	both	infection, neurology, psychiatry
 D007759	Labyrinth Diseases	1		1	1	13	both	other
 D008067	Lipoma	1		1	0	1	none	oncology
 D008379	Marburg Virus Disease	1		1	0	2	none	infection

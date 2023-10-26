@@ -130,7 +130,7 @@ abs_or = function(odds_ratio) {
 
 pipeline_best = function(merged_table,
                          basis='ti',
-                         phase='historical',
+                         phase='combined',
                          require_insight=TRUE,
                          share_mode='L2G', # other option is V2G
                          min_share=0.5,
@@ -145,6 +145,8 @@ pipeline_best = function(merged_table,
                          max_year=2022,
                          firstyear=F,
                          minusomim=F,
+                         lacking=NULL, # association sources required to be lacked by the T-I
+                         andalso=NULL, # association sources required to *also* endorse the T-I
                          minusothersubcat=F,
                          mingenecount=0,
                          maxgenecount=Inf,
@@ -223,6 +225,27 @@ pipeline_best = function(merged_table,
     # what gets removed? e.g. OTG associations that were already established by OMIM
     mtable %>%
       filter(is.na(assoc_source) | !(ti_uid %in% omim_supported_ti$ti_uid)) -> mtable
+  }
+  
+  # remove any association sources required to be lacked
+  if (!is.null(lacking)) {
+    mtable %>%
+      filter(comb_norm >= threshold) %>%
+      filter(assoc_source %in% lacking) %>%
+      filter(!(assoc_source %in% 'OTG' & l2g_share >= min_share)) %>%
+      select(ti_uid) -> lackable_supported_ti
+    mtable %>%
+      filter(is.na(assoc_source) | !(ti_uid %in% lackable_supported_ti$ti_uid)) -> mtable
+  }
+  
+  if (!is.null(andalso)) {
+    mtable %>%
+      filter(comb_norm >= threshold) %>%
+      filter(assoc_source %in% andalso) %>%
+      filter(!(assoc_source %in% 'OTG' & l2g_share >= min_share)) %>%
+      select(ti_uid) -> andalso_supported_ti
+    mtable %>%
+      filter(is.na(assoc_source) | (ti_uid %in% andalso_supported_ti$ti_uid)) -> mtable
   }
   
   # user-specified sources of genetic associations
@@ -403,16 +426,6 @@ pipeline_best = function(merged_table,
     group_by(uid) %>%
     slice(1) %>%
     ungroup() -> step2 # row count should drop back to ~ that of step1
-
-  # this is how we used to accomplish the above, with full dataset - drug ids and years
-  # if (basis=='drug') {
-  #   # if a drug has both active and historical programs, prioritize historical since it has a known outcome
-  #   step2 = step2[with(step2, order(uid, -year_use_valid, -hcatnum)),]
-  # } else {
-  #   # simply prioritize the programs with valid years for current phase
-  #   step2 = step2[with(step2, order(uid, -year_use_valid)),] 
-  # }
-  
   
   if (verbose) {
     cat(file=stderr(),nrow(step2),'rows remain.\n')
@@ -441,7 +454,7 @@ pipeline_best = function(merged_table,
 }
 
 
-advancement_forest = function(best_table, phase='historical') {
+advancement_forest = function(best_table, phase='combined') {
   if (phase == 'active') {
     meta = meta_acat
   } else if (phase == 'historical') {
@@ -659,39 +672,38 @@ cat(file=stderr(), '\rGenerating pipeline tables: hist_ti_all...')
 hist_ti_all = pipeline_best(merge2, phase='historical', basis='ti', require_insight=F, include_missing=F, verbose=F)
 cat(file=stderr(), '\rGenerating pipeline tables: active_ti...')
 active_ti = pipeline_best(merge2, phase='active', basis='ti', verbose=F)
-
-cat(file=stderr(), '\rGenerating pipeline tables: hist_ti_everything...')
-hist_ti_everything = pipeline_best(merge2, phase='historical', basis='ti', associations = c('OMIM','GWAS','intOGen'), verbose=F)
-cat(file=stderr(), '\rGenerating pipeline tables: hist_ti_germline...')
-hist_ti_germline = hist_ti
-cat(file=stderr(), '\rGenerating pipeline tables: hist_ti_omim...')
-hist_ti_omim = pipeline_best(merge2, phase='historical', basis='ti', associations=c('OMIM'), verbose=F)
-cat(file=stderr(), '\rGenerating pipeline tables: hist_ti_genebass...')
-hist_ti_genebass = pipeline_best(merge2, phase='historical', basis='ti', associations=c('Genebass'), verbose=F)
-cat(file=stderr(), '\rGenerating pipeline tables: hist_ti_otg...')
-hist_ti_otg = pipeline_best(merge2, phase='historical', basis='ti', associations=c('OTG'), verbose=F)
-cat(file=stderr(), '\rGenerating pipeline tables: hist_ti_piccolo...')
-hist_ti_pic  = pipeline_best(merge2, phase='historical', basis='ti', associations=c('PICCOLO'), verbose=F)
-cat(file=stderr(), '\rGenerating pipeline tables: hist_ti_gwas...')
-hist_ti_gwas  = pipeline_best(merge2, phase='historical', basis='ti', associations=c('PICCOLO','OTG','Genebass'), verbose=F)
-cat(file=stderr(), '\rGenerating pipeline tables: hist_ti_soma...')
-hist_ti_soma = pipeline_best(merge2, phase='historical', basis='ti', associations=c('Somatic'), verbose=F)
-cat(file=stderr(), '\rGenerating pipeline tables: hist_ti_intogen...')
-hist_ti_intogen = pipeline_best(merge2, phase='historical', basis='ti', associations=c('intOGen'), verbose=F)
-
-cat(file=stderr(), '\rGenerating pipeline tables: hist_ti_gwascat...')
-hist_ti_gwascat  = pipeline_best(merge2, phase='historical', basis='ti', otg_subcat='GWAS Catalog', verbose=F)
-cat(file=stderr(), '\rGenerating pipeline tables: hist_ti_ukbb...')
-hist_ti_ukbb  = pipeline_best(merge2, phase='historical', basis='ti', otg_subcat='Neale UKBB', verbose=F)
-cat(file=stderr(), '\rGenerating pipeline tables: hist_ti_finngen...')
-hist_ti_finngen  = pipeline_best(merge2, phase='historical', basis='ti', otg_subcat='FinnGen', verbose=F)
-
 cat(file=stderr(), '\rGenerating pipeline tables: combined_ti...')
 combined_ti = pipeline_best(merge2,  phase='combined', basis='ti', verbose=F)
+cat(file=stderr(), '\rGenerating pipeline tables: combined_ti_all...')
+combined_ti_all = pipeline_best(merge2, phase='combined', basis='ti', require_insight=F, include_missing=F, verbose=F)
 cat(file=stderr(), '\rGenerating pipeline tables: combined_ti_omim...')
 combined_ti_omim = pipeline_best(merge2,  phase='combined', basis='ti', associations=c('OMIM'), verbose=F)
 cat(file=stderr(), '\rGenerating pipeline tables: combined_ti_gwas...')
 combined_ti_gwas = pipeline_best(merge2,  phase='combined', basis='ti', associations=c('OTG','PICCOLO','Genebass'), verbose=F)
+cat(file=stderr(), '\rGenerating pipeline tables: combined_ti_everything...')
+combined_ti_everything = pipeline_best(merge2, phase='combined', basis='ti', associations = c('OMIM','GWAS','intOGen'), verbose=F)
+cat(file=stderr(), '\rGenerating pipeline tables: combined_ti_germline...')
+combined_ti_germline = combined_ti
+cat(file=stderr(), '\rGenerating pipeline tables: combined_ti_omim...')
+combined_ti_omim = pipeline_best(merge2, phase='combined', basis='ti', associations=c('OMIM'), verbose=F)
+cat(file=stderr(), '\rGenerating pipeline tables: combined_ti_genebass...')
+combined_ti_genebass = pipeline_best(merge2, phase='combined', basis='ti', associations=c('Genebass'), verbose=F)
+cat(file=stderr(), '\rGenerating pipeline tables: combined_ti_otg...')
+combined_ti_otg = pipeline_best(merge2, phase='combined', basis='ti', associations=c('OTG'), verbose=F)
+cat(file=stderr(), '\rGenerating pipeline tables: combined_ti_piccolo...')
+combined_ti_pic  = pipeline_best(merge2, phase='combined', basis='ti', associations=c('PICCOLO'), verbose=F)
+cat(file=stderr(), '\rGenerating pipeline tables: combined_ti_gwas...')
+combined_ti_gwas  = pipeline_best(merge2, phase='combined', basis='ti', associations=c('PICCOLO','OTG','Genebass'), verbose=F)
+cat(file=stderr(), '\rGenerating pipeline tables: combined_ti_soma...')
+combined_ti_soma = pipeline_best(merge2, phase='combined', basis='ti', associations=c('Somatic'), verbose=F)
+cat(file=stderr(), '\rGenerating pipeline tables: combined_ti_intogen...')
+combined_ti_intogen = pipeline_best(merge2, phase='combined', basis='ti', associations=c('intOGen'), verbose=F)
+cat(file=stderr(), '\rGenerating pipeline tables: combined_ti_gwascat...')
+combined_ti_gwascat  = pipeline_best(merge2, phase='combined', basis='ti', otg_subcat='GWAS Catalog', verbose=F)
+cat(file=stderr(), '\rGenerating pipeline tables: combined_ti_ukbb...')
+combined_ti_ukbb  = pipeline_best(merge2, phase='combined', basis='ti', otg_subcat='Neale UKBB', verbose=F)
+cat(file=stderr(), '\rGenerating pipeline tables: combined_ti_finngen...')
+combined_ti_finngen  = pipeline_best(merge2, phase='combined', basis='ti', otg_subcat='FinnGen', verbose=F)
 
 cat(file=stderr(), '\rGenerating pipeline tables... done.                    \n')
 
@@ -722,9 +734,9 @@ write(paste('Approved | Unique targets: ',length(unique(pp$gene[pp$ccat=='Launch
 write(paste('Approved | Unique indications: ',length(unique(pp$indication_mesh_id[pp$ccat=='Launched'])),'\n',sep=''),text_stats_path,append=T)
 write(paste('Approved | Unique T-I: ',sum(pp$ccat=='Launched'),'\n',sep=''),text_stats_path,append=T)
 
-write(paste('Historical | Unique targets: ',length(unique(pp$gene[pp$hcat!='Launched'])),'\n',sep=''),text_stats_path,append=T)
-write(paste('Historical | Unique indications: ',length(unique(pp$indication_mesh_id[pp$hcat!='Launched'])),'\n',sep=''),text_stats_path,append=T)
-write(paste('Historical | Unique T-I: ',sum(pp$hcat!='Launched'),'\n',sep=''),text_stats_path,append=T)
+write(paste('Historical | Unique targets: ',length(unique(pp$gene[pp$hcat!='Launched' & !is.na(pp$hcat)])),'\n',sep=''),text_stats_path,append=T)
+write(paste('Historical | Unique indications: ',length(unique(pp$indication_mesh_id[pp$hcat!='Launched' & !is.na(pp$hcat)])),'\n',sep=''),text_stats_path,append=T)
+write(paste('Historical | Unique T-I: ',sum(pp$hcat!='Launched' & !is.na(pp$hcat)),'\n',sep=''),text_stats_path,append=T)
 
 write(paste('Active | Unique targets: ',length(unique(pp$gene[pp$acat!='Launched' & !is.na(pp$acat)])),'\n',sep=''),text_stats_path,append=T)
 write(paste('Active | Unique indications: ',length(unique(pp$indication_mesh_id[pp$acat!='Launched' & !is.na(pp$acat)])),'\n',sep=''),text_stats_path,append=T)
@@ -803,7 +815,7 @@ combined_ti_forest = advancement_forest(combined_ti,phase='combined')
 
 #### 1B
 assoc_source_rr_forest = tibble(label=c('All germline','OMIM','All GWAS','All OTG','GWAS Catalog','Neale UKBB','FinnGen','PICCOLO','Genebass'),
-                                pipeline_obj=c('hist_ti_germline','hist_ti_omim','hist_ti_gwas','hist_ti_otg','hist_ti_gwascat','hist_ti_ukbb','hist_ti_finngen','hist_ti_pic','hist_ti_genebass')) %>%
+                                pipeline_obj=c('combined_ti_germline','combined_ti_omim','combined_ti_gwas','combined_ti_otg','combined_ti_gwascat','combined_ti_ukbb','combined_ti_finngen','combined_ti_pic','combined_ti_genebass')) %>%
   mutate(y=max(row_number()) - row_number() + 1)
 for (i in 1:nrow(assoc_source_rr_forest)) {
   pipeline_obj = get(assoc_source_rr_forest$pipeline_obj[i])
@@ -818,7 +830,7 @@ cat(file=stderr(), '\rCalculating ROC L2G...')
 roc_l2g = data.frame(share=seq(0.1, 0.9, 0.05))
 for (i in 1:nrow(roc_l2g)) {
   
-  pipeline_obj = pipeline_best(merge2, phase='historical', basis='ti', associations=c('OTG'), share_mode='L2G', min_share=roc_l2g$share[i], verbose=F)
+  pipeline_obj = pipeline_best(merge2, phase='combined', basis='ti', associations=c('OTG'), share_mode='L2G', min_share=roc_l2g$share[i], verbose=F)
   
   if (sum(pipeline_obj$target_status=='genetically supported target')==0) {
     next
@@ -853,7 +865,7 @@ crossing(year_tranches, modes) %>%
 
 for (i in 1:nrow(year_rrs)) {
   pb_obj = pipeline_best(merge2, 
-                         phase='historical', 
+                         phase='combined', 
                          basis='ti', 
                          associations='OTG',
                          otg_subcat='GWAS Catalog',
@@ -873,7 +885,7 @@ year_rrs$y = rep(5:1,each=3)
 year_rrs$frac = paste0(year_rrs$numerator,'/',year_rrs$denominator)
 
 yearfirst_all_pbest = pipeline_best(merge2, 
-                                    phase='historical', 
+                                    phase='combined', 
                                     basis='ti', 
                                     associations='OTG',
                                     otg_subcat='GWAS Catalog',
@@ -915,7 +927,7 @@ crossing(gc_tranches, gc_modes) %>%
 
 for (i in 1:nrow(gc_rrs)) {
   pb_obj = pipeline_best(merge2, 
-                         phase='historical', 
+                         phase='combined', 
                          basis='ti', 
                          associations=gc_rrs$associations[i],
                          otg_subcat=gc_rrs$subcats[i],
@@ -964,7 +976,7 @@ beta_rrs = tibble(y=5:1,
                   min_beta = c(0,     0, ideal_beta_breaks[2:4]),
                   max_beta = c(1e100, ideal_beta_breaks[2:4], 1e100))
 for (i in 1:nrow(beta_rrs)) {
-  pb_obj = pipeline_best(merge2, phase='historical', basis='target-indication', associations='OTG', otg_subcat='GWAS Catalog', min_beta=beta_rrs$min_beta[i], max_beta=beta_rrs$max_beta[i], verbose=F)
+  pb_obj = pipeline_best(merge2, phase='combined', basis='target-indication', associations='OTG', otg_subcat='GWAS Catalog', min_beta=beta_rrs$min_beta[i], max_beta=beta_rrs$max_beta[i], verbose=F)
   if (i == 1) {
     beta_logit_data = subset(pb_obj,  target_status=='genetically supported target' & !is.na(indication_mesh_id) & cat %in% c('Launched',active_clinical$cat))
   }
@@ -997,7 +1009,7 @@ or_rrs = tibble(y=5:1,
                 min_or = c(1,     1, ideal_or_breaks[2:4]),
                 max_or = c(1e100, ideal_or_breaks[2:4], 1e100))
 for (i in 1:nrow(or_rrs)) {
-  pb_obj = pipeline_best(merge2, phase='historical', basis='target-indication', associations='OTG', otg_subcat='GWAS Catalog', min_or=or_rrs$min_or[i], max_or=or_rrs$max_or[i], verbose=F)
+  pb_obj = pipeline_best(merge2, phase='combined', basis='target-indication', associations='OTG', otg_subcat='GWAS Catalog', min_or=or_rrs$min_or[i], max_or=or_rrs$max_or[i], verbose=F)
   if (i == 1) {
     or_logit_data = subset(pb_obj,  target_status=='genetically supported target' & !is.na(indication_mesh_id) & cat %in% c('Launched',active_clinical$cat))
   }
@@ -1031,7 +1043,7 @@ maf_rrs = tibble(y=5:1,
                  min_maf = c(0,     0.01,   0.03,  0.10, .30),
                  max_maf = c(0.501, 0.03,   0.10,  0.30, .501))
 for (i in 1:nrow(maf_rrs)) {
-  pb_obj = pipeline_best(merge2, phase='historical', basis='target-indication', associations='OTG', otg_subcat='GWAS Catalog', firstyear=T, min_maf=maf_rrs$min_maf[i], max_maf=maf_rrs$max_maf[i], verbose=F)
+  pb_obj = pipeline_best(merge2, phase='combined', basis='target-indication', associations='OTG', otg_subcat='GWAS Catalog', firstyear=T, min_maf=maf_rrs$min_maf[i], max_maf=maf_rrs$max_maf[i], verbose=F)
   if (i == 1) {
     maf_logit_data = subset(pb_obj,  target_status=='genetically supported target' & !is.na(indication_mesh_id) & cat %in% c('Launched',active_clinical$cat))
   }
@@ -1078,10 +1090,10 @@ combined_col = '#9970AB'
 hist_offset = 0.25
 active_offset = 0.0
 combined_offset = -0.25
-plot_forest(combined_ti_forest, xlims=c(0,.15), xlab='P(G) vs. phase', col='#00000000')
+plot_forest(hist_ti_forest, xlims=c(0,.15), xlab='P(G) vs. phase', col='#00000000')
 mtext(side=2, at=combined_ti_forest$y, text=combined_ti_forest$label, line=0.5, las=2, cex=0.75)
-points(hist_ti_forest$mean[1:4], hist_ti_forest$y[1:4] + hist_offset, pch=19, col=hist_col)
-segments(x0=hist_ti_forest$l95[1:4], x1=hist_ti_forest$u95[1:4], y0=hist_ti_forest$y[1:4] + hist_offset, lwd=2, col=hist_col) # 95%CIs
+points(hist_ti_forest$mean[1:4], combined_ti_forest$y[1:4] + hist_offset, pch=19, col=hist_col)
+segments(x0=combined_ti_forest$l95[1:4], x1=combined_ti_forest$u95[1:4], y0=combined_ti_forest$y[1:4] + hist_offset, lwd=2, col=hist_col) # 95%CIs
 points(active_ti_forest$mean[2:5], active_ti_forest$y[2:5] + active_offset, pch=19, col=active_col)
 segments(x0=active_ti_forest$l95[2:5], x1=active_ti_forest$u95[2:5], y0=active_ti_forest$y[2:5] + active_offset, lwd=2, col=active_col) # 95%CIs
 points(combined_ti_forest$mean[1:4], combined_ti_forest$y[1:4] + combined_offset, pch=19, col=combined_col)
@@ -1103,15 +1115,15 @@ write(paste('Combined P(G) for all active clinical T-I: ',
             '/',sum(active_ti_forest$denominator[active_ti_forest$label %in% active_clinical$cat]),')','\n',sep=''),text_stats_path,append=T)
 
 write(paste('Combined P(G) for all historical clinical T-I: ',
-            percent(sum(hist_ti_forest$numerator[hist_ti_forest$label %in% active_clinical$cat])/sum(hist_ti_forest$denominator[hist_ti_forest$label %in% active_clinical$cat]),digits=1),
-            ' (',sum(hist_ti_forest$numerator[hist_ti_forest$label %in% active_clinical$cat]),
-            '/',sum(hist_ti_forest$denominator[hist_ti_forest$label %in% active_clinical$cat]),')','\n',sep=''),text_stats_path,append=T)
+            percent(sum(combined_ti_forest$numerator[combined_ti_forest$label %in% active_clinical$cat])/sum(combined_ti_forest$denominator[combined_ti_forest$label %in% active_clinical$cat]),digits=1),
+            ' (',sum(combined_ti_forest$numerator[combined_ti_forest$label %in% active_clinical$cat]),
+            '/',sum(combined_ti_forest$denominator[combined_ti_forest$label %in% active_clinical$cat]),')','\n',sep=''),text_stats_path,append=T)
 
-rbind(cbind(hist_ti_forest, mode='historical'),
+rbind(cbind(combined_ti_forest, mode='historical'),
       cbind(active_ti_forest, mode='active'),
       cbind(combined_ti_forest, mode='combined')) %>%
   relocate(mode) %>% 
-  filter(label != 'Historical') %>%
+  filter(label != 'combined') %>%
   ungroup() %>%
   select(-num) %>%
   rename(phase=label, supported=numerator, total=denominator, pg=mean, pg_l95=l95, pg_u95=u95) %>%
@@ -1308,11 +1320,11 @@ onco_rrs %>%
 
 for (i in 1:nrow(onco_rrs)) {
   if (onco_rrs$assoc_source[i] == 'intOGen') {
-    orig_obj = hist_ti_intogen
+    orig_obj = combined_ti_intogen
   } else if ( onco_rrs$assoc_source[i] == 'OMIM') {
-    orig_obj = hist_ti_omim
+    orig_obj = combined_ti_omim
   } else if (onco_rrs$assoc_source[i] == 'GWAS') {
-    orig_obj = hist_ti_gwas
+    orig_obj = combined_ti_gwas
   }
   area_subset = subset_by_area(orig_obj, topl=onco_rrs$areas[i], filter=onco_rrs$area_filter[i])
   if (onco_rrs$intogen_mechanism[i]=='All') {
@@ -1329,7 +1341,7 @@ for (i in 1:nrow(onco_rrs)) {
 roc_col = '#FFAA00'
 roc_sim = tibble(thresh=seq(0.1, 1.0, 0.05))
 for (i in 1:nrow(roc_sim)) {
-  rr_obj = advancement_rr(hist_ti, threshold=roc_sim$thresh[i])
+  rr_obj = advancement_rr(combined_ti, threshold=roc_sim$thresh[i])
   roc_sim[i,c('mean','l95','u95')] = rr_obj[rr_obj$phase=='I-Launch',c('rs_mean','rs_l','rs_u')]
   roc_sim[i,c('numerator')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes')]
   roc_sim[i,c('denominator')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_yes')]
@@ -1337,22 +1349,22 @@ for (i in 1:nrow(roc_sim)) {
   roc_sim[i,c('gensup_launched')]  = rr_obj[rr_obj$phase=='I-Launch',c('x_yes')]
 }
 
-# hist_ti_firstyear = pipeline_best(merge2, basis='ti', phase='historical', associations='OTG', otg_subcat='GWAS Catalog', firstyear=T, minusomim=T)
-# hist_ti_firstyear %>%
-#   filter(ccat=='Launched') -> hist_ti_firstyear_launched
+# combined_ti_firstyear = pipeline_best(merge2, basis='ti', phase='combined', associations='OTG', otg_subcat='GWAS Catalog', firstyear=T, minusomim=T)
+# combined_ti_firstyear %>%
+#   filter(ccat=='Launched') -> combined_ti_firstyear_launched
 
 
 
 
 #### 
 
-hist_ti_omim_orphan = subset_by_area(hist_ti_omim, topl='all', orphan='yes')
-hist_ti_omim_nonorphan = subset_by_area(hist_ti_omim, topl='all', orphan='no')
-hist_ti_otg_orphan = subset_by_area(hist_ti_otg, topl='all', orphan='yes')
-hist_ti_otg_nonorphan = subset_by_area(hist_ti_otg, topl='all', orphan='no')
+combined_ti_omim_orphan = subset_by_area(combined_ti_omim, topl='all', orphan='yes')
+combined_ti_omim_nonorphan = subset_by_area(combined_ti_omim, topl='all', orphan='no')
+combined_ti_otg_orphan = subset_by_area(combined_ti_otg, topl='all', orphan='yes')
+combined_ti_otg_nonorphan = subset_by_area(combined_ti_otg, topl='all', orphan='no')
 orphan_forest = tibble(source = rep(c('OMIM','OTG'),each=2),
                        orphan = rep(c('orphan','non-orphan'),2),
-                                pipeline_obj=c('hist_ti_omim_orphan','hist_ti_omim_nonorphan','hist_ti_otg_orphan','hist_ti_otg_nonorphan')) %>%
+                                pipeline_obj=c('combined_ti_omim_orphan','combined_ti_omim_nonorphan','combined_ti_otg_orphan','combined_ti_otg_nonorphan')) %>%
   mutate(label = paste0(source,' ',orphan)) %>%
   mutate(y=max(row_number()) - row_number() + 1)
 for (i in 1:nrow(orphan_forest)) {
@@ -1362,6 +1374,11 @@ for (i in 1:nrow(orphan_forest)) {
   orphan_forest[i,c('numerator')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes')]
   orphan_forest[i,c('denominator')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_yes')]
 }
+
+
+# possible place for forest plots of new combinations
+
+
 
 cat(file=stderr(), 'done.\nCreating Figure S2...')
 
@@ -1435,7 +1452,7 @@ panel = panel + 1
 write_supp_table(year_rrs[year_rrs$abbr=='b',], "Relative success for GWAS Catalog associations by year, removing replications but not removing OMIM.")
 
 yearfirst_scatter_pbest = pipeline_best(merge2, 
-                                    phase='historical', 
+                                    phase='combined', 
                                     basis='ti', 
                                     associations='OTG', # note no otg_subcat restriction here
                                     min_year=2007,
@@ -1912,10 +1929,10 @@ if(exists('rr_table_areas')) {
   rm(rr_table_areas)
 }
 for (i in 1:nrow(areas_all)) {
-  hist_ti_area = subset_by_area(hist_ti, areas_all$topl[i], areas_all$filter[i])
-  area_rr_obj = advancement_rr(hist_ti_area)
+  combined_ti_area = subset_by_area(combined_ti, areas_all$topl[i], areas_all$filter[i])
+  area_rr_obj = advancement_rr(combined_ti_area)
   areas_all[i,c('rs_mean','rs_l95','rs_u95')]         = area_rr_obj[area_rr_obj$phase=='I-Launch',c('rs_mean','rs_l','rs_u')]
-  areas_all[i,'n_hist_ti'] = sum(area_rr_obj[area_rr_obj$phase=='I-Launch',c('n_yes','n_no')])
+  areas_all[i,'n_combined_ti'] = sum(area_rr_obj[area_rr_obj$phase=='I-Launch',c('n_yes','n_no')])
   
   # discuss whether we still need all of these extra columns and separate rr_table_areas table
   areas_all[i,c('nosup_clinical','nosup_launched')]   = area_rr_obj[area_rr_obj$phase=='I-Launch',c('n_no','x_no')]
@@ -1995,7 +2012,7 @@ pp %>%
             n_clinical_indic = length(unique(indication_mesh_id)),
             n_launched_indic = length(unique(indication_mesh_id[ccat=='Launched']))) -> ti_stats
 pp %>%
-  filter(hcat=='Launched' & gene != '' & indication_mesh_id != '') %>%
+  filter(ccat=='Launched' & gene != '' & indication_mesh_id != '') %>%
   distinct(gene, indication_mesh_id) -> ti_launched
 ti_launched %>%
   select(gene, meshcode_a = indication_mesh_id) -> a1
@@ -2059,7 +2076,7 @@ write(paste("For all time, of ",nrow(target_stats)," launched targets, the ",
 
 # supplementary version with only year 2000+ programs
 pp %>%
-  filter(hcat=='Launched' & gene != '' & indication_mesh_id != '') %>%
+  filter(ccat=='Launched' & gene != '' & indication_mesh_id != '') %>%
   distinct(gene, indication_mesh_id) -> ti_launched
 ti_launched %>%
   select(gene, meshcode_a = indication_mesh_id) -> a1
@@ -2094,11 +2111,11 @@ write(paste("Since 2000 only, of ",sum(target_stats$n_launched_indic_2000 > 0, n
             percent(sum(target_stats$n_launched_indic_2000[target_stats$n_launched_indic_2000 >= 10], na.rm=T)/sum(target_stats$n_launched_indic_2000, na.rm=T)),
             ")",'\n',sep=''),text_stats_path,append=T)
 
-hist_ti$ipert = target_stats$n_launched_indic[match(hist_ti$gene, target_stats$gene)]
-hist_ti$meansim = target_stats$meansim[match(hist_ti$gene, target_stats$gene)]
+combined_ti$ipert = target_stats$n_launched_indic[match(combined_ti$gene, target_stats$gene)]
+combined_ti$meansim = target_stats$meansim[match(combined_ti$gene, target_stats$gene)]
 
-hist_ti$ipert_2000 = target_stats$n_launched_indic_2000[match(hist_ti$gene, target_stats$gene)]
-hist_ti$meansim_2000 = target_stats$meansim_2000[match(hist_ti$gene, target_stats$gene)]
+combined_ti$ipert_2000 = target_stats$n_launched_indic_2000[match(combined_ti$gene, target_stats$gene)]
+combined_ti$meansim_2000 = target_stats$meansim_2000[match(combined_ti$gene, target_stats$gene)]
 
 areas$meansim = as.numeric(NA)
 areas$meanipert = as.numeric(NA)
@@ -2110,7 +2127,7 @@ areas$n_launched_ti = as.numeric(NA)
 areas$n_gensup_ti = as.numeric(NA)
 
 for (i in 1:nrow(areas)) {
-  subset_by_area(hist_ti, areas$topl[i], areas$filter[i]) %>%
+  subset_by_area(combined_ti, areas$topl[i], areas$filter[i]) %>%
     select(ti_uid, gene, indication_mesh_id, ccat) %>%
     left_join(target_stats, by='gene') %>% 
     filter(ccat=='Launched') -> launched_area
@@ -2120,9 +2137,9 @@ for (i in 1:nrow(areas)) {
   areas$meansim_2000[i] = mean(launched_area$meansim_2000)
   areas$meanipert_2000[i] = mean(launched_area$n_launched_indic_2000)
   
-  hist_ti_all_area = subset_by_area(hist_ti_all, areas$topl[i], 'only')
-  areas$n_launched_ti[i] = length(unique(hist_ti_all_area$ti_uid[hist_ti_all_area$cat=='Launched']))
-  areas$n_gensup_ti[i] = length(unique(hist_ti_all_area$ti_uid[hist_ti_all_area$target_status=='genetically supported target']))
+  combined_ti_all_area = subset_by_area(combined_ti_all, areas$topl[i], 'only')
+  areas$n_launched_ti[i] = length(unique(combined_ti_all_area$ti_uid[combined_ti_all_area$cat=='Launched']))
+  areas$n_gensup_ti[i] = length(unique(combined_ti_all_area$ti_uid[combined_ti_all_area$target_status=='genetically supported target']))
 }
 
 nli_sim_spearman = suppressWarnings(cor.test(target_stats$n_launched_indic, target_stats$meansim, method='spearman'))
@@ -2182,8 +2199,8 @@ nti_tot_n = nrow(ti_stats)
 nti_10plus = sum(ti_stats$n_launched_indic[ti_stats$n_launched_indic >= 10])
 nti_10plus_n = sum(ti_stats$n_launched_indic >= 10)
 
-hist_ti$gensup = hist_ti$target_status == 'genetically supported target'
-logit_n_indic = glm(gensup ~ ipert, data=subset(hist_ti, cat=='Launched'), family='binomial')
+combined_ti$gensup = combined_ti$target_status == 'genetically supported target'
+logit_n_indic = glm(gensup ~ ipert, data=subset(combined_ti, cat=='Launched'), family='binomial')
 # summary(logit_n_indic)
 indic_per_target_beta = summary(logit_n_indic)$coefficients['ipert','Estimate']
 indic_per_target_p    = summary(logit_n_indic)$coefficients['ipert','Pr(>|z|)']
@@ -2193,7 +2210,7 @@ write(paste("Logit model gensup ~ ipert: beta = ",
             ', P = ',formatC(indic_per_target_p, format='e', digits=1),
             '\n',sep=''),text_stats_path,append=T)
 
-logit_n_indic_no1 = glm(gensup ~ ipert, data=subset(hist_ti, cat=='Launched' & ipert > 1), family='binomial')
+logit_n_indic_no1 = glm(gensup ~ ipert, data=subset(combined_ti, cat=='Launched' & ipert > 1), family='binomial')
 # summary(logit_n_indic)
 indic_per_target_no1_beta = summary(logit_n_indic_no1)$coefficients['ipert','Estimate']
 indic_per_target_no1_p    = summary(logit_n_indic_no1)$coefficients['ipert','Pr(>|z|)']
@@ -2203,7 +2220,7 @@ write(paste("Logit model gensup ~ ipert without 1-indication targets: beta = ",
             ', P = ',formatC(indic_per_target_no1_p, format='e', digits=1),
             '\n',sep=''),text_stats_path,append=T)
 
-logit_meansim = glm(gensup ~ meansim, data=subset(hist_ti, cat=='Launched'), family='binomial')
+logit_meansim = glm(gensup ~ meansim, data=subset(combined_ti, cat=='Launched'), family='binomial')
 # summary(logit_meansim)
 meansim_beta = summary(logit_meansim)$coefficients['meansim','Estimate']
 meansim_p = summary(logit_meansim)$coefficients['meansim','Pr(>|z|)']
@@ -2213,7 +2230,7 @@ write(paste("Logit model gensup ~ meansim: beta = ",
             ', P = ',formatC(meansim_p, format='e', digits=1),
             '\n',sep=''),text_stats_path,append=T)
 
-logit_meansim_no1 = glm(gensup ~ meansim, data=subset(hist_ti, cat=='Launched' & ipert > 1), family='binomial')
+logit_meansim_no1 = glm(gensup ~ meansim, data=subset(combined_ti, cat=='Launched' & ipert > 1), family='binomial')
 # summary(logit_meansim)
 meansim_no1_beta = summary(logit_meansim_no1)$coefficients['meansim','Estimate']
 meansim_no1_p = summary(logit_meansim_no1)$coefficients['meansim','Pr(>|z|)']
@@ -2437,18 +2454,18 @@ write_supp_table(target_stats, "Count and mean similarity of approved indication
 
 write(paste('Spearman correlation n_launched_indic vs. mean_sim: rho= ',formatC(indic_sim_spearman$estimate,digits=2,format='fg'),', P = ',formatC(indic_sim_spearman$p.value,digits=2,format='fg'),'\n',sep=''),text_stats_path,append=T)
 
-indic_per_quantiles = quantile(hist_ti$ipert[hist_ti$cat=='Launched'], 0:5/5, na.rm=T)
+indic_per_quantiles = quantile(combined_ti$ipert[combined_ti$cat=='Launched'], 0:5/5, na.rm=T)
 indic_per_forest = data.frame(y=5:1, 
                               min=c(1,floor(indic_per_quantiles[c('20%','40%','60%','80%')])),
                               max=c(floor(indic_per_quantiles[c('20%','40%','60%','80%')])-1,round(indic_per_quantiles['100%']))) # use >= min and <= max
 # note - there are no non-integer values in indic_per_target
-# which(hist_ti$indic_per_target[hist_ti$cat=='Launched'] != round(hist_ti$indic_per_target[hist_ti$cat=='Launched'],0))
+# which(combined_ti$indic_per_target[combined_ti$cat=='Launched'] != round(combined_ti$indic_per_target[combined_ti$cat=='Launched'],0))
 # integer(0)
-# but if you do quantile(hist_ti$indic_per_target[hist_ti$cat=='Launched'], .4) you get 7.8
+# but if you do quantile(combined_ti$indic_per_target[combined_ti$cat=='Launched'], .4) you get 7.8
 # because quantile() uses type 7 algorithm by default which gives an interpolated average if the numbers on either side are different
 for (i in 1:nrow(indic_per_forest)) {
-  all_launched = length(unique(hist_ti$ti_uid[hist_ti$cat=='Launched' & hist_ti$ipert >= indic_per_forest$min[i] & hist_ti$ipert <= indic_per_forest$max[i]]))
-  gensup_launched = length(unique(hist_ti$ti_uid[hist_ti$cat=='Launched' & hist_ti$ipert >= indic_per_forest$min[i] & hist_ti$ipert <= indic_per_forest$max[i] & hist_ti$gensup]))
+  all_launched = length(unique(combined_ti$ti_uid[combined_ti$cat=='Launched' & combined_ti$ipert >= indic_per_forest$min[i] & combined_ti$ipert <= indic_per_forest$max[i]]))
+  gensup_launched = length(unique(combined_ti$ti_uid[combined_ti$cat=='Launched' & combined_ti$ipert >= indic_per_forest$min[i] & combined_ti$ipert <= indic_per_forest$max[i] & combined_ti$gensup]))
   bconf_obj = binom.confint(x=gensup_launched, n=all_launched, method='wilson')
   indic_per_forest[i,'label'] = ifelse(indic_per_forest$min[i]==indic_per_forest$max[i], indic_per_forest$min[i], paste0(indic_per_forest$min[i],'-',indic_per_forest$max[i]))
   indic_per_forest$numerator[i] = gensup_launched
@@ -2466,8 +2483,8 @@ meansim_forest = tibble(min=seq(0,0.99,0.2),
          l95=as.numeric(NA),
          u95=as.numeric(NA))
 for (i in 1:nrow(meansim_forest)) {
-  all_launched = length(unique(hist_ti$ti_uid[hist_ti$cat=='Launched' & hist_ti$meansim >= meansim_forest$min[i] & hist_ti$meansim < meansim_forest$max[i]]))
-  gensup_launched = length(unique(hist_ti$ti_uid[hist_ti$cat=='Launched' & hist_ti$meansim >= meansim_forest$min[i] & hist_ti$meansim < meansim_forest$max[i] & hist_ti$gensup]))
+  all_launched = length(unique(combined_ti$ti_uid[combined_ti$cat=='Launched' & combined_ti$meansim >= meansim_forest$min[i] & combined_ti$meansim < meansim_forest$max[i]]))
+  gensup_launched = length(unique(combined_ti$ti_uid[combined_ti$cat=='Launched' & combined_ti$meansim >= meansim_forest$min[i] & combined_ti$meansim < meansim_forest$max[i] & combined_ti$gensup]))
   bconf_obj = binom.confint(x=gensup_launched, n=all_launched, method='wilson')
   meansim_forest$numerator[i] = gensup_launched
   meansim_forest$denominator[i] = all_launched
@@ -2805,11 +2822,11 @@ mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
 panel = panel + 1
 smry2015$n_total = rowSums(smry2015[,c("nosup_clinical", "nosup_launched", "gensup_clinical", "gensup_launched")])
 wmean2015 = round(weighted.mean(smry2015$rs_mean, w=smry2015$n_total),2)
-wmean2022 = round(weighted.mean(areas$rs_mean, w=areas$n_hist_ti),2)
+wmean2022 = round(weighted.mean(areas$rs_mean, w=areas$n_combined_ti),2)
 ctable = matrix(as.integer(colSums(smry2015[,c("nosup_clinical", "nosup_launched", "gensup_clinical", "gensup_launched")])), nrow=2, byrow=T, dimnames=list(gensup=c('0','1'),phase=c('clinical','launched')))
 rr_epitools_obj = riskratio(ctable, method='boot', replicates=50000)
 total2015 = round(rr_epitools_obj$measure['1',c('estimate','lower','upper')],2)
-rr_obj = advancement_rr(hist_ti)
+rr_obj = advancement_rr(combined_ti)
 total2022 = round(rr_obj[rr_obj$phase=='I-Launch',c('rs_mean','rs_l','rs_u')],2)
 
 write_supp_table(smry2015, "Summary of therapy area data from Nelson 2015")
@@ -2930,8 +2947,8 @@ unecessary_message = dev.off()
 
 n_active_total = sum(active_ti$cat %in% active_clinical$cat)
 n_active_supported = sum(active_ti$cat %in% active_clinical$cat & active_ti$target_status=='genetically supported target')
-n_hist_total = sum(hist_ti$cat %in% active_clinical$cat)
-n_hist_supported = sum(hist_ti$cat %in% active_clinical$cat & hist_ti$target_status=='genetically supported target')
+n_hist_total = sum(combined_ti$cat %in% active_clinical$cat)
+n_hist_supported = sum(combined_ti$cat %in% active_clinical$cat & combined_ti$target_status=='genetically supported target')
 
 ctable = matrix(c(n_hist_total-n_hist_supported, n_hist_supported, n_active_total-n_active_supported, n_active_supported), nrow=2, byrow=T)
 fisher_obj = fisher.test(ctable)
@@ -2960,9 +2977,9 @@ assoc$hh = assoc$original_trait %in% heavy_hitters$trait_reported
 
 active_ti$gensup = active_ti$target_status == 'genetically supported target'
 active_ti_forest = advancement_forest(active_ti,phase='active')
-hist_ti_forest = advancement_forest(hist_ti,phase='historical')
-historical_clinical_pg_nu = sum(hist_ti_forest$numerator[hist_ti_forest$label %in% active_clinical$cat])
-historical_clinical_pg_de = sum(hist_ti_forest$denominator[hist_ti_forest$label %in% active_clinical$cat])
+combined_ti_forest = advancement_forest(combined_ti,phase='historical')
+historical_clinical_pg_nu = sum(combined_ti_forest$numerator[combined_ti_forest$label %in% active_clinical$cat])
+historical_clinical_pg_de = sum(combined_ti_forest$denominator[combined_ti_forest$label %in% active_clinical$cat])
 active_clinical_pg_nu = sum(active_ti_forest$numerator[active_ti_forest$label %in% active_clinical$cat])
 active_clinical_pg_de = sum(active_ti_forest$denominator[active_ti_forest$label %in% active_clinical$cat])
 
@@ -3337,8 +3354,8 @@ panel = panel + 1
 
 write_supp_table(gsup_bins, 'Histogram of supported vs. unsupported indications pursued for developed targets.')
 
-hist_ti$gensup = hist_ti$target_status == 'genetically supported target'
-drug_phase_summary$gensup = hist_ti$gensup[match(drug_phase_summary$ti_uid, hist_ti$ti_uid)]
+combined_ti$gensup = combined_ti$target_status == 'genetically supported target'
+drug_phase_summary$gensup = combined_ti$gensup[match(drug_phase_summary$ti_uid, combined_ti$ti_uid)]
 drug_phase_summary = drug_phase_summary[!is.na(drug_phase_summary$gensup),]
 drug_phase_summary %>%
   filter(maxphase != 'Preclinical') %>%

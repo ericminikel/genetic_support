@@ -1,145 +1,1642 @@
-area	genelist	developed	supported	utilization
-all_areas	all genes	742	33557	0.022111630956283337
-all_areas	predicted Ab tractable	606	17449	0.03472978394177317
-all_areas	predicted SM tractable	633	12147	0.05211163250185231
-all_areas	rhodopsin-like GPCRs	48	483	0.09937888198757763
-all_areas	nuclear receptors	22	244	0.09016393442622951
-all_areas	enzymes	120	2242	0.05352363960749331
-all_areas	ion channels	33	706	0.046742209631728045
-all_areas	kinases	137	1109	0.12353471596032461
-hematology	all genes	42	4472	0.009391771019677997
-hematology	predicted Ab tractable	35	2221	0.01575866726699685
-hematology	predicted SM tractable	38	1583	0.024005053695514846
-hematology	rhodopsin-like GPCRs	1	70	0.014285714285714285
-hematology	nuclear receptors	0	30	0
-hematology	enzymes	10	254	0.03937007874015748
-hematology	ion channels	0	56	0
-hematology	kinases	4	145	0.027586206896551724
-metabolic	all genes	114	6551	0.01740192337047779
-metabolic	predicted Ab tractable	93	3431	0.027105800058292044
-metabolic	predicted SM tractable	91	2397	0.03796412181894034
-metabolic	rhodopsin-like GPCRs	8	86	0.09302325581395349
-metabolic	nuclear receptors	10	49	0.20408163265306123
-metabolic	enzymes	13	463	0.028077753779697623
-metabolic	ion channels	2	96	0.020833333333333332
-metabolic	kinases	3	180	0.016666666666666666
-respiratory	all genes	26	881	0.029511918274687854
-respiratory	predicted Ab tractable	25	479	0.05219206680584551
-respiratory	predicted SM tractable	14	317	0.04416403785488959
-respiratory	rhodopsin-like GPCRs	2	9	0.2222222222222222
-respiratory	nuclear receptors	0	5	0
-respiratory	enzymes	3	51	0.058823529411764705
-respiratory	ion channels	1	26	0.038461538461538464
-respiratory	kinases	0	13	0
-endocrine	all genes	37	2607	0.014192558496355964
-endocrine	predicted Ab tractable	32	1287	0.024864024864024864
-endocrine	predicted SM tractable	33	897	0.03678929765886288
-endocrine	rhodopsin-like GPCRs	7	51	0.13725490196078433
-endocrine	nuclear receptors	3	32	0.09375
-endocrine	enzymes	1	177	0.005649717514124294
-endocrine	ion channels	2	53	0.03773584905660377
-endocrine	kinases	3	75	0.04
-infection	all genes	4	234	0.017094017094017096
-infection	predicted Ab tractable	4	138	0.028985507246376812
-infection	predicted SM tractable	2	88	0.022727272727272728
-infection	rhodopsin-like GPCRs	0	4	0
-infection	nuclear receptors	0	2	0
-infection	enzymes	0	13	0
-infection	ion channels	0	7	0
-infection	kinases	0	2	0
-congenital	all genes	87	4375	0.019885714285714284
-congenital	predicted Ab tractable	66	2374	0.02780117944397641
-congenital	predicted SM tractable	60	1651	0.03634161114476075
-congenital	rhodopsin-like GPCRs	2	45	0.044444444444444446
-congenital	nuclear receptors	2	29	0.06896551724137931
-congenital	enzymes	14	294	0.047619047619047616
-congenital	ion channels	1	100	0.01
-congenital	kinases	2	113	0.017699115044247787
-neurology	all genes	87	3472	0.025057603686635944
-neurology	predicted Ab tractable	74	1907	0.03880440482433141
-neurology	predicted SM tractable	69	1208	0.057119205298013245
-neurology	rhodopsin-like GPCRs	9	53	0.16981132075471697
-neurology	nuclear receptors	0	13	0
-neurology	enzymes	10	202	0.04950495049504951
-neurology	ion channels	14	132	0.10606060606060606
-neurology	kinases	3	85	0.03529411764705882
-oncology	all genes	305	4303	0.07088078085056937
-oncology	predicted Ab tractable	232	2086	0.1112176414189837
-oncology	predicted SM tractable	286	1972	0.14503042596348883
-oncology	rhodopsin-like GPCRs	6	37	0.16216216216216217
-oncology	nuclear receptors	4	25	0.16
-oncology	enzymes	64	419	0.15274463007159905
-oncology	ion channels	0	56	0
-oncology	kinases	111	249	0.4457831325301205
-cardiovascular	all genes	41	2831	0.014482515012363122
-cardiovascular	predicted Ab tractable	39	1508	0.02586206896551724
-cardiovascular	predicted SM tractable	38	995	0.03819095477386935
-cardiovascular	rhodopsin-like GPCRs	3	40	0.075
-cardiovascular	nuclear receptors	1	18	0.05555555555555555
-cardiovascular	enzymes	11	221	0.049773755656108594
-cardiovascular	ion channels	10	100	0.1
-cardiovascular	kinases	1	94	0.010638297872340425
-digestive	all genes	37	2240	0.016517857142857143
-digestive	predicted Ab tractable	29	1210	0.023966942148760332
-digestive	predicted SM tractable	26	772	0.03367875647668394
-digestive	rhodopsin-like GPCRs	2	44	0.045454545454545456
-digestive	nuclear receptors	3	21	0.14285714285714285
-digestive	enzymes	6	121	0.049586776859504134
-digestive	ion channels	1	24	0.041666666666666664
-digestive	kinases	4	70	0.05714285714285714
-psychiatry	all genes	42	2380	0.01764705882352941
-psychiatry	predicted Ab tractable	40	1301	0.030745580322828592
-psychiatry	predicted SM tractable	41	784	0.05229591836734694
-psychiatry	rhodopsin-like GPCRs	15	53	0.2830188679245283
-psychiatry	nuclear receptors	0	18	0
-psychiatry	enzymes	4	131	0.030534351145038167
-psychiatry	ion channels	6	84	0.07142857142857142
-psychiatry	kinases	0	74	0
-signs/symptoms	all genes	49	3586	0.013664249860568878
-signs/symptoms	predicted Ab tractable	42	1881	0.022328548644338118
-signs/symptoms	predicted SM tractable	42	1185	0.035443037974683546
-signs/symptoms	rhodopsin-like GPCRs	7	67	0.1044776119402985
-signs/symptoms	nuclear receptors	4	30	0.13333333333333333
-signs/symptoms	enzymes	4	207	0.01932367149758454
-signs/symptoms	ion channels	12	121	0.09917355371900827
-signs/symptoms	kinases	3	105	0.02857142857142857
-immune	all genes	66	2231	0.029583146571044376
-immune	predicted Ab tractable	59	1194	0.049413735343383586
-immune	predicted SM tractable	37	786	0.047073791348600506
-immune	rhodopsin-like GPCRs	4	32	0.125
-immune	nuclear receptors	0	7	0
-immune	enzymes	9	110	0.08181818181818182
-immune	ion channels	0	26	0
-immune	kinases	5	76	0.06578947368421052
-dermatology	all genes	53	2357	0.022486211285532458
-dermatology	predicted Ab tractable	47	1257	0.03739061256961018
-dermatology	predicted SM tractable	34	770	0.04415584415584416
-dermatology	rhodopsin-like GPCRs	3	24	0.125
-dermatology	nuclear receptors	0	7	0
-dermatology	enzymes	7	139	0.050359712230215826
-dermatology	ion channels	0	29	0
-dermatology	kinases	6	75	0.08
-ophthalmology	all genes	25	2029	0.01232134056185313
-ophthalmology	predicted Ab tractable	19	1144	0.016608391608391608
-ophthalmology	predicted SM tractable	16	619	0.025848142164781908
-ophthalmology	rhodopsin-like GPCRs	1	18	0.05555555555555555
-ophthalmology	nuclear receptors	1	18	0.05555555555555555
-ophthalmology	enzymes	3	108	0.027777777777777776
-ophthalmology	ion channels	2	54	0.037037037037037035
-ophthalmology	kinases	0	61	0
-musculoskeletal	all genes	32	1764	0.018140589569160998
-musculoskeletal	predicted Ab tractable	29	963	0.030114226375908618
-musculoskeletal	predicted SM tractable	24	580	0.041379310344827586
-musculoskeletal	rhodopsin-like GPCRs	1	16	0.0625
-musculoskeletal	nuclear receptors	2	7	0.2857142857142857
-musculoskeletal	enzymes	2	100	0.02
-musculoskeletal	ion channels	1	34	0.029411764705882353
-musculoskeletal	kinases	4	58	0.06896551724137931
-other	all genes	7	1480	0.00472972972972973
-other	predicted Ab tractable	6	750	0.008
-other	predicted SM tractable	5	472	0.01059322033898305
-other	rhodopsin-like GPCRs	0	24	0
-other	nuclear receptors	1	11	0.09090909090909091
-other	enzymes	0	91	0
-other	ion channels	0	34	0
-other	kinases	1	38	0.02631578947368421
+indication_mesh_id	indication_mesh_term	category_2015	area_2023
+D012559	Schizophrenia	Neurological/behavioral	psychiatry
+D000544	Alzheimer Disease	Neurological/behavioral	neurology
+D000544	Alzheimer Disease	Neurological/behavioral	psychiatry
+D008268	Macular Degeneration	Eye	ophthalmology
+D015179	Colorectal Neoplasms	Oncology	oncology
+D009369	Neoplasms	Oncology	oncology
+D010190	Pancreatic Neoplasms	Oncology	oncology
+D013274	Stomach Neoplasms	Oncology	oncology
+D002289	Carcinoma, Non-Small-Cell Lung	Oncology	oncology
+D005334	Fever	Inflammation	signs/symptoms
+D006258	Head and Neck Neoplasms	Oncology	oncology
+D007239	Infections	Infection	infection
+D007249	Inflammation	Autoimmune	signs/symptoms
+D008113	Liver Neoplasms	Oncology	oncology
+D008545	Melanoma	Oncology	oncology
+D010146	Pain	Neurological/behavioral	
+D001749	Urinary Bladder Neoplasms	Oncology	oncology
+D002545	Brain Ischemia	Neurological/behavioral	neurology
+D002545	Brain Ischemia	Neurological/behavioral	cardiovascular
+D006259	Craniocerebral Trauma	Neurological/behavioral	
+D003924	Diabetes Mellitus, Type 2	Diabetes	metabolic
+D003924	Diabetes Mellitus, Type 2	Diabetes	endocrine
+D018149	Glucose Intolerance	Diabetes	metabolic
+D009203	Myocardial Infarction	Cardiovascular	cardiovascular
+D009203	Myocardial Infarction	Cardiovascular	signs/symptoms
+D013119	Spinal Cord Injuries	Neurological/behavioral	neurology
+D000787	Angina Pectoris	Cardiovascular	cardiovascular
+D000787	Angina Pectoris	Cardiovascular	signs/symptoms
+D000789	Angina, Unstable	Cardiovascular	cardiovascular
+D000789	Angina, Unstable	Cardiovascular	signs/symptoms
+D006973	Hypertension	Cardiovascular	cardiovascular
+D000326	Adrenoleukodystrophy	Neurological/behavioral	neurology
+D000326	Adrenoleukodystrophy	Neurological/behavioral	congenital
+D000326	Adrenoleukodystrophy	Neurological/behavioral	metabolic
+D000326	Adrenoleukodystrophy	Neurological/behavioral	endocrine
+D001661	Biliary Tract Neoplasms	Oncology	
+D001932	Brain Neoplasms	Oncology	oncology
+D005770	Gastrointestinal Neoplasms	Oncology	oncology
+D019337	Hematologic Neoplasms	Oncology	oncology
+D017681	Hypereosinophilic Syndrome	Blood	hematology
+D006976	Hypertension, Pulmonary	Respiratory	respiratory
+D006976	Hypertension, Pulmonary	Respiratory	cardiovascular
+D007680	Kidney Neoplasms	Oncology	oncology
+D007945	Leukemia, Lymphoid	Oncology	
+D015470	Leukemia, Myeloid, Acute	Oncology	oncology
+D015477	Leukemia, Myelomonocytic, Chronic	Oncology	oncology
+D008415	Mastocytosis	Oncology	oncology
+D010051	Ovarian Neoplasms	Oncology	oncology
+D007690	Polycystic Kidney Diseases	Urogenital	congenital
+D011471	Prostatic Neoplasms	Oncology	oncology
+D012509	Sarcoma	Oncology	oncology
+D012983	Soft Tissue Neoplasms	Oncology	
+D048909	Diabetes Complications	Diabetes	endocrine
+D003928	Diabetic Nephropathies	Diabetes	endocrine
+D006333	Heart Failure	Cardiovascular	cardiovascular
+D007511	Ischemia	Cardiovascular	signs/symptoms
+D051437	Renal Insufficiency	Liver & kidney	other
+D055371	Acute Lung Injury	Respiratory	respiratory
+D003093	Colitis, Ulcerative	Autoimmune	digestive
+D012128	Respiratory Distress Syndrome	Respiratory	respiratory
+D001289	Attention Deficit Disorder with Hyperactivity	Neurological/behavioral	psychiatry
+D003704	Dementia	Neurological/behavioral	neurology
+D003704	Dementia	Neurological/behavioral	psychiatry
+D004314	Down Syndrome	Neurological/behavioral	neurology
+D004314	Down Syndrome	Neurological/behavioral	congenital
+D004827	Epilepsy	Neurological/behavioral	neurology
+D006816	Huntington Disease	Neurological/behavioral	neurology
+D006816	Huntington Disease	Neurological/behavioral	congenital
+D006816	Huntington Disease	Neurological/behavioral	psychiatry
+D020961	Lewy Body Disease	Neurological/behavioral	neurology
+D020961	Lewy Body Disease	Neurological/behavioral	psychiatry
+D008569	Memory Disorders	Neurological/behavioral	
+D011041	Poisoning	Neurological/behavioral	other
+D006949	Hyperlipidemias	Cardiovascular	metabolic
+D006566	Herpesviridae Infections	Infection	infection
+D015658	HIV Infections	Infection	infection
+D015658	HIV Infections	Infection	immune
+D010212	Papilloma	Oncology	
+D060737	Reproductive Tract Infections	Infection	infection
+D002100	Cachexia	Musculoskeletal	signs/symptoms
+D009220	Myositis	Musculoskeletal	musculoskeletal
+D009220	Myositis	Musculoskeletal	neurology
+D009133	Muscular Atrophy	Neurological/behavioral	neurology
+D009133	Muscular Atrophy	Neurological/behavioral	signs/symptoms
+D000310	Adrenal Gland Neoplasms	Oncology	oncology
+D000740	Anemia	Blood	hematology
+D001172	Arthritis, Rheumatoid	Autoimmune	musculoskeletal
+D001172	Arthritis, Rheumatoid	Autoimmune	dermatology
+D001172	Arthritis, Rheumatoid	Autoimmune	immune
+D002292	Carcinoma, Renal Cell	Oncology	
+D016889	Endometrial Neoplasms	Oncology	oncology
+D008654	Mesothelioma	Oncology	oncology
+D009101	Multiple Myeloma	Oncology	oncology
+D007938	Leukemia	Oncology	oncology
+D007943	Leukemia, Hairy Cell	Oncology	oncology
+D008228	Lymphoma, Non-Hodgkin	Oncology	oncology
+D016511	Severe Combined Immunodeficiency	Metabolic	congenital
+D016511	Severe Combined Immunodeficiency	Metabolic	metabolic
+D016511	Severe Combined Immunodeficiency	Metabolic	immune
+D001943	Breast Neoplasms	Oncology	oncology
+D005185	Fallopian Tube Neoplasms	Oncology	oncology
+D010534	Peritoneal Neoplasms	Oncology	oncology
+D011565	Psoriasis	Autoimmune	dermatology
+D011697	Purpura, Thrombotic Thrombocytopenic	Blood	hematology
+D011697	Purpura, Thrombotic Thrombocytopenic	Blood	signs/symptoms
+D018805	Sepsis	Infection	infection
+D018805	Sepsis	Infection	signs/symptoms
+D010300	Parkinson Disease	Neurological/behavioral	neurology
+D013494	Supranuclear Palsy, Progressive	Neurological/behavioral	neurology
+D013494	Supranuclear Palsy, Progressive	Neurological/behavioral	ophthalmology
+D013494	Supranuclear Palsy, Progressive	Neurological/behavioral	signs/symptoms
+D001249	Asthma	Respiratory	respiratory
+D001249	Asthma	Respiratory	immune
+D029481	Bronchitis, Chronic	Respiratory	infection
+D029481	Bronchitis, Chronic	Respiratory	respiratory
+D004646	Emphysema	Liver & kidney	signs/symptoms
+D005901	Glaucoma	Eye	ophthalmology
+D006967	Hypersensitivity	Inflammation	immune
+D029424	Pulmonary Disease, Chronic Obstructive	Respiratory	respiratory
+D012140	Respiratory Tract Diseases	Respiratory	
+D015009	Yersinia Infections	Infection	
+D001049	Apnea	Respiratory	respiratory
+D001049	Apnea	Respiratory	signs/symptoms
+D003863	Depression	Neurological/behavioral	psychiatry
+D000755	Anemia, Sickle Cell	Blood	hematology
+D000755	Anemia, Sickle Cell	Blood	congenital
+D015212	Inflammatory Bowel Diseases	Autoimmune	digestive
+D007172	Erectile Dysfunction	Urogenital	psychiatry
+D006509	Hepatitis B	Infection	infection
+D006509	Hepatitis B	Infection	digestive
+D006526	Hepatitis C	Infection	infection
+D006526	Hepatitis C	Infection	digestive
+D009503	Neutropenia	Blood	hematology
+D010003	Osteoarthritis	Musculoskeletal	musculoskeletal
+D014605	Uveitis	Eye	ophthalmology
+D014985	Xerophthalmia	Eye	
+D001714	Bipolar Disorder	Neurological/behavioral	psychiatry
+D002318	Cardiovascular Diseases	Cardiovascular	cardiovascular
+D002386	Cataract	Eye	ophthalmology
+D053159	Dysuria	Urogenital	signs/symptoms
+D007022	Hypotension	Cardiovascular	cardiovascular
+D011141	Polyuria	Urogenital	signs/symptoms
+D011470	Prostatic Hyperplasia	Urogenital	other
+D011472	Prostatitis	Urogenital	other
+D011618	Psychotic Disorders	Neurological/behavioral	psychiatry
+D053201	Urinary Bladder, Overactive	Urogenital	signs/symptoms
+D014545	Urinary Calculi	Liver & kidney	signs/symptoms
+D014549	Urinary Incontinence	Urogenital	signs/symptoms
+D016055	Urinary Retention	Urogenital	other
+D001007	Anxiety	Neurological/behavioral	
+D001008	Anxiety Disorders	Neurological/behavioral	psychiatry
+D001010	Anxiety, Separation	Neurological/behavioral	
+D001321	Autistic Disorder	Neurological/behavioral	psychiatry
+D003233	Conjunctivitis, Allergic	Eye	ophthalmology
+D003233	Conjunctivitis, Allergic	Eye	immune
+D003866	Depressive Disorder	Neurological/behavioral	
+D003929	Diabetic Neuropathies	Neurological/behavioral	neurology
+D003929	Diabetic Neuropathies	Neurological/behavioral	endocrine
+D020820	Dyskinesias	Neurological/behavioral	neurology
+D020820	Dyskinesias	Neurological/behavioral	signs/symptoms
+D005356	Fibromyalgia	Musculoskeletal	musculoskeletal
+D005356	Fibromyalgia	Musculoskeletal	neurology
+D009437	Neuralgia	Neurological/behavioral	neurology
+D009437	Neuralgia	Neurological/behavioral	signs/symptoms
+D009293	Opioid-Related Disorders	Neurological/behavioral	psychiatry
+D010698	Phobic Disorders	Neurological/behavioral	psychiatry
+D012163	Retinal Detachment	Eye	ophthalmology
+D012174	Retinitis Pigmentosa	Eye	ophthalmology
+D012174	Retinitis Pigmentosa	Eye	congenital
+D012220	Rhinitis	Respiratory	infection
+D012220	Rhinitis	Respiratory	respiratory
+D014552	Urinary Tract Infections	Infection	infection
+D001145	Arrhythmias, Cardiac	Cardiovascular	cardiovascular
+D001145	Arrhythmias, Cardiac	Cardiovascular	signs/symptoms
+D001281	Atrial Fibrillation	Cardiovascular	cardiovascular
+D001281	Atrial Fibrillation	Cardiovascular	signs/symptoms
+D003550	Cystic Fibrosis	Liver & kidney	digestive
+D003550	Cystic Fibrosis	Liver & kidney	respiratory
+D003550	Cystic Fibrosis	Liver & kidney	congenital
+D008881	Migraine Disorders	Neurological/behavioral	neurology
+D055948	Sarcopenia	Neurological/behavioral	neurology
+D055948	Sarcopenia	Neurological/behavioral	signs/symptoms
+D013610	Tachycardia	Cardiovascular	cardiovascular
+D013610	Tachycardia	Cardiovascular	signs/symptoms
+D013617	Tachycardia, Supraventricular	Cardiovascular	cardiovascular
+D013617	Tachycardia, Supraventricular	Cardiovascular	signs/symptoms
+D017180	Tachycardia, Ventricular	Cardiovascular	cardiovascular
+D017180	Tachycardia, Ventricular	Cardiovascular	signs/symptoms
+D014029	Tobacco Use Disorder	Neurological/behavioral	psychiatry
+D014693	Ventricular Fibrillation	Cardiovascular	cardiovascular
+D014693	Ventricular Fibrillation	Cardiovascular	signs/symptoms
+D003371	Cough	Respiratory	respiratory
+D003371	Cough	Respiratory	signs/symptoms
+D005094	Exophthalmos	Eye	
+D009765	Obesity	Metabolic	metabolic
+D009765	Obesity	Metabolic	signs/symptoms
+D007744	Obstetric Labor Complications	Urogenital	
+D054058	Acute Coronary Syndrome	Cardiovascular	cardiovascular
+D003930	Diabetic Retinopathy	Diabetes	ophthalmology
+D003930	Diabetic Retinopathy	Diabetes	cardiovascular
+D003930	Diabetic Retinopathy	Diabetes	endocrine
+D006937	Hypercholesterolemia	Cardiovascular	metabolic
+D008659	Metabolic Diseases	Metabolic	metabolic
+D005355	Fibrosis	Inflammation	signs/symptoms
+D051474	Neuralgia, Postherpetic	Neurological/behavioral	neurology
+D051474	Neuralgia, Postherpetic	Neurological/behavioral	signs/symptoms
+D006959	Hyperoxaluria	Urogenital	other
+D007154	Immune System Diseases	Inflammation	immune
+D050197	Atherosclerosis	Cardiovascular	cardiovascular
+D007674	Kidney Diseases	Liver & kidney	other
+D009422	Nervous System Diseases	Neurological/behavioral	neurology
+D015835	Ocular Motility Disorders	Eye	
+D011085	Polycystic Ovary Syndrome	Urogenital	oncology
+D006689	Hodgkin Disease	Oncology	oncology
+D008181	Lupus Nephritis	Autoimmune	dermatology
+D008181	Lupus Nephritis	Autoimmune	immune
+D008223	Lymphoma	Oncology	oncology
+D009190	Myelodysplastic Syndromes	Blood	hematology
+D011164	Porphyrias	Metabolic	metabolic
+D019966	Substance-Related Disorders	Neurological/behavioral	psychiatry
+D020268	Alcohol-Induced Disorders, Nervous System	Neurological/behavioral	
+D016393	Lymphoma, B-Cell	Oncology	oncology
+D004938	Esophageal Neoplasms	Oncology	oncology
+D016491	Peripheral Vascular Diseases	Cardiovascular	cardiovascular
+D010149	Pain, Postoperative	Neurological/behavioral	signs/symptoms
+D055752	Small Cell Lung Carcinoma	Oncology	oncology
+D000881	Anthrax	Infection	infection
+D003877	Dermatitis, Contact	Skin & connective tissue	dermatology
+D054990	Idiopathic Pulmonary Fibrosis	Respiratory	respiratory
+D009103	Multiple Sclerosis	Autoimmune	neurology
+D009103	Multiple Sclerosis	Autoimmune	immune
+D014657	Vasculitis	Cardiovascular	cardiovascular
+D000686	Amyloidosis	Neurological/behavioral	metabolic
+D008269	Macular Edema	Eye	ophthalmology
+D012164	Retinal Diseases	Eye	ophthalmology
+D001024	Aortic Valve Stenosis	Cardiovascular	cardiovascular
+D015228	Hypertriglyceridemia	Cardiovascular	metabolic
+D000152	Acne Vulgaris	Skin & connective tissue	dermatology
+D000505	Alopecia	Skin & connective tissue	dermatology
+D000505	Alopecia	Skin & connective tissue	signs/symptoms
+D012628	Dermatitis, Seborrheic	Skin & connective tissue	dermatology
+D004715	Endometriosis	Urogenital	other
+D006628	Hirsutism	Skin & connective tissue	dermatology
+D006628	Hirsutism	Skin & connective tissue	signs/symptoms
+D008599	Menstruation Disturbances	Urogenital	signs/symptoms
+D010024	Osteoporosis	Musculoskeletal	musculoskeletal
+D010024	Osteoporosis	Musculoskeletal	metabolic
+D012735	Sexual Dysfunction, Physiological	Urogenital	other
+D012871	Skin Diseases	Skin & connective tissue	dermatology
+D014424	Turner Syndrome	Urogenital	cardiovascular
+D014424	Turner Syndrome	Urogenital	congenital
+D014424	Turner Syndrome	Urogenital	endocrine
+D007966	Leukodystrophy, Metachromatic	Neurological/behavioral	neurology
+D007966	Leukodystrophy, Metachromatic	Neurological/behavioral	congenital
+D007966	Leukodystrophy, Metachromatic	Neurological/behavioral	metabolic
+D009087	Mucopolysaccharidosis VI	Metabolic	congenital
+D009087	Mucopolysaccharidosis VI	Metabolic	dermatology
+D009087	Mucopolysaccharidosis VI	Metabolic	metabolic
+D059352	Musculoskeletal Pain	Neurological/behavioral	musculoskeletal
+D059352	Musculoskeletal Pain	Neurological/behavioral	signs/symptoms
+D064420	Drug-Related Side Effects and Adverse Reactions	Neurological/behavioral	other
+D010939	Plant Poisoning	Neurological/behavioral	other
+D011225	Pre-Eclampsia	Urogenital	other
+D020388	Muscular Dystrophy, Duchenne	Musculoskeletal	musculoskeletal
+D020388	Muscular Dystrophy, Duchenne	Musculoskeletal	neurology
+D020388	Muscular Dystrophy, Duchenne	Musculoskeletal	congenital
+D016481	Helicobacter Infections	Infection	infection
+D020767	Intracranial Thrombosis	Neurological/behavioral	neurology
+D020767	Intracranial Thrombosis	Neurological/behavioral	cardiovascular
+D013167	Spondylitis, Ankylosing	Autoimmune	musculoskeletal
+D015043	Zollinger-Ellison Syndrome	Oncology	oncology
+D008080	Liposarcoma	Oncology	oncology
+D016399	Lymphoma, T-Cell	Oncology	oncology
+D009447	Neuroblastoma	Oncology	oncology
+D008258	Waldenstrom Macroglobulinemia	Oncology	oncology
+D001778	Blood Coagulation Disorders	Blood	hematology
+D004412	Dysmenorrhea	Urogenital	signs/symptoms
+D007010	Hyponatremia	Metabolic	metabolic
+D007247	Infertility, Female	Urogenital	other
+D013313	Stress Disorders, Post-Traumatic	Neurological/behavioral	psychiatry
+D000437	Alcoholism	Neurological/behavioral	psychiatry
+D003919	Diabetes Insipidus	Diabetes	endocrine
+D004487	Edema	Inflammation	signs/symptoms
+D004489	Edema, Cardiac	Cardiovascular	cardiovascular
+D004489	Edema, Cardiac	Cardiovascular	signs/symptoms
+D004775	Enuresis	Urogenital	psychiatry
+D008175	Lung Neoplasms	Oncology	oncology
+D008180	Lupus Erythematosus, Systemic	Autoimmune	dermatology
+D008180	Lupus Erythematosus, Systemic	Autoimmune	immune
+D011087	Polycythemia Vera	Blood	oncology
+D057135	Wet Macular Degeneration	Eye	ophthalmology
+D000799	Angioedema	Cardiovascular	cardiovascular
+D000799	Angioedema	Cardiovascular	dermatology
+D000799	Angioedema	Cardiovascular	immune
+D054179	Angioedemas, Hereditary	Cardiovascular	cardiovascular
+D054179	Angioedemas, Hereditary	Cardiovascular	congenital
+D054179	Angioedemas, Hereditary	Cardiovascular	dermatology
+D054179	Angioedemas, Hereditary	Cardiovascular	immune
+D007890	Leiomyosarcoma	Oncology	oncology
+D013953	Thymus Neoplasms	Oncology	oncology
+D009140	Musculoskeletal Diseases	Musculoskeletal	musculoskeletal
+D002276	Carcinoid Tumor	Oncology	oncology
+D013584	Sarcoma, Synovial	Oncology	oncology
+D013964	Thyroid Neoplasms	Oncology	oncology
+D001327	Autoimmune Diseases	Autoimmune	immune
+D000744	Anemia, Hemolytic, Autoimmune	Blood	hematology
+D000744	Anemia, Hemolytic, Autoimmune	Blood	immune
+D016736	Antiphospholipid Syndrome	Autoimmune	immune
+D015432	Glomerulonephritis, Membranoproliferative	Urogenital	immune
+D006463	Hemolytic-Uremic Syndrome	Blood	hematology
+D015417	Hereditary Sensory and Motor Neuropathy	Neurological/behavioral	
+D009157	Myasthenia Gravis	Neurological/behavioral	oncology
+D009902	Optic Neuritis	Neurological/behavioral	neurology
+D009902	Optic Neuritis	Neurological/behavioral	ophthalmology
+D015427	Reperfusion Injury	Cardiovascular	cardiovascular
+D015427	Reperfusion Injury	Cardiovascular	signs/symptoms
+D002583	Uterine Cervical Neoplasms	Oncology	oncology
+D009202	Cardiomyopathies	Cardiovascular	cardiovascular
+D011928	Raynaud Disease	Cardiovascular	cardiovascular
+D013345	Subarachnoid Hemorrhage	Neurological/behavioral	neurology
+D013345	Subarachnoid Hemorrhage	Neurological/behavioral	cardiovascular
+D013345	Subarachnoid Hemorrhage	Neurological/behavioral	signs/symptoms
+D001750	Urinary Bladder, Neurogenic	Neurological/behavioral	neurology
+D001750	Urinary Bladder, Neurogenic	Neurological/behavioral	signs/symptoms
+D006429	Hemiplegia	Neurological/behavioral	neurology
+D006429	Hemiplegia	Neurological/behavioral	signs/symptoms
+D004828	Epilepsies, Partial	Neurological/behavioral	neurology
+D004830	Epilepsy, Tonic-Clonic	Neurological/behavioral	neurology
+D012148	Restless Legs Syndrome	Neurological/behavioral	neurology
+D012148	Restless Legs Syndrome	Neurological/behavioral	psychiatry
+D006934	Hypercalcemia	Metabolic	metabolic
+D010001	Osteitis Deformans	Musculoskeletal	musculoskeletal
+D002547	Cerebral Palsy	Neurological/behavioral	neurology
+D003922	Diabetes Mellitus, Type 1	Diabetes	metabolic
+D003922	Diabetes Mellitus, Type 1	Diabetes	endocrine
+D003922	Diabetes Mellitus, Type 1	Diabetes	immune
+D003876	Dermatitis, Atopic	Autoimmune	congenital
+D003876	Dermatitis, Atopic	Autoimmune	dermatology
+D003876	Dermatitis, Atopic	Autoimmune	immune
+D030361	Papillomavirus Infections	Infection	infection
+D018917	Optic Neuropathy, Ischemic	Neurological/behavioral	neurology
+D018917	Optic Neuropathy, Ischemic	Neurological/behavioral	ophthalmology
+D018917	Optic Neuropathy, Ischemic	Neurological/behavioral	cardiovascular
+D005234	Fatty Liver	Liver & kidney	
+D006525	Hepatitis, Viral, Human	Infection	infection
+D006525	Hepatitis, Viral, Human	Infection	digestive
+D055623	Keratosis, Actinic	Oncology	oncology
+D018295	Neoplasms, Basal Cell	Oncology	oncology
+D012393	Rosacea	Skin & connective tissue	dermatology
+D006996	Hypocalcemia	Metabolic	
+D003424	Crohn Disease	Autoimmune	digestive
+D005512	Food Hypersensitivity	Inflammation	immune
+D007637	Keratoconjunctivitis	Eye	ophthalmology
+D007946	Leukemia, Mast-Cell	Oncology	oncology
+D009303	Nasopharyngeal Neoplasms	Oncology	oncology
+D012516	Osteosarcoma	Oncology	oncology
+D001987	Bronchiectasis	Respiratory	respiratory
+D000690	Amyotrophic Lateral Sclerosis	Neurological/behavioral	neurology
+D000690	Amyotrophic Lateral Sclerosis	Neurological/behavioral	metabolic
+D002446	Celiac Disease	Autoimmune	digestive
+D002446	Celiac Disease	Autoimmune	metabolic
+D020529	Multiple Sclerosis, Relapsing-Remitting	Neurological/behavioral	neurology
+D020529	Multiple Sclerosis, Relapsing-Remitting	Neurological/behavioral	immune
+D011014	Pneumonia	Respiratory	infection
+D011014	Pneumonia	Respiratory	respiratory
+D012208	Rhabdomyosarcoma	Oncology	oncology
+D000741	Anemia, Aplastic	Neurological/behavioral	hematology
+D007251	Influenza, Human	Infection	infection
+D007251	Influenza, Human	Infection	respiratory
+D059413	Intraabdominal Infections	Infection	infection
+D012874	Skin Diseases, Infectious	Infection	infection
+D012874	Skin Diseases, Infectious	Infection	dermatology
+D001168	Arthritis	Autoimmune	musculoskeletal
+D036981	Fasciitis, Plantar	Musculoskeletal	
+D003668	Pressure Ulcer	Skin & connective tissue	dermatology
+D012878	Skin Neoplasms	Oncology	oncology
+D052256	Tendinopathy	Musculoskeletal	musculoskeletal
+D013716	Tennis Elbow	Musculoskeletal	musculoskeletal
+D001171	Arthritis, Juvenile	Autoimmune	musculoskeletal
+D001171	Arthritis, Juvenile	Autoimmune	dermatology
+D001171	Arthritis, Juvenile	Autoimmune	immune
+D015535	Arthritis, Psoriatic	Autoimmune	musculoskeletal
+D015535	Arthritis, Psoriatic	Autoimmune	dermatology
+D008105	Liver Cirrhosis, Biliary	Liver & kidney	digestive
+D008105	Liver Cirrhosis, Biliary	Liver & kidney	signs/symptoms
+D018278	Carcinoma, Neuroendocrine	Oncology	oncology
+D009062	Mouth Neoplasms	Oncology	oncology
+D012595	Scleroderma, Systemic	Autoimmune	dermatology
+D020256	Choroidal Neovascularization	Eye	
+D005354	Fibrosarcoma	Oncology	oncology
+D009216	Myopia	Eye	ophthalmology
+D013945	Thymoma	Oncology	oncology
+D014625	Vaginal Neoplasms	Oncology	oncology
+D001005	Anus Neoplasms	Oncology	oncology
+D000592	Amino Acid Metabolism, Inborn Errors	Metabolic	congenital
+D000592	Amino Acid Metabolism, Inborn Errors	Metabolic	metabolic
+D006467	Hemophilia A	Blood	hematology
+D006467	Hemophilia A	Blood	congenital
+D002836	Hemophilia B	Blood	hematology
+D002836	Hemophilia B	Blood	congenital
+D013736	Testicular Neoplasms	Oncology	oncology
+D020329	Essential Tremor	Neurological/behavioral	neurology
+D003092	Colitis	Autoimmune	digestive
+D005600	Fragile X Syndrome	Neurological/behavioral	neurology
+D005600	Fragile X Syndrome	Neurological/behavioral	congenital
+D012798	Sialorrhea	Neurological/behavioral	other
+D012859	Sjogren's Syndrome	Musculoskeletal	musculoskeletal
+D012859	Sjogren's Syndrome	Musculoskeletal	ophthalmology
+D012859	Sjogren's Syndrome	Musculoskeletal	dermatology
+D012859	Sjogren's Syndrome	Musculoskeletal	immune
+D013035	Spasm	Neurological/behavioral	neurology
+D013035	Spasm	Neurological/behavioral	signs/symptoms
+D014564	Urogenital Abnormalities	Urogenital	
+D014987	Xerostomia	Neurological/behavioral	other
+D007896	Leishmaniasis	Infection	infection
+D007896	Leishmaniasis	Infection	dermatology
+D005128	Eye Diseases	Eye	ophthalmology
+D013130	Spinal Stenosis	Musculoskeletal	musculoskeletal
+D003117	Color Vision Defects	Eye	neurology
+D003117	Color Vision Defects	Eye	ophthalmology
+D003117	Color Vision Defects	Eye	signs/symptoms
+D000855	Anorexia	Neurological/behavioral	signs/symptoms
+D020528	Multiple Sclerosis, Chronic Progressive	Neurological/behavioral	neurology
+D020528	Multiple Sclerosis, Chronic Progressive	Neurological/behavioral	immune
+D009128	Muscle Spasticity	Musculoskeletal	musculoskeletal
+D009128	Muscle Spasticity	Musculoskeletal	neurology
+D009128	Muscle Spasticity	Musculoskeletal	signs/symptoms
+D011537	Pruritus	Skin & connective tissue	dermatology
+D011537	Pruritus	Skin & connective tissue	signs/symptoms
+D005879	Tourette Syndrome	Neurological/behavioral	neurology
+D005879	Tourette Syndrome	Neurological/behavioral	congenital
+D005879	Tourette Syndrome	Neurological/behavioral	psychiatry
+D024821	Metabolic Syndrome	Metabolic	metabolic
+D013684	Telangiectasis	Cardiovascular	
+D016066	Pleural Effusion, Malignant	Oncology	oncology
+D022124	Hyperammonemia	Metabolic	signs/symptoms
+D002312	Cardiomyopathy, Hypertrophic	Cardiovascular	cardiovascular
+D001929	Brain Edema	Neurological/behavioral	neurology
+D007319	Sleep Initiation and Maintenance Disorders	Neurological/behavioral	neurology
+D007319	Sleep Initiation and Maintenance Disorders	Neurological/behavioral	psychiatry
+D008178	Lupus Erythematosus, Cutaneous	Skin & connective tissue	dermatology
+D012507	Sarcoidosis	Liver & kidney	hematology
+D001851	Bone Diseases, Metabolic	Metabolic	musculoskeletal
+D001851	Bone Diseases, Metabolic	Metabolic	metabolic
+D009393	Nephritis	Urogenital	other
+D018307	Neoplasms, Squamous Cell	Oncology	oncology
+D012512	Sarcoma, Ewing	Oncology	oncology
+D000380	Agranulocytosis	Blood	
+D017719	Diabetic Foot	Cardiovascular	cardiovascular
+D017719	Diabetic Foot	Cardiovascular	dermatology
+D017719	Diabetic Foot	Cardiovascular	endocrine
+D054070	Postthrombotic Syndrome	Cardiovascular	
+D007970	Leukopenia	Blood	hematology
+D005871	Castleman Disease	Blood	hematology
+D005871	Castleman Disease	Blood	immune
+D011507	Proteinuria	Urogenital	signs/symptoms
+D014565	Urogenital Neoplasms	Oncology	oncology
+D011125	Adenomatous Polyposis Coli	Oncology	
+D001859	Bone Neoplasms	Oncology	oncology
+D000752	Anemia, Pernicious	Blood	
+D010391	Pemphigoid, Bullous	Skin & connective tissue	dermatology
+D010391	Pemphigoid, Bullous	Skin & connective tissue	immune
+D019970	Cocaine-Related Disorders	Neurological/behavioral	psychiatry
+D004719	Endomyocardial Fibrosis	Cardiovascular	cardiovascular
+D047748	Pituitary ACTH Hypersecretion	Neurological/behavioral	neurology
+D047748	Pituitary ACTH Hypersecretion	Neurological/behavioral	endocrine
+D009181	Mycoses	Infection	infection
+D012221	Rhinitis, Allergic, Perennial	Respiratory	respiratory
+D012221	Rhinitis, Allergic, Perennial	Respiratory	immune
+D006255	Rhinitis, Allergic, Seasonal	Respiratory	respiratory
+D006255	Rhinitis, Allergic, Seasonal	Respiratory	immune
+D002311	Cardiomyopathy, Dilated	Cardiovascular	cardiovascular
+D002311	Cardiomyopathy, Dilated	Cardiovascular	congenital
+D009136	Muscular Dystrophies	Musculoskeletal	musculoskeletal
+D009136	Muscular Dystrophies	Musculoskeletal	neurology
+D009136	Muscular Dystrophies	Musculoskeletal	congenital
+D049288	Muscular Dystrophies, Limb-Girdle	Musculoskeletal	musculoskeletal
+D049288	Muscular Dystrophies, Limb-Girdle	Musculoskeletal	neurology
+D049288	Muscular Dystrophies, Limb-Girdle	Musculoskeletal	congenital
+D010661	Phenylketonurias	Neurological/behavioral	neurology
+D010661	Phenylketonurias	Neurological/behavioral	congenital
+D010661	Phenylketonurias	Neurological/behavioral	metabolic
+D009134	Muscular Atrophy, Spinal	Neurological/behavioral	neurology
+D011656	Pulmonary Emphysema	Respiratory	
+D001847	Bone Diseases	Musculoskeletal	musculoskeletal
+D009223	Myotonic Dystrophy	Musculoskeletal	musculoskeletal
+D009223	Myotonic Dystrophy	Musculoskeletal	neurology
+D009223	Myotonic Dystrophy	Musculoskeletal	congenital
+D060831	Hand-Foot Syndrome	Skin & connective tissue	dermatology
+D015140	Dementia, Vascular	Neurological/behavioral	neurology
+D015140	Dementia, Vascular	Neurological/behavioral	cardiovascular
+D015140	Dementia, Vascular	Neurological/behavioral	psychiatry
+D007174	Disruptive, Impulse Control, and Conduct Disorders	Neurological/behavioral	psychiatry
+D007926	Lesch-Nyhan Syndrome	Neurological/behavioral	
+D000172	Acromegaly	Musculoskeletal	musculoskeletal
+D000172	Acromegaly	Musculoskeletal	neurology
+D000172	Acromegaly	Musculoskeletal	endocrine
+D000568	Amenorrhea	Urogenital	signs/symptoms
+D016543	Central Nervous System Neoplasms	Oncology	oncology
+D019955	Conduct Disorder	Neurological/behavioral	psychiatry
+D005687	Galactorrhea	Urogenital	
+D006261	Headache	Neurological/behavioral	signs/symptoms
+D006966	Hyperprolactinemia	Neurological/behavioral	neurology
+D006966	Hyperprolactinemia	Neurological/behavioral	endocrine
+D015518	Rett Syndrome	Neurological/behavioral	neurology
+D015518	Rett Syndrome	Neurological/behavioral	congenital
+D008288	Malaria	Infection	infection
+D005921	Glomerulonephritis	Urogenital	other
+D011552	Pseudomonas Infections	Infection	infection
+D018242	Neuroectodermal Tumors, Primitive	Oncology	oncology
+D014523	Urethral Neoplasms	Oncology	oncology
+D019896	alpha 1-Antitrypsin Deficiency	Respiratory	digestive
+D019896	alpha 1-Antitrypsin Deficiency	Respiratory	respiratory
+D019896	alpha 1-Antitrypsin Deficiency	Respiratory	congenital
+D019896	alpha 1-Antitrypsin Deficiency	Respiratory	signs/symptoms
+D018746	Systemic Inflammatory Response Syndrome	Inflammation	signs/symptoms
+D018352	Coronavirus Infections	Infection	infection
+D003586	Cytomegalovirus Infections	Infection	infection
+D020031	Epstein-Barr Virus Infections	Infection	infection
+D012899	Smallpox	Infection	infection
+D007248	Infertility, Male	Urogenital	other
+D059373	Mastodynia	Neurological/behavioral	signs/symptoms
+D008595	Menorrhagia	Urogenital	signs/symptoms
+D011293	Premenstrual Syndrome	Urogenital	signs/symptoms
+D014627	Vaginitis	Urogenital	other
+D023903	Coronary Restenosis	Cardiovascular	cardiovascular
+D004211	Disseminated Intravascular Coagulation	Blood	hematology
+D006470	Hemorrhage	Blood	signs/symptoms
+D006561	Herpes Simplex	Infection	infection
+D006561	Herpes Simplex	Infection	dermatology
+D011655	Pulmonary Embolism	Respiratory	respiratory
+D011655	Pulmonary Embolism	Respiratory	cardiovascular
+D013921	Thrombocytopenia	Blood	hematology
+D013924	Thrombophlebitis	Cardiovascular	cardiovascular
+D013927	Thrombosis	Cardiovascular	cardiovascular
+D014689	Venous Insufficiency	Cardiovascular	cardiovascular
+D020246	Venous Thrombosis	Cardiovascular	cardiovascular
+D005177	Factor XIII Deficiency	Blood	
+D020152	Antithrombin III Deficiency	Blood	hematology
+D020152	Antithrombin III Deficiency	Blood	congenital
+D007020	Hypoprothrombinemias	Blood	hematology
+D007020	Hypoprothrombinemias	Blood	congenital
+D055959	Intervertebral Disc Degeneration	Musculoskeletal	
+D014842	von Willebrand Diseases	Blood	hematology
+D014842	von Willebrand Diseases	Blood	congenital
+D018316	Gliosarcoma	Oncology	oncology
+D016553	Purpura, Thrombocytopenic, Idiopathic	Autoimmune	hematology
+D016553	Purpura, Thrombocytopenic, Idiopathic	Autoimmune	immune
+D016553	Purpura, Thrombocytopenic, Idiopathic	Autoimmune	signs/symptoms
+D010392	Pemphigus	Skin & connective tissue	dermatology
+D010392	Pemphigus	Skin & connective tissue	immune
+D000347	Afibrinogenemia	Blood	hematology
+D000347	Afibrinogenemia	Blood	congenital
+D012774	Shock, Traumatic	Neurological/behavioral	signs/symptoms
+D017674	Hypophosphatemia	Metabolic	metabolic
+D010518	Periodontitis	Infection	other
+D013922	Thrombocytosis	Blood	hematology
+D014376	Tuberculosis	Infection	infection
+D006009	Glycogen Storage Disease Type II	Metabolic	neurology
+D006009	Glycogen Storage Disease Type II	Metabolic	congenital
+D006009	Glycogen Storage Disease Type II	Metabolic	metabolic
+D033461	Hyperuricemia	Metabolic	
+D008607	Intellectual Disability	Neurological/behavioral	
+D016584	Panic Disorder	Neurological/behavioral	psychiatry
+D012893	Sleep Wake Disorders	Neurological/behavioral	neurology
+D012893	Sleep Wake Disorders	Neurological/behavioral	signs/symptoms
+D012893	Sleep Wake Disorders	Neurological/behavioral	psychiatry
+D009085	Mucopolysaccharidosis IV	Metabolic	congenital
+D009085	Mucopolysaccharidosis IV	Metabolic	dermatology
+D009085	Mucopolysaccharidosis IV	Metabolic	metabolic
+D005776	Gaucher Disease	Metabolic	neurology
+D005776	Gaucher Disease	Metabolic	congenital
+D005776	Gaucher Disease	Metabolic	metabolic
+D002543	Cerebral Hemorrhage	Neurological/behavioral	neurology
+D002543	Cerebral Hemorrhage	Neurological/behavioral	cardiovascular
+D002543	Cerebral Hemorrhage	Neurological/behavioral	signs/symptoms
+D007003	Hypoglycemia	Metabolic	metabolic
+D019578	Multiple System Atrophy	Neurological/behavioral	neurology
+D004392	Dwarfism	Musculoskeletal	musculoskeletal
+D004392	Dwarfism	Musculoskeletal	congenital
+D004392	Dwarfism	Musculoskeletal	endocrine
+D004393	Dwarfism, Pituitary	Musculoskeletal	musculoskeletal
+D004393	Dwarfism, Pituitary	Musculoskeletal	neurology
+D004393	Dwarfism, Pituitary	Musculoskeletal	endocrine
+D009634	Noonan Syndrome	Musculoskeletal	musculoskeletal
+D009634	Noonan Syndrome	Musculoskeletal	cardiovascular
+D009634	Noonan Syndrome	Musculoskeletal	congenital
+D009634	Noonan Syndrome	Musculoskeletal	dermatology
+D011218	Prader-Willi Syndrome	Neurological/behavioral	neurology
+D011218	Prader-Willi Syndrome	Neurological/behavioral	congenital
+D011218	Prader-Willi Syndrome	Neurological/behavioral	metabolic
+D008060	Lipodystrophy	Skin & connective tissue	dermatology
+D008060	Lipodystrophy	Skin & connective tissue	metabolic
+D000856	Anorexia Nervosa	Neurological/behavioral	psychiatry
+D000795	Fabry Disease	Metabolic	neurology
+D000795	Fabry Disease	Metabolic	cardiovascular
+D000795	Fabry Disease	Metabolic	congenital
+D000795	Fabry Disease	Metabolic	metabolic
+D016640	Diabetes, Gestational	Diabetes	
+D005348	Fibrocystic Breast Disease	Skin & connective tissue	dermatology
+D006177	Gynecomastia	Skin & connective tissue	dermatology
+D007889	Leiomyoma	Oncology	oncology
+D010262	Paraphilic Disorders	Neurological/behavioral	psychiatry
+D012131	Respiratory Insufficiency	Respiratory	respiratory
+D015526	AIDS Dementia Complex	Infection	infection
+D015526	AIDS Dementia Complex	Infection	neurology
+D015526	AIDS Dementia Complex	Infection	immune
+D015526	AIDS Dementia Complex	Infection	psychiatry
+D004644	Emotions	Neurological/behavioral	
+D004421	Dystonia	Neurological/behavioral	neurology
+D004421	Dystonia	Neurological/behavioral	signs/symptoms
+D009069	Movement Disorders	Neurological/behavioral	
+D013789	Thalassemia	Blood	hematology
+D013789	Thalassemia	Blood	congenital
+D009404	Nephrotic Syndrome	Urogenital	other
+D056912	Binge-Eating Disorder	Neurological/behavioral	psychiatry
+D005621	Friedreich Ataxia	Neurological/behavioral	neurology
+D005621	Friedreich Ataxia	Neurological/behavioral	congenital
+D005621	Friedreich Ataxia	Neurological/behavioral	metabolic
+D014581	Urticaria	Skin & connective tissue	dermatology
+D014581	Urticaria	Skin & connective tissue	immune
+D008209	Lymphedema	Blood	hematology
+D013919	Thromboangiitis Obliterans	Cardiovascular	cardiovascular
+D020176	Tyrosinemias	Neurological/behavioral	neurology
+D020176	Tyrosinemias	Neurological/behavioral	congenital
+D020176	Tyrosinemias	Neurological/behavioral	metabolic
+D003027	Cluster Headache	Neurological/behavioral	neurology
+D003231	Conjunctivitis	Eye	ophthalmology
+D004485	Eczema	Skin & connective tissue	dermatology
+D010033	Otitis Media	Inflammation	other
+D002385	Cataplexy	Neurological/behavioral	neurology
+D002385	Cataplexy	Neurological/behavioral	psychiatry
+D009290	Narcolepsy	Neurological/behavioral	neurology
+D009290	Narcolepsy	Neurological/behavioral	psychiatry
+D009771	Obsessive-Compulsive Disorder	Neurological/behavioral	psychiatry
+D016532	Mucopolysaccharidosis II	Neurological/behavioral	neurology
+D016532	Mucopolysaccharidosis II	Neurological/behavioral	congenital
+D016532	Mucopolysaccharidosis II	Neurological/behavioral	dermatology
+D016532	Mucopolysaccharidosis II	Neurological/behavioral	metabolic
+D008059	Mucopolysaccharidosis I	Metabolic	congenital
+D008059	Mucopolysaccharidosis I	Metabolic	dermatology
+D008059	Mucopolysaccharidosis I	Metabolic	metabolic
+D004660	Encephalitis	Infection	neurology
+D015673	Fatigue Syndrome, Chronic	Infection	infection
+D015673	Fatigue Syndrome, Chronic	Infection	musculoskeletal
+D015673	Fatigue Syndrome, Chronic	Infection	neurology
+D003699	Hepatitis D	Infection	infection
+D003699	Hepatitis D	Infection	digestive
+D006562	Herpes Zoster	Infection	infection
+D010031	Otitis	Inflammation	
+D010411	Penile Induration	Urogenital	dermatology
+D010850	Picornaviridae Infections	Infection	infection
+D011469	Prostatic Diseases	Urogenital	
+D012141	Respiratory Tract Infections	Infection	infection
+D012141	Respiratory Tract Infections	Infection	respiratory
+D012514	Sarcoma, Kaposi	Infection	oncology
+D013281	Stomatitis, Aphthous	Skin & connective tissue	other
+D002578	Uterine Cervical Dysplasia	Oncology	oncology
+D014777	Virus Diseases	Infection	infection
+D006105	Granulomatous Disease, Chronic	Blood	hematology
+D006105	Granulomatous Disease, Chronic	Blood	congenital
+D006105	Granulomatous Disease, Chronic	Blood	immune
+D010022	Osteopetrosis	Musculoskeletal	musculoskeletal
+D015266	Carcinoma, Merkel Cell	Infection	oncology
+D057765	Eosinophilic Esophagitis	Autoimmune	digestive
+D057765	Eosinophilic Esophagitis	Autoimmune	hematology
+D057765	Eosinophilic Esophagitis	Autoimmune	immune
+D001528	Behcet Syndrome	Autoimmune	ophthalmology
+D001528	Behcet Syndrome	Autoimmune	cardiovascular
+D001528	Behcet Syndrome	Autoimmune	congenital
+D001528	Behcet Syndrome	Autoimmune	dermatology
+D011111	Polymyalgia Rheumatica	Musculoskeletal	musculoskeletal
+D011111	Polymyalgia Rheumatica	Musculoskeletal	dermatology
+D015210	Arthritis, Gouty	Autoimmune	musculoskeletal
+D015210	Arthritis, Gouty	Autoimmune	congenital
+D015210	Arthritis, Gouty	Autoimmune	metabolic
+D056587	Cryopyrin-Associated Periodic Syndromes	Metabolic	congenital
+D056587	Cryopyrin-Associated Periodic Syndromes	Metabolic	dermatology
+D010505	Familial Mediterranean Fever	Inflammation	congenital
+D015423	Scleritis	Eye	ophthalmology
+D002006	Brucellosis	Infection	
+D002177	Candidiasis	Infection	infection
+D002690	Chlamydia Infections	Infection	infection
+D006482	Hemorrhagic Fevers, Viral	Infection	infection
+D007918	Leprosy	Infection	infection
+D008587	Meningitis, Viral	Infection	
+D010019	Osteomyelitis	Musculoskeletal	
+D012852	Sinusitis	Respiratory	infection
+D012852	Sinusitis	Respiratory	respiratory
+D009298	Nasal Polyps	Respiratory	respiratory
+D009298	Nasal Polyps	Respiratory	signs/symptoms
+D007153	Immunologic Deficiency Syndromes	Inflammation	immune
+D007968	Leukoencephalopathy, Progressive Multifocal	Infection	infection
+D007968	Leukoencephalopathy, Progressive Multifocal	Infection	neurology
+D001989	Bronchiolitis Obliterans	Respiratory	respiratory
+D018357	Respiratory Syncytial Virus Infections	Infection	infection
+D058065	Diabetic Cardiomyopathies	Cardiovascular	cardiovascular
+D058065	Diabetic Cardiomyopathies	Cardiovascular	endocrine
+D003328	Coronary Thrombosis	Cardiovascular	cardiovascular
+D015223	Wolman Disease	Metabolic	
+D002062	Bursitis	Musculoskeletal	musculoskeletal
+D003015	Clostridium Infections	Infection	
+D008363	alpha-Mannosidosis	Metabolic	congenital
+D008363	alpha-Mannosidosis	Metabolic	metabolic
+D000267	Tissue Adhesions	Blood	
+D014820	Vitiligo	Skin & connective tissue	dermatology
+D002544	Cerebral Infarction	Neurological/behavioral	neurology
+D002544	Cerebral Infarction	Neurological/behavioral	cardiovascular
+D002544	Cerebral Infarction	Neurological/behavioral	signs/symptoms
+D009021	Morphine Dependence	Neurological/behavioral	
+D003320	Corneal Ulcer	Infection	infection
+D003320	Corneal Ulcer	Infection	ophthalmology
+D004820	Epidermolysis Bullosa	Skin & connective tissue	congenital
+D004820	Epidermolysis Bullosa	Skin & connective tissue	dermatology
+D007238	Infarction	Cardiovascular	
+D014890	Granulomatosis with Polyangiitis	Autoimmune	respiratory
+D014890	Granulomatosis with Polyangiitis	Autoimmune	cardiovascular
+D014890	Granulomatosis with Polyangiitis	Autoimmune	immune
+D020178	Sleep Disorders, Circadian Rhythm	Neurological/behavioral	neurology
+D020178	Sleep Disorders, Circadian Rhythm	Neurological/behavioral	psychiatry
+D006223	Hamartoma Syndrome, Multiple	Oncology	oncology
+D018192	Lymphangioleiomyomatosis	Oncology	oncology
+D017253	Neurofibromatoses	Oncology	oncology
+D013203	Staphylococcal Infections	Infection	infection
+D013290	Streptococcal Infections	Infection	infection
+D014402	Tuberous Sclerosis	Oncology	oncology
+D009084	Mucopolysaccharidosis III	Metabolic	congenital
+D009084	Mucopolysaccharidosis III	Metabolic	dermatology
+D009084	Mucopolysaccharidosis III	Metabolic	metabolic
+D000257	Adenoviridae Infections	Infection	
+D001260	Ataxia Telangiectasia	Neurological/behavioral	neurology
+D001260	Ataxia Telangiectasia	Neurological/behavioral	cardiovascular
+D001260	Ataxia Telangiectasia	Neurological/behavioral	congenital
+D001260	Ataxia Telangiectasia	Neurological/behavioral	metabolic
+D001260	Ataxia Telangiectasia	Neurological/behavioral	immune
+D001762	Blepharitis	Eye	ophthalmology
+D002825	Chorioretinitis	Eye	
+D003440	Croup	Respiratory	
+D004892	Erythema Multiforme	Autoimmune	
+D015817	Eye Infections	Infection	infection
+D015817	Eye Infections	Infection	ophthalmology
+D005313	Fetal Death	Urogenital	
+D007169	Impetigo	Infection	infection
+D007169	Impetigo	Infection	dermatology
+D008548	Melanosis	Skin & connective tissue	dermatology
+D009080	Mucocutaneous Lymph Node Syndrome	Autoimmune	cardiovascular
+D009080	Mucocutaneous Lymph Node Syndrome	Autoimmune	hematology
+D009080	Mucocutaneous Lymph Node Syndrome	Autoimmune	dermatology
+D010032	Otitis Externa	Inflammation	
+D012170	Retinal Vein Occlusion	Eye	ophthalmology
+D012170	Retinal Vein Occlusion	Eye	cardiovascular
+D012713	Serum Sickness	Skin & connective tissue	
+D013036	Spasms, Infantile	Neurological/behavioral	neurology
+D015430	Weight Gain	Neurological/behavioral	signs/symptoms
+D020918	Complex Regional Pain Syndromes	Neurological/behavioral	neurology
+D002032	Bulimia	Neurological/behavioral	signs/symptoms
+D006473	Postpartum Hemorrhage	Urogenital	signs/symptoms
+D039141	Muscular Dystrophy, Oculopharyngeal	Musculoskeletal	musculoskeletal
+D039141	Muscular Dystrophy, Oculopharyngeal	Musculoskeletal	neurology
+D039141	Muscular Dystrophy, Oculopharyngeal	Musculoskeletal	congenital
+D008582	Meningitis, Aseptic	Infection	
+D055665	Purpura Fulminans	Blood	
+D007039	Hypotrichosis	Skin & connective tissue	
+D004238	Diverticulitis	Infection	digestive
+D004374	Ductus Arteriosus, Patent	Cardiovascular	cardiovascular
+D004374	Ductus Arteriosus, Patent	Cardiovascular	congenital
+D001471	Barrett Esophagus	Oncology	oncology
+D019559	Capillary Leak Syndrome	Cardiovascular	cardiovascular
+D000783	Aneurysm	Cardiovascular	cardiovascular
+D014901	West Nile Fever	Infection	infection
+D014901	West Nile Fever	Infection	neurology
+D012203	Rh Isoimmunization	Blood	
+D057130	Leber Congenital Amaurosis	Eye	ophthalmology
+D020277	Polyradiculoneuropathy, Chronic Inflammatory Demyelinating	Neurological/behavioral	neurology
+D020277	Polyradiculoneuropathy, Chronic Inflammatory Demyelinating	Neurological/behavioral	immune
+D001997	Bronchopulmonary Dysplasia	Respiratory	respiratory
+D001997	Bronchopulmonary Dysplasia	Respiratory	congenital
+D008471	Meconium Aspiration Syndrome	Respiratory	respiratory
+D008471	Meconium Aspiration Syndrome	Respiratory	congenital
+D012127	Respiratory Distress Syndrome, Newborn	Respiratory	respiratory
+D012127	Respiratory Distress Syndrome, Newborn	Respiratory	congenital
+D004916	Erythromelalgia	Cardiovascular	cardiovascular
+D002239	Carbohydrate Metabolism, Inborn Errors	Metabolic	congenital
+D002239	Carbohydrate Metabolism, Inborn Errors	Metabolic	metabolic
+D054559	Hyperphosphatemia	Metabolic	metabolic
+D056650	Vulvodynia	Urogenital	other
+D009542	Niemann-Pick Diseases	Neurological/behavioral	neurology
+D009542	Niemann-Pick Diseases	Neurological/behavioral	hematology
+D009542	Niemann-Pick Diseases	Neurological/behavioral	congenital
+D009542	Niemann-Pick Diseases	Neurological/behavioral	metabolic
+D011855	Radiodermatitis	Skin & connective tissue	
+D010013	Osteogenesis Imperfecta	Musculoskeletal	musculoskeletal
+D010013	Osteogenesis Imperfecta	Musculoskeletal	congenital
+D010013	Osteogenesis Imperfecta	Musculoskeletal	dermatology
+D008303	Malignant Carcinoid Syndrome	Oncology	oncology
+D010911	Pituitary Neoplasms	Oncology	oncology
+D019121	Burkholderia Infections	Infection	infection
+D020301	Vasospasm, Intracranial	Neurological/behavioral	neurology
+D020301	Vasospasm, Intracranial	Neurological/behavioral	cardiovascular
+D011654	Pulmonary Edema	Respiratory	respiratory
+D005134	Eye Neoplasms	Oncology	oncology
+D009472	Neuronal Ceroid-Lipofuscinoses	Neurological/behavioral	neurology
+D009472	Neuronal Ceroid-Lipofuscinoses	Neurological/behavioral	congenital
+D009472	Neuronal Ceroid-Lipofuscinoses	Neurological/behavioral	metabolic
+D020754	Spinocerebellar Ataxias	Neurological/behavioral	neurology
+D020754	Spinocerebellar Ataxias	Neurological/behavioral	congenital
+D015356	Retinal Artery Occlusion	Eye	ophthalmology
+D015356	Retinal Artery Occlusion	Eye	cardiovascular
+D007057	Ichthyosis	Skin & connective tissue	congenital
+D007057	Ichthyosis	Skin & connective tissue	dermatology
+D007642	Keratosis	Skin & connective tissue	
+D012080	Chronic Kidney Disease-Mineral and Bone Disorder	Liver & kidney	musculoskeletal
+D012080	Chronic Kidney Disease-Mineral and Bone Disorder	Liver & kidney	metabolic
+D012080	Chronic Kidney Disease-Mineral and Bone Disorder	Liver & kidney	endocrine
+D014808	Vitamin D Deficiency	Metabolic	metabolic
+D014923	Wiskott-Aldrich Syndrome	Blood	hematology
+D014923	Wiskott-Aldrich Syndrome	Blood	congenital
+D014923	Wiskott-Aldrich Syndrome	Blood	immune
+C000656924	scedosporiosis		other
+C000711409	post-acute COVID-19 syndrome		other
+C531854	Lysosomal acid lipase deficiency		other
+C535297	Recurrent respiratory papillomatosis		other
+C535306	2-Hydroxyglutaricaciduria		other
+C535440	Bietti Crystalline Dystrophy		other
+C535607	Aicardi-Goutieres syndrome		other
+C535739	Congenital disorder of glycosylation type 1A		other
+C535803	succinic semialdehyde dehydrogenase deficiency		other
+C535933	Cholestasis, progressive familial intrahepatic 1		other
+C535934	Cholestasis, progressive familial intrahepatic 2		other
+C535935	Cholestasis, progressive familial intrahepatic 3		other
+C536109	N-acetyl glutamate synthetase deficiency		other
+C536353	VLCAD deficiency		other
+C536657	Periodic fever, familial, autosomal dominant		other
+C536697	WHIM syndrome		other
+C536764	Xerocytosis, hereditary		other
+C536801	Telomeric 22q13 Monosomy Syndrome		other
+C537358	Methylmalonic acidemia		other
+C537403	Pitt-Hopkins syndrome		other
+C537409	Bruton type agammaglobulinemia		other
+C537437	Aromatic amino acid decarboxylase deficiency		other
+C537477			other
+C537701	Hyperostosis corticalis deformans juvenilis		other
+C537705	Kabuki syndrome		other
+C537995	Dysferlinopathy		other
+C538036	Partial Duplication 15q Syndrome		other
+C538380	HHH syndrome		other
+C562687	Lysinuric Protein Intolerance		other
+C562783	Hypercalciuric Hypocalcemia, Familial		other
+C563600	Masticatory Muscles, Hypertrophy of		other
+C564858	Pyruvate Kinase Deficiency of Red Cells		other
+C566780	Actinic Prurigo		other
+C567863	Congenital Lipomatous Overgrowth, Vascular Malformations, and Epidermal Nevi		other
+C580017	Congenital Plasminogen Deficiency		other
+C580062	Epidermal Nevus		other
+C580383	Pontocerebellar Hypoplasia		other
+C585640	Activated PI3K-delta Syndrome		other
+D000007	Abdominal Injuries		other
+D000022	Abortion, Spontaneous		other
+D000068884	Immunosenescence		immune
+D000070607	Morton Neuroma		musculoskeletal
+D000070607	Morton Neuroma		neurology
+D000070607	Morton Neuroma		signs/symptoms
+D000070627	Chronic Traumatic Encephalopathy		neurology
+D000070642	Brain Injuries, Traumatic		neurology
+D000071057	Tardive Dyskinesia		neurology
+D000071057	Tardive Dyskinesia		signs/symptoms
+D000071243	Zika Virus Infection		infection
+D000071700	Cone-Rod Dystrophies		ophthalmology
+D000071700	Cone-Rod Dystrophies		congenital
+D000072661	Ciliopathies		congenital
+D000072716	Cancer Pain		signs/symptoms
+D000072861	Phobia, Social		psychiatry
+D000073376	Epileptic Syndromes		neurology
+D000073496	Frailty		signs/symptoms
+D000075262	Hypoadrenocorticism, Familial		endocrine
+D000075363	Immunoglobulin Light-chain Amyloidosis		oncology
+D000077295	Urinary Bladder, Underactive		signs/symptoms
+D000077299	Healthcare-Associated Pneumonia		infection
+D000077299	Healthcare-Associated Pneumonia		respiratory
+D000077299	Healthcare-Associated Pneumonia		signs/symptoms
+D000077733	Immunoglobulin G4-Related Disease		immune
+D000079689	Opioid-Induced Constipation		signs/symptoms
+D000079689	Opioid-Induced Constipation		psychiatry
+D000079690	Postoperative Cognitive Complications		signs/symptoms
+D000079690	Postoperative Cognitive Complications		psychiatry
+D000080365	Birdshot Chorioretinopathy		ophthalmology
+D000080365	Birdshot Chorioretinopathy		immune
+D000080424	Cytokine Release Syndrome		signs/symptoms
+D000086382	COVID-19		infection
+D000086382	COVID-19		respiratory
+D000138	Acidosis		metabolic
+D000224	Addison Disease		endocrine
+D000224	Addison Disease		immune
+D000258	Adenovirus Infections, Human		infection
+D000292	Pelvic Inflammatory Disease		infection
+D000417	Albinism		ophthalmology
+D000417	Albinism		congenital
+D000417	Albinism		dermatology
+D000417	Albinism		metabolic
+D000435	Alcoholic Intoxication		psychiatry
+D000506	Alopecia Areata		dermatology
+D000542	Alveolitis, Extrinsic Allergic		respiratory
+D000542	Alveolitis, Extrinsic Allergic		immune
+D000550	Amblyopia		neurology
+D000550	Amblyopia		ophthalmology
+D000550	Amblyopia		signs/symptoms
+D000627	Aminophenols		other
+D000647	Amnesia		neurology
+D000647	Amnesia		signs/symptoms
+D000647	Amnesia		psychiatry
+D000707	Anaphylaxis		immune
+D000758	Anesthesia		other
+D000762	Anesthesia Recovery Period		other
+D001026	Coronary Artery Bypass		other
+D001068	Feeding and Eating Disorders		psychiatry
+D001165	Arteriovenous Malformations		cardiovascular
+D001165	Arteriovenous Malformations		congenital
+D001201	Ascites		signs/symptoms
+D001228	Aspergillosis		infection
+D001259	Ataxia		neurology
+D001259	Ataxia		signs/symptoms
+D001424	Bacterial Infections		infection
+D001478	Basal Cell Nevus Syndrome		oncology
+D001650	Bile Duct Neoplasms		oncology
+D001656	Biliary Atresia		digestive
+D001656	Biliary Atresia		congenital
+D001763	Blepharoptosis		ophthalmology
+D001764	Blepharospasm		ophthalmology
+D001766	Blindness		neurology
+D001766	Blindness		ophthalmology
+D001766	Blindness		signs/symptoms
+D001845	Bone Cysts		oncology
+D001848	Bone Diseases, Developmental		musculoskeletal
+D001850	Bone Diseases, Infectious		infection
+D001850	Bone Diseases, Infectious		musculoskeletal
+D001855	Bone Marrow Diseases		hematology
+D001861	Bone Regeneration		musculoskeletal
+D001883	Borderline Personality Disorder		psychiatry
+D001906	Botulism		infection
+D001906	Botulism		neurology
+D001919	Bradycardia		cardiovascular
+D001919	Bradycardia		signs/symptoms
+D001927	Brain Diseases		neurology
+D001930	Brain Injuries		neurology
+D002056	Burns		other
+D002189	Marijuana Abuse		psychiatry
+D002294	Carcinoma, Squamous Cell		oncology
+D002607	Charcot-Marie-Tooth Disease		neurology
+D002607	Charcot-Marie-Tooth Disease		congenital
+D002761	Cholangitis		digestive
+D002771	Cholera		infection
+D002780	Cholestasis, Intrahepatic		digestive
+D002813	Chondrosarcoma		oncology
+D002817	Chordoma		oncology
+D002925	Ciliary Motility Disorders		respiratory
+D002925	Ciliary Motility Disorders		congenital
+D003047	Coccidioidomycosis		infection
+D003072	Cognition Disorders		psychiatry
+D003139	Common Cold		infection
+D003139	Common Cold		respiratory
+D003248	Constipation		signs/symptoms
+D003267	Contraception		other
+D003316	Corneal Diseases		ophthalmology
+D003317	Corneal Dystrophies, Hereditary		ophthalmology
+D003317	Corneal Dystrophies, Hereditary		congenital
+D003414	Crigler-Najjar Syndrome		congenital
+D003414	Crigler-Najjar Syndrome		metabolic
+D003453	Cryptococcosis		infection
+D003456	Cryptorchidism		congenital
+D003456	Cryptorchidism		endocrine
+D003457	Cryptosporidiosis		infection
+D003457	Cryptosporidiosis		digestive
+D003528	Carcinoma, Adenoid Cystic		oncology
+D003554	Cystinosis		congenital
+D003554	Cystinosis		metabolic
+D003680	Deglutition Disorders		digestive
+D003693	Delirium		neurology
+D003693	Delirium		signs/symptoms
+D003693	Delirium		psychiatry
+D003715	Dengue		infection
+D003865	Depressive Disorder, Major		psychiatry
+D003872	Dermatitis		dermatology
+D003882	Dermatomyositis		musculoskeletal
+D003882	Dermatomyositis		neurology
+D003882	Dermatomyositis		dermatology
+D003920	Diabetes Mellitus		metabolic
+D003920	Diabetes Mellitus		endocrine
+D003967	Diarrhea		signs/symptoms
+D004357	Drug Synergism		other
+D004381	Duodenal Ulcer		digestive
+D004402	Dysautonomia, Familial		neurology
+D004402	Dysautonomia, Familial		congenital
+D004409	Dyskinesia, Drug-Induced		neurology
+D004409	Dyskinesia, Drug-Induced		signs/symptoms
+D004414	Dyspareunia		psychiatry
+D004415	Dyspepsia		signs/symptoms
+D004427	Ear Diseases		other
+D004476	Ectodermal Dysplasia		congenital
+D004476	Ectodermal Dysplasia		dermatology
+D004535	Ehlers-Danlos Syndrome		cardiovascular
+D004535	Ehlers-Danlos Syndrome		hematology
+D004535	Ehlers-Danlos Syndrome		congenital
+D004535	Ehlers-Danlos Syndrome		dermatology
+D004672	Encephalitis, Japanese		infection
+D004672	Encephalitis, Japanese		neurology
+D004673	Encephalomyelitis, Acute Disseminated		neurology
+D004673	Encephalomyelitis, Acute Disseminated		immune
+D004685	Encephalomyelitis, Venezuelan Equine		infection
+D004685	Encephalomyelitis, Venezuelan Equine		neurology
+D004686	Encephalomyocarditis virus		infection
+D004696	Endocarditis		cardiovascular
+D004700	Endocrine System Diseases		endocrine
+D004829	Epilepsy, Generalized		neurology
+D004831	Epilepsies, Myoclonic		neurology
+D004832	Epilepsy, Absence		neurology
+D004931	Esophageal Achalasia		digestive
+D004932	Esophageal and Gastric Varices		digestive
+D004941	Esophagitis		digestive
+D004942	Esophagitis, Peptic		digestive
+D005131	Eye Injuries		neurology
+D005131	Eye Injuries		ophthalmology
+D005168	Factor VII Deficiency		hematology
+D005168	Factor VII Deficiency		congenital
+D005173	Factor XI Deficiency		hematology
+D005173	Factor XI Deficiency		congenital
+D005199	Fanconi Anemia		hematology
+D005199	Fanconi Anemia		congenital
+D005199	Fanconi Anemia		metabolic
+D005221	Fatigue		signs/symptoms
+D005235	Fatty Liver, Alcoholic		digestive
+D005242	Fecal Incontinence		digestive
+D005261	Female Urogenital Diseases and Pregnancy Complications		other
+D005315	Fetal Diseases		congenital
+D005401	Fissure in Ano		digestive
+D005642	Fuchs' Endothelial Dystrophy		ophthalmology
+D005642	Fuchs' Endothelial Dystrophy		congenital
+D005693	Galactosemias		neurology
+D005693	Galactosemias		congenital
+D005693	Galactosemias		metabolic
+D005756	Gastritis		digestive
+D005759	Gastroenteritis		digestive
+D005764	Gastroesophageal Reflux		digestive
+D005767	Gastrointestinal Diseases		digestive
+D005769	Gastrointestinal Motility		digestive
+D005909	Glioblastoma		oncology
+D005922	Glomerulonephritis, IGA		immune
+D005923	Glomerulosclerosis, Focal Segmental		other
+D005953	Glycogen Storage Disease Type I		congenital
+D005953	Glycogen Storage Disease Type I		metabolic
+D006008	Glycogen Storage Disease		congenital
+D006008	Glycogen Storage Disease		metabolic
+D006011	Glycogen Storage Disease Type IV		congenital
+D006011	Glycogen Storage Disease Type IV		metabolic
+D006042	Goiter		endocrine
+D006069	Gonorrhea		infection
+D006073	Gout		musculoskeletal
+D006073	Gout		congenital
+D006073	Gout		metabolic
+D006084	Graft Rejection		immune
+D006086	Graft vs Host Disease		immune
+D006192	Haemophilus Infections		infection
+D006330	Heart Defects, Congenital		cardiovascular
+D006330	Heart Defects, Congenital		congenital
+D006432	Hemochromatosis		congenital
+D006432	Hemochromatosis		metabolic
+D006457	Hemoglobinuria, Paroxysmal		hematology
+D006461	Hemolysis		signs/symptoms
+D006501	Hepatic Encephalopathy		digestive
+D006501	Hepatic Encephalopathy		neurology
+D006501	Hepatic Encephalopathy		metabolic
+D006505	Hepatitis		digestive
+D006506	Hepatitis A		infection
+D006506	Hepatitis A		digestive
+D006519	Hepatitis, Alcoholic		digestive
+D006527	Hepatolenticular Degeneration		digestive
+D006527	Hepatolenticular Degeneration		neurology
+D006527	Hepatolenticular Degeneration		congenital
+D006527	Hepatolenticular Degeneration		metabolic
+D006530	Hepatorenal Syndrome		digestive
+D006623	von Hippel-Lindau Disease		neurology
+D006623	von Hippel-Lindau Disease		cardiovascular
+D006623	von Hippel-Lindau Disease		congenital
+D006646	Histiocytosis, Langerhans-Cell		respiratory
+D006646	Histiocytosis, Langerhans-Cell		hematology
+D006712	Homocystinuria		neurology
+D006712	Homocystinuria		congenital
+D006712	Homocystinuria		dermatology
+D006712	Homocystinuria		metabolic
+D006929	Hyperaldosteronism		endocrine
+D006932	Hyperbilirubinemia		signs/symptoms
+D006938	Hyperlipoproteinemia Type II		congenital
+D006938	Hyperlipoproteinemia Type II		metabolic
+D006946	Hyperinsulinism		metabolic
+D006961	Hyperparathyroidism		endocrine
+D006962	Hyperparathyroidism, Secondary		endocrine
+D006965	Hyperplasia		signs/symptoms
+D006975	Hypertension, Portal		digestive
+D006980	Hyperthyroidism		endocrine
+D007006	Hypogonadism		endocrine
+D007011	Hypoparathyroidism		endocrine
+D007014	Hypophosphatasia		congenital
+D007014	Hypophosphatasia		metabolic
+D007027	Hypothalamic Diseases		neurology
+D007035	Hypothermia		signs/symptoms
+D007037	Hypothyroidism		endocrine
+D007383	Intermittent Claudication		cardiovascular
+D007383	Intermittent Claudication		signs/symptoms
+D007403	Intervertebral Disc		musculoskeletal
+D007405	Intervertebral Disc Displacement		musculoskeletal
+D007405	Intervertebral Disc Displacement		signs/symptoms
+D007562	Creutzfeldt-Jakob Syndrome		infection
+D007562	Creutzfeldt-Jakob Syndrome		neurology
+D007562	Creutzfeldt-Jakob Syndrome		psychiatry
+D007565	Jaundice		signs/symptoms
+D007589	Job Syndrome		hematology
+D007589	Job Syndrome		congenital
+D007589	Job Syndrome		immune
+D007592	Joint Diseases		musculoskeletal
+D007627	Keloid		dermatology
+D007627	Keloid		signs/symptoms
+D007634	Keratitis		ophthalmology
+D007640	Keratoconus		ophthalmology
+D007644	Darier Disease		congenital
+D007644	Darier Disease		dermatology
+D007647	Kernicterus		neurology
+D007647	Kernicterus		hematology
+D007647	Kernicterus		congenital
+D007647	Kernicterus		metabolic
+D007647	Kernicterus		immune
+D007647	Kernicterus		signs/symptoms
+D007676	Kidney Failure, Chronic		other
+D007751	Labor, Induced		other
+D007752	Obstetric Labor, Premature		other
+D007759	Labyrinth Diseases		other
+D007775	Lactation Disorders		dermatology
+D007863	Lecithin Cholesterol Acyltransferase Deficiency		congenital
+D007863	Lecithin Cholesterol Acyltransferase Deficiency		metabolic
+D007888	Leigh Disease		neurology
+D007888	Leigh Disease		congenital
+D007888	Leigh Disease		metabolic
+D007965	Leukodystrophy, Globoid Cell		neurology
+D007965	Leukodystrophy, Globoid Cell		congenital
+D007965	Leukodystrophy, Globoid Cell		metabolic
+D007971	Leukoplakia		oncology
+D008052	Lipid Metabolism, Inborn Errors		congenital
+D008052	Lipid Metabolism, Inborn Errors		metabolic
+D008067	Lipoma		oncology
+D008072	Hyperlipoproteinemia Type I		congenital
+D008072	Hyperlipoproteinemia Type I		metabolic
+D008103	Liver Cirrhosis		digestive
+D008103	Liver Cirrhosis		signs/symptoms
+D008107	Liver Diseases		digestive
+D008133	Long QT Syndrome		cardiovascular
+D008133	Long QT Syndrome		congenital
+D008133	Long QT Syndrome		signs/symptoms
+D008193	Lyme Disease		infection
+D008224	Lymphoma, Follicular		oncology
+D008231	Lymphopenia		hematology
+D008231	Lymphopenia		immune
+D008232	Lymphoproliferative Disorders		hematology
+D008232	Lymphoproliferative Disorders		immune
+D008286	Malabsorption Syndromes		digestive
+D008286	Malabsorption Syndromes		metabolic
+D008305	Malignant Hyperthermia		signs/symptoms
+D008375	Maple Syrup Urine Disease		neurology
+D008375	Maple Syrup Urine Disease		congenital
+D008375	Maple Syrup Urine Disease		metabolic
+D008379	Marburg Virus Disease		infection
+D008382	Marfan Syndrome		musculoskeletal
+D008382	Marfan Syndrome		cardiovascular
+D008382	Marfan Syndrome		congenital
+D008382	Marfan Syndrome		dermatology
+D008527	Medulloblastoma		oncology
+D008575	Meniere Disease		other
+D008579	Meningioma		oncology
+D008581	Meningitis		neurology
+D008593	Menopause		other
+D008661	Metabolism, Inborn Errors		congenital
+D008661	Metabolism, Inborn Errors		metabolic
+D009083	Mucopolysaccharidoses		congenital
+D009083	Mucopolysaccharidoses		dermatology
+D009083	Mucopolysaccharidoses		metabolic
+D009165	Mycobacterium Infections, Nontuberculous		infection
+D009188	Myelitis, Transverse		oncology
+D009196	Myeloproliferative Disorders		hematology
+D009205	Myocarditis		cardiovascular
+D009221	Myositis Ossificans		musculoskeletal
+D009222	Myotonia		neurology
+D009222	Myotonia		signs/symptoms
+D009325	Nausea		signs/symptoms
+D009335	Necrobiosis Lipoidica		dermatology
+D009335	Necrobiosis Lipoidica		metabolic
+D009357	Neonatal Abstinence Syndrome		congenital
+D009357	Neonatal Abstinence Syndrome		psychiatry
+D009372	Neoplasms, Connective Tissue		oncology
+D009394	Nephritis, Hereditary		congenital
+D009394	Nephritis, Hereditary		dermatology
+D009396	Wilms Tumor		oncology
+D009400	Nephrosclerosis		other
+D009421	Nervous System Malformations		neurology
+D009421	Nervous System Malformations		congenital
+D009442	Neurilemmoma		oncology
+D009456	Neurofibromatosis 1		oncology
+D009471	Neuromyelitis Optica		neurology
+D009471	Neuromyelitis Optica		ophthalmology
+D009471	Neuromyelitis Optica		immune
+D009497	Neurotic Disorders		psychiatry
+D009999	Ossification, Heterotopic		signs/symptoms
+D010012	Osteogenesis		musculoskeletal
+D010018	Osteomalacia		musculoskeletal
+D010018	Osteomalacia		metabolic
+D010026	Osteosclerosis		musculoskeletal
+D010144	Paget's Disease, Mammary		oncology
+D010145	Paget Disease, Extramammary		oncology
+D010182	Pancreatic Diseases		digestive
+D010188	Exocrine Pancreatic Insufficiency		digestive
+D010195	Pancreatitis		digestive
+D010243	Paralysis		neurology
+D010243	Paralysis		signs/symptoms
+D010412	Penile Neoplasms		oncology
+D010437	Peptic Ulcer		digestive
+D010493	Pericarditis		cardiovascular
+D010523	Peripheral Nervous System Diseases		neurology
+D010787	Photosensitivity Disorders		dermatology
+D010916	Pityriasis Rubra Pilaris		dermatology
+D010927	Placental Insufficiency		other
+D010930	Plague		infection
+D011008	Pneumococcal Infections		infection
+D011115	Polyneuropathies		neurology
+D011183	Postoperative Complications		signs/symptoms
+D011271	Pregnancy, Ectopic		other
+D011305	Presbyopia		ophthalmology
+D011349	Proctitis		digestive
+D011371	Progeria		congenital
+D011371	Progeria		metabolic
+D011536	Prurigo		dermatology
+D011546	Pseudohypoaldosteronism		congenital
+D011595	Psychomotor Agitation		neurology
+D011595	Psychomotor Agitation		signs/symptoms
+D011625	Pterygium		ophthalmology
+D011628	Puberty, Delayed		endocrine
+D011629	Puberty, Precocious		endocrine
+D011649	Pulmonary Alveolar Proteinosis		respiratory
+D011818	Rabies		infection
+D011832	Radiation Injuries		other
+D012003	Rectal Fistula		digestive
+D012003	Rectal Fistula		signs/symptoms
+D012010	Red-Cell Aplasia, Pure		hematology
+D012038	Regeneration		other
+D012120	Respiration Disorders		respiratory
+D012173	Retinitis		ophthalmology
+D012178	Retinopathy of Prematurity		ophthalmology
+D012178	Retinopathy of Prematurity		congenital
+D012279	Rickets		musculoskeletal
+D012279	Rickets		metabolic
+D012398	Ross River virus		infection
+D012400	Rotavirus Infections		infection
+D012497	Sandhoff Disease		neurology
+D012497	Sandhoff Disease		congenital
+D012497	Sandhoff Disease		metabolic
+D012552	Schistosomiasis		infection
+D012778	Short Bowel Syndrome		digestive
+D012778	Short Bowel Syndrome		signs/symptoms
+D012872	Skin Diseases, Vesiculobullous		dermatology
+D013106	Sphingolipidoses		neurology
+D013106	Sphingolipidoses		congenital
+D013106	Sphingolipidoses		metabolic
+D013123	Spinal Fusion		other
+D013226	Status Epilepticus		neurology
+D013226	Status Epilepticus		signs/symptoms
+D013276	Stomach Ulcer		digestive
+D013280	Stomatitis		other
+D013514	Surgical Procedures, Operative		other
+D013586	Synovitis, Pigmented Villonodular		oncology
+D013625	Takayasu Arteritis		cardiovascular
+D013625	Takayasu Arteritis		dermatology
+D013661	Tay-Sachs Disease		neurology
+D013661	Tay-Sachs Disease		congenital
+D013661	Tay-Sachs Disease		metabolic
+D013683	Telangiectasia, Hereditary Hemorrhagic		cardiovascular
+D013683	Telangiectasia, Hereditary Hemorrhagic		hematology
+D013683	Telangiectasia, Hereditary Hemorrhagic		congenital
+D013708	Tendon Injuries		other
+D013724	Teratoma		oncology
+D013771	Tetralogy of Fallot		cardiovascular
+D013771	Tetralogy of Fallot		congenital
+D013915	Thrombasthenia		hematology
+D013915	Thrombasthenia		congenital
+D014012	Tinnitus		neurology
+D014012	Tinnitus		signs/symptoms
+D014103	Torticollis		signs/symptoms
+D014123	Toxoplasmosis		infection
+D014245	Trichomonas Infections		infection
+D014256	Trichotillomania		psychiatry
+D014277	Trigeminal Neuralgia		neurology
+D014328	Trophoblastic Neoplasms		oncology
+D014355	Chagas Disease		infection
+D014406	Tularemia		infection
+D014456	Ulcer		signs/symptoms
+D014526	Urethritis		other
+D014555	Urination Disorders		other
+D014647	Varicose Ulcer		cardiovascular
+D014647	Varicose Ulcer		dermatology
+D014652	Vascular Diseases		cardiovascular
+D014717	Vertigo		neurology
+D014717	Vertigo		signs/symptoms
+D014839	Vomiting		signs/symptoms
+D014898	Werner Syndrome		congenital
+D014898	Werner Syndrome		metabolic
+D014929	Wolfram Syndrome		neurology
+D014929	Wolfram Syndrome		ophthalmology
+D014929	Wolfram Syndrome		congenital
+D014929	Wolfram Syndrome		metabolic
+D014929	Wolfram Syndrome		endocrine
+D014945	Wound Healing		other
+D014947	Wounds and Injuries		other
+D014983	Xeroderma Pigmentosum		oncology
+D015004	Yellow Fever		infection
+D015209	Cholangitis, Sclerosing		digestive
+D015211	Zellweger Syndrome		digestive
+D015211	Zellweger Syndrome		neurology
+D015211	Zellweger Syndrome		congenital
+D015211	Zellweger Syndrome		metabolic
+D015267	Churg-Strauss Syndrome		cardiovascular
+D015267	Churg-Strauss Syndrome		hematology
+D015267	Churg-Strauss Syndrome		immune
+D015270	Mycobacterium avium-intracellulare Infection		infection
+D015275	Tumor Lysis Syndrome		hematology
+D015275	Tumor Lysis Syndrome		immune
+D015325	Pyruvate Dehydrogenase Complex Deficiency Disease		neurology
+D015325	Pyruvate Dehydrogenase Complex Deficiency Disease		congenital
+D015325	Pyruvate Dehydrogenase Complex Deficiency Disease		metabolic
+D015352	Dry Eye Syndromes		ophthalmology
+D015419	Spastic Paraplegia, Hereditary		neurology
+D015419	Spastic Paraplegia, Hereditary		congenital
+D015433	Glomerulonephritis, Membranous		immune
+D015451	Leukemia, Lymphocytic, Chronic, B-Cell		oncology
+D015461	Leukemia, Prolymphocytic, T-Cell		oncology
+D015464	Leukemia, Myelogenous, Chronic, BCR-ABL Positive		oncology
+D015490	HTLV-I Infections		infection
+D015490	HTLV-I Infections		immune
+D015595	Skin Aging		dermatology
+D015715	Corneal Edema		ophthalmology
+D015783	Aniridia		ophthalmology
+D015783	Aniridia		congenital
+D015794	Choroideremia		ophthalmology
+D015794	Choroideremia		congenital
+D015831	Osteochondroma		oncology
+D015837	Vestibular Diseases		other
+D015862	Choroid Diseases		ophthalmology
+D016262	Postpoliomyelitis Syndrome		infection
+D016262	Postpoliomyelitis Syndrome		musculoskeletal
+D016262	Postpoliomyelitis Syndrome		neurology
+D016403	Lymphoma, Large B-Cell, Diffuse		oncology
+D016410	Lymphoma, T-Cell, Cutaneous		oncology
+D016411	Lymphoma, T-Cell, Peripheral		oncology
+D016464	Lysosomal Storage Diseases		congenital
+D016464	Lysosomal Storage Diseases		metabolic
+D016472	Motor Neuron Disease		neurology
+D016518	Neurofibromatosis 2		oncology
+D016537	Gangliosidosis, GM1		neurology
+D016537	Gangliosidosis, GM1		congenital
+D016537	Gangliosidosis, GM1		metabolic
+D016538	Mucopolysaccharidosis VII		congenital
+D016538	Mucopolysaccharidosis VII		dermatology
+D016538	Mucopolysaccharidosis VII		metabolic
+D016557	Guided Tissue Regeneration, Periodontal		other
+D016657	Cerebral Amyloid Angiopathy		neurology
+D016657	Cerebral Amyloid Angiopathy		cardiovascular
+D016657	Cerebral Amyloid Angiopathy		metabolic
+D016706	Still's Disease, Adult-Onset		musculoskeletal
+D016706	Still's Disease, Adult-Onset		dermatology
+D016706	Still's Disease, Adult-Onset		immune
+D016738	Alagille Syndrome		digestive
+D016738	Alagille Syndrome		cardiovascular
+D016738	Alagille Syndrome		congenital
+D016739	Behavior, Addictive		psychiatry
+D016751	Hepatitis E		infection
+D016751	Hepatitis E		digestive
+D016849	Keratitis, Herpetic		infection
+D016849	Keratitis, Herpetic		ophthalmology
+D016878	POEMS Syndrome		neurology
+D016878	POEMS Syndrome		hematology
+D016878	POEMS Syndrome		congenital
+D016878	POEMS Syndrome		immune
+D016908	Gram-Positive Bacterial Infections		infection
+D017099	IgG Deficiency		hematology
+D017099	IgG Deficiency		immune
+D017204	Angelman Syndrome		neurology
+D017204	Angelman Syndrome		congenital
+D017240	Mitochondrial Myopathies		musculoskeletal
+D017240	Mitochondrial Myopathies		neurology
+D017240	Mitochondrial Myopathies		metabolic
+D017241	MELAS Syndrome		musculoskeletal
+D017241	MELAS Syndrome		neurology
+D017241	MELAS Syndrome		cardiovascular
+D017241	MELAS Syndrome		congenital
+D017241	MELAS Syndrome		metabolic
+D017250	Caliciviridae Infections		infection
+D017285	Polymyositis		musculoskeletal
+D017285	Polymyositis		neurology
+D017492	Keratosis, Seborrheic		dermatology
+D017497	Hidradenitis Suppurativa		infection
+D017497	Hidradenitis Suppurativa		dermatology
+D017511	Pyoderma Gangrenosum		dermatology
+D017563	Lung Diseases, Interstitial		respiratory
+D017590	Myelinolysis, Central Pontine		neurology
+D017590	Myelinolysis, Central Pontine		metabolic
+D017676	Lichen Planus, Oral		dermatology
+D017728	Lymphoma, Large-Cell, Anaplastic		oncology
+D018058	Tympanic Membrane Perforation		other
+D018222	Fibromatosis, Aggressive		oncology
+D018325	Hemangioblastoma		oncology
+D018358	Neuroendocrine Tumors		oncology
+D018442	Lymphoma, B-Cell, Marginal Zone		oncology
+D018459	Lichen Sclerosus et Atrophicus		dermatology
+D018589	Gastroparesis		digestive
+D018589	Gastroparesis		signs/symptoms
+D018778	Hantavirus Infections		infection
+D018798	Anemia, Iron-Deficiency		hematology
+D018798	Anemia, Iron-Deficiency		metabolic
+D018883	Heat Stroke		other
+D018979	Myositis, Inclusion Body		musculoskeletal
+D018979	Myositis, Inclusion Body		neurology
+D019142	Hemorrhagic Fever, Ebola		infection
+D019190	Iron Overload		metabolic
+D019247	HIV Wasting Syndrome		infection
+D019247	HIV Wasting Syndrome		metabolic
+D019247	HIV Wasting Syndrome		immune
+D019449	Pouchitis		digestive
+D019636	Neurodegenerative Diseases		neurology
+D019650	Hematopoietic Stem Cell Mobilization		other
+D019867	Anti-Glomerular Basement Membrane Disease		respiratory
+D019867	Anti-Glomerular Basement Membrane Disease		immune
+D019873	Schnitzler Syndrome		immune
+D019969	Amphetamine-Related Disorders		psychiatry
+D019973	Alcohol-Related Disorders		psychiatry
+D020018	Sexual Dysfunctions, Psychological		psychiatry
+D020158	Hyperglycinemia, Nonketotic		neurology
+D020158	Hyperglycinemia, Nonketotic		congenital
+D020158	Hyperglycinemia, Nonketotic		metabolic
+D020159	Citrullinemia		neurology
+D020159	Citrullinemia		congenital
+D020159	Citrullinemia		metabolic
+D020162	Hyperargininemia		neurology
+D020162	Hyperargininemia		congenital
+D020162	Hyperargininemia		metabolic
+D020163	Ornithine Carbamoyltransferase Deficiency Disease		neurology
+D020163	Ornithine Carbamoyltransferase Deficiency Disease		congenital
+D020163	Ornithine Carbamoyltransferase Deficiency Disease		metabolic
+D020165	Carbamoyl-Phosphate Synthase I Deficiency Disease		neurology
+D020165	Carbamoyl-Phosphate Synthase I Deficiency Disease		congenital
+D020165	Carbamoyl-Phosphate Synthase I Deficiency Disease		metabolic
+D020177	Idiopathic Hypersomnia		neurology
+D020177	Idiopathic Hypersomnia		psychiatry
+D020192	Lafora Disease		neurology
+D020192	Lafora Disease		congenital
+D020194	Unverricht-Lundborg Syndrome		neurology
+D020194	Unverricht-Lundborg Syndrome		congenital
+D020196	Trauma, Nervous System		neurology
+D020249	Hormone Replacement Therapy		other
+D020250	Postoperative Nausea and Vomiting		signs/symptoms
+D020275	Guillain-Barre Syndrome		neurology
+D020275	Guillain-Barre Syndrome		immune
+D020278	Demyelinating Autoimmune Diseases, CNS		neurology
+D020278	Demyelinating Autoimmune Diseases, CNS		immune
+D020294	Myasthenic Syndromes, Congenital		neurology
+D020294	Myasthenic Syndromes, Congenital		congenital
+D020345	Enterocolitis, Necrotizing		digestive
+D020391	Muscular Dystrophy, Facioscapulohumeral		musculoskeletal
+D020391	Muscular Dystrophy, Facioscapulohumeral		neurology
+D020391	Muscular Dystrophy, Facioscapulohumeral		congenital
+D020521	Stroke		neurology
+D020521	Stroke		cardiovascular
+D020522	Lymphoma, Mantle-Cell		oncology
+D020739	Brain Diseases, Metabolic, Inborn		neurology
+D020739	Brain Diseases, Metabolic, Inborn		congenital
+D020739	Brain Diseases, Metabolic, Inborn		metabolic
+D020786	Hemangioma, Cavernous, Central Nervous System		oncology
+D020788	Bardet-Biedl Syndrome		neurology
+D020788	Bardet-Biedl Syndrome		ophthalmology
+D020788	Bardet-Biedl Syndrome		congenital
+D020914	Myopathies, Structural, Congenital		musculoskeletal
+D020914	Myopathies, Structural, Congenital		neurology
+D020920	Dyssomnias		neurology
+D020920	Dyssomnias		psychiatry
+D022861	Hermanski-Pudlak Syndrome		ophthalmology
+D022861	Hermanski-Pudlak Syndrome		hematology
+D022861	Hermanski-Pudlak Syndrome		congenital
+D022861	Hermanski-Pudlak Syndrome		dermatology
+D022861	Hermanski-Pudlak Syndrome		metabolic
+D027601	Polyomavirus Infections		infection
+D028226	Amyloidosis, Familial		congenital
+D028226	Amyloidosis, Familial		metabolic
+D028227	Amyloid Neuropathies, Familial		neurology
+D028227	Amyloid Neuropathies, Familial		congenital
+D028227	Amyloid Neuropathies, Familial		metabolic
+D028361	Mitochondrial Diseases		metabolic
+D029241	Optic Atrophy, Autosomal Dominant		neurology
+D029241	Optic Atrophy, Autosomal Dominant		ophthalmology
+D029241	Optic Atrophy, Autosomal Dominant		congenital
+D029241	Optic Atrophy, Autosomal Dominant		metabolic
+D029242	Optic Atrophy, Hereditary, Leber		neurology
+D029242	Optic Atrophy, Hereditary, Leber		ophthalmology
+D029242	Optic Atrophy, Hereditary, Leber		congenital
+D029242	Optic Atrophy, Hereditary, Leber		metabolic
+D031249	Erdheim-Chester Disease		hematology
+D033581	Stem Cell Transplantation		other
+D034381	Hearing Loss		neurology
+D034381	Hearing Loss		signs/symptoms
+D038261	Alexander Disease		neurology
+D038261	Alexander Disease		congenital
+D038261	Alexander Disease		metabolic
+D041441	Retinoschisis		ophthalmology
+D042882	Gallstones		digestive
+D042882	Gallstones		signs/symptoms
+D043183	Irritable Bowel Syndrome		digestive
+D044148	Lymphatic Abnormalities		hematology
+D044148	Lymphatic Abnormalities		congenital
+D044903	Congenital Hyperinsulinism		digestive
+D044903	Congenital Hyperinsulinism		congenital
+D044903	Congenital Hyperinsulinism		metabolic
+D044968	Regenerative Medicine		other
+D045169	Severe Acute Respiratory Syndrome		infection
+D045169	Severe Acute Respiratory Syndrome		respiratory
+D045464	Henipavirus Infections		infection
+D045602	Steatorrhea		digestive
+D045602	Steatorrhea		metabolic
+D045743	Scleroderma, Diffuse		dermatology
+D045745	Scleroderma, Limited		dermatology
+D045823	Ileus		digestive
+D046152	Gastrointestinal Stromal Tumors		oncology
+D046351	Protoporphyria, Erythropoietic		digestive
+D046351	Protoporphyria, Erythropoietic		congenital
+D046351	Protoporphyria, Erythropoietic		dermatology
+D046351	Protoporphyria, Erythropoietic		metabolic
+D046589	CADASIL		neurology
+D046589	CADASIL		cardiovascular
+D046589	CADASIL		congenital
+D046589	CADASIL		signs/symptoms
+D048550	Hepatic Insufficiency		digestive
+D049950	Hyperparathyroidism, Primary		endocrine
+D049970	Graves Ophthalmopathy		ophthalmology
+D049970	Graves Ophthalmopathy		congenital
+D049970	Graves Ophthalmopathy		endocrine
+D049970	Graves Ophthalmopathy		immune
+D050031	Hashimoto Disease		endocrine
+D050151	Subcutaneous Fat		other
+D050171	Dyslipidemias		metabolic
+D050723	Fractures, Bone		other
+D050724	Fractures, Cartilage		other
+D051359	Lymphohistiocytosis, Hemophagocytic		hematology
+D051799	Delayed Graft Function		signs/symptoms
+D052016	Mucositis		digestive
+D052018	Bulimia Nervosa		psychiatry
+D052120	Glycogen Storage Disease Type IIb		neurology
+D052120	Glycogen Storage Disease Type IIb		cardiovascular
+D052120	Glycogen Storage Disease Type IIb		congenital
+D052120	Glycogen Storage Disease Type IIb		metabolic
+D052245	Usher Syndromes		neurology
+D052245	Usher Syndromes		ophthalmology
+D052245	Usher Syndromes		congenital
+D052245	Usher Syndromes		signs/symptoms
+D052456	Hypoalphalipoproteinemias		congenital
+D052456	Hypoalphalipoproteinemias		metabolic
+D052801	Male Urogenital Diseases		other
+D053306	Hyper-IgM Immunodeficiency Syndrome		hematology
+D053306	Hyper-IgM Immunodeficiency Syndrome		congenital
+D053306	Hyper-IgM Immunodeficiency Syndrome		immune
+D053549	Pachyonychia Congenita		congenital
+D053549	Pachyonychia Congenita		dermatology
+D054066	Leukemia, Large Granular Lymphocytic		oncology
+D054078	Mevalonate Kinase Deficiency		neurology
+D054078	Mevalonate Kinase Deficiency		hematology
+D054078	Mevalonate Kinase Deficiency		congenital
+D054078	Mevalonate Kinase Deficiency		metabolic
+D054078	Mevalonate Kinase Deficiency		immune
+D054198	Precursor Cell Lymphoblastic Leukemia-Lymphoma		oncology
+D054403	Leukemia, Prolymphocytic, B-Cell		oncology
+D054429	Leukemia, Myelomonocytic, Juvenile		oncology
+D054973	Perivascular Epithelioid Cell Neoplasms		oncology
+D055496	Neurogenic Bowel		digestive
+D055501	Macrophage Activation Syndrome		immune
+D055728	Primary Myelofibrosis		hematology
+D055953	Microscopic Polyangiitis		neurology
+D055953	Microscopic Polyangiitis		cardiovascular
+D055953	Microscopic Polyangiitis		immune
+D056693	Propionic Acidemia		congenital
+D056693	Propionic Acidemia		metabolic
+D056735	Autoimmune Lymphoproliferative Syndrome		hematology
+D056735	Autoimmune Lymphoproliferative Syndrome		congenital
+D056735	Autoimmune Lymphoproliferative Syndrome		immune
+D056769	Alstrom Syndrome		neurology
+D056769	Alstrom Syndrome		ophthalmology
+D056769	Alstrom Syndrome		congenital
+D056770	Netherton Syndrome		congenital
+D056770	Netherton Syndrome		dermatology
+D056806	Urea Cycle Disorders, Inborn		neurology
+D056806	Urea Cycle Disorders, Inborn		congenital
+D056806	Urea Cycle Disorders, Inborn		metabolic
+D056807	Argininosuccinic Aciduria		neurology
+D056807	Argininosuccinic Aciduria		congenital
+D056807	Argininosuccinic Aciduria		metabolic
+D057049	Thrombotic Microangiopathies		hematology
+D057092	Geographic Atrophy		ophthalmology
+D057180	Frontotemporal Dementia		neurology
+D057180	Frontotemporal Dementia		metabolic
+D057180	Frontotemporal Dementia		psychiatry
+D057826	Vitelliform Macular Dystrophy		ophthalmology
+D057826	Vitelliform Macular Dystrophy		congenital
+D058088	Sarcoglycanopathies		musculoskeletal
+D058088	Sarcoglycanopathies		respiratory
+D058088	Sarcoglycanopathies		neurology
+D058088	Sarcoglycanopathies		cardiovascular
+D058088	Sarcoglycanopathies		congenital
+D058186	Acute Kidney Injury		other
+D058456	Retinal Telangiectasis		ophthalmology
+D058456	Retinal Telangiectasis		cardiovascular
+D058496	Smith-Magenis Syndrome		neurology
+D058496	Smith-Magenis Syndrome		congenital
+D059226	Nociceptive Pain		signs/symptoms
+D059268	Atrophic Vaginitis		other
+D059407	Pinguecula		ophthalmology
+D060585	Fusariosis		infection
+D060585	Fusariosis		dermatology
+D061205	Vascular Calcification		metabolic
+D061686	Premature Ejaculation		psychiatry
+D062025	Organophosphate Poisoning		other
+D065227	Transfusion Reaction		hematology
+D065227	Transfusion Reaction		immune
+D065306	Corneal Injuries		neurology
+D065306	Corneal Injuries		ophthalmology
+D065446	Premenstrual Dysphoric Disorder		signs/symptoms
+D065446	Premenstrual Dysphoric Disorder		psychiatry
+D065626	Non-alcoholic Fatty Liver Disease		digestive
+D065631	Rhinitis, Allergic		respiratory
+D065631	Rhinitis, Allergic		immune
+D065632	Chikungunya Fever		infection
+D065768	Lennox Gastaut Syndrome		neurology
+D065768	Lennox Gastaut Syndrome		congenital
+D065886	Neurodevelopmental Disorders		psychiatry

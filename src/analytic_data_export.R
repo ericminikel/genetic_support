@@ -61,13 +61,14 @@ nany = function(x) {
 
 
 pp_new %>% 
+  as_tibble() %>%
   mutate(ti_uid = paste0(gene,'-',indication_mesh_id)) %>%
-  mutate(hcat = factor(highest_status_reached, levels=c('Preclinical','Phase I','Phase II','Phase III','Launched'), ordered=T)) %>%
-  mutate(acat = factor(current_status, levels=c('Preclinical','Phase I','Phase II','Phase III','Launched'), ordered=T)) %>%
+  mutate(hcat = factor(ifelse(is.na(current_status) | highest_status_reached=='Launched', highest_status_reached, as.character(NA)), levels=c('Preclinical','Phase I','Phase II','Phase III','Launched'), ordered=T)) %>%
+  mutate(acat = factor(ifelse(highest_status_reached=='Launched', 'Launched', current_status), levels=c('Preclinical','Phase I','Phase II','Phase III','Launched'), ordered=T)) %>%
   mutate(ccat = pmax(hcat,acat,na.rm=T)) %>%
-  filter(!is.na(hcat)) %>%
-  mutate(oto_hcat = factor(highest_status_reached_single_target, levels=c('Preclinical','Phase I','Phase II','Phase III','Launched'), ordered=T)) %>%
-  mutate(oto_acat = factor(current_status_single_target, levels=c('Preclinical','Phase I','Phase II','Phase III','Launched'), ordered=T)) %>%
+  filter(!is.na(ccat)) %>% # only include when either hcat or acat present
+  mutate(oto_hcat = factor(ifelse(is.na(current_status_single_target) | highest_status_reached_single_target=='Launched', highest_status_reached_single_target, as.character(NA)), levels=c('Preclinical','Phase I','Phase II','Phase III','Launched'), ordered=T)) %>%
+  mutate(oto_acat = factor(ifelse(highest_status_reached=='Launched', 'Launched', current_status_single_target), levels=c('Preclinical','Phase I','Phase II','Phase III','Launched'), ordered=T)) %>%
   mutate(oto_ccat = pmax(oto_hcat,oto_acat,na.rm=T)) %>%
   mutate(succ_p_1 = case_when(ccat %in% c('Phase I','Phase II','Phase III','Launched') ~ TRUE,
                               hcat %in% c('Preclinical') ~ FALSE,
