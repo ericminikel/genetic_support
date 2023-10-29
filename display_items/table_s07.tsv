@@ -1,10 +1,13 @@
 indication_mesh_id	n_human_target	n_drugs	n_supported_genes	logbin	indication_mesh_term
 D059226	176	840	0	-1	Nociceptive Pain
+D012509	156	175	0	-1	Sarcoma
 D010149	49	166	0	-1	Pain, Postoperative
 D005355	115	143	0	-1	Fibrosis
+D005185	99	141	0	-1	Fallopian Tube Neoplasms
 D020522	77	128	0	-1	Lymphoma, Mantle-Cell
 D008654	101	113	0	-1	Mesothelioma
 D000072716	44	107	0	-1	Cancer Pain
+D000070642	93	104	0	-1	Brain Injuries, Traumatic
 D009325	30	103	0	-1	Nausea
 D014945	92	101	0	-1	Wound Healing
 D002100	48	85	0	-1	Cachexia
@@ -25,6 +28,7 @@ D018589	17	33	0	-1	Gastroparesis
 D009400	28	31	0	-1	Nephrosclerosis
 D014526	33	29	0	-1	Urethritis
 D000758	13	26	0	-1	Anesthesia
+D011218	18	25	0	-1	Prader-Willi Syndrome
 D012778	10	24	0	-1	Short Bowel Syndrome
 D000079689	8	23	0	-1	Opioid-Induced Constipation
 D004415	16	23	0	-1	Dyspepsia
@@ -50,6 +54,7 @@ D033581	6	11	0	-1	Stem Cell Transplantation
 D045169	12	11	0	-1	Severe Acute Respiratory Syndrome
 D005871	4	10	0	-1	Castleman Disease
 D000627	17	9	0	-1	Aminophenols
+D003328	9	9	0	-1	Coronary Thrombosis
 D010188	2	9	0	-1	Exocrine Pancreatic Insufficiency
 D012178	6	9	0	-1	Retinopathy of Prematurity
 D012774	8	9	0	-1	Shock, Traumatic
@@ -62,7 +67,6 @@ D015430	5	8	0	-1	Weight Gain
 D018979	9	8	0	-1	Myositis, Inclusion Body
 D000071243	9	7	0	-1	Zika Virus Infection
 D000881	7	7	0	-1	Anthrax
-D003139	10	7	0	-1	Common Cold
 D005235	7	7	0	-1	Fatty Liver, Alcoholic
 D007403	13	7	0	-1	Intervertebral Disc
 D008303	2	7	0	-1	Malignant Carcinoid Syndrome
@@ -117,6 +121,7 @@ D018192	1	3	0	-1	Lymphangioleiomyomatosis
 D019121	3	3	0	-1	Burkholderia Infections
 D019449	4	3	0	-1	Pouchitis
 D055501	3	3	0	-1	Macrophage Activation Syndrome
+D058065	3	3	0	-1	Diabetic Cardiomyopathies
 C531854	1	2	0	-1	Lysosomal acid lipase deficiency
 C535607	1	2	0	-1	Aicardi-Goutieres syndrome
 C535933	1	2	0	-1	Cholestasis, progressive familial intrahepatic 1
@@ -170,9 +175,11 @@ D000292	1	1	0	-1	Pelvic Inflammatory Disease
 D001906	1	1	0	-1	Botulism
 D001919	1	1	0	-1	Bradycardia
 D002771	1	1	0	-1	Cholera
+D004672	1	1	0	-1	Encephalitis, Japanese
 D004673	1	1	0	-1	Encephalomyelitis, Acute Disseminated
 D004685	1	1	0	-1	Encephalomyelitis, Venezuelan Equine
 D004696	1	1	0	-1	Endocarditis
+D005348	1	1	0	-1	Fibrocystic Breast Disease
 D006192	1	1	0	-1	Haemophilus Infections
 D006965	1	1	0	-1	Hyperplasia
 D007027	3	1	0	-1	Hypothalamic Diseases

@@ -242,7 +242,7 @@ pipeline_best = function(merged_table,
     mtable %>%
       filter(comb_norm >= threshold) %>%
       filter(assoc_source %in% andalso) %>%
-      filter(!(assoc_source %in% 'OTG' & l2g_share >= min_share)) %>%
+      filter(!(assoc_source %in% 'OTG' & l2g_share < min_share)) %>%
       select(ti_uid) -> andalso_supported_ti
     mtable %>%
       filter(is.na(assoc_source) | (ti_uid %in% andalso_supported_ti$ti_uid)) -> mtable

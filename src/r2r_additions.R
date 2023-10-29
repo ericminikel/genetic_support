@@ -721,21 +721,22 @@ dev.off()
 
 
 
-hist_ti_gwas_sans_omim = pipeline_best(merge2, phase='historical', basis='ti', associations=c('PICCOLO','OTG','Genebass'), lacking=c('OMIM'), verbose=F)
-hist_ti_omim_sans_gwas = pipeline_best(merge2, phase='historical', basis='ti', associations=c('OMIM'), lacking=c('PICCOLO','OTG','Genebass'), verbose=F)
-hist_ti_gwas_andalso_omim = pipeline_best(merge2, phase='historical', basis='ti', associations=c('PICCOLO','OTG','Genebass'), andalso=c('OMIM'), verbose=F)
-hist_ti_omim_andalso_gwas = pipeline_best(merge2, phase='historical', basis='ti', associations=c('OMIM'), andalso=c('PICCOLO','OTG','Genebass'), verbose=F)
+combined_ti_gwas_sans_omim    = pipeline_best(merge2, phase='combined', basis='ti', associations=c('PICCOLO','OTG','Genebass'), lacking=c('OMIM'), verbose=F)
+combined_ti_omim_sans_gwas    = pipeline_best(merge2, phase='combined', basis='ti', associations=c('OMIM'), lacking=c('PICCOLO','OTG','Genebass'), verbose=F)
+combined_ti_gwas_andalso_omim = pipeline_best(merge2, phase='combined', basis='ti', associations=c('PICCOLO','OTG','Genebass'), andalso=c('OMIM'), verbose=F)
+combined_ti_omim_andalso_gwas = pipeline_best(merge2, phase='combined', basis='ti', associations=c('OMIM'), andalso=c('PICCOLO','OTG','Genebass'), verbose=F)
 
 
-advancement_rr(hist_ti_gwas_sans_omim)
-advancement_rr(hist_ti_omim_sans_gwas)
-advancement_rr(hist_ti_omim)
-advancement_rr(hist_ti_gwas_andalso_omim) # 3.81
-advancement_rr(hist_ti_omim_andalso_gwas) # 3.75
-# need to think about whether these numbers should definitely be identical, or if many-to-one targets
-# actually mean that there is room for these to disagree.
-
-
+advancement_rr(combined_ti_gwas_sans_omim)
+advancement_rr(combined_ti_omim_sans_gwas)
+advancement_rr(combined_ti_omim)
+advancement_rr(combined_ti_gwas_andalso_omim) # 3.93
+advancement_rr(combined_ti_omim_andalso_gwas) # 3.93
+# above RS numbers now agree; check that there are no T-I on which they disagree:
+omim_plus_gwas_ti = unique(combined_ti_omim_andalso_gwas$ti_uid[combined_ti_omim_andalso_gwas$target_status=='genetically supported target'])
+gwas_plus_omim_ti = unique(combined_ti_gwas_andalso_omim$ti_uid[combined_ti_gwas_andalso_omim$target_status=='genetically supported target'])
+setdiff(omim_plus_gwas_ti, gwas_plus_omim_ti)
+setdiff(gwas_plus_omim_ti, omim_plus_gwas_ti)
 
 # experiment with historical being T-I no longer in active
 pp$hcat[!is.na(pp$acat)] = NA
