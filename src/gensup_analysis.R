@@ -140,6 +140,7 @@ pipeline_best = function(merged_table,
                          include_missing=FALSE,
                          associations=c('OMIM','GWAS'),
                          otg_subcat=c(''),
+                         genebass_subcat=NULL,
                          mendelian_mechanism='',
                          min_year=2005,
                          max_year=2022,
@@ -273,6 +274,15 @@ pipeline_best = function(merged_table,
       filter(is.na(assoc_source) | gwas_source %in% otg_subcat) -> mtable
   }
   
+  # further filter of annotation & test in Genebass
+  if (!is.null(genebass_subcat)) {
+    grepstring = paste(genebass_subcat, collapse='|')
+    # mtable %>%
+    #   filter(!is.na(assoc_source) & assoc_source %in% 'Genebass') %>%
+    #   filter(grepl(grepstring, assoc_info)) -> genebass_hits
+    mtable %>%
+      filter(is.na(assoc_source) | !(assoc_source %in% 'Genebass') | grepl(grepstring, assoc_info)) -> mtable
+  }
   
   # apply user-specified filter of OMIM disease mechanism
   if (mendelian_mechanism != '') {
@@ -1362,10 +1372,50 @@ combined_ti_omim_orphan = subset_by_area(combined_ti_omim, topl='all', orphan='y
 combined_ti_omim_nonorphan = subset_by_area(combined_ti_omim, topl='all', orphan='no')
 combined_ti_otg_orphan = subset_by_area(combined_ti_otg, topl='all', orphan='yes')
 combined_ti_otg_nonorphan = subset_by_area(combined_ti_otg, topl='all', orphan='no')
-orphan_forest = tibble(source = rep(c('OMIM','OTG'),each=2),
-                       orphan = rep(c('orphan','non-orphan'),2),
-                                pipeline_obj=c('combined_ti_omim_orphan','combined_ti_omim_nonorphan','combined_ti_otg_orphan','combined_ti_otg_nonorphan')) %>%
-  mutate(label = paste0(source,' ',orphan)) %>%
+
+
+combined_ti_gwas_sans_omim    = pipeline_best(merge2, phase='combined', basis='ti', associations=c('PICCOLO','OTG','Genebass'), lacking=c('OMIM'), verbose=F)
+combined_ti_omim_sans_gwas    = pipeline_best(merge2, phase='combined', basis='ti', associations=c('OMIM'), lacking=c('PICCOLO','OTG','Genebass'), verbose=F)
+combined_ti_gwas_andalso_omim = pipeline_best(merge2, phase='combined', basis='ti', associations=c('PICCOLO','OTG','Genebass'), andalso=c('OMIM'), verbose=F)
+combined_ti_omim_andalso_gwas = pipeline_best(merge2, phase='combined', basis='ti', associations=c('OMIM'), andalso=c('PICCOLO','OTG','Genebass'), verbose=F)
+
+
+combined_ti_genebass_misskat  = pipeline_best(merge2, phase='combined', basis='ti', associations='Genebass', genebass_subcat='missenseLC skat', verbose=F)
+combined_ti_genebass_misburd  = pipeline_best(merge2, phase='combined', basis='ti', associations='Genebass', genebass_subcat='missenseLC burden', verbose=F)
+combined_ti_genebass_lofskat  = pipeline_best(merge2, phase='combined', basis='ti', associations='Genebass', genebass_subcat='pLoF skat', verbose=F)
+combined_ti_genebass_lofburd  = pipeline_best(merge2, phase='combined', basis='ti', associations='Genebass', genebass_subcat='pLoF burden', verbose=F)
+
+
+
+
+orphan_forest = tibble(label = c('OMIM orphan',
+                                 'OMIM non-orphan',
+                                 'OTG orphan',
+                                 'OTG non-orphan',
+                                 'OMIM',
+                                 'OMIM without GWAS',
+                                 'GWAS',
+                                 'GWAS without OMIM',
+                                 'OMIM + GWAS',
+                                 'Genebass all',
+                                 'Genebass missense/LC SKAT',
+                                 'Genebass missense/LC burden',
+                                 'Genebass pLoF SKAT',
+                                 'Genebass pLoF burden'),
+                       pipeline_obj=c('combined_ti_omim_orphan',
+                                      'combined_ti_omim_nonorphan',
+                                      'combined_ti_otg_orphan',
+                                      'combined_ti_otg_nonorphan',
+                                      'combined_ti_omim',
+                                      'combined_ti_omim_sans_gwas',
+                                      'combined_ti_gwas',
+                                      'combined_ti_gwas_sans_omim',
+                                      'combined_ti_gwas_andalso_omim',
+                                      'combined_ti_genebass',
+                                      'combined_ti_genebass_misskat',
+                                      'combined_ti_genebass_misburd',
+                                      'combined_ti_genebass_lofskat',
+                                      'combined_ti_genebass_lofburd')) %>%
   mutate(y=max(row_number()) - row_number() + 1)
 for (i in 1:nrow(orphan_forest)) {
   pipeline_obj = get(orphan_forest$pipeline_obj[i])
@@ -1383,13 +1433,16 @@ for (i in 1:nrow(orphan_forest)) {
 cat(file=stderr(), 'done.\nCreating Figure S2...')
 
 resx=300
-png(paste0(output_path,'/figure-s2.png'),width=6.5*resx,height=8*resx,res=resx)
+png(paste0(output_path,'/figure-s2.png'),width=6.5*resx,height=9*resx,res=resx)
 
 layout_matrix = matrix(c(1,2,
+                         3,2,
+                         3,4,
                          3,4,
                          3,5,
-                         6,7),nrow=4,byrow=T)
-layout(layout_matrix, heights=c(.8,.6, .6, 1.2))
+                         3,5,
+                         6,7),nrow=7,byrow=T)
+layout(layout_matrix, heights=c(1.2,.2,.4,.2,.3,.3, 1.2))
 
 panel = 1
 

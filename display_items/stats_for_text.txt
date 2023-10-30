@@ -1,4 +1,4 @@
-Last updated: 2023-10-29
+Last updated: 2023-10-30
 
 Unique indications: 1034
 
@@ -32,11 +32,11 @@ Merged sim ≥0.8 | Unique targets: 816
 
 Merged sim ≥0.8 | Unique indications: 391
 
-Merged sim ≥0.8 | Unique T-I: 2152
+Merged sim ≥0.8 | Unique T-I: 2153
 
-Merged sim ≥0.8 | Unique T-I-A: 2928
+Merged sim ≥0.8 | Unique T-I-A: 2931
 
-Assocs | Unique T-A: 79946
+Assocs | Unique T-A: 81939
 
 Assocs | OTG | Unique T-A: 66203
 
@@ -44,7 +44,7 @@ Assocs | OMIM | Unique T-A: 4510
 
 Assocs | PICCOLO | Unique T-A: 8186
 
-Assocs | Genebass | Unique T-A: 1707
+Assocs | Genebass | Unique T-A: 4313
 
 Assocs | intOGen | Unique T-A: 2506
 
@@ -56,13 +56,13 @@ Pharmaprojects | proportion of unique MeSH in sim matrix: 99.613%
 
 Pharmaprojects | proportion assoc rows in sim matrix: 99.980%
 
-Assocs | MeSH missing from sim matrix: 0/2260
+Assocs | MeSH missing from sim matrix: 2/2262
 
-Assocs | MeSH present in sim matrix: 2260/2260
+Assocs | MeSH present in sim matrix: 2260/2262
 
-Assocs | proportion of unique MeSH in sim matrix: 100.000%
+Assocs | proportion of unique MeSH in sim matrix: 99.912%
 
-Assocs | proportion assoc rows in sim matrix: 100.000%
+Assocs | proportion assoc rows in sim matrix: 99.999%
 
 Logit model launched ~ assoc_year: beta = -0.019, P = 0.46
 
@@ -78,9 +78,9 @@ Logit model launched ~ lead_maf: beta = 0.87, P = 0.27
 
 Combined P(G) for Launched T-I: 12.2%
 
-Combined P(G) for all active clinical T-I: 4.7% (281/5961)
+Combined P(G) for all active clinical T-I: 4.7% (282/5961)
 
-Combined P(G) for all historical clinical T-I: 4.2% (556/13345)
+Combined P(G) for all historical clinical T-I: 4.2% (558/13345)
 
 Indications with 0 supported genes: 217
 
@@ -104,47 +104,47 @@ Weighted Pearson correlation across areas, poss_supp_gi vs. rs: rho= 0.69, P = 2
 
 Spearman correlation n_launched_indic vs. mean_sim: rho= -0.72, P = 0.0000000000000000000000000000000000000000000000000000000000000000000000000000000000044
 
-Weighted Pearson correlation across areas, mean_sim vs. rs: rho= 0.7, P = 0.002
+Weighted Pearson correlation across areas, mean_sim vs. rs: rho= 0.72, P = 0.001
 
-Weighted Pearson correlation across areas, indic per target vs. rs: rho= -0.58, P = 0.014
+Weighted Pearson correlation across areas, indic per target vs. rs: rho= -0.59, P = 0.013
 
-Weighted Pearson's correlation P(G) vs P(S) across areas: rho = 0.558, P = 2.0e-02
+Weighted Pearson's correlation P(G) vs P(S) across areas: rho = 0.561, P = 1.9e-02
 
-Weighted Pearson's correlation P(S) vs RS across areas: rho = 0.197, P = 4.5e-01
+Weighted Pearson's correlation P(S) vs RS across areas: rho = 0.189, P = 4.7e-01
 
-Weighted Pearson's correlation P(G) vs RS across areas: rho = 0.684, P = 2.5e-03
+Weighted Pearson's correlation P(G) vs RS across areas: rho = 0.694, P = 2.0e-03
 
 Overall RS from Nelson 2015: 2.02 vs. current study: 2.61
 
-T-I in Phase I-III with genetic support: 556/13345 historical vs. 281/5961 active. OR = 1.1, P = 0.085
+T-I in Phase I-III with genetic support: 558/13345 historical vs. 282/5961 active. OR = 1.1, P = 0.086
 
-Fisher's test for enrichment of genetically supported T-I pairs among those developed: OR= 10.9, P = 0.00e+00
+Fisher's test for enrichment of genetically supported T-I pairs among those developed: OR= 10.8, P = 0.00e+00
 
 Space of possible T-I pairs: 19338 genes times 756 indications with genetic insight = 14,619,528 T-I pairs
 
-Number of possible T-I pairs with genetic support: 99731 = 0.68%
+Number of possible T-I pairs with genetic support: 101103 = 0.69%
 
 Number of clinically developed T-I pairs: 16818
 
-Number of clinically developed T-I pairs with genetic support: 1146 = 1.15% of possible / 6.81% of Phase I+
+Number of clinically developed T-I pairs with genetic support: 1148 = 1.14% of possible / 6.83% of Phase I+
 
-After removing heavy hitters and restricting to most similar indications, the number of possible T-I pairs with genetic support: 33320 = 0.23%
+After removing heavy hitters and restricting to most similar indications, the number of possible T-I pairs with genetic support: 33943 = 0.23%
 
-Number of clinically developed T-I pairs with genetic support: 710 = 2.13%
+Number of clinically developed T-I pairs with genetic support: 715 = 2.11%
 
-Of targets with both ≥1 supported indication and ≥1 Phase I+ indication, 68% (765/1132) have been developed only for unsupported indications.
+Of targets with both ≥1 supported indication and ≥1 Phase I+ indication, 68% (774/1143) have been developed only for unsupported indications.
 
-Of targets with both ≥1 supported indication and ≥1 Phase I+ indication, 6% (64/1132) have been developed only for supported indications.
+Of targets with both ≥1 supported indication and ≥1 Phase I+ indication, 6% (64/1143) have been developed only for supported indications.
 
-Of targets with both ≥1 supported indication and ≥1 Phase I+ indication, 27% (303/1132) have been developed for both.
+Of targets with both ≥1 supported indication and ≥1 Phase I+ indication, 27% (305/1143) have been developed for both.
 
-Of targets with both ≥1 supported indication and ≥1 Phase I+ indication, there were 12147 unsupported indications and 710 supported indications pursued, a ratio of 17.1
+Of targets with both ≥1 supported indication and ≥1 Phase I+ indication, there were 12273 unsupported indications and 715 supported indications pursued, a ratio of 17.2
 
-Of launched targets with both ≥1 supported indication and ≥1 Phase I+ indication, there were 7424 unsupported indications and 449 supported indications pursued, a ratio of 16.5
+Of launched targets with both ≥1 supported indication and ≥1 Phase I+ indication, there were 7501 unsupported indications and 451 supported indications pursued, a ratio of 16.6
 
-Of non-launched targets with both ≥1 supported indication and ≥1 Phase I+ indication, there were 4723 unsupported indications and 261 supported indications pursued, a ratio of 18.1
+Of non-launched targets with both ≥1 supported indication and ≥1 Phase I+ indication, there were 4772 unsupported indications and 264 supported indications pursued, a ratio of 18.1
 
-Fisher test for difference between these ratios: OR=1.1, P=0.27.
+Fisher test for difference between these ratios: OR=1.1, P=0.30.
 
-Ordinal logistic model for drug-indication advancement: genetic support beta= 0.6, P = 8.99e-73
+Ordinal logistic model for drug-indication advancement: genetic support beta= 0.6, P = 8.64e-73
 

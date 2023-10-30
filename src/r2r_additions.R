@@ -744,3 +744,15 @@ pp$hcatnum[!is.na(pp$acat)] = NA
 
 merge2$hcat[!is.na(merge2$acat)] = NA
 merge2$hcatnum[!is.na(merge2$acat)] = NA
+
+
+
+combined_ti_genebass_misskat  = pipeline_best(merge2, phase='combined', basis='ti', associations='Genebass', genebass_subcat='missenseLC skat', verbose=F)
+combined_ti_genebass_misburd  = pipeline_best(merge2, phase='combined', basis='ti', associations='Genebass', genebass_subcat='missenseLC burden', verbose=F)
+combined_ti_genebass_lofskat  = pipeline_best(merge2, phase='combined', basis='ti', associations='Genebass', genebass_subcat='pLoF skat', verbose=F)
+combined_ti_genebass_lofburd  = pipeline_best(merge2, phase='combined', basis='ti', associations='Genebass', genebass_subcat='pLoF burden', verbose=F)
+
+advancement_rr(combined_ti_genebass_misskat)
+advancement_rr(combined_ti_genebass_misburd)
+advancement_rr(combined_ti_genebass_lofskat)
+advancement_rr(combined_ti_genebass_lofburd)
