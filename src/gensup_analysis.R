@@ -1398,10 +1398,10 @@ orphan_forest = tibble(label = c('OMIM orphan',
                                  'GWAS without OMIM',
                                  'OMIM + GWAS',
                                  'Genebass all',
-                                 'Genebass missense/LC SKAT',
-                                 'Genebass missense/LC burden',
-                                 'Genebass pLoF SKAT',
-                                 'Genebass pLoF burden'),
+                                 'missense/LC SKAT',
+                                 'missense/LC burden',
+                                 'pLoF SKAT',
+                                 'pLoF burden'),
                        pipeline_obj=c('combined_ti_omim_orphan',
                                       'combined_ti_omim_nonorphan',
                                       'combined_ti_otg_orphan',
@@ -1469,7 +1469,9 @@ panel = panel + 1
 
 write_supp_table(roc_sim, "Relative success as a function of indication-association similarity threshold.")
 
-plot_forest(orphan_forest, xlims=c(0,4), xstyle='ratio', mar=c(4,12,4,6))
+plot_forest(orphan_forest, xlims=c(0,5), xstyle='ratio', mar=c(4,12,4,6))
+tranche_lines = c(4.5, 9.5)
+abline(h=tranche_lines, lwd=0.5)
 mtext(side=1, line=2.0, text='RS')
 mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
 panel = panel + 1
@@ -1592,10 +1594,10 @@ unecessary_message = dev.off()
 
 
 
+########
+# Figure S3
+########
 
-
-resx=300
-png(paste0(output_path,'/figure-s3.png'),width=6.5*resx,height=4.5*resx,res=resx)
 
 # all synonyms for all MeSH terms
 all_vocab = read_tsv('data/mesh_all_vocab.tsv.gz', col_types=cols())
@@ -1642,7 +1644,8 @@ n15p %>%
   group_by(gene, mesh_id_indication, mesh_term_indication, ccat, ccatnum) %>%
   arrange(desc(comb_norm)) %>%
   slice(1) %>%
-  mutate(gensup = comb_norm >= 0.8) -> p13_g13
+  mutate(gensup = comb_norm >= 0.8) %>%
+  ungroup() -> p13_g13
 
 p13_g13 %>%
   group_by(ccatnum, ccat) %>%
@@ -1667,7 +1670,8 @@ n15p %>%
   group_by(gene, mesh_id_indication, mesh_term_indication, ccat, ccatnum) %>%
   arrange(desc(comb_norm)) %>%
   slice(1) %>%
-  mutate(gensup = comb_norm >= 0.8) -> p13_g23
+  mutate(gensup = comb_norm >= 0.8) %>%
+  ungroup() -> p13_g23
 
 p13_g23 %>%
   group_by(ccatnum, ccat) %>%
@@ -1694,7 +1698,8 @@ pp_temp %>%
   group_by(gene, mesh_id_indication, mesh_term_indication, ccat, ccatnum) %>%
   arrange(desc(comb_norm)) %>%
   slice(1) %>%
-  mutate(gensup = comb_norm >= 0.8) -> p23_g13
+  mutate(gensup = comb_norm >= 0.8)  %>%
+  ungroup() -> p23_g13
 
 p23_g13 %>%
   group_by(ccatnum, ccat) %>%
@@ -1718,7 +1723,8 @@ pp_temp %>%
   group_by(gene, mesh_id_indication, mesh_term_indication, ccat, ccatnum) %>%
   arrange(desc(comb_norm)) %>%
   slice(1) %>%
-  mutate(gensup = comb_norm >= 0.8) -> p23_g23
+  mutate(gensup = comb_norm >= 0.8)  %>%
+  ungroup() -> p23_g23
 
 p23_g23 %>%
   group_by(ccatnum, ccat) %>%
@@ -1749,7 +1755,8 @@ pp_temp %>%
   group_by(gene, mesh_id_indication, mesh_term_indication, ccat, ccatnum) %>%
   arrange(desc(comb_norm)) %>%
   slice(1) %>%
-  mutate(gensup = comb_norm >= 0.8) -> p23_otgpre2013
+  mutate(gensup = comb_norm >= 0.8)  %>%
+  ungroup() -> p23_otgpre2013
 
 p23_otgpre2013 %>%
   group_by(ccatnum, ccat) %>%
@@ -1776,7 +1783,8 @@ pp_temp %>%
   group_by(gene, mesh_id_indication, mesh_term_indication, ccat, ccatnum) %>%
   arrange(desc(comb_norm)) %>%
   slice(1) %>%
-  mutate(gensup = comb_norm >= 0.8) -> p23_otgalltime
+  mutate(gensup = comb_norm >= 0.8)  %>%
+  ungroup() -> p23_otgalltime
 
 p23_otgalltime %>%
   group_by(ccatnum, ccat) %>%
@@ -1788,6 +1796,16 @@ p23_otgalltime %>%
   mutate(drug_data = 2023, genetic_data = 'OTG all time') %>%
   select(drug_data, genetic_data, ccatnum, ccat, pg_mean, pg_l95, pg_u95, supported, total) -> p23_otgalltime_smry
 
+rbind(
+cbind(drug_data = 2013, genetic_data = '2013', adv_rr_simple(p13_g13)),
+cbind(drug_data = 2013, genetic_data = '2023', adv_rr_simple(p13_g23)),
+cbind(drug_data = 2023, genetic_data = '2013', adv_rr_simple(p23_g13)),
+cbind(drug_data = 2023, genetic_data = '2023', adv_rr_simple(p23_g23)),
+cbind(drug_data = 2023, genetic_data = 'OTG through 2013', adv_rr_simple(p23_otgpre2013)),
+cbind(drug_data = 2023, genetic_data = 'OTG all time', adv_rr_simple(p23_otgalltime))) %>%
+  as_tibble() -> rs_time_comparison
+
+
 
 rbind(p13_g13_smry, p13_g23_smry, p23_g13_smry, p23_g23_smry, p23_otgpre2013_smry, p23_otgalltime_smry) -> pg_time_comparison
 # write_supp_table(pg_time_comparison, 'P(G) by phase using 2013 vs. 2023 drug and genetics datasets.')
@@ -1797,28 +1815,69 @@ pg_time_comparison %>%
   mutate(y = 6-ccatnum) %>%
   rename(mean=pg_mean, l95=pg_l95, u95=pg_u95, numerator=supported, denominator=total, label=ccat) -> pg_forest
 
-par(mfrow=c(3,2))
-panel = 1
-plot_forest(pg_forest %>% filter(drug_data==2013 & genetic_data=='2013'), title='2013 drug pipeline\n2013 genetics', xlims=c(0,.12), xlab='P(G) vs. phase', col='#000000')
-mtext(letters[panel], side=3, cex=2, adj = -0.2, line = 0.5)
-panel = panel + 1
-plot_forest(pg_forest %>% filter(drug_data==2013 & genetic_data=='2023'), title='2013 drug pipeline\n2023 genetics', xlims=c(0,.12), xlab='P(G) vs. phase', col='#000000')
-mtext(letters[panel], side=3, cex=2, adj = -0.2, line = 0.5)
-panel = panel + 1
-plot_forest(pg_forest %>% filter(drug_data==2023 & genetic_data=='2013'), title='2023 drug pipeline\n2013 genetics', xlims=c(0,.12), xlab='P(G) vs. phase', col='#000000')
-mtext(letters[panel], side=3, cex=2, adj = -0.2, line = 0.5)
-panel = panel + 1
-plot_forest(pg_forest %>% filter(drug_data==2023 & genetic_data=='2023'), title='2023 drug pipeline\n2023 genetics', xlims=c(0,.12), xlab='P(G) vs. phase', col='#000000')
-mtext(letters[panel], side=3, cex=2, adj = -0.2, line = 0.5)
-panel = panel + 1
-plot_forest(pg_forest %>% filter(drug_data==2023 & genetic_data=='OTG through 2013'), title='2023 drug pipeline\nOTG only, 2005-2013', xlims=c(0,.12), xlab='P(G) vs. phase', col='#000000')
-mtext(letters[panel], side=3, cex=2, adj = -0.2, line = 0.5)
-panel = panel + 1
-plot_forest(pg_forest %>% filter(drug_data==2023 & genetic_data=='OTG all time'), title='2023 drug pipeline\nOTG only, all time', xlims=c(0,.12), xlab='P(G) vs. phase', col='#000000')
-mtext(letters[panel], side=3, cex=2, adj = -0.2, line = 0.5)
-panel = panel + 1
+pg_forest %>%
+  distinct(y, label) -> pg_ylabs
 
+rbind(cbind(drug_data=2013, genetic_data='2013', title='2013 drug pipeline\n2013 genetics'),
+                  cbind(drug_data=2013, genetic_data='2023', title='2013 drug pipeline\n2023 genetics'),
+                  cbind(drug_data=2023, genetic_data='2013', title='2023 drug pipeline\n2013 genetics'),
+                  cbind(drug_data=2023, genetic_data='2023', title='2023 drug pipeline\n2023 genetics'),
+                  cbind(drug_data=2023, genetic_data='OTG through 2013', title='2023 drug pipeline\nOTG only, 2005-2013'),
+                  cbind(drug_data=2023, genetic_data='OTG all time', title='2023 drug pipeline\nOTG only, all time')) %>%
+  as_tibble() %>%
+  mutate(panel = row_number()) -> time_meta
+
+rs_time_comparison %>%
+  filter(phase=='I-Launch') -> rs_toplot
+
+resx=300
+png(paste0(output_path,'/figure-s3.png'),width=6.5*resx,height=2.5*resx,res=resx)
+
+layout_matrix = matrix(1:14, nrow=2, byrow=T)
+layout(layout_matrix, widths=c(1.25, rep(1,6)), heights=c(1,.4))
+par(mar=c(3,0,4.0,0.5))
+ylims = range(pg_ylabs$y) + c(-0.5, 0.5)
+plot(NA, NA, xlim=0:1, ylim=ylims, xaxs='i', yaxs='i', ann=F, axes=F)
+mtext(side=4, line=-0.25, adj=1, at=pg_ylabs$y, text=pg_ylabs$label, las=2, cex=0.8)
+xlims = c(0, 0.12)
+for (this_panel in time_meta$panel) {
+  plot(NA, NA, xlim=xlims, ylim=ylims, xaxs='i', yaxs='i', ann=F, axes=F)
+  axis(side=1, at=0:12/100, tck=-0.025, labels=NA)
+  axis(side=1, at=0:2/20, tck=-0.05, labels=NA)
+  axis(side=1, at=0:2/20, lwd=0, line=-0.8, labels=percent(0:2/20), cex.axis=0.8)
+  mtext(side=1, line=1.2, text='P(G)', cex=0.7)
+  axis(side=2, at=ylims, lwd.ticks=0, labels=NA)
+  pg_forest %>%
+    filter(drug_data == time_meta$drug_data[time_meta$panel==this_panel],
+           genetic_data == time_meta$genetic_data[time_meta$panel==this_panel]) -> this_forest
+  points(this_forest$mean, this_forest$y, pch=19)
+  segments(x0=this_forest$l95, x1=this_forest$u95, this_forest$y, lwd=1)
+  mtext(side=3, line=0, text=time_meta$title[time_meta$panel==this_panel], cex=0.55)
+  mtext(letters[this_panel], side=3, cex=2, adj = 0.05, line = 1.8)
+}
+par(mar=c(3,0,0.5,0.5))
+xlims = c(0, 3)
+ylims = c(0.5, 1.5)
+plot(NA, NA, xlim=0:1, ylim=ylims, xaxs='i', yaxs='i', ann=F, axes=F)
+mtext(side=4, line=-0.25, adj=1, at=1, text='RS I-Launch', las=2, cex=0.8)
+for (this_panel in time_meta$panel) {
+  plot(NA, NA, xlim=xlims, ylim=ylims, xaxs='i', yaxs='i', ann=F, axes=F)
+  axis(side=1, at=0:30/10, tck=-0.025, labels=NA)
+  axis(side=1, at=0:2, tck=-0.05, labels=NA)
+  axis(side=1, at=0:2, lwd=0, line=-1, labels=0:2, cex.axis=0.8)
+  mtext(side=1, line=1.0, text='RS', cex=0.7)
+  axis(side=2, at=ylims, lwd.ticks=0, labels=NA)
+  abline(v=1, lty=3)
+  rs_time_comparison %>%
+    filter(drug_data == time_meta$drug_data[time_meta$panel==this_panel],
+           genetic_data == time_meta$genetic_data[time_meta$panel==this_panel]) %>%
+    filter(phase=='I-Launch') -> this_forest
+  points(this_forest$rs_mean, 1, pch=19)
+  segments(x0=this_forest$rs_l, x1=this_forest$rs_u, y0=1, lwd=1)
+}
 unnecessary_message = dev.off()
+
+
 
 # 
 # # examples of what is in signs & symptoms
