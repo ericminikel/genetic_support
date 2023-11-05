@@ -1,4 +1,4 @@
-Last updated: 2023-10-30
+Last updated: 2023-11-05
 
 Unique indications: 1034
 
@@ -32,13 +32,17 @@ Merged sim ≥0.8 | Unique targets: 816
 
 Merged sim ≥0.8 | Unique indications: 391
 
-Merged sim ≥0.8 | Unique T-I: 2153
+Merged sim ≥0.8 | Unique T-I (all): 2153
+
+Merged sim ≥0.8 | Unique T-I (meeting default criteria): 743
 
 Merged sim ≥0.8 | Unique T-I-A: 2931
 
 Assocs | Unique T-A: 81939
 
-Assocs | OTG | Unique T-A: 66203
+Assocs | OTG | Unique T-A (all): 172046
+
+Assocs | OTG | Unique T-A (L2G >= 0.5): 66203
 
 Assocs | OMIM | Unique T-A: 4510
 
@@ -107,6 +111,18 @@ Spearman correlation n_launched_indic vs. mean_sim: rho= -0.72, P = 0.0000000000
 Weighted Pearson correlation across areas, mean_sim vs. rs: rho= 0.72, P = 0.001
 
 Weighted Pearson correlation across areas, indic per target vs. rs: rho= -0.59, P = 0.013
+
+Confounding between therapy area and year of discovery among OTG GWAS Catalog-supported T-I pairs: KW test P = 1.1e-11, Chi Square test P = 2.9e-16
+
+Confounding between therapy area and gene count among OTG GWAS Catalog-supported T-I pairs: KW test P = 8.4e-35, Chi Square test P = 9.7e-47
+
+Confounding between therapy area and beta among OTG GWAS Catalog-supported T-I pairs: KW test P = 1.5e-05, Chi Square test P = 1.2e-07
+
+Confounding between therapy area and OR among OTG GWAS Catalog-supported T-I pairs: KW test P = 4.7e-08, Chi Square test P = 7.4e-11
+
+Confounding between therapy area and MAF among OTG GWAS Catalog-supported T-I pairs: KW test P = 6.0e-04, Chi Square test P = 4.5e-03
+
+Confounding between therapy area and GWAS source: Chi Square test P = 2.4e-07
 
 Weighted Pearson's correlation P(G) vs P(S) across areas: rho = 0.561, P = 1.9e-02
 

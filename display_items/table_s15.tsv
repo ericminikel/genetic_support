@@ -1,27 +1,39 @@
-gene	mesh_id	mesh_term	original_trait
-ABCC8	D003920	Diabetes Mellitus	Diabetes mellitus, permanent neonatal, 606176 (3), Autosomal recessive, Autosomal dominant
-ABCC8	D003920	Diabetes Mellitus	Diabetes mellitus, transient neonatal 2, 610374 (3)
-ABCC8	D003924	Diabetes Mellitus, Type 2	Diabetes mellitus, noninsulin-dependent, 125853 (3), Autosomal dominant
-AQP2	D018500	Diabetes Insipidus, Nephrogenic	Diabetes insipidus, nephrogenic, 125800 (3), Autosomal recessive, Autosomal dominant
-AVP	D020790	Diabetes Insipidus, Neurogenic	Diabetes insipidus, neurohypophyseal, 125700 (3), Autosomal dominant
-BLK	D003924	Diabetes Mellitus, Type 2	Maturity-onset diabetes of the young, type 11, 613375 (3), Autosomal dominant
-CEL	D003924	Diabetes Mellitus, Type 2	Maturity-onset diabetes of the young, type VIII, 609812 (3), Autosomal dominant
-GCK	D003920	Diabetes Mellitus	Diabetes mellitus, permanent neonatal, 606176 (3), Autosomal recessive, Autosomal dominant
-GCK	D003924	Diabetes Mellitus, Type 2	Diabetes mellitus, noninsulin-dependent, late onset, 125853 (3), Autosomal dominant
-GLIS3	D003409	Congenital Hypothyroidism	Diabetes mellitus, neonatal, with congenital hypothyroidism, 610199 (3), Autosomal recessive
-HNF1A	D003922	Diabetes Mellitus, Type 1	Diabetes mellitus, insulin-dependent, 20, 612520 (3)
-HNF1B	D003924	Diabetes Mellitus, Type 2	Diabetes mellitus, noninsulin-dependent, 125853 (3), Autosomal dominant
-HNF1B	D003924	Diabetes Mellitus, Type 2	Renal cysts and diabetes syndrome, 137920 (3), Autosomal dominant
-HNF4A	D003924	Diabetes Mellitus, Type 2	Fanconi renotubular syndrome 4, with maturity-onset diabetes of the young, 616026 (3), Autosomal dominant
-IER3IP1	D008831	Microcephaly	Microcephaly, epilepsy, and diabetes syndrome, 614231 (3), Autosomal recessive
-INS	D003922	Diabetes Mellitus, Type 1	Diabetes mellitus, insulin-dependent, 2, 125852 (3), Autosomal dominant
-INS	D003924	Diabetes Mellitus, Type 2	Maturity-onset diabetes of the young, type 10, 613370 (3), Autosomal dominant
-INSR	D003920	Diabetes Mellitus	Diabetes mellitus, insulin-resistant, with acanthosis nigricans, 610549 (3)
-KCNJ11	D003920	Diabetes Mellitus	Diabetes mellitus, transient neonatal, 3, 610582 (3), Autosomal dominant
-KCNJ11	D011236	Prediabetic State	Diabetes, permanent neonatal, with or without neurologic features, 606176 (3), Autosomal recessive, Autosomal dominant
-KLF11	D003924	Diabetes Mellitus, Type 2	Maturity-onset diabetes of the young, type VII, 610508 (3)
-MAFA	D003920	Diabetes Mellitus	Insulinomatosis and diabetes mellitus, 147630 (3), Autosomal dominant
-NEUROD1	D003924	Diabetes Mellitus, Type 2	Maturity-onset diabetes of the young 6, 606394 (3)
-PAX4	D003924	Diabetes Mellitus, Type 2	Diabetes mellitus, type 2, 125853 (3), Autosomal dominant
-PAX4	D003924	Diabetes Mellitus, Type 2	Maturity-onset diabetes of the young, type IX, 612225 (3)
-ZFP57	D003920	Diabetes Mellitus	Diabetes mellitus, transient neonatal, 1, 601410 (3), Autosomal dominant
+ti_uid	gene	min_assoc_year	year_launch
+ACE-D006973	ACE	2010	2013
+ADRB2-D001249	ADRB2	2019	2004
+ADRB2-D006973	ADRB2	2020	2007
+ADRB2-D029424	ADRB2	2019	2009
+AR-D011471	AR	2021	2022
+BCL2-D015451	BCL2	2013	2018
+CHRM3-D029424	CHRM3	2017	2012
+CHRM3-D029481	CHRM3	2019	2012
+CHRM3-D065631	CHRM3	2017	2021
+CSF3-D009503	CSF3	2016	2021
+DRD2-D011618	DRD2	2014	2010
+DRD2-D012559	DRD2	2014	2020
+EPAS1-D007680	EPAS1	2010	2021
+ERBB4-D001943	ERBB4	2012	2019
+IFNAR2-D000086382	IFNAR2	2020	2021
+IL12B-D003424	IL12B	2008	2020
+IL12B-D011565	IL12B	2009	2009
+IL4R-D001249	IL4R	2018	2021
+IL4R-D057765	IL4R	2016	2022
+INSR-D003924	INSR	2018	2008
+KCNH2-D001281	KCNH2	2018	2021
+MC4R-D009765	MC4R	2008	2022
+MTNR1B-D007319	MTNR1B	2021	2015
+MTNR1B-D012893	MTNR1B	2021	2020
+MTNR1B-D058496	MTNR1B	2018	2020
+NR3C1-D001249	NR3C1	2018	2001
+NR3C1-D029424	NR3C1	2018	2012
+PCSK9-D006937	PCSK9	2008	2018
+PCSK9-D006949	PCSK9	2008	2019
+PLG-D009203	PLG	2015	2003
+PPARA-D006949	PPARA	2020	2008
+PPARG-D006949	PPARG	2013	2013
+PPARG-D015228	PPARG	2013	2013
+PPARG-D065626	PPARG	2021	2020
+SCN1A-D004828	SCN1A	2018	2019
+SCN5A-D017180	SCN5A	2013	2009
+SLC6A3-D009290	SLC6A3	2018	2021
+VEGFA-D009216	VEGFA	2018	2022
