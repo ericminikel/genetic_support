@@ -12,27 +12,30 @@ if(interactive()) {
 
 cat(file=stderr(), '\nReading in data...')
 
-best_names = read_tsv('../digap/output/mesh_best_names.tsv.gz', col_types=cols())
-mesh_tree = read_delim('../digap_pipeline/data/mesh_tree.tsv', col_names = c("id", "tree"), col_types=cols())
-remaps = read_tsv('data_received/mesh_remappings.tsv', col_types=cols())
+best_names = read_tsv('data/mesh_best_names.tsv.gz', col_types=cols())
+mesh_tree = read_delim('data/mesh_tree.tsv', col_names = c("id", "tree"), col_types=cols())
+remaps = read_tsv('data/mesh_remappings.tsv', col_types=cols())
+scr_best = read_tsv('data/mesh_scr_to_best.tsv.gz', col_types=cols())
 
-meta_hcat = read_tsv('../digap_pipeline/data/meta_hcat.tsv', col_types=cols())
-meta_acat = read_tsv('../digap_pipeline/data/meta_acat.tsv', col_types=cols())
-meta_ccat = read_tsv('../digap_pipeline/data/meta_ccat.tsv', col_types=cols())
+meta_hcat = read_tsv('data/meta_hcat.tsv', col_types=cols())
+meta_acat = read_tsv('data/meta_acat.tsv', col_types=cols())
+meta_ccat = read_tsv('data/meta_ccat.tsv', col_types=cols())
 
 areas = read_tsv('data/areas.tsv', col_types=cols())
-universe = read_tsv('../digap/data/universe/universe.tsv', col_types=cols())
+universe = read_tsv('data/universe.tsv', col_types=cols())
 
 assoc = read_tsv('../digap/output/all_mesh_assoc.tsv', col_types=cols())
 
 pp_new = read.xlsx('data_received/target_indication_pair_with_all_info.xlsx', na.strings = 'NA') %>%
   clean_names() %>%
+  left_join(scr_best, by=c('mesh_id'='scr')) %>% # join to mapping of SCRs to main headings. note that sum(duplicated(scr_best$scr))==0 so there are no many-to-one joins here
+  mutate(mapped_mesh = coalesce(main, mesh_id)) %>% # choose the main that the SCR is mapped to, but if not an SCR, just use the original
   mutate(highest_status_reached = na_if(highest_status_reached,'NA')) %>%
   mutate(current_status = na_if(current_status,'NA')) %>%
   mutate(highest_status_reached_single_target = na_if(highest_status_reached_single_target,'NA')) %>%
   mutate(current_status_single_target = na_if(current_status_single_target,'NA')) %>%
   select(gene,
-         indication_mesh_id = mesh_id,
+         indication_mesh_id = mapped_mesh,
          highest_status_reached,
          current_status,
          highest_status_reached_single_target,

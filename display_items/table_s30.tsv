@@ -46,12 +46,12 @@ Diabetes		1
 Metabolic	musculoskeletal	1
 Metabolic	neurology	3
 Metabolic	cardiovascular	1
-Metabolic	congenital	12
+Metabolic	congenital	13
 Metabolic	dermatology	5
-Metabolic	metabolic	22
+Metabolic	metabolic	24
 Metabolic	immune	1
 Metabolic	signs/symptoms	2
-Metabolic		3
+Metabolic		1
 Skin & connective tissue	congenital	2
 Skin & connective tissue	dermatology	22
 Skin & connective tissue	metabolic	1
@@ -129,20 +129,20 @@ Infection	signs/symptoms	1
 Infection	psychiatry	1
 Infection	other	1
 Infection		6
-	infection	52
-	oncology	47
+	infection	53
+	oncology	48
 	musculoskeletal	24
 	digestive	53
-	respiratory	13
-	neurology	102
+	respiratory	14
+	neurology	103
 	ophthalmology	38
 	cardiovascular	26
-	hematology	30
-	congenital	108
+	hematology	35
+	congenital	114
 	dermatology	35
-	metabolic	74
+	metabolic	75
 	endocrine	19
-	immune	35
-	signs/symptoms	56
+	immune	37
+	signs/symptoms	60
 	psychiatry	27
-	other	84
+	other	47

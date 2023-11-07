@@ -1586,7 +1586,7 @@ panel = panel + 1
 write_supp_table(roc_sim, "Relative success as a function of indication-association similarity threshold.")
 
 plot_forest(orphan_forest, xlims=c(0,5), xstyle='ratio', mar=c(4,12,4,6))
-tranche_lines = c(4.5, 10.5)
+tranche_lines = c(5.5, 10.5)
 abline(h=tranche_lines, lwd=0.5)
 mtext(side=1, line=2.0, text='RS')
 mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)

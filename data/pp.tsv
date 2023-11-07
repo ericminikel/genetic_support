@@ -48,8 +48,8 @@ ABCB1-D007938	ABCB1	D007938	Leukemia	Launched	Launched	Launched	5	6	5	TRUE	TRUE	
 ABCB1-D008268	ABCB1	D008268	Macular Degeneration	Preclinical		Preclinical	1		1	FALSE							FALSE	
 ABCB1-D009369	ABCB1	D009369	Neoplasms	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	FALSE	
 ABCB1-D015212	ABCB1	D015212	Inflammatory Bowel Diseases	Preclinical		Preclinical	1		1	FALSE							FALSE	
-ABCB11-C535934	ABCB11	C535934	Cholestasis, progressive familial intrahepatic 2		Preclinical	Preclinical		2	1						Preclinical	Preclinical	FALSE	
-ABCB4-C535935	ABCB4	C535935	Cholestasis, progressive familial intrahepatic 3		Preclinical	Preclinical		2	1						Preclinical	Preclinical	TRUE	
+ABCB11-D002780	ABCB11	D002780	Cholestasis, Intrahepatic		Preclinical	Preclinical		2	1						Preclinical	Preclinical	FALSE	
+ABCB4-D002780	ABCB4	D002780	Cholestasis, Intrahepatic		Preclinical	Preclinical		2	1						Preclinical	Preclinical	TRUE	
 ABCC1-D001749	ABCC1	D001749	Urinary Bladder Neoplasms	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 ABCC1-D001943	ABCC1	D001943	Breast Neoplasms	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 ABCC1-D002289	ABCC1	D002289	Carcinoma, Non-Small-Cell Lung	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
@@ -496,7 +496,7 @@ ADM-D009369	ADM	D009369	Neoplasms	Preclinical		Preclinical	1		1	FALSE				Preclin
 ADM-D012128	ADM	D012128	Respiratory Distress Syndrome		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	TRUE	
 ADM-D018805	ADM	D018805	Sepsis		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	FALSE	
 ADM-D055371	ADM	D055371	Acute Lung Injury	Phase I		Phase I	2		2	TRUE	FALSE			Phase I		Phase I	TRUE	
-ADNP-C536801	ADNP	C536801	Telomeric 22q13 Monosomy Syndrome	Preclinical		Preclinical	1		1	FALSE							FALSE	
+ADNP-D002872	ADNP	D002872	Chromosome Deletion	Preclinical		Preclinical	1		1	FALSE							FALSE	
 ADNP-D000544	ADNP	D000544	Alzheimer Disease	Phase III		Phase III	4		4	TRUE	TRUE	TRUE	FALSE				FALSE	
 ADNP-D001321	ADNP	D001321	Autistic Disorder	Phase II		Phase II	3		3	TRUE	TRUE	FALSE					FALSE	
 ADNP-D001927	ADNP	D001927	Brain Diseases	Phase III		Phase III	4		4	TRUE	TRUE	TRUE	FALSE				FALSE	
@@ -996,7 +996,7 @@ AIFM1-D010190	AIFM1	D010190	Pancreatic Neoplasms	Phase II		Phase II	3		3	TRUE	TR
 AIM2-D009369	AIM2	D009369	Neoplasms	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 AIMP2-D001424	AIMP2	D001424	Bacterial Infections	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 AIMP2-D009369	AIMP2	D009369	Neoplasms	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
-AKR1B1-C535739	AKR1B1	C535739	Congenital disorder of glycosylation type 1A		Preclinical	Preclinical		2	1						Preclinical	Preclinical	TRUE	
+AKR1B1-D018981	AKR1B1	D018981	Congenital Disorders of Glycosylation		Preclinical	Preclinical		2	1						Preclinical	Preclinical	TRUE	
 AKR1B1-D001249	AKR1B1	D001249	Asthma	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 AKR1B1-D002239	AKR1B1	D002239	Carbohydrate Metabolism, Inborn Errors		Phase III	Phase III		5	4	TRUE	TRUE	TRUE			Phase III	Phase III	TRUE	
 AKR1B1-D003924	AKR1B1	D003924	Diabetes Mellitus, Type 2	Phase II		Phase II	3		3	TRUE	TRUE	FALSE		Phase II		Phase II	FALSE	
@@ -1018,7 +1018,7 @@ AKR1C3-D011085	AKR1C3	D011085	Polycystic Ovary Syndrome		Preclinical	Preclinical
 AKR1C3-D011471	AKR1C3	D011471	Prostatic Neoplasms		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	TRUE	
 AKR1C3-D015470	AKR1C3	D015470	Leukemia, Myeloid, Acute		Phase I	Phase I		3	2	TRUE					Phase I	Phase I	TRUE	
 AKR1C3-D054198	AKR1C3	D054198	Precursor Cell Lymphoblastic Leukemia-Lymphoma		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	TRUE	
-AKT1-C580062	AKT1	C580062	Epidermal Nevus		Preclinical	Preclinical		2	1						Preclinical	Preclinical	FALSE	
+AKT1-D009506	AKT1	D009506	Nevus		Preclinical	Preclinical		2	1						Preclinical	Preclinical	FALSE	
 AKT1-D000086382	AKT1	D000086382	COVID-19		Preclinical	Preclinical		2	1						Preclinical	Preclinical	FALSE	
 AKT1-D000544	AKT1	D000544	Alzheimer Disease	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 AKT1-D001650	AKT1	D001650	Bile Duct Neoplasms	Phase I		Phase I	2		2	TRUE	FALSE						FALSE	
@@ -1080,8 +1080,8 @@ AKT1-D019337	AKT1	D019337	Hematologic Neoplasms	Phase II		Phase II	3		3	TRUE	TRU
 AKT1-D020522	AKT1	D020522	Lymphoma, Mantle-Cell	Phase II		Phase II	3		3	TRUE	TRUE	FALSE					FALSE	
 AKT1-D048909	AKT1	D048909	Diabetes Complications	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 AKT1-D054198	AKT1	D054198	Precursor Cell Lymphoblastic Leukemia-Lymphoma	Phase II		Phase II	3		3	TRUE	TRUE	FALSE					FALSE	
-AKT2-C567863	AKT2	C567863	Congenital Lipomatous Overgrowth, Vascular Malformations, and Epidermal Nevi		Phase II	Phase II		4	3	TRUE	TRUE						FALSE	
-AKT2-C580062	AKT2	C580062	Epidermal Nevus		Phase II	Phase II		4	3	TRUE	TRUE						FALSE	
+AKT2-D008067	AKT2	D008067	Lipoma		Phase II	Phase II		4	3	TRUE	TRUE						FALSE	
+AKT2-D009506	AKT2	D009506	Nevus		Phase II	Phase II		4	3	TRUE	TRUE						FALSE	
 AKT2-D000755	AKT2	D000755	Anemia, Sickle Cell	Preclinical		Preclinical	1		1	FALSE							FALSE	
 AKT2-D001932	AKT2	D001932	Brain Neoplasms	Preclinical		Preclinical	1		1	FALSE							FALSE	
 AKT2-D001943	AKT2	D001943	Breast Neoplasms	Phase I		Phase I	2		2	TRUE	FALSE						FALSE	
@@ -1200,8 +1200,8 @@ ALKBH5-D009369	ALKBH5	D009369	Neoplasms	Preclinical		Preclinical	1		1	FALSE				P
 ALOX12-D003922	ALOX12	D003922	Diabetes Mellitus, Type 1		Preclinical	Preclinical		2	1						Preclinical	Preclinical	TRUE	
 ALOX12-D007249	ALOX12	D007249	Inflammation		Preclinical	Preclinical		2	1						Preclinical	Preclinical	FALSE	
 ALOX12-D013921	ALOX12	D013921	Thrombocytopenia		Phase I	Phase I		3	2	TRUE					Phase I	Phase I	TRUE	
-ALOX15-C536353	ALOX15	C536353	VLCAD deficiency	Phase II		Phase II	3		3	TRUE	TRUE	FALSE		Phase II		Phase II	TRUE	
-ALOX15-C580383	ALOX15	C580383	Pontocerebellar Hypoplasia	Phase II		Phase II	3		3	TRUE	TRUE	FALSE		Phase II		Phase II	TRUE	
+ALOX15-D000080984	ALOX15	D000080984	Congenital Bone Marrow Failure Syndromes	Phase II		Phase II	3		3	TRUE	TRUE	FALSE		Phase II		Phase II	TRUE	
+ALOX15-D002526	ALOX15	D002526	Cerebellar Diseases	Phase II		Phase II	3		3	TRUE	TRUE	FALSE		Phase II		Phase II	TRUE	
 ALOX15-D000690	ALOX15	D000690	Amyotrophic Lateral Sclerosis		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	FALSE	
 ALOX15-D001321	ALOX15	D001321	Autistic Disorder	Phase II		Phase II	3		3	TRUE	TRUE	FALSE		Phase II		Phase II	TRUE	
 ALOX15-D003920	ALOX15	D003920	Diabetes Mellitus	Preclinical		Preclinical	1		1	FALSE							FALSE	
@@ -2589,7 +2589,7 @@ BPI-D007239	BPI	D007239	Infections	Preclinical		Preclinical	1		1	FALSE				Precli
 BPI-D012164	BPI	D012164	Retinal Diseases	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 BPI-D013203	BPI	D013203	Staphylococcal Infections	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 BPI-D018805	BPI	D018805	Sepsis	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
-BRAF-C537705	BRAF	C537705	Kabuki syndrome		Preclinical	Preclinical		2	1						Preclinical	Preclinical	TRUE	
+BRAF-D000015	BRAF	D000015	Abnormalities, Multiple		Preclinical	Preclinical		2	1						Preclinical	Preclinical	TRUE	
 BRAF-D001650	BRAF	D001650	Bile Duct Neoplasms		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	TRUE	
 BRAF-D001749	BRAF	D001749	Urinary Bladder Neoplasms	Phase I		Phase I	2		2	TRUE	FALSE						FALSE	
 BRAF-D001932	BRAF	D001932	Brain Neoplasms		Phase III	Phase III		5	4	TRUE	TRUE	TRUE			Phase II	Phase II	TRUE	
@@ -2763,7 +2763,7 @@ BST1-D015470	BST1	D015470	Leukemia, Myeloid, Acute	Phase I		Phase I	2		2	TRUE	FA
 BST2-D007154	BST2	D007154	Immune System Diseases	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 BST2-D009101	BST2	D009101	Multiple Myeloma	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 BST2-D009369	BST2	D009369	Neoplasms	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
-BTK-C537409	BTK	C537409	Bruton type agammaglobulinemia	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
+BTK-D000361	BTK	D000361	Agammaglobulinemia	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 BTK-D000077733	BTK	D000077733	Immunoglobulin G4-Related Disease		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	TRUE	
 BTK-D000080424	BTK	D000080424	Cytokine Release Syndrome		Phase II	Phase II		4	3	TRUE	TRUE			Phase II		Phase II	TRUE	
 BTK-D000086382	BTK	D000086382	COVID-19		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	TRUE	
@@ -3062,7 +3062,7 @@ CACNA1B-D051474	CACNA1B	D051474	Neuralgia, Postherpetic	Phase II		Phase II	3		3	
 CACNA1B-D052801	CACNA1B	D052801	Male Urogenital Diseases	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 CACNA1B-D059226	CACNA1B	D059226	Nociceptive Pain	Phase II		Phase II	3		3	TRUE	TRUE	FALSE		Phase II		Phase II	TRUE	
 CACNA1B-D059352	CACNA1B	D059352	Musculoskeletal Pain	Phase I		Phase I	2		2	TRUE	FALSE			Phase I		Phase I	FALSE	
-CACNA1C-C537403	CACNA1C	C537403	Pitt-Hopkins syndrome		Preclinical	Preclinical		2	1								FALSE	
+CACNA1C-D006985	CACNA1C	D006985	Hyperventilation		Preclinical	Preclinical		2	1								FALSE	
 CACNA1C-D000070642	CACNA1C	D000070642	Brain Injuries, Traumatic	Phase III		Phase III	4		4	TRUE	TRUE	TRUE	FALSE	Phase III		Phase III	TRUE	
 CACNA1C-D000544	CACNA1C	D000544	Alzheimer Disease	Phase III		Phase III	4		4	TRUE	TRUE	TRUE	FALSE				FALSE	
 CACNA1C-D000787	CACNA1C	D000787	Angina Pectoris	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	FALSE	2005
@@ -3372,7 +3372,7 @@ CASP9-D055752	CASP9	D055752	Small Cell Lung Carcinoma	Preclinical		Preclinical	1
 CASP9-D065626	CASP9	D065626	Non-alcoholic Fatty Liver Disease	Phase II		Phase II	3		3	TRUE	TRUE	FALSE					FALSE	
 CASQ2-D006009	CASQ2	D006009	Glycogen Storage Disease Type II	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 CASQ2-D017180	CASQ2	D017180	Tachycardia, Ventricular	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
-CASR-C562783	CASR	C562783	Hypercalciuric Hypocalcemia, Familial		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	TRUE	
+CASR-D006996	CASR	D006996	Hypocalcemia		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	TRUE	
 CASR-D006934	CASR	D006934	Hypercalcemia	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	TRUE	2019
 CASR-D006962	CASR	D006962	Hyperparathyroidism, Secondary	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	TRUE	2021
 CASR-D006976	CASR	D006976	Hypertension, Pulmonary	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	TRUE	
@@ -3585,7 +3585,7 @@ CCL5-D055371	CCL5	D055371	Acute Lung Injury	Preclinical		Preclinical	1		1	FALSE	
 CCN1-D001943	CCN1	D001943	Breast Neoplasms	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 CCN1-D016491	CCN1	D016491	Peripheral Vascular Diseases	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 CCN1-D050197	CCN1	D050197	Atherosclerosis	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
-CCN2-C000711409	CCN2	C000711409	post-acute COVID-19 syndrome		Preclinical	Preclinical		2	1						Preclinical	Preclinical	FALSE	
+CCN2-D000086382	CCN2	D000086382	COVID-19		Preclinical	Preclinical		2	1						Preclinical	Preclinical	FALSE	
 CCN2-D000086382	CCN2	D000086382	COVID-19		Preclinical	Preclinical		2	1						Preclinical	Preclinical	FALSE	
 CCN2-D005355	CCN2	D005355	Fibrosis	Phase II		Phase II	3		3	TRUE	TRUE	FALSE		Phase II		Phase II	FALSE	
 CCN2-D007403	CCN2	D007403	Intervertebral Disc	Preclinical		Preclinical	1		1	FALSE							FALSE	
@@ -5339,7 +5339,7 @@ CFTR-D015352	CFTR	D015352	Dry Eye Syndromes		Preclinical	Preclinical		2	1						P
 CFTR-D015518	CFTR	D015518	Rett Syndrome	Phase I		Phase I	2		2	TRUE	FALSE			Phase I		Phase I	TRUE	
 CFTR-D020388	CFTR	D020388	Muscular Dystrophy, Duchenne	Phase I		Phase I	2		2	TRUE	FALSE			Phase I		Phase I	TRUE	
 CFTR-D029424	CFTR	D029424	Pulmonary Disease, Chronic Obstructive		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	TRUE	
-CGAS-C535607	CGAS	C535607	Aicardi-Goutieres syndrome		Preclinical	Preclinical		2	1						Preclinical	Preclinical	FALSE	
+CGAS-D009421	CGAS	D009421	Nervous System Malformations		Preclinical	Preclinical		2	1						Preclinical	Preclinical	FALSE	
 CGAS-D001327	CGAS	D001327	Autoimmune Diseases		Preclinical	Preclinical		2	1						Preclinical	Preclinical	FALSE	
 CGAS-D004660	CGAS	D004660	Encephalitis		Preclinical	Preclinical		2	1						Preclinical	Preclinical	FALSE	
 CGAS-D007154	CGAS	D007154	Immune System Diseases	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
@@ -7026,7 +7026,7 @@ CXCR3-D007249	CXCR3	D007249	Inflammation	Preclinical		Preclinical	1		1	FALSE				
 CXCR3-D009103	CXCR3	D009103	Multiple Sclerosis	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 CXCR3-D011565	CXCR3	D011565	Psoriasis	Phase II		Phase II	3		3	TRUE	TRUE	FALSE		Phase II		Phase II	FALSE	
 CXCR3-NA	CXCR3				Preclinical	Preclinical		2	1						Preclinical	Preclinical	FALSE	
-CXCR4-C536697	CXCR4	C536697	WHIM syndrome		Phase III	Phase III		5	4	TRUE	TRUE	TRUE			Phase III	Phase III	TRUE	
+CXCR4-D000081207	CXCR4	D000081207	Primary Immunodeficiency Diseases		Phase III	Phase III		5	4	TRUE	TRUE	TRUE			Phase III	Phase III	TRUE	
 CXCR4-D000086382	CXCR4	D000086382	COVID-19		Preclinical	Preclinical		2	1						Preclinical	Preclinical	FALSE	
 CXCR4-D000326	CXCR4	D000326	Adrenoleukodystrophy	Phase II		Phase II	3		3	TRUE	TRUE	FALSE					FALSE	
 CXCR4-D000690	CXCR4	D000690	Amyotrophic Lateral Sclerosis		Phase I	Phase I		3	2	TRUE					Phase I	Phase I	TRUE	
@@ -7197,14 +7197,14 @@ CYP3A4-D004357	CYP3A4	D004357	Drug Synergism	Launched	Launched	Launched	5	6	5	TR
 CYP3A4-D006562	CYP3A4	D006562	Herpes Zoster	Phase III		Phase III	4		4	TRUE	TRUE	TRUE	FALSE	Phase III		Phase III	FALSE	
 CYP3A4-D015658	CYP3A4	D015658	HIV Infections	Phase I		Phase I	2		2	TRUE	FALSE			Phase I		Phase I	FALSE	
 CYP3A4-D051474	CYP3A4	D051474	Neuralgia, Postherpetic	Phase III		Phase III	4		4	TRUE	TRUE	TRUE	FALSE	Phase III		Phase III	FALSE	
-CYP46A1-C538036	CYP46A1	C538036	Partial Duplication 15q Syndrome	Phase II		Phase II	3		3	TRUE	TRUE	FALSE		Phase II		Phase II	TRUE	
+CYP46A1-D014314	CYP46A1	D014314	Trisomy	Phase II		Phase II	3		3	TRUE	TRUE	FALSE		Phase II		Phase II	TRUE	
 CYP46A1-D004827	CYP46A1	D004827	Epilepsy		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	TRUE	
 CYP46A1-D004831	CYP46A1	D004831	Epilepsies, Myoclonic		Phase III	Phase III		5	4	TRUE	TRUE	TRUE			Phase III	Phase III	TRUE	
 CYP46A1-D014402	CYP46A1	D014402	Tuberous Sclerosis	Phase II		Phase II	3		3	TRUE	TRUE	FALSE		Phase II		Phase II	TRUE	
 CYP46A1-D020918	CYP46A1	D020918	Complex Regional Pain Syndromes	Phase II		Phase II	3		3	TRUE	TRUE	FALSE		Phase II		Phase II	TRUE	
 CYP46A1-D065768	CYP46A1	D065768	Lennox Gastaut Syndrome		Phase III	Phase III		5	4	TRUE	TRUE	TRUE			Phase III	Phase III	TRUE	
 CYP46A1-D065886	CYP46A1	D065886	Neurodevelopmental Disorders	Phase II		Phase II	3		3	TRUE	TRUE	FALSE		Phase II		Phase II	TRUE	
-CYP4V2-C535440	CYP4V2	C535440	Bietti Crystalline Dystrophy		Preclinical	Preclinical		2	1						Preclinical	Preclinical	TRUE	
+CYP4V2-D003317	CYP4V2	D003317	Corneal Dystrophies, Hereditary		Preclinical	Preclinical		2	1						Preclinical	Preclinical	TRUE	
 CYP51A1-D002177	CYP51A1	D002177	Candidiasis		Phase I	Phase I		3	2	TRUE					Phase I	Phase I	TRUE	
 CYP51A1-D003047	CYP51A1	D003047	Coccidioidomycosis		Phase I	Phase I		3	2	TRUE					Phase I	Phase I	TRUE	
 CYP51A1-D003453	CYP51A1	D003453	Cryptococcosis		Phase I	Phase I		3	2	TRUE					Phase I	Phase I	TRUE	
@@ -7248,9 +7248,9 @@ DAG1-D009136	DAG1	D009136	Muscular Dystrophies	Preclinical		Preclinical	1		1	FAL
 DAG1-D009369	DAG1	D009369	Neoplasms	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 DAG1-D020388	DAG1	D020388	Muscular Dystrophy, Duchenne	Preclinical		Preclinical	1		1	FALSE							FALSE	
 DAG1-D049288	DAG1	D049288	Muscular Dystrophies, Limb-Girdle	Preclinical		Preclinical	1		1	FALSE							FALSE	
-DAO-C536109	DAO	C536109	N-acetyl glutamate synthetase deficiency	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	TRUE	
-DAO-C538380	DAO	C538380	HHH syndrome	Phase III		Phase III	4		4	TRUE	TRUE	TRUE	FALSE	Phase III		Phase III	TRUE	
-DAO-C562687	DAO	C562687	Lysinuric Protein Intolerance	Phase III		Phase III	4		4	TRUE	TRUE	TRUE	FALSE	Phase III		Phase III	TRUE	
+DAO-D056806	DAO	D056806	Urea Cycle Disorders, Inborn	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	TRUE	
+DAO-D022124	DAO	D022124	Hyperammonemia	Phase III		Phase III	4		4	TRUE	TRUE	TRUE	FALSE	Phase III		Phase III	TRUE	
+DAO-D000592	DAO	D000592	Amino Acid Metabolism, Inborn Errors	Phase III		Phase III	4		4	TRUE	TRUE	TRUE	FALSE	Phase III		Phase III	TRUE	
 DAO-D000080424	DAO	D000080424	Cytokine Release Syndrome		Preclinical	Preclinical		2	1						Preclinical	Preclinical	FALSE	
 DAO-D000086382	DAO	D000086382	COVID-19		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	FALSE	
 DAO-D000544	DAO	D000544	Alzheimer Disease	Phase III		Phase III	4		4	TRUE	TRUE	TRUE	FALSE	Phase III		Phase III	TRUE	
@@ -7295,7 +7295,7 @@ DCT-D008545	DCT	D008545	Melanoma		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	P
 DCT-D009369	DCT	D009369	Neoplasms	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 DDAH1-D014652	DDAH1	D014652	Vascular Diseases	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 DDAH1-D018805	DDAH1	D018805	Sepsis	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
-DDC-C537437	DDC	C537437	Aromatic amino acid decarboxylase deficiency	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	TRUE	
+DDC-D000592	DDC	D000592	Amino Acid Metabolism, Inborn Errors	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	TRUE	
 DDC-D001249	DDC	D001249	Asthma	Phase I		Phase I	2		2	TRUE	FALSE			Phase I		Phase I	FALSE	
 DDC-D010300	DDC	D010300	Parkinson Disease	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	FALSE	2022
 DDC-D014029	DDC	D014029	Tobacco Use Disorder	Phase I		Phase I	2		2	TRUE	FALSE			Phase I		Phase I	FALSE	
@@ -7422,7 +7422,7 @@ DHFR-D016399	DHFR	D016399	Lymphoma, T-Cell	Phase II		Phase II	3		3	TRUE	TRUE	FAL
 DHFR-D016410	DHFR	D016410	Lymphoma, T-Cell, Cutaneous	Phase II		Phase II	3		3	TRUE	TRUE	FALSE					FALSE	
 DHFR-D016411	DHFR	D016411	Lymphoma, T-Cell, Peripheral	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE		Launched	Launched	FALSE	
 DHFR-D054198	DHFR	D054198	Precursor Cell Lymphoblastic Leukemia-Lymphoma	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Phase II	Launched	Launched	FALSE	2017
-DHODH-C000656924	DHODH	C000656924	scedosporiosis		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	TRUE	
+DHODH-D000072742	DHODH	D000072742	Invasive Fungal Infections		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	TRUE	
 DHODH-D000086382	DHODH	D000086382	COVID-19		Phase III	Phase III		5	4	TRUE	TRUE	TRUE			Phase III	Phase III	TRUE	
 DHODH-D001172	DHODH	D001172	Arthritis, Rheumatoid	Phase I		Phase I	2		2	TRUE	FALSE			Phase I		Phase I	TRUE	
 DHODH-D001228	DHODH	D001228	Aspergillosis		Phase III	Phase III		5	4	TRUE	TRUE	TRUE			Phase III	Phase III	TRUE	
@@ -7878,7 +7878,7 @@ DYRK1B-D002289	DYRK1B	D002289	Carcinoma, Non-Small-Cell Lung		Preclinical	Precli
 DYRK1B-D009369	DYRK1B	D009369	Neoplasms	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 DYRK1B-D015179	DYRK1B	D015179	Colorectal Neoplasms		Preclinical	Preclinical		2	1								FALSE	
 DYRK3-D000740	DYRK3	D000740	Anemia	Phase I		Phase I	2		2	TRUE	FALSE			Phase I		Phase I	FALSE	
-DYSF-C537995	DYSF	C537995	Dysferlinopathy	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
+DYSF-D049288	DYSF	D049288	Muscular Dystrophies, Limb-Girdle	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 E2F1-D000310	E2F1	D000310	Adrenal Gland Neoplasms	Phase II		Phase II	3		3	TRUE	TRUE	FALSE		Phase II		Phase II	FALSE	
 E2F1-D001749	E2F1	D001749	Urinary Bladder Neoplasms	Phase I		Phase I	2		2	TRUE	FALSE						FALSE	
 E2F1-D001943	E2F1	D001943	Breast Neoplasms	Phase II		Phase II	3		3	TRUE	TRUE	FALSE		Phase II		Phase II	FALSE	
@@ -8722,7 +8722,7 @@ ERN1-D009369	ERN1	D009369	Neoplasms	Preclinical		Preclinical	1		1	FALSE				Precl
 ERN1-D012174	ERN1	D012174	Retinitis Pigmentosa	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 ERN1-D054990	ERN1	D054990	Idiopathic Pulmonary Fibrosis	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 ERVE-4-D007680	ERVE-4	D007680	Kidney Neoplasms		Phase I	Phase I		3	2	TRUE					Phase I	Phase I	FALSE	
-ERVW-1-C000711409	ERVW-1	C000711409	post-acute COVID-19 syndrome		Preclinical	Preclinical		2	1						Preclinical	Preclinical	TRUE	
+ERVW-1-D000086382	ERVW-1	D000086382	COVID-19		Preclinical	Preclinical		2	1						Preclinical	Preclinical	TRUE	
 ERVW-1-D000086382	ERVW-1	D000086382	COVID-19		Preclinical	Preclinical		2	1						Preclinical	Preclinical	TRUE	
 ERVW-1-D003922	ERVW-1	D003922	Diabetes Mellitus, Type 1		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	TRUE	
 ERVW-1-D009422	ERVW-1	D009422	Nervous System Diseases		Preclinical	Preclinical		2	1						Preclinical	Preclinical	TRUE	
@@ -9558,7 +9558,7 @@ FGF21-D008659	FGF21	D008659	Metabolic Diseases	Preclinical		Preclinical	1		1	FAL
 FGF21-D009765	FGF21	D009765	Obesity		Preclinical	Preclinical		2	1					Phase I		Phase I	FALSE	
 FGF21-D015228	FGF21	D015228	Hypertriglyceridemia		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	FALSE	
 FGF21-D065626	FGF21	D065626	Non-alcoholic Fatty Liver Disease		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	FALSE	
-FGF23-C580062	FGF23	C580062	Epidermal Nevus		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	TRUE	
+FGF23-D009506	FGF23	D009506	Nevus		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	TRUE	
 FGF23-D009372	FGF23	D009372	Neoplasms, Connective Tissue	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	TRUE	
 FGF23-D010018	FGF23	D010018	Osteomalacia	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	TRUE	2019
 FGF23-D017674	FGF23	D017674	Hypophosphatemia	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	TRUE	
@@ -9715,7 +9715,7 @@ FGFR2-D046152	FGFR2	D046152	Gastrointestinal Stromal Tumors		Phase II	Phase II		
 FGFR2-D052016	FGFR2	D052016	Mucositis	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 FGFR2-D054198	FGFR2	D054198	Precursor Cell Lymphoblastic Leukemia-Lymphoma	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE		Launched	Launched	FALSE	
 FGFR2-D055752	FGFR2	D055752	Small Cell Lung Carcinoma	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE		Launched	Launched	FALSE	
-FGFR3-C563600	FGFR3	C563600	Masticatory Muscles, Hypertrophy of		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	FALSE	
+FGFR3-D006984	FGFR3	D006984	Hypertrophy		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	FALSE	
 FGFR3-D000086382	FGFR3	D000086382	COVID-19		Phase II	Phase II		4	3	TRUE	TRUE						FALSE	
 FGFR3-D000310	FGFR3	D000310	Adrenal Gland Neoplasms	Phase I		Phase I	2		2	TRUE	FALSE						FALSE	
 FGFR3-D000544	FGFR3	D000544	Alzheimer Disease		Phase III	Phase III		5	4	TRUE	TRUE	TRUE					FALSE	
@@ -11787,7 +11787,7 @@ HAO1-D014545	HAO1	D014545	Urinary Calculi		Preclinical	Preclinical		2	1						Pre
 HAO2-D006959	HAO2	D006959	Hyperoxaluria	Phase I		Phase I	2		2	TRUE	FALSE			Phase I		Phase I	TRUE	
 HAO2-D006973	HAO2	D006973	Hypertension	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 HAO2-D007676	HAO2	D007676	Kidney Failure, Chronic	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
-HARS-C537995	HARS	C537995	Dysferlinopathy	Phase II		Phase II	3		3	TRUE	TRUE	FALSE		Phase II		Phase II	TRUE	
+HARS-D049288	HARS	D049288	Muscular Dystrophies, Limb-Girdle	Phase II		Phase II	3		3	TRUE	TRUE	FALSE		Phase II		Phase II	TRUE	
 HARS-D007154	HARS	D007154	Immune System Diseases	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 HARS-D009369	HARS	D009369	Neoplasms	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 HARS-D020391	HARS	D020391	Muscular Dystrophy, Facioscapulohumeral	Phase II		Phase II	3		3	TRUE	TRUE	FALSE		Phase II		Phase II	TRUE	
@@ -12600,7 +12600,7 @@ HPSE-D057092	HPSE	D057092	Geographic Atrophy	Preclinical		Preclinical	1		1	FALSE
 HR-D006628	HR	D006628	Hirsutism	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 HRAS-D002289	HRAS	D002289	Carcinoma, Non-Small-Cell Lung	Preclinical		Preclinical	1		1	FALSE							FALSE	
 HRAS-D010190	HRAS	D010190	Pancreatic Neoplasms	Preclinical		Preclinical	1		1	FALSE							FALSE	
-HRH1-C000711409	HRH1	C000711409	post-acute COVID-19 syndrome		Phase II	Phase II		4	3	TRUE	TRUE						FALSE	
+HRH1-D000086382	HRH1	D000086382	COVID-19		Phase II	Phase II		4	3	TRUE	TRUE						FALSE	
 HRH1-D000070642	HRH1	D000070642	Brain Injuries, Traumatic	Preclinical		Preclinical	1		1	FALSE							FALSE	
 HRH1-D000086382	HRH1	D000086382	COVID-19	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	FALSE	
 HRH1-D000152	HRH1	D000152	Acne Vulgaris	Preclinical		Preclinical	1		1	FALSE							FALSE	
@@ -13026,7 +13026,7 @@ HTR1D-D059226	HTR1D	D059226	Nociceptive Pain	Preclinical		Preclinical	1		1	FALSE
 HTR1F-D008881	HTR1F	D008881	Migraine Disorders	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	FALSE	2020
 HTR1F-D009765	HTR1F	D009765	Obesity	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 HTR1F-D011618	HTR1F	D011618	Psychotic Disorders	Preclinical		Preclinical	1		1	FALSE							FALSE	
-HTR2A-C000711409	HTR2A	C000711409	post-acute COVID-19 syndrome		Phase II	Phase II		4	3	TRUE	TRUE						FALSE	
+HTR2A-D000086382	HTR2A	D000086382	COVID-19		Phase II	Phase II		4	3	TRUE	TRUE						FALSE	
 HTR2A-D000070642	HTR2A	D000070642	Brain Injuries, Traumatic		Preclinical	Preclinical		2	1						Preclinical	Preclinical	FALSE	
 HTR2A-D000072716	HTR2A	D000072716	Cancer Pain	Preclinical		Preclinical	1		1	FALSE							FALSE	
 HTR2A-D000072861	HTR2A	D000072861	Phobia, Social		Phase I	Phase I		3	2	TRUE					Phase I	Phase I	FALSE	
@@ -13381,7 +13381,7 @@ IDH1-D009369	IDH1	D009369	Neoplasms		Phase II	Phase II		4	3	TRUE	TRUE				Phase I
 IDH1-D012509	IDH1	D012509	Sarcoma	Phase I		Phase I	2		2	TRUE	FALSE			Phase I		Phase I	TRUE	
 IDH1-D015470	IDH1	D015470	Leukemia, Myeloid, Acute	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	TRUE	2022
 IDH1-D019337	IDH1	D019337	Hematologic Neoplasms		Phase I	Phase I		3	2	TRUE					Phase I	Phase I	TRUE	
-IDH2-C535306	IDH2	C535306	2-Hydroxyglutaricaciduria	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
+IDH2-D020739	IDH2	D020739	Brain Diseases, Metabolic, Inborn	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 IDH2-D001650	IDH2	D001650	Bile Duct Neoplasms	Phase II		Phase II	3		3	TRUE	TRUE	FALSE		Phase II		Phase II	TRUE	
 IDH2-D001932	IDH2	D001932	Brain Neoplasms		Phase III	Phase III		5	4	TRUE	TRUE	TRUE		Phase II		Phase II	TRUE	
 IDH2-D005909	IDH2	D005909	Glioblastoma		Phase III	Phase III		5	4	TRUE	TRUE	TRUE		Phase II		Phase II	TRUE	
@@ -13494,7 +13494,7 @@ IFNAR1-D045743	IFNAR1	D045743	Scleroderma, Diffuse	Phase I		Phase I	2		2	TRUE	FA
 IFNAR1-D045745	IFNAR1	D045745	Scleroderma, Limited	Phase I		Phase I	2		2	TRUE	FALSE			Phase I		Phase I	FALSE	
 IFNAR1-D055371	IFNAR1	D055371	Acute Lung Injury	Phase III		Phase III	4		4	TRUE	TRUE	TRUE	FALSE				FALSE	
 IFNAR1-D058186	IFNAR1	D058186	Acute Kidney Injury		Preclinical	Preclinical		2	1								FALSE	
-IFNAR2-C535297	IFNAR2	C535297	Recurrent respiratory papillomatosis	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	FALSE	
+IFNAR2-D012141	IFNAR2	D012141	Respiratory Tract Infections	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	FALSE	
 IFNAR2-D000080424	IFNAR2	D000080424	Cytokine Release Syndrome		Preclinical	Preclinical		2	1								FALSE	
 IFNAR2-D000086382	IFNAR2	D000086382	COVID-19	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	FALSE	2021
 IFNAR2-D000506	IFNAR2	D000506	Alopecia Areata	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
@@ -14393,7 +14393,7 @@ IL1A-D050197	IL1A	D050197	Atherosclerosis	Preclinical		Preclinical	1		1	FALSE			
 IL1A-D054198	IL1A	D054198	Precursor Cell Lymphoblastic Leukemia-Lymphoma	Phase I		Phase I	2		2	TRUE	FALSE			Phase I		Phase I	FALSE	
 IL1A-D055371	IL1A	D055371	Acute Lung Injury		Preclinical	Preclinical		2	1								FALSE	
 IL1A-D055728	IL1A	D055728	Primary Myelofibrosis	Phase I		Phase I	2		2	TRUE	FALSE			Phase I		Phase I	FALSE	
-IL1B-C536657	IL1B	C536657	Periodic fever, familial, autosomal dominant	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	TRUE	
+IL1B-D005334	IL1B	D005334	Fever	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	TRUE	
 IL1B-D000070642	IL1B	D000070642	Brain Injuries, Traumatic		Preclinical	Preclinical		2	1					Preclinical		Preclinical	FALSE	
 IL1B-D000080424	IL1B	D000080424	Cytokine Release Syndrome		Phase III	Phase III		5	4	TRUE	TRUE	TRUE			Phase III	Phase III	TRUE	
 IL1B-D000086382	IL1B	D000086382	COVID-19		Phase III	Phase III		5	4	TRUE	TRUE	TRUE			Phase III	Phase III	TRUE	
@@ -16160,7 +16160,7 @@ KCNMB1-D008527	KCNMB1	D008527	Medulloblastoma	Preclinical		Preclinical	1		1	FALS
 KCNMB1-D020521	KCNMB1	D020521	Stroke	Phase I		Phase I	2		2	TRUE	FALSE			Phase I		Phase I	FALSE	
 KCNN3-D006505	KCNN3	D006505	Hepatitis		Preclinical	Preclinical		2	1						Preclinical	Preclinical	FALSE	
 KCNN3-D008103	KCNN3	D008103	Liver Cirrhosis		Preclinical	Preclinical		2	1						Preclinical	Preclinical	FALSE	
-KCNN4-C536764	KCNN4	C536764	Xerocytosis, hereditary	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
+KCNN4-D000745	KCNN4	D000745	Anemia, Hemolytic, Congenital	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 KCNN4-D000744	KCNN4	D000744	Anemia, Hemolytic, Autoimmune	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 KCNN4-D001281	KCNN4	D001281	Atrial Fibrillation		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	FALSE	
 KCNN4-D001327	KCNN4	D001327	Autoimmune Diseases	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
@@ -16214,7 +16214,7 @@ KCNQ5-D011618	KCNQ5	D011618	Psychotic Disorders	Preclinical		Preclinical	1		1	FA
 KCNV2-D000690	KCNV2	D000690	Amyotrophic Lateral Sclerosis		Preclinical	Preclinical		2	1								FALSE	
 KCNV2-D057180	KCNV2	D057180	Frontotemporal Dementia	Preclinical		Preclinical	1		1	FALSE							FALSE	
 KCNV2-NA	KCNV2				Preclinical	Preclinical		2	1								FALSE	
-KDM1A-C537705	KDM1A	C537705	Kabuki syndrome		Preclinical	Preclinical		2	1					Phase I		Phase I	TRUE	
+KDM1A-D000015	KDM1A	D000015	Abnormalities, Multiple		Preclinical	Preclinical		2	1					Phase I		Phase I	TRUE	
 KDM1A-D000086382	KDM1A	D000086382	COVID-19		Phase II	Phase II		4	3	TRUE	TRUE						FALSE	
 KDM1A-D000544	KDM1A	D000544	Alzheimer Disease		Phase II	Phase II		4	3	TRUE	TRUE						FALSE	
 KDM1A-D000755	KDM1A	D000755	Anemia, Sickle Cell		Preclinical	Preclinical		2	1						Preclinical	Preclinical	TRUE	
@@ -17034,7 +17034,7 @@ LINGO1-D009103	LINGO1	D009103	Multiple Sclerosis	Preclinical		Preclinical	1		1	F
 LINGO1-D009902	LINGO1	D009902	Optic Neuritis	Phase II		Phase II	3		3	TRUE	TRUE	FALSE		Phase II		Phase II	FALSE	
 LINGO1-D020528	LINGO1	D020528	Multiple Sclerosis, Chronic Progressive	Phase II		Phase II	3		3	TRUE	TRUE	FALSE		Phase II		Phase II	FALSE	
 LINGO1-D020529	LINGO1	D020529	Multiple Sclerosis, Relapsing-Remitting	Phase II		Phase II	3		3	TRUE	TRUE	FALSE		Phase II		Phase II	FALSE	
-LIPA-C531854	LIPA	C531854	Lysosomal acid lipase deficiency	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	TRUE	2016
+LIPA-D015223	LIPA	D015223	Wolman Disease	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	TRUE	2016
 LIPA-D050197	LIPA	D050197	Atherosclerosis	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	TRUE	
 LIPE-D003920	LIPE	D003920	Diabetes Mellitus	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 LIPE-D006949	LIPE	D006949	Hyperlipidemias	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
@@ -17435,7 +17435,7 @@ MAOA-D009437	MAOA	D009437	Neuralgia	Phase II		Phase II	3		3	TRUE	TRUE	FALSE		Pha
 MAOA-D010300	MAOA	D010300	Parkinson Disease	Phase I		Phase I	2		2	TRUE	FALSE						FALSE	
 MAOA-D014029	MAOA	D014029	Tobacco Use Disorder	Phase I		Phase I	2		2	TRUE	FALSE						FALSE	
 MAOA-D052801	MAOA	D052801	Male Urogenital Diseases	Preclinical		Preclinical	1		1	FALSE							FALSE	
-MAOB-C537705	MAOB	C537705	Kabuki syndrome		Preclinical	Preclinical		2	1								FALSE	
+MAOB-D000015	MAOB	D000015	Abnormalities, Multiple		Preclinical	Preclinical		2	1								FALSE	
 MAOB-D000086382	MAOB	D000086382	COVID-19		Phase II	Phase II		4	3	TRUE	TRUE						FALSE	
 MAOB-D000544	MAOB	D000544	Alzheimer Disease		Phase II	Phase II		4	3	TRUE	TRUE				Preclinical	Preclinical	FALSE	
 MAOB-D000690	MAOB	D000690	Amyotrophic Lateral Sclerosis	Preclinical		Preclinical	1		1	FALSE							FALSE	
@@ -17745,7 +17745,7 @@ MAPK10-D045745	MAPK10	D045745	Scleroderma, Limited	Preclinical		Preclinical	1		1
 MAPK11-D004485	MAPK11	D004485	Eczema	Preclinical		Preclinical	1		1	FALSE							FALSE	
 MAPK11-D007249	MAPK11	D007249	Inflammation	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 MAPK11-D009369	MAPK11	D009369	Neoplasms	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
-MAPK14-C000711409	MAPK14	C000711409	post-acute COVID-19 syndrome		Phase II	Phase II		4	3	TRUE	TRUE						FALSE	
+MAPK14-D000086382	MAPK14	D000086382	COVID-19		Phase II	Phase II		4	3	TRUE	TRUE						FALSE	
 MAPK14-D000080424	MAPK14	D000080424	Cytokine Release Syndrome	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	TRUE	
 MAPK14-D000086382	MAPK14	D000086382	COVID-19		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	TRUE	
 MAPK14-D000544	MAPK14	D000544	Alzheimer Disease		Preclinical	Preclinical		2	1						Preclinical	Preclinical	FALSE	
@@ -18012,7 +18012,7 @@ MBP-D005901	MBP	D005901	Glaucoma	Preclinical		Preclinical	1		1	FALSE				Preclini
 MBP-D009103	MBP	D009103	Multiple Sclerosis	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 MBP-D020528	MBP	D020528	Multiple Sclerosis, Chronic Progressive		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	FALSE	
 MBP-D020529	MBP	D020529	Multiple Sclerosis, Relapsing-Remitting		Phase III	Phase III		5	4	TRUE	TRUE	TRUE			Phase III	Phase III	FALSE	
-MC1R-C566780	MC1R	C566780	Actinic Prurigo	Phase III		Phase III	4		4	TRUE	TRUE	TRUE	FALSE	Phase III		Phase III	TRUE	
+MC1R-D010787	MC1R	D010787	Photosensitivity Disorders	Phase III		Phase III	4		4	TRUE	TRUE	TRUE	FALSE	Phase III		Phase III	TRUE	
 MC1R-D000086382	MC1R	D000086382	COVID-19		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	TRUE	
 MC1R-D000152	MC1R	D000152	Acne Vulgaris	Phase II		Phase II	3		3	TRUE	TRUE	FALSE					FALSE	
 MC1R-D000417	MC1R	D000417	Albinism	Phase I		Phase I	2		2	TRUE	FALSE			Phase I		Phase I	TRUE	
@@ -18705,7 +18705,7 @@ MMP9-D015212	MMP9	D015212	Inflammatory Bowel Diseases	Preclinical		Preclinical	1
 MMP9-D015352	MMP9	D015352	Dry Eye Syndromes	Phase II		Phase II	3		3	TRUE	TRUE	FALSE		Phase II		Phase II	FALSE	
 MMP9-D029424	MMP9	D029424	Pulmonary Disease, Chronic Obstructive	Phase III		Phase III	4		4	TRUE	TRUE	TRUE	FALSE	Phase III		Phase III	TRUE	
 MMP9-D065306	MMP9	D065306	Corneal Injuries		Phase II	Phase II		4	3	TRUE	TRUE						FALSE	
-MMUT-C537358	MMUT	C537358	Methylmalonic acidemia		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	TRUE	
+MMUT-D000592	MMUT	D000592	Amino Acid Metabolism, Inborn Errors		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	TRUE	
 MOGAT2-D008659	MOGAT2	D008659	Metabolic Diseases	Phase I		Phase I	2		2	TRUE	FALSE			Phase I		Phase I	FALSE	
 MOGAT2-D009765	MOGAT2	D009765	Obesity		Phase I	Phase I		3	2	TRUE					Phase I	Phase I	FALSE	
 MOGAT2-D065626	MOGAT2	D065626	Non-alcoholic Fatty Liver Disease	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
@@ -20414,7 +20414,7 @@ OPRD1-D059226	OPRD1	D059226	Nociceptive Pain	Launched	Launched	Launched	5	6	5	TR
 OPRD1-D059352	OPRD1	D059352	Musculoskeletal Pain	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Phase II	Launched	Launched	FALSE	
 OPRD1-D061686	OPRD1	D061686	Premature Ejaculation	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 OPRD1-NA	OPRD1			Phase I		Phase I	2		2	TRUE	FALSE						FALSE	
-OPRK1-C000711409	OPRK1	C000711409	post-acute COVID-19 syndrome		Phase I	Phase I		3	2	TRUE							FALSE	
+OPRK1-D000086382	OPRK1	D000086382	COVID-19		Phase I	Phase I		3	2	TRUE							FALSE	
 OPRK1-D000072716	OPRK1	D000072716	Cancer Pain	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Preclinical	Launched	Launched	FALSE	2006
 OPRK1-D000079689	OPRK1	D000079689	Opioid-Induced Constipation	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE		Launched	Launched	FALSE	
 OPRK1-D000086382	OPRK1	D000086382	COVID-19		Phase I	Phase I		3	2	TRUE							FALSE	
@@ -20496,7 +20496,7 @@ OPRL1-D043183	OPRL1	D043183	Irritable Bowel Syndrome	Preclinical		Preclinical	1	
 OPRL1-D056912	OPRL1	D056912	Binge-Eating Disorder	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 OPRL1-D059226	OPRL1	D059226	Nociceptive Pain		Preclinical	Preclinical		2	1					Phase II		Phase II	FALSE	
 OPRL1-D059352	OPRL1	D059352	Musculoskeletal Pain	Phase II		Phase II	3		3	TRUE	TRUE	FALSE		Phase II		Phase II	FALSE	
-OPRM1-C000711409	OPRM1	C000711409	post-acute COVID-19 syndrome		Phase I	Phase I		3	2	TRUE							FALSE	
+OPRM1-D000086382	OPRM1	D000086382	COVID-19		Phase I	Phase I		3	2	TRUE							FALSE	
 OPRM1-D000072716	OPRM1	D000072716	Cancer Pain	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	FALSE	2006
 OPRM1-D000079689	OPRM1	D000079689	Opioid-Induced Constipation	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	FALSE	2009
 OPRM1-D000086382	OPRM1	D000086382	COVID-19		Phase I	Phase I		3	2	TRUE							FALSE	
@@ -20733,7 +20733,7 @@ PARG-D013274	PARG	D013274	Stomach Neoplasms		Preclinical	Preclinical		2	1						P
 PARK7-D000544	PARK7	D000544	Alzheimer Disease	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 PARK7-D003920	PARK7	D003920	Diabetes Mellitus	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 PARK7-D010300	PARK7	D010300	Parkinson Disease	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
-PARP1-C536801	PARP1	C536801	Telomeric 22q13 Monosomy Syndrome	Preclinical		Preclinical	1		1	FALSE							FALSE	
+PARP1-D002872	PARP1	D002872	Chromosome Deletion	Preclinical		Preclinical	1		1	FALSE							FALSE	
 PARP1-D000070642	PARP1	D000070642	Brain Injuries, Traumatic	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 PARP1-D000080424	PARP1	D000080424	Cytokine Release Syndrome	Preclinical		Preclinical	1		1	FALSE							FALSE	
 PARP1-D000086382	PARP1	D000086382	COVID-19		Phase III	Phase III		5	4	TRUE	TRUE	TRUE			Phase III	Phase III	TRUE	
@@ -21775,8 +21775,8 @@ PIK3C3-D005909	PIK3C3	D005909	Glioblastoma		Preclinical	Preclinical		2	1						Pr
 PIK3C3-D008527	PIK3C3	D008527	Medulloblastoma		Preclinical	Preclinical		2	1						Preclinical	Preclinical	FALSE	
 PIK3C3-D009369	PIK3C3	D009369	Neoplasms		Phase I	Phase I		3	2	TRUE				Preclinical		Preclinical	FALSE	
 PIK3C3-D054990	PIK3C3	D054990	Idiopathic Pulmonary Fibrosis		Phase I	Phase I		3	2	TRUE							FALSE	
-PIK3CA-C567863	PIK3CA	C567863	Congenital Lipomatous Overgrowth, Vascular Malformations, and Epidermal Nevi	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	TRUE	
-PIK3CA-C580062	PIK3CA	C580062	Epidermal Nevus		Phase II	Phase II		4	3	TRUE	TRUE						FALSE	
+PIK3CA-D008067	PIK3CA	D008067	Lipoma	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	TRUE	
+PIK3CA-D009506	PIK3CA	D009506	Nevus		Phase II	Phase II		4	3	TRUE	TRUE						FALSE	
 PIK3CA-D000080424	PIK3CA	D000080424	Cytokine Release Syndrome	Preclinical		Preclinical	1		1	FALSE							FALSE	
 PIK3CA-D000086382	PIK3CA	D000086382	COVID-19		Preclinical	Preclinical		2	1								FALSE	
 PIK3CA-D000690	PIK3CA	D000690	Amyotrophic Lateral Sclerosis		Phase I	Phase I		3	2	TRUE					Phase I	Phase I	TRUE	
@@ -21915,7 +21915,7 @@ PIK3CB-D029424	PIK3CB	D029424	Pulmonary Disease, Chronic Obstructive		Preclinica
 PIK3CB-D046152	PIK3CB	D046152	Gastrointestinal Stromal Tumors		Phase I	Phase I		3	2	TRUE							FALSE	
 PIK3CB-D054990	PIK3CB	D054990	Idiopathic Pulmonary Fibrosis		Preclinical	Preclinical		2	1								FALSE	
 PIK3CB-D055728	PIK3CB	D055728	Primary Myelofibrosis	Phase I		Phase I	2		2	TRUE	FALSE						FALSE	
-PIK3CD-C585640	PIK3CD	C585640	Activated PI3K-delta Syndrome	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	TRUE	
+PIK3CD-D000081207	PIK3CD	D000081207	Primary Immunodeficiency Diseases	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	TRUE	
 PIK3CD-D000086382	PIK3CD	D000086382	COVID-19		Phase II	Phase II		4	3	TRUE	TRUE						FALSE	
 PIK3CD-D000740	PIK3CD	D000740	Anemia	Phase I		Phase I	2		2	TRUE	FALSE			Phase I		Phase I	FALSE	
 PIK3CD-D000744	PIK3CD	D000744	Anemia, Hemolytic, Autoimmune		Phase III	Phase III		5	4	TRUE	TRUE	TRUE			Phase III	Phase III	TRUE	
@@ -22135,7 +22135,7 @@ PIP4K2B-D003920	PIP4K2B	D003920	Diabetes Mellitus	Preclinical		Preclinical	1		1	
 PIP5K1A-D009369	PIP5K1A	D009369	Neoplasms	Preclinical		Preclinical	1		1	FALSE							FALSE	
 PIP5K1A-D015470	PIP5K1A	D015470	Leukemia, Myeloid, Acute		Preclinical	Preclinical		2	1								FALSE	
 PKD2-D010300	PKD2	D010300	Parkinson Disease	Preclinical		Preclinical	1		1	FALSE							FALSE	
-PKLR-C564858	PKLR	C564858	Pyruvate Kinase Deficiency of Red Cells	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	TRUE	
+PKLR-D000746	PKLR	D000746	Anemia, Hemolytic, Congenital Nonspherocytic	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	TRUE	
 PKLR-D000740	PKLR	D000740	Anemia	Phase I		Phase I	2		2	TRUE	FALSE			Phase I		Phase I	FALSE	
 PKLR-D000755	PKLR	D000755	Anemia, Sickle Cell		Phase III	Phase III		5	4	TRUE	TRUE	TRUE			Phase III	Phase III	TRUE	
 PKLR-D013789	PKLR	D013789	Thalassemia		Phase III	Phase III		5	4	TRUE	TRUE	TRUE			Phase III	Phase III	TRUE	
@@ -22256,7 +22256,7 @@ PLAUR-D015179	PLAUR	D015179	Colorectal Neoplasms	Preclinical		Preclinical	1		1	F
 PLEC-D004820	PLEC	D004820	Epidermolysis Bullosa	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 PLEC-D009136	PLEC	D009136	Muscular Dystrophies	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 PLEC-D009369	PLEC	D009369	Neoplasms		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	FALSE	
-PLG-C580017	PLG	C580017	Congenital Plasminogen Deficiency	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	TRUE	
+PLG-D020147	PLG	D020147	Coagulation Protein Disorders	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	TRUE	
 PLG-D000086382	PLG	D000086382	COVID-19	Phase III		Phase III	4		4	TRUE	TRUE	TRUE	FALSE				FALSE	
 PLG-D000690	PLG	D000690	Amyotrophic Lateral Sclerosis	Preclinical		Preclinical	1		1	FALSE							FALSE	
 PLG-D001172	PLG	D001172	Arthritis, Rheumatoid	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
@@ -23291,8 +23291,8 @@ PTGIR-D045745	PTGIR	D045745	Scleroderma, Limited		Phase III	Phase III		5	4	TRUE	
 PTGIR-D053201	PTGIR	D053201	Urinary Bladder, Overactive	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 PTGIR-D054990	PTGIR	D054990	Idiopathic Pulmonary Fibrosis		Phase III	Phase III		5	4	TRUE	TRUE	TRUE			Phase III	Phase III	TRUE	
 PTGIR-D059226	PTGIR	D059226	Nociceptive Pain	Phase I		Phase I	2		2	TRUE	FALSE			Phase I		Phase I	FALSE	
-PTGS1-C537701	PTGS1	C537701	Hyperostosis corticalis deformans juvenilis	Preclinical		Preclinical	1		1	FALSE							FALSE	
-PTGS1-C537995	PTGS1	C537995	Dysferlinopathy	Preclinical		Preclinical	1		1	FALSE							FALSE	
+PTGS1-D010001	PTGS1	D010001	Osteitis Deformans	Preclinical		Preclinical	1		1	FALSE							FALSE	
+PTGS1-D049288	PTGS1	D049288	Muscular Dystrophies, Limb-Girdle	Preclinical		Preclinical	1		1	FALSE							FALSE	
 PTGS1-D000072716	PTGS1	D000072716	Cancer Pain	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE		Launched	Launched	FALSE	2021
 PTGS1-D000152	PTGS1	D000152	Acne Vulgaris	Phase II		Phase II	3		3	TRUE	TRUE	FALSE					FALSE	
 PTGS1-D001168	PTGS1	D001168	Arthritis	Phase I		Phase I	2		2	TRUE	FALSE						FALSE	
@@ -23362,8 +23362,8 @@ PTGS1-D052801	PTGS1	D052801	Male Urogenital Diseases	Preclinical		Preclinical	1	
 PTGS1-D055623	PTGS1	D055623	Keratosis, Actinic	Preclinical		Preclinical	1		1	FALSE							FALSE	
 PTGS1-D059226	PTGS1	D059226	Nociceptive Pain	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE		Launched	Launched	FALSE	2009
 PTGS1-D059352	PTGS1	D059352	Musculoskeletal Pain	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE		Launched	Launched	FALSE	
-PTGS2-C537701	PTGS2	C537701	Hyperostosis corticalis deformans juvenilis	Preclinical		Preclinical	1		1	FALSE							FALSE	
-PTGS2-C537995	PTGS2	C537995	Dysferlinopathy	Preclinical		Preclinical	1		1	FALSE							FALSE	
+PTGS2-D010001	PTGS2	D010001	Osteitis Deformans	Preclinical		Preclinical	1		1	FALSE							FALSE	
+PTGS2-D049288	PTGS2	D049288	Muscular Dystrophies, Limb-Girdle	Preclinical		Preclinical	1		1	FALSE							FALSE	
 PTGS2-D000072716	PTGS2	D000072716	Cancer Pain	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE		Launched	Launched	FALSE	2021
 PTGS2-D000152	PTGS2	D000152	Acne Vulgaris	Phase II		Phase II	3		3	TRUE	TRUE	FALSE					FALSE	
 PTGS2-D001168	PTGS2	D001168	Arthritis	Phase I		Phase I	2		2	TRUE	FALSE			Phase I		Phase I	FALSE	
@@ -24212,7 +24212,7 @@ RPS6KB1-D015477	RPS6KB1	D015477	Leukemia, Myelomonocytic, Chronic	Phase II		Phas
 RPS6KB1-D016889	RPS6KB1	D016889	Endometrial Neoplasms	Phase II		Phase II	3		3	TRUE	TRUE	FALSE					FALSE	
 RPS6KB1-D018278	RPS6KB1	D018278	Carcinoma, Neuroendocrine	Phase I		Phase I	2		2	TRUE	FALSE			Phase I		Phase I	FALSE	
 RPS6KB1-D054198	RPS6KB1	D054198	Precursor Cell Lymphoblastic Leukemia-Lymphoma	Phase II		Phase II	3		3	TRUE	TRUE	FALSE					FALSE	
-RRM1-C537701	RRM1	C537701	Hyperostosis corticalis deformans juvenilis	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
+RRM1-D010001	RRM1	D010001	Osteitis Deformans	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 RRM1-D000544	RRM1	D000544	Alzheimer Disease	Preclinical		Preclinical	1		1	FALSE							FALSE	
 RRM1-D000755	RRM1	D000755	Anemia, Sickle Cell	Phase III		Phase III	4		4	TRUE	TRUE	TRUE	FALSE	Phase III		Phase III	TRUE	
 RRM1-D001749	RRM1	D001749	Urinary Bladder Neoplasms	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
@@ -24586,7 +24586,7 @@ SCGB1A1-D018357	SCGB1A1	D018357	Respiratory Syncytial Virus Infections	Preclinic
 SCGB1A1-D029424	SCGB1A1	D029424	Pulmonary Disease, Chronic Obstructive	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 SCGB1A1-D054990	SCGB1A1	D054990	Idiopathic Pulmonary Fibrosis	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 SCGB1A1-D055371	SCGB1A1	D055371	Acute Lung Injury	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	TRUE	
-SCN10A-C537403	SCN10A	C537403	Pitt-Hopkins syndrome		Preclinical	Preclinical		2	1								FALSE	
+SCN10A-D006985	SCN10A	D006985	Hyperventilation		Preclinical	Preclinical		2	1								FALSE	
 SCN10A-D000072716	SCN10A	D000072716	Cancer Pain		Preclinical	Preclinical		2	1						Preclinical	Preclinical	FALSE	
 SCN10A-D001008	SCN10A	D001008	Anxiety Disorders	Preclinical		Preclinical	1		1	FALSE							FALSE	
 SCN10A-D001714	SCN10A	D001714	Bipolar Disorder	Preclinical		Preclinical	1		1	FALSE							FALSE	
@@ -25093,7 +25093,7 @@ SGPL1-D010392	SGPL1	D010392	Pemphigus	Phase II		Phase II	3		3	TRUE	TRUE	FALSE		P
 SGPL1-D020388	SGPL1	D020388	Muscular Dystrophy, Duchenne	Phase I		Phase I	2		2	TRUE	FALSE			Phase I		Phase I	FALSE	
 SGSH-D009084	SGSH	D009084	Mucopolysaccharidosis III		Phase III	Phase III		5	4	TRUE	TRUE	TRUE			Phase II	Phase II	TRUE	
 SH3RF1-D015658	SH3RF1	D015658	HIV Infections	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
-SHANK3-C536801	SHANK3	C536801	Telomeric 22q13 Monosomy Syndrome		Preclinical	Preclinical		2	1						Preclinical	Preclinical	FALSE	
+SHANK3-D002872	SHANK3	D002872	Chromosome Deletion		Preclinical	Preclinical		2	1						Preclinical	Preclinical	FALSE	
 SHC1-D002318	SHC1	D002318	Cardiovascular Diseases	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 SHC1-D003920	SHC1	D003920	Diabetes Mellitus	Phase I		Phase I	2		2	TRUE	FALSE			Phase I		Phase I	FALSE	
 SHC1-D003924	SHC1	D003924	Diabetes Mellitus, Type 2	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
@@ -25316,7 +25316,7 @@ SLC10A1-D008105	SLC10A1	D008105	Liver Cirrhosis, Biliary		Phase I	Phase I		3	2	T
 SLC10A1-D014777	SLC10A1	D014777	Virus Diseases		Preclinical	Preclinical		2	1						Preclinical	Preclinical	FALSE	
 SLC10A1-D015209	SLC10A1	D015209	Cholangitis, Sclerosing		Phase I	Phase I		3	2	TRUE					Phase I	Phase I	FALSE	
 SLC10A1-D065626	SLC10A1	D065626	Non-alcoholic Fatty Liver Disease		Preclinical	Preclinical		2	1						Preclinical	Preclinical	TRUE	
-SLC10A2-C535933	SLC10A2	C535933	Cholestasis, progressive familial intrahepatic 1	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	TRUE	2022
+SLC10A2-D002780	SLC10A2	D002780	Cholestasis, Intrahepatic	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	TRUE	2022
 SLC10A2-D001656	SLC10A2	D001656	Biliary Atresia		Phase III	Phase III		5	4	TRUE	TRUE	TRUE			Phase III	Phase III	TRUE	
 SLC10A2-D003248	SLC10A2	D003248	Constipation	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	TRUE	2021
 SLC10A2-D003924	SLC10A2	D003924	Diabetes Mellitus, Type 2	Phase I		Phase I	2		2	TRUE	FALSE			Phase I		Phase I	TRUE	
@@ -25473,7 +25473,7 @@ SLC44A4-D010051	SLC44A4	D010051	Ovarian Neoplasms	Phase I		Phase I	2		2	TRUE	FAL
 SLC44A4-D010190	SLC44A4	D010190	Pancreatic Neoplasms	Phase I		Phase I	2		2	TRUE	FALSE			Phase I		Phase I	FALSE	
 SLC44A4-D011471	SLC44A4	D011471	Prostatic Neoplasms	Phase I		Phase I	2		2	TRUE	FALSE			Phase I		Phase I	FALSE	
 SLC44A4-D013274	SLC44A4	D013274	Stomach Neoplasms	Phase I		Phase I	2		2	TRUE	FALSE			Phase I		Phase I	FALSE	
-SLC52A2-C535803	SLC52A2	C535803	succinic semialdehyde dehydrogenase deficiency	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
+SLC52A2-D000592	SLC52A2	D000592	Amino Acid Metabolism, Inborn Errors	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 SLC5A1-D003248	SLC5A1	D003248	Constipation	Phase II		Phase II	3		3	TRUE	TRUE	FALSE		Phase II		Phase II	FALSE	
 SLC5A1-D003920	SLC5A1	D003920	Diabetes Mellitus		Phase I	Phase I		3	2	TRUE				Preclinical		Preclinical	FALSE	
 SLC5A1-D003922	SLC5A1	D003922	Diabetes Mellitus, Type 1	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE		Launched	Launched	FALSE	
@@ -26779,7 +26779,7 @@ TGFA-D010300	TGFA	D010300	Parkinson Disease	Preclinical		Preclinical	1		1	FALSE	
 TGFA-D013274	TGFA	D013274	Stomach Neoplasms	Preclinical		Preclinical	1		1	FALSE							FALSE	
 TGFA-D020521	TGFA	D020521	Stroke	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 TGFA-D059352	TGFA	D059352	Musculoskeletal Pain	Phase II		Phase II	3		3	TRUE	TRUE	FALSE					FALSE	
-TGFB1-C000711409	TGFB1	C000711409	post-acute COVID-19 syndrome		Phase II	Phase II		4	3	TRUE	TRUE						FALSE	
+TGFB1-D000086382	TGFB1	D000086382	COVID-19		Phase II	Phase II		4	3	TRUE	TRUE						FALSE	
 TGFB1-D000080424	TGFB1	D000080424	Cytokine Release Syndrome		Phase I	Phase I		3	2	TRUE					Phase I	Phase I	FALSE	
 TGFB1-D000086382	TGFB1	D000086382	COVID-19		Phase II	Phase II		4	3	TRUE	TRUE				Phase I	Phase I	FALSE	
 TGFB1-D001172	TGFB1	D001172	Arthritis, Rheumatoid	Launched	Launched	Launched	5	6	5	TRUE	TRUE	TRUE	TRUE	Launched	Launched	Launched	FALSE	
@@ -27727,7 +27727,7 @@ TNFRSF18-D011471	TNFRSF18	D011471	Prostatic Neoplasms	Phase II		Phase II	3		3	TR
 TNFRSF18-D013274	TNFRSF18	D013274	Stomach Neoplasms	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
 TNFRSF18-D014777	TNFRSF18	D014777	Virus Diseases	Phase I		Phase I	2		2	TRUE	FALSE			Phase I		Phase I	FALSE	
 TNFRSF18-D019337	TNFRSF18	D019337	Hematologic Neoplasms	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
-TNFRSF1A-C000711409	TNFRSF1A	C000711409	post-acute COVID-19 syndrome		Phase II	Phase II		4	3	TRUE	TRUE						FALSE	
+TNFRSF1A-D000086382	TNFRSF1A	D000086382	COVID-19		Phase II	Phase II		4	3	TRUE	TRUE						FALSE	
 TNFRSF1A-D000086382	TNFRSF1A	D000086382	COVID-19		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	TRUE	
 TNFRSF1A-D000310	TNFRSF1A	D000310	Adrenal Gland Neoplasms	Phase I		Phase I	2		2	TRUE	FALSE			Phase I		Phase I	FALSE	
 TNFRSF1A-D000544	TNFRSF1A	D000544	Alzheimer Disease	Preclinical		Preclinical	1		1	FALSE				Preclinical		Preclinical	FALSE	
@@ -28547,7 +28547,7 @@ TSLP-D018805	TSLP	D018805	Sepsis	Phase I		Phase I	2		2	TRUE	FALSE						FALSE
 TSLP-D029424	TSLP	D029424	Pulmonary Disease, Chronic Obstructive		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	TRUE	
 TSLP-D057765	TSLP	D057765	Eosinophilic Esophagitis		Preclinical	Preclinical		2	1						Preclinical	Preclinical	TRUE	
 TSLP-D065626	TSLP	D065626	Non-alcoholic Fatty Liver Disease		Preclinical	Preclinical		2	1								FALSE	
-TSPO-C536801	TSPO	C536801	Telomeric 22q13 Monosomy Syndrome		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	TRUE	
+TSPO-D002872	TSPO	D002872	Chromosome Deletion		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	TRUE	
 TSPO-D001008	TSPO	D001008	Anxiety Disorders		Phase I	Phase I		3	2	TRUE				Phase II		Phase II	FALSE	
 TSPO-D001932	TSPO	D001932	Brain Neoplasms	Phase II		Phase II	3		3	TRUE	TRUE	FALSE		Phase II		Phase II	TRUE	
 TSPO-D001943	TSPO	D001943	Breast Neoplasms	Phase II		Phase II	3		3	TRUE	TRUE	FALSE		Phase II		Phase II	TRUE	
@@ -28824,7 +28824,7 @@ UBA3-D019337	UBA3	D019337	Hematologic Neoplasms	Phase I		Phase I	2		2	TRUE	FALSE
 UBA3-D054198	UBA3	D054198	Precursor Cell Lymphoblastic Leukemia-Lymphoma	Phase I		Phase I	2		2	TRUE	FALSE			Phase I		Phase I	TRUE	
 UBA6-D009369	UBA6	D009369	Neoplasms	Phase I		Phase I	2		2	TRUE	FALSE						FALSE	
 UBA6-D016403	UBA6	D016403	Lymphoma, Large B-Cell, Diffuse	Phase I		Phase I	2		2	TRUE	FALSE						FALSE	
-UBE3A-C538036	UBE3A	C538036	Partial Duplication 15q Syndrome		Preclinical	Preclinical		2	1						Preclinical	Preclinical	FALSE	
+UBE3A-D014314	UBE3A	D014314	Trisomy		Preclinical	Preclinical		2	1						Preclinical	Preclinical	FALSE	
 UBE3A-D002578	UBE3A	D002578	Uterine Cervical Dysplasia		Preclinical	Preclinical		2	1						Preclinical	Preclinical	FALSE	
 UBE3A-D009369	UBE3A	D009369	Neoplasms		Preclinical	Preclinical		2	1						Preclinical	Preclinical	FALSE	
 UBE3A-D017204	UBE3A	D017204	Angelman Syndrome		Phase II	Phase II		4	3	TRUE	TRUE				Phase II	Phase II	TRUE	

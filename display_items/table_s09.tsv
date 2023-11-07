@@ -80,7 +80,6 @@ D012038	5	6	0	-1	Regeneration
 D012127	6	6	0	-1	Respiratory Distress Syndrome, Newborn
 D019559	4	6	0	-1	Capillary Leak Syndrome
 D044968	10	6	0	-1	Regenerative Medicine
-C000711409	9	5	0	-1	post-acute COVID-19 syndrome
 D000077299	5	5	0	-1	Healthcare-Associated Pneumonia
 D001201	9	5	0	-1	Ascites
 D001861	4	5	0	-1	Bone Regeneration
@@ -89,7 +88,6 @@ D007751	3	5	0	-1	Labor, Induced
 D011818	8	5	0	-1	Rabies
 D015673	5	5	0	-1	Fatigue Syndrome, Chronic
 D018352	8	5	0	-1	Coronavirus Infections
-C580062	4	4	0	-1	Epidermal Nevus
 D000077295	3	4	0	-1	Urinary Bladder, Underactive
 D002813	3	4	0	-1	Chondrosarcoma
 D004357	1	4	0	-1	Drug Synergism
@@ -102,11 +100,6 @@ D015356	6	4	0	-1	Retinal Artery Occlusion
 D015461	3	4	0	-1	Leukemia, Prolymphocytic, T-Cell
 D020345	6	4	0	-1	Enterocolitis, Necrotizing
 D060737	5	4	0	-1	Reproductive Tract Infections
-C536801	4	3	0	-1	Telomeric 22q13 Monosomy Syndrome
-C537705	3	3	0	-1	Kabuki syndrome
-C537995	4	3	0	-1	Dysferlinopathy
-C562783	1	3	0	-1	Hypercalciuric Hypocalcemia, Familial
-C585640	1	3	0	-1	Activated PI3K-delta Syndrome
 D000077733	3	3	0	-1	Immunoglobulin G4-Related Disease
 D000079690	3	3	0	-1	Postoperative Cognitive Complications
 D000258	4	3	0	-1	Adenovirus Infections, Human
@@ -122,16 +115,7 @@ D019121	3	3	0	-1	Burkholderia Infections
 D019449	4	3	0	-1	Pouchitis
 D055501	3	3	0	-1	Macrophage Activation Syndrome
 D058065	3	3	0	-1	Diabetic Cardiomyopathies
-C531854	1	2	0	-1	Lysosomal acid lipase deficiency
-C535607	1	2	0	-1	Aicardi-Goutieres syndrome
-C535933	1	2	0	-1	Cholestasis, progressive familial intrahepatic 1
-C535935	1	2	0	-1	Cholestasis, progressive familial intrahepatic 3
-C537437	1	2	0	-1	Aromatic amino acid decarboxylase deficiency
 C537477	1	2	0	-1	
-C537701	3	2	0	-1	Hyperostosis corticalis deformans juvenilis
-C538036	2	2	0	-1	Partial Duplication 15q Syndrome
-C564858	1	2	0	-1	Pyruvate Kinase Deficiency of Red Cells
-C567863	2	2	0	-1	Congenital Lipomatous Overgrowth, Vascular Malformations, and Epidermal Nevi
 D000070627	3	2	0	-1	Chronic Traumatic Encephalopathy
 D000762	1	2	0	-1	Anesthesia Recovery Period
 D005242	4	2	0	-1	Fecal Incontinence
@@ -147,27 +131,6 @@ D016751	2	2	0	-1	Hepatitis E
 D017250	3	2	0	-1	Caliciviridae Infections
 D059373	2	2	0	-1	Mastodynia
 D065227	4	2	0	-1	Transfusion Reaction
-C000656924	1	1	0	-1	scedosporiosis
-C535297	1	1	0	-1	Recurrent respiratory papillomatosis
-C535306	1	1	0	-1	2-Hydroxyglutaricaciduria
-C535440	1	1	0	-1	Bietti Crystalline Dystrophy
-C535739	1	1	0	-1	Congenital disorder of glycosylation type 1A
-C535803	1	1	0	-1	succinic semialdehyde dehydrogenase deficiency
-C535934	1	1	0	-1	Cholestasis, progressive familial intrahepatic 2
-C536109	1	1	0	-1	N-acetyl glutamate synthetase deficiency
-C536353	1	1	0	-1	VLCAD deficiency
-C536657	1	1	0	-1	Periodic fever, familial, autosomal dominant
-C536697	1	1	0	-1	WHIM syndrome
-C536764	1	1	0	-1	Xerocytosis, hereditary
-C537358	1	1	0	-1	Methylmalonic acidemia
-C537403	2	1	0	-1	Pitt-Hopkins syndrome
-C537409	1	1	0	-1	Bruton type agammaglobulinemia
-C538380	1	1	0	-1	HHH syndrome
-C562687	1	1	0	-1	Lysinuric Protein Intolerance
-C563600	1	1	0	-1	Masticatory Muscles, Hypertrophy of
-C566780	1	1	0	-1	Actinic Prurigo
-C580017	1	1	0	-1	Congenital Plasminogen Deficiency
-C580383	1	1	0	-1	Pontocerebellar Hypoplasia
 D000007	1	1	0	-1	Abdominal Injuries
 D000068884	1	1	0	-1	Immunosenescence
 D000080365	1	1	0	-1	Birdshot Chorioretinopathy
@@ -216,3 +179,7 @@ D056650	1	1	0	-1	Vulvodynia
 D058088	1	1	0	-1	Sarcoglycanopathies
 D060585	1	1	0	-1	Fusariosis
 D065632	1	1	0	-1	Chikungunya Fever
+D000072742	1		0	-1	Invasive Fungal Infections
+D000080984	1		0	-1	Congenital Bone Marrow Failure Syndromes
+D006985	2		0	-1	Hyperventilation
+D014314	2		0	-1	Trisomy

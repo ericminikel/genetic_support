@@ -1,43 +1,7 @@
 indication_mesh_id	indication_mesh_term	topl
-C000656924	scedosporiosis	OTH
-C000711409	post-acute COVID-19 syndrome	OTH
-C531854	Lysosomal acid lipase deficiency	OTH
-C535297	Recurrent respiratory papillomatosis	OTH
-C535306	2-Hydroxyglutaricaciduria	OTH
-C535440	Bietti Crystalline Dystrophy	OTH
-C535607	Aicardi-Goutieres syndrome	OTH
-C535739	Congenital disorder of glycosylation type 1A	OTH
-C535803	succinic semialdehyde dehydrogenase deficiency	OTH
-C535933	Cholestasis, progressive familial intrahepatic 1	OTH
-C535934	Cholestasis, progressive familial intrahepatic 2	OTH
-C535935	Cholestasis, progressive familial intrahepatic 3	OTH
-C536109	N-acetyl glutamate synthetase deficiency	OTH
-C536353	VLCAD deficiency	OTH
-C536657	Periodic fever, familial, autosomal dominant	OTH
-C536697	WHIM syndrome	OTH
-C536764	Xerocytosis, hereditary	OTH
-C536801	Telomeric 22q13 Monosomy Syndrome	OTH
-C537358	Methylmalonic acidemia	OTH
-C537403	Pitt-Hopkins syndrome	OTH
-C537409	Bruton type agammaglobulinemia	OTH
-C537437	Aromatic amino acid decarboxylase deficiency	OTH
 C537477		OTH
-C537701	Hyperostosis corticalis deformans juvenilis	OTH
-C537705	Kabuki syndrome	OTH
-C537995	Dysferlinopathy	OTH
-C538036	Partial Duplication 15q Syndrome	OTH
-C538380	HHH syndrome	OTH
-C562687	Lysinuric Protein Intolerance	OTH
-C562783	Hypercalciuric Hypocalcemia, Familial	OTH
-C563600	Masticatory Muscles, Hypertrophy of	OTH
-C564858	Pyruvate Kinase Deficiency of Red Cells	OTH
-C566780	Actinic Prurigo	OTH
-C567863	Congenital Lipomatous Overgrowth, Vascular Malformations, and Epidermal Nevi	OTH
-C580017	Congenital Plasminogen Deficiency	OTH
-C580062	Epidermal Nevus	OTH
-C580383	Pontocerebellar Hypoplasia	OTH
-C585640	Activated PI3K-delta Syndrome	OTH
 D000007	Abdominal Injuries	OTH
+D000015	Abnormalities, Multiple	C16
 D000022	Abortion, Spontaneous	OTH
 D000068884	Immunosenescence	C20
 D000070607	Morton Neuroma	C05
@@ -52,6 +16,7 @@ D000071700	Cone-Rod Dystrophies	C11
 D000071700	Cone-Rod Dystrophies	C16
 D000072661	Ciliopathies	C16
 D000072716	Cancer Pain	C23
+D000072742	Invasive Fungal Infections	C01
 D000072861	Phobia, Social	F03
 D000073376	Epileptic Syndromes	C10
 D000073496	Frailty	C23
@@ -69,6 +34,10 @@ D000079690	Postoperative Cognitive Complications	F03
 D000080365	Birdshot Chorioretinopathy	C11
 D000080365	Birdshot Chorioretinopathy	C20
 D000080424	Cytokine Release Syndrome	C23
+D000080984	Congenital Bone Marrow Failure Syndromes	C15
+D000080984	Congenital Bone Marrow Failure Syndromes	C16
+D000081207	Primary Immunodeficiency Diseases	C16
+D000081207	Primary Immunodeficiency Diseases	C20
 D000086382	COVID-19	C01
 D000086382	COVID-19	C08
 D000138	Acidosis	C18
@@ -87,6 +56,8 @@ D000326	Adrenoleukodystrophy	C18
 D000326	Adrenoleukodystrophy	C19
 D000347	Afibrinogenemia	C15
 D000347	Afibrinogenemia	C16
+D000361	Agammaglobulinemia	C15
+D000361	Agammaglobulinemia	C20
 D000417	Albinism	C11
 D000417	Albinism	C16
 D000417	Albinism	C17
@@ -118,6 +89,10 @@ D000740	Anemia	C15
 D000741	Anemia, Aplastic	C15
 D000744	Anemia, Hemolytic, Autoimmune	C15
 D000744	Anemia, Hemolytic, Autoimmune	C20
+D000745	Anemia, Hemolytic, Congenital	C15
+D000745	Anemia, Hemolytic, Congenital	C16
+D000746	Anemia, Hemolytic, Congenital Nonspherocytic	C15
+D000746	Anemia, Hemolytic, Congenital Nonspherocytic	C16
 D000755	Anemia, Sickle Cell	C15
 D000755	Anemia, Sickle Cell	C16
 D000758	Anesthesia	OTH
@@ -236,6 +211,7 @@ D002385	Cataplexy	F03
 D002386	Cataract	C11
 D002446	Celiac Disease	C06
 D002446	Celiac Disease	C18
+D002526	Cerebellar Diseases	C10
 D002543	Cerebral Hemorrhage	C10
 D002543	Cerebral Hemorrhage	C14
 D002543	Cerebral Hemorrhage	C23
@@ -257,6 +233,7 @@ D002813	Chondrosarcoma	C04
 D002817	Chordoma	C04
 D002836	Hemophilia B	C15
 D002836	Hemophilia B	C16
+D002872	Chromosome Deletion	C23
 D002925	Ciliary Motility Disorders	C08
 D002925	Ciliary Motility Disorders	C16
 D003027	Cluster Headache	C10
@@ -546,6 +523,10 @@ D006975	Hypertension, Portal	C06
 D006976	Hypertension, Pulmonary	C08
 D006976	Hypertension, Pulmonary	C14
 D006980	Hyperthyroidism	C19
+D006984	Hypertrophy	C23
+D006985	Hyperventilation	C08
+D006985	Hyperventilation	C23
+D006996	Hypocalcemia	C18
 D007003	Hypoglycemia	C18
 D007006	Hypogonadism	C19
 D007010	Hyponatremia	C18
@@ -785,6 +766,7 @@ D009472	Neuronal Ceroid-Lipofuscinoses	C16
 D009472	Neuronal Ceroid-Lipofuscinoses	C18
 D009497	Neurotic Disorders	F03
 D009503	Neutropenia	C15
+D009506	Nevus	C04
 D009542	Niemann-Pick Diseases	C10
 D009542	Niemann-Pick Diseases	C15
 D009542	Niemann-Pick Diseases	C16
@@ -1027,6 +1009,7 @@ D014123	Toxoplasmosis	C01
 D014245	Trichomonas Infections	C01
 D014256	Trichotillomania	F03
 D014277	Trigeminal Neuralgia	C10
+D014314	Trisomy	C23
 D014328	Trophoblastic Neoplasms	C04
 D014355	Chagas Disease	C01
 D014376	Tuberculosis	C01
@@ -1097,6 +1080,8 @@ D015211	Zellweger Syndrome	C10
 D015211	Zellweger Syndrome	C16
 D015211	Zellweger Syndrome	C18
 D015212	Inflammatory Bowel Diseases	C06
+D015223	Wolman Disease	C16
+D015223	Wolman Disease	C18
 D015228	Hypertriglyceridemia	C18
 D015266	Carcinoma, Merkel Cell	C04
 D015267	Churg-Strauss Syndrome	C14
@@ -1267,6 +1252,8 @@ D018917	Optic Neuropathy, Ischemic	C11
 D018917	Optic Neuropathy, Ischemic	C14
 D018979	Myositis, Inclusion Body	C05
 D018979	Myositis, Inclusion Body	C10
+D018981	Congenital Disorders of Glycosylation	C16
+D018981	Congenital Disorders of Glycosylation	C18
 D019121	Burkholderia Infections	C01
 D019142	Hemorrhagic Fever, Ebola	C01
 D019190	Iron Overload	C18
@@ -1293,6 +1280,7 @@ D019970	Cocaine-Related Disorders	F03
 D019973	Alcohol-Related Disorders	F03
 D020018	Sexual Dysfunctions, Psychological	F03
 D020031	Epstein-Barr Virus Infections	C01
+D020147	Coagulation Protein Disorders	C15
 D020152	Antithrombin III Deficiency	C15
 D020152	Antithrombin III Deficiency	C16
 D020158	Hyperglycinemia, Nonketotic	C10

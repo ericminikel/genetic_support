@@ -348,7 +348,7 @@ D006525	Hepatitis, Viral, Human	Infection	digestive
 D055623	Keratosis, Actinic	Oncology	oncology
 D018295	Neoplasms, Basal Cell	Oncology	oncology
 D012393	Rosacea	Skin & connective tissue	dermatology
-D006996	Hypocalcemia	Metabolic	
+D006996	Hypocalcemia	Metabolic	metabolic
 D003424	Crohn Disease	Autoimmune	digestive
 D005512	Food Hypersensitivity	Inflammation	immune
 D007637	Keratoconjunctivitis	Eye	ophthalmology
@@ -698,7 +698,8 @@ D018357	Respiratory Syncytial Virus Infections	Infection	infection
 D058065	Diabetic Cardiomyopathies	Cardiovascular	cardiovascular
 D058065	Diabetic Cardiomyopathies	Cardiovascular	endocrine
 D003328	Coronary Thrombosis	Cardiovascular	cardiovascular
-D015223	Wolman Disease	Metabolic	
+D015223	Wolman Disease	Metabolic	congenital
+D015223	Wolman Disease	Metabolic	metabolic
 D002062	Bursitis	Musculoskeletal	musculoskeletal
 D003015	Clostridium Infections	Infection	
 D008363	alpha-Mannosidosis	Metabolic	congenital
@@ -817,45 +818,9 @@ D014808	Vitamin D Deficiency	Metabolic	metabolic
 D014923	Wiskott-Aldrich Syndrome	Blood	hematology
 D014923	Wiskott-Aldrich Syndrome	Blood	congenital
 D014923	Wiskott-Aldrich Syndrome	Blood	immune
-C000656924	scedosporiosis		other
-C000711409	post-acute COVID-19 syndrome		other
-C531854	Lysosomal acid lipase deficiency		other
-C535297	Recurrent respiratory papillomatosis		other
-C535306	2-Hydroxyglutaricaciduria		other
-C535440	Bietti Crystalline Dystrophy		other
-C535607	Aicardi-Goutieres syndrome		other
-C535739	Congenital disorder of glycosylation type 1A		other
-C535803	succinic semialdehyde dehydrogenase deficiency		other
-C535933	Cholestasis, progressive familial intrahepatic 1		other
-C535934	Cholestasis, progressive familial intrahepatic 2		other
-C535935	Cholestasis, progressive familial intrahepatic 3		other
-C536109	N-acetyl glutamate synthetase deficiency		other
-C536353	VLCAD deficiency		other
-C536657	Periodic fever, familial, autosomal dominant		other
-C536697	WHIM syndrome		other
-C536764	Xerocytosis, hereditary		other
-C536801	Telomeric 22q13 Monosomy Syndrome		other
-C537358	Methylmalonic acidemia		other
-C537403	Pitt-Hopkins syndrome		other
-C537409	Bruton type agammaglobulinemia		other
-C537437	Aromatic amino acid decarboxylase deficiency		other
 C537477			other
-C537701	Hyperostosis corticalis deformans juvenilis		other
-C537705	Kabuki syndrome		other
-C537995	Dysferlinopathy		other
-C538036	Partial Duplication 15q Syndrome		other
-C538380	HHH syndrome		other
-C562687	Lysinuric Protein Intolerance		other
-C562783	Hypercalciuric Hypocalcemia, Familial		other
-C563600	Masticatory Muscles, Hypertrophy of		other
-C564858	Pyruvate Kinase Deficiency of Red Cells		other
-C566780	Actinic Prurigo		other
-C567863	Congenital Lipomatous Overgrowth, Vascular Malformations, and Epidermal Nevi		other
-C580017	Congenital Plasminogen Deficiency		other
-C580062	Epidermal Nevus		other
-C580383	Pontocerebellar Hypoplasia		other
-C585640	Activated PI3K-delta Syndrome		other
 D000007	Abdominal Injuries		other
+D000015	Abnormalities, Multiple		congenital
 D000022	Abortion, Spontaneous		other
 D000068884	Immunosenescence		immune
 D000070607	Morton Neuroma		musculoskeletal
@@ -870,6 +835,7 @@ D000071700	Cone-Rod Dystrophies		ophthalmology
 D000071700	Cone-Rod Dystrophies		congenital
 D000072661	Ciliopathies		congenital
 D000072716	Cancer Pain		signs/symptoms
+D000072742	Invasive Fungal Infections		infection
 D000072861	Phobia, Social		psychiatry
 D000073376	Epileptic Syndromes		neurology
 D000073496	Frailty		signs/symptoms
@@ -887,6 +853,10 @@ D000079690	Postoperative Cognitive Complications		psychiatry
 D000080365	Birdshot Chorioretinopathy		ophthalmology
 D000080365	Birdshot Chorioretinopathy		immune
 D000080424	Cytokine Release Syndrome		signs/symptoms
+D000080984	Congenital Bone Marrow Failure Syndromes		hematology
+D000080984	Congenital Bone Marrow Failure Syndromes		congenital
+D000081207	Primary Immunodeficiency Diseases		congenital
+D000081207	Primary Immunodeficiency Diseases		immune
 D000086382	COVID-19		infection
 D000086382	COVID-19		respiratory
 D000138	Acidosis		metabolic
@@ -894,6 +864,8 @@ D000224	Addison Disease		endocrine
 D000224	Addison Disease		immune
 D000258	Adenovirus Infections, Human		infection
 D000292	Pelvic Inflammatory Disease		infection
+D000361	Agammaglobulinemia		hematology
+D000361	Agammaglobulinemia		immune
 D000417	Albinism		ophthalmology
 D000417	Albinism		congenital
 D000417	Albinism		dermatology
@@ -910,6 +882,10 @@ D000647	Amnesia		neurology
 D000647	Amnesia		signs/symptoms
 D000647	Amnesia		psychiatry
 D000707	Anaphylaxis		immune
+D000745	Anemia, Hemolytic, Congenital		hematology
+D000745	Anemia, Hemolytic, Congenital		congenital
+D000746	Anemia, Hemolytic, Congenital Nonspherocytic		hematology
+D000746	Anemia, Hemolytic, Congenital Nonspherocytic		congenital
 D000758	Anesthesia		other
 D000762	Anesthesia Recovery Period		other
 D001026	Coronary Artery Bypass		other
@@ -946,6 +922,7 @@ D001930	Brain Injuries		neurology
 D002056	Burns		other
 D002189	Marijuana Abuse		psychiatry
 D002294	Carcinoma, Squamous Cell		oncology
+D002526	Cerebellar Diseases		neurology
 D002607	Charcot-Marie-Tooth Disease		neurology
 D002607	Charcot-Marie-Tooth Disease		congenital
 D002761	Cholangitis		digestive
@@ -953,6 +930,7 @@ D002771	Cholera		infection
 D002780	Cholestasis, Intrahepatic		digestive
 D002813	Chondrosarcoma		oncology
 D002817	Chordoma		oncology
+D002872	Chromosome Deletion		signs/symptoms
 D002925	Ciliary Motility Disorders		respiratory
 D002925	Ciliary Motility Disorders		congenital
 D003047	Coccidioidomycosis		infection
@@ -1097,6 +1075,9 @@ D006962	Hyperparathyroidism, Secondary		endocrine
 D006965	Hyperplasia		signs/symptoms
 D006975	Hypertension, Portal		digestive
 D006980	Hyperthyroidism		endocrine
+D006984	Hypertrophy		signs/symptoms
+D006985	Hyperventilation		respiratory
+D006985	Hyperventilation		signs/symptoms
 D007006	Hypogonadism		endocrine
 D007011	Hypoparathyroidism		endocrine
 D007014	Hypophosphatasia		congenital
@@ -1206,6 +1187,7 @@ D009471	Neuromyelitis Optica		neurology
 D009471	Neuromyelitis Optica		ophthalmology
 D009471	Neuromyelitis Optica		immune
 D009497	Neurotic Disorders		psychiatry
+D009506	Nevus		oncology
 D009999	Ossification, Heterotopic		signs/symptoms
 D010012	Osteogenesis		musculoskeletal
 D010018	Osteomalacia		musculoskeletal
@@ -1294,6 +1276,7 @@ D014123	Toxoplasmosis		infection
 D014245	Trichomonas Infections		infection
 D014256	Trichotillomania		psychiatry
 D014277	Trigeminal Neuralgia		neurology
+D014314	Trisomy		signs/symptoms
 D014328	Trophoblastic Neoplasms		oncology
 D014355	Chagas Disease		infection
 D014406	Tularemia		infection
@@ -1423,6 +1406,8 @@ D018798	Anemia, Iron-Deficiency		metabolic
 D018883	Heat Stroke		other
 D018979	Myositis, Inclusion Body		musculoskeletal
 D018979	Myositis, Inclusion Body		neurology
+D018981	Congenital Disorders of Glycosylation		congenital
+D018981	Congenital Disorders of Glycosylation		metabolic
 D019142	Hemorrhagic Fever, Ebola		infection
 D019190	Iron Overload		metabolic
 D019247	HIV Wasting Syndrome		infection
@@ -1437,6 +1422,7 @@ D019873	Schnitzler Syndrome		immune
 D019969	Amphetamine-Related Disorders		psychiatry
 D019973	Alcohol-Related Disorders		psychiatry
 D020018	Sexual Dysfunctions, Psychological		psychiatry
+D020147	Coagulation Protein Disorders		hematology
 D020158	Hyperglycinemia, Nonketotic		neurology
 D020158	Hyperglycinemia, Nonketotic		congenital
 D020158	Hyperglycinemia, Nonketotic		metabolic
