@@ -1,17 +1,180 @@
-y	label	areas	area_filter	assoc_source	intogen_mechanism	mean	l95	u95	numerator	denominator
-16	All indications	All	All	intOGen	All	1.9765417701837111	1.5333180671038782	2.5478845212200114	50	242
-15	oncology	C04	only	intOGen	All	2.917935334203277	2.2251064191494034	3.826489619245622	50	242
-14	    oncogenes	C04	only	intOGen	oncogene	1.8345979862833792	1.331233979080825	2.5282931657130434	47	178
-13	    tumor suppressors	C04	only	intOGen	tumor suppressor	1.40625	0.38921310098000395	5.080864589400338	3	44
-12	    unknown	C04	only	intOGen	unknown	0	0	25.357680433257176	0	20
-11	non-oncology	C04	non	intOGen	All				0	0
-10	oncology	C04	only	OMIM	All	6.433534743202417	3.1927784927899543	12.96374596153845	4	8
-9	    oncogenes	C04	only	OMIM	oncogene	2.9214876033057853	1.2913179391700436	6.6095959464135206	3	6
-8	    tumor suppressors	C04	only	OMIM	tumor suppressor				0	0
-7	    unknown	C04	only	OMIM	unknown	114	16.19738374325988	802.3517998953347	1	1
-6	non-oncology	C04	non	OMIM	All	2.5655343827671913	2.0343978140362395	3.235339039271788	54	170
-5	oncology	C04	only	GWAS	All	2.793675364882795	1.6736481034926465	4.663239559179717	12	56
-4	    oncogenes	C04	only	GWAS	oncogene	1.761864406779661	0.8842975532463165	3.510318643856291	6	20
-3	    tumor suppressors	C04	only	GWAS	tumor suppressor	4.08	0.6387657311423417	26.06025838335172	1	5
-2	    unknown	C04	only	GWAS	unknown	27.75	2.0899280831038833	368.4636357708213	1	4
-1	non-oncology	C04	non	GWAS	All	1.9450424073623542	1.60531927933982	2.3566588996512654	94	398
+indication_mesh_id	indication_mesh_term	n_human_targets_pursued	n_drugs	n_supported_genes
+D059226	Nociceptive Pain	125	840	0
+D012509	Sarcoma	86	175	0
+D010149	Pain, Postoperative	36	166	0
+D005355	Fibrosis	75	143	0
+D005185	Fallopian Tube Neoplasms	54	141	0
+D020522	Lymphoma, Mantle-Cell	32	128	0
+D008654	Mesothelioma	45	113	0
+D000072716	Cancer Pain	30	107	0
+D000070642	Brain Injuries, Traumatic	67	104	0
+D009325	Nausea	14	103	0
+D014945	Wound Healing	68	101	0
+D002100	Cachexia	34	85	0
+D000080424	Cytokine Release Syndrome	31	64	0
+D007511	Ischemia	39	64	0
+D013119	Spinal Cord Injuries	45	64	0
+D057092	Geographic Atrophy	36	64	0
+D005261	Female Urogenital Diseases and Pregnancy Complications	35	61	0
+D018278	Carcinoma, Neuroendocrine	33	61	0
+D003267	Contraception	13	57	0
+D013514	Surgical Procedures, Operative	30	57	0
+D023903	Coronary Restenosis	31	53	0
+D020528	Multiple Sclerosis, Chronic Progressive	27	47	0
+D055371	Acute Lung Injury	30	45	0
+D015427	Reperfusion Injury	35	44	0
+D019650	Hematopoietic Stem Cell Mobilization	7	34	0
+D018589	Gastroparesis	7	33	0
+D009400	Nephrosclerosis	19	31	0
+D014526	Urethritis	20	29	0
+D000758	Anesthesia	5	26	0
+D011218	Prader-Willi Syndrome	11	25	0
+D012778	Short Bowel Syndrome	8	24	0
+D000079689	Opioid-Induced Constipation	8	23	0
+D004415	Dyspepsia	14	23	0
+D007943	Leukemia, Hairy Cell	7	23	0
+D052016	Mucositis	15	23	0
+D006470	Hemorrhage	10	22	0
+D012003	Rectal Fistula	1	20	0
+D015266	Carcinoma, Merkel Cell	9	20	0
+D011832	Radiation Injuries	12	19	0
+D013584	Sarcoma, Synovial	8	19	0
+D009140	Musculoskeletal Diseases	14	18	0
+D004686	Encephalomyocarditis virus	14	17	0
+D004660	Encephalitis	12	15	0
+D005769	Gastrointestinal Motility	6	14	0
+D051799	Delayed Graft Function	12	13	0
+D062025	Organophosphate Poisoning	3	13	0
+D003699	Hepatitis D	7	12	0
+D006084	Graft Rejection	7	12	0
+D004830	Epilepsy, Tonic-Clonic	7	11	0
+D010012	Osteogenesis	9	11	0
+D014456	Ulcer	7	11	0
+D033581	Stem Cell Transplantation	6	11	0
+D045169	Severe Acute Respiratory Syndrome	9	11	0
+D005871	Castleman Disease	2	10	0
+D000627	Aminophenols	3	9	0
+D003328	Coronary Thrombosis	7	9	0
+D010188	Exocrine Pancreatic Insufficiency	2	9	0
+D012178	Retinopathy of Prematurity	4	9	0
+D012774	Shock, Traumatic	8	9	0
+D013123	Spinal Fusion	5	9	0
+D018357	Respiratory Syncytial Virus Infections	8	9	0
+D003586	Cytomegalovirus Infections	6	8	0
+D007896	Leishmaniasis	7	8	0
+D011472	Prostatitis	6	8	0
+D015430	Weight Gain	3	8	0
+D018979	Myositis, Inclusion Body	7	8	0
+D000071243	Zika Virus Infection	4	7	0
+D000881	Anthrax	7	7	0
+D005235	Fatty Liver, Alcoholic	7	7	0
+D007403	Intervertebral Disc	3	7	0
+D008303	Malignant Carcinoid Syndrome	2	7	0
+D015210	Arthritis, Gouty	4	7	0
+D019969	Amphetamine-Related Disorders	4	7	0
+D059268	Atrophic Vaginitis	3	7	0
+D001997	Bronchopulmonary Dysplasia	4	6	0
+D004489	Edema, Cardiac	3	6	0
+D011654	Pulmonary Edema	5	6	0
+D012038	Regeneration	5	6	0
+D012127	Respiratory Distress Syndrome, Newborn	2	6	0
+D019559	Capillary Leak Syndrome	4	6	0
+D044968	Regenerative Medicine	3	6	0
+D000077299	Healthcare-Associated Pneumonia	5	5	0
+D001201	Ascites	9	5	0
+D001861	Bone Regeneration	4	5	0
+D002817	Chordoma	4	5	0
+D007751	Labor, Induced	2	5	0
+D011818	Rabies	3	5	0
+D015673	Fatigue Syndrome, Chronic	5	5	0
+D018352	Coronavirus Infections	3	5	0
+D000077295	Urinary Bladder, Underactive	1	4	0
+D002813	Chondrosarcoma	3	4	0
+D004357	Drug Synergism	1	4	0
+D006530	Hepatorenal Syndrome	5	4	0
+D007968	Leukoencephalopathy, Progressive Multifocal	2	4	0
+D011552	Pseudomonas Infections	4	4	0
+D013919	Thromboangiitis Obliterans	4	4	0
+D014901	West Nile Fever	4	4	0
+D015356	Retinal Artery Occlusion	2	4	0
+D015461	Leukemia, Prolymphocytic, T-Cell	3	4	0
+D020345	Enterocolitis, Necrotizing	2	4	0
+D060737	Reproductive Tract Infections	5	4	0
+D000077733	Immunoglobulin G4-Related Disease	2	3	0
+D000079690	Postoperative Cognitive Complications	3	3	0
+D000258	Adenovirus Infections, Human	2	3	0
+D000707	Anaphylaxis	3	3	0
+D003693	Delirium	2	3	0
+D008231	Lymphopenia	3	3	0
+D012080	Chronic Kidney Disease-Mineral and Bone Disorder	2	3	0
+D016066	Pleural Effusion, Malignant	3	3	0
+D018058	Tympanic Membrane Perforation	3	3	0
+D018192	Lymphangioleiomyomatosis	1	3	0
+D019121	Burkholderia Infections	3	3	0
+D019449	Pouchitis	2	3	0
+D055501	Macrophage Activation Syndrome	3	3	0
+D058065	Diabetic Cardiomyopathies	3	3	0
+C537477		1	2	0
+D000070627	Chronic Traumatic Encephalopathy	1	2	0
+D000762	Anesthesia Recovery Period	1	2	0
+D005242	Fecal Incontinence	1	2	0
+D006461	Hemolysis	1	2	0
+D010144	Paget's Disease, Mammary	1	2	0
+D012552	Schistosomiasis	2	2	0
+D012899	Smallpox	1	2	0
+D014328	Trophoblastic Neoplasms	2	2	0
+D014355	Chagas Disease	2	2	0
+D014406	Tularemia	2	2	0
+D015423	Scleritis	2	2	0
+D016751	Hepatitis E	2	2	0
+D017250	Caliciviridae Infections	1	2	0
+D059373	Mastodynia	2	2	0
+D000007	Abdominal Injuries	1	1	0
+D000068884	Immunosenescence	1	1	0
+D000080365	Birdshot Chorioretinopathy	1	1	0
+D000292	Pelvic Inflammatory Disease	1	1	0
+D001906	Botulism	1	1	0
+D001919	Bradycardia	1	1	0
+D002771	Cholera	1	1	0
+D004672	Encephalitis, Japanese	1	1	0
+D004673	Encephalomyelitis, Acute Disseminated	1	1	0
+D004685	Encephalomyelitis, Venezuelan Equine	1	1	0
+D004696	Endocarditis	1	1	0
+D005348	Fibrocystic Breast Disease	1	1	0
+D006192	Haemophilus Infections	1	1	0
+D006965	Hyperplasia	1	1	0
+D007174	Disruptive, Impulse Control, and Conduct Disorders	1	1	0
+D007775	Lactation Disorders	1	1	0
+D007971	Leukoplakia	1	1	0
+D009335	Necrobiosis Lipoidica	1	1	0
+D010018	Osteomalacia	1	1	0
+D010262	Paraphilic Disorders	1	1	0
+D010930	Plague	1	1	0
+D010939	Plant Poisoning	1	1	0
+D011271	Pregnancy, Ectopic	1	1	0
+D012398	Ross River virus	1	1	0
+D012400	Rotavirus Infections	1	1	0
+D014245	Trichomonas Infections	1	1	0
+D014256	Trichotillomania	1	1	0
+D014947	Wounds and Injuries	1	1	0
+D015275	Tumor Lysis Syndrome	1	1	0
+D016557	Guided Tissue Regeneration, Periodontal	1	1	0
+D017590	Myelinolysis, Central Pontine	1	1	0
+D018325	Hemangioblastoma	1	1	0
+D018778	Hantavirus Infections	1	1	0
+D018883	Heat Stroke	1	1	0
+D020301	Vasospasm, Intracranial	1	1	0
+D027601	Polyomavirus Infections	1	1	0
+D045464	Henipavirus Infections	1	1	0
+D045602	Steatorrhea	1	1	0
+D050724	Fractures, Cartilage	1	1	0
+D054066	Leukemia, Large Granular Lymphocytic	1	1	0
+D054973	Perivascular Epithelioid Cell Neoplasms	1	1	0
+D055496	Neurogenic Bowel	1	1	0
+D056650	Vulvodynia	1	1	0
+D058088	Sarcoglycanopathies	1	1	0
+D060585	Fusariosis	1	1	0
+D065632	Chikungunya Fever	1	1	0
+D000072742	Invasive Fungal Infections	1		0
+D000080984	Congenital Bone Marrow Failure Syndromes	1		0
+D014314	Trisomy	2		0
