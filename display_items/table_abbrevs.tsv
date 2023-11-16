@@ -1,0 +1,12 @@
+abbreviation	description
+pg	P(G); proportion of programs with genetic support.
+ps	P(S); probability of success.
+rs	RS; relative success.
+_l95	Lower bound of the 95% confidence interval
+_u95	Upper bound of the 95% confidence interval
+gensup	Genetically supported
+nosup	Not genetically supported
+_yes	Genetically supported
+_no	Not genetically supported
+x_	Number of successes (numerator)
+n_	Total programs (denominator)

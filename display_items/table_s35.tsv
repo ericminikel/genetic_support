@@ -1,15 +1,148 @@
-phasenum	phase	maxphasenum	maxphase	n_gensup	n_total	y	pg	pg_l95	pg_u95
-2	Preclinical	3	Phase I	80	1313	14	0.06092916984006093	0.049227255816434785	0.07519277798734854
-3	Phase I	3	Phase I	823	8307	13	0.09907307090405681	0.09283256376645892	0.10568421302389101
-2	Preclinical	4	Phase II	98	2099	12	0.046688899475940925	0.03846191687061711	0.056572094363291255
-3	Phase I	4	Phase II	116	2313	11	0.05015131863380891	0.041978680783663735	0.05981570740064512
-4	Phase II	4	Phase II	920	11180	10	0.08228980322003578	0.07733820384707324	0.08752835525158573
-2	Preclinical	5	Phase III	56	1002	9	0.05588822355289421	0.043287736323218175	0.07188096924645804
-3	Phase I	5	Phase III	53	987	8	0.05369807497467072	0.041286223290553335	0.06957052159316209
-4	Phase II	5	Phase III	83	1780	7	0.04662921348314607	0.03777264219859594	0.05743843050120392
-5	Phase III	5	Phase III	309	2448	6	0.12622549019607843	0.11365262936318618	0.13996958449716362
-2	Preclinical	6	Launched	33	793	5	0.0416141235813367	0.029782904800815104	0.057864967994430486
-3	Phase I	6	Launched	51	1170	4	0.04358974358974359	0.033307861305982914	0.05685887971799513
-4	Phase II	6	Launched	109	2848	3	0.03827247191011236	0.03182567903022283	0.045963167939002084
-5	Phase III	6	Launched	67	1115	2	0.060089686098654706	0.047593035145199594	0.07560713565110322
-6	Launched	6	Launched	500	3387	1	0.14762326542663123	0.1360762597664563	0.15996868099872524
+category_2015	area_2023	unique_indications
+Urogenital	oncology	1
+Urogenital	cardiovascular	1
+Urogenital	congenital	2
+Urogenital	dermatology	1
+Urogenital	endocrine	1
+Urogenital	immune	1
+Urogenital	signs/symptoms	11
+Urogenital	psychiatry	2
+Urogenital	other	14
+Urogenital		5
+Inflammation	congenital	1
+Inflammation	immune	4
+Inflammation	signs/symptoms	4
+Inflammation	other	1
+Inflammation		2
+Liver & kidney	musculoskeletal	1
+Liver & kidney	digestive	2
+Liver & kidney	respiratory	1
+Liver & kidney	hematology	1
+Liver & kidney	congenital	1
+Liver & kidney	metabolic	1
+Liver & kidney	endocrine	1
+Liver & kidney	signs/symptoms	3
+Liver & kidney	other	2
+Liver & kidney		1
+Autoimmune	musculoskeletal	6
+Autoimmune	digestive	6
+Autoimmune	respiratory	1
+Autoimmune	neurology	1
+Autoimmune	ophthalmology	1
+Autoimmune	cardiovascular	3
+Autoimmune	hematology	3
+Autoimmune	congenital	3
+Autoimmune	dermatology	10
+Autoimmune	metabolic	2
+Autoimmune	immune	11
+Autoimmune	signs/symptoms	2
+Autoimmune		1
+Diabetes	ophthalmology	1
+Diabetes	cardiovascular	1
+Diabetes	metabolic	3
+Diabetes	endocrine	6
+Diabetes	immune	1
+Diabetes		1
+Metabolic	musculoskeletal	1
+Metabolic	neurology	3
+Metabolic	cardiovascular	1
+Metabolic	congenital	13
+Metabolic	dermatology	5
+Metabolic	metabolic	24
+Metabolic	immune	1
+Metabolic	signs/symptoms	2
+Metabolic		1
+Skin & connective tissue	congenital	2
+Skin & connective tissue	dermatology	22
+Skin & connective tissue	metabolic	1
+Skin & connective tissue	immune	3
+Skin & connective tissue	signs/symptoms	3
+Skin & connective tissue	other	1
+Skin & connective tissue		4
+Blood	oncology	1
+Blood	hematology	24
+Blood	congenital	10
+Blood	immune	4
+Blood	signs/symptoms	2
+Blood		6
+Cardiovascular	cardiovascular	40
+Cardiovascular	congenital	3
+Cardiovascular	dermatology	3
+Cardiovascular	metabolic	3
+Cardiovascular	endocrine	2
+Cardiovascular	immune	2
+Cardiovascular	signs/symptoms	12
+Cardiovascular		3
+Eye	neurology	1
+Eye	ophthalmology	20
+Eye	cardiovascular	2
+Eye	congenital	1
+Eye	immune	1
+Eye	signs/symptoms	1
+Eye		5
+Neurological/behavioral	oncology	1
+Neurological/behavioral	musculoskeletal	1
+Neurological/behavioral	neurology	66
+Neurological/behavioral	ophthalmology	3
+Neurological/behavioral	cardiovascular	9
+Neurological/behavioral	hematology	2
+Neurological/behavioral	congenital	16
+Neurological/behavioral	dermatology	1
+Neurological/behavioral	metabolic	12
+Neurological/behavioral	endocrine	4
+Neurological/behavioral	immune	4
+Neurological/behavioral	signs/symptoms	22
+Neurological/behavioral	psychiatry	33
+Neurological/behavioral	other	5
+Neurological/behavioral		13
+Respiratory	infection	4
+Respiratory	digestive	1
+Respiratory	respiratory	24
+Respiratory	cardiovascular	2
+Respiratory	congenital	4
+Respiratory	immune	3
+Respiratory	signs/symptoms	4
+Respiratory		3
+Musculoskeletal	musculoskeletal	25
+Musculoskeletal	neurology	10
+Musculoskeletal	ophthalmology	1
+Musculoskeletal	cardiovascular	1
+Musculoskeletal	congenital	8
+Musculoskeletal	dermatology	4
+Musculoskeletal	metabolic	1
+Musculoskeletal	endocrine	3
+Musculoskeletal	immune	1
+Musculoskeletal	signs/symptoms	2
+Musculoskeletal		3
+Oncology	oncology	79
+Oncology		6
+Infection	infection	45
+Infection	oncology	2
+Infection	musculoskeletal	1
+Infection	digestive	5
+Infection	respiratory	2
+Infection	neurology	5
+Infection	ophthalmology	2
+Infection	dermatology	4
+Infection	immune	2
+Infection	signs/symptoms	1
+Infection	psychiatry	1
+Infection	other	1
+Infection		6
+	infection	53
+	oncology	48
+	musculoskeletal	24
+	digestive	53
+	respiratory	14
+	neurology	103
+	ophthalmology	38
+	cardiovascular	26
+	hematology	35
+	congenital	114
+	dermatology	35
+	metabolic	75
+	endocrine	19
+	immune	37
+	signs/symptoms	60
+	psychiatry	27
+	other	47

@@ -1,276 +1,285 @@
-min_year	topl	n	cumn	area	color
-2005	C11	4	4	ophthalmology	#6A3D9A
-2005	C16	2	2	congenital	#8B7E66
-2006	C06	4	4	digestive	#FDBF6F
-2006	C11	4	8	ophthalmology	#6A3D9A
-2006	C14	1	1	cardiovascular	#B2DF8A
-2006	C16	3	5	congenital	#8B7E66
-2006	C23	1	1	signs/symptoms	#7B3F00
-2007	C04	21	21	oncology	#66A61E
-2007	C05	9	9	musculoskeletal	#A6CEE3
-2007	C06	21	25	digestive	#FDBF6F
-2007	C10	21	21	neurology	#B15928
-2007	C11	10	18	ophthalmology	#6A3D9A
-2007	C14	2	3	cardiovascular	#B2DF8A
-2007	C15	6	6	hematology	#CAB2D6
-2007	C16	13	18	congenital	#8B7E66
-2007	C17	26	26	dermatology	#FB9A99
-2007	C18	27	27	metabolic	#FFB90F
-2007	C19	11	11	endocrine	#33A02C
-2007	C20	15	15	immune	#FF7F00
-2007	C23	7	8	signs/symptoms	#7B3F00
-2007	F03	17	17	psychiatry	#9959E1
-2008	C01	3	3	infection	#EE7600
-2008	C04	69	90	oncology	#66A61E
-2008	C05	22	31	musculoskeletal	#A6CEE3
-2008	C06	65	90	digestive	#FDBF6F
-2008	C08	2	2	respiratory	#E31A1C
-2008	C10	16	37	neurology	#B15928
-2008	C11	5	23	ophthalmology	#6A3D9A
-2008	C14	11	14	cardiovascular	#B2DF8A
-2008	C15	24	30	hematology	#CAB2D6
-2008	C16	61	79	congenital	#8B7E66
-2008	C17	34	60	dermatology	#FB9A99
-2008	C18	202	229	metabolic	#FFB90F
-2008	C19	10	21	endocrine	#33A02C
-2008	C20	22	37	immune	#FF7F00
-2008	C23	21	29	signs/symptoms	#7B3F00
-2008	F03	9	26	psychiatry	#9959E1
-2009	C01	15	18	infection	#EE7600
-2009	C04	116	206	oncology	#66A61E
-2009	C05	46	77	musculoskeletal	#A6CEE3
-2009	C06	56	146	digestive	#FDBF6F
-2009	C08	3	5	respiratory	#E31A1C
-2009	C10	127	164	neurology	#B15928
-2009	C11	15	38	ophthalmology	#6A3D9A
-2009	C14	42	56	cardiovascular	#B2DF8A
-2009	C15	105	135	hematology	#CAB2D6
-2009	C16	188	267	congenital	#8B7E66
-2009	C17	95	155	dermatology	#FB9A99
-2009	C18	243	472	metabolic	#FFB90F
-2009	C19	18	39	endocrine	#33A02C
-2009	C20	59	96	immune	#FF7F00
-2009	C23	43	72	signs/symptoms	#7B3F00
-2009	F03	22	48	psychiatry	#9959E1
-2009	OTH	8	8	other	#BBBBBB
-2010	C01	13	31	infection	#EE7600
-2010	C04	146	352	oncology	#66A61E
-2010	C05	49	126	musculoskeletal	#A6CEE3
-2010	C06	136	282	digestive	#FDBF6F
-2010	C08	19	24	respiratory	#E31A1C
-2010	C10	46	210	neurology	#B15928
-2010	C11	60	98	ophthalmology	#6A3D9A
-2010	C14	113	169	cardiovascular	#B2DF8A
-2010	C15	146	281	hematology	#CAB2D6
-2010	C16	187	454	congenital	#8B7E66
-2010	C17	116	271	dermatology	#FB9A99
-2010	C18	385	857	metabolic	#FFB90F
-2010	C19	41	80	endocrine	#33A02C
-2010	C20	47	143	immune	#FF7F00
-2010	C23	136	208	signs/symptoms	#7B3F00
-2010	F03	25	73	psychiatry	#9959E1
-2010	OTH	33	41	other	#BBBBBB
-2011	C01	42	73	infection	#EE7600
-2011	C04	146	498	oncology	#66A61E
-2011	C05	32	158	musculoskeletal	#A6CEE3
-2011	C06	552	834	digestive	#FDBF6F
-2011	C08	28	52	respiratory	#E31A1C
-2011	C10	113	323	neurology	#B15928
-2011	C11	99	197	ophthalmology	#6A3D9A
-2011	C14	70	239	cardiovascular	#B2DF8A
-2011	C15	289	570	hematology	#CAB2D6
-2011	C16	196	650	congenital	#8B7E66
-2011	C17	79	350	dermatology	#FB9A99
-2011	C18	217	1074	metabolic	#FFB90F
-2011	C19	66	146	endocrine	#33A02C
-2011	C20	104	247	immune	#FF7F00
-2011	C23	100	308	signs/symptoms	#7B3F00
-2011	F03	48	121	psychiatry	#9959E1
-2011	OTH	17	58	other	#BBBBBB
-2012	C01	6	79	infection	#EE7600
-2012	C04	158	656	oncology	#66A61E
-2012	C05	191	349	musculoskeletal	#A6CEE3
-2012	C06	374	1208	digestive	#FDBF6F
-2012	C08	6	58	respiratory	#E31A1C
-2012	C10	97	420	neurology	#B15928
-2012	C11	115	312	ophthalmology	#6A3D9A
-2012	C14	47	286	cardiovascular	#B2DF8A
-2012	C15	208	778	hematology	#CAB2D6
-2012	C16	264	914	congenital	#8B7E66
-2012	C17	463	813	dermatology	#FB9A99
-2012	C18	411	1485	metabolic	#FFB90F
-2012	C19	30	176	endocrine	#33A02C
-2012	C20	102	349	immune	#FF7F00
-2012	C23	118	426	signs/symptoms	#7B3F00
-2012	F03	11	132	psychiatry	#9959E1
-2012	OTH	23	81	other	#BBBBBB
-2013	C01	70	149	infection	#EE7600
-2013	C04	302	958	oncology	#66A61E
-2013	C05	138	487	musculoskeletal	#A6CEE3
-2013	C06	57	1265	digestive	#FDBF6F
-2013	C08	53	111	respiratory	#E31A1C
-2013	C10	198	618	neurology	#B15928
-2013	C11	333	645	ophthalmology	#6A3D9A
-2013	C14	136	422	cardiovascular	#B2DF8A
-2013	C15	40	818	hematology	#CAB2D6
-2013	C16	226	1140	congenital	#8B7E66
-2013	C17	155	968	dermatology	#FB9A99
-2013	C18	451	1936	metabolic	#FFB90F
-2013	C19	17	193	endocrine	#33A02C
-2013	C20	198	547	immune	#FF7F00
-2013	C23	130	556	signs/symptoms	#7B3F00
-2013	F03	109	241	psychiatry	#9959E1
-2013	OTH	33	114	other	#BBBBBB
-2014	C01	14	163	infection	#EE7600
-2014	C04	164	1122	oncology	#66A61E
-2014	C05	30	517	musculoskeletal	#A6CEE3
-2014	C06	40	1305	digestive	#FDBF6F
-2014	C08	49	160	respiratory	#E31A1C
-2014	C10	215	833	neurology	#B15928
-2014	C11	107	752	ophthalmology	#6A3D9A
-2014	C14	76	498	cardiovascular	#B2DF8A
-2014	C15	22	840	hematology	#CAB2D6
-2014	C16	139	1279	congenital	#8B7E66
-2014	C17	55	1023	dermatology	#FB9A99
-2014	C18	117	2053	metabolic	#FFB90F
-2014	C19	124	317	endocrine	#33A02C
-2014	C20	69	616	immune	#FF7F00
-2014	C23	158	714	signs/symptoms	#7B3F00
-2014	F03	140	381	psychiatry	#9959E1
-2014	OTH	51	165	other	#BBBBBB
-2015	C01	70	233	infection	#EE7600
-2015	C04	189	1311	oncology	#66A61E
-2015	C05	53	570	musculoskeletal	#A6CEE3
-2015	C06	287	1592	digestive	#FDBF6F
-2015	C08	142	302	respiratory	#E31A1C
-2015	C10	142	975	neurology	#B15928
-2015	C11	112	864	ophthalmology	#6A3D9A
-2015	C14	86	584	cardiovascular	#B2DF8A
-2015	C15	24	864	hematology	#CAB2D6
-2015	C16	135	1414	congenital	#8B7E66
-2015	C17	263	1286	dermatology	#FB9A99
-2015	C18	381	2434	metabolic	#FFB90F
-2015	C19	29	346	endocrine	#33A02C
-2015	C20	173	789	immune	#FF7F00
-2015	C23	201	915	signs/symptoms	#7B3F00
-2015	F03	67	448	psychiatry	#9959E1
-2015	OTH	16	181	other	#BBBBBB
-2016	C01	43	276	infection	#EE7600
-2016	C04	201	1512	oncology	#66A61E
-2016	C05	57	627	musculoskeletal	#A6CEE3
-2016	C06	235	1827	digestive	#FDBF6F
-2016	C08	47	349	respiratory	#E31A1C
-2016	C10	138	1113	neurology	#B15928
-2016	C11	451	1315	ophthalmology	#6A3D9A
-2016	C14	500	1084	cardiovascular	#B2DF8A
-2016	C15	4291	5155	hematology	#CAB2D6
-2016	C16	1334	2748	congenital	#8B7E66
-2016	C17	652	1938	dermatology	#FB9A99
-2016	C18	488	2922	metabolic	#FFB90F
-2016	C19	45	391	endocrine	#33A02C
-2016	C20	477	1266	immune	#FF7F00
-2016	C23	602	1517	signs/symptoms	#7B3F00
-2016	F03	171	619	psychiatry	#9959E1
-2016	OTH	50	231	other	#BBBBBB
-2017	C01	43	319	infection	#EE7600
-2017	C04	445	1957	oncology	#66A61E
-2017	C05	41	668	musculoskeletal	#A6CEE3
-2017	C06	212	2039	digestive	#FDBF6F
-2017	C08	160	509	respiratory	#E31A1C
-2017	C10	532	1645	neurology	#B15928
-2017	C11	368	1683	ophthalmology	#6A3D9A
-2017	C14	310	1394	cardiovascular	#B2DF8A
-2017	C15	59	5214	hematology	#CAB2D6
-2017	C16	396	3144	congenital	#8B7E66
-2017	C17	442	2380	dermatology	#FB9A99
-2017	C18	668	3590	metabolic	#FFB90F
-2017	C19	96	487	endocrine	#33A02C
-2017	C20	257	1523	immune	#FF7F00
-2017	C23	363	1880	signs/symptoms	#7B3F00
-2017	F03	556	1175	psychiatry	#9959E1
-2017	OTH	36	267	other	#BBBBBB
-2018	C01	231	550	infection	#EE7600
-2018	C04	681	2638	oncology	#66A61E
-2018	C05	194	862	musculoskeletal	#A6CEE3
-2018	C06	590	2629	digestive	#FDBF6F
-2018	C08	2631	3140	respiratory	#E31A1C
-2018	C10	1195	2840	neurology	#B15928
-2018	C11	1924	3607	ophthalmology	#6A3D9A
-2018	C14	1314	2708	cardiovascular	#B2DF8A
-2018	C15	6505	11719	hematology	#CAB2D6
-2018	C16	2729	5873	congenital	#8B7E66
-2018	C17	2500	4880	dermatology	#FB9A99
-2018	C18	2840	6430	metabolic	#FFB90F
-2018	C19	912	1399	endocrine	#33A02C
-2018	C20	2849	4372	immune	#FF7F00
-2018	C23	2958	4838	signs/symptoms	#7B3F00
-2018	F03	1973	3148	psychiatry	#9959E1
-2018	OTH	474	741	other	#BBBBBB
-2019	C01	65	615	infection	#EE7600
-2019	C04	298	2936	oncology	#66A61E
-2019	C05	188	1050	musculoskeletal	#A6CEE3
-2019	C06	83	2712	digestive	#FDBF6F
-2019	C08	430	3570	respiratory	#E31A1C
-2019	C10	2159	4999	neurology	#B15928
-2019	C11	143	3750	ophthalmology	#6A3D9A
-2019	C14	155	2863	cardiovascular	#B2DF8A
-2019	C15	29	11748	hematology	#CAB2D6
-2019	C16	390	6263	congenital	#8B7E66
-2019	C17	78	4958	dermatology	#FB9A99
-2019	C18	415	6845	metabolic	#FFB90F
-2019	C19	57	1456	endocrine	#33A02C
-2019	C20	686	5058	immune	#FF7F00
-2019	C23	390	5228	signs/symptoms	#7B3F00
-2019	F03	2040	5188	psychiatry	#9959E1
-2019	OTH	188	929	other	#BBBBBB
-2020	C01	245	860	infection	#EE7600
-2020	C04	393	3329	oncology	#66A61E
-2020	C05	147	1197	musculoskeletal	#A6CEE3
-2020	C06	159	2871	digestive	#FDBF6F
-2020	C08	168	3738	respiratory	#E31A1C
-2020	C10	1268	6267	neurology	#B15928
-2020	C11	1617	5367	ophthalmology	#6A3D9A
-2020	C14	661	3524	cardiovascular	#B2DF8A
-2020	C15	8300	20048	hematology	#CAB2D6
-2020	C16	3880	10143	congenital	#8B7E66
-2020	C17	924	5882	dermatology	#FB9A99
-2020	C18	4082	10927	metabolic	#FFB90F
-2020	C19	1183	2639	endocrine	#33A02C
-2020	C20	1130	6188	immune	#FF7F00
-2020	C23	1954	7182	signs/symptoms	#7B3F00
-2020	F03	746	5934	psychiatry	#9959E1
-2020	OTH	27	956	other	#BBBBBB
-2021	C01	144	1004	infection	#EE7600
-2021	C04	806	4135	oncology	#66A61E
-2021	C05	636	1833	musculoskeletal	#A6CEE3
-2021	C06	1030	3901	digestive	#FDBF6F
-2021	C08	330	4068	respiratory	#E31A1C
-2021	C10	1259	7526	neurology	#B15928
-2021	C11	343	5710	ophthalmology	#6A3D9A
-2021	C14	542	4066	cardiovascular	#B2DF8A
-2021	C15	2710	22758	hematology	#CAB2D6
-2021	C16	2983	13126	congenital	#8B7E66
-2021	C17	472	6354	dermatology	#FB9A99
-2021	C18	4739	15666	metabolic	#FFB90F
-2021	C19	716	3355	endocrine	#33A02C
-2021	C20	786	6974	immune	#FF7F00
-2021	C23	1588	8770	signs/symptoms	#7B3F00
-2021	F03	585	6519	psychiatry	#9959E1
-2021	OTH	1724	2680	other	#BBBBBB
-2022	C01	59	1063	infection	#EE7600
-2022	C04	112	4247	oncology	#66A61E
-2022	C05	167	2000	musculoskeletal	#A6CEE3
-2022	C06	105	4006	digestive	#FDBF6F
-2022	C08	92	4160	respiratory	#E31A1C
-2022	C10	176	7702	neurology	#B15928
-2022	C11	129	5839	ophthalmology	#6A3D9A
-2022	C14	219	4285	cardiovascular	#B2DF8A
-2022	C15	36	22794	hematology	#CAB2D6
-2022	C16	145	13271	congenital	#8B7E66
-2022	C17	214	6568	dermatology	#FB9A99
-2022	C18	144	15810	metabolic	#FFB90F
-2022	C19	125	3480	endocrine	#33A02C
-2022	C20	127	7101	immune	#FF7F00
-2022	C23	132	8902	signs/symptoms	#7B3F00
-2022	F03	100	6619	psychiatry	#9959E1
-2022	OTH	68	2748	other	#BBBBBB
+gene	indication_mesh_id	indication_mesh_term	max_phase_number	max_phase	drug	genetic_support
+ABCA1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		novel gwas
+ABCC8	D003924	Diabetes Mellitus, Type 2	5	Launched	sulfonylureas	omim, established gwas
+ACACA	D003920	Diabetes Mellitus	1	Preclinical		none
+ACACB	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+ACE	D003920	Diabetes Mellitus	1	Preclinical		established gwas
+ACLY	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+ACVR2B	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+ADAM17	D003920	Diabetes Mellitus	1	Preclinical		none
+ADH5	D003920	Diabetes Mellitus	1	Preclinical		none
+ADIPOQ	D003920	Diabetes Mellitus	1	Preclinical		none
+ADIPOR2	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+ADORA1	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
+ADORA2B	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+ADRB3	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+ALOX12	D003920	Diabetes Mellitus	1	Preclinical		none
+ALOX15	D003920	Diabetes Mellitus	1	Preclinical		none
+ANGPTL3	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+APCS	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+APH1A	D003920	Diabetes Mellitus	1	Preclinical		none
+APLN	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+APOA4	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+APOC3	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+ATP2A2	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+AVPR2	D003920	Diabetes Mellitus	2	Phase I		none
+BACE2	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+BCAT2	D003920	Diabetes Mellitus	1	Preclinical		none
+BGLAP	D003920	Diabetes Mellitus	1	Preclinical		none
+BMP4	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+BMP7	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+BRD4	D003924	Diabetes Mellitus, Type 2	4	Phase III		none
+CACNA1G	D003920	Diabetes Mellitus	1	Preclinical		none
+CACNB3	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+CALCA	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+CALCR	D003924	Diabetes Mellitus, Type 2	5	Launched	pramlintide	novel gwas
+CBL	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+CCKAR	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+CCKBR	D003920	Diabetes Mellitus	1	Preclinical		none
+CCR2	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+CCR5	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+CD28	D003920	Diabetes Mellitus	1	Preclinical		none
+CD3E	D003920	Diabetes Mellitus	1	Preclinical		none
+CDK5	D003920	Diabetes Mellitus	1	Preclinical		none
+CERS6	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+CHRM1	D003920	Diabetes Mellitus	1	Preclinical		none
+CHRM2	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+CHRNA7	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+CNR1	D003924	Diabetes Mellitus, Type 2	4	Phase III		none
+COL4A3BP	D003920	Diabetes Mellitus	1	Preclinical		none
+CPT1A	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+CPT2	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
+CRBN	D003920	Diabetes Mellitus	1	Preclinical		none
+CTF1	D003920	Diabetes Mellitus	2	Phase I		none
+CTLA4	D003920	Diabetes Mellitus	1	Preclinical		none
+CTSC	D003920	Diabetes Mellitus	1	Preclinical		none
+CTSD	D003920	Diabetes Mellitus	1	Preclinical		none
+CXCL12	D003920	Diabetes Mellitus	3	Phase II		none
+CXCR3	D003920	Diabetes Mellitus	1	Preclinical		none
+CXCR4	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
+DGAT1	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
+DGAT2	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+DPP4	D003924	Diabetes Mellitus, Type 2	5	Launched	sitagliptin	none
+DPP8	D003920	Diabetes Mellitus	1	Preclinical		none
+DRD2	D003920	Diabetes Mellitus	3	Phase II	bromocriptine	none
+EGFR	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+EIF2AK3	D003920	Diabetes Mellitus	1	Preclinical		none
+EIF5A	D003920	Diabetes Mellitus	1	Preclinical		none
+EPOR	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
+ERN1	D003920	Diabetes Mellitus	1	Preclinical		established gwas
+ESRRA	D003920	Diabetes Mellitus	1	Preclinical		none
+FABP4	D003920	Diabetes Mellitus	1	Preclinical		none
+FASN	D003920	Diabetes Mellitus	1	Preclinical		none
+FBP1	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+FFAR1	D003924	Diabetes Mellitus, Type 2	4	Phase III		none
+FFAR2	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+FFAR4	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
+FGF1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+FGF21	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
+FGFR4	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+FOXO1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+FSTL3	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+FTO	D003920	Diabetes Mellitus	1	Preclinical		established gwas
+FYN	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+GAA	D003924	Diabetes Mellitus, Type 2	5	Launched	voglibose	none
+GABRA1	D003920	Diabetes Mellitus	1	Preclinical		none
+GAD2	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+GALR1	D003920	Diabetes Mellitus	1	Preclinical		none
+GAST	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+GCGR	D003920	Diabetes Mellitus	5	Launched	glucagon	none
+GCK	D003924	Diabetes Mellitus, Type 2	5	Launched	dorzagliatin	omim, established gwas
+GCKR	D003924	Diabetes Mellitus, Type 2	1	Preclinical		established gwas
+GCNT1	D003920	Diabetes Mellitus	1	Preclinical		none
+GDF11	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+GDF15	D003920	Diabetes Mellitus	2	Phase I		none
+GFRAL	D003920	Diabetes Mellitus	1	Preclinical		none
+GHR	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+GHRHR	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+GHSR	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+GIPR	D003924	Diabetes Mellitus, Type 2	3	Phase II	tirzepatide	novel gwas
+GLP1R	D003924	Diabetes Mellitus, Type 2	5	Launched	exenatide	novel gwas
+GLP2R	D003924	Diabetes Mellitus, Type 2	1	Preclinical		established gwas
+GLUD1	D003920	Diabetes Mellitus	1	Preclinical		none
+GPBAR1	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+GPER1	D003920	Diabetes Mellitus	2	Phase I		none
+GPR119	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+GPR142	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
+GPR146	D003920	Diabetes Mellitus	1	Preclinical		none
+GPR39	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+GRM4	D003920	Diabetes Mellitus	1	Preclinical		none
+GSK3B	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+GYS2	D003920	Diabetes Mellitus	1	Preclinical		none
+HCAR2	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+HMMR	D003920	Diabetes Mellitus	1	Preclinical		none
+HNF4A	D003920	Diabetes Mellitus	1	Preclinical		omim, established gwas
+HPSE	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+HRH3	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+HSD11B1	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+HTR1A	D003920	Diabetes Mellitus	1	Preclinical		none
+HTR2C	D003924	Diabetes Mellitus, Type 2	1	Preclinical	lorcaserin	none
+IAPP	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+IFNA1	D003920	Diabetes Mellitus	1	Preclinical		none
+IGF2R	D003920	Diabetes Mellitus	1	Preclinical		none
+IGFBP2	D003920	Diabetes Mellitus	1	Preclinical		none
+IKBKB	D003924	Diabetes Mellitus, Type 2	4	Phase III		none
+IL13	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+IL18	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+IL1A	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+IL1B	D003924	Diabetes Mellitus, Type 2	4	Phase III		none
+IL1R1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+IL1R2	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+IL2RA	D003920	Diabetes Mellitus	1	Preclinical		none
+IL4R	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+IL9R	D003920	Diabetes Mellitus	1	Preclinical		none
+INSR	D003924	Diabetes Mellitus, Type 2	5	Launched	insulin	omim, established gwas
+IRS2	D003924	Diabetes Mellitus, Type 2	1	Preclinical		novel gwas
+KCNJ11	D003924	Diabetes Mellitus, Type 2	5	Launched	sulfonylureas	omim, established gwas
+KHK	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+KLB	D003924	Diabetes Mellitus, Type 2	2	Phase I		novel gwas
+KLKB1	D003920	Diabetes Mellitus	1	Preclinical		none
+KMO	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+LANCL2	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
+LEP	D003920	Diabetes Mellitus	1	Preclinical		none
+LEPR	D003924	Diabetes Mellitus, Type 2	3	Phase II		novel gwas
+LGALS3	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+LGALS9	D003920	Diabetes Mellitus	1	Preclinical		none
+LIPE	D003920	Diabetes Mellitus	1	Preclinical		none
+LYN	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+MANF	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+MAP2K7	D003920	Diabetes Mellitus	1	Preclinical		novel gwas
+MAP3K5	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+MAP4K4	D003920	Diabetes Mellitus	1	Preclinical		none
+MAPK14	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+MAPK3	D003924	Diabetes Mellitus, Type 2	3	Phase II		novel gwas
+MAPK8	D003920	Diabetes Mellitus	1	Preclinical		none
+MAPK9	D003920	Diabetes Mellitus	1	Preclinical		none
+MAS1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+MBOAT4	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
+MC1R	D003920	Diabetes Mellitus	1	Preclinical		none
+MC4R	D003924	Diabetes Mellitus, Type 2	2	Phase I		novel gwas
+MCHR1	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
+METAP2	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+MIF	D003920	Diabetes Mellitus	1	Preclinical		none
+MIOX	D003920	Diabetes Mellitus	1	Preclinical		none
+MIR107	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+MIRLET7A1	D003920	Diabetes Mellitus	1	Preclinical		none
+MKNK1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+MLYCD	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+MOGS	D003920	Diabetes Mellitus	1	Preclinical		none
+MRGPRD	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+MSTN	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
+MTNR1B	D003924	Diabetes Mellitus, Type 2	1	Preclinical		established gwas
+MTOR	D003920	Diabetes Mellitus	1	Preclinical		novel gwas
+MTTP	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+NAIP	D003920	Diabetes Mellitus	1	Preclinical		none
+NCOR2	D003924	Diabetes Mellitus, Type 2	1	Preclinical		novel gwas
+NLRP3	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+NMUR1	D003920	Diabetes Mellitus	1	Preclinical		none
+NNMT	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+NPY	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
+NPY1R	D003920	Diabetes Mellitus	1	Preclinical		none
+NPY2R	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
+NPY4R	D003920	Diabetes Mellitus	1	Preclinical		none
+NR1H2	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+NR1H3	D003920	Diabetes Mellitus	1	Preclinical		none
+NR1H4	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+NR3C1	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+NRIP1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+NTSR1	D003920	Diabetes Mellitus	1	Preclinical		none
+NUAK1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+OLR1	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
+P2RX7	D003920	Diabetes Mellitus	1	Preclinical		none
+PARK7	D003920	Diabetes Mellitus	1	Preclinical		none
+PARL	D003920	Diabetes Mellitus	1	Preclinical		none
+PARP1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+PAX4	D003924	Diabetes Mellitus, Type 2	1	Preclinical		omim, novel gwas
+PBK	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+PCK1	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+PCSK9	D003924	Diabetes Mellitus, Type 2	4	Phase III		none
+PDE10A	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+PDE4C	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
+PDE4D	D003920	Diabetes Mellitus	2	Phase I		none
+PDE8B	D003920	Diabetes Mellitus	1	Preclinical		none
+PDK1	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
+PDX1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+PGP	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+PHB	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+PIP4K2B	D003920	Diabetes Mellitus	1	Preclinical		none
+PLAT	D003920	Diabetes Mellitus	1	Preclinical		none
+PNLIP	D003924	Diabetes Mellitus, Type 2	5	Launched	orlistat	none
+PNP	D003920	Diabetes Mellitus	1	Preclinical		none
+PPARA	D003924	Diabetes Mellitus, Type 2	3	Phase II	lobeglitazone	none
+PPARD	D003924	Diabetes Mellitus, Type 2	3	Phase II	chiglitazar	none
+PPARG	D003924	Diabetes Mellitus, Type 2	5	Launched	glitazones	established gwas
+PPARGC1B	D003920	Diabetes Mellitus	1	Preclinical		none
+PPP2CA	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+PRKAA1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+PRKAG3	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+PRKCA	D003920	Diabetes Mellitus	1	Preclinical		none
+PRKCB	D003920	Diabetes Mellitus	1	Preclinical		none
+PRKCE	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+PTEN	D003924	Diabetes Mellitus, Type 2	1	Preclinical		established gwas
+PTGER3	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+PTGS2	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
+PTPN1	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+PTPRC	D003920	Diabetes Mellitus	1	Preclinical		none
+PTPRF	D003920	Diabetes Mellitus	1	Preclinical		none
+PYGL	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+PYY	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
+RAMP1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+RAPGEF4	D003920	Diabetes Mellitus	1	Preclinical		none
+RBP4	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+REG3A	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+ROCK2	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+RXRA	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+RXRB	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+RXRG	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+RYR1	D003920	Diabetes Mellitus	1	Preclinical		none
+SCD	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+SELE	D003920	Diabetes Mellitus	2	Phase I		none
+SELENOS	D003920	Diabetes Mellitus	1	Preclinical		none
+SERPINA1	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+SERPINE1	D003920	Diabetes Mellitus	2	Phase I		none
+SGIP1	D003920	Diabetes Mellitus	1	Preclinical		novel gwas
+SHC1	D003920	Diabetes Mellitus	2	Phase I		none
+SIGMAR1	D003920	Diabetes Mellitus	1	Preclinical		none
+SIRT1	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+SIRT2	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+SIRT6	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+SLC10A1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+SLC10A2	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+SLC13A5	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+SLC18A2	D003920	Diabetes Mellitus	1	Preclinical		none
+SLC22A12	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+SLC2A4	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
+SLC30A8	D003924	Diabetes Mellitus, Type 2	1	Preclinical		established gwas
+SLC5A2	D003924	Diabetes Mellitus, Type 2	5	Launched	canagliflozin	none
+SLC6A2	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+SLC6A3	D003920	Diabetes Mellitus	1	Preclinical		none
+SLC7A5	D003920	Diabetes Mellitus	1	Preclinical		none
+SLC9A1	D003920	Diabetes Mellitus	1	Preclinical		none
+SOCS3	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+SORT1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+SREBF1	D003920	Diabetes Mellitus	2	Phase I		novel gwas
+SSTR2	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+TACR1	D003920	Diabetes Mellitus	2	Phase I		none
+TBK1	D003920	Diabetes Mellitus	1	Preclinical		none
+TBXAS1	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+THRB	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+TLR2	D003920	Diabetes Mellitus	1	Preclinical		none
+TMPRSS15	D003920	Diabetes Mellitus	3	Phase II		none
+TMSB4X	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
+TNF	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
+TP53	D003920	Diabetes Mellitus	3	Phase II		none
+TRIB3	D003920	Diabetes Mellitus	1	Preclinical		none
+TRPV1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+TRPV4	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+TTR	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+TULP1	D003920	Diabetes Mellitus	1	Preclinical		none
+UCN2	D003920	Diabetes Mellitus	2	Phase I		none
+UGCG	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+VCAM1	D003924	Diabetes Mellitus, Type 2	4	Phase III		none
+VDAC1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
+VEGFA	D003924	Diabetes Mellitus, Type 2	2	Phase I		novel gwas
+VEGFB	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
+VIPR2	D003920	Diabetes Mellitus	1	Preclinical		none

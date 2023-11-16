@@ -1,4 +1,4 @@
-Last updated: 2023-11-07
+Last updated: 2023-11-16
 
 Unique indications: 1014
 
@@ -87,6 +87,8 @@ Combined P(G) for all active clinical T-I: 4.8% (284/5968)
 Combined P(G) for all historical clinical T-I: 4.2% (560/13355)
 
 Indications with 0 supported genes: 184
+
+Genetic support for launched T-I from OTG was retrospective (min_assoc_year >= year_launch) in 18/38 (47%) instances
 
 CMH test on I-Launched RS values across 17 therapy areas: P = 1.0e-15
 

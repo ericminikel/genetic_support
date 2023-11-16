@@ -1,27 +1,17 @@
-gene	mesh_id	mesh_term	original_trait
-ABCC8	D003920	Diabetes Mellitus	Diabetes mellitus, permanent neonatal, 606176 (3), Autosomal recessive, Autosomal dominant
-ABCC8	D003920	Diabetes Mellitus	Diabetes mellitus, transient neonatal 2, 610374 (3)
-ABCC8	D003924	Diabetes Mellitus, Type 2	Diabetes mellitus, noninsulin-dependent, 125853 (3), Autosomal dominant
-AQP2	D018500	Diabetes Insipidus, Nephrogenic	Diabetes insipidus, nephrogenic, 125800 (3), Autosomal recessive, Autosomal dominant
-AVP	D020790	Diabetes Insipidus, Neurogenic	Diabetes insipidus, neurohypophyseal, 125700 (3), Autosomal dominant
-BLK	D003924	Diabetes Mellitus, Type 2	Maturity-onset diabetes of the young, type 11, 613375 (3), Autosomal dominant
-CEL	D003924	Diabetes Mellitus, Type 2	Maturity-onset diabetes of the young, type VIII, 609812 (3), Autosomal dominant
-GCK	D003920	Diabetes Mellitus	Diabetes mellitus, permanent neonatal, 606176 (3), Autosomal recessive, Autosomal dominant
-GCK	D003924	Diabetes Mellitus, Type 2	Diabetes mellitus, noninsulin-dependent, late onset, 125853 (3), Autosomal dominant
-GLIS3	D003409	Congenital Hypothyroidism	Diabetes mellitus, neonatal, with congenital hypothyroidism, 610199 (3), Autosomal recessive
-HNF1A	D003922	Diabetes Mellitus, Type 1	Diabetes mellitus, insulin-dependent, 20, 612520 (3)
-HNF1B	D003924	Diabetes Mellitus, Type 2	Diabetes mellitus, noninsulin-dependent, 125853 (3), Autosomal dominant
-HNF1B	D003924	Diabetes Mellitus, Type 2	Renal cysts and diabetes syndrome, 137920 (3), Autosomal dominant
-HNF4A	D003924	Diabetes Mellitus, Type 2	Fanconi renotubular syndrome 4, with maturity-onset diabetes of the young, 616026 (3), Autosomal dominant
-IER3IP1	D008831	Microcephaly	Microcephaly, epilepsy, and diabetes syndrome, 614231 (3), Autosomal recessive
-INS	D003922	Diabetes Mellitus, Type 1	Diabetes mellitus, insulin-dependent, 2, 125852 (3), Autosomal dominant
-INS	D003924	Diabetes Mellitus, Type 2	Maturity-onset diabetes of the young, type 10, 613370 (3), Autosomal dominant
-INSR	D003920	Diabetes Mellitus	Diabetes mellitus, insulin-resistant, with acanthosis nigricans, 610549 (3)
-KCNJ11	D003920	Diabetes Mellitus	Diabetes mellitus, transient neonatal, 3, 610582 (3), Autosomal dominant
-KCNJ11	D011236	Prediabetic State	Diabetes, permanent neonatal, with or without neurologic features, 606176 (3), Autosomal recessive, Autosomal dominant
-KLF11	D003924	Diabetes Mellitus, Type 2	Maturity-onset diabetes of the young, type VII, 610508 (3)
-MAFA	D003920	Diabetes Mellitus	Insulinomatosis and diabetes mellitus, 147630 (3), Autosomal dominant
-NEUROD1	D003924	Diabetes Mellitus, Type 2	Maturity-onset diabetes of the young 6, 606394 (3)
-PAX4	D003924	Diabetes Mellitus, Type 2	Diabetes mellitus, type 2, 125853 (3), Autosomal dominant
-PAX4	D003924	Diabetes Mellitus, Type 2	Maturity-onset diabetes of the young, type IX, 612225 (3)
-ZFP57	D003920	Diabetes Mellitus	Diabetes mellitus, transient neonatal, 1, 601410 (3), Autosomal dominant
+first_assoc_year	supported_launched	supported_total_phase_i_through_launch	proportion_launched	proportion_l95	proportion_u95
+2007	1	8	0.125	0.02241749145005667	0.4708881822128534
+2008	10	20	0.5	0.2992980081982124	0.7007019918017876
+2009	2	18	0.1111111111111111	0.031019522645612387	0.32799765130178793
+2010	6	25	0.24	0.11496313693401446	0.43429683355429083
+2011	3	20	0.15	0.05236874589621661	0.3604188647407569
+2012	7	33	0.21212121212121213	0.10676021533020799	0.3775164499215068
+2013	5	23	0.21739130434782608	0.09663978026586202	0.41903483016264
+2014	2	9	0.2222222222222222	0.06322510711784675	0.547411030893011
+2015	3	17	0.17647058823529413	0.06191126637620996	0.41029458568834115
+2016	9	25	0.36	0.20247880774458227	0.5548150225183514
+2017	6	33	0.18181818181818182	0.08610768208940668	0.3438823163466992
+2018	12	66	0.18181818181818182	0.10718606405608065	0.29145192677071835
+2019	10	37	0.2702702702702703	0.15397461511049093	0.42978168324714267
+2020	13	58	0.22413793103448276	0.13593660611409744	0.3466111763891869
+2021	14	69	0.2028985507246377	0.12489333067903492	0.31224040244779294
+2022	0	3	0	0	0.5614970317550454

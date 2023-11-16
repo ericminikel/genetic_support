@@ -1,285 +1,31 @@
-gene	indication_mesh_id	indication_mesh_term	maxphasenum	maxphase	drug	support
-ABCA1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		novel gwas
-ABCC8	D003924	Diabetes Mellitus, Type 2	5	Launched	sulfonylureas	omim, established gwas
-ACACA	D003920	Diabetes Mellitus	1	Preclinical		none
-ACACB	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-ACE	D003920	Diabetes Mellitus	1	Preclinical		established gwas
-ACLY	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-ACVR2B	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-ADAM17	D003920	Diabetes Mellitus	1	Preclinical		none
-ADH5	D003920	Diabetes Mellitus	1	Preclinical		none
-ADIPOQ	D003920	Diabetes Mellitus	1	Preclinical		none
-ADIPOR2	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-ADORA1	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
-ADORA2B	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-ADRB3	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-ALOX12	D003920	Diabetes Mellitus	1	Preclinical		none
-ALOX15	D003920	Diabetes Mellitus	1	Preclinical		none
-ANGPTL3	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-APCS	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-APH1A	D003920	Diabetes Mellitus	1	Preclinical		none
-APLN	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-APOA4	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-APOC3	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-ATP2A2	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-AVPR2	D003920	Diabetes Mellitus	2	Phase I		none
-BACE2	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-BCAT2	D003920	Diabetes Mellitus	1	Preclinical		none
-BGLAP	D003920	Diabetes Mellitus	1	Preclinical		none
-BMP4	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-BMP7	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-BRD4	D003924	Diabetes Mellitus, Type 2	4	Phase III		none
-CACNA1G	D003920	Diabetes Mellitus	1	Preclinical		none
-CACNB3	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-CALCA	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-CALCR	D003924	Diabetes Mellitus, Type 2	5	Launched	pramlintide	novel gwas
-CBL	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-CCKAR	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-CCKBR	D003920	Diabetes Mellitus	1	Preclinical		none
-CCR2	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-CCR5	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-CD28	D003920	Diabetes Mellitus	1	Preclinical		none
-CD3E	D003920	Diabetes Mellitus	1	Preclinical		none
-CDK5	D003920	Diabetes Mellitus	1	Preclinical		none
-CERS6	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-CHRM1	D003920	Diabetes Mellitus	1	Preclinical		none
-CHRM2	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-CHRNA7	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-CNR1	D003924	Diabetes Mellitus, Type 2	4	Phase III		none
-COL4A3BP	D003920	Diabetes Mellitus	1	Preclinical		none
-CPT1A	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-CPT2	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
-CRBN	D003920	Diabetes Mellitus	1	Preclinical		none
-CTF1	D003920	Diabetes Mellitus	2	Phase I		none
-CTLA4	D003920	Diabetes Mellitus	1	Preclinical		none
-CTSC	D003920	Diabetes Mellitus	1	Preclinical		none
-CTSD	D003920	Diabetes Mellitus	1	Preclinical		none
-CXCL12	D003920	Diabetes Mellitus	3	Phase II		none
-CXCR3	D003920	Diabetes Mellitus	1	Preclinical		none
-CXCR4	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
-DGAT1	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
-DGAT2	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-DPP4	D003924	Diabetes Mellitus, Type 2	5	Launched	sitagliptin	none
-DPP8	D003920	Diabetes Mellitus	1	Preclinical		none
-DRD2	D003920	Diabetes Mellitus	3	Phase II	bromocriptine	none
-EGFR	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-EIF2AK3	D003920	Diabetes Mellitus	1	Preclinical		none
-EIF5A	D003920	Diabetes Mellitus	1	Preclinical		none
-EPOR	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
-ERN1	D003920	Diabetes Mellitus	1	Preclinical		established gwas
-ESRRA	D003920	Diabetes Mellitus	1	Preclinical		none
-FABP4	D003920	Diabetes Mellitus	1	Preclinical		none
-FASN	D003920	Diabetes Mellitus	1	Preclinical		none
-FBP1	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-FFAR1	D003924	Diabetes Mellitus, Type 2	4	Phase III		none
-FFAR2	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-FFAR4	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
-FGF1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-FGF21	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
-FGFR4	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-FOXO1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-FSTL3	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-FTO	D003920	Diabetes Mellitus	1	Preclinical		established gwas
-FYN	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-GAA	D003924	Diabetes Mellitus, Type 2	5	Launched	voglibose	none
-GABRA1	D003920	Diabetes Mellitus	1	Preclinical		none
-GAD2	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-GALR1	D003920	Diabetes Mellitus	1	Preclinical		none
-GAST	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-GCGR	D003920	Diabetes Mellitus	5	Launched	glucagon	none
-GCK	D003924	Diabetes Mellitus, Type 2	5	Launched	dorzagliatin	omim, established gwas
-GCKR	D003924	Diabetes Mellitus, Type 2	1	Preclinical		established gwas
-GCNT1	D003920	Diabetes Mellitus	1	Preclinical		none
-GDF11	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-GDF15	D003920	Diabetes Mellitus	2	Phase I		none
-GFRAL	D003920	Diabetes Mellitus	1	Preclinical		none
-GHR	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-GHRHR	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-GHSR	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-GIPR	D003924	Diabetes Mellitus, Type 2	3	Phase II	tirzepatide	novel gwas
-GLP1R	D003924	Diabetes Mellitus, Type 2	5	Launched	exenatide	novel gwas
-GLP2R	D003924	Diabetes Mellitus, Type 2	1	Preclinical		established gwas
-GLUD1	D003920	Diabetes Mellitus	1	Preclinical		none
-GPBAR1	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-GPER1	D003920	Diabetes Mellitus	2	Phase I		none
-GPR119	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-GPR142	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
-GPR146	D003920	Diabetes Mellitus	1	Preclinical		none
-GPR39	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-GRM4	D003920	Diabetes Mellitus	1	Preclinical		none
-GSK3B	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-GYS2	D003920	Diabetes Mellitus	1	Preclinical		none
-HCAR2	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-HMMR	D003920	Diabetes Mellitus	1	Preclinical		none
-HNF4A	D003920	Diabetes Mellitus	1	Preclinical		omim, established gwas
-HPSE	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-HRH3	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-HSD11B1	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-HTR1A	D003920	Diabetes Mellitus	1	Preclinical		none
-HTR2C	D003924	Diabetes Mellitus, Type 2	1	Preclinical	lorcaserin	none
-IAPP	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-IFNA1	D003920	Diabetes Mellitus	1	Preclinical		none
-IGF2R	D003920	Diabetes Mellitus	1	Preclinical		none
-IGFBP2	D003920	Diabetes Mellitus	1	Preclinical		none
-IKBKB	D003924	Diabetes Mellitus, Type 2	4	Phase III		none
-IL13	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-IL18	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-IL1A	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-IL1B	D003924	Diabetes Mellitus, Type 2	4	Phase III		none
-IL1R1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-IL1R2	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-IL2RA	D003920	Diabetes Mellitus	1	Preclinical		none
-IL4R	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-IL9R	D003920	Diabetes Mellitus	1	Preclinical		none
-INSR	D003924	Diabetes Mellitus, Type 2	5	Launched	insulin	omim, established gwas
-IRS2	D003924	Diabetes Mellitus, Type 2	1	Preclinical		novel gwas
-KCNJ11	D003924	Diabetes Mellitus, Type 2	5	Launched	sulfonylureas	omim, established gwas
-KHK	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-KLB	D003924	Diabetes Mellitus, Type 2	2	Phase I		novel gwas
-KLKB1	D003920	Diabetes Mellitus	1	Preclinical		none
-KMO	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-LANCL2	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
-LEP	D003920	Diabetes Mellitus	1	Preclinical		none
-LEPR	D003924	Diabetes Mellitus, Type 2	3	Phase II		novel gwas
-LGALS3	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-LGALS9	D003920	Diabetes Mellitus	1	Preclinical		none
-LIPE	D003920	Diabetes Mellitus	1	Preclinical		none
-LYN	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-MANF	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-MAP2K7	D003920	Diabetes Mellitus	1	Preclinical		novel gwas
-MAP3K5	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-MAP4K4	D003920	Diabetes Mellitus	1	Preclinical		none
-MAPK14	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-MAPK3	D003924	Diabetes Mellitus, Type 2	3	Phase II		novel gwas
-MAPK8	D003920	Diabetes Mellitus	1	Preclinical		none
-MAPK9	D003920	Diabetes Mellitus	1	Preclinical		none
-MAS1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-MBOAT4	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
-MC1R	D003920	Diabetes Mellitus	1	Preclinical		none
-MC4R	D003924	Diabetes Mellitus, Type 2	2	Phase I		novel gwas
-MCHR1	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
-METAP2	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-MIF	D003920	Diabetes Mellitus	1	Preclinical		none
-MIOX	D003920	Diabetes Mellitus	1	Preclinical		none
-MIR107	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-MIRLET7A1	D003920	Diabetes Mellitus	1	Preclinical		none
-MKNK1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-MLYCD	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-MOGS	D003920	Diabetes Mellitus	1	Preclinical		none
-MRGPRD	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-MSTN	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
-MTNR1B	D003924	Diabetes Mellitus, Type 2	1	Preclinical		established gwas
-MTOR	D003920	Diabetes Mellitus	1	Preclinical		novel gwas
-MTTP	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-NAIP	D003920	Diabetes Mellitus	1	Preclinical		none
-NCOR2	D003924	Diabetes Mellitus, Type 2	1	Preclinical		novel gwas
-NLRP3	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-NMUR1	D003920	Diabetes Mellitus	1	Preclinical		none
-NNMT	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-NPY	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
-NPY1R	D003920	Diabetes Mellitus	1	Preclinical		none
-NPY2R	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
-NPY4R	D003920	Diabetes Mellitus	1	Preclinical		none
-NR1H2	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-NR1H3	D003920	Diabetes Mellitus	1	Preclinical		none
-NR1H4	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-NR3C1	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-NRIP1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-NTSR1	D003920	Diabetes Mellitus	1	Preclinical		none
-NUAK1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-OLR1	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
-P2RX7	D003920	Diabetes Mellitus	1	Preclinical		none
-PARK7	D003920	Diabetes Mellitus	1	Preclinical		none
-PARL	D003920	Diabetes Mellitus	1	Preclinical		none
-PARP1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-PAX4	D003924	Diabetes Mellitus, Type 2	1	Preclinical		omim, novel gwas
-PBK	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-PCK1	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-PCSK9	D003924	Diabetes Mellitus, Type 2	4	Phase III		none
-PDE10A	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-PDE4C	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
-PDE4D	D003920	Diabetes Mellitus	2	Phase I		none
-PDE8B	D003920	Diabetes Mellitus	1	Preclinical		none
-PDK1	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
-PDX1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-PGP	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-PHB	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-PIP4K2B	D003920	Diabetes Mellitus	1	Preclinical		none
-PLAT	D003920	Diabetes Mellitus	1	Preclinical		none
-PNLIP	D003924	Diabetes Mellitus, Type 2	5	Launched	orlistat	none
-PNP	D003920	Diabetes Mellitus	1	Preclinical		none
-PPARA	D003924	Diabetes Mellitus, Type 2	3	Phase II	lobeglitazone	none
-PPARD	D003924	Diabetes Mellitus, Type 2	3	Phase II	chiglitazar	none
-PPARG	D003924	Diabetes Mellitus, Type 2	5	Launched	glitazones	established gwas
-PPARGC1B	D003920	Diabetes Mellitus	1	Preclinical		none
-PPP2CA	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-PRKAA1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-PRKAG3	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-PRKCA	D003920	Diabetes Mellitus	1	Preclinical		none
-PRKCB	D003920	Diabetes Mellitus	1	Preclinical		none
-PRKCE	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-PTEN	D003924	Diabetes Mellitus, Type 2	1	Preclinical		established gwas
-PTGER3	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-PTGS2	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
-PTPN1	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-PTPRC	D003920	Diabetes Mellitus	1	Preclinical		none
-PTPRF	D003920	Diabetes Mellitus	1	Preclinical		none
-PYGL	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-PYY	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
-RAMP1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-RAPGEF4	D003920	Diabetes Mellitus	1	Preclinical		none
-RBP4	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-REG3A	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-ROCK2	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-RXRA	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-RXRB	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-RXRG	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-RYR1	D003920	Diabetes Mellitus	1	Preclinical		none
-SCD	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-SELE	D003920	Diabetes Mellitus	2	Phase I		none
-SELENOS	D003920	Diabetes Mellitus	1	Preclinical		none
-SERPINA1	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-SERPINE1	D003920	Diabetes Mellitus	2	Phase I		none
-SGIP1	D003920	Diabetes Mellitus	1	Preclinical		novel gwas
-SHC1	D003920	Diabetes Mellitus	2	Phase I		none
-SIGMAR1	D003920	Diabetes Mellitus	1	Preclinical		none
-SIRT1	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-SIRT2	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-SIRT6	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-SLC10A1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-SLC10A2	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-SLC13A5	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-SLC18A2	D003920	Diabetes Mellitus	1	Preclinical		none
-SLC22A12	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-SLC2A4	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
-SLC30A8	D003924	Diabetes Mellitus, Type 2	1	Preclinical		established gwas
-SLC5A2	D003924	Diabetes Mellitus, Type 2	5	Launched	canagliflozin	none
-SLC6A2	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-SLC6A3	D003920	Diabetes Mellitus	1	Preclinical		none
-SLC7A5	D003920	Diabetes Mellitus	1	Preclinical		none
-SLC9A1	D003920	Diabetes Mellitus	1	Preclinical		none
-SOCS3	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-SORT1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-SREBF1	D003920	Diabetes Mellitus	2	Phase I		novel gwas
-SSTR2	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-TACR1	D003920	Diabetes Mellitus	2	Phase I		none
-TBK1	D003920	Diabetes Mellitus	1	Preclinical		none
-TBXAS1	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-THRB	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-TLR2	D003920	Diabetes Mellitus	1	Preclinical		none
-TMPRSS15	D003920	Diabetes Mellitus	3	Phase II		none
-TMSB4X	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
-TNF	D003924	Diabetes Mellitus, Type 2	3	Phase II		none
-TP53	D003920	Diabetes Mellitus	3	Phase II		none
-TRIB3	D003920	Diabetes Mellitus	1	Preclinical		none
-TRPV1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-TRPV4	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-TTR	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-TULP1	D003920	Diabetes Mellitus	1	Preclinical		none
-UCN2	D003920	Diabetes Mellitus	2	Phase I		none
-UGCG	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-VCAM1	D003924	Diabetes Mellitus, Type 2	4	Phase III		none
-VDAC1	D003924	Diabetes Mellitus, Type 2	1	Preclinical		none
-VEGFA	D003924	Diabetes Mellitus, Type 2	2	Phase I		novel gwas
-VEGFB	D003924	Diabetes Mellitus, Type 2	2	Phase I		none
-VIPR2	D003920	Diabetes Mellitus	1	Preclinical		none
+drug_data	genetic_data	phase	x_yes	n_yes	x_no	n_no	mean_yes	l_yes	u_yes	mean_no	l_no	u_no	rs_mean	rs_l	rs_u	fraction
+2013	2013	Preclinical	179	200	6840	8424	0.895	0.8448196800887695	0.9302925120731899	0.811965811965812	0.8034802697197929	0.820166962573477	1.1022631578947368	1.0500063629981957	1.1571206728526897	179/200
+2013	2013	I	159	179	5088	6840	0.888268156424581	0.8337241037909872	0.9264973519802236	0.743859649122807	0.7333803862922732	0.754065154355135	1.1941340782122905	1.1316040734593469	1.260119356400624	159/179
+2013	2013	II	89	159	2379	5088	0.559748427672956	0.4820807267303315	0.6345971766586392	0.4675707547169811	0.45389063296206233	0.4812998079287602	1.1971416561580497	1.0397745324028114	1.3783258776275091	89/159
+2013	2013	III	65	89	1767	2379	0.7303370786516854	0.6300335779919279	0.8115794742026075	0.742749054224464	0.7248024207928192	0.7599129998342953	0.983289139848534	0.864771918967178	1.118049177289216	65/89
+2013	2013	I-Launch	65	179	1767	6840	0.36312849162011174	0.29258229356679977	0.4336746896734237	0.2583333333333333	0.24795945570478922	0.2687072109618774	1.4056586772391422	1.1530229355070496	1.713648754115017	65/179
+2013	2023	Preclinical	345	403	6674	8221	0.8560794044665012	0.8184441161508772	0.8869903811885115	0.8118233791509549	0.8032295735494918	0.8201259069992028	1.054514351830852	1.0117872095228129	1.0990458346885927	345/403
+2013	2023	I	293	345	4954	6674	0.8492753623188406	0.8076877730385161	0.8831704776256486	0.7422834881630207	0.7316529322606696	0.7526352946974955	1.1441388308671663	1.0919936686550873	1.198774042261923	293/345
+2013	2023	II	189	293	2279	4954	0.6450511945392492	0.5887082763616303	0.697639864958292	0.46003229713362936	0.44618992896090093	0.4739366012460179	1.4021867563613166	1.2813274806735693	1.5344459003419755	189/293
+2013	2023	III	142	189	1690	2279	0.7513227513227513	0.6851043192031679	0.807528336559574	0.741553312856516	0.7231838697447922	0.7591098067371356	1.0131742900973668	0.9301230370436341	1.1036412401708386	142/189
+2013	2023	I-Launch	142	345	1690	6674	0.41159420289855075	0.35963269452183533	0.4635557112752662	0.25322145639796223	0.24278798264275378	0.26365493015317065	1.6254317811508447	1.42340335625767	1.8561347797587582	142/345
+2023	2013	Preclinical	362	547	16449	28917	0.6617915904936015	0.6211389471767554	0.7001876290380094	0.568834941383961	0.5631181382250628	0.5745334583119327	1.163415856423094	1.0948502928142512	1.2362753737750685	362/547
+2023	2013	I	282	362	11583	16449	0.7790055248618785	0.7334580582063454	0.8186936871184075	0.7041765456866679	0.6971546664987676	0.7111030813687829	1.106264515104294	1.0462734645074903	1.169695322393582	282/362
+2023	2013	II	131	282	3466	11583	0.4645390070921986	0.40719594995858865	0.5228351935903048	0.2992316325649659	0.2909600313408805	0.30763635780196547	1.552439503505175	1.3654152195577736	1.7650809640337535	131/282
+2023	2013	III	89	131	1727	3466	0.6793893129770993	0.5953388097642381	0.7532186770136112	0.498268897864974	0.48163436358912126	0.5149072651445217	1.3634993391885502	1.2065515897717227	1.540862789231712	89/131
+2023	2013	I-Launch	89	362	1727	16446	0.24585635359116023	0.20144510513778702	0.29026760204453345	0.10499118487446045	0.10030630673730687	0.10967606301161403	2.34125859360754	1.944170281936961	2.819450463299948	89/362
+2023	2023	Preclinical	750	1259	16061	28205	0.5957108816521048	0.568351336753525	0.6224881374470275	0.569438042900195	0.5636503264238951	0.5752068473355462	1.0461381867254604	0.998483359971486	1.096067445487011	750/1259
+2023	2023	I	575	750	11290	16061	0.7666666666666667	0.7350846621280165	0.795530887493993	0.7029450221032314	0.6958300773486572	0.7099629095731417	1.0906495423678773	1.047107111959639	1.1360026215857757	575/750
+2023	2023	II	279	575	3318	11290	0.4852173913043478	0.4446009445297878	0.5260300464938422	0.2938883968113375	0.2855567432940763	0.3023602628929423	1.651026024058495	1.5105664507204182	1.8045461891586265	279/575
+2023	2023	III	189	279	1627	3318	0.6774193548387096	0.6204780182595566	0.7295413898313927	0.49035563592525616	0.4733668276118179	0.5073667501963414	1.3814858139857644	1.2649970451218877	1.508701590729817	189/279
+2023	2023	I-Launch	189	749	1627	16059	0.252	0.2209100286232882	0.2830899713767118	0.10130128883631156	0.09663460917040746	0.10596796850221567	2.4906398451366827	2.1835255642365206	2.8409499480036935	189/749
+2023	OTG through 2013	Preclinical	171	268	16640	29196	0.6380597014925373	0.5789487104962859	0.6932687809821209	0.5699410878202493	0.564253337592392	0.5756104354955369	1.1195186925947187	1.0224264442702484	1.225831070873309	171/268
+2023	OTG through 2013	I	122	171	11743	16640	0.7134502923976608	0.6415761645660885	0.7759449456579115	0.7057091346153846	0.698738043310902	0.7125852690949516	1.0109693319847632	0.9188947636628652	1.1122699036172803	122/171
+2023	OTG through 2013	II	63	122	3534	11743	0.5163934426229508	0.42857983422345886	0.6032061927146063	0.3009452439751341	0.29271564723206067	0.30930503071881554	1.715904979264661	1.4419855000802113	2.041858186300401	63/122
+2023	OTG through 2013	III	41	63	1775	3534	0.6507936507936508	0.5275146077366178	0.7567401098476968	0.5022637238256933	0.4857855434401846	0.5187369882182391	1.2957209926224011	1.0781331689221303	1.5572221865698308	41/63
+2023	OTG through 2013	I-Launch	41	171	1775	16637	0.23976608187134504	0.17559681982235564	0.30393534392033444	0.10667067307692309	0.10198006825619746	0.11136127789764871	2.247317354418911	1.7147221948933296	2.9453373301595325	41/171
+2023	OTG all time	Preclinical	549	895	16262	28569	0.6134078212290502	0.5810842400164858	0.6447620402233484	0.5692183835626028	0.5634673843043743	0.5749507707713106	1.077631782357197	1.022025460993937	1.1362635302813051	549/895
+2023	OTG all time	I	404	549	11461	16262	0.7358834244080146	0.6974584485490184	0.7710302942317628	0.7047718607797319	0.6977134149432493	0.7117335858074184	1.044144162614356	0.9921373277099228	1.0988771431855588	404/549
+2023	OTG all time	II	191	404	3406	11461	0.47277227722772275	0.42457429182181705	0.5214831784912434	0.29718174679347353	0.28888383657772243	0.30561557131219624	1.5908523397847711	1.4297730434145106	1.7700789497015048	191/404
+2023	OTG all time	III	127	191	1689	3406	0.6649214659685864	0.5953127273079358	0.7280270812796026	0.4958896065766295	0.4791125222026587	0.5126759523237541	1.3408659047300207	1.205746996921558	1.4911265622537757	127/191
+2023	OTG all time	I-Launch	127	548	1689	16260	0.23132969034608378	0.19602475637034503	0.26663462432182256	0.10386176362071087	0.09917247472231504	0.1085510525191067	2.231074405880904	1.903128914828813	2.615531173843036	127/548
