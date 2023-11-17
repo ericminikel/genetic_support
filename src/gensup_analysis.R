@@ -486,7 +486,7 @@ advancement_forest = function(best_table, phase='combined') {
     filter(!(target_status %in% c('indication lacks genetic insight','no indication annotated','no target annotated'))) %>%
     group_by(catnum=num, cat) %>%
     summarize(.groups='keep',
-              n_total = n(),
+              n_total = sum(!is.na(target_status)),
               n_gensup = sum(target_status=='genetically supported target', na.rm=T)) -> forest_data
   bconf_obj = binom.confint(x=forest_data$n_gensup, n=forest_data$n_total, method='wilson', conf.level = .95)
   forest_data$proportion = bconf_obj$mean
@@ -1284,8 +1284,8 @@ active_offset = 0.0
 combined_offset = -0.25
 plot_forest(hist_ti_forest, xlims=c(0,.15), xlab='P(G) vs. phase', col='#00000000')
 mtext(side=2, at=combined_ti_forest$y, text=combined_ti_forest$label, line=0.5, las=2, cex=0.75)
-points(hist_ti_forest$mean[1:4], combined_ti_forest$y[1:4] + hist_offset, pch=19, col=hist_col)
-segments(x0=combined_ti_forest$l95[1:4], x1=combined_ti_forest$u95[1:4], y0=combined_ti_forest$y[1:4] + hist_offset, lwd=2, col=hist_col) # 95%CIs
+points(hist_ti_forest$mean[1:4], hist_ti_forest$y[1:4] + hist_offset, pch=19, col=hist_col)
+segments(x0=hist_ti_forest$l95[1:4], x1=hist_ti_forest$u95[1:4], y0=hist_ti_forest$y[1:4] + hist_offset, lwd=2, col=hist_col) # 95%CIs
 points(active_ti_forest$mean[2:5], active_ti_forest$y[2:5] + active_offset, pch=19, col=active_col)
 segments(x0=active_ti_forest$l95[2:5], x1=active_ti_forest$u95[2:5], y0=active_ti_forest$y[2:5] + active_offset, lwd=2, col=active_col) # 95%CIs
 points(combined_ti_forest$mean[1:4], combined_ti_forest$y[1:4] + combined_offset, pch=19, col=combined_col)

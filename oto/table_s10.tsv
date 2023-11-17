@@ -1,26 +1,26 @@
 indication_mesh_id	indication_mesh_term	n_human_targets_pursued	n_drugs	n_supported_genes
-D059226	Nociceptive Pain	125	840	0
-D012509	Sarcoma	86	175	0
-D010149	Pain, Postoperative	36	166	0
+D059226	Nociceptive Pain	123	840	0
+D012509	Sarcoma	77	175	0
+D010149	Pain, Postoperative	34	166	0
 D005355	Fibrosis	75	143	0
-D005185	Fallopian Tube Neoplasms	54	141	0
+D005185	Fallopian Tube Neoplasms	44	141	0
 D020522	Lymphoma, Mantle-Cell	32	128	0
-D008654	Mesothelioma	45	113	0
-D000072716	Cancer Pain	30	107	0
+D008654	Mesothelioma	43	113	0
+D000072716	Cancer Pain	28	107	0
 D000070642	Brain Injuries, Traumatic	67	104	0
-D009325	Nausea	14	103	0
-D014945	Wound Healing	68	101	0
+D009325	Nausea	12	103	0
+D014945	Wound Healing	64	101	0
 D002100	Cachexia	34	85	0
-D000080424	Cytokine Release Syndrome	31	64	0
+D000080424	Cytokine Release Syndrome	30	64	0
 D007511	Ischemia	39	64	0
 D013119	Spinal Cord Injuries	45	64	0
 D057092	Geographic Atrophy	36	64	0
 D005261	Female Urogenital Diseases and Pregnancy Complications	35	61	0
-D018278	Carcinoma, Neuroendocrine	33	61	0
+D018278	Carcinoma, Neuroendocrine	29	61	0
 D003267	Contraception	13	57	0
-D013514	Surgical Procedures, Operative	30	57	0
-D023903	Coronary Restenosis	31	53	0
-D020528	Multiple Sclerosis, Chronic Progressive	27	47	0
+D013514	Surgical Procedures, Operative	23	57	0
+D023903	Coronary Restenosis	27	53	0
+D020528	Multiple Sclerosis, Chronic Progressive	25	47	0
 D055371	Acute Lung Injury	30	45	0
 D015427	Reperfusion Injury	35	44	0
 D019650	Hematopoietic Stem Cell Mobilization	7	34	0
@@ -30,38 +30,38 @@ D014526	Urethritis	20	29	0
 D000758	Anesthesia	5	26	0
 D011218	Prader-Willi Syndrome	11	25	0
 D012778	Short Bowel Syndrome	8	24	0
-D000079689	Opioid-Induced Constipation	8	23	0
-D004415	Dyspepsia	14	23	0
-D007943	Leukemia, Hairy Cell	7	23	0
+D000079689	Opioid-Induced Constipation	6	23	0
+D004415	Dyspepsia	10	23	0
+D007943	Leukemia, Hairy Cell	5	23	0
 D052016	Mucositis	15	23	0
-D006470	Hemorrhage	10	22	0
+D006470	Hemorrhage	7	22	0
 D012003	Rectal Fistula	1	20	0
 D015266	Carcinoma, Merkel Cell	9	20	0
 D011832	Radiation Injuries	12	19	0
 D013584	Sarcoma, Synovial	8	19	0
 D009140	Musculoskeletal Diseases	14	18	0
-D004686	Encephalomyocarditis virus	14	17	0
+D004686	Encephalomyocarditis virus	8	17	0
 D004660	Encephalitis	12	15	0
 D005769	Gastrointestinal Motility	6	14	0
 D051799	Delayed Graft Function	12	13	0
 D062025	Organophosphate Poisoning	3	13	0
 D003699	Hepatitis D	7	12	0
 D006084	Graft Rejection	7	12	0
-D004830	Epilepsy, Tonic-Clonic	7	11	0
+D004830	Epilepsy, Tonic-Clonic	2	11	0
 D010012	Osteogenesis	9	11	0
 D014456	Ulcer	7	11	0
 D033581	Stem Cell Transplantation	6	11	0
 D045169	Severe Acute Respiratory Syndrome	9	11	0
 D005871	Castleman Disease	2	10	0
 D000627	Aminophenols	3	9	0
-D003328	Coronary Thrombosis	7	9	0
-D010188	Exocrine Pancreatic Insufficiency	2	9	0
+D003328	Coronary Thrombosis	4	9	0
+D010188	Exocrine Pancreatic Insufficiency	1	9	0
 D012178	Retinopathy of Prematurity	4	9	0
 D012774	Shock, Traumatic	8	9	0
 D013123	Spinal Fusion	5	9	0
 D018357	Respiratory Syncytial Virus Infections	8	9	0
 D003586	Cytomegalovirus Infections	6	8	0
-D007896	Leishmaniasis	7	8	0
+D007896	Leishmaniasis	4	8	0
 D011472	Prostatitis	6	8	0
 D015430	Weight Gain	3	8	0
 D018979	Myositis, Inclusion Body	7	8	0
@@ -81,7 +81,7 @@ D012127	Respiratory Distress Syndrome, Newborn	2	6	0
 D019559	Capillary Leak Syndrome	4	6	0
 D044968	Regenerative Medicine	3	6	0
 D000077299	Healthcare-Associated Pneumonia	5	5	0
-D001201	Ascites	9	5	0
+D001201	Ascites	3	5	0
 D001861	Bone Regeneration	4	5	0
 D002817	Chordoma	4	5	0
 D007751	Labor, Induced	2	5	0
@@ -91,7 +91,7 @@ D018352	Coronavirus Infections	3	5	0
 D000077295	Urinary Bladder, Underactive	1	4	0
 D002813	Chondrosarcoma	3	4	0
 D004357	Drug Synergism	1	4	0
-D006530	Hepatorenal Syndrome	5	4	0
+D006530	Hepatorenal Syndrome	2	4	0
 D007968	Leukoencephalopathy, Progressive Multifocal	2	4	0
 D011552	Pseudomonas Infections	4	4	0
 D013919	Thromboangiitis Obliterans	4	4	0
@@ -99,7 +99,7 @@ D014901	West Nile Fever	4	4	0
 D015356	Retinal Artery Occlusion	2	4	0
 D015461	Leukemia, Prolymphocytic, T-Cell	3	4	0
 D020345	Enterocolitis, Necrotizing	2	4	0
-D060737	Reproductive Tract Infections	5	4	0
+D060737	Reproductive Tract Infections	3	4	0
 D000077733	Immunoglobulin G4-Related Disease	2	3	0
 D000079690	Postoperative Cognitive Complications	3	3	0
 D000258	Adenovirus Infections, Human	2	3	0

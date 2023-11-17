@@ -71,7 +71,7 @@ pp_new %>%
   mutate(ccat = pmax(hcat,acat,na.rm=T)) %>%
   filter(!is.na(ccat)) %>% # only include when either hcat or acat present
   mutate(oto_hcat = factor(ifelse(is.na(current_status_single_target) | highest_status_reached_single_target=='Launched', highest_status_reached_single_target, as.character(NA)), levels=c('Preclinical','Phase I','Phase II','Phase III','Launched'), ordered=T)) %>%
-  mutate(oto_acat = factor(ifelse(highest_status_reached=='Launched', 'Launched', current_status_single_target), levels=c('Preclinical','Phase I','Phase II','Phase III','Launched'), ordered=T)) %>%
+  mutate(oto_acat = factor(ifelse(highest_status_reached_single_target=='Launched', 'Launched', current_status_single_target), levels=c('Preclinical','Phase I','Phase II','Phase III','Launched'), ordered=T)) %>%
   mutate(oto_ccat = pmax(oto_hcat,oto_acat,na.rm=T)) %>%
   mutate(succ_p_1 = case_when(ccat %in% c('Phase I','Phase II','Phase III','Launched') ~ TRUE,
                               hcat %in% c('Preclinical') ~ FALSE,
