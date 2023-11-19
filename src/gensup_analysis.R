@@ -383,7 +383,7 @@ pipeline_best = function(merged_table,
     stopifnot(associations=='OTG') # only supported for OTG-only mode
     # leave null rows (with no association source) but delete all those mapped to OTG that do not have or, or have or outside range
     mtable %>%
-      filter(is.na(assoc_source) | (!is.na(mtable$abs_or) & mtable$abs_or >= min_or & mtable$abs_or <= max_or)) -> mtable
+      filter(is.na(assoc_source) | (!is.na(mtable$abs_or) & mtable$abs_or >= min_or & mtable$abs_or < max_or)) -> mtable
   }
   
   
@@ -1187,6 +1187,8 @@ beta_logit_p = summary(beta_logit)$coefficients['abs_beta','Pr(>|z|)']
 write(paste('Logit model launched ~ abs_beta: beta = ',formatC(beta_logit_beta,digits=2,format='g'),', P = ',formatC(beta_logit_p,digits=2,format='fg'),'\n',sep=''),text_stats_path,append=T)
 
 
+
+
 cat(file=stderr(), 'done.\nCalculating OR statistics...')
 
 
@@ -1217,6 +1219,27 @@ oddsratio_logit_beta = summary(oddsratio_logit)$coefficients['abs_or','Estimate'
 oddsratio_logit_p = summary(oddsratio_logit)$coefficients['abs_or','Pr(>|z|)']
 
 write(paste('Logit model launched ~ abs_or: beta = ',formatC(oddsratio_logit_beta,digits=2,format='g'),', P = ',formatC(oddsratio_logit_p,digits=2,format='fg'),'\n',sep=''),text_stats_path,append=T)
+
+or_rrs_king2019 = tibble(y=2:1, 
+                         label=c('OR 1.0 - 1.2',
+                                 'OR ≥1.2'),
+                         min_or = c(1,     1.2),
+                         max_or = c(1.2, 1e100))
+for (i in 1:nrow(or_rrs_king2019)) {
+  pb_obj = pipeline_best(merge2, phase='combined', basis='target-indication', associations='OTG', otg_subcat='GWAS Catalog', min_or=or_rrs_king2019$min_or[i], max_or=or_rrs_king2019$max_or[i], verbose=F)
+  if (i == 1) {
+    or_logit_data = subset(pb_obj,  target_status=='genetically supported target' & !is.na(indication_mesh_id) & cat %in% c('Launched',active_clinical$cat))
+  }
+  rr_obj = advancement_rr(pb_obj)
+  or_rrs_king2019[i,c('mean','l95','u95')] = rr_obj[rr_obj$phase=='I-Launch',c('rs_mean','rs_l','rs_u')]
+  or_rrs_king2019[i,c('numerator')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes')]
+  or_rrs_king2019[i,c('denominator')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_yes')]
+}
+
+or_rrs_king2019 %>%
+  select(or_range = label, min_or, max_or, rs=mean, rs_l95=l95, rs_u95 = u95, approved=numerator, supported=denominator) -> or_rrs_king2019_out
+
+
 
 cat(file=stderr(), 'done.\nCalculating MAF statistics...')
 
@@ -1629,11 +1652,18 @@ png(paste0(output_path,'/figure-s2.png'),width=6.5*resx,height=9*resx,res=resx)
 layout_matrix = matrix(c(1,2,
                          3,2,
                          3,4,
-                         3,4,
                          3,5,
-                         3,5,
-                         6,7),nrow=7,byrow=T)
-layout(layout_matrix, heights=c(1.2,.2,.4,.2,.3,.3, 1.2))
+                         3,7,
+                         6,7,
+                         6,8),nrow=7,byrow=T)
+layout(layout_matrix, heights=c(1.0,
+                                0.2,
+                                0.4,
+                                0.4,
+                                0.4,
+                                0.7,
+                                0.4))
+
 
 panel = 1
 
@@ -1689,7 +1719,7 @@ onco_rrs %>%
   select(data_subset = label, areas, area_filter, assoc_source, intogen_mechanism, rs=mean, rs_l95 = l95, rs_u95 = u95, gensup_approved=numerator, gensup_total=denominator, unsupported_approved = x_no, unsupported_total = n_no) -> onco_rr_out
 write_supp_table(onco_rr_out, "Relative success for somatic vs. germline support in oncology.")
 
-plot_forest(year_rrs[year_rrs$abbr=='a',], xlims=c(0,4), xstyle='ratio', mar=c(3,6,3,6))
+plot_forest(year_rrs[year_rrs$abbr=='a',], xlims=c(0,4), xstyle='ratio', mar=c(2,6,2,6))
 mtext(side=1, line=1.6, text='RS')
 mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
 panel = panel + 1
@@ -1699,7 +1729,7 @@ year_rrs[year_rrs$abbr=='a',] %>%
 
 write_supp_table(years_a_out, "Relative success for GWAS Catalog associations by year of discovery, without removing replications or OMIM.")
 
-plot_forest(year_rrs[year_rrs$abbr=='b',], xlims=c(0,4), xstyle='ratio', mar=c(3,6,3,6))
+plot_forest(year_rrs[year_rrs$abbr=='b',], xlims=c(0,4), xstyle='ratio', mar=c(2,6,2,6))
 mtext(side=1, line=1.6, text='RS')
 mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
 panel = panel + 1
@@ -1709,6 +1739,36 @@ year_rrs[year_rrs$abbr=='b',] %>%
 
 
 write_supp_table(years_b_out, "Relative success for GWAS Catalog associations by year, removing replications but not removing OMIM.")
+
+
+
+par(mar=c(6,4.5,6,1))
+xlims = c(2007, 2022)
+ylims = c(0, 1)
+plot(NA, NA, xlim=xlims, ylim=ylims, axes=F, ann=F, xaxs='i', yaxs='i')
+axis(side=1, at=2005:2022, las=2)
+mtext(side=1, line=3, text='First year of genetic association')
+axis(side=2, at=0:4/4, labels=percent(0:4/4), las=2)
+mtext(side=2, line=3, text='P(Launched|Supported)')
+points(yearfirst_bins$assoc_year, yearfirst_bins$p_launched, type='l', lwd=3)
+polygon(x=c(yearfirst_bins$assoc_year, rev(yearfirst_bins$assoc_year)), y=c(yearfirst_bins$l95, rev(yearfirst_bins$u95)), col='#A9A9A988', border=NA)
+mtext(side=3, at=yearfirst_bins$assoc_year, text=paste0(yearfirst_bins$n_launched,'/',yearfirst_bins$n_i_l), las=2, line=0.5)
+mtext(letters[panel], side=3, cex=2, adj = -0.15, line = 1.5)
+panel = panel + 1
+
+yearfirst_bins %>%
+  rename(first_assoc_year = assoc_year,
+         supported_launched = n_launched,
+         supported_total_phase_i_through_launch = n_i_l,
+         proportion_launched = p_launched,
+         proportion_l95 = l95,
+         proportion_u95 = u95) -> yearfirst_bins_out
+write_supp_table(yearfirst_bins_out, "Proportion of supported target-indication pairs that are launched, by year of discovery.")
+
+
+
+
+
 
 yearfirst_scatter_pbest = pipeline_best(merge2, 
                                     phase='combined', 
@@ -1778,33 +1838,18 @@ write_supp_table(yearfirst_scatter_output, "Years of association and launch for 
 
 write(paste('Genetic support for launched T-I from OTG was retrospective (min_assoc_year >= year_launch) in ',sum(yearfirst_scatter$min_assoc_year >= yearfirst_scatter$year_launch, na.rm=T),'/',sum(!is.na(yearfirst_scatter$min_assoc_year) & !is.na(yearfirst_scatter$year_launch)),' (',percent(mean(yearfirst_scatter$min_assoc_year >= yearfirst_scatter$year_launch, na.rm=T)),') instances','\n',sep=''),text_stats_path,append=T)
 
-
 mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
 panel = panel + 1
 
 
-par(mar=c(6,4,6,1))
-xlims = c(2007, 2022)
-ylims = c(0, 1)
-plot(NA, NA, xlim=xlims, ylim=ylims, axes=F, ann=F, xaxs='i', yaxs='i')
-axis(side=1, at=2005:2022, las=2)
-mtext(side=1, line=3, text='First year of genetic association')
-axis(side=2, at=0:4/4, labels=percent(0:4/4), las=2)
-mtext(side=2, line=3, text='P(Launched|Supported)')
-points(yearfirst_bins$assoc_year, yearfirst_bins$p_launched, type='l', lwd=3)
-polygon(x=c(yearfirst_bins$assoc_year, rev(yearfirst_bins$assoc_year)), y=c(yearfirst_bins$l95, rev(yearfirst_bins$u95)), col='#A9A9A988', border=NA)
-mtext(side=3, at=yearfirst_bins$assoc_year, text=paste0(yearfirst_bins$n_launched,'/',yearfirst_bins$n_i_l), las=2, line=0.5)
-mtext(letters[panel], side=3, cex=2, adj = -0.15, line = 1.5)
+plot_forest(or_rrs_king2019, xlims=c(0,4), xstyle='ratio', mar=c(3,6,3,6))
+mtext(side=1, line=1.6, text='RS')
+mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
+panel = panel + 1
+write_supp_table(or_rrs_king2019_out, 'Relative success for GWAS Catalog supported programs by odds ratio breaks used in King 2019.')
+mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
 panel = panel + 1
 
-yearfirst_bins %>%
-  rename(first_assoc_year = assoc_year,
-         supported_launched = n_launched,
-         supported_total_phase_i_through_launch = n_i_l,
-         proportion_launched = p_launched,
-         proportion_l95 = l95,
-         proportion_u95 = u95) -> yearfirst_bins_out
-write_supp_table(yearfirst_bins_out, "Proportion of supported target-indication pairs that are launched, by year of discovery.")
 
 unecessary_message = dev.off()
 
@@ -3158,6 +3203,10 @@ write(paste("Confounding between therapy area and year of discovery among OTG GW
             ', Chi Square test P = ',formatC(area_year_chisq_p, format='e', digits=1),
             '\n',sep=''),text_stats_path,append=T)
 
+area_x_year %>%
+  select(area, gene, indication_mesh_id, indication_mesh_term, assoc_year) -> area_x_year_out
+write_supp_table(area_x_year_out, 'Confounding between therapy area and year of discovery.')
+
 # genecount
 for (i in 1:nrow(areas)) {
   this_topl = areas$topl[i]
@@ -3191,6 +3240,10 @@ write(paste("Confounding between therapy area and gene count among OTG GWAS Cata
             ', Chi Square test P = ',formatC(area_gc_chisq_p, format='e', digits=1),
             '\n',sep=''),text_stats_path,append=T)
 
+area_x_gc %>%
+  select(area, gene, indication_mesh_id, indication_mesh_term, gene_count) -> area_x_gc_out
+write_supp_table(area_x_gc_out, 'Confounding between therapy area and count of associated genes.')
+
 
 # beta
 for (i in 1:nrow(areas)) {
@@ -3221,6 +3274,10 @@ write(paste("Confounding between therapy area and beta among OTG GWAS Catalog-su
             ', Chi Square test P = ',formatC(area_beta_chisq_p, format='e', digits=1),
             '\n',sep=''),text_stats_path,append=T)
 
+area_x_beta %>%
+  select(area, gene, indication_mesh_id, indication_mesh_term, abs_beta) -> area_x_beta_out
+write_supp_table(area_x_beta_out, 'Confounding between therapy area and lead SNP beta.')
+
 
 # or
 for (i in 1:nrow(areas)) {
@@ -3250,6 +3307,10 @@ write(paste("Confounding between therapy area and OR among OTG GWAS Catalog-supp
             formatC(area_or_kw_p, format='e', digits=1),
             ', Chi Square test P = ',formatC(area_or_chisq_p, format='e', digits=1),
             '\n',sep=''),text_stats_path,append=T)
+
+area_x_or %>%
+  select(area, gene, indication_mesh_id, indication_mesh_term, abs_or) -> area_x_or_out
+write_supp_table(area_x_or_out, 'Confounding between therapy area and absolute odds ratio.')
 
 
 
@@ -3284,6 +3345,10 @@ write(paste("Confounding between therapy area and MAF among OTG GWAS Catalog-sup
             '\n',sep=''),text_stats_path,append=T)
 
 
+area_x_maf %>%
+  select(area, gene, indication_mesh_id, indication_mesh_term, lead_maf) -> area_x_maf_out
+write_supp_table(area_x_maf_out, 'Confounding between therapy area and minor allele frequency.')
+
 
 
 ### assess confounding between TA and OTG source
@@ -3315,6 +3380,10 @@ write(paste("Confounding between therapy area and GWAS source: ",
             'Chi Square test P = ',formatC(area_subcat_chisq_p, format='e', digits=1),
             '\n',sep=''),text_stats_path,append=T)
 
+
+area_x_subcat %>%
+  select(area, gene, indication_mesh_id, indication_mesh_term, gwas_source) -> area_x_subcat_out
+write_supp_table(area_x_subcat_out, 'Confounding between therapy area and GWAS source (GWAS Catalog, UKBB, or FinnGen).')
 
 
 
@@ -3516,6 +3585,9 @@ rect(xleft=area_subcat_plotdata$x - barwidth,
      ybottom=rep(0,length(area_subcat_plotdata)),
      ytop=area_subcat_plotdata$cume_prop,
      col=area_subcat_plotdata$color, border=NA)
+mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
+panel = panel + 1
+
 
 unnecessary_message = dev.off()
 

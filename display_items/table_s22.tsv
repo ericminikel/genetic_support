@@ -1,27 +1,19 @@
-gene	mesh_id	mesh_term	omim_phenotype
-ABCC8	D003920	Diabetes Mellitus	Diabetes mellitus, permanent neonatal, 606176 (3), Autosomal recessive, Autosomal dominant
-ABCC8	D003920	Diabetes Mellitus	Diabetes mellitus, transient neonatal 2, 610374 (3)
-ABCC8	D003924	Diabetes Mellitus, Type 2	Diabetes mellitus, noninsulin-dependent, 125853 (3), Autosomal dominant
-AQP2	D018500	Diabetes Insipidus, Nephrogenic	Diabetes insipidus, nephrogenic, 125800 (3), Autosomal recessive, Autosomal dominant
-AVP	D020790	Diabetes Insipidus, Neurogenic	Diabetes insipidus, neurohypophyseal, 125700 (3), Autosomal dominant
-BLK	D003924	Diabetes Mellitus, Type 2	Maturity-onset diabetes of the young, type 11, 613375 (3), Autosomal dominant
-CEL	D003924	Diabetes Mellitus, Type 2	Maturity-onset diabetes of the young, type VIII, 609812 (3), Autosomal dominant
-GCK	D003920	Diabetes Mellitus	Diabetes mellitus, permanent neonatal, 606176 (3), Autosomal recessive, Autosomal dominant
-GCK	D003924	Diabetes Mellitus, Type 2	Diabetes mellitus, noninsulin-dependent, late onset, 125853 (3), Autosomal dominant
-GLIS3	D003409	Congenital Hypothyroidism	Diabetes mellitus, neonatal, with congenital hypothyroidism, 610199 (3), Autosomal recessive
-HNF1A	D003922	Diabetes Mellitus, Type 1	Diabetes mellitus, insulin-dependent, 20, 612520 (3)
-HNF1B	D003924	Diabetes Mellitus, Type 2	Diabetes mellitus, noninsulin-dependent, 125853 (3), Autosomal dominant
-HNF1B	D003924	Diabetes Mellitus, Type 2	Renal cysts and diabetes syndrome, 137920 (3), Autosomal dominant
-HNF4A	D003924	Diabetes Mellitus, Type 2	Fanconi renotubular syndrome 4, with maturity-onset diabetes of the young, 616026 (3), Autosomal dominant
-IER3IP1	D008831	Microcephaly	Microcephaly, epilepsy, and diabetes syndrome, 614231 (3), Autosomal recessive
-INS	D003922	Diabetes Mellitus, Type 1	Diabetes mellitus, insulin-dependent, 2, 125852 (3), Autosomal dominant
-INS	D003924	Diabetes Mellitus, Type 2	Maturity-onset diabetes of the young, type 10, 613370 (3), Autosomal dominant
-INSR	D003920	Diabetes Mellitus	Diabetes mellitus, insulin-resistant, with acanthosis nigricans, 610549 (3)
-KCNJ11	D003920	Diabetes Mellitus	Diabetes mellitus, transient neonatal, 3, 610582 (3), Autosomal dominant
-KCNJ11	D011236	Prediabetic State	Diabetes, permanent neonatal, with or without neurologic features, 606176 (3), Autosomal recessive, Autosomal dominant
-KLF11	D003924	Diabetes Mellitus, Type 2	Maturity-onset diabetes of the young, type VII, 610508 (3)
-MAFA	D003920	Diabetes Mellitus	Insulinomatosis and diabetes mellitus, 147630 (3), Autosomal dominant
-NEUROD1	D003924	Diabetes Mellitus, Type 2	Maturity-onset diabetes of the young 6, 606394 (3)
-PAX4	D003924	Diabetes Mellitus, Type 2	Diabetes mellitus, type 2, 125853 (3), Autosomal dominant
-PAX4	D003924	Diabetes Mellitus, Type 2	Maturity-onset diabetes of the young, type IX, 612225 (3)
-ZFP57	D003920	Diabetes Mellitus	Diabetes mellitus, transient neonatal, 1, 601410 (3), Autosomal dominant
+area	rs_filtered	rs_unfiltered	difference
+all	2.632249664641364	2.46418349266925	-0.16806617197211393
+infection	2.727272727272727	2.0304761904761905	-0.6967965367965365
+oncology	2.3885736646448836	2.3361743256304366	-0.052399339014447044
+musculoskeletal	1.2682926829268293	1.2636469221835076	-0.004645760743321681
+digestive	2.2642857142857147	2.080357142857143	-0.18392857142857189
+respiratory	3.0404797601199403	3.2364130434782608	0.1959332833583205
+neurology	2.5110906298003073	2.3924012158054713	-0.11868941399483601
+ophthalmology	1.2923976608187133	1.339080459770115	0.046682798951401594
+cardiovascular	2.473544973544974	2.267244308528712	-0.20630066501626176
+hematology	3.9387096774193546	3.9554079696394684	0.016698292220113764
+congenital	2.721073531425442	2.6985398630313995	-0.022533668394042472
+dermatology	1.3605291005291007	1.3716326530612246	0.011103552532123917
+metabolic	3.756097560975609	3.375886524822695	-0.3802110361529141
+endocrine	3.0308139534883725	3.038372093023256	0.007558139534883601
+immune	1.7586909614001438	1.6103233125354508	-0.148367648864693
+signs/symptoms	1.74518542097724	1.4592647789369102	-0.28592064204032974
+psychiatry	2.0345123626373627	2.010812581913499	-0.023699780723863473
+other	0.519047619047619	0.4346846846846847	-0.0843629343629343
