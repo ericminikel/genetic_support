@@ -1,145 +1,302 @@
-area	genelist	developed	supported	utilization
-all_areas	all genes	478	34190	0.013980696109973677
-all_areas	predicted Ab tractable	395	17811	0.022177306159115152
-all_areas	predicted SM tractable	394	12391	0.031797272213703494
-all_areas	rhodopsin-like GPCRs	24	508	0.047244094488188976
-all_areas	nuclear receptors	16	245	0.0653061224489796
-all_areas	enzymes	71	2278	0.031167690956979806
-all_areas	ion channels	21	714	0.029411764705882353
-all_areas	kinases	67	1134	0.059082892416225746
-respiratory	all genes	21	884	0.023755656108597284
-respiratory	predicted Ab tractable	20	480	0.041666666666666664
-respiratory	predicted SM tractable	11	318	0.03459119496855346
-respiratory	rhodopsin-like GPCRs	2	9	0.2222222222222222
-respiratory	nuclear receptors	0	5	0
-respiratory	enzymes	1	51	0.0196078431372549
-respiratory	ion channels	1	26	0.038461538461538464
-respiratory	kinases	0	13	0
-metabolic	all genes	92	6819	0.01349171432761402
-metabolic	predicted Ab tractable	76	3594	0.021146355036171398
-metabolic	predicted SM tractable	75	2487	0.030156815440289506
-metabolic	rhodopsin-like GPCRs	5	90	0.05555555555555555
-metabolic	nuclear receptors	6	51	0.11764705882352941
-metabolic	enzymes	10	471	0.021231422505307854
-metabolic	ion channels	1	98	0.01020408163265306
-metabolic	kinases	3	185	0.016216216216216217
-hematology	all genes	29	4794	0.006049228201919066
-hematology	predicted Ab tractable	26	2409	0.010792860107928601
-hematology	predicted SM tractable	24	1698	0.014134275618374558
-hematology	rhodopsin-like GPCRs	0	87	0
-hematology	nuclear receptors	0	30	0
-hematology	enzymes	6	276	0.021739130434782608
-hematology	ion channels	0	58	0
-hematology	kinases	1	156	0.00641025641025641
-cardiovascular	all genes	28	2681	0.010443864229765013
-cardiovascular	predicted Ab tractable	28	1436	0.019498607242339833
-cardiovascular	predicted SM tractable	25	952	0.026260504201680673
-cardiovascular	rhodopsin-like GPCRs	1	43	0.023255813953488372
-cardiovascular	nuclear receptors	0	17	0
-cardiovascular	enzymes	9	212	0.04245283018867924
-cardiovascular	ion channels	6	97	0.061855670103092786
-cardiovascular	kinases	0	90	0
-oncology	all genes	168	4304	0.03903345724907063
-oncology	predicted Ab tractable	130	2088	0.06226053639846743
-oncology	predicted SM tractable	158	1975	0.08
-oncology	rhodopsin-like GPCRs	5	37	0.13513513513513514
-oncology	nuclear receptors	4	25	0.16
-oncology	enzymes	33	419	0.07875894988066826
-oncology	ion channels	0	56	0
-oncology	kinases	52	250	0.208
-congenital	all genes	75	4488	0.016711229946524065
-congenital	predicted Ab tractable	58	2444	0.023731587561374796
-congenital	predicted SM tractable	54	1697	0.03182086034177961
-congenital	rhodopsin-like GPCRs	1	46	0.021739130434782608
-congenital	nuclear receptors	1	28	0.03571428571428571
-congenital	enzymes	13	296	0.04391891891891892
-congenital	ion channels	1	103	0.009708737864077669
-congenital	kinases	2	114	0.017543859649122806
-infection	all genes	3	234	0.01282051282051282
-infection	predicted Ab tractable	3	138	0.021739130434782608
-infection	predicted SM tractable	1	88	0.011363636363636364
-infection	rhodopsin-like GPCRs	0	4	0
-infection	nuclear receptors	0	2	0
-infection	enzymes	0	13	0
-infection	ion channels	0	7	0
-infection	kinases	0	2	0
-endocrine	all genes	27	2676	0.010089686098654708
-endocrine	predicted Ab tractable	23	1327	0.01733232856066315
-endocrine	predicted SM tractable	24	922	0.026030368763557483
-endocrine	rhodopsin-like GPCRs	5	53	0.09433962264150944
-endocrine	nuclear receptors	2	32	0.0625
-endocrine	enzymes	1	187	0.0053475935828877
-endocrine	ion channels	1	53	0.018867924528301886
-endocrine	kinases	2	80	0.025
-signs/symptoms	all genes	31	3629	0.008542298153761367
-signs/symptoms	predicted Ab tractable	27	1897	0.014232999472851872
-signs/symptoms	predicted SM tractable	27	1200	0.0225
-signs/symptoms	rhodopsin-like GPCRs	3	70	0.04285714285714286
-signs/symptoms	nuclear receptors	2	30	0.06666666666666667
-signs/symptoms	enzymes	3	206	0.014563106796116505
-signs/symptoms	ion channels	8	124	0.06451612903225806
-signs/symptoms	kinases	3	107	0.028037383177570093
-immune	all genes	50	2406	0.020781379883624274
-immune	predicted Ab tractable	46	1301	0.035357417371252885
-immune	predicted SM tractable	26	855	0.0304093567251462
-immune	rhodopsin-like GPCRs	2	40	0.05
-immune	nuclear receptors	0	7	0
-immune	enzymes	7	125	0.056
-immune	ion channels	0	26	0
-immune	kinases	2	79	0.02531645569620253
-digestive	all genes	24	2309	0.01039411000433088
-digestive	predicted Ab tractable	18	1252	0.01437699680511182
-digestive	predicted SM tractable	14	802	0.017456359102244388
-digestive	rhodopsin-like GPCRs	0	47	0
-digestive	nuclear receptors	2	21	0.09523809523809523
-digestive	enzymes	2	129	0.015503875968992248
-digestive	ion channels	1	24	0.041666666666666664
-digestive	kinases	2	71	0.028169014084507043
-neurology	all genes	60	3481	0.017236426314277506
-neurology	predicted Ab tractable	51	1911	0.026687598116169546
-neurology	predicted SM tractable	45	1212	0.03712871287128713
-neurology	rhodopsin-like GPCRs	2	53	0.03773584905660377
-neurology	nuclear receptors	0	13	0
-neurology	enzymes	8	198	0.04040404040404041
-neurology	ion channels	9	133	0.06766917293233082
-neurology	kinases	2	86	0.023255813953488372
-psychiatry	all genes	23	2382	0.009655751469353484
-psychiatry	predicted Ab tractable	21	1300	0.016153846153846154
-psychiatry	predicted SM tractable	22	786	0.027989821882951654
-psychiatry	rhodopsin-like GPCRs	5	53	0.09433962264150944
-psychiatry	nuclear receptors	0	18	0
-psychiatry	enzymes	3	131	0.022900763358778626
-psychiatry	ion channels	4	84	0.047619047619047616
-psychiatry	kinases	0	74	0
-musculoskeletal	all genes	23	1620	0.014197530864197531
-musculoskeletal	predicted Ab tractable	22	887	0.02480270574971815
-musculoskeletal	predicted SM tractable	17	539	0.03153988868274583
-musculoskeletal	rhodopsin-like GPCRs	1	15	0.06666666666666667
-musculoskeletal	nuclear receptors	1	6	0.16666666666666666
-musculoskeletal	enzymes	1	91	0.01098901098901099
-musculoskeletal	ion channels	1	31	0.03225806451612903
-musculoskeletal	kinases	3	54	0.05555555555555555
-dermatology	all genes	36	2217	0.016238159675236806
-dermatology	predicted Ab tractable	31	1183	0.026204564666103127
-dermatology	predicted SM tractable	23	731	0.03146374829001368
-dermatology	rhodopsin-like GPCRs	2	24	0.08333333333333333
-dermatology	nuclear receptors	0	6	0
-dermatology	enzymes	6	131	0.04580152671755725
-dermatology	ion channels	0	28	0
-dermatology	kinases	3	71	0.04225352112676056
-ophthalmology	all genes	21	2044	0.010273972602739725
-ophthalmology	predicted Ab tractable	16	1153	0.013876843018213356
-ophthalmology	predicted SM tractable	13	626	0.020766773162939296
-ophthalmology	rhodopsin-like GPCRs	1	19	0.05263157894736842
-ophthalmology	nuclear receptors	1	18	0.05555555555555555
-ophthalmology	enzymes	2	108	0.018518518518518517
-ophthalmology	ion channels	2	54	0.037037037037037035
-ophthalmology	kinases	0	61	0
-other	all genes	5	1513	0.003304692663582287
-other	predicted Ab tractable	4	761	0.005256241787122208
-other	predicted SM tractable	3	487	0.006160164271047228
-other	rhodopsin-like GPCRs	0	24	0
-other	nuclear receptors	1	11	0.09090909090909091
-other	enzymes	0	93	0
-other	ion channels	0	35	0
-other	kinases	0	41	0
+area	gene	indication_mesh_id	indication_mesh_term	abs_beta
+other	ACVR2A	D007676	Kidney Failure, Chronic	0.0148957999999999
+other	DPEP1	D058186	Acute Kidney Injury	0.0194
+other	KCNJ1	D051437	Renal Insufficiency	0.0208169
+other	NFE2L2	D007676	Kidney Failure, Chronic	0.0257
+other	NFE2L2	D051437	Renal Insufficiency	0.0257
+other	PGR	D008593	Menopause	0.08
+other	SLC9A3	D007676	Kidney Failure, Chronic	0.0175589
+ophthalmology	CD28	D012859	Sjogren's Syndrome	0.115858
+ophthalmology	CD40	D012859	Sjogren's Syndrome	0.0917533
+ophthalmology	IL2RA	D012859	Sjogren's Syndrome	0.0788456
+ophthalmology	MAPT	D013494	Supranuclear Palsy, Progressive	0.38
+ophthalmology	TGFB2	D005901	Glaucoma	0.00625
+dermatology	CD28	D001172	Arthritis, Rheumatoid	0.115858
+dermatology	CD28	D012859	Sjogren's Syndrome	0.115858
+dermatology	CD40	D001172	Arthritis, Rheumatoid	0.0917533
+dermatology	CD40	D012859	Sjogren's Syndrome	0.0917533
+dermatology	CTLA4	D001172	Arthritis, Rheumatoid	0.138126
+dermatology	IL13	D003876	Dermatitis, Atopic	0.22578353
+dermatology	IL23R	D011565	Psoriasis	0.3904
+dermatology	IL2RA	D001172	Arthritis, Rheumatoid	0.0788456
+dermatology	IL2RA	D012859	Sjogren's Syndrome	0.0788456
+dermatology	IL6R	D001172	Arthritis, Rheumatoid	0.0792409
+dermatology	STAT3	D011565	Psoriasis	0.1024
+musculoskeletal	CD28	D001172	Arthritis, Rheumatoid	0.115858
+musculoskeletal	CD28	D012859	Sjogren's Syndrome	0.115858
+musculoskeletal	CD40	D001172	Arthritis, Rheumatoid	0.0917533
+musculoskeletal	CD40	D012859	Sjogren's Syndrome	0.0917533
+musculoskeletal	CTLA4	D001172	Arthritis, Rheumatoid	0.138126
+musculoskeletal	ESR1	D010024	Osteoporosis	0.07
+musculoskeletal	IL2RA	D001172	Arthritis, Rheumatoid	0.0788456
+musculoskeletal	IL2RA	D012859	Sjogren's Syndrome	0.0788456
+musculoskeletal	IL6R	D001172	Arthritis, Rheumatoid	0.0792409
+musculoskeletal	SLC22A12	D006073	Gout	0.07
+musculoskeletal	SOST	D001851	Bone Diseases, Metabolic	0.08
+musculoskeletal	SOST	D010024	Osteoporosis	0.08
+psychiatry	ALDH2	D000437	Alcoholism	0.2797
+psychiatry	ALDH2	D019973	Alcohol-Related Disorders	0.2797
+psychiatry	APOE	D000544	Alzheimer Disease	0.101
+psychiatry	CACNA2D1	D001008	Anxiety Disorders	0.013417954095938
+psychiatry	CD33	D000544	Alzheimer Disease	5.4802556
+psychiatry	CYP2A6	D014029	Tobacco Use Disorder	0.031
+psychiatry	DRD2	D001714	Bipolar Disorder	0.07235493
+psychiatry	DRD2	D012559	Schizophrenia	0.07893311
+psychiatry	GRIA1	D012559	Schizophrenia	0.059579235
+psychiatry	GRIN2B	D000544	Alzheimer Disease	1.02
+psychiatry	GRM5	D001008	Anxiety Disorders	0.014510679934776
+psychiatry	GRM5	D003865	Depressive Disorder, Major	0.028490389
+psychiatry	GRM5	D009771	Obsessive-Compulsive Disorder	0.014510679934776
+psychiatry	GRN	D057180	Frontotemporal Dementia	0.0665
+psychiatry	HCRTR2	D007319	Sleep Initiation and Maintenance Disorders	0.846
+psychiatry	HCRTR2	D009290	Narcolepsy	0.846
+psychiatry	MAPT	D000544	Alzheimer Disease	0.38
+psychiatry	OPRM1	D009293	Opioid-Related Disorders	0.07
+neurology	APOE	D000544	Alzheimer Disease	0.101
+neurology	CD33	D000544	Alzheimer Disease	5.4802556
+neurology	GRIN2B	D000544	Alzheimer Disease	1.02
+neurology	GRN	D057180	Frontotemporal Dementia	0.0665
+neurology	HCRTR2	D007319	Sleep Initiation and Maintenance Disorders	0.846
+neurology	HCRTR2	D009290	Narcolepsy	0.846
+neurology	LRRK2	D010300	Parkinson Disease	0.1439
+neurology	MAPT	D000544	Alzheimer Disease	0.38
+neurology	MAPT	D013494	Supranuclear Palsy, Progressive	0.38
+neurology	PDE3A	D020521	Stroke	0.0604
+neurology	SCN1A	D004828	Epilepsies, Partial	5.78
+neurology	SNCA	D010300	Parkinson Disease	0.2774
+neurology	SNCA	D019578	Multiple System Atrophy	0.2774
+digestive	CASP8	D008107	Liver Diseases	0.017
+digestive	IFNG	D003424	Crohn Disease	0.113
+digestive	IL13	D057765	Eosinophilic Esophagitis	0.0863169999999999
+digestive	IL23R	D003424	Crohn Disease	0.3098
+digestive	IL23R	D015212	Inflammatory Bowel Diseases	0.3098
+digestive	IL4R	D057765	Eosinophilic Esophagitis	0.02771053
+digestive	IL5RA	D057765	Eosinophilic Esophagitis	0.03026724
+digestive	NR1H4	D008107	Liver Diseases	0.00768656
+digestive	NR3C1	D057765	Eosinophilic Esophagitis	0.0136809999999999
+immune	ADRB2	D001249	Asthma	0.0247
+immune	CD28	D001172	Arthritis, Rheumatoid	0.115858
+immune	CD28	D012859	Sjogren's Syndrome	0.115858
+immune	CD40	D001172	Arthritis, Rheumatoid	0.0917533
+immune	CD40	D012859	Sjogren's Syndrome	0.0917533
+immune	CHRM3	D001249	Asthma	0.038
+immune	CTLA4	D001172	Arthritis, Rheumatoid	0.138126
+immune	FCGRT	D016553	Purpura, Thrombocytopenic, Idiopathic	0.078719
+immune	IL13	D001249	Asthma	0.081391685
+immune	IL13	D003876	Dermatitis, Atopic	0.22578353
+immune	IL13	D057765	Eosinophilic Esophagitis	0.0863169999999999
+immune	IL2RA	D001172	Arthritis, Rheumatoid	0.0788456
+immune	IL2RA	D012859	Sjogren's Syndrome	0.0788456
+immune	IL33	D001249	Asthma	1.031
+immune	IL33	D065631	Rhinitis, Allergic	1.031
+immune	IL4R	D001249	Asthma	0.1230239
+immune	IL4R	D057765	Eosinophilic Esophagitis	0.02771053
+immune	IL4R	D065631	Rhinitis, Allergic	0.1230239
+immune	IL5RA	D057765	Eosinophilic Esophagitis	0.03026724
+immune	IL6R	D001172	Arthritis, Rheumatoid	0.0792409
+immune	INS	D003922	Diabetes Mellitus, Type 1	0.3085
+immune	NFKB1	D006967	Hypersensitivity	0.025
+immune	NR3C1	D001249	Asthma	0.0157
+immune	NR3C1	D057765	Eosinophilic Esophagitis	0.0136809999999999
+immune	NR3C1	D065631	Rhinitis, Allergic	0.0157
+immune	PTGER4	D006967	Hypersensitivity	0.0785
+immune	SYK	D016553	Purpura, Thrombocytopenic, Idiopathic	0.0150012999999999
+immune	TNFSF4	D001249	Asthma	0.849
+immune	TNFSF4	D065631	Rhinitis, Allergic	0.849
+immune	TSLP	D001249	Asthma	0.121619895
+signs/symptoms	AVPR1A	D018805	Sepsis	0.0130231
+signs/symptoms	CALCR	D009765	Obesity	0.0254
+signs/symptoms	CRP	D007249	Inflammation	0.16
+signs/symptoms	FCGRT	D016553	Purpura, Thrombocytopenic, Idiopathic	0.078719
+signs/symptoms	FGFR4	D009765	Obesity	0.0245634
+signs/symptoms	IL18	D007249	Inflammation	0.2668
+signs/symptoms	IL1RN	D007249	Inflammation	0.05
+signs/symptoms	IL6	D007249	Inflammation	0.0528
+signs/symptoms	INSR	D009765	Obesity	0.0259
+signs/symptoms	LEPR	D009765	Obesity	0.07
+signs/symptoms	MAPT	D013494	Supranuclear Palsy, Progressive	0.38
+signs/symptoms	MC4R	D009765	Obesity	0.05
+signs/symptoms	NLRP3	D007249	Inflammation	0.047
+signs/symptoms	NPY	D009765	Obesity	0.0115
+signs/symptoms	NR1H4	D007249	Inflammation	0.0431909
+signs/symptoms	NR3C1	D009765	Obesity	0.0241466
+signs/symptoms	OPRM1	D009765	Obesity	0.018
+signs/symptoms	PPARA	D009765	Obesity	0.0349198
+signs/symptoms	SCN5A	D001145	Arrhythmias, Cardiac	5.11
+signs/symptoms	SCN5A	D017180	Tachycardia, Ventricular	0.6568
+signs/symptoms	SYK	D016553	Purpura, Thrombocytopenic, Idiopathic	0.0150012999999999
+signs/symptoms	TNFRSF1A	D018805	Sepsis	0.0198902
+signs/symptoms	TSLP	D009298	Nasal Polyps	0.2789
+endocrine	CALCR	D003920	Diabetes Mellitus	0.0119235
+endocrine	CALCR	D003924	Diabetes Mellitus, Type 2	0.022
+endocrine	ESR1	D004700	Endocrine System Diseases	0.0187752
+endocrine	FGFR4	D003924	Diabetes Mellitus, Type 2	0.0549
+endocrine	GCK	D003920	Diabetes Mellitus	0.208
+endocrine	GIPR	D003924	Diabetes Mellitus, Type 2	0.076
+endocrine	GLP1R	D003920	Diabetes Mellitus	0.0257273999999999
+endocrine	GLP1R	D003924	Diabetes Mellitus, Type 2	0.0316
+endocrine	INS	D003922	Diabetes Mellitus, Type 1	0.3085
+endocrine	INSR	D003924	Diabetes Mellitus, Type 2	0.0445
+endocrine	KCNJ11	D003924	Diabetes Mellitus, Type 2	0.068
+endocrine	MC4R	D003920	Diabetes Mellitus	0.0452
+endocrine	METAP2	D003924	Diabetes Mellitus, Type 2	0.0601
+endocrine	PPARG	D003924	Diabetes Mellitus, Type 2	0.1028
+endocrine	TSHR	D006980	Hyperthyroidism	0.2483
+infection	AVPR1A	D018805	Sepsis	0.0130231
+infection	IL33	D012852	Sinusitis	0.1375
+infection	TNFRSF1A	D018805	Sepsis	0.0198902
+infection	TSLP	D012852	Sinusitis	0.0827
+congenital	ALPL	D007014	Hypophosphatasia	0.02
+congenital	APOA1	D006938	Hyperlipoproteinemia Type II	0.0849428
+congenital	APOA1	D052456	Hypoalphalipoproteinemias	0.0849428
+congenital	APOB	D006938	Hyperlipoproteinemia Type II	10.5
+congenital	CETP	D006938	Hyperlipoproteinemia Type II	0.0479
+congenital	F11	D005173	Factor XI Deficiency	0.0735
+congenital	IL13	D003876	Dermatitis, Atopic	0.22578353
+congenital	LCAT	D007863	Lecithin Cholesterol Acyltransferase Deficiency	0.0792
+congenital	PCSK9	D006938	Hyperlipoproteinemia Type II	3.04
+congenital	SLC22A12	D006073	Gout	0.07
+congenital	SLC40A1	D006432	Hemochromatosis	0.089
+congenital	THRB	D006938	Hyperlipoproteinemia Type II	0.018
+congenital	VWF	D006467	Hemophilia A	0.0271
+congenital	VWF	D014842	von Willebrand Diseases	0.0271
+oncology	CYP19A1	D001943	Breast Neoplasms	1.39
+oncology	GNRH1	D007889	Leiomyoma	0.052
+oncology	KLK3	D011471	Prostatic Neoplasms	39.1
+oncology	MC1R	D018307	Neoplasms, Squamous Cell	0.38
+oncology	MSLN	D009369	Neoplasms	0.15
+oncology	MYC	D008223	Lymphoma	0.1546
+cardiovascular	ACE	D006973	Hypertension	0.213
+cardiovascular	ADRB1	D006973	Hypertension	0.338
+cardiovascular	AGT	D006973	Hypertension	0.32885453
+cardiovascular	CETP	D050197	Atherosclerosis	0.0405
+cardiovascular	CYP11B2	D006973	Hypertension	0.0177372999999999
+cardiovascular	GP6	D013927	Thrombosis	0.199
+cardiovascular	LPA	D050197	Atherosclerosis	0.2761
+cardiovascular	MME	D006973	Hypertension	0.403
+cardiovascular	NPR1	D006973	Hypertension	0.06447421
+cardiovascular	PCSK9	D050197	Atherosclerosis	0.052
+cardiovascular	PDE3A	D020521	Stroke	0.0604
+cardiovascular	PDE5A	D006973	Hypertension	0.215
+cardiovascular	SCN5A	D001145	Arrhythmias, Cardiac	5.11
+cardiovascular	SCN5A	D017180	Tachycardia, Ventricular	0.6568
+hematology	ACVRL1	D000740	Anemia	0.0239139999999999
+hematology	BCL2	D000740	Anemia	0.09760817
+hematology	BMP6	D000740	Anemia	0.020634
+hematology	CSF3	D009503	Neutropenia	0.1324835
+hematology	CSF3R	D007970	Leukopenia	0.04220662
+hematology	CSF3R	D009503	Neutropenia	0.04766949
+hematology	DYRK3	D000740	Anemia	0.01562
+hematology	EGLN2	D000740	Anemia	0.08824054
+hematology	EPOR	D000740	Anemia	0.0619314
+hematology	F10	D001778	Blood Coagulation Disorders	0.534
+hematology	F11	D001778	Blood Coagulation Disorders	0.483
+hematology	F11	D005173	Factor XI Deficiency	0.0735
+hematology	FCGRT	D013921	Thrombocytopenia	0.078719
+hematology	FCGRT	D016553	Purpura, Thrombocytopenic, Idiopathic	0.078719
+hematology	IL13	D057765	Eosinophilic Esophagitis	0.0863169999999999
+hematology	IL4R	D057765	Eosinophilic Esophagitis	0.02771053
+hematology	IL5RA	D017681	Hypereosinophilic Syndrome	0.03026724
+hematology	IL5RA	D057765	Eosinophilic Esophagitis	0.03026724
+hematology	JAK2	D013922	Thrombocytosis	0.04031984
+hematology	MPL	D013921	Thrombocytopenia	0.2101
+hematology	NR3C1	D057765	Eosinophilic Esophagitis	0.0136809999999999
+hematology	SLC40A1	D000740	Anemia	0.0209683999999999
+hematology	SYK	D016553	Purpura, Thrombocytopenic, Idiopathic	0.0150012999999999
+hematology	THPO	D013921	Thrombocytopenia	0.3019065
+hematology	THPO	D013922	Thrombocytosis	0.3019065
+hematology	VWF	D006467	Hemophilia A	0.0271
+hematology	VWF	D014842	von Willebrand Diseases	0.0271
+metabolic	ABCA1	D006949	Hyperlipidemias	0.0476
+metabolic	ALPL	D007014	Hypophosphatasia	0.02
+metabolic	APOA1	D006937	Hypercholesterolemia	0.0849428
+metabolic	APOA1	D006938	Hyperlipoproteinemia Type II	0.0849428
+metabolic	APOA1	D006949	Hyperlipidemias	0.0849428
+metabolic	APOA1	D052456	Hypoalphalipoproteinemias	0.0849428
+metabolic	APOB	D006937	Hypercholesterolemia	0.12
+metabolic	APOB	D006938	Hyperlipoproteinemia Type II	10.5
+metabolic	APOB	D015228	Hypertriglyceridemia	0.08
+metabolic	APOC3	D006937	Hypercholesterolemia	0.0334341
+metabolic	APOC3	D006949	Hyperlipidemias	0.0334341
+metabolic	APOC3	D015228	Hypertriglyceridemia	0.199194
+metabolic	APOC3	D050171	Dyslipidemias	0.0334341
+metabolic	CALCR	D003920	Diabetes Mellitus	0.0119235
+metabolic	CALCR	D003924	Diabetes Mellitus, Type 2	0.022
+metabolic	CALCR	D009765	Obesity	0.0254
+metabolic	CASR	D006934	Hypercalcemia	0
+metabolic	CASR	D006996	Hypocalcemia	0
+metabolic	CETP	D006937	Hypercholesterolemia	0.0479
+metabolic	CETP	D006938	Hyperlipoproteinemia Type II	0.0479
+metabolic	CETP	D006949	Hyperlipidemias	0.0479
+metabolic	DGAT2	D006949	Hyperlipidemias	0.0243
+metabolic	ESR1	D010024	Osteoporosis	0.07
+metabolic	FDFT1	D006949	Hyperlipidemias	0.0160844999999999
+metabolic	FGF21	D015228	Hypertriglyceridemia	0.0248079
+metabolic	FGFR4	D003924	Diabetes Mellitus, Type 2	0.0549
+metabolic	FGFR4	D009765	Obesity	0.0245634
+metabolic	GCK	D003920	Diabetes Mellitus	0.208
+metabolic	GIPR	D003924	Diabetes Mellitus, Type 2	0.076
+metabolic	GLP1R	D003920	Diabetes Mellitus	0.0257273999999999
+metabolic	GLP1R	D003924	Diabetes Mellitus, Type 2	0.0316
+metabolic	GRN	D057180	Frontotemporal Dementia	0.0665
+metabolic	HMGCR	D006937	Hypercholesterolemia	0.0744
+metabolic	HMGCR	D006949	Hyperlipidemias	0.0744
+metabolic	IGF1	D024821	Metabolic Syndrome	0.013
+metabolic	INS	D003922	Diabetes Mellitus, Type 1	0.3085
+metabolic	INSR	D003924	Diabetes Mellitus, Type 2	0.0445
+metabolic	INSR	D009765	Obesity	0.0259
+metabolic	KCNJ11	D003924	Diabetes Mellitus, Type 2	0.068
+metabolic	LCAT	D007863	Lecithin Cholesterol Acyltransferase Deficiency	0.0792
+metabolic	LEPR	D009765	Obesity	0.07
+metabolic	LPA	D006949	Hyperlipidemias	0.0457
+metabolic	MC4R	D003920	Diabetes Mellitus	0.0452
+metabolic	MC4R	D009765	Obesity	0.05
+metabolic	METAP2	D003924	Diabetes Mellitus, Type 2	0.0601
+metabolic	MTTP	D006949	Hyperlipidemias	0.0280325
+metabolic	NPC1L1	D006949	Hyperlipidemias	0.0366
+metabolic	NPY	D009765	Obesity	0.0115
+metabolic	NR1H4	D006937	Hypercholesterolemia	0.030061
+metabolic	NR1H4	D006949	Hyperlipidemias	0.030061
+metabolic	NR1H4	D015228	Hypertriglyceridemia	0.030061
+metabolic	NR3C1	D009765	Obesity	0.0241466
+metabolic	OPRM1	D009765	Obesity	0.018
+metabolic	PCSK9	D006937	Hypercholesterolemia	3.04
+metabolic	PCSK9	D006938	Hyperlipoproteinemia Type II	3.04
+metabolic	PCSK9	D006949	Hyperlipidemias	3.04
+metabolic	PPARA	D006937	Hypercholesterolemia	0.0179778
+metabolic	PPARA	D006949	Hyperlipidemias	0.0179778
+metabolic	PPARA	D009765	Obesity	0.0349198
+metabolic	PPARA	D015228	Hypertriglyceridemia	0.0179778
+metabolic	PPARA	D050171	Dyslipidemias	0.0179778
+metabolic	PPARG	D003924	Diabetes Mellitus, Type 2	0.1028
+metabolic	SLC10A2	D006937	Hypercholesterolemia	0.0767204
+metabolic	SLC10A2	D006949	Hyperlipidemias	0.0767204
+metabolic	SLC22A12	D006073	Gout	0.07
+metabolic	SLC40A1	D006432	Hemochromatosis	0.089
+metabolic	SOST	D001851	Bone Diseases, Metabolic	0.08
+metabolic	SOST	D010024	Osteoporosis	0.08
+metabolic	THRB	D006937	Hypercholesterolemia	0.018
+metabolic	THRB	D006938	Hyperlipoproteinemia Type II	0.018
+respiratory	ADRB2	D001249	Asthma	0.0247
+respiratory	ADRB2	D029424	Pulmonary Disease, Chronic Obstructive	0.0247
+respiratory	CHRM3	D001249	Asthma	0.038
+respiratory	CHRM3	D029424	Pulmonary Disease, Chronic Obstructive	0.038
+respiratory	IL13	D001249	Asthma	0.081391685
+respiratory	IL13	D029424	Pulmonary Disease, Chronic Obstructive	0.081391685
+respiratory	IL33	D001249	Asthma	1.031
+respiratory	IL33	D012852	Sinusitis	0.1375
+respiratory	IL33	D029424	Pulmonary Disease, Chronic Obstructive	1.031
+respiratory	IL33	D065631	Rhinitis, Allergic	1.031
+respiratory	IL4R	D001249	Asthma	0.1230239
+respiratory	IL4R	D029424	Pulmonary Disease, Chronic Obstructive	0.1230239
+respiratory	IL4R	D065631	Rhinitis, Allergic	0.1230239
+respiratory	NR3C1	D001249	Asthma	0.0157
+respiratory	NR3C1	D029424	Pulmonary Disease, Chronic Obstructive	0.0157
+respiratory	NR3C1	D065631	Rhinitis, Allergic	0.0157
+respiratory	RARG	D029424	Pulmonary Disease, Chronic Obstructive	0.0237558
+respiratory	TNFSF4	D001249	Asthma	0.849
+respiratory	TNFSF4	D065631	Rhinitis, Allergic	0.849
+respiratory	TSLP	D001249	Asthma	0.121619895
+respiratory	TSLP	D009298	Nasal Polyps	0.2789
+respiratory	TSLP	D012852	Sinusitis	0.0827
+respiratory	TSLP	D029424	Pulmonary Disease, Chronic Obstructive	0.121619895

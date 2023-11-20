@@ -86,6 +86,9 @@ if (opt$oto) {
   pp$hcat = pp$oto_hcat
   pp$acat = pp$oto_acat
   pp$ccat = pp$oto_ccat
+  pp$hcatnum = meta_hcat$num[match(pp$hcat, meta_hcat$cat)]
+  pp$acatnum = meta_acat$num[match(pp$acat, meta_hcat$cat)]
+  pp$ccatnum = meta_ccat$num[match(pp$ccat, meta_hcat$cat)]
   merge2$hcat = pp$oto_hcat[match(merge2$ti_uid, pp$ti_uid)]
   merge2$acat = pp$oto_acat[match(merge2$ti_uid, pp$ti_uid)]
   merge2$ccat = pp$oto_ccat[match(merge2$ti_uid, pp$ti_uid)]

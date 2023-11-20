@@ -1,27 +1,19 @@
-gene	mesh_id	mesh_term	omim_phenotype
-ABCC8	D003920	Diabetes Mellitus	Diabetes mellitus, permanent neonatal, 606176 (3), Autosomal recessive, Autosomal dominant
-ABCC8	D003920	Diabetes Mellitus	Diabetes mellitus, transient neonatal 2, 610374 (3)
-ABCC8	D003924	Diabetes Mellitus, Type 2	Diabetes mellitus, noninsulin-dependent, 125853 (3), Autosomal dominant
-AQP2	D018500	Diabetes Insipidus, Nephrogenic	Diabetes insipidus, nephrogenic, 125800 (3), Autosomal recessive, Autosomal dominant
-AVP	D020790	Diabetes Insipidus, Neurogenic	Diabetes insipidus, neurohypophyseal, 125700 (3), Autosomal dominant
-BLK	D003924	Diabetes Mellitus, Type 2	Maturity-onset diabetes of the young, type 11, 613375 (3), Autosomal dominant
-CEL	D003924	Diabetes Mellitus, Type 2	Maturity-onset diabetes of the young, type VIII, 609812 (3), Autosomal dominant
-GCK	D003920	Diabetes Mellitus	Diabetes mellitus, permanent neonatal, 606176 (3), Autosomal recessive, Autosomal dominant
-GCK	D003924	Diabetes Mellitus, Type 2	Diabetes mellitus, noninsulin-dependent, late onset, 125853 (3), Autosomal dominant
-GLIS3	D003409	Congenital Hypothyroidism	Diabetes mellitus, neonatal, with congenital hypothyroidism, 610199 (3), Autosomal recessive
-HNF1A	D003922	Diabetes Mellitus, Type 1	Diabetes mellitus, insulin-dependent, 20, 612520 (3)
-HNF1B	D003924	Diabetes Mellitus, Type 2	Diabetes mellitus, noninsulin-dependent, 125853 (3), Autosomal dominant
-HNF1B	D003924	Diabetes Mellitus, Type 2	Renal cysts and diabetes syndrome, 137920 (3), Autosomal dominant
-HNF4A	D003924	Diabetes Mellitus, Type 2	Fanconi renotubular syndrome 4, with maturity-onset diabetes of the young, 616026 (3), Autosomal dominant
-IER3IP1	D008831	Microcephaly	Microcephaly, epilepsy, and diabetes syndrome, 614231 (3), Autosomal recessive
-INS	D003922	Diabetes Mellitus, Type 1	Diabetes mellitus, insulin-dependent, 2, 125852 (3), Autosomal dominant
-INS	D003924	Diabetes Mellitus, Type 2	Maturity-onset diabetes of the young, type 10, 613370 (3), Autosomal dominant
-INSR	D003920	Diabetes Mellitus	Diabetes mellitus, insulin-resistant, with acanthosis nigricans, 610549 (3)
-KCNJ11	D003920	Diabetes Mellitus	Diabetes mellitus, transient neonatal, 3, 610582 (3), Autosomal dominant
-KCNJ11	D011236	Prediabetic State	Diabetes, permanent neonatal, with or without neurologic features, 606176 (3), Autosomal recessive, Autosomal dominant
-KLF11	D003924	Diabetes Mellitus, Type 2	Maturity-onset diabetes of the young, type VII, 610508 (3)
-MAFA	D003920	Diabetes Mellitus	Insulinomatosis and diabetes mellitus, 147630 (3), Autosomal dominant
-NEUROD1	D003924	Diabetes Mellitus, Type 2	Maturity-onset diabetes of the young 6, 606394 (3)
-PAX4	D003924	Diabetes Mellitus, Type 2	Diabetes mellitus, type 2, 125853 (3), Autosomal dominant
-PAX4	D003924	Diabetes Mellitus, Type 2	Maturity-onset diabetes of the young, type IX, 612225 (3)
-ZFP57	D003920	Diabetes Mellitus	Diabetes mellitus, transient neonatal, 1, 601410 (3), Autosomal dominant
+area	rs_filtered	rs_unfiltered	difference
+all	2.5109964155714244	2.3848265023303346	-0.12616991324108984
+infection	2.4035087719298245	2.185185185185185	-0.21832358674463936
+oncology	2.947555555555556	2.857126436781609	-0.09042911877394699
+musculoskeletal	1.5206896551724138	1.5231866825208085	0.0024970273483946315
+digestive	1.85497692814766	1.7711328349626223	-0.08384409318503772
+respiratory	3.634095634095634	3.8617221873035827	0.22762655320794867
+neurology	1.8299029126213595	1.7959891598915991	-0.03391375272976038
+ophthalmology	1.0651340996168583	1.1019490254872564	0.03681492587039803
+cardiovascular	3.127016129032258	3.099264705882353	-0.027751423149905197
+hematology	3.288497800125707	3.2900856793145654	0.0015878791888583876
+congenital	2.556178515362189	2.4822724445365956	-0.07390607082559342
+dermatology	1.4943310657596371	1.511111111111111	0.016780045351473927
+metabolic	3.3903743315508024	2.9909090909090907	-0.3994652406417116
+endocrine	2.3586800573888094	2.367288378766141	0.008608321377331585
+immune	1.8898809523809523	1.7864077669902911	-0.1034731853906612
+signs/symptoms	1.9090909090909094	1.6300349597203223	-0.2790559493705871
+psychiatry	1.6482435597189695	1.6191964285714284	-0.029047131147541094
+other	0.7112068965517242	0.5964912280701754	-0.1147156684815488

@@ -1,4 +1,4 @@
-Last updated: 2023-11-17
+Last updated: 2023-11-19
 
 Unique indications: 1014
 
@@ -120,7 +120,7 @@ Confounding between therapy area and gene count among OTG GWAS Catalog-supported
 
 Confounding between therapy area and beta among OTG GWAS Catalog-supported T-I pairs: KW test P = 1.7e-06, Chi Square test P = 4.3e-03
 
-Confounding between therapy area and OR among OTG GWAS Catalog-supported T-I pairs: KW test P = 1.3e-05, Chi Square test P = 3.4e-10
+Confounding between therapy area and OR among OTG GWAS Catalog-supported T-I pairs: KW test P = 5.6e-05, Chi Square test P = 6.6e-06
 
 Confounding between therapy area and MAF among OTG GWAS Catalog-supported T-I pairs: KW test P = 1.4e-01, Chi Square test P = 5.6e-02
 

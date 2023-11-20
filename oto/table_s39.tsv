@@ -1,11 +1,728 @@
-bin_n_possible_gensup_ti	n_targets	n_developed_gensup_ti_mean	n_developed_gensup_ti_sd	n_developed_gensup_ti_l95	n_developed_gensup_ti_u95	n_developed_nosup_ti_mean	n_developed_nosup_ti_sd	n_developed_nosup_ti_l95	n_developed_nosup_ti_u95
-1	248	0.1774193548387097	0.3827957478383803	0.12977654841991465	0.22506216125750472	6.383064516129032	7.231456495088333	5.483036540721913	7.283092491536151
-2	153	0.19607843137254902	0.4300982679851652	0.1279265185673692	0.26423034417772884	6.849673202614379	8.304066253340546	5.533839028537627	8.165507376691131
-3	116	0.3620689655172414	0.5955859624610537	0.2536833795387853	0.4704545514956975	7.129310344827586	8.664299738295211	5.552568676256916	8.706052013398256
-4	91	0.32967032967032966	0.6675817894950743	0.19250641969925314	0.4668342396414062	8.131868131868131	9.09237628298051	6.263713695173312	10.000022568562951
-5	62	0.43548387096774194	0.8222513624277421	0.23080885715711225	0.6401588847783717	6.935483870967742	7.831987725299611	4.985943536844854	8.88502420509063
-6	40	0.575	1.1067971810589328	0.23199999999999998	0.9179999999999999	7.575	9.37779018308411	4.668792713024105	10.481207286975895
-7	29	0.7586206896551724	0.9876079475824802	0.39916807370233376	1.118073305608011	6.310344827586207	6.585175170009104	3.9135856204922743	8.70710403468014
-8	32	0.875	1.0395408415691625	0.5148174745869767	1.2351825254130233	7.8125	8.942242989173318	4.714170878235466	10.910829121764534
-9	37	0.8378378378378378	1.364500590641815	0.3981657078908483	1.2775099677848274	11.216216216216216	16.878874263303118	5.7774713381628935	16.654961094269538
-10+	129	1.558139534883721	2.0421609906243696	1.2057271258523414	1.9105519439151006	8.534883720930232	9.467086497132371	6.9011639631442305	10.168603478716232
+area	gene	indication_mesh_id	indication_mesh_term	gwas_source
+other	ACVR2A	D007676	Kidney Failure, Chronic	GWAS Catalog
+other	APOL1	D005923	Glomerulosclerosis, Focal Segmental	GWAS Catalog
+other	APOL1	D007676	Kidney Failure, Chronic	GWAS Catalog
+other	APOL1	D051437	Renal Insufficiency	GWAS Catalog
+other	DPEP1	D058186	Acute Kidney Injury	GWAS Catalog
+other	KCNJ1	D051437	Renal Insufficiency	GWAS Catalog
+other	NFE2L2	D007676	Kidney Failure, Chronic	GWAS Catalog
+other	NFE2L2	D051437	Renal Insufficiency	GWAS Catalog
+other	PGR	D008593	Menopause	GWAS Catalog
+other	SLC9A3	D007676	Kidney Failure, Chronic	GWAS Catalog
+ophthalmology	CD28	D012859	Sjogren's Syndrome	GWAS Catalog
+ophthalmology	CD40	D012859	Sjogren's Syndrome	GWAS Catalog
+ophthalmology	ICOSLG	D012859	Sjogren's Syndrome	GWAS Catalog
+ophthalmology	IL2RA	D012859	Sjogren's Syndrome	GWAS Catalog
+ophthalmology	LOXL2	D005901	Glaucoma	GWAS Catalog
+ophthalmology	MAPT	D013494	Supranuclear Palsy, Progressive	GWAS Catalog
+ophthalmology	MC1R	D000417	Albinism	GWAS Catalog
+ophthalmology	TGFB2	D005901	Glaucoma	GWAS Catalog
+ophthalmology	VEGFA	D008269	Macular Edema	GWAS Catalog
+ophthalmology	VEGFA	D009216	Myopia	GWAS Catalog
+ophthalmology	MC1R	D000417	Albinism	Neale UKBB
+ophthalmology	VEGFA	D009216	Myopia	Neale UKBB
+ophthalmology	C3	D057135	Wet Macular Degeneration	FinnGen
+ophthalmology	CFH	D057135	Wet Macular Degeneration	FinnGen
+dermatology	C3	D008181	Lupus Nephritis	GWAS Catalog
+dermatology	CBS	D006712	Homocystinuria	GWAS Catalog
+dermatology	CD200R1	D003876	Dermatitis, Atopic	GWAS Catalog
+dermatology	CD28	D001172	Arthritis, Rheumatoid	GWAS Catalog
+dermatology	CD28	D011565	Psoriasis	GWAS Catalog
+dermatology	CD28	D012859	Sjogren's Syndrome	GWAS Catalog
+dermatology	CD40	D001172	Arthritis, Rheumatoid	GWAS Catalog
+dermatology	CD40	D008180	Lupus Erythematosus, Systemic	GWAS Catalog
+dermatology	CD40	D008181	Lupus Nephritis	GWAS Catalog
+dermatology	CD40	D012859	Sjogren's Syndrome	GWAS Catalog
+dermatology	CTLA4	D001172	Arthritis, Rheumatoid	GWAS Catalog
+dermatology	ESR1	D006177	Gynecomastia	GWAS Catalog
+dermatology	GATA3	D003876	Dermatitis, Atopic	GWAS Catalog
+dermatology	HLA-DRB1	D001172	Arthritis, Rheumatoid	GWAS Catalog
+dermatology	ICOSLG	D012859	Sjogren's Syndrome	GWAS Catalog
+dermatology	IFNG	D011565	Psoriasis	GWAS Catalog
+dermatology	IL13	D003876	Dermatitis, Atopic	GWAS Catalog
+dermatology	IL1B	D000152	Acne Vulgaris	GWAS Catalog
+dermatology	IL2	D011565	Psoriasis	GWAS Catalog
+dermatology	IL23R	D011565	Psoriasis	GWAS Catalog
+dermatology	IL2RA	D001172	Arthritis, Rheumatoid	GWAS Catalog
+dermatology	IL2RA	D012859	Sjogren's Syndrome	GWAS Catalog
+dermatology	IL33	D003876	Dermatitis, Atopic	GWAS Catalog
+dermatology	IL4R	D003876	Dermatitis, Atopic	GWAS Catalog
+dermatology	IL6R	D001172	Arthritis, Rheumatoid	GWAS Catalog
+dermatology	INPP5D	D003876	Dermatitis, Atopic	GWAS Catalog
+dermatology	JAK2	D011565	Psoriasis	GWAS Catalog
+dermatology	MAPK14	D017719	Diabetic Foot	GWAS Catalog
+dermatology	MC1R	D000417	Albinism	GWAS Catalog
+dermatology	MC1R	D010787	Photosensitivity Disorders	GWAS Catalog
+dermatology	NFKB1	D003876	Dermatitis, Atopic	GWAS Catalog
+dermatology	NFKB1	D008181	Lupus Nephritis	GWAS Catalog
+dermatology	PRKCB	D001172	Arthritis, Rheumatoid	GWAS Catalog
+dermatology	PRKCB	D008180	Lupus Erythematosus, Systemic	GWAS Catalog
+dermatology	SOAT1	D000152	Acne Vulgaris	GWAS Catalog
+dermatology	SOAT1	D012628	Dermatitis, Seborrheic	GWAS Catalog
+dermatology	STAT3	D011565	Psoriasis	GWAS Catalog
+dermatology	TNFRSF1A	D015535	Arthritis, Psoriatic	GWAS Catalog
+dermatology	TNFSF4	D003876	Dermatitis, Atopic	GWAS Catalog
+dermatology	TSLP	D003876	Dermatitis, Atopic	GWAS Catalog
+dermatology	TYK2	D011565	Psoriasis	GWAS Catalog
+dermatology	TYK2	D015535	Arthritis, Psoriatic	GWAS Catalog
+dermatology	IL13	D003876	Dermatitis, Atopic	Neale UKBB
+dermatology	MC1R	D000417	Albinism	Neale UKBB
+dermatology	MC1R	D010787	Photosensitivity Disorders	Neale UKBB
+dermatology	CTLA4	D001172	Arthritis, Rheumatoid	FinnGen
+dermatology	IL13	D003876	Dermatitis, Atopic	FinnGen
+musculoskeletal	CD28	D001172	Arthritis, Rheumatoid	GWAS Catalog
+musculoskeletal	CD28	D012859	Sjogren's Syndrome	GWAS Catalog
+musculoskeletal	CD40	D001172	Arthritis, Rheumatoid	GWAS Catalog
+musculoskeletal	CD40	D012859	Sjogren's Syndrome	GWAS Catalog
+musculoskeletal	CTLA4	D001172	Arthritis, Rheumatoid	GWAS Catalog
+musculoskeletal	ESR1	D010024	Osteoporosis	GWAS Catalog
+musculoskeletal	HLA-DRB1	D001172	Arthritis, Rheumatoid	GWAS Catalog
+musculoskeletal	ICOSLG	D012859	Sjogren's Syndrome	GWAS Catalog
+musculoskeletal	IL2RA	D001172	Arthritis, Rheumatoid	GWAS Catalog
+musculoskeletal	IL2RA	D012859	Sjogren's Syndrome	GWAS Catalog
+musculoskeletal	IL6R	D001172	Arthritis, Rheumatoid	GWAS Catalog
+musculoskeletal	IL6R	D013167	Spondylitis, Ankylosing	GWAS Catalog
+musculoskeletal	PRKCB	D001172	Arthritis, Rheumatoid	GWAS Catalog
+musculoskeletal	SLC22A12	D006073	Gout	GWAS Catalog
+musculoskeletal	SOST	D001851	Bone Diseases, Metabolic	GWAS Catalog
+musculoskeletal	SOST	D010024	Osteoporosis	GWAS Catalog
+musculoskeletal	TGFB1	D010003	Osteoarthritis	GWAS Catalog
+musculoskeletal	TNFRSF1A	D013167	Spondylitis, Ankylosing	GWAS Catalog
+musculoskeletal	TNFRSF1A	D015535	Arthritis, Psoriatic	GWAS Catalog
+musculoskeletal	TYK2	D015535	Arthritis, Psoriatic	GWAS Catalog
+musculoskeletal	SLC22A12	D006073	Gout	Neale UKBB
+musculoskeletal	CTLA4	D001172	Arthritis, Rheumatoid	FinnGen
+psychiatry	ALDH2	D000437	Alcoholism	GWAS Catalog
+psychiatry	ALDH2	D019973	Alcohol-Related Disorders	GWAS Catalog
+psychiatry	APOE	D000544	Alzheimer Disease	GWAS Catalog
+psychiatry	APP	D000544	Alzheimer Disease	GWAS Catalog
+psychiatry	APP	D003704	Dementia	GWAS Catalog
+psychiatry	C9orf72	D057180	Frontotemporal Dementia	GWAS Catalog
+psychiatry	CACNA2D1	D001008	Anxiety Disorders	GWAS Catalog
+psychiatry	CD33	D000544	Alzheimer Disease	GWAS Catalog
+psychiatry	CYP2A6	D014029	Tobacco Use Disorder	GWAS Catalog
+psychiatry	DRD2	D001714	Bipolar Disorder	GWAS Catalog
+psychiatry	DRD2	D012559	Schizophrenia	GWAS Catalog
+psychiatry	GRIA1	D012559	Schizophrenia	GWAS Catalog
+psychiatry	GRIA1	D012893	Sleep Wake Disorders	GWAS Catalog
+psychiatry	GRIN2B	D000544	Alzheimer Disease	GWAS Catalog
+psychiatry	GRM5	D001008	Anxiety Disorders	GWAS Catalog
+psychiatry	GRM5	D003865	Depressive Disorder, Major	GWAS Catalog
+psychiatry	GRM5	D009771	Obsessive-Compulsive Disorder	GWAS Catalog
+psychiatry	GRN	D057180	Frontotemporal Dementia	GWAS Catalog
+psychiatry	HCRTR2	D007319	Sleep Initiation and Maintenance Disorders	GWAS Catalog
+psychiatry	HCRTR2	D009290	Narcolepsy	GWAS Catalog
+psychiatry	MAPT	D000544	Alzheimer Disease	GWAS Catalog
+psychiatry	OPRM1	D009293	Opioid-Related Disorders	GWAS Catalog
+psychiatry	PDE10A	D001714	Bipolar Disorder	GWAS Catalog
+psychiatry	PTPRS	D000544	Alzheimer Disease	GWAS Catalog
+psychiatry	SCN2A	D001714	Bipolar Disorder	GWAS Catalog
+psychiatry	APOE	D000544	Alzheimer Disease	Neale UKBB
+psychiatry	CYP2A6	D014029	Tobacco Use Disorder	Neale UKBB
+psychiatry	DRD2	D012148	Restless Legs Syndrome	Neale UKBB
+psychiatry	GABRA1	D001008	Anxiety Disorders	Neale UKBB
+psychiatry	GRM5	D001008	Anxiety Disorders	Neale UKBB
+psychiatry	GRM5	D009771	Obsessive-Compulsive Disorder	Neale UKBB
+psychiatry	HCRTR2	D007319	Sleep Initiation and Maintenance Disorders	Neale UKBB
+psychiatry	HCRTR2	D009290	Narcolepsy	Neale UKBB
+psychiatry	HCRTR2	D020177	Idiopathic Hypersomnia	Neale UKBB
+psychiatry	APOE	D000544	Alzheimer Disease	FinnGen
+neurology	APOE	D000544	Alzheimer Disease	GWAS Catalog
+neurology	APP	D000544	Alzheimer Disease	GWAS Catalog
+neurology	APP	D003704	Dementia	GWAS Catalog
+neurology	C9orf72	D000690	Amyotrophic Lateral Sclerosis	GWAS Catalog
+neurology	C9orf72	D057180	Frontotemporal Dementia	GWAS Catalog
+neurology	CBS	D006712	Homocystinuria	GWAS Catalog
+neurology	CD33	D000544	Alzheimer Disease	GWAS Catalog
+neurology	CD6	D009103	Multiple Sclerosis	GWAS Catalog
+neurology	GRIA1	D012893	Sleep Wake Disorders	GWAS Catalog
+neurology	GRIN2B	D000544	Alzheimer Disease	GWAS Catalog
+neurology	GRN	D057180	Frontotemporal Dementia	GWAS Catalog
+neurology	HCRTR2	D007319	Sleep Initiation and Maintenance Disorders	GWAS Catalog
+neurology	HCRTR2	D009290	Narcolepsy	GWAS Catalog
+neurology	IL7R	D009103	Multiple Sclerosis	GWAS Catalog
+neurology	LRRK2	D010300	Parkinson Disease	GWAS Catalog
+neurology	MAPK14	D003929	Diabetic Neuropathies	GWAS Catalog
+neurology	MAPT	D000544	Alzheimer Disease	GWAS Catalog
+neurology	MAPT	D013494	Supranuclear Palsy, Progressive	GWAS Catalog
+neurology	NOS3	D020521	Stroke	GWAS Catalog
+neurology	PDE3A	D020521	Stroke	GWAS Catalog
+neurology	PTPRS	D000544	Alzheimer Disease	GWAS Catalog
+neurology	SCN1A	D004828	Epilepsies, Partial	GWAS Catalog
+neurology	SCN1A	D004829	Epilepsy, Generalized	GWAS Catalog
+neurology	SNCA	D010300	Parkinson Disease	GWAS Catalog
+neurology	SNCA	D019578	Multiple System Atrophy	GWAS Catalog
+neurology	TNFRSF1A	D009103	Multiple Sclerosis	GWAS Catalog
+neurology	TRPM8	D008881	Migraine Disorders	GWAS Catalog
+neurology	APOE	D000544	Alzheimer Disease	Neale UKBB
+neurology	DRD2	D012148	Restless Legs Syndrome	Neale UKBB
+neurology	HCRTR2	D007319	Sleep Initiation and Maintenance Disorders	Neale UKBB
+neurology	HCRTR2	D009290	Narcolepsy	Neale UKBB
+neurology	HCRTR2	D020177	Idiopathic Hypersomnia	Neale UKBB
+neurology	LRRK2	D010300	Parkinson Disease	Neale UKBB
+neurology	NOS3	D020521	Stroke	Neale UKBB
+neurology	PDE7A	D009437	Neuralgia	Neale UKBB
+neurology	SNCA	D010300	Parkinson Disease	Neale UKBB
+neurology	SNCA	D019578	Multiple System Atrophy	Neale UKBB
+neurology	TRPM8	D008881	Migraine Disorders	Neale UKBB
+neurology	APOE	D000544	Alzheimer Disease	FinnGen
+neurology	PDE3A	D020521	Stroke	FinnGen
+digestive	CASP8	D008107	Liver Diseases	GWAS Catalog
+digestive	CCL20	D003093	Colitis, Ulcerative	GWAS Catalog
+digestive	CD40	D003093	Colitis, Ulcerative	GWAS Catalog
+digestive	CD40	D003424	Crohn Disease	GWAS Catalog
+digestive	HSD17B13	D065626	Non-alcoholic Fatty Liver Disease	GWAS Catalog
+digestive	IFNG	D003424	Crohn Disease	GWAS Catalog
+digestive	IL13	D057765	Eosinophilic Esophagitis	GWAS Catalog
+digestive	IL23R	D003424	Crohn Disease	GWAS Catalog
+digestive	IL23R	D015212	Inflammatory Bowel Diseases	GWAS Catalog
+digestive	IL2RA	D003093	Colitis, Ulcerative	GWAS Catalog
+digestive	IL4R	D057765	Eosinophilic Esophagitis	GWAS Catalog
+digestive	IL5RA	D057765	Eosinophilic Esophagitis	GWAS Catalog
+digestive	ITGA4	D003093	Colitis, Ulcerative	GWAS Catalog
+digestive	ITGA4	D003424	Crohn Disease	GWAS Catalog
+digestive	MAP3K8	D003093	Colitis, Ulcerative	GWAS Catalog
+digestive	MAP3K8	D015212	Inflammatory Bowel Diseases	GWAS Catalog
+digestive	MMP9	D003093	Colitis, Ulcerative	GWAS Catalog
+digestive	MMP9	D003424	Crohn Disease	GWAS Catalog
+digestive	NFKB1	D003093	Colitis, Ulcerative	GWAS Catalog
+digestive	NFKB1	D003424	Crohn Disease	GWAS Catalog
+digestive	NR1H4	D008107	Liver Diseases	GWAS Catalog
+digestive	NR3C1	D057765	Eosinophilic Esophagitis	GWAS Catalog
+digestive	PNPLA3	D065626	Non-alcoholic Fatty Liver Disease	GWAS Catalog
+digestive	PTGER4	D003093	Colitis, Ulcerative	GWAS Catalog
+digestive	SMAD7	D003093	Colitis, Ulcerative	GWAS Catalog
+digestive	SMAD7	D003424	Crohn Disease	GWAS Catalog
+digestive	STAT3	D003093	Colitis, Ulcerative	GWAS Catalog
+digestive	TNFRSF1A	D008103	Liver Cirrhosis	GWAS Catalog
+digestive	TNFSF15	D003093	Colitis, Ulcerative	GWAS Catalog
+digestive	TNFSF15	D003424	Crohn Disease	GWAS Catalog
+digestive	IL4R	D057765	Eosinophilic Esophagitis	Neale UKBB
+digestive	IL5RA	D057765	Eosinophilic Esophagitis	Neale UKBB
+digestive	NR3C1	D057765	Eosinophilic Esophagitis	Neale UKBB
+digestive	IL21R	D003424	Crohn Disease	FinnGen
+digestive	IL23R	D003424	Crohn Disease	FinnGen
+digestive	IL23R	D015212	Inflammatory Bowel Diseases	FinnGen
+digestive	IL7R	D003093	Colitis, Ulcerative	FinnGen
+digestive	IL7R	D003424	Crohn Disease	FinnGen
+digestive	PNPLA3	D065626	Non-alcoholic Fatty Liver Disease	FinnGen
+digestive	PTGER4	D003093	Colitis, Ulcerative	FinnGen
+digestive	SERPINA1	D019896	alpha 1-Antitrypsin Deficiency	FinnGen
+digestive	TNFSF15	D003093	Colitis, Ulcerative	FinnGen
+digestive	TNFSF15	D003424	Crohn Disease	FinnGen
+digestive	TYK2	D003093	Colitis, Ulcerative	FinnGen
+digestive	TYK2	D003424	Crohn Disease	FinnGen
+digestive	TYK2	D015212	Inflammatory Bowel Diseases	FinnGen
+immune	ADORA1	D001249	Asthma	GWAS Catalog
+immune	ADRB2	D001249	Asthma	GWAS Catalog
+immune	C3	D008181	Lupus Nephritis	GWAS Catalog
+immune	CD200R1	D003876	Dermatitis, Atopic	GWAS Catalog
+immune	CD28	D001172	Arthritis, Rheumatoid	GWAS Catalog
+immune	CD28	D001327	Autoimmune Diseases	GWAS Catalog
+immune	CD28	D012859	Sjogren's Syndrome	GWAS Catalog
+immune	CD40	D001172	Arthritis, Rheumatoid	GWAS Catalog
+immune	CD40	D008180	Lupus Erythematosus, Systemic	GWAS Catalog
+immune	CD40	D008181	Lupus Nephritis	GWAS Catalog
+immune	CD40	D012859	Sjogren's Syndrome	GWAS Catalog
+immune	CD6	D009103	Multiple Sclerosis	GWAS Catalog
+immune	CHRM3	D001249	Asthma	GWAS Catalog
+immune	CTLA4	D001172	Arthritis, Rheumatoid	GWAS Catalog
+immune	FCGRT	D016553	Purpura, Thrombocytopenic, Idiopathic	GWAS Catalog
+immune	GATA3	D001249	Asthma	GWAS Catalog
+immune	GATA3	D003876	Dermatitis, Atopic	GWAS Catalog
+immune	HLA-DRB1	D001172	Arthritis, Rheumatoid	GWAS Catalog
+immune	ICOSLG	D012859	Sjogren's Syndrome	GWAS Catalog
+immune	IL12B	D001327	Autoimmune Diseases	GWAS Catalog
+immune	IL13	D001249	Asthma	GWAS Catalog
+immune	IL13	D003876	Dermatitis, Atopic	GWAS Catalog
+immune	IL13	D057765	Eosinophilic Esophagitis	GWAS Catalog
+immune	IL2RA	D001172	Arthritis, Rheumatoid	GWAS Catalog
+immune	IL2RA	D001327	Autoimmune Diseases	GWAS Catalog
+immune	IL2RA	D012859	Sjogren's Syndrome	GWAS Catalog
+immune	IL33	D001249	Asthma	GWAS Catalog
+immune	IL33	D001327	Autoimmune Diseases	GWAS Catalog
+immune	IL33	D003876	Dermatitis, Atopic	GWAS Catalog
+immune	IL33	D065631	Rhinitis, Allergic	GWAS Catalog
+immune	IL4R	D001249	Asthma	GWAS Catalog
+immune	IL4R	D003876	Dermatitis, Atopic	GWAS Catalog
+immune	IL4R	D006967	Hypersensitivity	GWAS Catalog
+immune	IL4R	D057765	Eosinophilic Esophagitis	GWAS Catalog
+immune	IL4R	D065631	Rhinitis, Allergic	GWAS Catalog
+immune	IL5RA	D057765	Eosinophilic Esophagitis	GWAS Catalog
+immune	IL6	D001249	Asthma	GWAS Catalog
+immune	IL6R	D001172	Arthritis, Rheumatoid	GWAS Catalog
+immune	IL7R	D001327	Autoimmune Diseases	GWAS Catalog
+immune	IL7R	D003922	Diabetes Mellitus, Type 1	GWAS Catalog
+immune	IL7R	D009103	Multiple Sclerosis	GWAS Catalog
+immune	INPP5D	D003876	Dermatitis, Atopic	GWAS Catalog
+immune	INS	D003922	Diabetes Mellitus, Type 1	GWAS Catalog
+immune	MMP12	D001249	Asthma	GWAS Catalog
+immune	NFKB1	D001249	Asthma	GWAS Catalog
+immune	NFKB1	D003876	Dermatitis, Atopic	GWAS Catalog
+immune	NFKB1	D006967	Hypersensitivity	GWAS Catalog
+immune	NFKB1	D008181	Lupus Nephritis	GWAS Catalog
+immune	NR3C1	D001249	Asthma	GWAS Catalog
+immune	NR3C1	D057765	Eosinophilic Esophagitis	GWAS Catalog
+immune	NR3C1	D065631	Rhinitis, Allergic	GWAS Catalog
+immune	PRKCB	D001172	Arthritis, Rheumatoid	GWAS Catalog
+immune	PRKCB	D008180	Lupus Erythematosus, Systemic	GWAS Catalog
+immune	PTGER4	D006967	Hypersensitivity	GWAS Catalog
+immune	SYK	D016553	Purpura, Thrombocytopenic, Idiopathic	GWAS Catalog
+immune	TNFRSF1A	D009103	Multiple Sclerosis	GWAS Catalog
+immune	TNFSF15	D001249	Asthma	GWAS Catalog
+immune	TNFSF4	D001249	Asthma	GWAS Catalog
+immune	TNFSF4	D003876	Dermatitis, Atopic	GWAS Catalog
+immune	TNFSF4	D065631	Rhinitis, Allergic	GWAS Catalog
+immune	TSLP	D001249	Asthma	GWAS Catalog
+immune	TSLP	D003876	Dermatitis, Atopic	GWAS Catalog
+immune	TYK2	D001327	Autoimmune Diseases	GWAS Catalog
+immune	ADORA1	D001249	Asthma	Neale UKBB
+immune	GATA3	D001249	Asthma	Neale UKBB
+immune	IL13	D003876	Dermatitis, Atopic	Neale UKBB
+immune	IL33	D001249	Asthma	Neale UKBB
+immune	IL33	D006255	Rhinitis, Allergic, Seasonal	Neale UKBB
+immune	IL33	D065631	Rhinitis, Allergic	Neale UKBB
+immune	IL4R	D001249	Asthma	Neale UKBB
+immune	IL4R	D057765	Eosinophilic Esophagitis	Neale UKBB
+immune	IL4R	D065631	Rhinitis, Allergic	Neale UKBB
+immune	IL5RA	D057765	Eosinophilic Esophagitis	Neale UKBB
+immune	IL6	D001249	Asthma	Neale UKBB
+immune	NR3C1	D057765	Eosinophilic Esophagitis	Neale UKBB
+immune	TNFSF4	D001249	Asthma	Neale UKBB
+immune	TNFSF4	D065631	Rhinitis, Allergic	Neale UKBB
+immune	TSLP	D001249	Asthma	Neale UKBB
+immune	CTLA4	D001172	Arthritis, Rheumatoid	FinnGen
+immune	IL13	D003876	Dermatitis, Atopic	FinnGen
+immune	IL2RA	D001327	Autoimmune Diseases	FinnGen
+immune	IL33	D001249	Asthma	FinnGen
+immune	IL33	D065631	Rhinitis, Allergic	FinnGen
+immune	IL4R	D001249	Asthma	FinnGen
+immune	IL4R	D065631	Rhinitis, Allergic	FinnGen
+immune	IL7R	D001327	Autoimmune Diseases	FinnGen
+immune	TSLP	D001249	Asthma	FinnGen
+immune	TYK2	D001327	Autoimmune Diseases	FinnGen
+signs/symptoms	AVPR1A	D018805	Sepsis	GWAS Catalog
+signs/symptoms	CALCR	D009765	Obesity	GWAS Catalog
+signs/symptoms	CRP	D007249	Inflammation	GWAS Catalog
+signs/symptoms	FCGRT	D016553	Purpura, Thrombocytopenic, Idiopathic	GWAS Catalog
+signs/symptoms	FGFR4	D009765	Obesity	GWAS Catalog
+signs/symptoms	GLP1R	D009765	Obesity	GWAS Catalog
+signs/symptoms	GRIA1	D012893	Sleep Wake Disorders	GWAS Catalog
+signs/symptoms	IL18	D007249	Inflammation	GWAS Catalog
+signs/symptoms	IL1RN	D007249	Inflammation	GWAS Catalog
+signs/symptoms	IL6	D007249	Inflammation	GWAS Catalog
+signs/symptoms	INSR	D009765	Obesity	GWAS Catalog
+signs/symptoms	LEPR	D009765	Obesity	GWAS Catalog
+signs/symptoms	MAPT	D013494	Supranuclear Palsy, Progressive	GWAS Catalog
+signs/symptoms	MC4R	D009765	Obesity	GWAS Catalog
+signs/symptoms	NLRP3	D007249	Inflammation	GWAS Catalog
+signs/symptoms	NPY	D009765	Obesity	GWAS Catalog
+signs/symptoms	NR1H4	D007249	Inflammation	GWAS Catalog
+signs/symptoms	NR3C1	D009765	Obesity	GWAS Catalog
+signs/symptoms	OPRM1	D009765	Obesity	GWAS Catalog
+signs/symptoms	PLG	D009203	Myocardial Infarction	GWAS Catalog
+signs/symptoms	PPARA	D009765	Obesity	GWAS Catalog
+signs/symptoms	SCN5A	D001145	Arrhythmias, Cardiac	GWAS Catalog
+signs/symptoms	SCN5A	D001281	Atrial Fibrillation	GWAS Catalog
+signs/symptoms	SCN5A	D017180	Tachycardia, Ventricular	GWAS Catalog
+signs/symptoms	SYK	D016553	Purpura, Thrombocytopenic, Idiopathic	GWAS Catalog
+signs/symptoms	TNFRSF1A	D008103	Liver Cirrhosis	GWAS Catalog
+signs/symptoms	TNFRSF1A	D018805	Sepsis	GWAS Catalog
+signs/symptoms	TSLP	D009298	Nasal Polyps	GWAS Catalog
+signs/symptoms	CALCR	D009765	Obesity	Neale UKBB
+signs/symptoms	GHR	D009765	Obesity	Neale UKBB
+signs/symptoms	INSR	D009765	Obesity	Neale UKBB
+signs/symptoms	MC4R	D009765	Obesity	Neale UKBB
+signs/symptoms	NPY5R	D009765	Obesity	Neale UKBB
+signs/symptoms	NR3C1	D009765	Obesity	Neale UKBB
+signs/symptoms	OPRM1	D009765	Obesity	Neale UKBB
+signs/symptoms	PDE7A	D009437	Neuralgia	Neale UKBB
+signs/symptoms	PPARA	D009765	Obesity	Neale UKBB
+signs/symptoms	TSLP	D009298	Nasal Polyps	Neale UKBB
+signs/symptoms	MC4R	D009765	Obesity	FinnGen
+signs/symptoms	SCN5A	D001281	Atrial Fibrillation	FinnGen
+signs/symptoms	SERPINA1	D019896	alpha 1-Antitrypsin Deficiency	FinnGen
+signs/symptoms	TSLP	D009298	Nasal Polyps	FinnGen
+endocrine	CALCR	D003920	Diabetes Mellitus	GWAS Catalog
+endocrine	CALCR	D003924	Diabetes Mellitus, Type 2	GWAS Catalog
+endocrine	ESR1	D004700	Endocrine System Diseases	GWAS Catalog
+endocrine	FBP1	D003924	Diabetes Mellitus, Type 2	GWAS Catalog
+endocrine	FGFR4	D003924	Diabetes Mellitus, Type 2	GWAS Catalog
+endocrine	GCK	D003920	Diabetes Mellitus	GWAS Catalog
+endocrine	GCK	D003924	Diabetes Mellitus, Type 2	GWAS Catalog
+endocrine	GIPR	D003924	Diabetes Mellitus, Type 2	GWAS Catalog
+endocrine	GLP1R	D003920	Diabetes Mellitus	GWAS Catalog
+endocrine	GLP1R	D003924	Diabetes Mellitus, Type 2	GWAS Catalog
+endocrine	IL7R	D003922	Diabetes Mellitus, Type 1	GWAS Catalog
+endocrine	INS	D003922	Diabetes Mellitus, Type 1	GWAS Catalog
+endocrine	INSR	D003924	Diabetes Mellitus, Type 2	GWAS Catalog
+endocrine	KCNJ11	D003924	Diabetes Mellitus, Type 2	GWAS Catalog
+endocrine	MAPK14	D003929	Diabetic Neuropathies	GWAS Catalog
+endocrine	MAPK14	D017719	Diabetic Foot	GWAS Catalog
+endocrine	MC4R	D003920	Diabetes Mellitus	GWAS Catalog
+endocrine	METAP2	D003924	Diabetes Mellitus, Type 2	GWAS Catalog
+endocrine	PPARG	D003924	Diabetes Mellitus, Type 2	GWAS Catalog
+endocrine	TSHR	D006980	Hyperthyroidism	GWAS Catalog
+endocrine	VEGFA	D003924	Diabetes Mellitus, Type 2	GWAS Catalog
+endocrine	MC4R	D003920	Diabetes Mellitus	Neale UKBB
+endocrine	TSHR	D006980	Hyperthyroidism	Neale UKBB
+endocrine	INSR	D003924	Diabetes Mellitus, Type 2	FinnGen
+endocrine	KCNJ11	D003924	Diabetes Mellitus, Type 2	FinnGen
+endocrine	PPARG	D003924	Diabetes Mellitus, Type 2	FinnGen
+endocrine	TSHR	D006980	Hyperthyroidism	FinnGen
+infection	AVPR1A	D018805	Sepsis	GWAS Catalog
+infection	CHRM3	D029481	Bronchitis, Chronic	GWAS Catalog
+infection	IFNAR2	D000086382	COVID-19	GWAS Catalog
+infection	IL33	D012852	Sinusitis	GWAS Catalog
+infection	TNFRSF1A	D018805	Sepsis	GWAS Catalog
+infection	TSLP	D012852	Sinusitis	GWAS Catalog
+infection	IL33	D012852	Sinusitis	FinnGen
+congenital	ALPL	D007014	Hypophosphatasia	GWAS Catalog
+congenital	APOA1	D006938	Hyperlipoproteinemia Type II	GWAS Catalog
+congenital	APOA1	D052456	Hypoalphalipoproteinemias	GWAS Catalog
+congenital	APOB	D006938	Hyperlipoproteinemia Type II	GWAS Catalog
+congenital	BCL11A	D000755	Anemia, Sickle Cell	GWAS Catalog
+congenital	BCL11A	D013789	Thalassemia	GWAS Catalog
+congenital	CBS	D006712	Homocystinuria	GWAS Catalog
+congenital	CD200R1	D003876	Dermatitis, Atopic	GWAS Catalog
+congenital	CETP	D006938	Hyperlipoproteinemia Type II	GWAS Catalog
+congenital	F11	D005173	Factor XI Deficiency	GWAS Catalog
+congenital	F7	D005168	Factor VII Deficiency	GWAS Catalog
+congenital	F7	D006467	Hemophilia A	GWAS Catalog
+congenital	GATA3	D003876	Dermatitis, Atopic	GWAS Catalog
+congenital	IL13	D003876	Dermatitis, Atopic	GWAS Catalog
+congenital	IL33	D003876	Dermatitis, Atopic	GWAS Catalog
+congenital	IL4R	D003876	Dermatitis, Atopic	GWAS Catalog
+congenital	INPP5D	D003876	Dermatitis, Atopic	GWAS Catalog
+congenital	LCAT	D007863	Lecithin Cholesterol Acyltransferase Deficiency	GWAS Catalog
+congenital	MC1R	D000417	Albinism	GWAS Catalog
+congenital	NFKB1	D003876	Dermatitis, Atopic	GWAS Catalog
+congenital	PCSK9	D006938	Hyperlipoproteinemia Type II	GWAS Catalog
+congenital	SLC22A12	D006073	Gout	GWAS Catalog
+congenital	SLC40A1	D006432	Hemochromatosis	GWAS Catalog
+congenital	THRB	D006938	Hyperlipoproteinemia Type II	GWAS Catalog
+congenital	TNFSF4	D003876	Dermatitis, Atopic	GWAS Catalog
+congenital	TSLP	D003876	Dermatitis, Atopic	GWAS Catalog
+congenital	VWF	D006467	Hemophilia A	GWAS Catalog
+congenital	VWF	D014842	von Willebrand Diseases	GWAS Catalog
+congenital	APOB	D006938	Hyperlipoproteinemia Type II	Neale UKBB
+congenital	IL13	D003876	Dermatitis, Atopic	Neale UKBB
+congenital	MC1R	D000417	Albinism	Neale UKBB
+congenital	PCSK9	D006938	Hyperlipoproteinemia Type II	Neale UKBB
+congenital	SLC22A12	D006073	Gout	Neale UKBB
+congenital	VWF	D014842	von Willebrand Diseases	Neale UKBB
+congenital	APOB	D006938	Hyperlipoproteinemia Type II	FinnGen
+congenital	IL13	D003876	Dermatitis, Atopic	FinnGen
+congenital	PCSK9	D006938	Hyperlipoproteinemia Type II	FinnGen
+congenital	SERPINA1	D019896	alpha 1-Antitrypsin Deficiency	FinnGen
+congenital	VWF	D006467	Hemophilia A	FinnGen
+congenital	VWF	D014842	von Willebrand Diseases	FinnGen
+oncology	ALCAM	D001943	Breast Neoplasms	GWAS Catalog
+oncology	AR	D011471	Prostatic Neoplasms	GWAS Catalog
+oncology	BCL2	D008224	Lymphoma, Follicular	GWAS Catalog
+oncology	BCL2	D015451	Leukemia, Lymphocytic, Chronic, B-Cell	GWAS Catalog
+oncology	BCL2	D054198	Precursor Cell Lymphoblastic Leukemia-Lymphoma	GWAS Catalog
+oncology	CDKN1A	D015179	Colorectal Neoplasms	GWAS Catalog
+oncology	CYP19A1	D001943	Breast Neoplasms	GWAS Catalog
+oncology	EDNRB	D005770	Gastrointestinal Neoplasms	GWAS Catalog
+oncology	EGFR	D005909	Glioblastoma	GWAS Catalog
+oncology	EGFR	D008527	Medulloblastoma	GWAS Catalog
+oncology	EPAS1	D007680	Kidney Neoplasms	GWAS Catalog
+oncology	ESR1	D001943	Breast Neoplasms	GWAS Catalog
+oncology	ESR1	D009369	Neoplasms	GWAS Catalog
+oncology	FGFR2	D009369	Neoplasms	GWAS Catalog
+oncology	FLT4	D006258	Head and Neck Neoplasms	GWAS Catalog
+oncology	FSHR	D010051	Ovarian Neoplasms	GWAS Catalog
+oncology	GNRH1	D007889	Leiomyoma	GWAS Catalog
+oncology	IL13	D006689	Hodgkin Disease	GWAS Catalog
+oncology	JAK2	D011087	Polycythemia Vera	GWAS Catalog
+oncology	KLK2	D011471	Prostatic Neoplasms	GWAS Catalog
+oncology	KLK3	D011471	Prostatic Neoplasms	GWAS Catalog
+oncology	LHCGR	D011085	Polycystic Ovary Syndrome	GWAS Catalog
+oncology	MC1R	D014983	Xeroderma Pigmentosum	GWAS Catalog
+oncology	MC1R	D018307	Neoplasms, Squamous Cell	GWAS Catalog
+oncology	MSLN	D009369	Neoplasms	GWAS Catalog
+oncology	MYC	D001943	Breast Neoplasms	GWAS Catalog
+oncology	MYC	D008223	Lymphoma	GWAS Catalog
+oncology	MYC	D011471	Prostatic Neoplasms	GWAS Catalog
+oncology	NOTCH2	D001943	Breast Neoplasms	GWAS Catalog
+oncology	PARP1	D008545	Melanoma	GWAS Catalog
+oncology	TYR	D008545	Melanoma	GWAS Catalog
+oncology	VEGFA	D011471	Prostatic Neoplasms	GWAS Catalog
+oncology	WT1	D010051	Ovarian Neoplasms	GWAS Catalog
+oncology	FGFR2	D009369	Neoplasms	Neale UKBB
+oncology	MC1R	D014983	Xeroderma Pigmentosum	Neale UKBB
+oncology	TYR	D008545	Melanoma	Neale UKBB
+oncology	AR	D011471	Prostatic Neoplasms	FinnGen
+oncology	FGFR2	D009369	Neoplasms	FinnGen
+oncology	IGF1	D001943	Breast Neoplasms	FinnGen
+oncology	KLK3	D011471	Prostatic Neoplasms	FinnGen
+oncology	MC1R	D055623	Keratosis, Actinic	FinnGen
+oncology	MDM4	D009369	Neoplasms	FinnGen
+oncology	WT1	D009369	Neoplasms	FinnGen
+cardiovascular	ACE	D006973	Hypertension	GWAS Catalog
+cardiovascular	ADRB1	D006973	Hypertension	GWAS Catalog
+cardiovascular	AGT	D006973	Hypertension	GWAS Catalog
+cardiovascular	CETP	D050197	Atherosclerosis	GWAS Catalog
+cardiovascular	CYP11B2	D006973	Hypertension	GWAS Catalog
+cardiovascular	F11	D013927	Thrombosis	GWAS Catalog
+cardiovascular	F11	D020246	Venous Thrombosis	GWAS Catalog
+cardiovascular	F2	D013927	Thrombosis	GWAS Catalog
+cardiovascular	F2	D020246	Venous Thrombosis	GWAS Catalog
+cardiovascular	FCGR2A	D014657	Vasculitis	GWAS Catalog
+cardiovascular	GP6	D013927	Thrombosis	GWAS Catalog
+cardiovascular	LPA	D002318	Cardiovascular Diseases	GWAS Catalog
+cardiovascular	LPA	D050197	Atherosclerosis	GWAS Catalog
+cardiovascular	MAPK14	D017719	Diabetic Foot	GWAS Catalog
+cardiovascular	MME	D006973	Hypertension	GWAS Catalog
+cardiovascular	NOS3	D020521	Stroke	GWAS Catalog
+cardiovascular	NPR1	D006973	Hypertension	GWAS Catalog
+cardiovascular	PCSK9	D050197	Atherosclerosis	GWAS Catalog
+cardiovascular	PDE3A	D020521	Stroke	GWAS Catalog
+cardiovascular	PDE3A	D050197	Atherosclerosis	GWAS Catalog
+cardiovascular	PDE5A	D006973	Hypertension	GWAS Catalog
+cardiovascular	PLG	D009203	Myocardial Infarction	GWAS Catalog
+cardiovascular	REN	D006973	Hypertension	GWAS Catalog
+cardiovascular	SCN5A	D001145	Arrhythmias, Cardiac	GWAS Catalog
+cardiovascular	SCN5A	D001281	Atrial Fibrillation	GWAS Catalog
+cardiovascular	SCN5A	D017180	Tachycardia, Ventricular	GWAS Catalog
+cardiovascular	VWF	D013927	Thrombosis	GWAS Catalog
+cardiovascular	VWF	D020246	Venous Thrombosis	GWAS Catalog
+cardiovascular	ACE	D006973	Hypertension	Neale UKBB
+cardiovascular	ADRB1	D006973	Hypertension	Neale UKBB
+cardiovascular	AGT	D006973	Hypertension	Neale UKBB
+cardiovascular	F11	D013927	Thrombosis	Neale UKBB
+cardiovascular	F11	D020246	Venous Thrombosis	Neale UKBB
+cardiovascular	F2	D013927	Thrombosis	Neale UKBB
+cardiovascular	F2	D020246	Venous Thrombosis	Neale UKBB
+cardiovascular	NOS3	D020521	Stroke	Neale UKBB
+cardiovascular	NPR1	D006973	Hypertension	Neale UKBB
+cardiovascular	ADRB1	D006973	Hypertension	FinnGen
+cardiovascular	AGT	D006973	Hypertension	FinnGen
+cardiovascular	F11	D013927	Thrombosis	FinnGen
+cardiovascular	F11	D020246	Venous Thrombosis	FinnGen
+cardiovascular	LPA	D002318	Cardiovascular Diseases	FinnGen
+cardiovascular	LPA	D050197	Atherosclerosis	FinnGen
+cardiovascular	PCSK9	D050197	Atherosclerosis	FinnGen
+cardiovascular	PDE3A	D020521	Stroke	FinnGen
+cardiovascular	SCN5A	D001281	Atrial Fibrillation	FinnGen
+hematology	ACVRL1	D000740	Anemia	GWAS Catalog
+hematology	BCL11A	D000755	Anemia, Sickle Cell	GWAS Catalog
+hematology	BCL11A	D013789	Thalassemia	GWAS Catalog
+hematology	BCL2	D000740	Anemia	GWAS Catalog
+hematology	BMP6	D000740	Anemia	GWAS Catalog
+hematology	CSF3	D009503	Neutropenia	GWAS Catalog
+hematology	CSF3R	D007970	Leukopenia	GWAS Catalog
+hematology	CSF3R	D009503	Neutropenia	GWAS Catalog
+hematology	DYRK3	D000740	Anemia	GWAS Catalog
+hematology	EGLN2	D000740	Anemia	GWAS Catalog
+hematology	EPOR	D000740	Anemia	GWAS Catalog
+hematology	F10	D001778	Blood Coagulation Disorders	GWAS Catalog
+hematology	F11	D001778	Blood Coagulation Disorders	GWAS Catalog
+hematology	F11	D005173	Factor XI Deficiency	GWAS Catalog
+hematology	F7	D005168	Factor VII Deficiency	GWAS Catalog
+hematology	F7	D006467	Hemophilia A	GWAS Catalog
+hematology	FCGRT	D013921	Thrombocytopenia	GWAS Catalog
+hematology	FCGRT	D016553	Purpura, Thrombocytopenic, Idiopathic	GWAS Catalog
+hematology	IL13	D057765	Eosinophilic Esophagitis	GWAS Catalog
+hematology	IL4R	D057765	Eosinophilic Esophagitis	GWAS Catalog
+hematology	IL5RA	D017681	Hypereosinophilic Syndrome	GWAS Catalog
+hematology	IL5RA	D057765	Eosinophilic Esophagitis	GWAS Catalog
+hematology	JAK2	D009196	Myeloproliferative Disorders	GWAS Catalog
+hematology	JAK2	D013922	Thrombocytosis	GWAS Catalog
+hematology	JAK2	D055728	Primary Myelofibrosis	GWAS Catalog
+hematology	MPL	D013921	Thrombocytopenia	GWAS Catalog
+hematology	NR3C1	D057765	Eosinophilic Esophagitis	GWAS Catalog
+hematology	SLC40A1	D000740	Anemia	GWAS Catalog
+hematology	SYK	D016553	Purpura, Thrombocytopenic, Idiopathic	GWAS Catalog
+hematology	THPO	D013921	Thrombocytopenia	GWAS Catalog
+hematology	THPO	D013922	Thrombocytosis	GWAS Catalog
+hematology	VWF	D006467	Hemophilia A	GWAS Catalog
+hematology	VWF	D014842	von Willebrand Diseases	GWAS Catalog
+hematology	BCL2	D000740	Anemia	Neale UKBB
+hematology	IL4R	D057765	Eosinophilic Esophagitis	Neale UKBB
+hematology	IL5RA	D017681	Hypereosinophilic Syndrome	Neale UKBB
+hematology	IL5RA	D057765	Eosinophilic Esophagitis	Neale UKBB
+hematology	JAK2	D013922	Thrombocytosis	Neale UKBB
+hematology	NR3C1	D057765	Eosinophilic Esophagitis	Neale UKBB
+hematology	THPO	D013921	Thrombocytopenia	Neale UKBB
+hematology	THPO	D013922	Thrombocytosis	Neale UKBB
+hematology	VWF	D014842	von Willebrand Diseases	Neale UKBB
+hematology	VWF	D006467	Hemophilia A	FinnGen
+hematology	VWF	D014842	von Willebrand Diseases	FinnGen
+metabolic	ABCA1	D006949	Hyperlipidemias	GWAS Catalog
+metabolic	ALPL	D007014	Hypophosphatasia	GWAS Catalog
+metabolic	APOA1	D006937	Hypercholesterolemia	GWAS Catalog
+metabolic	APOA1	D006938	Hyperlipoproteinemia Type II	GWAS Catalog
+metabolic	APOA1	D006949	Hyperlipidemias	GWAS Catalog
+metabolic	APOA1	D052456	Hypoalphalipoproteinemias	GWAS Catalog
+metabolic	APOB	D006937	Hypercholesterolemia	GWAS Catalog
+metabolic	APOB	D006938	Hyperlipoproteinemia Type II	GWAS Catalog
+metabolic	APOB	D015228	Hypertriglyceridemia	GWAS Catalog
+metabolic	APOC3	D006937	Hypercholesterolemia	GWAS Catalog
+metabolic	APOC3	D006949	Hyperlipidemias	GWAS Catalog
+metabolic	APOC3	D015228	Hypertriglyceridemia	GWAS Catalog
+metabolic	APOC3	D050171	Dyslipidemias	GWAS Catalog
+metabolic	C9orf72	D000690	Amyotrophic Lateral Sclerosis	GWAS Catalog
+metabolic	C9orf72	D057180	Frontotemporal Dementia	GWAS Catalog
+metabolic	CALCR	D003920	Diabetes Mellitus	GWAS Catalog
+metabolic	CALCR	D003924	Diabetes Mellitus, Type 2	GWAS Catalog
+metabolic	CALCR	D009765	Obesity	GWAS Catalog
+metabolic	CASR	D006934	Hypercalcemia	GWAS Catalog
+metabolic	CASR	D006996	Hypocalcemia	GWAS Catalog
+metabolic	CBS	D006712	Homocystinuria	GWAS Catalog
+metabolic	CETP	D006937	Hypercholesterolemia	GWAS Catalog
+metabolic	CETP	D006938	Hyperlipoproteinemia Type II	GWAS Catalog
+metabolic	CETP	D006949	Hyperlipidemias	GWAS Catalog
+metabolic	DGAT2	D006949	Hyperlipidemias	GWAS Catalog
+metabolic	ENPP1	D017674	Hypophosphatemia	GWAS Catalog
+metabolic	ESR1	D010024	Osteoporosis	GWAS Catalog
+metabolic	FBP1	D003924	Diabetes Mellitus, Type 2	GWAS Catalog
+metabolic	FDFT1	D006949	Hyperlipidemias	GWAS Catalog
+metabolic	FGF21	D015228	Hypertriglyceridemia	GWAS Catalog
+metabolic	FGFR4	D003924	Diabetes Mellitus, Type 2	GWAS Catalog
+metabolic	FGFR4	D009765	Obesity	GWAS Catalog
+metabolic	GCK	D003920	Diabetes Mellitus	GWAS Catalog
+metabolic	GCK	D003924	Diabetes Mellitus, Type 2	GWAS Catalog
+metabolic	GIPR	D003924	Diabetes Mellitus, Type 2	GWAS Catalog
+metabolic	GLP1R	D003920	Diabetes Mellitus	GWAS Catalog
+metabolic	GLP1R	D003924	Diabetes Mellitus, Type 2	GWAS Catalog
+metabolic	GLP1R	D009765	Obesity	GWAS Catalog
+metabolic	GRN	D057180	Frontotemporal Dementia	GWAS Catalog
+metabolic	HMGCR	D006937	Hypercholesterolemia	GWAS Catalog
+metabolic	HMGCR	D006949	Hyperlipidemias	GWAS Catalog
+metabolic	IGF1	D024821	Metabolic Syndrome	GWAS Catalog
+metabolic	IL7R	D003922	Diabetes Mellitus, Type 1	GWAS Catalog
+metabolic	INS	D003922	Diabetes Mellitus, Type 1	GWAS Catalog
+metabolic	INSR	D003924	Diabetes Mellitus, Type 2	GWAS Catalog
+metabolic	INSR	D009765	Obesity	GWAS Catalog
+metabolic	KCNJ11	D003924	Diabetes Mellitus, Type 2	GWAS Catalog
+metabolic	LCAT	D007863	Lecithin Cholesterol Acyltransferase Deficiency	GWAS Catalog
+metabolic	LEPR	D009765	Obesity	GWAS Catalog
+metabolic	LPA	D006949	Hyperlipidemias	GWAS Catalog
+metabolic	MC1R	D000417	Albinism	GWAS Catalog
+metabolic	MC4R	D003920	Diabetes Mellitus	GWAS Catalog
+metabolic	MC4R	D009765	Obesity	GWAS Catalog
+metabolic	METAP2	D003924	Diabetes Mellitus, Type 2	GWAS Catalog
+metabolic	MTTP	D006949	Hyperlipidemias	GWAS Catalog
+metabolic	NPC1L1	D006949	Hyperlipidemias	GWAS Catalog
+metabolic	NPY	D009765	Obesity	GWAS Catalog
+metabolic	NR1H4	D006937	Hypercholesterolemia	GWAS Catalog
+metabolic	NR1H4	D006949	Hyperlipidemias	GWAS Catalog
+metabolic	NR1H4	D015228	Hypertriglyceridemia	GWAS Catalog
+metabolic	NR3C1	D009765	Obesity	GWAS Catalog
+metabolic	OPRM1	D009765	Obesity	GWAS Catalog
+metabolic	PCSK9	D006937	Hypercholesterolemia	GWAS Catalog
+metabolic	PCSK9	D006938	Hyperlipoproteinemia Type II	GWAS Catalog
+metabolic	PCSK9	D006949	Hyperlipidemias	GWAS Catalog
+metabolic	PPARA	D006937	Hypercholesterolemia	GWAS Catalog
+metabolic	PPARA	D006949	Hyperlipidemias	GWAS Catalog
+metabolic	PPARA	D009765	Obesity	GWAS Catalog
+metabolic	PPARA	D015228	Hypertriglyceridemia	GWAS Catalog
+metabolic	PPARA	D050171	Dyslipidemias	GWAS Catalog
+metabolic	PPARG	D003924	Diabetes Mellitus, Type 2	GWAS Catalog
+metabolic	SLC10A2	D006937	Hypercholesterolemia	GWAS Catalog
+metabolic	SLC10A2	D006949	Hyperlipidemias	GWAS Catalog
+metabolic	SLC22A12	D006073	Gout	GWAS Catalog
+metabolic	SLC40A1	D006432	Hemochromatosis	GWAS Catalog
+metabolic	SOST	D001851	Bone Diseases, Metabolic	GWAS Catalog
+metabolic	SOST	D010024	Osteoporosis	GWAS Catalog
+metabolic	THRB	D006937	Hypercholesterolemia	GWAS Catalog
+metabolic	THRB	D006938	Hyperlipoproteinemia Type II	GWAS Catalog
+metabolic	VEGFA	D003924	Diabetes Mellitus, Type 2	GWAS Catalog
+metabolic	ABCA1	D006949	Hyperlipidemias	Neale UKBB
+metabolic	APOB	D006937	Hypercholesterolemia	Neale UKBB
+metabolic	APOB	D006938	Hyperlipoproteinemia Type II	Neale UKBB
+metabolic	APOB	D015228	Hypertriglyceridemia	Neale UKBB
+metabolic	CALCR	D009765	Obesity	Neale UKBB
+metabolic	GHR	D009765	Obesity	Neale UKBB
+metabolic	HMGCR	D006937	Hypercholesterolemia	Neale UKBB
+metabolic	HMGCR	D006949	Hyperlipidemias	Neale UKBB
+metabolic	INSR	D009765	Obesity	Neale UKBB
+metabolic	LPA	D006949	Hyperlipidemias	Neale UKBB
+metabolic	MC1R	D000417	Albinism	Neale UKBB
+metabolic	MC4R	D003920	Diabetes Mellitus	Neale UKBB
+metabolic	MC4R	D009765	Obesity	Neale UKBB
+metabolic	NPC1L1	D006949	Hyperlipidemias	Neale UKBB
+metabolic	NPY5R	D009765	Obesity	Neale UKBB
+metabolic	NR3C1	D009765	Obesity	Neale UKBB
+metabolic	OPRM1	D009765	Obesity	Neale UKBB
+metabolic	PCSK9	D006937	Hypercholesterolemia	Neale UKBB
+metabolic	PCSK9	D006938	Hyperlipoproteinemia Type II	Neale UKBB
+metabolic	PCSK9	D006949	Hyperlipidemias	Neale UKBB
+metabolic	PPARA	D009765	Obesity	Neale UKBB
+metabolic	SLC22A12	D006073	Gout	Neale UKBB
+metabolic	APOB	D006937	Hypercholesterolemia	FinnGen
+metabolic	APOB	D006938	Hyperlipoproteinemia Type II	FinnGen
+metabolic	APOB	D015228	Hypertriglyceridemia	FinnGen
+metabolic	INSR	D003924	Diabetes Mellitus, Type 2	FinnGen
+metabolic	KCNJ11	D003924	Diabetes Mellitus, Type 2	FinnGen
+metabolic	LPA	D006949	Hyperlipidemias	FinnGen
+metabolic	MC4R	D009765	Obesity	FinnGen
+metabolic	NPC1L1	D006949	Hyperlipidemias	FinnGen
+metabolic	PCSK9	D006937	Hypercholesterolemia	FinnGen
+metabolic	PCSK9	D006938	Hyperlipoproteinemia Type II	FinnGen
+metabolic	PCSK9	D006949	Hyperlipidemias	FinnGen
+metabolic	PPARG	D003924	Diabetes Mellitus, Type 2	FinnGen
+respiratory	ADORA1	D001249	Asthma	GWAS Catalog
+respiratory	ADORA1	D029424	Pulmonary Disease, Chronic Obstructive	GWAS Catalog
+respiratory	ADRB2	D001249	Asthma	GWAS Catalog
+respiratory	ADRB2	D029424	Pulmonary Disease, Chronic Obstructive	GWAS Catalog
+respiratory	CHRM3	D001249	Asthma	GWAS Catalog
+respiratory	CHRM3	D029424	Pulmonary Disease, Chronic Obstructive	GWAS Catalog
+respiratory	CHRM3	D029481	Bronchitis, Chronic	GWAS Catalog
+respiratory	GATA3	D001249	Asthma	GWAS Catalog
+respiratory	GATA3	D029424	Pulmonary Disease, Chronic Obstructive	GWAS Catalog
+respiratory	IFNAR2	D000086382	COVID-19	GWAS Catalog
+respiratory	IL13	D001249	Asthma	GWAS Catalog
+respiratory	IL13	D029424	Pulmonary Disease, Chronic Obstructive	GWAS Catalog
+respiratory	IL33	D001249	Asthma	GWAS Catalog
+respiratory	IL33	D012852	Sinusitis	GWAS Catalog
+respiratory	IL33	D029424	Pulmonary Disease, Chronic Obstructive	GWAS Catalog
+respiratory	IL33	D065631	Rhinitis, Allergic	GWAS Catalog
+respiratory	IL4R	D001249	Asthma	GWAS Catalog
+respiratory	IL4R	D029424	Pulmonary Disease, Chronic Obstructive	GWAS Catalog
+respiratory	IL4R	D065631	Rhinitis, Allergic	GWAS Catalog
+respiratory	IL6	D001249	Asthma	GWAS Catalog
+respiratory	MMP12	D001249	Asthma	GWAS Catalog
+respiratory	NFKB1	D001249	Asthma	GWAS Catalog
+respiratory	NR3C1	D001249	Asthma	GWAS Catalog
+respiratory	NR3C1	D029424	Pulmonary Disease, Chronic Obstructive	GWAS Catalog
+respiratory	NR3C1	D065631	Rhinitis, Allergic	GWAS Catalog
+respiratory	RARG	D029424	Pulmonary Disease, Chronic Obstructive	GWAS Catalog
+respiratory	TNFSF15	D001249	Asthma	GWAS Catalog
+respiratory	TNFSF4	D001249	Asthma	GWAS Catalog
+respiratory	TNFSF4	D065631	Rhinitis, Allergic	GWAS Catalog
+respiratory	TSLP	D001249	Asthma	GWAS Catalog
+respiratory	TSLP	D009298	Nasal Polyps	GWAS Catalog
+respiratory	TSLP	D012852	Sinusitis	GWAS Catalog
+respiratory	TSLP	D029424	Pulmonary Disease, Chronic Obstructive	GWAS Catalog
+respiratory	ADORA1	D001249	Asthma	Neale UKBB
+respiratory	ADORA1	D029424	Pulmonary Disease, Chronic Obstructive	Neale UKBB
+respiratory	GATA3	D001249	Asthma	Neale UKBB
+respiratory	GATA3	D029424	Pulmonary Disease, Chronic Obstructive	Neale UKBB
+respiratory	IL33	D001249	Asthma	Neale UKBB
+respiratory	IL33	D006255	Rhinitis, Allergic, Seasonal	Neale UKBB
+respiratory	IL33	D029424	Pulmonary Disease, Chronic Obstructive	Neale UKBB
+respiratory	IL33	D065631	Rhinitis, Allergic	Neale UKBB
+respiratory	IL4R	D001249	Asthma	Neale UKBB
+respiratory	IL4R	D029424	Pulmonary Disease, Chronic Obstructive	Neale UKBB
+respiratory	IL4R	D065631	Rhinitis, Allergic	Neale UKBB
+respiratory	IL6	D001249	Asthma	Neale UKBB
+respiratory	TNFSF4	D001249	Asthma	Neale UKBB
+respiratory	TNFSF4	D065631	Rhinitis, Allergic	Neale UKBB
+respiratory	TSLP	D001249	Asthma	Neale UKBB
+respiratory	TSLP	D009298	Nasal Polyps	Neale UKBB
+respiratory	TSLP	D029424	Pulmonary Disease, Chronic Obstructive	Neale UKBB
+respiratory	IL33	D001249	Asthma	FinnGen
+respiratory	IL33	D012852	Sinusitis	FinnGen
+respiratory	IL33	D029424	Pulmonary Disease, Chronic Obstructive	FinnGen
+respiratory	IL33	D065631	Rhinitis, Allergic	FinnGen
+respiratory	IL4R	D001249	Asthma	FinnGen
+respiratory	IL4R	D029424	Pulmonary Disease, Chronic Obstructive	FinnGen
+respiratory	IL4R	D065631	Rhinitis, Allergic	FinnGen
+respiratory	SERPINA1	D019896	alpha 1-Antitrypsin Deficiency	FinnGen
+respiratory	SERPINA1	D029424	Pulmonary Disease, Chronic Obstructive	FinnGen
+respiratory	TSLP	D001249	Asthma	FinnGen
+respiratory	TSLP	D009298	Nasal Polyps	FinnGen
+respiratory	TSLP	D029424	Pulmonary Disease, Chronic Obstructive	FinnGen
