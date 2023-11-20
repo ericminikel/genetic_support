@@ -96,6 +96,8 @@ For all time, of 517 launched targets, the 74 with ≥10 launched indications ac
 
 Since 2000 only, of 450 launched targets, the 42 with ≥10 launched indications account for 713 of 1806 launched indications (39%)
 
+Since 2000, targets with only 1 launched indication: 167 / 450 (37%) of targets, or 167/1806 (0.0924695459579181) of T-I pairs.
+
 Spearman's correlation n_launched_indic vs. meansim across targets: rho = -0.721, P = 4.4e-84
 
 Logit model gensup ~ ipert: beta = -0.0484, P = 6.3e-07
@@ -108,11 +110,9 @@ Logit model gensup ~ meansim without 1-indication targets: beta = -0.609, P = 3.
 
 Weighted Pearson correlation across areas, poss_supp_gi vs. rs: rho= 0.71, P = 1.00e-03
 
-Spearman correlation n_launched_indic vs. mean_sim: rho= -0.72, P = 0.0000000000000000000000000000000000000000000000000000000000000000000000000000000000044
+Weighted Pearson correlation across areas, mean_sim vs. rs: rho= 7.4e-01, P = 0.001
 
-Weighted Pearson correlation across areas, mean_sim vs. rs: rho= 0.74, P = 0.001
-
-Weighted Pearson correlation across areas, indic per target vs. rs: rho= -0.62, P = 0.008
+Weighted Pearson correlation across areas, indic per target vs. rs: rho= -6.2e-01, P = 0.008
 
 Confounding between therapy area and year of discovery among OTG GWAS Catalog-supported T-I pairs: KW test P = 1.1e-11, Chi Square test P = 2.9e-16
 

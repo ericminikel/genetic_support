@@ -2618,6 +2618,15 @@ write(paste("Since 2000 only, of ",sum(target_stats$n_launched_indic_2000 > 0, n
             percent(sum(target_stats$n_launched_indic_2000[target_stats$n_launched_indic_2000 >= 10], na.rm=T)/sum(target_stats$n_launched_indic_2000, na.rm=T)),
             ")",'\n',sep=''),text_stats_path,append=T)
 
+write(paste("Since 2000, targets with only 1 launched indication: ",
+            sum(target_stats$n_launched_indic_2000 ==1, na.rm=T),
+            " / ",sum(!is.na(target_stats$n_launched_indic_2000)),
+            " (",percent(mean(target_stats$n_launched_indic_2000 ==1, na.rm=T)),
+            ") of targets, or ",sum(target_stats$n_launched_indic_2000[target_stats$n_launched_indic_2000==1], na.rm=T),
+            "/",sum(target_stats$n_launched_indic_2000[!is.na(target_stats$n_launched_indic_2000)]),
+            " (",sum(target_stats$n_launched_indic_2000[target_stats$n_launched_indic_2000==1], na.rm=T)/sum(target_stats$n_launched_indic_2000[!is.na(target_stats$n_launched_indic_2000)]),
+            ") of T-I pairs.",'\n',sep=''),text_stats_path,append=T)
+
 combined_ti$ipert = target_stats$n_launched_indic[match(combined_ti$gene, target_stats$gene)]
 combined_ti$meansim = target_stats$meansim[match(combined_ti$gene, target_stats$gene)]
 
@@ -2980,8 +2989,6 @@ target_stats %>%
 
 write_supp_table(target_stats_out, "Count and mean similarity of approved indications per target.")
 
-write(paste('Spearman correlation n_launched_indic vs. mean_sim: rho= ',formatC(indic_sim_spearman$estimate,digits=2,format='fg'),', P = ',formatC(indic_sim_spearman$p.value,digits=2,format='fg'),'\n',sep=''),text_stats_path,append=T)
-
 indic_per_quantiles = quantile(combined_ti$ipert[combined_ti$cat=='Launched'], 0:5/5, na.rm=T)
 indic_per_forest = data.frame(y=5:1, 
                               min=c(1,floor(indic_per_quantiles[c('20%','40%','60%','80%')])),
@@ -3065,7 +3072,7 @@ sim_rr_weightedbygensup = wtd.cor(areas$meansim, areas$rs_mean, weight=areas$n_g
 sim_rr_weightedbygensup_rho = round(sim_rr_weightedbygensup['Y','correlation'],2)
 sim_rr_weightedbygensup_p = round(sim_rr_weightedbygensup['Y','p.value'],3)
 
-write(paste('Weighted Pearson correlation across areas, mean_sim vs. rs: rho= ',formatC(sim_rr_weightedbygensup_rho,digits=2,format='fg'),', P = ',formatC(sim_rr_weightedbygensup_p,digits=2,format='fg'),'\n',sep=''),text_stats_path,append=T)
+write(paste('Weighted Pearson correlation across areas, mean_sim vs. rs: rho= ',formatC(sim_rr_weightedbygensup_rho,digits=1,format='e'),', P = ',formatC(sim_rr_weightedbygensup_p,digits=2,format='fg'),'\n',sep=''),text_stats_path,append=T)
 
 par(mar=c(4,3,2.5,1))
 xlims = c(0,18)
@@ -3090,7 +3097,7 @@ ipert_rr_weightedbygensup = wtd.cor(areas$meanipert, areas$rs_mean, weight=areas
 ipert_rr_weightedbygensup_rho = round(ipert_rr_weightedbygensup['Y','correlation'],2)
 ipert_rr_weightedbygensup_p = round(ipert_rr_weightedbygensup['Y','p.value'],3)
 
-write(paste('Weighted Pearson correlation across areas, indic per target vs. rs: rho= ',formatC(ipert_rr_weightedbygensup_rho,digits=2,format='fg'),', P = ',formatC(ipert_rr_weightedbygensup_p,digits=2,format='fg'),'\n',sep=''),text_stats_path,append=T)
+write(paste('Weighted Pearson correlation across areas, indic per target vs. rs: rho= ',formatC(ipert_rr_weightedbygensup_rho,digits=1,format='e'),', P = ',formatC(ipert_rr_weightedbygensup_p,digits=2,format='fg'),'\n',sep=''),text_stats_path,append=T)
 
 unecessary_message = dev.off()
 
