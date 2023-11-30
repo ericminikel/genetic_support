@@ -1,4 +1,4 @@
-Last updated: 2023-11-20
+Last updated: 2023-11-30
 
 Unique indications: 1014
 
@@ -150,6 +150,8 @@ After removing heavy hitters and restricting to most similar indications, the nu
 
 Number of clinically developed T-I pairs with genetic support: 719 = 2.10%
 
+Of possible genetically supported T-I 17691/34190 (52%) are from OTG in 2018-2022. Note that a total of 57167 T-I pairs acquired OTG support in 2018-2022 but only 17691 of them are in the universe of 34190 possible T-I pairs after removing heavy hitters and restricting to most similar indication.
+
 Of targets with both ≥1 supported indication and ≥1 Phase I+ indication, 67% (774/1147) have been developed only for unsupported indications.
 
 Of targets with both ≥1 supported indication and ≥1 Phase I+ indication, 6% (66/1147) have been developed only for supported indications.
@@ -165,4 +167,6 @@ Of non-launched targets with both ≥1 supported indication and ≥1 Phase I+ in
 Fisher test for difference between these ratios: OR=1.1, P=0.29.
 
 Ordinal logistic model for drug-indication advancement: genetic support beta= 0.6, P = 8.64e-73
+
+Of possible genetically supported T-I 23358/34190 (68%) are from OTG in any year. 
 

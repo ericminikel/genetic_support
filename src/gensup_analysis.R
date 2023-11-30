@@ -4069,6 +4069,24 @@ write(paste("Number of clinically developed T-I pairs with genetic support: ",
             length(unique(pp$ti_uid[pp$at_least_clinical & pp$ti_uid %in% all_possible_gensup_ti$ti_uid])),
             " = ",percent(length(unique(pp$ti_uid[pp$at_least_clinical & pp$ti_uid %in% all_possible_gensup_ti$ti_uid]))/nrow(all_possible_gensup_ti),digits=2),'\n',sep=''),text_stats_path,append=T)
 
+n_otg_last_5_years = sum(gtyc_tiyc$n_ti[gtyc_tiyc$min_year %in% 2018:2022])
+all_possible_gensup_ti %>%
+  inner_join(tiy, by=c('gene'='gene','indication_mesh_id'='meshcode_a')) %>%
+  filter(min_year %in% 2018:2022) -> all_poss_otglast5
+n_possible_gensup_ti_total = nrow(all_possible_gensup_ti)
+n_all_poss_otglast5 = nrow(all_poss_otglast5)
+write(paste('Of possible genetically supported T-I ',n_all_poss_otglast5,'/',n_possible_gensup_ti_total,
+            ' (',percent(n_all_poss_otglast5/n_possible_gensup_ti_total),') are from OTG in 2018-2022. ',
+            'Note that a total of ',n_otg_last_5_years,' T-I pairs acquired OTG support in 2018-2022 ',
+            'but only ',n_all_poss_otglast5,' of them are in the universe of ',n_possible_gensup_ti_total,
+            ' possible T-I pairs after removing heavy hitters and restricting to most similar indication.',
+            '\n',sep=''),text_stats_path,append=T)
+
+n_all_poss_otgall = sum(grepl('OTG',all_possible_gensup_ti$sources))
+write(paste('Of possible genetically supported T-I ',n_all_poss_otgall,'/',n_possible_gensup_ti_total,
+            ' (',percent(n_all_poss_otgall/n_possible_gensup_ti_total),') are from OTG (including all years). ',
+            '\n',sep=''),text_stats_path,append=T)
+
 
 genelists = data.frame(x=c(-0.5,1:2,seq(3.5,7.5,1)),
                        list=c('all_genes','ab_tractable','sm_tractable','rhodop_gpcr','nuclear_receptors','enzymes','ion_channels','kinases'),
