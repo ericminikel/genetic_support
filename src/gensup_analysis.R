@@ -929,7 +929,7 @@ pp %>%
 write(paste0('Pharmaprojects | MeSH missing from sim matrix: ',sum(!(pp_mesh_uq$indication_mesh_id %in% sim$meshcode_a)),'/',nrow(pp_mesh_uq),'\n',sep=''),text_stats_path,append=T)
 write(paste0('Pharmaprojects | MeSH present in sim matrix: ',sum((pp_mesh_uq$indication_mesh_id %in% sim$meshcode_a)),'/',nrow(pp_mesh_uq),'\n',sep=''),text_stats_path,append=T)
 write(paste0('Pharmaprojects | proportion of unique MeSH in sim matrix: ',percent(mean(pp_mesh_uq$indication_mesh_id %in% sim$meshcode_a), digits=3),'\n',sep=''),text_stats_path,append=T)
-write(paste0('Pharmaprojects | proportion assoc rows in sim matrix: ',percent(mean(pp$indication_mesh_id[!is.na(pp$indication_mesh_id)] %in% sim$meshcode_a), digits=3),'\n',sep=''),text_stats_path,append=T)
+write(paste0('Pharmaprojects | proportion of rows in sim matrix: ',percent(mean(pp$indication_mesh_id[!is.na(pp$indication_mesh_id)] %in% sim$meshcode_a), digits=3),'\n',sep=''),text_stats_path,append=T)
 
 write(paste0('Assocs | MeSH missing from sim matrix: ',sum(!(assoc_mesh_uq$mesh_id %in% sim$meshcode_a)),'/',nrow(assoc_mesh_uq),'\n',sep=''),text_stats_path,append=T)
 write(paste0('Assocs | MeSH present in sim matrix: ',sum((assoc_mesh_uq$mesh_id %in% sim$meshcode_a)),'/',nrow(assoc_mesh_uq),'\n',sep=''),text_stats_path,append=T)
@@ -1706,7 +1706,7 @@ orphan_forest %>%
   select(data_subset = label, rs=mean, rs_l95 = l95, rs_u95 = u95, approved=numerator, supported=denominator) -> orphan_out
 write_supp_table(orphan_out, "RS breakdowns by orphan status, association source combinations, and Genebass queries.")
 
-plot_forest(onco_rrs, xlims=c(0,5), xstyle='ratio', mar=c(3,12,3,6))
+plot_forest(onco_rrs, xlims=c(0,6), xstyle='ratio', mar=c(3,12,3,6))
 mtext(side=1, line=2.0, text='RS')
 overhang = 0.35
 tranche_line = 8.75
@@ -4443,8 +4443,8 @@ ordinal_repur_model_smry = tibble(variable=rownames(ordinal_model_coefs),
                                   p=ordinal_model_p)
 
 write(paste('Ordinal logistic model for drug-indication advancement: genetic support beta= ',
-            formatC(ordinal_repur_model_smry$beta[ordinal_repur_model_smry$variable=='gensupTRUE'],digits=2,format='fg'),
-            ', P = ',
+            formatC(ordinal_repur_model_smry$beta[ordinal_repur_model_smry$variable=='gensupTRUE'],digits=2,format='f'),
+            ' (i.e. ',percent(exp(ordinal_repur_model_smry$beta[ordinal_repur_model_smry$variable=='gensupTRUE'])-1),'higher), P = ',
             formatC(ordinal_repur_model_smry$p[ordinal_repur_model_smry$variable=='gensupTRUE'],digits=2,format='e'),'\n',sep=''),
       text_stats_path,append=T)
 
