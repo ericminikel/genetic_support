@@ -621,7 +621,7 @@ binom_ratio = function(x_yes, n_yes, x_no, n_no, mean_yes, mean_no, alpha =  0.0
 }
 
 
-# For Figure S6, we need to be able to calculate RS based solely on columns ccat, ccatnum, and gensup (example: p13_g13)
+# For Figure ED6, we need to be able to calculate RS based solely on columns ccat, ccatnum, and gensup (example: p13_g13)
 adv_rr_simple = function(ptbl, alpha=0.05) {
   
   phase_map = tibble(phase=factor(c('Preclinical','I','II','III','I-Launch'),ordered=T,levels=c('Preclinical','I','II','III','I-Launch')), 
@@ -842,7 +842,7 @@ cat(file=stderr(), '\rGenerating pipeline tables... done.                    \n'
 
 
 #########
-# Figure S1
+# Figure ED1
 #########
 
 # Things I can't generate based on my limited dataset:
@@ -1525,10 +1525,10 @@ unecessary_message = dev.off()
 
 
 ####
-# Additional Figure S2/3 staging
+# Additional Figure ED2/3 staging
 ####
 
-cat(file=stderr(), 'done.\nCalculating oncology, orphan, and ROC sim for Figure S2...')
+cat(file=stderr(), 'done.\nCalculating oncology, orphan, and ROC sim for Figure ED2...')
 
 intogen_genes = read.table('data/intogen_genes.tsv',sep='\t',header=T)
 
@@ -1647,10 +1647,10 @@ for (i in 1:nrow(orphan_forest)) {
 
 
 
-cat(file=stderr(), 'done.\nCreating Figure S2...')
+cat(file=stderr(), 'done.\nCreating Figure ED2...')
 
 resx=300
-png(paste0(output_path,'/figure-s2.png'),width=6.5*resx,height=9*resx,res=resx)
+png(paste0(output_path,'/figure-ed2.png'),width=6.5*resx,height=9*resx,res=resx)
 
 layout_matrix = matrix(c(1,2,
                          3,2,
@@ -1861,10 +1861,10 @@ unecessary_message = dev.off()
 
 
 ########
-# Figure S3
+# Figure ED3
 ########
 
-cat(file=stderr(), 'done.\nCreating Figure S3...')
+cat(file=stderr(), 'done.\nCreating Figure ED3...')
 
 
 
@@ -2119,7 +2119,7 @@ combined_ti_finngen_unfiltered  = pipeline_best(merge2, phase='combined', basis=
 
 
 resx=300
-png(paste0(output_path,'/figure-s3.png'),width=6.5*resx,height=4.5*resx,res=resx)
+png(paste0(output_path,'/figure-ed3.png'),width=6.5*resx,height=4.5*resx,res=resx)
 
 layout_matrix = matrix(c(1:14, 15, rep(16:17,each=3)),
                        nrow=3, byrow=T)
@@ -2258,10 +2258,10 @@ unnecessary_message = dev.off()
 
 
 
-cat(file=stderr(), 'done.\nCreating Figure S4...')
+cat(file=stderr(), 'done.\nCreating Figure ED4...')
 
 resx=300
-png(paste0(output_path,'/figure-s4.png'),width=6.5*resx,height=3.5*resx,res=resx)
+png(paste0(output_path,'/figure-ed4.png'),width=6.5*resx,height=3.5*resx,res=resx)
 
 # read data
 t2d_omim = read_tsv('data/t2d/omim_t2d.tsv', col_types=cols())
@@ -3109,11 +3109,11 @@ unecessary_message = dev.off()
 
 
 
-cat(file=stderr(), 'done.\nCreating Figure S5...')
+cat(file=stderr(), 'done.\nCreating Figure ED5...')
 
 
 resx=300
-png('display_items/figure-s5.png',width=6.5*resx,height=6.0*resx,res=resx)
+png(paste0(output_path,'/figure-ed5.png'),width=6.5*resx,height=6.0*resx,res=resx)
 
 layout_matrix = matrix(1:18, nrow=6, byrow=T)
 layout(layout_matrix, 
@@ -3179,10 +3179,10 @@ write_supp_table(pg_out, "Proportion of target-indication pairs with genetic sup
 
 
 ########
-# Figure S6
+# Figure ED6
 ########
 
-cat(file=stderr(), 'done.\nCreating Figure S6...')
+cat(file=stderr(), 'done.\nCreating Figure ED6...')
 
 ##### confounding between TA and categories in panel 1D
 # yearfirst
@@ -3399,7 +3399,7 @@ write_supp_table(area_x_subcat_out, 'Confounding between therapy area and GWAS s
 
 
 resx=300
-png(paste0(output_path,'/figure-s6.png'),width=6.5*resx,height=4*resx,res=resx)
+png(paste0(output_path,'/figure-ed6.png'),width=6.5*resx,height=4*resx,res=resx)
 
 layout_matrix = matrix(1:7, byrow=T, nrow=1)
 layout(layout_matrix)
@@ -3617,10 +3617,10 @@ unnecessary_message = dev.off()
 
 
 
-cat(file=stderr(), 'done.\nCreating Figure S7...')
+cat(file=stderr(), 'done.\nCreating Figure ED7...')
 
 resx=300
-png(paste0(output_path,'/figure-s7.png'),width=6.5*resx,height=9*resx,res=resx)
+png(paste0(output_path,'/figure-ed7.png'),width=6.5*resx,height=9*resx,res=resx)
 layout_matrix = matrix(c(1,1,2,2,2,3,3,3,9,
                          4,4,4,5,5,5,6,6,6,
                          7,7,7,7,7,8,8,8,8,
@@ -4454,13 +4454,13 @@ unecessary_message = dev.off()
 
 
 ####
-# FIGURE S8
+# Figure ED8
 ####
 
-cat(file=stderr(), 'done.\nCreating Figure S8...')
+cat(file=stderr(), 'done.\nCreating Figure ED8...')
 
 resx=300
-png(paste0(output_path,'/figure-s8.png'),width=6.5*resx,height=8*resx,res=resx)
+png(paste0(output_path,'/figure-ed8.png'),width=6.5*resx,height=8*resx,res=resx)
 
 layout_matrix = matrix(c(1,2,3,3),nrow=2,byrow=T)
 layout(layout_matrix, heights=c(1,3))

@@ -1,4 +1,4 @@
-Last updated: 2023-11-19
+Last updated: 2023-12-03
 
 Unique indications: 1014
 
@@ -58,7 +58,7 @@ Pharmaprojects | MeSH present in sim matrix: 970/977
 
 Pharmaprojects | proportion of unique MeSH in sim matrix: 99.284%
 
-Pharmaprojects | proportion assoc rows in sim matrix: 99.946%
+Pharmaprojects | proportion of rows in sim matrix: 99.946%
 
 Assocs | MeSH missing from sim matrix: 2/2262
 
@@ -96,6 +96,8 @@ For all time, of 517 launched targets, the 74 with ≥10 launched indications ac
 
 Since 2000 only, of 311 launched targets, the 14 with ≥10 launched indications account for 241 of 940 launched indications (26%)
 
+Since 2000, targets with only 1 launched indication: 144 / 311 (46%) of targets, or 144/940 (0.153191489361702) of T-I pairs.
+
 Spearman's correlation n_launched_indic vs. meansim across targets: rho = -0.721, P = 4.4e-84
 
 Logit model gensup ~ ipert: beta = -0.0532, P = 2.3e-05
@@ -108,11 +110,9 @@ Logit model gensup ~ meansim without 1-indication targets: beta = -0.718, P = 3.
 
 Weighted Pearson correlation across areas, poss_supp_gi vs. rs: rho= 0.54, P = 2.50e-02
 
-Spearman correlation n_launched_indic vs. mean_sim: rho= -0.72, P = 0.0000000000000000000000000000000000000000000000000000000000000000000000000000000000044
+Weighted Pearson correlation across areas, mean_sim vs. rs: rho= 5.9e-01, P = 0.012
 
-Weighted Pearson correlation across areas, mean_sim vs. rs: rho= 0.59, P = 0.012
-
-Weighted Pearson correlation across areas, indic per target vs. rs: rho= -0.47, P = 0.06
+Weighted Pearson correlation across areas, indic per target vs. rs: rho= -4.7e-01, P = 0.06
 
 Confounding between therapy area and year of discovery among OTG GWAS Catalog-supported T-I pairs: KW test P = 1.2e-05, Chi Square test P = 3.6e-09
 
@@ -150,6 +150,10 @@ After removing heavy hitters and restricting to most similar indications, the nu
 
 Number of clinically developed T-I pairs with genetic support: 478 = 1.40%
 
+Of possible genetically supported T-I 17691/34190 (52%) are from OTG in 2018-2022. Note that a total of 57167 T-I pairs acquired OTG support in 2018-2022 but only 17691 of them are in the universe of 34190 possible T-I pairs after removing heavy hitters and restricting to most similar indication.
+
+Of possible genetically supported T-I 23358/34190 (68%) are from OTG (including all years). 
+
 Of targets with both ≥1 supported indication and ≥1 Phase I+ indication, 70% (652/937) have been developed only for unsupported indications.
 
 Of targets with both ≥1 supported indication and ≥1 Phase I+ indication, 7% (63/937) have been developed only for supported indications.
@@ -164,5 +168,5 @@ Of non-launched targets with both ≥1 supported indication and ≥1 Phase I+ in
 
 Fisher test for difference between these ratios: OR=1.2, P=0.06.
 
-Ordinal logistic model for drug-indication advancement: genetic support beta= 0.57, P = 2.24e-56
+Ordinal logistic model for drug-indication advancement: genetic support beta= 0.57 (i.e. 77%higher), P = 2.24e-56
 
