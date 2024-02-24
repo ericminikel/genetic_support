@@ -3621,21 +3621,20 @@ unnecessary_message = dev.off()
 cat(file=stderr(), 'done.\nCreating Figure ED7...')
 
 resx=300
-png(paste0(output_path,'/figure-ed7.png'),width=6.5*resx,height=9*resx,res=resx)
+png(paste0(output_path,'/figure-ed7.png'),width=6.5*resx,height=6.7*resx,res=resx)
 layout_matrix = matrix(c(1,1,2,2,2,3,3,3,9,
                          4,4,4,5,5,5,6,6,6,
-                         7,7,7,7,7,8,8,8,8,
-                         7,7,7,7,7,8,8,8,8), nrow=4,byrow=T)
-layout(layout_matrix, heights=c(1.5,1,.75,.75))
+                         7,7,7,7,8,8,8,8,8), nrow=3,byrow=T)
+layout(layout_matrix, heights=c(1.3,0.85,1.55))
 panel = 1
 
 ylims = range(areas$y, na.rm=T) + c(-0.5, 0.5)
-par(mar=c(4,0,3,0))
+par(mar=c(3,0,2.5,0))
 plot(NA, NA, ylim=ylims, xlim=c(0,1), axes=F, ann=F, xaxs='i', yaxs='i')
-mtext(side=4,adj=1,las=2,at=areas$y,text=areas$area,col=areas$color)
+mtext(side=4,adj=1,las=2,at=areas$y,text=areas$area,col=areas$color, cex=0.6)
 
 xlims = c(0, 0.20)
-par(mar=c(4,1,3,8))
+par(mar=c(3,1,2.5,8))
 plot(NA, NA, ylim=ylims, xlim=xlims, axes=F, ann=F, xaxs='i', yaxs='i')
 axis(side=1, at=xlims, labels=NA, lwd=1, lwd.ticks=0)
 axis(side=1, lwd=0, lwd.ticks=1, at=0:100/100, labels=NA, tck=-0.015)
@@ -3645,7 +3644,7 @@ mtext(side=1, line=2, text='P(S)')
 abline(v=0:4, lwd=0.125, col=line_color)
 abline(v=1, lwd=1, col='black')
 axis(side=2, at=ylims, labels=NA, lwd=1, lwd.ticks=0)
-mtext(side=4, at=areas$y, line=0.5, las=2, text=paste0(formatC(areas$gensup_launched+areas$nosup_launched, format='d', big.mark=','),'/',formatC(areas$nosup_launched+areas$gensup_launched+areas$nosup_clinical+areas$gensup_clinical, format='d', big.mark=',')), cex=1, col=areas$color)
+mtext(side=4, at=areas$y, line=0.5, las=2, text=paste0(formatC(areas$gensup_launched+areas$nosup_launched, format='d', big.mark=','),'/',formatC(areas$nosup_launched+areas$gensup_launched+areas$nosup_clinical+areas$gensup_clinical, format='d', big.mark=',')), cex=0.6, col=areas$color)
 segments(x0=areas$p_s_l95, x1=pmin(areas$p_s_u95,max(xlims)+1), y0=areas$y, lwd=1.5, col=areas$color)
 points(x=areas$p_s_mean, y=areas$y, pch=19, col=areas$color)
 mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
@@ -3653,7 +3652,7 @@ panel = panel + 1
 
 ylims = range(areas$y, na.rm=T) + c(-0.5, 0.5)
 xlims = c(0, 0.30)
-par(mar=c(4,1,3,8))
+par(mar=c(3,1,2.5,8))
 plot(NA, NA, ylim=ylims, xlim=xlims, axes=F, ann=F, xaxs='i', yaxs='i')
 axis(side=1, at=xlims, labels=NA, lwd=1, lwd.ticks=0)
 axis(side=1, lwd=0, lwd.ticks=1, at=0:100/100, labels=NA, tck=-0.015)
@@ -3663,7 +3662,7 @@ mtext(side=1, line=2, text='P(G)')
 abline(v=0:4, lwd=0.125, col=line_color)
 abline(v=1, lwd=1, col='black')
 axis(side=2, at=ylims, labels=NA, lwd=1, lwd.ticks=0)
-mtext(side=4, at=areas$y, line=0.5, las=2, text=paste0(formatC(areas$gensup_launched+areas$gensup_clinical, format='d', big.mark=','),'/',formatC(areas$nosup_launched+areas$gensup_launched+areas$nosup_clinical+areas$gensup_clinical, format='d', big.mark=',')), cex=1, col=areas$color)
+mtext(side=4, at=areas$y, line=0.5, las=2, text=paste0(formatC(areas$gensup_launched+areas$gensup_clinical, format='d', big.mark=','),'/',formatC(areas$nosup_launched+areas$gensup_launched+areas$nosup_clinical+areas$gensup_clinical, format='d', big.mark=',')), cex=0.6, col=areas$color)
 segments(x0=areas$p_g_l95, x1=pmin(areas$p_g_u95,max(xlims)+1), y0=areas$y, lwd=1.5, col=areas$color)
 points(x=areas$p_g_mean, y=areas$y, pch=19, col=areas$color)
 mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
@@ -3671,7 +3670,7 @@ panel = panel + 1
 
 ylims = c(0.0, 0.20)
 xlims = c(0.0, 0.30)
-par(mar=c(4,5,3,1))
+par(mar=c(3,5,2.5,1))
 plot(NA, NA, ylim=ylims, xlim=xlims, axes=F, ann=F, xaxs='i', yaxs='i')
 axis(side=1, at=xlims, labels=NA, lwd=1, lwd.ticks=0)
 axis(side=1, lwd=0, lwd.ticks=1, at=0:100/100, labels=NA, tck=-0.015)
@@ -3691,7 +3690,7 @@ panel = panel + 1
 
 ylims = c(0,5)
 xlims = c(0.0, 0.20)
-par(mar=c(4,5,3,1))
+par(mar=c(3,5,2.5,1))
 plot(NA, NA, ylim=ylims, xlim=xlims, axes=F, ann=F, xaxs='i', yaxs='i')
 axis(side=1, at=xlims, labels=NA, lwd=1, lwd.ticks=0)
 axis(side=1, lwd=0, lwd.ticks=1, at=0:100/100, labels=NA, tck=-0.015)
@@ -3712,7 +3711,7 @@ panel = panel + 1
 
 ylims = c(0,5)
 xlims = c(0, 0.30)
-par(mar=c(4,5,3,1))
+par(mar=c(3,5,2.5,1))
 plot(NA, NA, ylim=ylims, xlim=xlims, axes=F, ann=F, xaxs='i', yaxs='i')
 axis(side=1, at=xlims, labels=NA, lwd=1, lwd.ticks=0)
 axis(side=1, lwd=0, lwd.ticks=1, at=0:100/100, labels=NA, tck=-0.015)
@@ -3793,7 +3792,7 @@ smry2015$area = smry2015$category
 ylims = range(smry2015$y, na.rm=T) + c(-0.5, 0.5)
 smry2015$rs_u95[smry2015$rs_u95==Inf] = max(ylims)
 xlims = c(0, 8)
-par(mar=c(4,10,3,4))
+par(mar=c(3,11,2.0,4))
 plot(NA, NA, ylim=ylims, xlim=xlims, axes=F, ann=F, xaxs='i', yaxs='i')
 axis(side=1, at=xlims, labels=NA, lwd=1, lwd.ticks=0)
 axis(side=1, lwd=0, lwd.ticks=1, at=0:100/10, labels=NA, tck=-0.015, cex.axis=0.7)
@@ -3802,11 +3801,12 @@ axis(side=1, lwd=0, at=0:10, line=-0.5)
 abline(v=0:8, lwd=0.125, col=line_color)
 abline(v=1, lwd=1, col='black')
 axis(side=2, at=ylims, labels=NA, lwd=1, lwd.ticks=0)
+mtext(side=1, line=1.6, text='RS')
 mtext(side=2, at=smry2015$y, line=0.5, las=2, cex=0.7, text=smry2015$area, col=smry2015$color)
 mtext(side=4, at=smry2015$y, line=0.5, las=2, cex=0.7, text=paste0(smry2015$gensup_launched,'/',smry2015$gensup_launched + smry2015$gensup_clinical), col=smry2015$color)
 segments(x0=smry2015$rs_l95, x1=smry2015$rs_u95, y0=smry2015$y, lwd=3, col=smry2015$color)
 points(x=smry2015$rs_mean, y=smry2015$y, pch=19, col=smry2015$color)
-mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
+mtext(letters[panel], side=3, cex=2, adj = -0.8, line = 0.5)
 panel = panel + 1
 smry2015$n_total = rowSums(smry2015[,c("nosup_clinical", "nosup_launched", "gensup_clinical", "gensup_launched")])
 wmean2015 = round(weighted.mean(smry2015$rs_mean, w=smry2015$n_total),2)
@@ -3908,7 +3908,7 @@ area_xtab %>%
 
 write_supp_table(area_xtab_out, 'Confusion matrix of count of drug indication classifications into therapy areas in 2015 versus 2023.')
 
-par(mar=c(7,7,3,1))
+par(mar=c(7,10,2.0,1))
 xlims = range(area_xtab$x) + c(-0.6, 0.6)
 ylims = range(area_xtab$y) + c(-0.6, 0.6)
 boxrad = 0.5
