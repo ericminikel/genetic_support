@@ -712,7 +712,7 @@ adv_rr_simple = function(ptbl, alpha=0.05) {
 }
 
 
-plot_forest = function(forestdf, xlims=c(0,1), xstyle='percent', mar=c(3,8,3,8), xlab='', title='', col='#000000', showvals=F, right_text=NA, xlab_line=1.6) {
+plot_forest = function(forestdf, xlims=c(0,1), xstyle='percent', mar=c(3,8,3,8), xlab='', title='', col='#000000', showvals=F, right_text=NA, xlab_line=1.6, yaxcex=0.75) {
   ylims = range(forestdf$y) + c(-0.5, 0.5)
   par(mar=mar)
   plot(NA, NA, xlim=xlims, ylim=ylims, axes=F, ann=F, xaxs='i', yaxs='i')
@@ -734,8 +734,8 @@ plot_forest = function(forestdf, xlims=c(0,1), xstyle='percent', mar=c(3,8,3,8),
   }
   mtext(side=1, line=xlab_line, cex=0.75, text=xlab)
   axis(side=2, at=ylims, labels=NA, lwd.ticks=0)
-  mtext(side=2, at=forestdf$y, text=forestdf$label, cex=0.75, line=0.5, las=2, col=col)
-  mtext(side=4, at=forestdf$y, text=paste0(formatC(forestdf$numerator,big.mark=','),'/',formatC(forestdf$denominator,big.mark=',')), cex=0.75, las=2, line=0.25)
+  mtext(side=2, at=forestdf$y, text=forestdf$label, cex=yaxcex, line=0.5, las=2, col=col)
+  mtext(side=4, at=forestdf$y, text=paste0(formatC(forestdf$numerator,big.mark=','),'/',formatC(forestdf$denominator,big.mark=',')), cex=yaxcex, las=2, line=0.25)
   par(xpd=T)
   if (is.na(right_text)) {
     if (xstyle=='ratio') {
@@ -2756,8 +2756,9 @@ write(paste("Logit model gensup ~ meansim without 1-indication targets: beta = "
             ', P = ',formatC(meansim_no1_p, format='e', digits=1),
             '\n',sep=''),text_stats_path,append=T)
 
+cm_to_inch = 1/2.54
 resx=300
-png(paste0(output_path,'/figure-2.png'),width=6.5*resx,height=8.5*resx,res=resx)
+png(paste0(output_path,'/figure-2.png'),width=18*cm_to_inch*resx,height=17*cm_to_inch*resx,res=resx)
 
 #layout_matrix =  matrix(c(1,1,2,2,3,3,4,4,5,5,6,6,6,
 #                          7,7,7,8,8,8,8,9,9,9,10,10,10), nrow=2, byrow=T)
@@ -2774,7 +2775,7 @@ ylims = range(areas_all$y, na.rm=T) + c(-0.5, 0.5)
 par(mar=c(3,1,3,0))
 plot(NA, NA, ylim=ylims, xlim=xlims, axes=F, ann=F, xaxs='i', yaxs='i')
 areas_all %>% group_by(topl, area, color, y) %>% slice(1) %>% select(topl, area, color, y) -> rr_table_meta
-mtext(side=4, at=rr_table_meta$y, line=0, adj=1, las=2, text=rr_table_meta$area, cex=.8, col=rr_table_meta$color)
+mtext(side=4, at=rr_table_meta$y, line=0, adj=1, las=2, text=rr_table_meta$area, cex=.7, col=rr_table_meta$color)
 panel = 1
 par(mar=c(3,0.25,3,3.5))
 transition_disp = list('Preclinical'='Pre-I','I'='I-II', 'II'='II-III', 'III'='III-Launch', 'I-Launch'='I-Launch')
@@ -2800,7 +2801,7 @@ for (transition in c('Preclinical','I','II','III','I-Launch')) {
   mtext(side=3, line=0.25, text=transition_disp[[transition]], adj=0, at=1, cex=0.9, font=2)
   
   par(xpd=T)
-  segments(x0=-max(xlims), x1=max(xlims)*1.25, y0=max(areas_all$y)-0.5, lwd=.125)
+  segments(x0=-max(xlims), x1=max(xlims)*1.5, y0=max(areas_all$y)-0.5, lwd=.125)
   #segments(x0=-max(xlims), x1=max(xlims)*1.25, y0=0, lwd=.125)
   par(xpd=F)
   
@@ -2824,7 +2825,7 @@ assoc %>%
 # i.e. ever developed in pharmaprojects and has genetic insight
 # (this also excludes diagnostic indications)
 gty %>%
-  inner_join(sim8, by=c('mesh_id'='meshcode_b')) %>%
+  inner_join(sim8, by=c('mesh_id'='meshcode_b'), relationship = "many-to-many") %>%
   group_by(gene, meshcode_a) %>%
   summarize(.groups='keep', min_year = min(min_year)) %>%
   ungroup() -> tiy
@@ -2875,12 +2876,12 @@ tiya %>%
   ungroup() %>%
   arrange(desc(cumn)) -> tiya_leg
 
-par(mar=c(3,4,2,6))
+par(mar=c(3,4,2,7))
 xlims = c(2007, 2022)
 xats = 2007:2022
 xbigs = c(2010, 2015, 2020)
 ylims = c(0, 27000)
-yats = 0:10*1e3
+yats = 0:30*1e3
 ybigs = c(0, 5000, 10000, 15000, 20000, 25000)
 plot(NA, NA, xlim=xlims, ylim=ylims, axes=F, ann=F, xaxs='i', yaxs='i')
 axis(side=1, at=xlims, lwd.ticks=0, labels=NA)
@@ -3030,12 +3031,12 @@ master_forest_2 = rbind(indic_per_forest, meansim_forest)
 master_forest_2$y = c(11:7,5:1)
 
 
-plot_forest(master_forest_2, xlims=c(0,.35), xstyle='percent', mar=c(4,8,2.5,6))
+plot_forest(master_forest_2, xlims=c(0,.35), xstyle='percent', mar=c(4,8,2.5,6), yaxcex=0.6)
 tranche_line = 4.0
 axis(side=2, at=c(6.75,11.25), tck=0.025, labels=NA, line=tranche_line)
 axis(side=2, at=c(0.75,5.25), tck=0.025, labels=NA, line=tranche_line)
 abline(h=6)
-mtext(side=2, at=c(3.5, 9.5), text=c('Mean\nsimilarity', 'Indications/\ntarget'), line=tranche_line + 0.25, cex=0.8)
+mtext(side=2, at=c(3.5, 9.5), text=c('Mean\nsimilarity', 'Indications/\ntarget'), line=tranche_line + 0.25, cex=0.7)
 mtext(side=1, line=2, text='P(G)')
 mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
 panel = panel + 1
@@ -3863,11 +3864,7 @@ n15i %>%
   summarize(.groups='keep', n = length(unique(id))) %>%
   ungroup() -> area_xtab
 
-# experiment with full join to get marginals
-#n15i %>%
-#  inner_join(vocab_match, by=c('msh'='labeltext')) -> temp
-#mean(temp$id %in% indic_topl_match$indication_mesh_id)
-
+# full join to get marginals
 n15i %>%
   inner_join(vocab_match, by=c('msh'='labeltext')) %>%
   full_join(indic_topl_match, by=c('id'='indication_mesh_id')) %>%
@@ -3955,12 +3952,12 @@ write(paste('T-I in Phase I-III with genetic support: ',n_hist_supported,'/',n_h
 cat(file=stderr(), 'done.\nCreating Figure 3...')
 
 resx=300
-png(paste0(output_path,'/figure-3.png'),width=6.5*resx,height=9*resx,res=resx)
+png(paste0(output_path,'/figure-3.png'),width=18*cm_to_inch*resx,height=17*cm_to_inch*resx,res=resx)
 
 layout_matrix = matrix(c(1,1,
                          2,4,
                          3,4), nrow=3, byrow=T)
-layout(layout_matrix, heights=c(2,.6,.6), widths=c(1,.9))
+layout(layout_matrix, heights=c(1.8,.5,.65), widths=c(1,.9))
 panel = 1
 
 heavy_hitters = read_tsv('data/otg_heavy_hitter_curation.tsv', col_types=cols())
@@ -4090,7 +4087,7 @@ write(paste('Of possible genetically supported T-I ',n_all_poss_otgall,'/',n_pos
 
 genelists = data.frame(x=c(-0.5,1:2,seq(3.5,7.5,1)),
                        list=c('all_genes','ab_tractable','sm_tractable','rhodop_gpcr','nuclear_receptors','enzymes','ion_channels','kinases'),
-                       disp=c('all genes','predicted Ab tractable','predicted SM tractable','rhodopsin-like GPCRs','nuclear receptors','enzymes','ion channels','kinases'))
+                       disp=c('all genes','predicted\nAb tractable','predicted\nSM tractable','rhodopsin-\nlike GPCRs','nuclear\nreceptors','enzymes','ion\nchannels','kinases'))
 
 
 all_possible_gensup_ti = add_genelist_cols(all_possible_gensup_ti, genelists)
@@ -4152,12 +4149,10 @@ panel = 1
 maxcol = '#6E016B'
 ylims = range(area_meta$y) + c(-0.5, 0.5)
 xlims = range(genelists$x) + c(-0.5, 0.5)
-par(mar=c(0.5,8,8,2))
+par(mar=c(0.5,8,2.5,2))
 plot(NA, NA, xlim=xlims, ylim=ylims, xaxs='i', yaxs='i', ann=F, axes=F)
 axis(side=2, at=area_meta$y, labels=area_meta$disp, lwd=0, line=-0.25, las=2, cex.axis=1.1)
-par(xpd=T)
-text(x=genelists$x, y=rep(max(ylims), nrow(genelists))+0.1, labels=genelists$disp, adj=c(0,0), srt=45, cex=1.1)
-par(xpd=F)
+mtext(side=3, at=genelists$x, text=genelists$disp, cex=0.6, padj=0)
 utilization_table = tibble(area=character(0), 
                            genelist=character(0), 
                            developed=integer(0),
@@ -4177,8 +4172,8 @@ for (a in 1:nrow(area_meta)) {
     disp = gsub(' ','',paste0(formatC(utilization*100, format='fg', digits=2),'%'))
     col = alpha(maxcol, utilization)
     rect(xleft=genelists$x[g]-0.5, xright=genelists$x[g]+0.5, ybottom=area_meta$y[a]-0.5, ytop=area_meta$y[a]+0.5, col=col, border=NA)
-    text(x=genelists$x[g], y=area_meta$y[a]-0.2, labels=disp, cex=1.2, font=2)
-    text(x=genelists$x[g], y=area_meta$y[a]-0.1, labels=paste0(numden[1],'/',formatC(numden[2],format='fg',big.mark=',')), pos=3, cex=0.8)
+    text(x=genelists$x[g], y=area_meta$y[a]-0.17, labels=disp, cex=0.9, font=2)
+    text(x=genelists$x[g], y=area_meta$y[a]-0.15, labels=paste0(numden[1],'/',formatC(numden[2],format='fg',big.mark=',')), pos=3, cex=0.6)
   }
 }
 abline(h=mean(area_meta$y[1:2]),lwd=0.5)
@@ -4192,11 +4187,11 @@ write_supp_table(utilization_table, 'Proportion of all possible genetically supp
 maxcol = '#6E016B'
 ylims = range(intogen_directions$y) + c(-0.5, 0.5)
 xlims = range(genelists$x) + c(-0.5, 0.5)
-par(mar=c(1,11,7,1))
+par(mar=c(1,8,3,1))
 plot(NA, NA, xlim=xlims, ylim=ylims, xaxs='i', yaxs='i', ann=F, axes=F)
-axis(side=2, at=intogen_directions$y, labels=intogen_directions$disp, lwd=0, las=2, line=-0.25, cex.axis=1.1)
+axis(side=2, at=intogen_directions$y, labels=intogen_directions$disp, lwd=0, las=2, line=-0.25, cex.axis=1.0)
 par(xpd=T)
-text(x=genelists$x, y=rep(max(ylims), nrow(genelists))+0.05, labels=genelists$disp, adj=c(0,0), srt=45, cex=0.9)
+text(x=genelists$x, y=rep(max(ylims), nrow(genelists))+0.05, labels=genelists$disp, adj=c(0,0), srt=45, cex=0.8)
 par(xpd=F)
 intogen_utilization_table = tibble(area=character(0), 
                            genelist=character(0), 
@@ -4222,8 +4217,8 @@ for (a in 1:nrow(intogen_directions)) {
                                      supported=numden[2],
                                      utilization=utilization))
     rect(xleft=genelists$x[g]-0.5, xright=genelists$x[g]+0.5, ybottom=intogen_directions$y[a]-0.5, ytop=intogen_directions$y[a]+0.5, col=col, border=NA)
-    text(x=genelists$x[g], y=intogen_directions$y[a]-0.2, labels=disp, cex=0.8, font=2)
-    text(x=genelists$x[g], y=intogen_directions$y[a]-0.15, labels=paste0(numden[1],'/',numden[2]), pos=3, cex=0.6)
+    text(x=genelists$x[g], y=intogen_directions$y[a]-0.17, labels=disp, cex=0.8, font=2)
+    text(x=genelists$x[g], y=intogen_directions$y[a]-0.16, labels=paste0(numden[1],'/',numden[2]), pos=3, cex=0.6)
   }
 }
 mtext(side=2, line=8.5, text='IntOGen\nmechanism', cex=0.7)
@@ -4337,7 +4332,7 @@ noncol = '#BC7642'
 binwidth = 0.4
 xlims=c(-20,20)
 ylims=c(0,maxbin+0.5)
-par(mar=c(3.5,4,3,1))
+par(mar=c(3.5,4,2.5,1))
 plot(NA, NA, xlim=xlims, ylim=ylims, axes=F, ann=F, xaxs='i', yaxs='i')
 axis(side=1, at=-20:20, labels=NA, tck=-0.025)
 axis(side=1, at=c(-20, -10, 10, 20), labels=NA, tck=-0.05)
@@ -4352,9 +4347,9 @@ axis(side=2, at=c(0,5,10), labels=c(0,5,10), line=-0.5, lwd=0, las=2)
 mtext(side=2, line=1.5, text='Possible indications\nwith genetic support', cex=0.8)
 abline(v=0)
 rect(xleft=-gsup_bins$mean_sup, xright=0, ybottom=gsup_bins$bin_n_gsup_ti-binwidth, ytop=gsup_bins$bin_n_gsup_ti+binwidth, col=supcol, border=NA)
-arrows(x0=-gsup_bins$u95_sup, x1=-gsup_bins$l95_sup, y0=gsup_bins$bin_n_gsup_ti, y1=gsup_bins$bin_n_gsup_ti, angle=90, code=3, length=0.03)
+arrows(x0=-gsup_bins$u95_sup, x1=-gsup_bins$l95_sup, y0=gsup_bins$bin_n_gsup_ti, y1=gsup_bins$bin_n_gsup_ti, angle=90, code=3, length=0.018)
 rect(xleft=0, xright=gsup_bins$mean_non, ybottom=gsup_bins$bin_n_gsup_ti-binwidth, ytop=gsup_bins$bin_n_gsup_ti+binwidth, col=noncol, border=NA)
-arrows(x0=gsup_bins$l95_non, x1=gsup_bins$u95_non, y0=gsup_bins$bin_n_gsup_ti, y1=gsup_bins$bin_n_gsup_ti, angle=90, code=3, length=0.03)
+arrows(x0=gsup_bins$l95_non, x1=gsup_bins$u95_non, y0=gsup_bins$bin_n_gsup_ti, y1=gsup_bins$bin_n_gsup_ti, angle=90, code=3, length=0.018)
 mtext(letters[panel], side=3, cex=2, adj = 0.0, line = 0.5)
 panel = panel + 1
 
@@ -4460,17 +4455,17 @@ unecessary_message = dev.off()
 cat(file=stderr(), 'done.\nCreating Figure ED8...')
 
 resx=300
-png(paste0(output_path,'/figure-ed8.png'),width=6.5*resx,height=8*resx,res=resx)
+png(paste0(output_path,'/figure-ed8.png'),width=6.5*resx,height=6.7*resx,res=resx)
 
 layout_matrix = matrix(c(1,2,3,3),nrow=2,byrow=T)
-layout(layout_matrix, heights=c(1,3))
+layout(layout_matrix, heights=c(1.1,3))
 
 panel = 1
 
 gtcolor = '#3489CA'
 ticolor = '#CB7635'
 
-par(mar=c(3,3,3,1))
+par(mar=c(2,3,2.5,1))
 xlims = c(2007, 2022)
 xats = 2007:2022
 xbigs = c(2010, 2015, 2020)
@@ -4500,12 +4495,10 @@ plot(NA, NA, xlim=c(0,1), ylim=c(0,1), axes=F, ann=F, xaxs='i', yaxs='i')
 maxcol = '#6E016B'
 ylims = range(area_meta$y) + c(-0.5, 0.5)
 xlims = range(genelists$x) + c(-0.5, 0.5)
-par(mar=c(1,10,6,1))
+par(mar=c(1,7,3,1))
 plot(NA, NA, xlim=xlims, ylim=ylims, xaxs='i', yaxs='i', ann=F, axes=F)
-axis(side=2, at=area_meta$y, labels=area_meta$disp, lwd=0, las=2)
-par(xpd=T)
-text(x=genelists$x, y=rep(max(ylims), nrow(genelists)), labels=genelists$disp, adj=c(0,0), srt=45)
-par(xpd=F)
+axis(side=2, at=area_meta$y, labels=area_meta$disp, lwd=0, las=2, cex=0.9)
+mtext(side=3, at=genelists$x, text=genelists$disp, cex=0.58, padj=0)
 target_utilization_table = tibble(area=character(0), 
                                   genelist=character(0), 
                                   developed=integer(0),
@@ -4525,13 +4518,13 @@ for (a in 1:nrow(area_meta)) {
     disp = gsub(' ','',paste0(formatC(utilization*100, format='fg', digits=2),'%'))
     col = alpha(maxcol, utilization)
     rect(xleft=genelists$x[g]-0.5, xright=genelists$x[g]+0.5, ybottom=area_meta$y[a]-0.5, ytop=area_meta$y[a]+0.5, col=col, border=NA)
-    text(x=genelists$x[g], y=area_meta$y[a]-0.2, labels=disp, cex=1, font=2)
-    text(x=genelists$x[g], y=area_meta$y[a]-0.1, labels=paste0(numden[1],'/',numden[2]), pos=3, cex=0.7)
+    text(x=genelists$x[g], y=area_meta$y[a]-0.17, labels=disp, cex=0.8, font=2)
+    text(x=genelists$x[g], y=area_meta$y[a]-0.16, labels=paste0(numden[1],'/',numden[2]), pos=3, cex=0.6)
   }
 }
 abline(h=mean(area_meta$y[1:2]),lwd=0.5)
 abline(v=c(0.25,2.75),lwd=0.5)
-mtext(letters[panel], side=3, cex=2, adj = 0.0, line = 0.5)
+mtext(letters[panel], side=3, cex=2, adj = -0.2, line = 0.5)
 
 write_supp_table(target_utilization_table, 'Proportion of all possible genetically supported targets that have been developed, by therapy area and gene list.')
 
