@@ -2860,7 +2860,7 @@ read_tsv('data/areas.tsv', col_types=cols()) %>%
   select(topl, area, color) -> areas_temp
 
 tiy %>%
-  inner_join(indic_topl_match, by=c('meshcode_a'='indication_mesh_id')) %>%
+  inner_join(indic_topl_match, by=c('meshcode_a'='indication_mesh_id'), relationship='many-to-many') %>%
   group_by(min_year, topl) %>%
   summarize(.groups='keep', n=n()) %>%
   ungroup() %>%
@@ -2962,13 +2962,13 @@ callouts$y_orig = target_stats$meansim[match(callouts$gene, target_stats$gene)]
 callouts$x = callouts$x_orig
 callouts$y = callouts$y_orig
 callouts$x[callouts$gene %in% c('SLC6A4')] = callouts$x_orig[callouts$gene %in% c('SLC6A4')] + 8
-callouts$y[callouts$gene %in% c('SLC6A4')] = callouts$y_orig[callouts$gene %in% c('SLC6A4')] - 0.13
+callouts$y[callouts$gene %in% c('SLC6A4')] = callouts$y_orig[callouts$gene %in% c('SLC6A4')] - 0.16
 callouts$x[callouts$gene %in% c('CHRM3')] = callouts$x_orig[callouts$gene %in% c('CHRM3')] - 2
 callouts$y[callouts$gene %in% c('CHRM3')] = callouts$y_orig[callouts$gene %in% c('CHRM3')] - 0.05
 callouts$x[callouts$gene %in% c('PTGS2')] = callouts$x_orig[callouts$gene %in% c('PTGS2')] + 4
-callouts$y[callouts$gene %in% c('PTGS2')] = callouts$y_orig[callouts$gene %in% c('PTGS2')] - 0.04
+callouts$y[callouts$gene %in% c('PTGS2')] = callouts$y_orig[callouts$gene %in% c('PTGS2')] - 0.05
 callouts$x[callouts$gene %in% c('OPRM1')] = callouts$x_orig[callouts$gene %in% c('OPRM1')] + 6
-callouts$y[callouts$gene %in% c('OPRM1')] = callouts$y_orig[callouts$gene %in% c('OPRM1')] - 0.15
+callouts$y[callouts$gene %in% c('OPRM1')] = callouts$y_orig[callouts$gene %in% c('OPRM1')] - 0.19
 callouts$x[callouts$gene %in% c('TOP2A')] = callouts$x_orig[callouts$gene %in% c('TOP2A')] + 5
 callouts$y[callouts$gene %in% c('TOP2A')] = callouts$y_orig[callouts$gene %in% c('TOP2A')] + 0.1
 callouts$x[callouts$gene %in% c('PDCD1')] = callouts$x_orig[callouts$gene %in% c('PDCD1')] + 0
@@ -3038,7 +3038,7 @@ axis(side=2, at=c(0.75,5.25), tck=0.025, labels=NA, line=tranche_line)
 abline(h=6)
 mtext(side=2, at=c(3.5, 9.5), text=c('Mean\nsimilarity', 'Indications/\ntarget'), line=tranche_line + 0.25, cex=0.7)
 mtext(side=1, line=2, text='P(G)')
-mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
+mtext(letters[panel], side=3, cex=2, adj = -0.3, line = 0.5)
 panel = panel + 1
 
 master_forest_2 %>%
