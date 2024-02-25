@@ -1287,8 +1287,8 @@ rbind(year_rrs[year_rrs$abbr=='c',master_cols],
 
 cat(file=stderr(), 'done.\nCreating Figure 1...')
 
-resx=300
-png(paste0(output_path,'/figure-1.png'),width=6.5*resx,height=5.5*resx,res=resx)
+resx=1
+pdf(paste0(output_path,'/figure-1.pdf'),width=6.5*resx,height=5.5*resx)
 
 #layout_matrix = matrix(c(1,2,3,4,4,4),nrow=3,byrow=F)
 layout_matrix = matrix(c(1,4,
@@ -1447,7 +1447,7 @@ indic %>%
   select(indication_mesh_id, indication_mesh_term) %>%
   left_join(sim, by=c('indication_mesh_id' = 'meshcode_a')) %>%
   filter(comb_norm >= 0.8) %>%
-  left_join(assoc, by=c('meshcode_b' = 'mesh_id')) %>%
+  left_join(assoc, by=c('meshcode_b' = 'mesh_id'), relationship = 'many-to-many') %>%
   filter(l2g_share >= 0.5 | source != 'OTG') %>%
   rename(assoc_mesh_id=meshcode_b, assoc_mesh_term=mesh_term) %>%
   group_by(indication_mesh_id, indication_mesh_term, assoc_mesh_id, assoc_mesh_term, gene) %>%
@@ -1650,7 +1650,7 @@ for (i in 1:nrow(orphan_forest)) {
 cat(file=stderr(), 'done.\nCreating Figure ED2...')
 
 resx=300
-png(paste0(output_path,'/figure-ed2.png'),width=6.5*resx,height=9*resx,res=resx)
+tiff(paste0(output_path,'/figure-ed2.tif'),width=6.5*resx,height=9*resx,res=resx)
 
 layout_matrix = matrix(c(1,2,
                          3,2,
@@ -2117,7 +2117,7 @@ combined_ti_finngen_unfiltered  = pipeline_best(merge2, phase='combined', basis=
 
 
 resx=300
-png(paste0(output_path,'/figure-ed3.png'),width=6.5*resx,height=4.5*resx,res=resx)
+tiff(paste0(output_path,'/figure-ed3.tif'),width=6.5*resx,height=4.5*resx,res=resx)
 
 layout_matrix = matrix(c(1:14, 15, rep(16:17,each=3)),
                        nrow=3, byrow=T)
@@ -2259,7 +2259,7 @@ unnecessary_message = dev.off()
 cat(file=stderr(), 'done.\nCreating Figure ED4...')
 
 resx=300
-png(paste0(output_path,'/figure-ed4.png'),width=6.5*resx,height=3.5*resx,res=resx)
+tiff(paste0(output_path,'/figure-ed4.tif'),width=6.5*resx,height=3.5*resx,res=resx)
 
 # read data
 t2d_omim = read_tsv('data/t2d/omim_t2d.tsv', col_types=cols())
@@ -2755,8 +2755,8 @@ write(paste("Logit model gensup ~ meansim without 1-indication targets: beta = "
             '\n',sep=''),text_stats_path,append=T)
 
 cm_to_inch = 1/2.54
-resx=300
-png(paste0(output_path,'/figure-2.png'),width=18*cm_to_inch*resx,height=17*cm_to_inch*resx,res=resx)
+resx=1
+pdf(paste0(output_path,'/figure-2.pdf'),width=18*cm_to_inch*resx,height=17*cm_to_inch*resx)
 
 #layout_matrix =  matrix(c(1,1,2,2,3,3,4,4,5,5,6,6,6,
 #                          7,7,7,8,8,8,8,9,9,9,10,10,10), nrow=2, byrow=T)
@@ -3050,7 +3050,7 @@ write_supp_table(master_forest_2_out, "Probability of genetic support by count a
 cex_factor = 70
 
 par(mar=c(4,3,2.5,1))
-plot(NA, NA, xlim=c(0.3,0.65), ylim=c(0,4.5), axes=F, ann=F, xaxs='i', yaxs='i')
+plot(NA, NA, xlim=c(0.25,0.65), ylim=c(0,4.5), axes=F, ann=F, xaxs='i', yaxs='i')
 axis(side=1, lwd=1, at=c(0,1), lwd.ticks=0, labels=NA)
 axis(side=1, lwd=0, lwd.ticks=1, at=0:20/20, labels=NA, tck=-0.015)
 axis(side=1, lwd=0, lwd.ticks=1, at=0:10/10, labels=NA, tck=-0.03)
@@ -3112,7 +3112,7 @@ cat(file=stderr(), 'done.\nCreating Figure ED5...')
 
 
 resx=300
-png(paste0(output_path,'/figure-ed5.png'),width=6.5*resx,height=6.0*resx,res=resx)
+tiff(paste0(output_path,'/figure-ed5.tif'),width=6.5*resx,height=6.0*resx,res=resx)
 
 layout_matrix = matrix(1:18, nrow=6, byrow=T)
 layout(layout_matrix, 
@@ -3398,7 +3398,7 @@ write_supp_table(area_x_subcat_out, 'Confounding between therapy area and GWAS s
 
 
 resx=300
-png(paste0(output_path,'/figure-ed6.png'),width=6.5*resx,height=4*resx,res=resx)
+tiff(paste0(output_path,'/figure-ed6.tif'),width=6.5*resx,height=4*resx,res=resx)
 
 layout_matrix = matrix(1:7, byrow=T, nrow=1)
 layout(layout_matrix)
@@ -3619,7 +3619,7 @@ unnecessary_message = dev.off()
 cat(file=stderr(), 'done.\nCreating Figure ED7...')
 
 resx=300
-png(paste0(output_path,'/figure-ed7.png'),width=6.5*resx,height=6.7*resx,res=resx)
+tiff(paste0(output_path,'/figure-ed7.tif'),width=6.5*resx,height=6.7*resx,res=resx)
 layout_matrix = matrix(c(1,1,2,2,2,3,3,3,9,
                          4,4,4,5,5,5,6,6,6,
                          7,7,7,7,8,8,8,8,8), nrow=3,byrow=T)
@@ -3949,8 +3949,8 @@ write(paste('T-I in Phase I-III with genetic support: ',n_hist_supported,'/',n_h
 
 cat(file=stderr(), 'done.\nCreating Figure 3...')
 
-resx=300
-png(paste0(output_path,'/figure-3.png'),width=18*cm_to_inch*resx,height=17*cm_to_inch*resx,res=resx)
+resx=1
+pdf(paste0(output_path,'/figure-3.pdf'),width=18*cm_to_inch*resx,height=17*cm_to_inch*resx)
 
 layout_matrix = matrix(c(1,1,
                          2,4,
@@ -4085,7 +4085,8 @@ write(paste('Of possible genetically supported T-I ',n_all_poss_otgall,'/',n_pos
 
 genelists = data.frame(x=c(-0.5,1:2,seq(3.5,7.5,1)),
                        list=c('all_genes','ab_tractable','sm_tractable','rhodop_gpcr','nuclear_receptors','enzymes','ion_channels','kinases'),
-                       disp=c('all genes','predicted\nAb tractable','predicted\nSM tractable','rhodopsin-\nlike GPCRs','nuclear\nreceptors','enzymes','ion\nchannels','kinases'))
+                       figdisp = c('all genes','predicted\nAb tractable','predicted\nSM tractable','rhodopsin-\nlike GPCRs','nuclear\nreceptors','enzymes','ion\nchannels','kinases'),
+                       disp=c('all genes','predicted Ab tractable','predicted SM tractable','rhodopsin-like GPCRs','nuclear receptors','enzymes','ion channels','kinases'))
 
 
 all_possible_gensup_ti = add_genelist_cols(all_possible_gensup_ti, genelists)
@@ -4150,7 +4151,7 @@ xlims = range(genelists$x) + c(-0.5, 0.5)
 par(mar=c(0.5,8,2.5,2))
 plot(NA, NA, xlim=xlims, ylim=ylims, xaxs='i', yaxs='i', ann=F, axes=F)
 axis(side=2, at=area_meta$y, labels=area_meta$disp, lwd=0, line=-0.25, las=2, cex.axis=1.1)
-mtext(side=3, at=genelists$x, text=genelists$disp, cex=0.6, padj=0)
+mtext(side=3, at=genelists$x, text=genelists$figdisp, cex=0.6, padj=0)
 utilization_table = tibble(area=character(0), 
                            genelist=character(0), 
                            developed=integer(0),
@@ -4189,7 +4190,7 @@ par(mar=c(1,8,3,1))
 plot(NA, NA, xlim=xlims, ylim=ylims, xaxs='i', yaxs='i', ann=F, axes=F)
 axis(side=2, at=intogen_directions$y, labels=intogen_directions$disp, lwd=0, las=2, line=-0.25, cex.axis=1.0)
 par(xpd=T)
-text(x=genelists$x, y=rep(max(ylims), nrow(genelists))+0.05, labels=genelists$disp, adj=c(0,0), srt=45, cex=0.8)
+text(x=genelists$x, y=rep(max(ylims), nrow(genelists))+0.05, labels=genelists$figdisp, adj=c(0,0), srt=45, cex=0.8)
 par(xpd=F)
 intogen_utilization_table = tibble(area=character(0), 
                            genelist=character(0), 
@@ -4453,7 +4454,7 @@ unecessary_message = dev.off()
 cat(file=stderr(), 'done.\nCreating Figure ED8...')
 
 resx=300
-png(paste0(output_path,'/figure-ed8.png'),width=6.5*resx,height=6.7*resx,res=resx)
+tiff(paste0(output_path,'/figure-ed8.tif'),width=6.5*resx,height=6.7*resx,res=resx)
 
 layout_matrix = matrix(c(1,2,3,3),nrow=2,byrow=T)
 layout(layout_matrix, heights=c(1.1,3))
@@ -4496,7 +4497,7 @@ xlims = range(genelists$x) + c(-0.5, 0.5)
 par(mar=c(1,7,3,1))
 plot(NA, NA, xlim=xlims, ylim=ylims, xaxs='i', yaxs='i', ann=F, axes=F)
 axis(side=2, at=area_meta$y, labels=area_meta$disp, lwd=0, las=2, cex=0.9)
-mtext(side=3, at=genelists$x, text=genelists$disp, cex=0.58, padj=0)
+mtext(side=3, at=genelists$x, text=genelists$figdisp, cex=0.58, padj=0)
 target_utilization_table = tibble(area=character(0), 
                                   genelist=character(0), 
                                   developed=integer(0),
