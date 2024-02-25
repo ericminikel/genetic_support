@@ -1847,8 +1847,6 @@ panel = panel + 1
 
 plot_forest(or_rrs_king2019, xlims=c(0,4), xstyle='ratio', mar=c(3,6,3,6))
 mtext(side=1, line=1.6, text='RS')
-mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
-panel = panel + 1
 write_supp_table(or_rrs_king2019_out, 'Relative success for GWAS Catalog supported programs by odds ratio breaks used in King 2019.')
 mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
 panel = panel + 1
