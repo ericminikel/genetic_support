@@ -1014,10 +1014,12 @@ assoc_source_rr_forest = tibble(label=c('All germline','OMIM','All GWAS','All OT
   mutate(y=max(row_number()) - row_number() + 1)
 for (i in 1:nrow(assoc_source_rr_forest)) {
   pipeline_obj = get(assoc_source_rr_forest$pipeline_obj[i])
-  rr_obj = advancement_rr(pipeline_obj)
+  rr_obj = advancement_rr(pipeline_obj) %>% mutate(n_total = n_yes + n_no)
   assoc_source_rr_forest[i,c('mean','l95','u95')] = rr_obj[rr_obj$phase=='I-Launch',c('rs_mean','rs_l','rs_u')]
   assoc_source_rr_forest[i,c('numerator')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes')]
   assoc_source_rr_forest[i,c('denominator')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_yes')]
+  assoc_source_rr_forest[i,c('x_yes','n_yes','x_no','n_no')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes','n_yes','x_no','n_no')]
+  assoc_source_rr_forest[i,c('n_total')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_total')]
 }
 
 #### 1C
@@ -1068,12 +1070,14 @@ for (i in 1:nrow(year_rrs)) {
                          max_year=year_rrs$maxyear[i],
                          firstyear=year_rrs$firstyear[i],
                          minusomim=year_rrs$minusomim[i], verbose=F)
-  rr_obj = advancement_rr(pb_obj)
+  rr_obj = advancement_rr(pb_obj)  %>% mutate(n_total = n_yes + n_no)
   year_rrs$mean[i] = rr_obj$rs_mean[rr_obj$phase=='I-Launch']
   year_rrs$l95[i] = rr_obj$rs_l[rr_obj$phase=='I-Launch']
   year_rrs$u95[i] = rr_obj$rs_u[rr_obj$phase=='I-Launch']
   year_rrs$numerator[i] = rr_obj$x_yes[rr_obj$phase=='I-Launch']
   year_rrs$denominator[i] = rr_obj$n_yes[rr_obj$phase=='I-Launch']
+  year_rrs[i,c('x_yes','n_yes','x_no','n_no')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes','n_yes','x_no','n_no')]
+  year_rrs[i,c('n_total')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_total')]
 }
 
 year_rrs$y = rep(5:1,each=3)
@@ -1131,12 +1135,14 @@ for (i in 1:nrow(gc_rrs)) {
   if (i == 1) {
     gc_logit_data = subset(pb_obj,  target_status=='genetically supported target' & !is.na(indication_mesh_id) & cat %in% c('Launched',active_clinical$cat))
   }
-  rr_obj = advancement_rr(pb_obj)
+  rr_obj = advancement_rr(pb_obj) %>% mutate(n_total = n_yes + n_no)
   gc_rrs$mean[i] = rr_obj$rs_mean[rr_obj$phase=='I-Launch']
   gc_rrs$l95[i] = rr_obj$rs_l[rr_obj$phase=='I-Launch']
   gc_rrs$u95[i] = rr_obj$rs_u[rr_obj$phase=='I-Launch']
   gc_rrs$numerator[i] = rr_obj$x_yes[rr_obj$phase=='I-Launch']
   gc_rrs$denominator[i] = rr_obj$n_yes[rr_obj$phase=='I-Launch']
+  gc_rrs[i,c('x_yes','n_yes','x_no','n_no')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes','n_yes','x_no','n_no')]
+  gc_rrs[i,c('n_total')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_total')]
 }
 
 gc_logit_data$launched = gc_logit_data$cat=='Launched'
@@ -1175,10 +1181,12 @@ for (i in 1:nrow(beta_rrs)) {
   if (i == 1) {
     beta_logit_data = subset(pb_obj,  target_status=='genetically supported target' & !is.na(indication_mesh_id) & cat %in% c('Launched',active_clinical$cat))
   }
-  rr_obj = advancement_rr(pb_obj)
+  rr_obj = advancement_rr(pb_obj) %>% mutate(n_total = n_yes + n_no)
   beta_rrs[i,c('mean','l95','u95')] = rr_obj[rr_obj$phase=='I-Launch',c('rs_mean','rs_l','rs_u')]
   beta_rrs[i,c('numerator')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes')]
   beta_rrs[i,c('denominator')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_yes')]
+  beta_rrs[i,c('x_yes','n_yes','x_no','n_no')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes','n_yes','x_no','n_no')]
+  beta_rrs[i,c('n_total')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_total')]
 }
 
 beta_logit_data$launched = beta_logit_data$cat=='Launched'
@@ -1210,10 +1218,12 @@ for (i in 1:nrow(or_rrs)) {
   if (i == 1) {
     or_logit_data = subset(pb_obj,  target_status=='genetically supported target' & !is.na(indication_mesh_id) & cat %in% c('Launched',active_clinical$cat))
   }
-  rr_obj = advancement_rr(pb_obj)
+  rr_obj = advancement_rr(pb_obj) %>% mutate(n_total = n_yes + n_no)
   or_rrs[i,c('mean','l95','u95')] = rr_obj[rr_obj$phase=='I-Launch',c('rs_mean','rs_l','rs_u')]
   or_rrs[i,c('numerator')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes')]
   or_rrs[i,c('denominator')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_yes')]
+  or_rrs[i,c('x_yes','n_yes','x_no','n_no')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes','n_yes','x_no','n_no')]
+  or_rrs[i,c('n_total')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_total')]
 }
 
 or_logit_data$launched = or_logit_data$cat=='Launched'
@@ -1233,14 +1243,16 @@ for (i in 1:nrow(or_rrs_king2019)) {
   if (i == 1) {
     or_logit_data = subset(pb_obj,  target_status=='genetically supported target' & !is.na(indication_mesh_id) & cat %in% c('Launched',active_clinical$cat))
   }
-  rr_obj = advancement_rr(pb_obj)
+  rr_obj = advancement_rr(pb_obj)  %>% mutate(n_total = n_yes + n_no)
   or_rrs_king2019[i,c('mean','l95','u95')] = rr_obj[rr_obj$phase=='I-Launch',c('rs_mean','rs_l','rs_u')]
   or_rrs_king2019[i,c('numerator')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes')]
   or_rrs_king2019[i,c('denominator')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_yes')]
+  or_rrs_king2019[i,c('x_yes','n_yes','x_no','n_no')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes','n_yes','x_no','n_no')]
+  or_rrs_king2019[i,c('n_total')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_total')]
 }
 
 or_rrs_king2019 %>%
-  select(or_range = label, min_or, max_or, rs=mean, rs_l95=l95, rs_u95 = u95, approved=numerator, supported=denominator) -> or_rrs_king2019_out
+  select(or_range = label, min_or, max_or, rs=mean, rs_l95=l95, rs_u95 = u95, approved=numerator, supported=denominator, x_yes, n_yes, x_no, n_no, n_total) -> or_rrs_king2019_out
 
 
 
@@ -1265,10 +1277,12 @@ for (i in 1:nrow(maf_rrs)) {
   if (i == 1) {
     maf_logit_data = subset(pb_obj,  target_status=='genetically supported target' & !is.na(indication_mesh_id) & cat %in% c('Launched',active_clinical$cat))
   }
-  rr_obj = advancement_rr(pb_obj)
+  rr_obj = advancement_rr(pb_obj) %>% mutate(n_total = n_yes + n_no)
   maf_rrs[i,c('mean','l95','u95')] = rr_obj[rr_obj$phase=='I-Launch',c('rs_mean','rs_l','rs_u')]
   maf_rrs[i,c('numerator')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes')]
   maf_rrs[i,c('denominator')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_yes')]
+  maf_rrs[i,c('x_yes','n_yes','x_no','n_no')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes','n_yes','x_no','n_no')]
+  maf_rrs[i,c('n_total')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_total')]
 }
 maf_logit_data$launched = maf_logit_data$cat=='Launched'
 maf_logit = glm(launched ~ lead_maf, data=maf_logit_data, family='binomial')
@@ -1355,7 +1369,7 @@ mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
 panel = panel + 1
 
 assoc_source_rr_forest %>%
-  select(association_source=label, rs=mean, rs_l95 = l95, rs_u95 = u95, approved=numerator, supported=denominator) -> assoc_source_rr_out
+  select(association_source=label, rs=mean, rs_l95 = l95, rs_u95 = u95, approved=numerator, supported=denominator, x_yes, n_yes, x_no, n_no, n_total) -> assoc_source_rr_out
 write_supp_table(assoc_source_rr_out, "Relative success by source of germline genetic evidence.")
 
 ##### 1C - by threshold
@@ -1401,7 +1415,7 @@ master_forest$subpanel = c(rep('Year',sum(year_rrs$abbr=='c')),
                            rep('MAF',nrow(maf_rrs)))
 master_forest %>% 
   relocate(subpanel) %>%
-  rename(rs = mean, rs_l95 = l95, rs_u95 = u95, approved=numerator, supported=denominator) %>%
+  rename(rs = mean, rs_l95 = l95, rs_u95 = u95, approved=numerator, supported=denominator, x_yes, n_yes, x_no, n_no, n_total) %>%
   select(-y) -> master_forest_out
 
 write_supp_table(master_forest_out, "Relative success for GWAS Catalog associations as a function of year of discovery, gene count, beta, odds ratio, and minor allele frequency.")
@@ -1557,12 +1571,12 @@ for (i in 1:nrow(onco_rrs)) {
   } else {
     gene_subset = area_subset[area_subset$gene %in% intogen_genes$gene[intogen_genes$mechanism==onco_rrs$intogen_mechanism[i]],]
   }
-  rr_obj = advancement_rr(gene_subset)
+  rr_obj = advancement_rr(gene_subset) %>% mutate(n_total = n_yes + n_no)
   onco_rrs[i,c('mean','l95','u95')] = rr_obj[rr_obj$phase=='I-Launch',c('rs_mean','rs_l','rs_u')]
   onco_rrs[i,c('numerator')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes')]
   onco_rrs[i,c('denominator')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_yes')]
-  onco_rrs[i,c('x_no')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_no')]
-  onco_rrs[i,c('n_no')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_no')]
+  onco_rrs[i,c('x_yes','n_yes','x_no','n_no')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes','n_yes','x_no','n_no')]
+  onco_rrs[i,c('n_total')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_total')]
 }
 
 roc_col = '#FFAA00'
@@ -1636,10 +1650,12 @@ orphan_forest = tibble(label = c('OMIM orphan',
   mutate(y=max(row_number()) - row_number() + 1)
 for (i in 1:nrow(orphan_forest)) {
   pipeline_obj = get(orphan_forest$pipeline_obj[i])
-  rr_obj = advancement_rr(pipeline_obj)
+  rr_obj = advancement_rr(pipeline_obj) %>% mutate(n_total = n_yes + n_no)
   orphan_forest[i,c('mean','l95','u95')] = rr_obj[rr_obj$phase=='I-Launch',c('rs_mean','rs_l','rs_u')]
   orphan_forest[i,c('numerator')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes')]
   orphan_forest[i,c('denominator')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_yes')]
+  orphan_forest[i,c('x_yes','n_yes','x_no','n_no')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes','n_yes','x_no','n_no')]
+  orphan_forest[i,c('n_total')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_total')]
 }
 
 
@@ -1703,7 +1719,7 @@ mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
 panel = panel + 1
 
 orphan_forest %>%
-  select(data_subset = label, rs=mean, rs_l95 = l95, rs_u95 = u95, approved=numerator, supported=denominator) -> orphan_out
+  select(data_subset = label, rs=mean, rs_l95 = l95, rs_u95 = u95, approved=numerator, supported=denominator, x_yes, n_yes, x_no, n_no, n_total) -> orphan_out
 write_supp_table(orphan_out, "RS breakdowns by orphan status, association source combinations, and Genebass queries.")
 
 plot_forest(onco_rrs, xlims=c(0,6), xstyle='ratio', mar=c(3,12,3,6))
@@ -1719,7 +1735,7 @@ mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
 panel = panel + 1
 
 onco_rrs %>%
-  select(data_subset = label, areas, area_filter, assoc_source, intogen_mechanism, rs=mean, rs_l95 = l95, rs_u95 = u95, gensup_approved=numerator, gensup_total=denominator, unsupported_approved = x_no, unsupported_total = n_no) -> onco_rr_out
+  select(data_subset = label, areas, area_filter, assoc_source, intogen_mechanism, rs=mean, rs_l95 = l95, rs_u95 = u95, x_yes, n_yes, x_no, n_no, n_total) -> onco_rr_out
 write_supp_table(onco_rr_out, "Relative success for somatic vs. germline support in oncology.")
 
 plot_forest(year_rrs[year_rrs$abbr=='a',], xlims=c(0,4), xstyle='ratio', mar=c(2,6,2,6))
@@ -1728,7 +1744,7 @@ mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
 panel = panel + 1
 
 year_rrs[year_rrs$abbr=='a',] %>%
-  select(years=label,  rs=mean, rs_l95 = l95, rs_u95 = u95, approved=numerator, supported=denominator) -> years_a_out
+  select(years=label,  rs=mean, rs_l95 = l95, rs_u95 = u95, approved=numerator, supported=denominator, x_yes, n_yes, x_no, n_no, n_total) -> years_a_out
 
 write_supp_table(years_a_out, "Relative success for GWAS Catalog associations by year of discovery, without removing replications or OMIM.")
 
@@ -1738,7 +1754,7 @@ mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
 panel = panel + 1
 
 year_rrs[year_rrs$abbr=='b',] %>%
-  select(years=label,  rs=mean, rs_l95 = l95, rs_u95 = u95, approved=numerator, supported=denominator) -> years_b_out
+  select(years=label,  rs=mean, rs_l95 = l95, rs_u95 = u95, approved=numerator, supported=denominator, x_yes, n_yes, x_no, n_no, n_total) -> years_b_out
 
 
 write_supp_table(years_b_out, "Relative success for GWAS Catalog associations by year, removing replications but not removing OMIM.")
@@ -2070,7 +2086,8 @@ cbind(drug_data = 2023, genetic_data = '2013', adv_rr_simple(p23_g13)),
 cbind(drug_data = 2023, genetic_data = '2023', adv_rr_simple(p23_g23)),
 cbind(drug_data = 2023, genetic_data = 'OTG through 2013', adv_rr_simple(p23_otgpre2013)),
 cbind(drug_data = 2023, genetic_data = 'OTG all time', adv_rr_simple(p23_otgalltime))) %>%
-  as_tibble() -> rs_time_comparison
+  as_tibble() %>%
+  mutate(n_total = n_yes + n_no) -> rs_time_comparison
 
 
 
@@ -2104,7 +2121,7 @@ write_supp_table(rs_time_out, 'RS by phase using 2013 vs. 2023 drug and genetics
 rs_time_comparison %>%
   filter(phase=='I-Launch') -> rs_toplot
 
-# unfiltered versions for Fig S3
+# unfiltered versions for Fig ED3
 combined_ti_germline_unfiltered = pipeline_best(merge2, phase='combined', basis='ti', require_insight=F, include_missing=F, verbose=F)
 combined_ti_omim_unfiltered     = pipeline_best(merge2, phase='combined', basis='ti', require_insight=F, associations=c('OMIM'), verbose=F)
 combined_ti_genebass_unfiltered = pipeline_best(merge2, phase='combined', basis='ti', require_insight=F, associations=c('Genebass'), verbose=F)
@@ -2126,10 +2143,10 @@ par(mar=c(3,0,4.0,0.5))
 ylims = range(pg_ylabs$y) + c(-0.5, 0.5)
 plot(NA, NA, xlim=0:1, ylim=ylims, xaxs='i', yaxs='i', ann=F, axes=F)
 mtext(side=4, line=-0.25, adj=1, at=pg_ylabs$y, text=pg_ylabs$label, las=2, cex=0.8)
-xlims = c(0, 0.12)
+xlims = c(0, 0.13)
 for (this_panel in time_meta$panel) {
   plot(NA, NA, xlim=xlims, ylim=ylims, xaxs='i', yaxs='i', ann=F, axes=F)
-  axis(side=1, at=0:12/100, tck=-0.025, labels=NA)
+  axis(side=1, at=0:13/100, tck=-0.025, labels=NA)
   axis(side=1, at=0:2/20, tck=-0.05, labels=NA)
   axis(side=1, at=0:2/20, lwd=0, line=-0.8, labels=percent(0:2/20), cex.axis=0.8)
   mtext(side=1, line=1.2, text='P(G)', cex=0.7)
@@ -2456,7 +2473,8 @@ areas_all %>%
   filter(area != 'all') -> areas
 
 rr_table_areas %>%
-  select(area, topl, phase:fraction) -> rr_table_output
+  select(area, topl, phase:fraction) %>%
+  mutate(n_total = n_yes + n_no) -> rr_table_output
 
 rr_table_output %>%
   rename(top_mesh_heading = topl,
@@ -2524,7 +2542,7 @@ ti_launched %>%
 ti_launched %>%
   select(gene, meshcode_b = indication_mesh_id) -> a2
 a1 %>%
-  inner_join(a2, by=c('gene'='gene')) %>%
+  inner_join(a2, by=c('gene'='gene'), relationship='many-to-many') %>%
   filter(meshcode_a < meshcode_b) -> ti_simpairs
 ti_simpairs %>%
   left_join(sim, by=c('meshcode_a' = 'meshcode_a', 'meshcode_b' = 'meshcode_b')) -> ti_sim
@@ -2551,7 +2569,7 @@ pp_launched_alltime %>%
 pp_launched_alltime %>%
   select(gene, meshcode_b = indication_mesh_id) -> a2
 a1 %>%
-  inner_join(a2, by=c('gene'='gene')) %>%
+  inner_join(a2, by=c('gene'='gene'), relationship='many-to-many') %>%
   filter(meshcode_a < meshcode_b) -> ti_simpairs
 ti_simpairs %>%
   left_join(sim, by=c('meshcode_a' = 'meshcode_a', 'meshcode_b' = 'meshcode_b')) -> ti_sim
@@ -2671,7 +2689,7 @@ assoc %>% filter(source != 'OTG' | l2g_share >= 0.5) -> assoc_l2g5
 assoc_l2g5$associated_mesh_term = assoc_l2g5$mesh_term
 indic %>% filter(genetic_insight != 'none') -> indic_insight
 sim8 %>%
-  inner_join(assoc_l2g5, by=c('meshcode_a'='mesh_id')) %>%
+  inner_join(assoc_l2g5, by=c('meshcode_a'='mesh_id'), relationship='many-to-many') %>%
   inner_join(indic_insight, by=c('meshcode_b'='indication_mesh_id')) %>%
   group_by(gene, assoc_mesh_id=meshcode_a, indication_mesh_id=meshcode_b, source) %>%
   summarize(.groups='keep',
@@ -2686,7 +2704,7 @@ read_tsv('data/areas.tsv', col_types=cols()) %>%
   select(topl, area, color) -> areas_temp
 
 all_possible_gensup_ti_assocs_all %>%
-  inner_join(indic_topl_match, by='indication_mesh_id') %>%
+  inner_join(indic_topl_match, by='indication_mesh_id', relationship='many-to-many') %>%
   inner_join(areas_temp, by='topl') %>%
   group_by(area) %>%
   summarize(.groups='keep', n_supp_ti = length(unique(ti_uid))) %>%
@@ -2699,7 +2717,7 @@ areas$poss_supp_gi = area_possible_supp_ti$n_supp_ti[match(areas$area, area_poss
 
 
 areas %>%
-  select(area, color, rs=rs_mean, rs_l95, rs_u95,
+  select(area, color, n_ti=n_combined_ti, rs=rs_mean, rs_l95, rs_u95,
          nosup_clinical, nosup_launched, gensup_clinical, gensup_launched,
          ps = p_s_mean, ps_l95 = p_s_l95, ps_u95 = p_s_u95, pg = p_g_mean, pg_l95 = p_g_l95, pg_u95 = p_g_u95, possible_supported_gene_indication_pairs = poss_supp_gi,
          mean_similarity_of_launched_indications = meansim, mean_launched_indications_per_target = meanipert, mean_similarity_since_2000_only = meansim_2000, mean_indications_per_target_since_2000_only = meanipert_2000, n_launched_ti, n_gensup_ti) -> area_output
@@ -3396,6 +3414,88 @@ write_supp_table(area_x_subcat_out, 'Confounding between therapy area and GWAS s
 
 
 
+area_x_year_out %>%
+  mutate(x=assoc_year) %>%
+  group_by(area) %>%
+  summarize(.groups='keep',
+            n_ti = n(),
+            median_x = median(x),
+            q25 = quantile(x,.25),
+            q75 = quantile(x,.75)) %>%
+  ungroup() %>%
+  adorn_totals(where='row',fill='',na.rm=T,name='Total',n_ti) %>%
+  mutate(variable='Year of discovery') %>%
+  relocate(variable) -> area_x_year_n
+
+
+
+area_x_gc_out %>%
+  mutate(x=gene_count) %>%
+  group_by(area) %>%
+  summarize(.groups='keep',
+            n_ti = n(),
+            median_x = median(x),
+            q25 = quantile(x,.25),
+            q75 = quantile(x,.75)) %>%
+  ungroup() %>%
+  adorn_totals(where='row',fill='',na.rm=T,name='Total',n_ti) %>%
+  mutate(variable='Gene count') %>%
+  relocate(variable) -> area_x_gc_n
+
+
+area_x_beta_out %>%
+  mutate(x=abs_beta) %>%
+  group_by(area) %>%
+  summarize(.groups='keep',
+            n_ti = n(),
+            median_x = median(x),
+            q25 = quantile(x,.25),
+            q75 = quantile(x,.75)) %>%
+  ungroup() %>%
+  adorn_totals(where='row',fill='',na.rm=T,name='Total',n_ti) %>%
+  mutate(variable='Beta') %>%
+  relocate(variable) -> area_x_beta_n
+
+
+area_x_or_out %>%
+  mutate(x=abs_or) %>%
+  group_by(area) %>%
+  summarize(.groups='keep',
+            n_ti = n(),
+            median_x = median(x),
+            q25 = quantile(x,.25),
+            q75 = quantile(x,.75)) %>%
+  ungroup() %>%
+  adorn_totals(where='row',fill='',na.rm=T,name='Total',n_ti) %>%
+  mutate(variable='Odds ratio') %>%
+  relocate(variable) -> area_x_or_n
+
+
+area_x_maf_out %>%
+  mutate(x=lead_maf) %>%
+  group_by(area) %>%
+  summarize(.groups='keep',
+            n_ti = n(),
+            median_x = median(x),
+            q25 = quantile(x,.25),
+            q75 = quantile(x,.75)) %>%
+  ungroup() %>%
+  adorn_totals(where='row',fill='',na.rm=T,name='Total',n_ti) %>%
+  mutate(variable='Minor allele frequency') %>%
+  relocate(variable) -> area_x_maf_n
+
+area_x_subcat_out %>%
+  group_by(area) %>%
+  summarize(.groups='keep',
+            n_ti = n()) %>%
+  ungroup() %>%
+  adorn_totals() %>%
+  mutate(variable='OTG GWAS source') %>%
+  relocate(variable) -> area_x_subcat_n
+
+rbind(area_x_year_n, area_x_gc_n, area_x_beta_n, area_x_or_n, area_x_maf_n) -> area_x_vars_out
+write_supp_table(area_x_subcat_out, 'Summary of therapy area confounding by continuous variables (year, gene count, beta, odds ratio, minor allele frequency.')
+write_supp_table(area_x_subcat_n, 'Summary of therapy area confounding by GWAS source (GWAS Catalog, UKBB, or FinnGen).')
 
 resx=300
 tiff(paste0(output_path,'/figure-ed6.tif'),width=6.5*resx,height=4*resx,res=resx)
@@ -3976,7 +4076,7 @@ sim8 = sim[sim$comb_norm >= 0.8,]
 assoc %>% filter(source != 'OTG' | l2g_share >= 0.5) -> assoc_l2g5
 assoc_l2g5$associated_mesh_term = assoc_l2g5$mesh_term
 sim8 %>%
-  inner_join(assoc_l2g5, by=c('meshcode_a'='mesh_id')) %>%
+  inner_join(assoc_l2g5, by=c('meshcode_a'='mesh_id'), relationship = 'many-to-many') %>%
   inner_join(indic_insight, by=c('meshcode_b'='indication_mesh_id')) %>%
   group_by(gene, assoc_mesh_id=meshcode_a, indication_mesh_id=meshcode_b, source) %>%
   summarize(.groups='keep', 
@@ -4028,7 +4128,7 @@ write(paste("Number of clinically developed T-I pairs with genetic support: ",
 assoc %>% filter(source != 'OTG' | (l2g_share >= 0.5 & !hh))  -> assoc_l2g5_nohh
 assoc_l2g5_nohh$associated_mesh_term = assoc_l2g5_nohh$mesh_term
 sim8 %>%
-  inner_join(assoc_l2g5_nohh, by=c('meshcode_a'='mesh_id')) %>%
+  inner_join(assoc_l2g5_nohh, by=c('meshcode_a'='mesh_id'), relationship = 'many-to-many') %>%
   inner_join(indic_insight, by=c('meshcode_b'='indication_mesh_id')) %>%
   group_by(gene, assoc_mesh_id=meshcode_a, indication_mesh_id=meshcode_b, source) %>%
   summarize(.groups='keep', 
@@ -4325,6 +4425,10 @@ gsup_bins$l95_sup = gsup_bins$mean_sup - 1.96 * gsup_bins$sd_sup/sqrt(gsup_bins$
 gsup_bins$u95_sup = gsup_bins$mean_sup + 1.96 * gsup_bins$sd_sup/sqrt(gsup_bins$n)
 gsup_bins$l95_non = gsup_bins$mean_non - 1.96 * gsup_bins$sd_non/sqrt(gsup_bins$n)
 gsup_bins$u95_non = gsup_bins$mean_non + 1.96 * gsup_bins$sd_non/sqrt(gsup_bins$n)
+
+
+write(paste('Total N for Figure 3C: ',sum(gsup_bins$n),
+            '\n',sep=''),text_stats_path,append=T)
 
 supcol = '#43A2CA'
 noncol = '#BC7642'
