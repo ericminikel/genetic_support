@@ -1,4 +1,4 @@
-Last updated: 2024-02-25
+Last updated: 2024-03-05
 
 Unique indications: 1014
 
@@ -167,6 +167,8 @@ Of launched targets with both ≥1 supported indication and ≥1 Phase I+ indica
 Of non-launched targets with both ≥1 supported indication and ≥1 Phase I+ indication, there were 3445 unsupported indications and 218 supported indications pursued, a ratio of 15.8
 
 Fisher test for difference between these ratios: OR=1.2, P=0.06.
+
+Total N for Figure 3C: 937
 
 Ordinal logistic model for drug-indication advancement: genetic support beta= 0.57 (i.e. 77%higher), P = 2.24e-56
 

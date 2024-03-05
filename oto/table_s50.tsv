@@ -1,0 +1,145 @@
+area	genelist	developed	supported	utilization
+all_areas	all genes	285	10424	0.027340752110514198
+all_areas	predicted Ab tractable	233	5292	0.04402872260015117
+all_areas	predicted SM tractable	227	3213	0.0706504824151883
+all_areas	rhodopsin-like GPCRs	16	175	0.09142857142857143
+all_areas	nuclear receptors	8	34	0.23529411764705882
+all_areas	enzymes	49	597	0.08207705192629816
+all_areas	ion channels	15	210	0.07142857142857142
+all_areas	kinases	21	239	0.08786610878661087
+respiratory	all genes	15	691	0.02170767004341534
+respiratory	predicted Ab tractable	14	368	0.03804347826086957
+respiratory	predicted SM tractable	10	238	0.04201680672268908
+respiratory	rhodopsin-like GPCRs	2	6	0.3333333333333333
+respiratory	nuclear receptors	0	4	0
+respiratory	enzymes	1	42	0.023809523809523808
+respiratory	ion channels	1	18	0.05555555555555555
+respiratory	kinases	0	10	0
+metabolic	all genes	76	3914	0.019417475728155338
+metabolic	predicted Ab tractable	62	2052	0.030214424951267055
+metabolic	predicted SM tractable	60	1318	0.04552352048558422
+metabolic	rhodopsin-like GPCRs	4	52	0.07692307692307693
+metabolic	nuclear receptors	5	20	0.25
+metabolic	enzymes	8	249	0.0321285140562249
+metabolic	ion channels	1	53	0.018867924528301886
+metabolic	kinases	2	104	0.019230769230769232
+hematology	all genes	25	3072	0.008138020833333334
+hematology	predicted Ab tractable	22	1514	0.01453104359313078
+hematology	predicted SM tractable	20	1046	0.019120458891013385
+hematology	rhodopsin-like GPCRs	0	51	0
+hematology	nuclear receptors	0	13	0
+hematology	enzymes	6	186	0.03225806451612903
+hematology	ion channels	0	35	0
+hematology	kinases	1	87	0.011494252873563218
+cardiovascular	all genes	23	1706	0.013481828839390387
+cardiovascular	predicted Ab tractable	23	899	0.025583982202447165
+cardiovascular	predicted SM tractable	20	578	0.03460207612456748
+cardiovascular	rhodopsin-like GPCRs	1	22	0.045454545454545456
+cardiovascular	nuclear receptors	0	10	0
+cardiovascular	enzymes	8	122	0.06557377049180328
+cardiovascular	ion channels	4	48	0.08333333333333333
+cardiovascular	kinases	0	62	0
+oncology	all genes	76	2045	0.037163814180929094
+oncology	predicted Ab tractable	58	949	0.06111696522655427
+oncology	predicted SM tractable	67	716	0.0935754189944134
+oncology	rhodopsin-like GPCRs	4	26	0.15384615384615385
+oncology	nuclear receptors	2	13	0.15384615384615385
+oncology	enzymes	16	130	0.12307692307692308
+oncology	ion channels	0	33	0
+oncology	kinases	15	79	0.189873417721519
+congenital	all genes	72	3555	0.020253164556962026
+congenital	predicted Ab tractable	55	1912	0.028765690376569036
+congenital	predicted SM tractable	52	1311	0.03966437833714721
+congenital	rhodopsin-like GPCRs	1	38	0.02631578947368421
+congenital	nuclear receptors	1	19	0.05263157894736842
+congenital	enzymes	13	236	0.05508474576271186
+congenital	ion channels	1	80	0.0125
+congenital	kinases	2	87	0.022988505747126436
+infection	all genes	3	222	0.013513513513513514
+infection	predicted Ab tractable	3	129	0.023255813953488372
+infection	predicted SM tractable	1	79	0.012658227848101266
+infection	rhodopsin-like GPCRs	0	4	0
+infection	nuclear receptors	0	2	0
+infection	enzymes	0	13	0
+infection	ion channels	0	6	0
+infection	kinases	0	2	0
+endocrine	all genes	23	2033	0.01131333005410723
+endocrine	predicted Ab tractable	20	1016	0.01968503937007874
+endocrine	predicted SM tractable	20	667	0.029985007496251874
+endocrine	rhodopsin-like GPCRs	4	36	0.1111111111111111
+endocrine	nuclear receptors	2	22	0.09090909090909091
+endocrine	enzymes	1	138	0.007246376811594203
+endocrine	ion channels	1	40	0.025
+endocrine	kinases	2	55	0.03636363636363636
+signs/symptoms	all genes	29	2659	0.010906355772846935
+signs/symptoms	predicted Ab tractable	25	1408	0.01775568181818182
+signs/symptoms	predicted SM tractable	25	842	0.029691211401425176
+signs/symptoms	rhodopsin-like GPCRs	3	55	0.05454545454545454
+signs/symptoms	nuclear receptors	2	19	0.10526315789473684
+signs/symptoms	enzymes	3	155	0.01935483870967742
+signs/symptoms	ion channels	6	73	0.0821917808219178
+signs/symptoms	kinases	3	71	0.04225352112676056
+immune	all genes	34	1566	0.021711366538952746
+immune	predicted Ab tractable	32	852	0.03755868544600939
+immune	predicted SM tractable	22	545	0.04036697247706422
+immune	rhodopsin-like GPCRs	2	30	0.06666666666666667
+immune	nuclear receptors	0	4	0
+immune	enzymes	6	95	0.06315789473684211
+immune	ion channels	0	19	0
+immune	kinases	1	49	0.02040816326530612
+digestive	all genes	20	1610	0.012422360248447204
+digestive	predicted Ab tractable	16	871	0.018369690011481057
+digestive	predicted SM tractable	11	552	0.019927536231884056
+digestive	rhodopsin-like GPCRs	0	33	0
+digestive	nuclear receptors	1	12	0.08333333333333333
+digestive	enzymes	2	95	0.021052631578947368
+digestive	ion channels	1	21	0.047619047619047616
+digestive	kinases	1	51	0.0196078431372549
+neurology	all genes	55	2810	0.019572953736654804
+neurology	predicted Ab tractable	46	1531	0.030045721750489876
+neurology	predicted SM tractable	40	957	0.04179728317659352
+neurology	rhodopsin-like GPCRs	2	44	0.045454545454545456
+neurology	nuclear receptors	0	8	0
+neurology	enzymes	8	164	0.04878048780487805
+neurology	ion channels	6	96	0.0625
+neurology	kinases	2	67	0.029850746268656716
+psychiatry	all genes	20	1663	0.012026458208057728
+psychiatry	predicted Ab tractable	18	891	0.020202020202020204
+psychiatry	predicted SM tractable	19	524	0.03625954198473282
+psychiatry	rhodopsin-like GPCRs	4	34	0.11764705882352941
+psychiatry	nuclear receptors	0	9	0
+psychiatry	enzymes	3	101	0.0297029702970297
+psychiatry	ion channels	4	55	0.07272727272727272
+psychiatry	kinases	0	49	0
+musculoskeletal	all genes	21	1359	0.01545253863134658
+musculoskeletal	predicted Ab tractable	20	735	0.027210884353741496
+musculoskeletal	predicted SM tractable	15	449	0.0334075723830735
+musculoskeletal	rhodopsin-like GPCRs	1	15	0.06666666666666667
+musculoskeletal	nuclear receptors	1	5	0.2
+musculoskeletal	enzymes	1	82	0.012195121951219513
+musculoskeletal	ion channels	1	24	0.041666666666666664
+musculoskeletal	kinases	3	42	0.07142857142857142
+dermatology	all genes	31	1590	0.01949685534591195
+dermatology	predicted Ab tractable	27	869	0.031070195627157654
+dermatology	predicted SM tractable	20	522	0.038314176245210725
+dermatology	rhodopsin-like GPCRs	1	18	0.05555555555555555
+dermatology	nuclear receptors	0	6	0
+dermatology	enzymes	5	106	0.04716981132075472
+dermatology	ion channels	0	24	0
+dermatology	kinases	2	45	0.044444444444444446
+ophthalmology	all genes	19	1573	0.012078830260648443
+ophthalmology	predicted Ab tractable	14	888	0.015765765765765764
+ophthalmology	predicted SM tractable	12	478	0.02510460251046025
+ophthalmology	rhodopsin-like GPCRs	1	16	0.0625
+ophthalmology	nuclear receptors	1	12	0.08333333333333333
+ophthalmology	enzymes	2	87	0.022988505747126436
+ophthalmology	ion channels	2	44	0.045454545454545456
+ophthalmology	kinases	0	43	0
+other	all genes	4	1186	0.003372681281618887
+other	predicted Ab tractable	3	586	0.005119453924914676
+other	predicted SM tractable	3	363	0.008264462809917356
+other	rhodopsin-like GPCRs	0	19	0
+other	nuclear receptors	1	7	0.14285714285714285
+other	enzymes	0	67	0
+other	ion channels	0	28	0
+other	kinases	0	30	0
