@@ -8,5 +8,7 @@ Here, you can:
 + If you're curious, you can also browse the source code for other scripts that prepared this releasable analytical dataset, in [src](/src). These scripts require inputs that are either too large for GitHub, and/or not approved for public release, thus, you will not be able to successfully run them after cloning the repository; they are provided simply for reference in case you want to see what we did.
 + Browse the input datasets in [data](/data). We have permission from Citeline Pharmaprojects to publicly release the subset of their data that appear here. This includes [data/pp.tsv](/data/pp.tsv), which contains the highest phase reached for all target-indication (T-I) pairs added to Pharmaprojects since 2000.
 
+_Note about dependencies_. This code was written for R 4.2.0 and the following package versions: tidyverse_1.3.1, janitor_2.1.0, binom_1.1-1.1, glue_1.6.2, lawstat_3.4, weights_1.0.4, epitools_0.5-10.1, DescTools_0.99.45, openxlsx_4.2.5, optparse_1.7.1, MASS_7.3-56.
+
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
 

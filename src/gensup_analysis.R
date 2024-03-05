@@ -712,7 +712,7 @@ adv_rr_simple = function(ptbl, alpha=0.05) {
 }
 
 
-plot_forest = function(forestdf, xlims=c(0,1), xstyle='percent', mar=c(3,8,3,8), xlab='', title='', col='#000000', showvals=F, right_text=NA, xlab_line=1.6) {
+plot_forest = function(forestdf, xlims=c(0,1), xstyle='percent', mar=c(3,8,3,8), xlab='', title='', col='#000000', showvals=F, right_text=NA, xlab_line=1.6, yaxcex=0.75) {
   ylims = range(forestdf$y) + c(-0.5, 0.5)
   par(mar=mar)
   plot(NA, NA, xlim=xlims, ylim=ylims, axes=F, ann=F, xaxs='i', yaxs='i')
@@ -734,8 +734,8 @@ plot_forest = function(forestdf, xlims=c(0,1), xstyle='percent', mar=c(3,8,3,8),
   }
   mtext(side=1, line=xlab_line, cex=0.75, text=xlab)
   axis(side=2, at=ylims, labels=NA, lwd.ticks=0)
-  mtext(side=2, at=forestdf$y, text=forestdf$label, cex=0.75, line=0.5, las=2, col=col)
-  mtext(side=4, at=forestdf$y, text=paste0(formatC(forestdf$numerator,big.mark=','),'/',formatC(forestdf$denominator,big.mark=',')), cex=0.75, las=2, line=0.25)
+  mtext(side=2, at=forestdf$y, text=forestdf$label, cex=yaxcex, line=0.5, las=2, col=col)
+  mtext(side=4, at=forestdf$y, text=paste0(formatC(forestdf$numerator,big.mark=','),'/',formatC(forestdf$denominator,big.mark=',')), cex=yaxcex, las=2, line=0.25)
   par(xpd=T)
   if (is.na(right_text)) {
     if (xstyle=='ratio') {
@@ -1014,10 +1014,12 @@ assoc_source_rr_forest = tibble(label=c('All germline','OMIM','All GWAS','All OT
   mutate(y=max(row_number()) - row_number() + 1)
 for (i in 1:nrow(assoc_source_rr_forest)) {
   pipeline_obj = get(assoc_source_rr_forest$pipeline_obj[i])
-  rr_obj = advancement_rr(pipeline_obj)
+  rr_obj = advancement_rr(pipeline_obj) %>% mutate(n_total = n_yes + n_no)
   assoc_source_rr_forest[i,c('mean','l95','u95')] = rr_obj[rr_obj$phase=='I-Launch',c('rs_mean','rs_l','rs_u')]
   assoc_source_rr_forest[i,c('numerator')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes')]
   assoc_source_rr_forest[i,c('denominator')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_yes')]
+  assoc_source_rr_forest[i,c('x_yes','n_yes','x_no','n_no')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes','n_yes','x_no','n_no')]
+  assoc_source_rr_forest[i,c('n_total')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_total')]
 }
 
 #### 1C
@@ -1068,12 +1070,14 @@ for (i in 1:nrow(year_rrs)) {
                          max_year=year_rrs$maxyear[i],
                          firstyear=year_rrs$firstyear[i],
                          minusomim=year_rrs$minusomim[i], verbose=F)
-  rr_obj = advancement_rr(pb_obj)
+  rr_obj = advancement_rr(pb_obj)  %>% mutate(n_total = n_yes + n_no)
   year_rrs$mean[i] = rr_obj$rs_mean[rr_obj$phase=='I-Launch']
   year_rrs$l95[i] = rr_obj$rs_l[rr_obj$phase=='I-Launch']
   year_rrs$u95[i] = rr_obj$rs_u[rr_obj$phase=='I-Launch']
   year_rrs$numerator[i] = rr_obj$x_yes[rr_obj$phase=='I-Launch']
   year_rrs$denominator[i] = rr_obj$n_yes[rr_obj$phase=='I-Launch']
+  year_rrs[i,c('x_yes','n_yes','x_no','n_no')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes','n_yes','x_no','n_no')]
+  year_rrs[i,c('n_total')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_total')]
 }
 
 year_rrs$y = rep(5:1,each=3)
@@ -1131,12 +1135,14 @@ for (i in 1:nrow(gc_rrs)) {
   if (i == 1) {
     gc_logit_data = subset(pb_obj,  target_status=='genetically supported target' & !is.na(indication_mesh_id) & cat %in% c('Launched',active_clinical$cat))
   }
-  rr_obj = advancement_rr(pb_obj)
+  rr_obj = advancement_rr(pb_obj) %>% mutate(n_total = n_yes + n_no)
   gc_rrs$mean[i] = rr_obj$rs_mean[rr_obj$phase=='I-Launch']
   gc_rrs$l95[i] = rr_obj$rs_l[rr_obj$phase=='I-Launch']
   gc_rrs$u95[i] = rr_obj$rs_u[rr_obj$phase=='I-Launch']
   gc_rrs$numerator[i] = rr_obj$x_yes[rr_obj$phase=='I-Launch']
   gc_rrs$denominator[i] = rr_obj$n_yes[rr_obj$phase=='I-Launch']
+  gc_rrs[i,c('x_yes','n_yes','x_no','n_no')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes','n_yes','x_no','n_no')]
+  gc_rrs[i,c('n_total')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_total')]
 }
 
 gc_logit_data$launched = gc_logit_data$cat=='Launched'
@@ -1175,10 +1181,12 @@ for (i in 1:nrow(beta_rrs)) {
   if (i == 1) {
     beta_logit_data = subset(pb_obj,  target_status=='genetically supported target' & !is.na(indication_mesh_id) & cat %in% c('Launched',active_clinical$cat))
   }
-  rr_obj = advancement_rr(pb_obj)
+  rr_obj = advancement_rr(pb_obj) %>% mutate(n_total = n_yes + n_no)
   beta_rrs[i,c('mean','l95','u95')] = rr_obj[rr_obj$phase=='I-Launch',c('rs_mean','rs_l','rs_u')]
   beta_rrs[i,c('numerator')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes')]
   beta_rrs[i,c('denominator')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_yes')]
+  beta_rrs[i,c('x_yes','n_yes','x_no','n_no')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes','n_yes','x_no','n_no')]
+  beta_rrs[i,c('n_total')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_total')]
 }
 
 beta_logit_data$launched = beta_logit_data$cat=='Launched'
@@ -1210,10 +1218,12 @@ for (i in 1:nrow(or_rrs)) {
   if (i == 1) {
     or_logit_data = subset(pb_obj,  target_status=='genetically supported target' & !is.na(indication_mesh_id) & cat %in% c('Launched',active_clinical$cat))
   }
-  rr_obj = advancement_rr(pb_obj)
+  rr_obj = advancement_rr(pb_obj) %>% mutate(n_total = n_yes + n_no)
   or_rrs[i,c('mean','l95','u95')] = rr_obj[rr_obj$phase=='I-Launch',c('rs_mean','rs_l','rs_u')]
   or_rrs[i,c('numerator')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes')]
   or_rrs[i,c('denominator')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_yes')]
+  or_rrs[i,c('x_yes','n_yes','x_no','n_no')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes','n_yes','x_no','n_no')]
+  or_rrs[i,c('n_total')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_total')]
 }
 
 or_logit_data$launched = or_logit_data$cat=='Launched'
@@ -1233,14 +1243,16 @@ for (i in 1:nrow(or_rrs_king2019)) {
   if (i == 1) {
     or_logit_data = subset(pb_obj,  target_status=='genetically supported target' & !is.na(indication_mesh_id) & cat %in% c('Launched',active_clinical$cat))
   }
-  rr_obj = advancement_rr(pb_obj)
+  rr_obj = advancement_rr(pb_obj)  %>% mutate(n_total = n_yes + n_no)
   or_rrs_king2019[i,c('mean','l95','u95')] = rr_obj[rr_obj$phase=='I-Launch',c('rs_mean','rs_l','rs_u')]
   or_rrs_king2019[i,c('numerator')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes')]
   or_rrs_king2019[i,c('denominator')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_yes')]
+  or_rrs_king2019[i,c('x_yes','n_yes','x_no','n_no')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes','n_yes','x_no','n_no')]
+  or_rrs_king2019[i,c('n_total')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_total')]
 }
 
 or_rrs_king2019 %>%
-  select(or_range = label, min_or, max_or, rs=mean, rs_l95=l95, rs_u95 = u95, approved=numerator, supported=denominator) -> or_rrs_king2019_out
+  select(or_range = label, min_or, max_or, rs=mean, rs_l95=l95, rs_u95 = u95, approved=numerator, supported=denominator, x_yes, n_yes, x_no, n_no, n_total) -> or_rrs_king2019_out
 
 
 
@@ -1265,10 +1277,12 @@ for (i in 1:nrow(maf_rrs)) {
   if (i == 1) {
     maf_logit_data = subset(pb_obj,  target_status=='genetically supported target' & !is.na(indication_mesh_id) & cat %in% c('Launched',active_clinical$cat))
   }
-  rr_obj = advancement_rr(pb_obj)
+  rr_obj = advancement_rr(pb_obj) %>% mutate(n_total = n_yes + n_no)
   maf_rrs[i,c('mean','l95','u95')] = rr_obj[rr_obj$phase=='I-Launch',c('rs_mean','rs_l','rs_u')]
   maf_rrs[i,c('numerator')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes')]
   maf_rrs[i,c('denominator')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_yes')]
+  maf_rrs[i,c('x_yes','n_yes','x_no','n_no')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes','n_yes','x_no','n_no')]
+  maf_rrs[i,c('n_total')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_total')]
 }
 maf_logit_data$launched = maf_logit_data$cat=='Launched'
 maf_logit = glm(launched ~ lead_maf, data=maf_logit_data, family='binomial')
@@ -1278,7 +1292,7 @@ maf_logit_p = summary(maf_logit)$coefficients['lead_maf','Pr(>|z|)']
 
 write(paste('Logit model launched ~ lead_maf: beta = ',formatC(maf_logit_beta,digits=2,format='g'),', P = ',formatC(maf_logit_p,digits=2,format='fg'),'\n',sep=''),text_stats_path,append=T)
 
-master_cols = c('label','mean','l95','u95','numerator','denominator')
+master_cols = c('label','mean','l95','u95','numerator','denominator','x_yes','n_yes','x_no','n_no','n_total')
 rbind(year_rrs[year_rrs$abbr=='c',master_cols], 
       gc_rrs[,master_cols], 
       beta_rrs[,master_cols], 
@@ -1287,8 +1301,8 @@ rbind(year_rrs[year_rrs$abbr=='c',master_cols],
 
 cat(file=stderr(), 'done.\nCreating Figure 1...')
 
-resx=300
-png(paste0(output_path,'/figure-1.png'),width=6.5*resx,height=5.5*resx,res=resx)
+resx=1
+pdf(paste0(output_path,'/figure-1.pdf'),width=6.5*resx,height=5.5*resx)
 
 #layout_matrix = matrix(c(1,2,3,4,4,4),nrow=3,byrow=F)
 layout_matrix = matrix(c(1,4,
@@ -1355,7 +1369,7 @@ mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
 panel = panel + 1
 
 assoc_source_rr_forest %>%
-  select(association_source=label, rs=mean, rs_l95 = l95, rs_u95 = u95, approved=numerator, supported=denominator) -> assoc_source_rr_out
+  select(association_source=label, rs=mean, rs_l95 = l95, rs_u95 = u95, approved=numerator, supported=denominator, x_yes, n_yes, x_no, n_no, n_total) -> assoc_source_rr_out
 write_supp_table(assoc_source_rr_out, "Relative success by source of germline genetic evidence.")
 
 ##### 1C - by threshold
@@ -1447,7 +1461,7 @@ indic %>%
   select(indication_mesh_id, indication_mesh_term) %>%
   left_join(sim, by=c('indication_mesh_id' = 'meshcode_a')) %>%
   filter(comb_norm >= 0.8) %>%
-  left_join(assoc, by=c('meshcode_b' = 'mesh_id')) %>%
+  left_join(assoc, by=c('meshcode_b' = 'mesh_id'), relationship = 'many-to-many') %>%
   filter(l2g_share >= 0.5 | source != 'OTG') %>%
   rename(assoc_mesh_id=meshcode_b, assoc_mesh_term=mesh_term) %>%
   group_by(indication_mesh_id, indication_mesh_term, assoc_mesh_id, assoc_mesh_term, gene) %>%
@@ -1557,12 +1571,12 @@ for (i in 1:nrow(onco_rrs)) {
   } else {
     gene_subset = area_subset[area_subset$gene %in% intogen_genes$gene[intogen_genes$mechanism==onco_rrs$intogen_mechanism[i]],]
   }
-  rr_obj = advancement_rr(gene_subset)
+  rr_obj = advancement_rr(gene_subset) %>% mutate(n_total = n_yes + n_no)
   onco_rrs[i,c('mean','l95','u95')] = rr_obj[rr_obj$phase=='I-Launch',c('rs_mean','rs_l','rs_u')]
   onco_rrs[i,c('numerator')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes')]
   onco_rrs[i,c('denominator')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_yes')]
-  onco_rrs[i,c('x_no')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_no')]
-  onco_rrs[i,c('n_no')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_no')]
+  onco_rrs[i,c('x_yes','n_yes','x_no','n_no')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes','n_yes','x_no','n_no')]
+  onco_rrs[i,c('n_total')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_total')]
 }
 
 roc_col = '#FFAA00'
@@ -1636,10 +1650,12 @@ orphan_forest = tibble(label = c('OMIM orphan',
   mutate(y=max(row_number()) - row_number() + 1)
 for (i in 1:nrow(orphan_forest)) {
   pipeline_obj = get(orphan_forest$pipeline_obj[i])
-  rr_obj = advancement_rr(pipeline_obj)
+  rr_obj = advancement_rr(pipeline_obj) %>% mutate(n_total = n_yes + n_no)
   orphan_forest[i,c('mean','l95','u95')] = rr_obj[rr_obj$phase=='I-Launch',c('rs_mean','rs_l','rs_u')]
   orphan_forest[i,c('numerator')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes')]
   orphan_forest[i,c('denominator')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_yes')]
+  orphan_forest[i,c('x_yes','n_yes','x_no','n_no')]        = rr_obj[rr_obj$phase=='I-Launch',c('x_yes','n_yes','x_no','n_no')]
+  orphan_forest[i,c('n_total')]      = rr_obj[rr_obj$phase=='I-Launch',c('n_total')]
 }
 
 
@@ -1650,7 +1666,7 @@ for (i in 1:nrow(orphan_forest)) {
 cat(file=stderr(), 'done.\nCreating Figure ED2...')
 
 resx=300
-png(paste0(output_path,'/figure-ed2.png'),width=6.5*resx,height=9*resx,res=resx)
+tiff(paste0(output_path,'/figure-ed2.tif'),width=6.5*resx,height=9*resx,res=resx)
 
 layout_matrix = matrix(c(1,2,
                          3,2,
@@ -1703,7 +1719,7 @@ mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
 panel = panel + 1
 
 orphan_forest %>%
-  select(data_subset = label, rs=mean, rs_l95 = l95, rs_u95 = u95, approved=numerator, supported=denominator) -> orphan_out
+  select(data_subset = label, rs=mean, rs_l95 = l95, rs_u95 = u95, approved=numerator, supported=denominator, x_yes, n_yes, x_no, n_no, n_total) -> orphan_out
 write_supp_table(orphan_out, "RS breakdowns by orphan status, association source combinations, and Genebass queries.")
 
 plot_forest(onco_rrs, xlims=c(0,6), xstyle='ratio', mar=c(3,12,3,6))
@@ -1719,7 +1735,7 @@ mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
 panel = panel + 1
 
 onco_rrs %>%
-  select(data_subset = label, areas, area_filter, assoc_source, intogen_mechanism, rs=mean, rs_l95 = l95, rs_u95 = u95, gensup_approved=numerator, gensup_total=denominator, unsupported_approved = x_no, unsupported_total = n_no) -> onco_rr_out
+  select(data_subset = label, areas, area_filter, assoc_source, intogen_mechanism, rs=mean, rs_l95 = l95, rs_u95 = u95, x_yes, n_yes, x_no, n_no, n_total) -> onco_rr_out
 write_supp_table(onco_rr_out, "Relative success for somatic vs. germline support in oncology.")
 
 plot_forest(year_rrs[year_rrs$abbr=='a',], xlims=c(0,4), xstyle='ratio', mar=c(2,6,2,6))
@@ -1728,7 +1744,7 @@ mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
 panel = panel + 1
 
 year_rrs[year_rrs$abbr=='a',] %>%
-  select(years=label,  rs=mean, rs_l95 = l95, rs_u95 = u95, approved=numerator, supported=denominator) -> years_a_out
+  select(years=label,  rs=mean, rs_l95 = l95, rs_u95 = u95, approved=numerator, supported=denominator, x_yes, n_yes, x_no, n_no, n_total) -> years_a_out
 
 write_supp_table(years_a_out, "Relative success for GWAS Catalog associations by year of discovery, without removing replications or OMIM.")
 
@@ -1738,7 +1754,7 @@ mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
 panel = panel + 1
 
 year_rrs[year_rrs$abbr=='b',] %>%
-  select(years=label,  rs=mean, rs_l95 = l95, rs_u95 = u95, approved=numerator, supported=denominator) -> years_b_out
+  select(years=label,  rs=mean, rs_l95 = l95, rs_u95 = u95, approved=numerator, supported=denominator, x_yes, n_yes, x_no, n_no, n_total) -> years_b_out
 
 
 write_supp_table(years_b_out, "Relative success for GWAS Catalog associations by year, removing replications but not removing OMIM.")
@@ -1847,8 +1863,6 @@ panel = panel + 1
 
 plot_forest(or_rrs_king2019, xlims=c(0,4), xstyle='ratio', mar=c(3,6,3,6))
 mtext(side=1, line=1.6, text='RS')
-mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
-panel = panel + 1
 write_supp_table(or_rrs_king2019_out, 'Relative success for GWAS Catalog supported programs by odds ratio breaks used in King 2019.')
 mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
 panel = panel + 1
@@ -1907,7 +1921,7 @@ sim_temp = sim %>%
   filter(meshcode_b %in% n15g$mesh_id)
 
 n15p %>%
-  left_join(n15g, by='gene', suffix=c('_indication','_association')) %>%
+  left_join(n15g, by='gene', suffix=c('_indication','_association'), relationship='many-to-many') %>%
   left_join(sim_temp, by=c('mesh_id_indication'='meshcode_a', 'mesh_id_association'='meshcode_b')) %>%
   mutate(comb_norm = replace_na(comb_norm, 0)) %>%
   group_by(gene, mesh_id_indication, mesh_term_indication, ccat, ccatnum) %>%
@@ -1933,7 +1947,7 @@ sim_temp = sim %>%
   filter(meshcode_a %in% n15p$mesh_id) %>%
   filter(meshcode_b %in% assoc_temp$mesh_id)
 n15p %>%
-  left_join(assoc_temp, by='gene', suffix=c('_indication','_association')) %>%
+  left_join(assoc_temp, by='gene', suffix=c('_indication','_association'), relationship='many-to-many') %>%
   left_join(sim_temp, by=c('mesh_id_indication'='meshcode_a', 'mesh_id_association'='meshcode_b')) %>%
   mutate(comb_norm = replace_na(comb_norm, 0)) %>%
   group_by(gene, mesh_id_indication, mesh_term_indication, ccat, ccatnum) %>%
@@ -1961,7 +1975,7 @@ sim_temp = sim %>%
   filter(meshcode_b %in% n15g$mesh_id)
 
 pp_temp %>%
-  left_join(n15g, by='gene', suffix=c('_indication','_association')) %>%
+  left_join(n15g, by='gene', suffix=c('_indication','_association'), relationship='many-to-many') %>%
   left_join(sim_temp, by=c('mesh_id_indication'='meshcode_a', 'mesh_id_association'='meshcode_b')) %>%
   mutate(comb_norm = replace_na(comb_norm, 0)) %>%
   group_by(gene, mesh_id_indication, mesh_term_indication, ccat, ccatnum) %>%
@@ -1986,7 +2000,7 @@ sim_temp = sim %>%
   filter(meshcode_b %in% assoc_temp$mesh_id)
 
 pp_temp %>%
-  left_join(assoc_temp, by='gene', suffix=c('_indication','_association')) %>%
+  left_join(assoc_temp, by='gene', suffix=c('_indication','_association'), relationship='many-to-many') %>%
   left_join(sim_temp, by=c('mesh_id_indication'='meshcode_a', 'mesh_id_association'='meshcode_b')) %>%
   mutate(comb_norm = replace_na(comb_norm, 0)) %>%
   group_by(gene, mesh_id_indication, mesh_term_indication, ccat, ccatnum) %>%
@@ -2018,7 +2032,7 @@ sim_temp = sim %>%
   filter(meshcode_b %in% assoc_temp$mesh_id)
 
 pp_temp %>%
-  left_join(assoc_temp, by='gene', suffix=c('_indication','_association')) %>%
+  left_join(assoc_temp, by='gene', suffix=c('_indication','_association'), relationship='many-to-many') %>%
   left_join(sim_temp, by=c('mesh_id_indication'='meshcode_a', 'mesh_id_association'='meshcode_b')) %>%
   mutate(comb_norm = replace_na(comb_norm, 0)) %>%
   group_by(gene, mesh_id_indication, mesh_term_indication, ccat, ccatnum) %>%
@@ -2046,7 +2060,7 @@ sim_temp = sim %>%
   filter(meshcode_b %in% assoc_temp$mesh_id)
 
 pp_temp %>%
-  left_join(assoc_temp, by='gene', suffix=c('_indication','_association')) %>%
+  left_join(assoc_temp, by='gene', suffix=c('_indication','_association'), relationship='many-to-many') %>%
   left_join(sim_temp, by=c('mesh_id_indication'='meshcode_a', 'mesh_id_association'='meshcode_b')) %>%
   mutate(comb_norm = replace_na(comb_norm, 0)) %>%
   group_by(gene, mesh_id_indication, mesh_term_indication, ccat, ccatnum) %>%
@@ -2072,7 +2086,8 @@ cbind(drug_data = 2023, genetic_data = '2013', adv_rr_simple(p23_g13)),
 cbind(drug_data = 2023, genetic_data = '2023', adv_rr_simple(p23_g23)),
 cbind(drug_data = 2023, genetic_data = 'OTG through 2013', adv_rr_simple(p23_otgpre2013)),
 cbind(drug_data = 2023, genetic_data = 'OTG all time', adv_rr_simple(p23_otgalltime))) %>%
-  as_tibble() -> rs_time_comparison
+  as_tibble() %>%
+  mutate(n_total = n_yes + n_no) -> rs_time_comparison
 
 
 
@@ -2106,7 +2121,7 @@ write_supp_table(rs_time_out, 'RS by phase using 2013 vs. 2023 drug and genetics
 rs_time_comparison %>%
   filter(phase=='I-Launch') -> rs_toplot
 
-# unfiltered versions for Fig S3
+# unfiltered versions for Fig ED3
 combined_ti_germline_unfiltered = pipeline_best(merge2, phase='combined', basis='ti', require_insight=F, include_missing=F, verbose=F)
 combined_ti_omim_unfiltered     = pipeline_best(merge2, phase='combined', basis='ti', require_insight=F, associations=c('OMIM'), verbose=F)
 combined_ti_genebass_unfiltered = pipeline_best(merge2, phase='combined', basis='ti', require_insight=F, associations=c('Genebass'), verbose=F)
@@ -2119,7 +2134,7 @@ combined_ti_finngen_unfiltered  = pipeline_best(merge2, phase='combined', basis=
 
 
 resx=300
-png(paste0(output_path,'/figure-ed3.png'),width=6.5*resx,height=4.5*resx,res=resx)
+tiff(paste0(output_path,'/figure-ed3.tif'),width=6.5*resx,height=4.5*resx,res=resx)
 
 layout_matrix = matrix(c(1:14, 15, rep(16:17,each=3)),
                        nrow=3, byrow=T)
@@ -2128,10 +2143,10 @@ par(mar=c(3,0,4.0,0.5))
 ylims = range(pg_ylabs$y) + c(-0.5, 0.5)
 plot(NA, NA, xlim=0:1, ylim=ylims, xaxs='i', yaxs='i', ann=F, axes=F)
 mtext(side=4, line=-0.25, adj=1, at=pg_ylabs$y, text=pg_ylabs$label, las=2, cex=0.8)
-xlims = c(0, 0.12)
+xlims = c(0, 0.13)
 for (this_panel in time_meta$panel) {
   plot(NA, NA, xlim=xlims, ylim=ylims, xaxs='i', yaxs='i', ann=F, axes=F)
-  axis(side=1, at=0:12/100, tck=-0.025, labels=NA)
+  axis(side=1, at=0:13/100, tck=-0.025, labels=NA)
   axis(side=1, at=0:2/20, tck=-0.05, labels=NA)
   axis(side=1, at=0:2/20, lwd=0, line=-0.8, labels=percent(0:2/20), cex.axis=0.8)
   mtext(side=1, line=1.2, text='P(G)', cex=0.7)
@@ -2261,7 +2276,7 @@ unnecessary_message = dev.off()
 cat(file=stderr(), 'done.\nCreating Figure ED4...')
 
 resx=300
-png(paste0(output_path,'/figure-ed4.png'),width=6.5*resx,height=3.5*resx,res=resx)
+tiff(paste0(output_path,'/figure-ed4.tif'),width=6.5*resx,height=3.5*resx,res=resx)
 
 # read data
 t2d_omim = read_tsv('data/t2d/omim_t2d.tsv', col_types=cols())
@@ -2458,7 +2473,8 @@ areas_all %>%
   filter(area != 'all') -> areas
 
 rr_table_areas %>%
-  select(area, topl, phase:fraction) -> rr_table_output
+  select(area, topl, phase:fraction) %>%
+  mutate(n_total = n_yes + n_no) -> rr_table_output
 
 rr_table_output %>%
   rename(top_mesh_heading = topl,
@@ -2526,7 +2542,7 @@ ti_launched %>%
 ti_launched %>%
   select(gene, meshcode_b = indication_mesh_id) -> a2
 a1 %>%
-  inner_join(a2, by=c('gene'='gene')) %>%
+  inner_join(a2, by=c('gene'='gene'), relationship='many-to-many') %>%
   filter(meshcode_a < meshcode_b) -> ti_simpairs
 ti_simpairs %>%
   left_join(sim, by=c('meshcode_a' = 'meshcode_a', 'meshcode_b' = 'meshcode_b')) -> ti_sim
@@ -2553,7 +2569,7 @@ pp_launched_alltime %>%
 pp_launched_alltime %>%
   select(gene, meshcode_b = indication_mesh_id) -> a2
 a1 %>%
-  inner_join(a2, by=c('gene'='gene')) %>%
+  inner_join(a2, by=c('gene'='gene'), relationship='many-to-many') %>%
   filter(meshcode_a < meshcode_b) -> ti_simpairs
 ti_simpairs %>%
   left_join(sim, by=c('meshcode_a' = 'meshcode_a', 'meshcode_b' = 'meshcode_b')) -> ti_sim
@@ -2590,7 +2606,7 @@ ti_launched %>%
 ti_launched %>%
   select(gene, meshcode_b = indication_mesh_id) -> a2
 a1 %>%
-  inner_join(a2, by=c('gene'='gene')) %>%
+  inner_join(a2, by=c('gene'='gene'), relationship='many-to-many') %>%
   filter(meshcode_a < meshcode_b) -> ti_simpairs
 ti_simpairs %>%
   left_join(sim, by=c('meshcode_a' = 'meshcode_a', 'meshcode_b' = 'meshcode_b')) -> ti_sim
@@ -2673,7 +2689,7 @@ assoc %>% filter(source != 'OTG' | l2g_share >= 0.5) -> assoc_l2g5
 assoc_l2g5$associated_mesh_term = assoc_l2g5$mesh_term
 indic %>% filter(genetic_insight != 'none') -> indic_insight
 sim8 %>%
-  inner_join(assoc_l2g5, by=c('meshcode_a'='mesh_id')) %>%
+  inner_join(assoc_l2g5, by=c('meshcode_a'='mesh_id'), relationship='many-to-many') %>%
   inner_join(indic_insight, by=c('meshcode_b'='indication_mesh_id')) %>%
   group_by(gene, assoc_mesh_id=meshcode_a, indication_mesh_id=meshcode_b, source) %>%
   summarize(.groups='keep',
@@ -2688,7 +2704,7 @@ read_tsv('data/areas.tsv', col_types=cols()) %>%
   select(topl, area, color) -> areas_temp
 
 all_possible_gensup_ti_assocs_all %>%
-  inner_join(indic_topl_match, by='indication_mesh_id') %>%
+  inner_join(indic_topl_match, by='indication_mesh_id', relationship='many-to-many') %>%
   inner_join(areas_temp, by='topl') %>%
   group_by(area) %>%
   summarize(.groups='keep', n_supp_ti = length(unique(ti_uid))) %>%
@@ -2701,7 +2717,7 @@ areas$poss_supp_gi = area_possible_supp_ti$n_supp_ti[match(areas$area, area_poss
 
 
 areas %>%
-  select(area, color, rs=rs_mean, rs_l95, rs_u95,
+  select(area, color, n_ti=n_combined_ti, rs=rs_mean, rs_l95, rs_u95,
          nosup_clinical, nosup_launched, gensup_clinical, gensup_launched,
          ps = p_s_mean, ps_l95 = p_s_l95, ps_u95 = p_s_u95, pg = p_g_mean, pg_l95 = p_g_l95, pg_u95 = p_g_u95, possible_supported_gene_indication_pairs = poss_supp_gi,
          mean_similarity_of_launched_indications = meansim, mean_launched_indications_per_target = meanipert, mean_similarity_since_2000_only = meansim_2000, mean_indications_per_target_since_2000_only = meanipert_2000, n_launched_ti, n_gensup_ti) -> area_output
@@ -2756,8 +2772,9 @@ write(paste("Logit model gensup ~ meansim without 1-indication targets: beta = "
             ', P = ',formatC(meansim_no1_p, format='e', digits=1),
             '\n',sep=''),text_stats_path,append=T)
 
-resx=300
-png(paste0(output_path,'/figure-2.png'),width=6.5*resx,height=8.5*resx,res=resx)
+cm_to_inch = 1/2.54
+resx=1
+pdf(paste0(output_path,'/figure-2.pdf'),width=18*cm_to_inch*resx,height=17*cm_to_inch*resx)
 
 #layout_matrix =  matrix(c(1,1,2,2,3,3,4,4,5,5,6,6,6,
 #                          7,7,7,8,8,8,8,9,9,9,10,10,10), nrow=2, byrow=T)
@@ -2774,7 +2791,7 @@ ylims = range(areas_all$y, na.rm=T) + c(-0.5, 0.5)
 par(mar=c(3,1,3,0))
 plot(NA, NA, ylim=ylims, xlim=xlims, axes=F, ann=F, xaxs='i', yaxs='i')
 areas_all %>% group_by(topl, area, color, y) %>% slice(1) %>% select(topl, area, color, y) -> rr_table_meta
-mtext(side=4, at=rr_table_meta$y, line=0, adj=1, las=2, text=rr_table_meta$area, cex=.8, col=rr_table_meta$color)
+mtext(side=4, at=rr_table_meta$y, line=0, adj=1, las=2, text=rr_table_meta$area, cex=.7, col=rr_table_meta$color)
 panel = 1
 par(mar=c(3,0.25,3,3.5))
 transition_disp = list('Preclinical'='Pre-I','I'='I-II', 'II'='II-III', 'III'='III-Launch', 'I-Launch'='I-Launch')
@@ -2800,7 +2817,7 @@ for (transition in c('Preclinical','I','II','III','I-Launch')) {
   mtext(side=3, line=0.25, text=transition_disp[[transition]], adj=0, at=1, cex=0.9, font=2)
   
   par(xpd=T)
-  segments(x0=-max(xlims), x1=max(xlims)*1.25, y0=max(areas_all$y)-0.5, lwd=.125)
+  segments(x0=-max(xlims), x1=max(xlims)*1.5, y0=max(areas_all$y)-0.5, lwd=.125)
   #segments(x0=-max(xlims), x1=max(xlims)*1.25, y0=0, lwd=.125)
   par(xpd=F)
   
@@ -2824,7 +2841,7 @@ assoc %>%
 # i.e. ever developed in pharmaprojects and has genetic insight
 # (this also excludes diagnostic indications)
 gty %>%
-  inner_join(sim8, by=c('mesh_id'='meshcode_b')) %>%
+  inner_join(sim8, by=c('mesh_id'='meshcode_b'), relationship = "many-to-many") %>%
   group_by(gene, meshcode_a) %>%
   summarize(.groups='keep', min_year = min(min_year)) %>%
   ungroup() -> tiy
@@ -2859,7 +2876,7 @@ read_tsv('data/areas.tsv', col_types=cols()) %>%
   select(topl, area, color) -> areas_temp
 
 tiy %>%
-  inner_join(indic_topl_match, by=c('meshcode_a'='indication_mesh_id')) %>%
+  inner_join(indic_topl_match, by=c('meshcode_a'='indication_mesh_id'), relationship='many-to-many') %>%
   group_by(min_year, topl) %>%
   summarize(.groups='keep', n=n()) %>%
   ungroup() %>%
@@ -2875,12 +2892,12 @@ tiya %>%
   ungroup() %>%
   arrange(desc(cumn)) -> tiya_leg
 
-par(mar=c(3,4,2,6))
+par(mar=c(3,4,2,7))
 xlims = c(2007, 2022)
 xats = 2007:2022
 xbigs = c(2010, 2015, 2020)
 ylims = c(0, 27000)
-yats = 0:10*1e3
+yats = 0:30*1e3
 ybigs = c(0, 5000, 10000, 15000, 20000, 25000)
 plot(NA, NA, xlim=xlims, ylim=ylims, axes=F, ann=F, xaxs='i', yaxs='i')
 axis(side=1, at=xlims, lwd.ticks=0, labels=NA)
@@ -2961,13 +2978,13 @@ callouts$y_orig = target_stats$meansim[match(callouts$gene, target_stats$gene)]
 callouts$x = callouts$x_orig
 callouts$y = callouts$y_orig
 callouts$x[callouts$gene %in% c('SLC6A4')] = callouts$x_orig[callouts$gene %in% c('SLC6A4')] + 8
-callouts$y[callouts$gene %in% c('SLC6A4')] = callouts$y_orig[callouts$gene %in% c('SLC6A4')] - 0.13
+callouts$y[callouts$gene %in% c('SLC6A4')] = callouts$y_orig[callouts$gene %in% c('SLC6A4')] - 0.16
 callouts$x[callouts$gene %in% c('CHRM3')] = callouts$x_orig[callouts$gene %in% c('CHRM3')] - 2
 callouts$y[callouts$gene %in% c('CHRM3')] = callouts$y_orig[callouts$gene %in% c('CHRM3')] - 0.05
 callouts$x[callouts$gene %in% c('PTGS2')] = callouts$x_orig[callouts$gene %in% c('PTGS2')] + 4
-callouts$y[callouts$gene %in% c('PTGS2')] = callouts$y_orig[callouts$gene %in% c('PTGS2')] - 0.04
+callouts$y[callouts$gene %in% c('PTGS2')] = callouts$y_orig[callouts$gene %in% c('PTGS2')] - 0.05
 callouts$x[callouts$gene %in% c('OPRM1')] = callouts$x_orig[callouts$gene %in% c('OPRM1')] + 6
-callouts$y[callouts$gene %in% c('OPRM1')] = callouts$y_orig[callouts$gene %in% c('OPRM1')] - 0.15
+callouts$y[callouts$gene %in% c('OPRM1')] = callouts$y_orig[callouts$gene %in% c('OPRM1')] - 0.19
 callouts$x[callouts$gene %in% c('TOP2A')] = callouts$x_orig[callouts$gene %in% c('TOP2A')] + 5
 callouts$y[callouts$gene %in% c('TOP2A')] = callouts$y_orig[callouts$gene %in% c('TOP2A')] + 0.1
 callouts$x[callouts$gene %in% c('PDCD1')] = callouts$x_orig[callouts$gene %in% c('PDCD1')] + 0
@@ -3030,14 +3047,14 @@ master_forest_2 = rbind(indic_per_forest, meansim_forest)
 master_forest_2$y = c(11:7,5:1)
 
 
-plot_forest(master_forest_2, xlims=c(0,.35), xstyle='percent', mar=c(4,8,2.5,6))
+plot_forest(master_forest_2, xlims=c(0,.35), xstyle='percent', mar=c(4,8,2.5,6), yaxcex=0.6)
 tranche_line = 4.0
 axis(side=2, at=c(6.75,11.25), tck=0.025, labels=NA, line=tranche_line)
 axis(side=2, at=c(0.75,5.25), tck=0.025, labels=NA, line=tranche_line)
 abline(h=6)
-mtext(side=2, at=c(3.5, 9.5), text=c('Mean\nsimilarity', 'Indications/\ntarget'), line=tranche_line + 0.25, cex=0.8)
+mtext(side=2, at=c(3.5, 9.5), text=c('Mean\nsimilarity', 'Indications/\ntarget'), line=tranche_line + 0.25, cex=0.7)
 mtext(side=1, line=2, text='P(G)')
-mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
+mtext(letters[panel], side=3, cex=2, adj = -0.3, line = 0.5)
 panel = panel + 1
 
 master_forest_2 %>%
@@ -3051,7 +3068,7 @@ write_supp_table(master_forest_2_out, "Probability of genetic support by count a
 cex_factor = 70
 
 par(mar=c(4,3,2.5,1))
-plot(NA, NA, xlim=c(0.3,0.65), ylim=c(0,4.5), axes=F, ann=F, xaxs='i', yaxs='i')
+plot(NA, NA, xlim=c(0.25,0.65), ylim=c(0,4.5), axes=F, ann=F, xaxs='i', yaxs='i')
 axis(side=1, lwd=1, at=c(0,1), lwd.ticks=0, labels=NA)
 axis(side=1, lwd=0, lwd.ticks=1, at=0:20/20, labels=NA, tck=-0.015)
 axis(side=1, lwd=0, lwd.ticks=1, at=0:10/10, labels=NA, tck=-0.03)
@@ -3113,7 +3130,7 @@ cat(file=stderr(), 'done.\nCreating Figure ED5...')
 
 
 resx=300
-png(paste0(output_path,'/figure-ed5.png'),width=6.5*resx,height=6.0*resx,res=resx)
+tiff(paste0(output_path,'/figure-ed5.tif'),width=6.5*resx,height=6.0*resx,res=resx)
 
 layout_matrix = matrix(1:18, nrow=6, byrow=T)
 layout(layout_matrix, 
@@ -3397,9 +3414,91 @@ write_supp_table(area_x_subcat_out, 'Confounding between therapy area and GWAS s
 
 
 
+area_x_year_out %>%
+  mutate(x=assoc_year) %>%
+  group_by(area) %>%
+  summarize(.groups='keep',
+            n_ti = n(),
+            median_x = median(x),
+            q25 = quantile(x,.25),
+            q75 = quantile(x,.75)) %>%
+  ungroup() %>%
+  adorn_totals(where='row',fill='',na.rm=T,name='Total',n_ti) %>%
+  mutate(variable='Year of discovery') %>%
+  relocate(variable) -> area_x_year_n
+
+
+
+area_x_gc_out %>%
+  mutate(x=gene_count) %>%
+  group_by(area) %>%
+  summarize(.groups='keep',
+            n_ti = n(),
+            median_x = median(x),
+            q25 = quantile(x,.25),
+            q75 = quantile(x,.75)) %>%
+  ungroup() %>%
+  adorn_totals(where='row',fill='',na.rm=T,name='Total',n_ti) %>%
+  mutate(variable='Gene count') %>%
+  relocate(variable) -> area_x_gc_n
+
+
+area_x_beta_out %>%
+  mutate(x=abs_beta) %>%
+  group_by(area) %>%
+  summarize(.groups='keep',
+            n_ti = n(),
+            median_x = median(x),
+            q25 = quantile(x,.25),
+            q75 = quantile(x,.75)) %>%
+  ungroup() %>%
+  adorn_totals(where='row',fill='',na.rm=T,name='Total',n_ti) %>%
+  mutate(variable='Beta') %>%
+  relocate(variable) -> area_x_beta_n
+
+
+area_x_or_out %>%
+  mutate(x=abs_or) %>%
+  group_by(area) %>%
+  summarize(.groups='keep',
+            n_ti = n(),
+            median_x = median(x),
+            q25 = quantile(x,.25),
+            q75 = quantile(x,.75)) %>%
+  ungroup() %>%
+  adorn_totals(where='row',fill='',na.rm=T,name='Total',n_ti) %>%
+  mutate(variable='Odds ratio') %>%
+  relocate(variable) -> area_x_or_n
+
+
+area_x_maf_out %>%
+  mutate(x=lead_maf) %>%
+  group_by(area) %>%
+  summarize(.groups='keep',
+            n_ti = n(),
+            median_x = median(x),
+            q25 = quantile(x,.25),
+            q75 = quantile(x,.75)) %>%
+  ungroup() %>%
+  adorn_totals(where='row',fill='',na.rm=T,name='Total',n_ti) %>%
+  mutate(variable='Minor allele frequency') %>%
+  relocate(variable) -> area_x_maf_n
+
+area_x_subcat_out %>%
+  group_by(area) %>%
+  summarize(.groups='keep',
+            n_ti = n()) %>%
+  ungroup() %>%
+  adorn_totals() %>%
+  mutate(variable='OTG GWAS source') %>%
+  relocate(variable) -> area_x_subcat_n
+
+rbind(area_x_year_n, area_x_gc_n, area_x_beta_n, area_x_or_n, area_x_maf_n) -> area_x_vars_out
+write_supp_table(area_x_vars_out, 'Summary of therapy area confounding by continuous variables (year, gene count, beta, odds ratio, minor allele frequency).')
+write_supp_table(area_x_subcat_n, 'Summary of therapy area confounding by GWAS source (GWAS Catalog, UKBB, or FinnGen).')
 
 resx=300
-png(paste0(output_path,'/figure-ed6.png'),width=6.5*resx,height=4*resx,res=resx)
+tiff(paste0(output_path,'/figure-ed6.tif'),width=6.5*resx,height=4*resx,res=resx)
 
 layout_matrix = matrix(1:7, byrow=T, nrow=1)
 layout(layout_matrix)
@@ -3620,21 +3719,20 @@ unnecessary_message = dev.off()
 cat(file=stderr(), 'done.\nCreating Figure ED7...')
 
 resx=300
-png(paste0(output_path,'/figure-ed7.png'),width=6.5*resx,height=9*resx,res=resx)
+tiff(paste0(output_path,'/figure-ed7.tif'),width=6.5*resx,height=6.7*resx,res=resx)
 layout_matrix = matrix(c(1,1,2,2,2,3,3,3,9,
                          4,4,4,5,5,5,6,6,6,
-                         7,7,7,7,7,8,8,8,8,
-                         7,7,7,7,7,8,8,8,8), nrow=4,byrow=T)
-layout(layout_matrix, heights=c(1.5,1,.75,.75))
+                         7,7,7,7,8,8,8,8,8), nrow=3,byrow=T)
+layout(layout_matrix, heights=c(1.3,0.85,1.55))
 panel = 1
 
 ylims = range(areas$y, na.rm=T) + c(-0.5, 0.5)
-par(mar=c(4,0,3,0))
+par(mar=c(3,0,2.5,0))
 plot(NA, NA, ylim=ylims, xlim=c(0,1), axes=F, ann=F, xaxs='i', yaxs='i')
-mtext(side=4,adj=1,las=2,at=areas$y,text=areas$area,col=areas$color)
+mtext(side=4,adj=1,las=2,at=areas$y,text=areas$area,col=areas$color, cex=0.6)
 
 xlims = c(0, 0.20)
-par(mar=c(4,1,3,8))
+par(mar=c(3,1,2.5,8))
 plot(NA, NA, ylim=ylims, xlim=xlims, axes=F, ann=F, xaxs='i', yaxs='i')
 axis(side=1, at=xlims, labels=NA, lwd=1, lwd.ticks=0)
 axis(side=1, lwd=0, lwd.ticks=1, at=0:100/100, labels=NA, tck=-0.015)
@@ -3644,7 +3742,7 @@ mtext(side=1, line=2, text='P(S)')
 abline(v=0:4, lwd=0.125, col=line_color)
 abline(v=1, lwd=1, col='black')
 axis(side=2, at=ylims, labels=NA, lwd=1, lwd.ticks=0)
-mtext(side=4, at=areas$y, line=0.5, las=2, text=paste0(formatC(areas$gensup_launched+areas$nosup_launched, format='d', big.mark=','),'/',formatC(areas$nosup_launched+areas$gensup_launched+areas$nosup_clinical+areas$gensup_clinical, format='d', big.mark=',')), cex=1, col=areas$color)
+mtext(side=4, at=areas$y, line=0.5, las=2, text=paste0(formatC(areas$gensup_launched+areas$nosup_launched, format='d', big.mark=','),'/',formatC(areas$nosup_launched+areas$gensup_launched+areas$nosup_clinical+areas$gensup_clinical, format='d', big.mark=',')), cex=0.6, col=areas$color)
 segments(x0=areas$p_s_l95, x1=pmin(areas$p_s_u95,max(xlims)+1), y0=areas$y, lwd=1.5, col=areas$color)
 points(x=areas$p_s_mean, y=areas$y, pch=19, col=areas$color)
 mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
@@ -3652,7 +3750,7 @@ panel = panel + 1
 
 ylims = range(areas$y, na.rm=T) + c(-0.5, 0.5)
 xlims = c(0, 0.30)
-par(mar=c(4,1,3,8))
+par(mar=c(3,1,2.5,8))
 plot(NA, NA, ylim=ylims, xlim=xlims, axes=F, ann=F, xaxs='i', yaxs='i')
 axis(side=1, at=xlims, labels=NA, lwd=1, lwd.ticks=0)
 axis(side=1, lwd=0, lwd.ticks=1, at=0:100/100, labels=NA, tck=-0.015)
@@ -3662,7 +3760,7 @@ mtext(side=1, line=2, text='P(G)')
 abline(v=0:4, lwd=0.125, col=line_color)
 abline(v=1, lwd=1, col='black')
 axis(side=2, at=ylims, labels=NA, lwd=1, lwd.ticks=0)
-mtext(side=4, at=areas$y, line=0.5, las=2, text=paste0(formatC(areas$gensup_launched+areas$gensup_clinical, format='d', big.mark=','),'/',formatC(areas$nosup_launched+areas$gensup_launched+areas$nosup_clinical+areas$gensup_clinical, format='d', big.mark=',')), cex=1, col=areas$color)
+mtext(side=4, at=areas$y, line=0.5, las=2, text=paste0(formatC(areas$gensup_launched+areas$gensup_clinical, format='d', big.mark=','),'/',formatC(areas$nosup_launched+areas$gensup_launched+areas$nosup_clinical+areas$gensup_clinical, format='d', big.mark=',')), cex=0.6, col=areas$color)
 segments(x0=areas$p_g_l95, x1=pmin(areas$p_g_u95,max(xlims)+1), y0=areas$y, lwd=1.5, col=areas$color)
 points(x=areas$p_g_mean, y=areas$y, pch=19, col=areas$color)
 mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
@@ -3670,7 +3768,7 @@ panel = panel + 1
 
 ylims = c(0.0, 0.20)
 xlims = c(0.0, 0.30)
-par(mar=c(4,5,3,1))
+par(mar=c(3,5,2.5,1))
 plot(NA, NA, ylim=ylims, xlim=xlims, axes=F, ann=F, xaxs='i', yaxs='i')
 axis(side=1, at=xlims, labels=NA, lwd=1, lwd.ticks=0)
 axis(side=1, lwd=0, lwd.ticks=1, at=0:100/100, labels=NA, tck=-0.015)
@@ -3690,7 +3788,7 @@ panel = panel + 1
 
 ylims = c(0,5)
 xlims = c(0.0, 0.20)
-par(mar=c(4,5,3,1))
+par(mar=c(3,5,2.5,1))
 plot(NA, NA, ylim=ylims, xlim=xlims, axes=F, ann=F, xaxs='i', yaxs='i')
 axis(side=1, at=xlims, labels=NA, lwd=1, lwd.ticks=0)
 axis(side=1, lwd=0, lwd.ticks=1, at=0:100/100, labels=NA, tck=-0.015)
@@ -3711,7 +3809,7 @@ panel = panel + 1
 
 ylims = c(0,5)
 xlims = c(0, 0.30)
-par(mar=c(4,5,3,1))
+par(mar=c(3,5,2.5,1))
 plot(NA, NA, ylim=ylims, xlim=xlims, axes=F, ann=F, xaxs='i', yaxs='i')
 axis(side=1, at=xlims, labels=NA, lwd=1, lwd.ticks=0)
 axis(side=1, lwd=0, lwd.ticks=1, at=0:100/100, labels=NA, tck=-0.015)
@@ -3792,7 +3890,7 @@ smry2015$area = smry2015$category
 ylims = range(smry2015$y, na.rm=T) + c(-0.5, 0.5)
 smry2015$rs_u95[smry2015$rs_u95==Inf] = max(ylims)
 xlims = c(0, 8)
-par(mar=c(4,10,3,4))
+par(mar=c(3,11,2.0,4))
 plot(NA, NA, ylim=ylims, xlim=xlims, axes=F, ann=F, xaxs='i', yaxs='i')
 axis(side=1, at=xlims, labels=NA, lwd=1, lwd.ticks=0)
 axis(side=1, lwd=0, lwd.ticks=1, at=0:100/10, labels=NA, tck=-0.015, cex.axis=0.7)
@@ -3801,11 +3899,12 @@ axis(side=1, lwd=0, at=0:10, line=-0.5)
 abline(v=0:8, lwd=0.125, col=line_color)
 abline(v=1, lwd=1, col='black')
 axis(side=2, at=ylims, labels=NA, lwd=1, lwd.ticks=0)
+mtext(side=1, line=1.6, text='RS')
 mtext(side=2, at=smry2015$y, line=0.5, las=2, cex=0.7, text=smry2015$area, col=smry2015$color)
 mtext(side=4, at=smry2015$y, line=0.5, las=2, cex=0.7, text=paste0(smry2015$gensup_launched,'/',smry2015$gensup_launched + smry2015$gensup_clinical), col=smry2015$color)
 segments(x0=smry2015$rs_l95, x1=smry2015$rs_u95, y0=smry2015$y, lwd=3, col=smry2015$color)
 points(x=smry2015$rs_mean, y=smry2015$y, pch=19, col=smry2015$color)
-mtext(letters[panel], side=3, cex=2, adj = -0.1, line = 0.5)
+mtext(letters[panel], side=3, cex=2, adj = -0.8, line = 0.5)
 panel = panel + 1
 smry2015$n_total = rowSums(smry2015[,c("nosup_clinical", "nosup_launched", "gensup_clinical", "gensup_launched")])
 wmean2015 = round(weighted.mean(smry2015$rs_mean, w=smry2015$n_total),2)
@@ -3863,11 +3962,7 @@ n15i %>%
   summarize(.groups='keep', n = length(unique(id))) %>%
   ungroup() -> area_xtab
 
-# experiment with full join to get marginals
-#n15i %>%
-#  inner_join(vocab_match, by=c('msh'='labeltext')) -> temp
-#mean(temp$id %in% indic_topl_match$indication_mesh_id)
-
+# full join to get marginals
 n15i %>%
   inner_join(vocab_match, by=c('msh'='labeltext')) %>%
   full_join(indic_topl_match, by=c('id'='indication_mesh_id')) %>%
@@ -3911,7 +4006,7 @@ area_xtab %>%
 
 write_supp_table(area_xtab_out, 'Confusion matrix of count of drug indication classifications into therapy areas in 2015 versus 2023.')
 
-par(mar=c(7,7,3,1))
+par(mar=c(7,10,2.0,1))
 xlims = range(area_xtab$x) + c(-0.6, 0.6)
 ylims = range(area_xtab$y) + c(-0.6, 0.6)
 boxrad = 0.5
@@ -3954,13 +4049,13 @@ write(paste('T-I in Phase I-III with genetic support: ',n_hist_supported,'/',n_h
 
 cat(file=stderr(), 'done.\nCreating Figure 3...')
 
-resx=300
-png(paste0(output_path,'/figure-3.png'),width=6.5*resx,height=9*resx,res=resx)
+resx=1
+pdf(paste0(output_path,'/figure-3.pdf'),width=18*cm_to_inch*resx,height=17*cm_to_inch*resx)
 
 layout_matrix = matrix(c(1,1,
                          2,4,
                          3,4), nrow=3, byrow=T)
-layout(layout_matrix, heights=c(2,.6,.6), widths=c(1,.9))
+layout(layout_matrix, heights=c(1.8,.5,.65), widths=c(1,.9))
 panel = 1
 
 heavy_hitters = read_tsv('data/otg_heavy_hitter_curation.tsv', col_types=cols())
@@ -3981,7 +4076,7 @@ sim8 = sim[sim$comb_norm >= 0.8,]
 assoc %>% filter(source != 'OTG' | l2g_share >= 0.5) -> assoc_l2g5
 assoc_l2g5$associated_mesh_term = assoc_l2g5$mesh_term
 sim8 %>%
-  inner_join(assoc_l2g5, by=c('meshcode_a'='mesh_id')) %>%
+  inner_join(assoc_l2g5, by=c('meshcode_a'='mesh_id'), relationship = 'many-to-many') %>%
   inner_join(indic_insight, by=c('meshcode_b'='indication_mesh_id')) %>%
   group_by(gene, assoc_mesh_id=meshcode_a, indication_mesh_id=meshcode_b, source) %>%
   summarize(.groups='keep', 
@@ -4033,7 +4128,7 @@ write(paste("Number of clinically developed T-I pairs with genetic support: ",
 assoc %>% filter(source != 'OTG' | (l2g_share >= 0.5 & !hh))  -> assoc_l2g5_nohh
 assoc_l2g5_nohh$associated_mesh_term = assoc_l2g5_nohh$mesh_term
 sim8 %>%
-  inner_join(assoc_l2g5_nohh, by=c('meshcode_a'='mesh_id')) %>%
+  inner_join(assoc_l2g5_nohh, by=c('meshcode_a'='mesh_id'), relationship = 'many-to-many') %>%
   inner_join(indic_insight, by=c('meshcode_b'='indication_mesh_id')) %>%
   group_by(gene, assoc_mesh_id=meshcode_a, indication_mesh_id=meshcode_b, source) %>%
   summarize(.groups='keep', 
@@ -4090,6 +4185,7 @@ write(paste('Of possible genetically supported T-I ',n_all_poss_otgall,'/',n_pos
 
 genelists = data.frame(x=c(-0.5,1:2,seq(3.5,7.5,1)),
                        list=c('all_genes','ab_tractable','sm_tractable','rhodop_gpcr','nuclear_receptors','enzymes','ion_channels','kinases'),
+                       figdisp = c('all genes','predicted\nAb tractable','predicted\nSM tractable','rhodopsin-\nlike GPCRs','nuclear\nreceptors','enzymes','ion\nchannels','kinases'),
                        disp=c('all genes','predicted Ab tractable','predicted SM tractable','rhodopsin-like GPCRs','nuclear receptors','enzymes','ion channels','kinases'))
 
 
@@ -4152,12 +4248,10 @@ panel = 1
 maxcol = '#6E016B'
 ylims = range(area_meta$y) + c(-0.5, 0.5)
 xlims = range(genelists$x) + c(-0.5, 0.5)
-par(mar=c(0.5,8,8,2))
+par(mar=c(0.5,8,2.5,2))
 plot(NA, NA, xlim=xlims, ylim=ylims, xaxs='i', yaxs='i', ann=F, axes=F)
 axis(side=2, at=area_meta$y, labels=area_meta$disp, lwd=0, line=-0.25, las=2, cex.axis=1.1)
-par(xpd=T)
-text(x=genelists$x, y=rep(max(ylims), nrow(genelists))+0.1, labels=genelists$disp, adj=c(0,0), srt=45, cex=1.1)
-par(xpd=F)
+mtext(side=3, at=genelists$x, text=genelists$figdisp, cex=0.6, padj=0)
 utilization_table = tibble(area=character(0), 
                            genelist=character(0), 
                            developed=integer(0),
@@ -4177,8 +4271,8 @@ for (a in 1:nrow(area_meta)) {
     disp = gsub(' ','',paste0(formatC(utilization*100, format='fg', digits=2),'%'))
     col = alpha(maxcol, utilization)
     rect(xleft=genelists$x[g]-0.5, xright=genelists$x[g]+0.5, ybottom=area_meta$y[a]-0.5, ytop=area_meta$y[a]+0.5, col=col, border=NA)
-    text(x=genelists$x[g], y=area_meta$y[a]-0.2, labels=disp, cex=1.2, font=2)
-    text(x=genelists$x[g], y=area_meta$y[a]-0.1, labels=paste0(numden[1],'/',formatC(numden[2],format='fg',big.mark=',')), pos=3, cex=0.8)
+    text(x=genelists$x[g], y=area_meta$y[a]-0.17, labels=disp, cex=0.9, font=2)
+    text(x=genelists$x[g], y=area_meta$y[a]-0.15, labels=paste0(numden[1],'/',formatC(numden[2],format='fg',big.mark=',')), pos=3, cex=0.6)
   }
 }
 abline(h=mean(area_meta$y[1:2]),lwd=0.5)
@@ -4192,11 +4286,11 @@ write_supp_table(utilization_table, 'Proportion of all possible genetically supp
 maxcol = '#6E016B'
 ylims = range(intogen_directions$y) + c(-0.5, 0.5)
 xlims = range(genelists$x) + c(-0.5, 0.5)
-par(mar=c(1,11,7,1))
+par(mar=c(1,8,3,1))
 plot(NA, NA, xlim=xlims, ylim=ylims, xaxs='i', yaxs='i', ann=F, axes=F)
-axis(side=2, at=intogen_directions$y, labels=intogen_directions$disp, lwd=0, las=2, line=-0.25, cex.axis=1.1)
+axis(side=2, at=intogen_directions$y, labels=intogen_directions$disp, lwd=0, las=2, line=-0.25, cex.axis=1.0)
 par(xpd=T)
-text(x=genelists$x, y=rep(max(ylims), nrow(genelists))+0.05, labels=genelists$disp, adj=c(0,0), srt=45, cex=0.9)
+text(x=genelists$x, y=rep(max(ylims), nrow(genelists))+0.05, labels=genelists$figdisp, adj=c(0,0), srt=45, cex=0.8)
 par(xpd=F)
 intogen_utilization_table = tibble(area=character(0), 
                            genelist=character(0), 
@@ -4222,8 +4316,8 @@ for (a in 1:nrow(intogen_directions)) {
                                      supported=numden[2],
                                      utilization=utilization))
     rect(xleft=genelists$x[g]-0.5, xright=genelists$x[g]+0.5, ybottom=intogen_directions$y[a]-0.5, ytop=intogen_directions$y[a]+0.5, col=col, border=NA)
-    text(x=genelists$x[g], y=intogen_directions$y[a]-0.2, labels=disp, cex=0.8, font=2)
-    text(x=genelists$x[g], y=intogen_directions$y[a]-0.15, labels=paste0(numden[1],'/',numden[2]), pos=3, cex=0.6)
+    text(x=genelists$x[g], y=intogen_directions$y[a]-0.17, labels=disp, cex=0.8, font=2)
+    text(x=genelists$x[g], y=intogen_directions$y[a]-0.16, labels=paste0(numden[1],'/',numden[2]), pos=3, cex=0.6)
   }
 }
 mtext(side=2, line=8.5, text='IntOGen\nmechanism', cex=0.7)
@@ -4332,12 +4426,16 @@ gsup_bins$u95_sup = gsup_bins$mean_sup + 1.96 * gsup_bins$sd_sup/sqrt(gsup_bins$
 gsup_bins$l95_non = gsup_bins$mean_non - 1.96 * gsup_bins$sd_non/sqrt(gsup_bins$n)
 gsup_bins$u95_non = gsup_bins$mean_non + 1.96 * gsup_bins$sd_non/sqrt(gsup_bins$n)
 
+
+write(paste('Total N for Figure 3C: ',sum(gsup_bins$n),
+            '\n',sep=''),text_stats_path,append=T)
+
 supcol = '#43A2CA'
 noncol = '#BC7642'
 binwidth = 0.4
 xlims=c(-20,20)
 ylims=c(0,maxbin+0.5)
-par(mar=c(3.5,4,3,1))
+par(mar=c(3.5,4,2.5,1))
 plot(NA, NA, xlim=xlims, ylim=ylims, axes=F, ann=F, xaxs='i', yaxs='i')
 axis(side=1, at=-20:20, labels=NA, tck=-0.025)
 axis(side=1, at=c(-20, -10, 10, 20), labels=NA, tck=-0.05)
@@ -4352,9 +4450,9 @@ axis(side=2, at=c(0,5,10), labels=c(0,5,10), line=-0.5, lwd=0, las=2)
 mtext(side=2, line=1.5, text='Possible indications\nwith genetic support', cex=0.8)
 abline(v=0)
 rect(xleft=-gsup_bins$mean_sup, xright=0, ybottom=gsup_bins$bin_n_gsup_ti-binwidth, ytop=gsup_bins$bin_n_gsup_ti+binwidth, col=supcol, border=NA)
-arrows(x0=-gsup_bins$u95_sup, x1=-gsup_bins$l95_sup, y0=gsup_bins$bin_n_gsup_ti, y1=gsup_bins$bin_n_gsup_ti, angle=90, code=3, length=0.03)
+arrows(x0=-gsup_bins$u95_sup, x1=-gsup_bins$l95_sup, y0=gsup_bins$bin_n_gsup_ti, y1=gsup_bins$bin_n_gsup_ti, angle=90, code=3, length=0.018)
 rect(xleft=0, xright=gsup_bins$mean_non, ybottom=gsup_bins$bin_n_gsup_ti-binwidth, ytop=gsup_bins$bin_n_gsup_ti+binwidth, col=noncol, border=NA)
-arrows(x0=gsup_bins$l95_non, x1=gsup_bins$u95_non, y0=gsup_bins$bin_n_gsup_ti, y1=gsup_bins$bin_n_gsup_ti, angle=90, code=3, length=0.03)
+arrows(x0=gsup_bins$l95_non, x1=gsup_bins$u95_non, y0=gsup_bins$bin_n_gsup_ti, y1=gsup_bins$bin_n_gsup_ti, angle=90, code=3, length=0.018)
 mtext(letters[panel], side=3, cex=2, adj = 0.0, line = 0.5)
 panel = panel + 1
 
@@ -4460,17 +4558,17 @@ unecessary_message = dev.off()
 cat(file=stderr(), 'done.\nCreating Figure ED8...')
 
 resx=300
-png(paste0(output_path,'/figure-ed8.png'),width=6.5*resx,height=8*resx,res=resx)
+tiff(paste0(output_path,'/figure-ed8.tif'),width=6.5*resx,height=6.7*resx,res=resx)
 
 layout_matrix = matrix(c(1,2,3,3),nrow=2,byrow=T)
-layout(layout_matrix, heights=c(1,3))
+layout(layout_matrix, heights=c(1.1,3))
 
 panel = 1
 
 gtcolor = '#3489CA'
 ticolor = '#CB7635'
 
-par(mar=c(3,3,3,1))
+par(mar=c(2,3,2.5,1))
 xlims = c(2007, 2022)
 xats = 2007:2022
 xbigs = c(2010, 2015, 2020)
@@ -4500,12 +4598,10 @@ plot(NA, NA, xlim=c(0,1), ylim=c(0,1), axes=F, ann=F, xaxs='i', yaxs='i')
 maxcol = '#6E016B'
 ylims = range(area_meta$y) + c(-0.5, 0.5)
 xlims = range(genelists$x) + c(-0.5, 0.5)
-par(mar=c(1,10,6,1))
+par(mar=c(1,7,3,1))
 plot(NA, NA, xlim=xlims, ylim=ylims, xaxs='i', yaxs='i', ann=F, axes=F)
-axis(side=2, at=area_meta$y, labels=area_meta$disp, lwd=0, las=2)
-par(xpd=T)
-text(x=genelists$x, y=rep(max(ylims), nrow(genelists)), labels=genelists$disp, adj=c(0,0), srt=45)
-par(xpd=F)
+axis(side=2, at=area_meta$y, labels=area_meta$disp, lwd=0, las=2, cex=0.9)
+mtext(side=3, at=genelists$x, text=genelists$figdisp, cex=0.58, padj=0)
 target_utilization_table = tibble(area=character(0), 
                                   genelist=character(0), 
                                   developed=integer(0),
@@ -4525,13 +4621,13 @@ for (a in 1:nrow(area_meta)) {
     disp = gsub(' ','',paste0(formatC(utilization*100, format='fg', digits=2),'%'))
     col = alpha(maxcol, utilization)
     rect(xleft=genelists$x[g]-0.5, xright=genelists$x[g]+0.5, ybottom=area_meta$y[a]-0.5, ytop=area_meta$y[a]+0.5, col=col, border=NA)
-    text(x=genelists$x[g], y=area_meta$y[a]-0.2, labels=disp, cex=1, font=2)
-    text(x=genelists$x[g], y=area_meta$y[a]-0.1, labels=paste0(numden[1],'/',numden[2]), pos=3, cex=0.7)
+    text(x=genelists$x[g], y=area_meta$y[a]-0.17, labels=disp, cex=0.8, font=2)
+    text(x=genelists$x[g], y=area_meta$y[a]-0.16, labels=paste0(numden[1],'/',numden[2]), pos=3, cex=0.6)
   }
 }
 abline(h=mean(area_meta$y[1:2]),lwd=0.5)
 abline(v=c(0.25,2.75),lwd=0.5)
-mtext(letters[panel], side=3, cex=2, adj = 0.0, line = 0.5)
+mtext(letters[panel], side=3, cex=2, adj = -0.2, line = 0.5)
 
 write_supp_table(target_utilization_table, 'Proportion of all possible genetically supported targets that have been developed, by therapy area and gene list.')
 

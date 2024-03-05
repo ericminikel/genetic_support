@@ -1,25 +1,148 @@
-area	genelist	developed	supported	utilization
-oncogene	all genes	52	184	0.2826086956521739
-oncogene	predicted Ab tractable	41	94	0.43617021276595747
-oncogene	predicted SM tractable	49	118	0.4152542372881356
-oncogene	rhodopsin-like GPCRs	1	3	0.3333333333333333
-oncogene	nuclear receptors	2	2	1
-oncogene	enzymes	10	18	0.5555555555555556
-oncogene	ion channels	0	1	0
-oncogene	kinases	19	25	0.76
-tumor_suppressor	all genes	18	197	0.09137055837563451
-tumor_suppressor	predicted Ab tractable	8	69	0.11594202898550725
-tumor_suppressor	predicted SM tractable	15	103	0.14563106796116504
-tumor_suppressor	rhodopsin-like GPCRs	0	1	0
-tumor_suppressor	nuclear receptors	0	1	0
-tumor_suppressor	enzymes	6	25	0.24
-tumor_suppressor	ion channels	0	0	0
-tumor_suppressor	kinases	3	10	0.3
-unknown	all genes	18	208	0.08653846153846154
-unknown	predicted Ab tractable	14	102	0.13725490196078433
-unknown	predicted SM tractable	16	96	0.16666666666666666
-unknown	rhodopsin-like GPCRs	1	2	0.5
-unknown	nuclear receptors	0	0	0
-unknown	enzymes	1	13	0.07692307692307693
-unknown	ion channels	0	1	0
-unknown	kinases	5	18	0.2777777777777778
+category_2015	area_2023	unique_indications
+Urogenital	oncology	1
+Urogenital	cardiovascular	1
+Urogenital	congenital	2
+Urogenital	dermatology	1
+Urogenital	endocrine	1
+Urogenital	immune	1
+Urogenital	signs/symptoms	11
+Urogenital	psychiatry	2
+Urogenital	other	14
+Urogenital		5
+Inflammation	congenital	1
+Inflammation	immune	4
+Inflammation	signs/symptoms	4
+Inflammation	other	1
+Inflammation		2
+Liver & kidney	musculoskeletal	1
+Liver & kidney	digestive	2
+Liver & kidney	respiratory	1
+Liver & kidney	hematology	1
+Liver & kidney	congenital	1
+Liver & kidney	metabolic	1
+Liver & kidney	endocrine	1
+Liver & kidney	signs/symptoms	3
+Liver & kidney	other	2
+Liver & kidney		1
+Autoimmune	musculoskeletal	6
+Autoimmune	digestive	6
+Autoimmune	respiratory	1
+Autoimmune	neurology	1
+Autoimmune	ophthalmology	1
+Autoimmune	cardiovascular	3
+Autoimmune	hematology	3
+Autoimmune	congenital	3
+Autoimmune	dermatology	10
+Autoimmune	metabolic	2
+Autoimmune	immune	11
+Autoimmune	signs/symptoms	2
+Autoimmune		1
+Diabetes	ophthalmology	1
+Diabetes	cardiovascular	1
+Diabetes	metabolic	3
+Diabetes	endocrine	6
+Diabetes	immune	1
+Diabetes		1
+Metabolic	musculoskeletal	1
+Metabolic	neurology	3
+Metabolic	cardiovascular	1
+Metabolic	congenital	13
+Metabolic	dermatology	5
+Metabolic	metabolic	24
+Metabolic	immune	1
+Metabolic	signs/symptoms	2
+Metabolic		1
+Skin & connective tissue	congenital	2
+Skin & connective tissue	dermatology	22
+Skin & connective tissue	metabolic	1
+Skin & connective tissue	immune	3
+Skin & connective tissue	signs/symptoms	3
+Skin & connective tissue	other	1
+Skin & connective tissue		4
+Blood	oncology	1
+Blood	hematology	24
+Blood	congenital	10
+Blood	immune	4
+Blood	signs/symptoms	2
+Blood		6
+Cardiovascular	cardiovascular	40
+Cardiovascular	congenital	3
+Cardiovascular	dermatology	3
+Cardiovascular	metabolic	3
+Cardiovascular	endocrine	2
+Cardiovascular	immune	2
+Cardiovascular	signs/symptoms	12
+Cardiovascular		3
+Eye	neurology	1
+Eye	ophthalmology	20
+Eye	cardiovascular	2
+Eye	congenital	1
+Eye	immune	1
+Eye	signs/symptoms	1
+Eye		5
+Neurological/behavioral	oncology	1
+Neurological/behavioral	musculoskeletal	1
+Neurological/behavioral	neurology	66
+Neurological/behavioral	ophthalmology	3
+Neurological/behavioral	cardiovascular	9
+Neurological/behavioral	hematology	2
+Neurological/behavioral	congenital	16
+Neurological/behavioral	dermatology	1
+Neurological/behavioral	metabolic	12
+Neurological/behavioral	endocrine	4
+Neurological/behavioral	immune	4
+Neurological/behavioral	signs/symptoms	22
+Neurological/behavioral	psychiatry	33
+Neurological/behavioral	other	5
+Neurological/behavioral		13
+Respiratory	infection	4
+Respiratory	digestive	1
+Respiratory	respiratory	24
+Respiratory	cardiovascular	2
+Respiratory	congenital	4
+Respiratory	immune	3
+Respiratory	signs/symptoms	4
+Respiratory		3
+Musculoskeletal	musculoskeletal	25
+Musculoskeletal	neurology	10
+Musculoskeletal	ophthalmology	1
+Musculoskeletal	cardiovascular	1
+Musculoskeletal	congenital	8
+Musculoskeletal	dermatology	4
+Musculoskeletal	metabolic	1
+Musculoskeletal	endocrine	3
+Musculoskeletal	immune	1
+Musculoskeletal	signs/symptoms	2
+Musculoskeletal		3
+Oncology	oncology	79
+Oncology		6
+Infection	infection	45
+Infection	oncology	2
+Infection	musculoskeletal	1
+Infection	digestive	5
+Infection	respiratory	2
+Infection	neurology	5
+Infection	ophthalmology	2
+Infection	dermatology	4
+Infection	immune	2
+Infection	signs/symptoms	1
+Infection	psychiatry	1
+Infection	other	1
+Infection		6
+	infection	53
+	oncology	48
+	musculoskeletal	24
+	digestive	53
+	respiratory	14
+	neurology	103
+	ophthalmology	38
+	cardiovascular	26
+	hematology	35
+	congenital	114
+	dermatology	35
+	metabolic	75
+	endocrine	19
+	immune	37
+	signs/symptoms	60
+	psychiatry	27
+	other	47
