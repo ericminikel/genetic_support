@@ -3494,7 +3494,7 @@ area_x_subcat_out %>%
   relocate(variable) -> area_x_subcat_n
 
 rbind(area_x_year_n, area_x_gc_n, area_x_beta_n, area_x_or_n, area_x_maf_n) -> area_x_vars_out
-write_supp_table(area_x_subcat_out, 'Summary of therapy area confounding by continuous variables (year, gene count, beta, odds ratio, minor allele frequency.')
+write_supp_table(area_x_vars_out, 'Summary of therapy area confounding by continuous variables (year, gene count, beta, odds ratio, minor allele frequency).')
 write_supp_table(area_x_subcat_n, 'Summary of therapy area confounding by GWAS source (GWAS Catalog, UKBB, or FinnGen).')
 
 resx=300
