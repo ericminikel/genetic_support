@@ -1292,7 +1292,7 @@ maf_logit_p = summary(maf_logit)$coefficients['lead_maf','Pr(>|z|)']
 
 write(paste('Logit model launched ~ lead_maf: beta = ',formatC(maf_logit_beta,digits=2,format='g'),', P = ',formatC(maf_logit_p,digits=2,format='fg'),'\n',sep=''),text_stats_path,append=T)
 
-master_cols = c('label','mean','l95','u95','numerator','denominator')
+master_cols = c('label','mean','l95','u95','numerator','denominator','x_yes','n_yes','x_no','n_no','n_total')
 rbind(year_rrs[year_rrs$abbr=='c',master_cols], 
       gc_rrs[,master_cols], 
       beta_rrs[,master_cols], 
@@ -1415,7 +1415,7 @@ master_forest$subpanel = c(rep('Year',sum(year_rrs$abbr=='c')),
                            rep('MAF',nrow(maf_rrs)))
 master_forest %>% 
   relocate(subpanel) %>%
-  rename(rs = mean, rs_l95 = l95, rs_u95 = u95, approved=numerator, supported=denominator, x_yes, n_yes, x_no, n_no, n_total) %>%
+  rename(rs = mean, rs_l95 = l95, rs_u95 = u95, approved=numerator, supported=denominator) %>%
   select(-y) -> master_forest_out
 
 write_supp_table(master_forest_out, "Relative success for GWAS Catalog associations as a function of year of discovery, gene count, beta, odds ratio, and minor allele frequency.")
@@ -1921,7 +1921,7 @@ sim_temp = sim %>%
   filter(meshcode_b %in% n15g$mesh_id)
 
 n15p %>%
-  left_join(n15g, by='gene', suffix=c('_indication','_association')) %>%
+  left_join(n15g, by='gene', suffix=c('_indication','_association'), relationship='many-to-many') %>%
   left_join(sim_temp, by=c('mesh_id_indication'='meshcode_a', 'mesh_id_association'='meshcode_b')) %>%
   mutate(comb_norm = replace_na(comb_norm, 0)) %>%
   group_by(gene, mesh_id_indication, mesh_term_indication, ccat, ccatnum) %>%
@@ -1947,7 +1947,7 @@ sim_temp = sim %>%
   filter(meshcode_a %in% n15p$mesh_id) %>%
   filter(meshcode_b %in% assoc_temp$mesh_id)
 n15p %>%
-  left_join(assoc_temp, by='gene', suffix=c('_indication','_association')) %>%
+  left_join(assoc_temp, by='gene', suffix=c('_indication','_association'), relationship='many-to-many') %>%
   left_join(sim_temp, by=c('mesh_id_indication'='meshcode_a', 'mesh_id_association'='meshcode_b')) %>%
   mutate(comb_norm = replace_na(comb_norm, 0)) %>%
   group_by(gene, mesh_id_indication, mesh_term_indication, ccat, ccatnum) %>%
@@ -1975,7 +1975,7 @@ sim_temp = sim %>%
   filter(meshcode_b %in% n15g$mesh_id)
 
 pp_temp %>%
-  left_join(n15g, by='gene', suffix=c('_indication','_association')) %>%
+  left_join(n15g, by='gene', suffix=c('_indication','_association'), relationship='many-to-many') %>%
   left_join(sim_temp, by=c('mesh_id_indication'='meshcode_a', 'mesh_id_association'='meshcode_b')) %>%
   mutate(comb_norm = replace_na(comb_norm, 0)) %>%
   group_by(gene, mesh_id_indication, mesh_term_indication, ccat, ccatnum) %>%
@@ -2000,7 +2000,7 @@ sim_temp = sim %>%
   filter(meshcode_b %in% assoc_temp$mesh_id)
 
 pp_temp %>%
-  left_join(assoc_temp, by='gene', suffix=c('_indication','_association')) %>%
+  left_join(assoc_temp, by='gene', suffix=c('_indication','_association'), relationship='many-to-many') %>%
   left_join(sim_temp, by=c('mesh_id_indication'='meshcode_a', 'mesh_id_association'='meshcode_b')) %>%
   mutate(comb_norm = replace_na(comb_norm, 0)) %>%
   group_by(gene, mesh_id_indication, mesh_term_indication, ccat, ccatnum) %>%
@@ -2032,7 +2032,7 @@ sim_temp = sim %>%
   filter(meshcode_b %in% assoc_temp$mesh_id)
 
 pp_temp %>%
-  left_join(assoc_temp, by='gene', suffix=c('_indication','_association')) %>%
+  left_join(assoc_temp, by='gene', suffix=c('_indication','_association'), relationship='many-to-many') %>%
   left_join(sim_temp, by=c('mesh_id_indication'='meshcode_a', 'mesh_id_association'='meshcode_b')) %>%
   mutate(comb_norm = replace_na(comb_norm, 0)) %>%
   group_by(gene, mesh_id_indication, mesh_term_indication, ccat, ccatnum) %>%
@@ -2060,7 +2060,7 @@ sim_temp = sim %>%
   filter(meshcode_b %in% assoc_temp$mesh_id)
 
 pp_temp %>%
-  left_join(assoc_temp, by='gene', suffix=c('_indication','_association')) %>%
+  left_join(assoc_temp, by='gene', suffix=c('_indication','_association'), relationship='many-to-many') %>%
   left_join(sim_temp, by=c('mesh_id_indication'='meshcode_a', 'mesh_id_association'='meshcode_b')) %>%
   mutate(comb_norm = replace_na(comb_norm, 0)) %>%
   group_by(gene, mesh_id_indication, mesh_term_indication, ccat, ccatnum) %>%
@@ -2606,7 +2606,7 @@ ti_launched %>%
 ti_launched %>%
   select(gene, meshcode_b = indication_mesh_id) -> a2
 a1 %>%
-  inner_join(a2, by=c('gene'='gene')) %>%
+  inner_join(a2, by=c('gene'='gene'), relationship='many-to-many') %>%
   filter(meshcode_a < meshcode_b) -> ti_simpairs
 ti_simpairs %>%
   left_join(sim, by=c('meshcode_a' = 'meshcode_a', 'meshcode_b' = 'meshcode_b')) -> ti_sim
