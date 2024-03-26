@@ -592,9 +592,6 @@ advancement_rr = function(best, alpha = 0.05, threshold = NA) {
 always_katz = T
 binom_ratio_atomic = function(x_yes, n_yes, x_no, n_no, mean_yes=NA, mean_no=NA, alpha =  0.05) {
   
-  # TO DO: think through whether we really need the Katz option, esp since for 
-  # I-Launch it will be based on the combined denominator (unique T-I in any phase)
-  
   # Wald by default
   if (!always_katz & x_yes >= 3 & x_no >=3) {
     mean = mean_yes / mean_no
