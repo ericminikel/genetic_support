@@ -1,6 +1,6 @@
 This repository holds the data and source code for the following manuscript:
 
-[Minikel EV, Painter JL, Dong CL, Nelson MR. **Refining the impact of genetic evidence on clinical success**. _medRxiv_. 2023 Jun 29. 2023.06.23.23291765.](https://doi.org/10.1101/2023.06.23.23291765)
+[Minikel EV, Painter JL, Dong CC, Nelson MR. **Refining the impact of genetic evidence on clinical success.** _Nature_. 2024 May;629(8012):624-629. doi: 10.1038/s41586-024-07316-0. Epub 2024 Apr 17. PMID: 38632401; PMCID: PMC11096124.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11096124/)
 
 Here, you can:
 
