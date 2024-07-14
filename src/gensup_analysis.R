@@ -1255,7 +1255,7 @@ or_rrs_king2019 %>%
 
 cat(file=stderr(), 'done.\nCalculating MAF statistics...')
 
-gwascat = suppressMessages(read_tsv('../digap/data/gwascat/gwas_catalog-ancestry_r2022-02-02.tsv') %>% clean_names())
+gwascat = suppressMessages(read_tsv('data/gwas_catalog-ancestry_r2022-02-02.tsv') %>% clean_names())
 gwascat$acc_link = paste0('https://genetics.opentargets.org/study/',gwascat$study_accession)
 gwascat$nfe = gwascat$broad_ancestral_category=='European' & gwascat$country_of_origin != 'Finland'
 merge2$in_nfe = gwascat$nfe[match(merge2$original_link, gwascat$acc_link)]
