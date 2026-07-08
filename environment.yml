@@ -1,0 +1,18 @@
+name: gensup
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - r-base=4.2.*
+  - r-binom=1.1_1.1
+  - r-tidyverse=1.3.*
+  - r-janitor=2.1.*
+  - r-glue=1.6.*
+  - r-weights=1.0.*
+  - r-epitools=0.5_10.1
+  - r-desctools=0.99.*
+  - r-openxlsx=4.2.*
+  - r-optparse=1.7.*
+  - r-mass=7.3_60.*
+  - r-stringi=1.8.*
+  - r-remotes=2.5
